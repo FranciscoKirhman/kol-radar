@@ -156,8 +156,9 @@ agrégale `/web/index.html` al final.
 - `web/index.html` — la vista de producto (búsqueda, lista con señales, red de
   conexiones, detalle con evidencia). Esto es lo que probaría un MSL.
 - `web/interno.html` — cómo se construyó (costos, arquitectura de agentes, pipeline).
-  Enlazada desde el pie de página de `web/index.html` (no del `index.html` raíz, que
-  solo redirige), no pensada para el usuario final.
+  Enlazada desde "Detalles técnicos" en el header de `web/index.html` (no del
+  `index.html` raíz, que solo redirige), no pensada para el usuario final —
+  deliberadamente discreta para no competir con la vista de producto.
 
 Si ves un mensaje de error en pantalla en vez de la lista, es casi siempre que abriste
 el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no `file://`.

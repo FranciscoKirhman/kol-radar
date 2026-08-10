@@ -7,6 +7,7 @@
     {
       "id": "carlos-rojas", "nombre": "Carlos Rojas", "tipo": "persona",
       "ciudad": "Santiago", "subtitulo": "Bradford Hill Clinical Research Center",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/42129521/",
       "hechos": [
         { "tipo": "publicacion", "hecho": "Coautor con afiliación chilena (Bradford Hill, Santiago) en ensayo fase 3 de nivolumab en NSCLC estadio III, publicado en Nature Cancer.", "revista": "Nature Cancer", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42129521/", "fecha": "2026-07", "confianza": "pendiente" },
         { "tipo": "publicacion", "hecho": "Aparece como 'Rojas, Carlos I' en artículo de revisión sobre atezolizumab subcutáneo en NSCLC, misma afiliación (Bradford Hill / Finis Terrae University, Santiago).", "revista": "Therapeutic delivery", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/", "fecha": "2026-03", "confianza": "pendiente" },
@@ -16,6 +17,7 @@
     {
       "id": "mauricio-burotto", "nombre": "Mauricio Burotto", "tipo": "persona",
       "ciudad": "Santiago", "subtitulo": "Bradford Hill Clinical Research Center",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/42214243/",
       "hechos": [
         { "tipo": "publicacion", "hecho": "Coautor en actualización de resultados de atezolizumab subcutáneo vs. intravenoso en NSCLC (estudios IMscin001/IMscin002).", "revista": null, "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42214243/", "fecha": "2026-07", "confianza": "pendiente" },
         { "tipo": "publicacion", "hecho": "Coautor de revisión sobre atezolizumab subcutáneo en NSCLC; ORCID registrado en PubMed 0000-0002-7150-4033.", "revista": "Therapeutic delivery", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/", "fecha": "2026-03", "confianza": "pendiente" }
@@ -24,6 +26,7 @@
     {
       "id": "roberto-gonzalez", "nombre": "Roberto González L.", "tipo": "persona",
       "ciudad": "Concepción", "subtitulo": "Hospital Clínico Regional de Concepción",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
       "hechos": [
         { "tipo": "publicacion", "hecho": "Autor de correspondencia del estudio de cohorte sobre cáncer pulmonar en un hospital público de Concepción (Rev Med Chile 2022;150(1)).", "revista": "Revista Médica de Chile", "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", "fecha": "2022-01", "confianza": "pendiente" }
       ]
@@ -31,6 +34,7 @@
     {
       "id": "andres-rojas", "nombre": "Andrés Rojas G.", "tipo": "persona",
       "ciudad": "Puerto Montt", "subtitulo": "Hospital Puerto Montt",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
       "hechos": [
         { "tipo": "publicacion", "hecho": "Autor de correspondencia de revisión sobre evaluación preoperatoria en resección de cáncer de pulmón. Nota: comparte apellido con 'Carlos Rojas' pero son personas distintas.", "revista": "Revista Médica de Chile", "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", "fecha": "2015-06", "confianza": "pendiente" }
       ]
@@ -38,6 +42,7 @@
     {
       "id": "fernando-saldias", "nombre": "Fernando Saldías P.", "tipo": "persona",
       "ciudad": "Santiago", "subtitulo": "Pontificia Universidad Católica de Chile",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
       "hechos": [
         { "tipo": "publicacion", "hecho": "Coautor del artículo 'Factores pronósticos y sobrevida a mediano plazo... cáncer pulmonar... Red de Salud UC' (Rev Chil Enferm Respir 2014;30(4)).", "revista": "Revista Chilena de Enfermedades Respiratorias", "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", "fecha": "2014-12", "confianza": "pendiente" }
       ]
@@ -45,6 +50,7 @@
     {
       "id": "javiera-martinez", "nombre": "Javiera Martinez-Gutierrez", "tipo": "persona",
       "ciudad": "Santiago (afiliación secundaria)", "subtitulo": "Pontificia Universidad Católica de Chile",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/41421033/",
       "hechos": [
         { "tipo": "publicacion", "hecho": "Coautora de estudio sobre screening de cáncer de pulmón; afiliación principal a University of Melbourne (Australia), secundaria a la PUC.", "revista": "Lung Cancer (Amsterdam)", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41421033/", "fecha": "2026-01", "confianza": "pendiente" }
       ]
@@ -52,6 +58,7 @@
     {
       "id": "rodrigo-uribe", "nombre": "Rodrigo Uribe", "tipo": "persona",
       "ciudad": "Santiago", "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "subtitulo_fuente": "https://clinicaltrials.gov/study/NCT06890598",
       "hechos": [
         { "tipo": "ensayo_clinico", "hecho": "Investigador principal del sitio FALP en el ensayo SUNRAY-02 (NCT06890598).", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
       ]
@@ -59,6 +66,7 @@
     {
       "id": "pamela-salman", "nombre": "Pamela Salman", "tipo": "persona",
       "ciudad": "Santiago", "subtitulo": "Centro de Oncología de Precisión",
+      "subtitulo_fuente": "https://clinicaltrials.gov/study/NCT06890598",
       "hechos": [
         { "tipo": "ensayo_clinico", "hecho": "Investigadora principal del sitio Centro de Oncología de Precisión en el ensayo SUNRAY-02 (NCT06890598).", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
       ]
@@ -66,6 +74,7 @@
     {
       "id": "pablo-rodriguez", "nombre": "Pablo Rodríguez Monarca", "tipo": "persona",
       "ciudad": "Santiago (Providencia)", "subtitulo": "K2 Oncology",
+      "subtitulo_fuente": "https://clinicaltrials.gov/study/NCT06890598",
       "hechos": [
         { "tipo": "ensayo_clinico", "hecho": "Investigador principal del sitio K2 Oncology en el ensayo SUNRAY-02 (NCT06890598).", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
       ]

@@ -115,7 +115,7 @@
     <header>
       <h1>KOL Radar — cómo se construyó esto</h1>
       <p>Vista interna (no es lo que ve un MSL): red de conexiones cruda, costo del pipeline de automatización, y cómo se arma un perfil. La vista de producto está en <a href="index.html">index.html</a>.</p>
-      <p class="refs">Datos y fuentes: <a href="../data/sample/perfiles-muestra.json">data/sample/perfiles-muestra.json</a> · <a href="../COSTS.md">COSTS.md</a> · <a href="../README.md">README.md</a></p>
+      <p class="refs">Datos y fuentes: <a href="../data/sample/perfiles-muestra.json">data/sample/perfiles-muestra.json</a> · <a href="../DATA_SAMPLE.md">DATA_SAMPLE.md</a> · <a href="../COSTS.md">COSTS.md</a> · <a href="../README.md">README.md</a></p>
     </header>
 
     <nav class="tabs" role="tablist">
@@ -159,6 +159,19 @@
     </section>
 
     <section class="panel" id="panel-pipeline">
+      <h2 class="section-title" id="puntaje">Cómo se calcula el puntaje</h2>
+      <p class="section-sub">
+        Suma sin ponderar de señales contables: publicaciones (1 pt c/u) + ensayos clínicos
+        (2 pts si son fase III/IV, 1 pt si son fase I/II — el único peso que usamos, porque
+        ClinicalTrials.gov entrega la fase como dato estructurado real) + conexiones en la red
+        (1 pt c/u) + docencia/congresos (1 pt c/u, hoy siempre en 0 porque nuestras fuentes
+        actuales no lo capturan). No pesamos "impacto" de una publicación porque no tenemos un
+        dato real de impacto — mostramos la revista como texto para que el criterio lo pongas
+        vos. Un mismo hecho real (ej. un rol de investigador principal) puede quedar registrado
+        en dos entidades relacionadas (la persona y la institución) — cada una lo cuenta desde
+        su propia perspectiva, así que los puntajes de dos entidades no son sumables entre sí
+        como si cada punto fuera un hecho único del mundo real.
+      </p>
       <h2 class="section-title">Cómo se arma un perfil</h2>
       <p class="section-sub">Cuatro pasos, cada uno con su propio costo y su propio límite de autonomía — ningún hecho llega a "confirmado" sin revisión humana.</p>
       <div class="pipeline">
@@ -199,7 +212,21 @@
       <ul>
         <li><s>Los datos del grafo están hardcodeados</s> — resuelto en ambas páginas: <code>web/index.html</code> y <code>web/interno.html</code> ahora cargan <code>data/sample/perfiles-muestra.json</code> en vivo vía <code>fetch()</code> (necesita servirse por HTTP, no <code>file://</code>). Antes de este fix, esta página mostraba una copia hardcodeada con menos hechos de los que realmente existen en el JSON — auditoría del 2026-08-10 lo detectó.</li>
         <li><s>Falta el puntaje</s> — resuelto en <code>index.html</code>: "señales" transparentes (publicaciones + ensayos + conexiones) con desglose siempre visible, nunca un número oculto.</li>
-        <li>El layout del grafo es una simulación de fuerzas simple corrida una sola vez al cargar — con más de ~50 nodos va a necesitar un layout incremental o una librería real (D3, Cytoscape).</li>
+        <li><s>El grafo global de 23 nodos era la única forma de ver con qué se conecta una persona</s> —
+          resuelto en <code>index.html</code>: se investigó cómo resuelven esto LinkedIn, ResearchGate,
+          Google Scholar, Connected Papers, Obsidian y herramientas de relationship-mapping como Veeva
+          Network (workflow de investigación, 2026-08-10) antes de tocar el código. Hallazgo principal:
+          ninguna referencia seria muestra el grafo completo sin un nodo de origen, y Semantic Scholar
+          probó en A/B testing real que una lista categorizada le gana a un grafo cuando el problema es
+          "no entiendo qué conecta con qué" — casi literal al feedback recibido. Se implementó una sección
+          "Conectado con" en el panel de detalle (lista de vínculos reales, con el tipo de relación tal
+          cual viene del JSON) más un mini-grafo ego-céntrico estático debajo (la entidad al centro + sus
+          vecinos directos, sin simulación de fuerzas). El grafo global de 23 nodos sigue existiendo como
+          "Mapa completo (avanzado)", ya no como la respuesta por defecto.</li>
+        <li>El layout del grafo global sigue siendo una simulación de fuerzas simple corrida una sola vez
+          al cargar — con más de ~50 nodos va a necesitar un layout incremental o una librería real (D3,
+          Cytoscape). El mini-grafo del panel de detalle no tiene este problema: usa un layout radial
+          estático porque nunca muestra más de un puñado de vecinos.</li>
         <li>No hay filtro por especialidad (solo por tipo de entidad y texto libre) — el spec original pide filtrar también por biomarcador, algo que los datos actuales no sostienen de forma confiable.</li>
         <li><s>La confianza se mostraba como nota fija de texto, no por hecho</s> — resuelto: cada hecho ahora muestra su propio <code>confianza</code> (index.html y esta página). Sigue faltando el botón de "corregir este dato" del modelo de datos, y el canal de contacto para pedirlo (README.md tiene el placeholder sin completar).</li>
         <li>No hay mapa de Chile con centros geolocalizados — está en el roadmap del README como parte de la pantalla principal.</li>
@@ -359,14 +386,21 @@
 
   // ---- Tabs ----
   var tabs = document.querySelectorAll("nav.tabs button");
+  function activateTab(panelKey) {
+    tabs.forEach(function (b) { b.setAttribute("aria-selected", String(b.getAttribute("data-panel") === panelKey)); });
+    document.querySelectorAll("section.panel").forEach(function (p) { p.classList.remove("active"); });
+    document.getElementById("panel-" + panelKey).classList.add("active");
+  }
   tabs.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      tabs.forEach(function (b) { b.setAttribute("aria-selected", "false"); });
-      btn.setAttribute("aria-selected", "true");
-      document.querySelectorAll("section.panel").forEach(function (p) { p.classList.remove("active"); });
-      document.getElementById("panel-" + btn.getAttribute("data-panel")).classList.add("active");
-    });
+    btn.addEventListener("click", function () { activateTab(btn.getAttribute("data-panel")); });
   });
+  // Si alguien llega con un ancla (ej. interno.html#puntaje desde el link de index.html),
+  // activar la pestaña que contiene ese elemento en vez de dejarlo escondido en un panel inactivo.
+  if (location.hash) {
+    var target = document.querySelector(location.hash);
+    var containingPanel = target && target.closest("section.panel");
+    if (containingPanel) activateTab(containingPanel.id.replace("panel-", ""));
+  }
 })();
 </script>
 </body>

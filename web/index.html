@@ -52,6 +52,8 @@
     padding: 12px 16px;
   }
   .topbar-row { display: flex; align-items: center; gap: 10px; max-width: 1080px; margin: 0 auto; flex-wrap: wrap; }
+  .dev-link { margin-left: auto; font-size: 11px; color: var(--text-muted); white-space: nowrap; text-decoration: none; }
+  .dev-link:hover { text-decoration: underline; }
   .brand { font-weight: 700; font-size: 16px; white-space: nowrap; }
   .specialty-badge {
     font-size: 11px; font-weight: 500; color: var(--text-secondary);
@@ -125,12 +127,17 @@
   #network-view { display: none; }
   #network-view.active { display: block; }
   #network-view svg { width: 100%; height: auto; display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; }
+  .network-hint { font-size: 12.5px; color: var(--text-muted); margin: 0 0 10px; }
   .network-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); padding: 10px 4px 0; }
   .network-legend .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
   .node-circle { cursor: pointer; stroke: var(--surface-0); stroke-width: 2px; }
   .node-circle:hover { stroke: var(--text-primary); }
   .edge-line { stroke: var(--border); stroke-width: 1.4px; }
   .node-label { font-size: 9px; fill: var(--text-secondary); pointer-events: none; }
+  .node-circle-center { stroke: var(--text-primary); stroke-width: 2px; cursor: default; }
+  .ego-center-label { font-weight: 600; fill: var(--text-primary); }
+  .ego-graph-wrap { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; margin: 4px 0 16px; }
+  .ego-graph { width: 100%; height: auto; display: block; }
   #list-view.active { display: block; }
   #list-view { display: none; }
 
@@ -163,6 +170,7 @@
   .sheet-name { font-size: 18px; font-weight: 700; margin: 4px 0 4px; padding-right: 28px; }
   .sheet-type-tag { display: inline-block; font-size: 11px; color: var(--text-secondary); background: var(--surface-2); border-radius: 4px; padding: 2px 8px; margin-bottom: 4px; }
   .sheet-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
+  .sheet-sub-fuente { color: var(--text-muted); text-decoration: underline; }
 
   .score-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; }
   .score-panel-title { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
@@ -179,6 +187,9 @@
   .hecho-item { padding: 12px 0; border-top: 1px solid var(--surface-2); font-size: 13.5px; line-height: 1.5; }
   .hecho-tag { display: inline-block; font-size: 10.5px; font-weight: 600; color: var(--accent); background: var(--surface-1); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; margin: 0 6px 2px 0; vertical-align: middle; }
   .hecho-item:first-child { border-top: none; }
+  .conexion-item { cursor: pointer; }
+  .conexion-item:hover, .conexion-item:focus-visible { color: var(--text-primary); outline: none; }
+  .conexion-item:focus-visible .hecho-tag { border-color: var(--accent); }
   .hecho-fecha { display: block; font-size: 11px; color: var(--text-muted); margin-top: 6px; }
   .hecho-fecha a { color: var(--accent); text-decoration: none; margin-left: 4px; }
   .hecho-fecha a:hover { text-decoration: underline; }
@@ -198,6 +209,7 @@
       <span class="icon">⌕</span>
       <input id="search" type="search" placeholder="Buscar por nombre, institución o ciudad…" autocomplete="off" />
     </div>
+    <a class="dev-link" href="interno.html" title="Cómo se construyó esto y de dónde salen los datos">Detalles técnicos ↗</a>
   </div>
   <div class="filters-row">
     <button class="chip" data-filter="todos" aria-pressed="true">Todos</button>
@@ -205,7 +217,7 @@
     <button class="chip" data-filter="institucion" aria-pressed="false">Instituciones</button>
     <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Ensayos clínicos</button>
     <button class="chip sort-toggle" id="sort-toggle" data-sort="reciente">Ordenar: más reciente</button>
-    <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false">Ver red de conexiones</button>
+    <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false" title="Vista avanzada — para ver de qué se conecta una persona en particular, abre su ficha en la lista">Mapa completo (avanzado)</button>
   </div>
 </header>
 
@@ -219,6 +231,8 @@
   </section>
 
   <section id="network-view">
+    <p class="network-hint">Mapa completo de las 23 entidades — para ver con qué se conecta una persona o
+      institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa.</p>
     <svg id="graph" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"></svg>
     <div class="network-legend">
       <span><span class="swatch" style="background:var(--persona)"></span>Persona</span>
@@ -232,9 +246,7 @@
   Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, sitios institucionales) —
   no es una evaluación de desempeño profesional ni un listado comercial. Datos de muestra, sin revisión
   humana todavía. ¿Eres un profesional listado acá y quieres corregir o eliminar tu información? El canal
-  de contacto para eso todavía no está definido — este es un prototipo, no un producto en producción.<br />
-  Datos cargados en vivo desde <code>data/sample/perfiles-muestra.json</code> ·
-  <a href="../DATA_SAMPLE.md">de dónde salen</a> · <a href="interno.html">cómo se construyó esto</a>
+  de contacto para eso todavía no está definido — este es un prototipo, no un producto en producción.
 </footer>
 
 <div class="backdrop" id="backdrop"></div>
@@ -462,7 +474,7 @@
     var showingNetwork = networkView.classList.toggle("active");
     listView.classList.toggle("active", !showingNetwork);
     networkBtn.setAttribute("aria-pressed", String(showingNetwork));
-    networkBtn.textContent = showingNetwork ? "Ver lista" : "Ver red de conexiones";
+    networkBtn.textContent = showingNetwork ? "Ver lista" : "Mapa completo (avanzado)";
     if (showingNetwork && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
   });
 
@@ -515,6 +527,11 @@
       line.setAttribute("class", "edge-line");
       line.setAttribute("x1", a._x); line.setAttribute("y1", a._y);
       line.setAttribute("x2", b._x); line.setAttribute("y2", b._y);
+      if (e.tipo) {
+        var edgeTitle = document.createElementNS(NS, "title");
+        edgeTitle.textContent = e.tipo;
+        line.appendChild(edgeTitle);
+      }
       svg.appendChild(line);
     });
     entidades.forEach(function (n) {
@@ -536,6 +553,75 @@
     });
   }
 
+  // Mini-grafo ego-céntrico: la entidad al centro + sus vecinos directos en círculo,
+  // layout radial estático (sin simulación de fuerzas — con ≤6 nodos no hace falta).
+  function buildEgoGraph(centerNode, relacionados) {
+    var NS = "http://www.w3.org/2000/svg";
+    var W = 320, H = 195, cx = W / 2, cy = H / 2 + 14, R = 55;
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("class", "ego-graph");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Vecinos directos de " + centerNode.nombre);
+
+    var neighbors = relacionados.map(function (v) {
+      var otherId = v.origen === centerNode.id ? v.destino : v.origen;
+      return { id: otherId, tipo: v.tipo, node: byId[otherId] };
+    }).filter(function (x) { return x.node; });
+
+    neighbors.forEach(function (nb, i) {
+      var angle = (i / neighbors.length) * Math.PI * 2 - Math.PI / 2;
+      nb._ex = cx + Math.cos(angle) * R;
+      nb._ey = cy + Math.sin(angle) * R;
+    });
+
+    neighbors.forEach(function (nb) {
+      var line = document.createElementNS(NS, "line");
+      line.setAttribute("class", "edge-line");
+      line.setAttribute("x1", cx); line.setAttribute("y1", cy);
+      line.setAttribute("x2", nb._ex); line.setAttribute("y2", nb._ey);
+      var title = document.createElementNS(NS, "title"); title.textContent = nb.tipo;
+      line.appendChild(title);
+      svg.appendChild(line);
+    });
+
+    var centerFill = "var(--" + (centerNode.tipo === "ensayo_clinico" ? "ensayo" : centerNode.tipo) + ")";
+    var centerCircle = document.createElementNS(NS, "circle");
+    centerCircle.setAttribute("class", "node-circle node-circle-center");
+    centerCircle.setAttribute("cx", cx); centerCircle.setAttribute("cy", cy); centerCircle.setAttribute("r", 9);
+    centerCircle.setAttribute("fill", centerFill);
+    svg.appendChild(centerCircle);
+    var centerLabel = document.createElementNS(NS, "text");
+    centerLabel.setAttribute("class", "node-label ego-center-label");
+    centerLabel.setAttribute("x", cx); centerLabel.setAttribute("y", 16);
+    centerLabel.setAttribute("text-anchor", "middle");
+    centerLabel.textContent = centerNode.nombre.length > 34 ? centerNode.nombre.slice(0, 32) + "…" : centerNode.nombre;
+    svg.appendChild(centerLabel);
+
+    neighbors.forEach(function (nb) {
+      var r = nb.node.tipo === "persona" ? 6 : nb.node.tipo === "institucion" ? 8 : 7;
+      var fill = "var(--" + (nb.node.tipo === "ensayo_clinico" ? "ensayo" : nb.node.tipo) + ")";
+      var circle = document.createElementNS(NS, "circle");
+      circle.setAttribute("class", "node-circle");
+      circle.setAttribute("cx", nb._ex); circle.setAttribute("cy", nb._ey); circle.setAttribute("r", r);
+      circle.setAttribute("fill", fill);
+      circle.addEventListener("click", function () { openDetail(nb.id); });
+      svg.appendChild(circle);
+
+      var label = document.createElementNS(NS, "text");
+      label.setAttribute("class", "node-label");
+      label.setAttribute("x", nb._ex);
+      label.setAttribute("y", nb._ey > cy ? nb._ey + r + 12 : nb._ey - r - 5);
+      label.setAttribute("text-anchor", "middle");
+      label.textContent = nb.node.nombre.length > 18 ? nb.node.nombre.slice(0, 16) + "…" : nb.node.nombre;
+      svg.appendChild(label);
+    });
+
+    var wrap = document.createElement("div"); wrap.className = "ego-graph-wrap";
+    wrap.appendChild(svg);
+    return wrap;
+  }
+
   // ---------------- Detail sheet ----------------
   var backdrop = document.getElementById("backdrop");
   var sheet = document.getElementById("detail-sheet");
@@ -548,7 +634,17 @@
 
     var tag = document.createElement("span"); tag.className = "sheet-type-tag"; tag.textContent = typeLabel[n.tipo];
     var name = document.createElement("div"); name.className = "sheet-name"; name.textContent = n.nombre;
-    var sub = document.createElement("div"); sub.className = "sheet-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
+    var sub = document.createElement("div"); sub.className = "sheet-sub";
+    sub.appendChild(document.createTextNode(n.subtitulo + " · " + n.ciudad));
+    if (n.subtitulo_fuente && esUrlSegura(n.subtitulo_fuente)) {
+      var subFuente = document.createElement("a");
+      subFuente.className = "sheet-sub-fuente";
+      subFuente.href = n.subtitulo_fuente;
+      subFuente.target = "_blank"; subFuente.rel = "noopener";
+      subFuente.textContent = "fuente";
+      sub.appendChild(document.createTextNode(" · "));
+      sub.appendChild(subFuente);
+    }
     content.appendChild(tag); content.appendChild(name); content.appendChild(sub);
 
     // Panel de señales — el "puntaje", siempre con su desglose al lado, nunca solo.
@@ -575,13 +671,38 @@
     });
     scorePanel.appendChild(breakdown);
     var scoreNote = document.createElement("div"); scoreNote.className = "score-note";
-    scoreNote.textContent = "No es un ranking oculto: es la suma de menciones públicas verificables listadas abajo, cada una con su fuente. " +
-      "Los ensayos fase III/IV pesan el doble que fase I/II porque ClinicalTrials.gov entrega esa fase como dato estructurado real — " +
-      "publicaciones y conexiones valen 1 punto cada una porque no tenemos un dato real de impacto para pesarlas sin inventar. " +
-      "Un mismo hecho real (ej. un rol de investigador principal) puede aparecer registrado tanto en el perfil de la persona como en el de la institución — cada una lo cuenta desde su propia perspectiva, así que los puntajes de dos entidades no son sumables entre sí como si cada punto fuera un hecho global único. " +
-      (senales.docencia === 0 ? "Docencia y congresos está en 0: nuestras fuentes actuales (PubMed, ClinicalTrials.gov) no capturan cursos ni charlas — no significa que esta persona no las dicte." : "");
+    scoreNote.appendChild(document.createTextNode("Suma de señales verificables, cada una con su fuente abajo. "));
+    var scoreNoteLink = document.createElement("a");
+    scoreNoteLink.href = "interno.html#puntaje"; scoreNoteLink.target = "_blank"; scoreNoteLink.rel = "noopener";
+    scoreNoteLink.textContent = "Cómo se calcula →";
+    scoreNote.appendChild(scoreNoteLink);
     scorePanel.appendChild(scoreNote);
     content.appendChild(scorePanel);
+
+    // Conexiones reales de esta entidad — cada vínculo del JSON, no solo un número mudo.
+    var relacionados = vinculos.filter(function (v) { return v.origen === n.id || v.destino === n.id; });
+    if (relacionados.length) {
+      var conTitle = document.createElement("div"); conTitle.className = "sheet-section-title";
+      conTitle.textContent = "Conectado con (" + relacionados.length + ")";
+      content.appendChild(conTitle);
+      var conList = document.createElement("ul"); conList.className = "hecho-list";
+      relacionados.forEach(function (v) {
+        var otherId = v.origen === n.id ? v.destino : v.origen;
+        var other = byId[otherId];
+        if (!other) return;
+        var li = document.createElement("li"); li.className = "hecho-item conexion-item";
+        li.tabIndex = 0; li.setAttribute("role", "button");
+        var vTag = document.createElement("span"); vTag.className = "hecho-tag"; vTag.textContent = v.tipo;
+        li.appendChild(vTag);
+        li.appendChild(document.createTextNode(other.nombre + " · " + typeLabel[other.tipo]));
+        var goTo = function () { openDetail(otherId); };
+        li.addEventListener("click", goTo);
+        li.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); goTo(); } });
+        conList.appendChild(li);
+      });
+      content.appendChild(conList);
+      content.appendChild(buildEgoGraph(n, relacionados));
+    }
 
     // Evidencia agrupada por tipo — así se ve el listado de publicaciones separado de ensayos/afiliación.
     var tiposEnOrden = ["publicacion", "ensayo_clinico", "afiliacion", "congreso", "otro"];
@@ -609,7 +730,8 @@
         li.appendChild(document.createTextNode(h.hecho));
         var fechaLine = document.createElement("span"); fechaLine.className = "hecho-fecha";
         var confianzaTxt = h.confianza ? " · confianza: " + h.confianza : "";
-        fechaLine.textContent = h.fecha + confianzaTxt;
+        var fechaLabel = h.tipo === "ensayo_clinico" ? "Última actualización en ClinicalTrials.gov: " : "";
+        fechaLine.textContent = fechaLabel + h.fecha + confianzaTxt;
         if (esUrlSegura(h.fuente_url)) {
           var a = document.createElement("a"); a.href = h.fuente_url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Ver fuente →";
           fechaLine.appendChild(a);
