@@ -1,0 +1,239 @@
+{
+  "descripcion": "Muestra de 10 perfiles reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax, SER Chile). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana (Fase 1, no Fase 2).",
+  "generado": "2026-08-09",
+  "especialidad_muestra": "cáncer de pulmón",
+  "perfiles": [
+    {
+      "nombre_o_entidad": "Carlos Rojas (Bradford Hill Clinical Research Center, Santiago)",
+      "tipo": "persona",
+      "hechos": [
+        {
+          "hecho": "Coautor con afiliación chilena (Bradford Hill Clinical Research Center, Santiago) en ensayo clínico fase 3 randomizado de nivolumab + quimiorradioterapia en NSCLC estadio III localmente avanzado, publicado en Nature Cancer.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42129521/",
+          "fecha": "2026-07",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Aparece como 'Rojas, Carlos I' en artículo de revisión sobre atezolizumab subcutáneo en NSCLC, misma afiliación (Bradford Hill Clinical Research Center / Finis Terrae University, Santiago).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/",
+          "fecha": "2026-03",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Investigador principal (PI) de sitio en el ensayo clínico fase 3 SUNRAY-02 (NCT06890598, patrocinador Eli Lilly), centro listado como 'Bradfordhill', Santiago — vínculo por coincidencia de nombre + institución, NO confirmado por ORCID u otro identificador único.",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "Mauricio Burotto (Bradford Hill Clinical Research Center, Santiago)",
+      "tipo": "persona",
+      "hechos": [
+        {
+          "hecho": "Coautor con afiliación chilena en actualización de resultados de estudios IMscin001/IMscin002 sobre atezolizumab subcutáneo vs. intravenoso en NSCLC.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42214243/",
+          "fecha": "2026-07",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Coautor de revisión sobre atezolizumab subcutáneo en NSCLC, mismo centro (Bradford Hill / Finis Terrae University, Santiago); ORCID registrado en PubMed: 0000-0002-7150-4033.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/",
+          "fecha": "2026-03",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "Fundación Arturo López Pérez (FALP)",
+      "tipo": "institucion",
+      "hechos": [
+        {
+          "hecho": "Afiliación de 3 autores (Muñoz-Navarro, Caglevic, Sapunar) como 'Cancer Research Department, Arturo López Pérez Oncology Foundation Institute', en estudio de cohorte sobre diagnóstico tardío de cáncer (incluye pulmón) en adultos mayores chilenos.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42416231/",
+          "fecha": "2026-04-29",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Afiliación de 2 autores (Vidal, Villarroel-Espindola) como 'Unidad Medicina Traslacional, Instituto Oncológico Fundación Arturo López Pérez', en estudio preclínico sobre inhibidor de poliaminas SAM486A en NSCLC.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41715254/",
+          "fecha": "2026-02-19",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Sitio activo (uno de 4 en Chile) en ensayo WU-KONG1 (NCT03974022, fase I/II, Dizal Pharmaceuticals) sobre sunvozertinib en NSCLC EGFR/HER2. Estado: ACTIVE_NOT_RECRUITING.",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03974022",
+          "fecha": "2026-01-29",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Sitio (como 'Instituto Oncológico Fundación Arturo López Pérez') en ensayo REZILIENT3 (NCT05973773, fase III, Taiho Oncology) sobre zipalertinib en NSCLC EGFR exón 20. Estado: ACTIVE_NOT_RECRUITING.",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05973773",
+          "fecha": "2026-07-30",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "3 registros de sitio (variantes de nombre/dirección de la misma institución) en ensayo BE6A LUNG-02 (NCT06758401, fase III, Pfizer) sobre sigvotatug vedotin + pembrolizumab en NSCLC. Estado: RECRUITING.",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06758401",
+          "fecha": "2026-07-22",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Rodrigo Uribe listado como investigador principal del sitio FALP en el ensayo SUNRAY-02 (NCT06890598, fase III, Eli Lilly); sitio en estado NOT_YET_RECRUITING.",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "Instituto Nacional del Tórax",
+      "tipo": "institucion",
+      "hechos": [
+        {
+          "hecho": "Dra. Begoña Yarza Sáez, Directora (seleccionada vía Alta Dirección Pública), médica pediatra, ex Ministra de Salud (marzo-septiembre 2022), ex directora Hospital Dr. Exequiel González Cortés (2009-2018).",
+          "fuente_url": "https://torax.cl/equipo-directivo-2/",
+          "fecha": "sin fecha en la página",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Dra. Claudia Sepúlveda Landeros, Subdirectora Médica, especialista en trasplante pulmonar y fibrosis pulmonar, miembro de la Sociedad Chilena de Enfermedades Respiratorias; también ejerce en Clínica Santa María.",
+          "fuente_url": "https://torax.cl/equipo-directivo-2/",
+          "fecha": "sin fecha en la página",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Dr. Francisco Orlandi, director del equipo de cáncer pulmonar del Instituto Nacional del Tórax (fecha de la nota: 2019). Posible vínculo no confirmado con 'Orlandi Oncología', sitio en dos ensayos de ClinicalTrials.gov — coincidencia de apellido y rubro, sin confirmación de identidad.",
+          "fuente_url": "https://www.torax.cl/cancer-pulmonar/",
+          "fecha": "2019-02-04",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Dra. María Paz Saavedra, Jefa (S) de Oncología, citada indicando que ~75% de los pacientes con cáncer pulmonar consultan en etapa avanzada y mencionando un futuro Registro Nacional de Cáncer Pulmonar en desarrollo.",
+          "fuente_url": "https://www.torax.cl/cancer-pulmonar/",
+          "fecha": "2019-02-04",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "James Lind Centro de Investigación del Cáncer (Temuco)",
+      "tipo": "institucion",
+      "hechos": [
+        {
+          "hecho": "Sitio activo en ensayo WU-KONG1 (NCT03974022, fase I/II, Dizal Pharmaceuticals) sobre sunvozertinib en NSCLC. Estado: ACTIVE_NOT_RECRUITING.",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03974022",
+          "fecha": "2026-01-29",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Sitio en ensayo PROCLAIM (NCT03937154, fase III, Amgen) sobre romiplostim para trombocitopenia inducida por quimioterapia en NSCLC/otros cánceres. Estado: ACTIVE_NOT_RECRUITING.",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03937154",
+          "fecha": "2026-04-07",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "Roberto González L. (Universidad de Concepción / Hospital Guillermo Grant Benavente)",
+      "tipo": "persona",
+      "hechos": [
+        {
+          "hecho": "Autor principal y de correspondencia del estudio de cohorte 'Cáncer pulmonar: caracterización, estadificación y supervivencia' (Rev Med Chile 2022;150(1)), afiliado al Centro Cardiovascular y Servicio de Cirugía del Hospital Clínico Regional de Concepción y al Departamento de Cirugía de la Universidad de Concepción.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "Andrés Rojas G. (Hospital Puerto Montt / Universidad San Sebastián)",
+      "tipo": "persona",
+      "hechos": [
+        {
+          "hecho": "Autor principal y de correspondencia del artículo de revisión 'Evaluación preoperatoria y predictores de morbimortalidad en resección de cáncer de pulmón' (Rev Med Chile 2015;143(6)), afiliado al Servicio de Anestesia y Pabellón del Hospital Puerto Montt y a la Universidad San Sebastián. Nota de desambiguación: comparte apellido con 'Carlos Rojas' (Bradford Hill, Santiago) pero son personas distintas.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+          "fecha": "2015-06",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "Fernando Saldías P. (Pontificia Universidad Católica de Chile)",
+      "tipo": "persona",
+      "hechos": [
+        {
+          "hecho": "Coautor del artículo 'Factores pronósticos y sobrevida a mediano plazo... cáncer pulmonar... Red de Salud UC' (Rev Chil Enferm Respir 2014;30(4)), afiliado al Departamento de Enfermedades Respiratorias, Facultad de Medicina, PUC.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+          "fecha": "2014-12",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Dato débil, no verificado de forma independiente: posible mención como 'F. Saldías P.' dentro de la lista de referencias bibliográficas (no como autor) de otro artículo distinto en Rev Med Chile 2022;150(1). Se reporta solo como señal a investigar, no como hecho de autoría confirmado.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "NCT06890598 — SUNRAY-02",
+      "tipo": "ensayo_clinico",
+      "hechos": [
+        {
+          "hecho": "Ensayo fase III, patrocinado por Eli Lilly, evalúa olomorasib + estándar de cuidado en NSCLC KRAS G12C-mutante resecado/irresecable. Estado general RECRUITING (sitios en Chile: NOT_YET_RECRUITING).",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        },
+        {
+          "hecho": "Caso excepcional en la muestra (1 de 8 ensayos): expone públicamente nombres reales de investigadores principales por sitio en Chile — Pablo Rodríguez Monarca (K2 Oncology, Providencia), Rodrigo Uribe (FALP, Santiago), Pamela Salman (Centro de Oncología de Precisión, Santiago) y Carlos Rojas (Bradfordhill, Santiago) — a diferencia de la mayoría de ensayos, donde solo se publica el nombre del centro.",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "nombre_o_entidad": "Javiera Martinez-Gutierrez (PUC / University of Melbourne)",
+      "tipo": "persona",
+      "hechos": [
+        {
+          "hecho": "Coautora de estudio sobre identificación de pacientes elegibles para el programa nacional australiano de screening de cáncer de pulmón; afiliación principal a University of Melbourne (Australia), con afiliación secundaria al Departamento de Medicina Familiar, Pontificia Universidad Católica de Chile. Ejemplo de investigador con vínculo chileno pero base laboral principal en el extranjero.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41421033/",
+          "fecha": "2026-01",
+          "confianza": "pendiente"
+        }
+      ]
+    }
+  ],
+  "campos_confiables": [
+    "nombre de la entidad (persona/institución/ensayo) — presente en el 100% de los hallazgos de las 4 fuentes",
+    "fuente_url — presente y verificable en el 100% de los hallazgos",
+    "afiliación institucional en texto libre — presente casi siempre, aunque sin estructura",
+    "tema/resumen del hallazgo (título de publicación, objetivo del ensayo, cargo institucional) — consistente y descriptivo en las 4 fuentes",
+    "ciudad + país dentro del texto de afiliación (PubMed y SciELO) — casi siempre presente al final de la cadena de afiliación",
+    "nombre del centro/institución en ClinicalTrials.gov (locations.facility) — estructurado y presente en el 100% de los 8 ensayos muestreados",
+    "fase del ensayo, estado (overallStatus) y sponsor en ClinicalTrials.gov — campos estructurados y consistentes",
+    "DOI de la publicación — presente en la mayoría de registros PubMed y SciELO"
+  ],
+  "campos_faltantes_o_dificiles": [
+    "ORCID — inconsistente, visible en menos del 20% de los autores muestreados",
+    "investigador principal (PI) a nivel de sitio en ClinicalTrials.gov — ausente en 7 de 8 ensayos muestreados; 'overallOfficials' casi siempre es personal corporativo del sponsor, no alguien vinculado a Chile; solo locations[].contacts (~12-15% de casos) da un nombre real por sitio",
+    "identificador único de institución (ROR/GRID/Ringgold ID) — ausente en las 4 fuentes",
+    "normalización de nombre de institución — la misma entidad aparece con variantes distintas (ej. 'FALP' / 'Fundación Arturo López Pérez' / 'Instituto Oncológico Fundación Arturo López Pérez' / 'Arturo López Pérez Oncology Foundation Institute')",
+    "fecha con precisión homogénea — varía entre día completo, solo mes/año, o completamente ausente (páginas institucionales sin timestamp)",
+    "fecha de 'última revisión/vigencia' de páginas institucionales — prácticamente siempre ausente",
+    "estabilidad de enlaces institucionales — varias URLs esperadas devolvieron HTTP 404; SciELO devolvió HTTP 403 a fetch estándar, requiriendo navegador embebido",
+    "vínculo persona-institución cuando solo hay coincidencia de nombre entre fuentes — no hay identificador que confirme la identidad, solo inferencia por nombre + institución + ciudad"
+  ],
+  "recomendaciones_pagina": [
+    "Mostrar siempre y sin excepción solo 3 campos garantizados por la muestra: nombre de la entidad, tipo (persona/institución/ensayo), y al menos una fuente_url verificada — todo lo demás debe tratarse como opcional/nullable.",
+    "Tratar 'afiliación' como texto libre citado tal cual aparece en la fuente; mostrarlo con nota 'texto original de la fuente, no normalizado', y resaltar el nombre de institución reconocido solo mediante un diccionario de sinónimos mantenido manualmente.",
+    "Manejar la fecha con precisión variable mediante un campo 'fecha_precision' (día/mes/año/desconocida); cuando sea completamente desconocida, mostrar explícitamente 'fecha no disponible en la fuente' en vez de omitir el campo o sustituirlo silenciosamente por la fecha de scraping.",
+    "Diferenciar claramente 'investigador principal de sitio' de 'contacto del patrocinador' en perfiles de tipo ensayo_clinico: solo poblar el campo de PI cuando locations[].contacts esté presente; cuando no lo esté, mostrar el centro como entidad principal y dejar el campo de persona vacío.",
+    "Incluir un indicador de confianza y de fuente por cada 'hecho' individual, no solo a nivel de perfil, para que un revisor humano apruebe o rechace hechos uno por uno.",
+    "Explicitar el criterio de deduplicación cuando se combinan hechos de distintas fuentes bajo un mismo nombre: mostrar un aviso visible tipo 'vínculo no confirmado por ORCID u otro identificador único' y nunca fusionar automáticamente solo por apellido compartido."
+  ]
+}
