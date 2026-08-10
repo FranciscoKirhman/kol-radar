@@ -32,8 +32,15 @@ debe servir para cualquier especialidad, no solo para una patología de ejemplo.
 
 - No infiere ni publica datos que no estén ya públicos.
 - No guarda datos personales sensibles ni información de contacto privada.
-- No calcula un score único ni oculto de "importancia" — muestra señales, no un
-  ranking opaco.
+- No calcula un score oculto de "importancia" — toda señal se muestra con su
+  desglose de origen, nunca como un número sin explicación al lado.
+  *(Nota del 2026-08-10, tras una auditoría: el prototipo de Fase 3 sí compone un
+  "puntaje" visible sumando señales — publicaciones, ensayos pesados por fase,
+  conexiones — porque se pidió explícitamente como diferenciador frente a
+  competidores que sí ocultan su scoring. Cada componente queda siempre trazable a
+  hechos concretos con fuente. Lo que el producto evita es usarlo como ranking por
+  defecto: el orden inicial de la lista es cronológico, no por puntaje — ordenarla
+  por puntaje es una acción que el usuario elige, no algo que la app decide por él.)*
 - No registra interacciones con profesionales de salud (eso es trabajo de un CRM,
   fuera de alcance).
 - No decide nada de forma autónoma: toda incorporación de un dato nuevo pasa por
@@ -46,13 +53,24 @@ debe servir para cualquier especialidad, no solo para una patología de ejemplo.
   La base para tratar ese dato es que es información profesional de interés público
   (autoría científica, afiliación institucional publicada, participación en estudios
   o congresos) — nunca datos de salud propios del profesional ni de pacientes.
-- Toda persona listada puede pedir corrección o exclusión de su ficha.
+- Toda persona listada puede pedir corrección o exclusión de su ficha — **pero este
+  canal todavía no existe**. El contacto de abajo sigue sin completarse, así que
+  hoy esa promesa no es cumplible en la práctica. No compartir este proyecto más
+  allá de una demo interna hasta llenar esto.
 - **Contacto**: [completar — nombre y correo de contacto del responsable del proyecto]
-- **Disclaimer visible en la app**: "La información de este sitio proviene de fuentes
-  públicas (publicaciones científicas, registros de ensayos clínicos, sitios de
-  sociedades médicas y centros de salud). No constituye una evaluación de desempeño
-  profesional ni un listado comercial. Si eres un profesional listado aquí y quieres
-  corregir o eliminar tu información, contáctanos en la dirección indicada arriba."
+- **Disclaimer visible en la app** (implementado en el footer de `web/index.html`,
+  visible siempre, no solo al abrir una ficha — versión actual, honesta sobre el
+  contacto pendiente): "Información de fuentes públicas (...) — no es una evaluación
+  de desempeño profesional ni un listado comercial. Datos de muestra, sin revisión
+  humana todavía. ¿Eres un profesional listado acá y quieres corregir o eliminar tu
+  información? El canal de contacto para eso todavía no está definido — este es un
+  prototipo, no un producto en producción." Reemplazar por el texto original de
+  abajo recién cuando el contacto esté completo:
+  "La información de este sitio proviene de fuentes públicas (publicaciones
+  científicas, registros de ensayos clínicos, sitios de sociedades médicas y centros
+  de salud). No constituye una evaluación de desempeño profesional ni un listado
+  comercial. Si eres un profesional listado aquí y quieres corregir o eliminar tu
+  información, contáctanos en la dirección indicada arriba."
 
 ## Fuentes (Fase 1)
 
@@ -138,7 +156,8 @@ agrégale `/web/index.html` al final.
 - `web/index.html` — la vista de producto (búsqueda, lista con señales, red de
   conexiones, detalle con evidencia). Esto es lo que probaría un MSL.
 - `web/interno.html` — cómo se construyó (costos, arquitectura de agentes, pipeline).
-  Enlazada desde el pie de página de `index.html`, no pensada para el usuario final.
+  Enlazada desde el pie de página de `web/index.html` (no del `index.html` raíz, que
+  solo redirige), no pensada para el usuario final.
 
 Si ves un mensaje de error en pantalla en vez de la lista, es casi siempre que abriste
 el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no `file://`.
@@ -153,7 +172,10 @@ el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no
    evidencia" en cada afirmación).
 4. **Fase 4** — automatizar solo PubMed y ClinicalTrials.gov con los cuatro agentes;
    todo lo demás sigue siendo carga manual revisada.
-5. **Fase 5** — matriz de señales (no score único) para priorizar sin caja negra.
+5. **Fase 5** — matriz de señales para priorizar sin caja negra. Parcialmente
+   adelantada en el prototipo (puntaje visible + desglose por señal, orden por
+   defecto cronológico no por puntaje); falta que el usuario pueda ajustar los
+   pesos por su cuenta en vez de tenerlos fijos en el código.
 6. **Fase 6** — validación con 5 entrevistas a usuarios reales de Medical Affairs.
 
 ## Estado actual
@@ -169,3 +191,15 @@ Sin automatizar todavía: Fase 2 (validación manual de 30 fichas) no se hizo fo
 porque se saltó directo a construir con datos de muestra ya verificados; Fase 4
 (automatización real vía los cuatro agentes) sigue sin implementar — el pipeline
 descrito en `COSTS.md` es una estimación, no código corriendo.
+
+**Auditoría 2026-08-10**: se corrió una auditoría adversarial (seguridad, integridad
+de los datos, cumplimiento de las promesas de este README, consistencia entre
+archivos) sobre todo el repo. 16 hallazgos confirmados, aplicados: orden por defecto
+de la lista pasó de puntaje a cronológico, cada hecho ahora muestra su propia
+confianza, se valida el esquema de las URLs antes de usarlas como link, se explicita
+que un mismo hecho puede sumar puntos en dos entidades relacionadas,
+`web/interno.html` dejó de tener datos hardcodeados desactualizados,
+`DATA_SAMPLE.md` y este README quedaron con los números reales (23 entidades, no
+10), y el disclaimer de privacidad quedó visible siempre en la app, no solo al
+abrir una ficha. Pendiente real, no resuelto todavía: el canal de contacto para
+pedir corrección/exclusión de una ficha (ver "Marco legal y ético" arriba).

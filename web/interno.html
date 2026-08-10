@@ -197,11 +197,11 @@
     <div class="notes">
       <h2>Qué mejorar después (esto es un prototipo de prueba, no la página final)</h2>
       <ul>
-        <li><s>Los datos del grafo están hardcodeados</s> — resuelto: <code>web/index.html</code> ahora carga <code>data/sample/perfiles-muestra.json</code> en vivo vía <code>fetch()</code> (necesita servirse por HTTP, no <code>file://</code>). Esta página (<code>interno.html</code>) todavía tiene su copia hardcodeada — pendiente de migrar si se sigue usando.</li>
+        <li><s>Los datos del grafo están hardcodeados</s> — resuelto en ambas páginas: <code>web/index.html</code> y <code>web/interno.html</code> ahora cargan <code>data/sample/perfiles-muestra.json</code> en vivo vía <code>fetch()</code> (necesita servirse por HTTP, no <code>file://</code>). Antes de este fix, esta página mostraba una copia hardcodeada con menos hechos de los que realmente existen en el JSON — auditoría del 2026-08-10 lo detectó.</li>
         <li><s>Falta el puntaje</s> — resuelto en <code>index.html</code>: "señales" transparentes (publicaciones + ensayos + conexiones) con desglose siempre visible, nunca un número oculto.</li>
         <li>El layout del grafo es una simulación de fuerzas simple corrida una sola vez al cargar — con más de ~50 nodos va a necesitar un layout incremental o una librería real (D3, Cytoscape).</li>
         <li>No hay filtro por especialidad (solo por tipo de entidad y texto libre) — el spec original pide filtrar también por biomarcador, algo que los datos actuales no sostienen de forma confiable.</li>
-        <li>El indicador de confianza (confirmado/probable/pendiente) se muestra como nota fija de texto, no como estado real por hecho — falta el botón de "corregir este dato" del modelo de datos.</li>
+        <li><s>La confianza se mostraba como nota fija de texto, no por hecho</s> — resuelto: cada hecho ahora muestra su propio <code>confianza</code> (index.html y esta página). Sigue faltando el botón de "corregir este dato" del modelo de datos, y el canal de contacto para pedirlo (README.md tiene el placeholder sin completar).</li>
         <li>No hay mapa de Chile con centros geolocalizados — está en el roadmap del README como parte de la pantalla principal.</li>
         <li>Sin backend real: los datos siguen viviendo en un archivo JSON estático, no en una base de datos. La Fase 4 (automatizar PubMed/ClinicalTrials.gov) va a necesitar eso y la bandeja de revisión humana descrita en el spec.</li>
       </ul>
@@ -214,168 +214,103 @@
 (function () {
   "use strict";
 
-  // ---- Datos (Fase 3 prototipo: hardcodeados a propósito, ver nota "qué mejorar") ----
-  var nodes = [
-    { id: "carlos-rojas", label: "Carlos Rojas", type: "persona", hechos: [
-      { t: "Coautor con afiliación chilena (Bradford Hill, Santiago) en ensayo fase 3 de nivolumab en NSCLC estadio III, publicado en Nature Cancer.", u: "https://pubmed.ncbi.nlm.nih.gov/42129521/", f: "2026-07" },
-      { t: "Investigador principal de sitio en el ensayo SUNRAY-02 (NCT06890598), centro 'Bradfordhill' — vínculo por coincidencia de nombre, no confirmado por ORCID.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "mauricio-burotto", label: "Mauricio Burotto", type: "persona", hechos: [
-      { t: "Coautor en actualización de resultados de atezolizumab subcutáneo vs. intravenoso en NSCLC.", u: "https://pubmed.ncbi.nlm.nih.gov/42214243/", f: "2026-07" },
-      { t: "Coautor de revisión sobre atezolizumab subcutáneo en NSCLC; ORCID registrado en PubMed 0000-0002-7150-4033.", u: "https://pubmed.ncbi.nlm.nih.gov/41946650/", f: "2026-03" }
-    ]},
-    { id: "roberto-gonzalez", label: "Roberto González L.", type: "persona", hechos: [
-      { t: "Autor de correspondencia del estudio de cohorte sobre cáncer pulmonar en un hospital público de Concepción.", u: "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", f: "2022-01" }
-    ]},
-    { id: "andres-rojas", label: "Andrés Rojas G.", type: "persona", hechos: [
-      { t: "Autor de correspondencia de revisión sobre evaluación preoperatoria en resección de cáncer de pulmón. Nota: comparte apellido con 'Carlos Rojas' pero son personas distintas.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", f: "2015-06" }
-    ]},
-    { id: "fernando-saldias", label: "Fernando Saldías P.", type: "persona", hechos: [
-      { t: "Coautor de estudio sobre factores pronósticos en cáncer pulmonar, Red de Salud UC.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", f: "2014-12" }
-    ]},
-    { id: "javiera-martinez", label: "Javiera Martinez-Gutierrez", type: "persona", hechos: [
-      { t: "Coautora de estudio sobre screening de cáncer de pulmón; base laboral principal en University of Melbourne, afiliación secundaria a la PUC.", u: "https://pubmed.ncbi.nlm.nih.gov/41421033/", f: "2026-01" }
-    ]},
-    { id: "rodrigo-uribe", label: "Rodrigo Uribe", type: "persona", hechos: [
-      { t: "Investigador principal del sitio FALP en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "pamela-salman", label: "Pamela Salman", type: "persona", hechos: [
-      { t: "Investigadora principal del sitio Centro de Oncología de Precisión en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "pablo-rodriguez", label: "Pablo Rodríguez Monarca", type: "persona", hechos: [
-      { t: "Investigador principal del sitio K2 Oncology en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "bradford-hill", label: "Bradford Hill Clinical Research Center", type: "institucion", hechos: [
-      { t: "Afiliación de Carlos Rojas y Mauricio Burotto en múltiples publicaciones sobre NSCLC.", u: "https://pubmed.ncbi.nlm.nih.gov/41946650/", f: "2026-03" }
-    ]},
-    { id: "falp", label: "Fundación Arturo López Pérez (FALP)", type: "institucion", hechos: [
-      { t: "Sitio activo en 3 ensayos clínicos distintos sobre NSCLC (WU-KONG1, REZILIENT3, BE6A LUNG-02). Aparece con 4 nombres distintos entre fuentes — ver nota de normalización en DATA_SAMPLE.md.", u: "https://clinicaltrials.gov/study/NCT06758401", f: "2026-07-22" }
-    ]},
-    { id: "torax", label: "Instituto Nacional del Tórax", type: "institucion", hechos: [
-      { t: "Directorio público con Dra. Begoña Yarza (Directora) y Dra. Claudia Sepúlveda (Subdirectora Médica). Sin fecha de actualización visible en la página.", u: "https://torax.cl/equipo-directivo-2/", f: "sin fecha en la fuente" }
-    ]},
-    { id: "james-lind", label: "James Lind Centro de Investigación del Cáncer", type: "institucion", hechos: [
-      { t: "Sitio activo en 2 ensayos clínicos sobre NSCLC (WU-KONG1, PROCLAIM).", u: "https://clinicaltrials.gov/study/NCT03974022", f: "2026-01-29" }
-    ]},
-    { id: "hosp-concepcion", label: "Hospital Clínico Regional de Concepción", type: "institucion", hechos: [
-      { t: "Afiliación de Roberto González L. y equipo, estudio de cohorte sobre cáncer pulmonar.", u: "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", f: "2022-01" }
-    ]},
-    { id: "hosp-puerto-montt", label: "Hospital Puerto Montt", type: "institucion", hechos: [
-      { t: "Afiliación de Andrés Rojas G., revisión sobre evaluación preoperatoria en cáncer de pulmón.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", f: "2015-06" }
-    ]},
-    { id: "puc", label: "Pontificia Universidad Católica de Chile", type: "institucion", hechos: [
-      { t: "Afiliación de Fernando Saldías P. y (secundaria) de Javiera Martinez-Gutierrez.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", f: "2014-12" }
-    ]},
-    { id: "k2-oncology", label: "K2 Oncology", type: "institucion", hechos: [
-      { t: "Sitio del ensayo SUNRAY-02, PI Pablo Rodríguez Monarca.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "centro-precision", label: "Centro de Oncología de Precisión", type: "institucion", hechos: [
-      { t: "Sitio del ensayo SUNRAY-02, PI Pamela Salman.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "nct06890598", label: "SUNRAY-02 (NCT06890598)", type: "ensayo", hechos: [
-      { t: "Fase III, Eli Lilly, olomorasib en NSCLC KRAS G12C. Único de 8 ensayos muestreados que expone PIs reales por sitio en Chile.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "nct03974022", label: "WU-KONG1 (NCT03974022)", type: "ensayo", hechos: [
-      { t: "Fase I/II, Dizal Pharmaceuticals, sunvozertinib en NSCLC EGFR/HER2. 4 sitios en Chile.", u: "https://clinicaltrials.gov/study/NCT03974022", f: "2026-01-29" }
-    ]},
-    { id: "nct05973773", label: "REZILIENT3 (NCT05973773)", type: "ensayo", hechos: [
-      { t: "Fase III, Taiho Oncology, zipalertinib en NSCLC EGFR exón 20. 3 sitios en Chile.", u: "https://clinicaltrials.gov/study/NCT05973773", f: "2026-07-30" }
-    ]},
-    { id: "nct06758401", label: "BE6A LUNG-02 (NCT06758401)", type: "ensayo", hechos: [
-      { t: "Fase III, Pfizer, sigvotatug vedotin + pembrolizumab en NSCLC. 12 registros de sitio en Chile.", u: "https://clinicaltrials.gov/study/NCT06758401", f: "2026-07-22" }
-    ]},
-    { id: "nct03937154", label: "PROCLAIM (NCT03937154)", type: "ensayo", hechos: [
-      { t: "Fase III, Amgen, romiplostim para trombocitopenia inducida por quimioterapia en NSCLC y otros cánceres.", u: "https://clinicaltrials.gov/study/NCT03937154", f: "2026-04-07" }
-    ]}
-  ];
-
-  var edges = [
-    ["carlos-rojas", "bradford-hill"], ["mauricio-burotto", "bradford-hill"],
-    ["carlos-rojas", "nct06890598"],
-    ["rodrigo-uribe", "falp"], ["rodrigo-uribe", "nct06890598"],
-    ["pamela-salman", "centro-precision"], ["pamela-salman", "nct06890598"],
-    ["pablo-rodriguez", "k2-oncology"], ["pablo-rodriguez", "nct06890598"],
-    ["falp", "nct03974022"], ["falp", "nct05973773"], ["falp", "nct06758401"],
-    ["james-lind", "nct03974022"], ["james-lind", "nct03937154"],
-    ["roberto-gonzalez", "hosp-concepcion"],
-    ["andres-rojas", "hosp-puerto-montt"],
-    ["fernando-saldias", "puc"], ["javiera-martinez", "puc"]
-  ];
-
-  // ---- Layout: simulación de fuerzas mínima, corrida una vez al cargar ----
-  var W = 720, H = 480;
-  var byId = {};
-  nodes.forEach(function (n, i) {
-    byId[n.id] = n;
-    var angle = (i / nodes.length) * Math.PI * 2;
-    n.x = W / 2 + Math.cos(angle) * 120 + (Math.random() - 0.5) * 20;
-    n.y = H / 2 + Math.sin(angle) * 120 + (Math.random() - 0.5) * 20;
-    n.vx = 0; n.vy = 0;
-  });
-
-  for (var iter = 0; iter < 260; iter++) {
-    for (var i = 0; i < nodes.length; i++) {
-      for (var j = i + 1; j < nodes.length; j++) {
-        var a = nodes[i], b = nodes[j];
-        var dx = a.x - b.x, dy = a.y - b.y;
-        var distSq = dx * dx + dy * dy || 0.01;
-        var dist = Math.sqrt(distSq);
-        var force = 1400 / distSq;
-        var fx = (dx / dist) * force, fy = (dy / dist) * force;
-        a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
-      }
-    }
-    edges.forEach(function (e) {
-      var a = byId[e[0]], b = byId[e[1]];
-      var dx = b.x - a.x, dy = b.y - a.y;
-      var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-      var force = (dist - 95) * 0.02;
-      var fx = (dx / dist) * force, fy = (dy / dist) * force;
-      a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
-    });
-    nodes.forEach(function (n) {
-      n.vx += (W / 2 - n.x) * 0.0015;
-      n.vy += (H / 2 - n.y) * 0.0015;
-      n.x += n.vx * 0.15; n.y += n.vy * 0.15;
-      n.vx *= 0.82; n.vy *= 0.82;
-      n.x = Math.max(30, Math.min(W - 30, n.x));
-      n.y = Math.max(20, Math.min(H - 20, n.y));
-    });
+  // ---- Datos: cargados en vivo desde el JSON, no hardcodeados (ver "qué mejorar" — esto ya estaba pendiente y quedó resuelto acá) ----
+  var DATA_URL = "../data/sample/perfiles-muestra.json";
+  function esUrlSegura(url) {
+    return typeof url === "string" && /^https?:\/\//i.test(url);
   }
 
-  // ---- Render SVG ----
+  var entidades = [], vinculos = [], byId = {};
+  var W = 720, H = 480;
   var svg = document.getElementById("graph");
   svg.setAttribute("viewBox", "0 0 " + W + " " + H);
   var NS = "http://www.w3.org/2000/svg";
-  var colorByType = { persona: "var(--series-persona)", institucion: "var(--series-institucion)", ensayo: "var(--series-ensayo)" };
+  var colorByType = { persona: "var(--series-persona)", institucion: "var(--series-institucion)", ensayo_clinico: "var(--series-ensayo)" };
 
-  edges.forEach(function (e) {
-    var a = byId[e[0]], b = byId[e[1]];
-    var line = document.createElementNS(NS, "line");
-    line.setAttribute("class", "edge-line");
-    line.setAttribute("x1", a.x); line.setAttribute("y1", a.y);
-    line.setAttribute("x2", b.x); line.setAttribute("y2", b.y);
-    svg.appendChild(line);
-  });
+  fetch(DATA_URL)
+    .then(function (res) { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
+    .then(function (data) {
+      entidades = data.entidades || [];
+      vinculos = data.vinculos || [];
+      entidades.forEach(function (n) { byId[n.id] = n; });
+      document.getElementById("panel-red").querySelector(".section-sub").textContent =
+        entidades.length + " entidades reales, " + vinculos.length + " vínculos. Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.";
+      layoutYRenderRed();
+    })
+    .catch(function (err) {
+      document.getElementById("detail-panel").innerHTML =
+        "<p class=\"placeholder\">No se pudo cargar " + DATA_URL + " (" + err.message + "). Sirve este archivo por HTTP (no file://) — ver \"Cómo correr el prototipo\" en README.md.</p>";
+    });
 
-  nodes.forEach(function (n) {
-    var r = n.type === "persona" ? 6 : n.type === "institucion" ? 8 : 7;
-    var circle = document.createElementNS(NS, "circle");
-    circle.setAttribute("class", "node-circle");
-    circle.setAttribute("cx", n.x); circle.setAttribute("cy", n.y);
-    circle.setAttribute("r", r);
-    circle.setAttribute("fill", colorByType[n.type]);
-    circle.setAttribute("data-id", n.id);
-    circle.addEventListener("click", function () { selectNode(n.id); });
-    svg.appendChild(circle);
+  // ---- Layout: simulación de fuerzas mínima, corrida una vez al cargar ----
+  function layoutYRenderRed() {
+    entidades.forEach(function (n, i) {
+      var angle = (i / entidades.length) * Math.PI * 2;
+      n.x = W / 2 + Math.cos(angle) * 120 + (Math.random() - 0.5) * 20;
+      n.y = H / 2 + Math.sin(angle) * 120 + (Math.random() - 0.5) * 20;
+      n.vx = 0; n.vy = 0;
+    });
 
-    var label = document.createElementNS(NS, "text");
-    label.setAttribute("class", "node-label");
-    label.setAttribute("x", n.x + r + 3);
-    label.setAttribute("y", n.y + 3);
-    label.textContent = n.label.length > 26 ? n.label.slice(0, 24) + "…" : n.label;
-    svg.appendChild(label);
-  });
+    for (var iter = 0; iter < 260; iter++) {
+      for (var i = 0; i < entidades.length; i++) {
+        for (var j = i + 1; j < entidades.length; j++) {
+          var a = entidades[i], b = entidades[j];
+          var dx = a.x - b.x, dy = a.y - b.y;
+          var distSq = dx * dx + dy * dy || 0.01;
+          var dist = Math.sqrt(distSq);
+          var force = 1400 / distSq;
+          var fx = (dx / dist) * force, fy = (dy / dist) * force;
+          a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
+        }
+      }
+      vinculos.forEach(function (e) {
+        var a = byId[e.origen], b = byId[e.destino];
+        if (!a || !b) return;
+        var dx = b.x - a.x, dy = b.y - a.y;
+        var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
+        var force = (dist - 95) * 0.02;
+        var fx = (dx / dist) * force, fy = (dy / dist) * force;
+        a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
+      });
+      entidades.forEach(function (n) {
+        n.vx += (W / 2 - n.x) * 0.0015;
+        n.vy += (H / 2 - n.y) * 0.0015;
+        n.x += n.vx * 0.15; n.y += n.vy * 0.15;
+        n.vx *= 0.82; n.vy *= 0.82;
+        n.x = Math.max(30, Math.min(W - 30, n.x));
+        n.y = Math.max(20, Math.min(H - 20, n.y));
+      });
+    }
+
+    vinculos.forEach(function (e) {
+      var a = byId[e.origen], b = byId[e.destino];
+      if (!a || !b) return;
+      var line = document.createElementNS(NS, "line");
+      line.setAttribute("class", "edge-line");
+      line.setAttribute("x1", a.x); line.setAttribute("y1", a.y);
+      line.setAttribute("x2", b.x); line.setAttribute("y2", b.y);
+      svg.appendChild(line);
+    });
+
+    entidades.forEach(function (n) {
+      var r = n.tipo === "persona" ? 6 : n.tipo === "institucion" ? 8 : 7;
+      var circle = document.createElementNS(NS, "circle");
+      circle.setAttribute("class", "node-circle");
+      circle.setAttribute("cx", n.x); circle.setAttribute("cy", n.y);
+      circle.setAttribute("r", r);
+      circle.setAttribute("fill", colorByType[n.tipo]);
+      circle.setAttribute("data-id", n.id);
+      circle.addEventListener("click", function () { selectNode(n.id); });
+      svg.appendChild(circle);
+
+      var label = document.createElementNS(NS, "text");
+      label.setAttribute("class", "node-label");
+      label.setAttribute("x", n.x + r + 3);
+      label.setAttribute("y", n.y + 3);
+      label.textContent = n.nombre.length > 26 ? n.nombre.slice(0, 24) + "…" : n.nombre;
+      svg.appendChild(label);
+    });
+  }
 
   function selectNode(id) {
     svg.querySelectorAll(".node-circle").forEach(function (c) {
@@ -384,15 +319,19 @@
     var n = byId[id];
     var panel = document.getElementById("detail-panel");
     panel.innerHTML = "";
-    var h3 = document.createElement("h3"); h3.textContent = n.label; panel.appendChild(h3);
-    var tag = document.createElement("span"); tag.className = "type-tag"; tag.textContent = n.type; panel.appendChild(tag);
+    var h3 = document.createElement("h3"); h3.textContent = n.nombre; panel.appendChild(h3);
+    var tag = document.createElement("span"); tag.className = "type-tag"; tag.textContent = n.tipo; panel.appendChild(tag);
     var ul = document.createElement("ul");
     n.hechos.forEach(function (h) {
       var li = document.createElement("li");
-      li.appendChild(document.createTextNode(h.t + " ("+ h.f +") — "));
-      var a = document.createElement("a");
-      a.href = h.u; a.target = "_blank"; a.rel = "noopener"; a.textContent = "ver fuente";
-      li.appendChild(a);
+      li.appendChild(document.createTextNode(h.hecho + " (" + h.fecha + ", confianza: " + h.confianza + ") — "));
+      if (esUrlSegura(h.fuente_url)) {
+        var a = document.createElement("a");
+        a.href = h.fuente_url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "ver fuente";
+        li.appendChild(a);
+      } else if (h.fuente_url) {
+        li.appendChild(document.createTextNode("fuente no verificable: " + h.fuente_url));
+      }
       ul.appendChild(li);
     });
     panel.appendChild(ul);

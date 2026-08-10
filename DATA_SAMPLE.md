@@ -1,11 +1,15 @@
 # Muestra de datos — cáncer de pulmón en Chile
 
-Ejercicio de Fase 1: traer datos **reales** (no sintéticos) de las fuentes ya
+Ejercicio de traer datos **reales** (no sintéticos) de las fuentes ya
 documentadas en `README.md`, para descubrir qué campos son confiables antes de
-diseñar la página de perfil. Los datos completos están en
-[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 10
-perfiles (personas, instituciones, un ensayo clínico), cada uno con hechos en
-el formato hecho/fuente/fecha/confianza del modelo de datos.
+diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
+validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
+2 (esa etapa formal sigue sin hacerse). Los datos completos están en
+[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 23
+entidades reales (personas, instituciones, 5 ensayos clínicos) y 18 vínculos
+entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza del modelo
+de datos, con un campo `tipo` adicional y (según el caso) `fase` del ensayo o
+`revista` de la publicación.
 
 Metodología: 4 agentes en paralelo, cada uno restringido a una sola fuente y
 obligado a citar la URL exacta de donde sacó cada dato — sin inventar
@@ -18,9 +22,9 @@ autores, afiliaciones ni fechas. Fuentes: PubMed (E-utilities), ClinicalTrials.g
   Clinical Research Center (Santiago), coautores en varios ensayos y
   publicaciones sobre NSCLC, uno de ellos con ORCID visible.
 - **Fundación Arturo López Pérez (FALP)** — aparece como afiliación en
-  publicaciones y como sitio activo en al menos 3 ensayos clínicos distintos
-  (WU-KONG1, REZILIENT3, BE6A LUNG-02), con el nombre escrito de 4 formas
-  distintas entre fuentes.
+  publicaciones y como sitio activo en 4 ensayos clínicos distintos
+  (WU-KONG1, REZILIENT3, BE6A LUNG-02, SUNRAY-02), con el nombre escrito de 4
+  formas distintas entre fuentes.
 - **Instituto Nacional del Tórax** — directorio público con nombres, cargos y
   formación de su plana directiva (Dra. Begoña Yarza, Dra. Claudia Sepúlveda),
   pero sin ninguna fecha de actualización visible en la página.

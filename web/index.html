@@ -204,7 +204,7 @@
     <button class="chip" data-filter="persona" aria-pressed="false">Personas</button>
     <button class="chip" data-filter="institucion" aria-pressed="false">Instituciones</button>
     <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Ensayos clínicos</button>
-    <button class="chip sort-toggle" id="sort-toggle" data-sort="senales">Ordenar: puntaje</button>
+    <button class="chip sort-toggle" id="sort-toggle" data-sort="reciente">Ordenar: más reciente</button>
     <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false">Ver red de conexiones</button>
   </div>
 </header>
@@ -229,7 +229,11 @@
 </main>
 
 <footer class="page-footer">
-  Datos de muestra (sin revisión humana todavía), cargados en vivo desde <code>data/sample/perfiles-muestra.json</code> ·
+  Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, sitios institucionales) —
+  no es una evaluación de desempeño profesional ni un listado comercial. Datos de muestra, sin revisión
+  humana todavía. ¿Eres un profesional listado acá y quieres corregir o eliminar tu información? El canal
+  de contacto para eso todavía no está definido — este es un prototipo, no un producto en producción.<br />
+  Datos cargados en vivo desde <code>data/sample/perfiles-muestra.json</code> ·
   <a href="../DATA_SAMPLE.md">de dónde salen</a> · <a href="interno.html">cómo se construyó esto</a>
 </footer>
 
@@ -257,7 +261,18 @@
   var entidades = [];
   var vinculos = [];
   var byId = {};
-  var state = { filter: "todos", query: "", sort: "senales" };
+  // Orden por defecto = "reciente", no "senales": el producto no debe decidir por
+  // adelantado un ranking de "a quién contactar primero" -- eso es una decisión del
+  // usuario, que puede activarla explícitamente con el chip de abajo.
+  var state = { filter: "todos", query: "", sort: "reciente" };
+
+  // Los datos de hoy son 100% https:// verificados, pero el JSON viene de una fuente
+  // externa y en el futuro (Fase 4) va a poblarse con un Extractor automatizado sin
+  // revisión humana previa -- nunca asignar un valor no verificado directo a a.href
+  // (un esquema javascript: se ejecutaría al click; rel="noopener" no protege contra eso).
+  function esUrlSegura(url) {
+    return typeof url === "string" && /^https?:\/\//i.test(url);
+  }
 
   function sortableDate(fecha) {
     var m = fecha && fecha.match(/(\d{4})(-(\d{2}))?(-(\d{2}))?/);
@@ -563,6 +578,7 @@
     scoreNote.textContent = "No es un ranking oculto: es la suma de menciones públicas verificables listadas abajo, cada una con su fuente. " +
       "Los ensayos fase III/IV pesan el doble que fase I/II porque ClinicalTrials.gov entrega esa fase como dato estructurado real — " +
       "publicaciones y conexiones valen 1 punto cada una porque no tenemos un dato real de impacto para pesarlas sin inventar. " +
+      "Un mismo hecho real (ej. un rol de investigador principal) puede aparecer registrado tanto en el perfil de la persona como en el de la institución — cada una lo cuenta desde su propia perspectiva, así que los puntajes de dos entidades no son sumables entre sí como si cada punto fuera un hecho global único. " +
       (senales.docencia === 0 ? "Docencia y congresos está en 0: nuestras fuentes actuales (PubMed, ClinicalTrials.gov) no capturan cursos ni charlas — no significa que esta persona no las dicte." : "");
     scorePanel.appendChild(scoreNote);
     content.appendChild(scorePanel);
@@ -592,9 +608,14 @@
         }
         li.appendChild(document.createTextNode(h.hecho));
         var fechaLine = document.createElement("span"); fechaLine.className = "hecho-fecha";
-        fechaLine.textContent = h.fecha;
-        var a = document.createElement("a"); a.href = h.fuente_url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Ver fuente →";
-        fechaLine.appendChild(a);
+        var confianzaTxt = h.confianza ? " · confianza: " + h.confianza : "";
+        fechaLine.textContent = h.fecha + confianzaTxt;
+        if (esUrlSegura(h.fuente_url)) {
+          var a = document.createElement("a"); a.href = h.fuente_url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Ver fuente →";
+          fechaLine.appendChild(a);
+        } else if (h.fuente_url) {
+          fechaLine.appendChild(document.createTextNode(" · fuente no verificable: " + h.fuente_url));
+        }
         li.appendChild(fechaLine);
         ul.appendChild(li);
       });
