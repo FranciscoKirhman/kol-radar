@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KOL Radar — cómo se construyó (interno)</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-0: #ffffff;
+    --surface-1: #fcfcfb;
+    --surface-2: #f0efec;
+    --border: #e2e0da;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #85837c;
+    --series-persona: #2a78d6;   /* slot 1 blue */
+    --series-institucion: #eb6834; /* slot 2 orange */
+    --series-ensayo: #1baf7a;    /* slot 3 aqua */
+  }
+  @media (prefers-color-scheme: dark) {
+    .viz-root {
+      color-scheme: dark;
+      --surface-0: #121211;
+      --surface-1: #1a1a19;
+      --surface-2: #232320;
+      --border: #34332e;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #85837c;
+      --series-persona: #3987e5;
+      --series-institucion: #d95926;
+      --series-ensayo: #199e70;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--surface-0);
+    color: var(--text-primary);
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 20px 64px; }
+  header h1 { font-size: 22px; margin: 0 0 4px; }
+  header p { color: var(--text-secondary); margin: 0 0 4px; font-size: 14px; }
+  header .refs { font-size: 12px; color: var(--text-muted); }
+  header .refs a { color: var(--text-secondary); }
+
+  nav.tabs {
+    display: flex; gap: 4px; margin: 20px 0 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  nav.tabs button {
+    font: inherit; font-size: 14px; padding: 8px 14px; border: none;
+    background: none; color: var(--text-secondary); cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  nav.tabs button[aria-selected="true"] {
+    color: var(--text-primary); border-bottom-color: var(--series-persona); font-weight: 600;
+  }
+  section.panel { display: none; }
+  section.panel.active { display: block; }
+
+  /* --- Red de conexiones --- */
+  .graph-layout { display: flex; gap: 16px; flex-wrap: wrap; }
+  .graph-box { flex: 2 1 480px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  svg#graph { display: block; width: 100%; height: auto; }
+  .graph-legend { display: flex; gap: 16px; padding: 8px 12px; font-size: 12px; color: var(--text-secondary); border-top: 1px solid var(--border); }
+  .graph-legend .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
+  .node-circle { cursor: pointer; stroke: var(--surface-1); stroke-width: 2px; }
+  .node-circle:hover, .node-circle.selected { stroke: var(--text-primary); }
+  .edge-line { stroke: var(--border); stroke-width: 1.5px; }
+  .node-label { font-size: 9px; fill: var(--text-secondary); pointer-events: none; }
+
+  .detail-panel { flex: 1 1 260px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-size: 13px; min-height: 200px; }
+  .detail-panel h3 { margin: 0 0 4px; font-size: 15px; }
+  .detail-panel .type-tag { display: inline-block; font-size: 11px; color: var(--text-secondary); background: var(--surface-2); border-radius: 4px; padding: 2px 6px; margin-bottom: 10px; }
+  .detail-panel ul { margin: 0; padding-left: 18px; }
+  .detail-panel li { margin-bottom: 10px; line-height: 1.4; }
+  .detail-panel li a { color: var(--series-persona); font-size: 12px; }
+  .detail-panel .placeholder { color: var(--text-muted); }
+
+  /* --- Costos --- */
+  .cost-bars { margin: 8px 0 24px; }
+  .cost-row { display: grid; grid-template-columns: 190px 1fr 70px; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; }
+  .cost-row .track { background: var(--surface-2); border-radius: 4px; height: 20px; position: relative; }
+  .cost-row .fill { background: var(--series-persona); height: 20px; border-radius: 4px 10px 10px 4px; }
+  .cost-row .value { text-align: right; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  table.cost-table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 8px; }
+  table.cost-table th, table.cost-table td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+  table.cost-table th { color: var(--text-secondary); font-weight: 600; }
+  table.cost-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* --- Cómo funciona --- */
+  .pipeline { display: flex; gap: 6px; flex-wrap: wrap; align-items: stretch; margin: 12px 0 20px; }
+  .pipeline .step { flex: 1 1 180px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+  .pipeline .step h4 { margin: 0 0 6px; font-size: 14px; }
+  .pipeline .step p { margin: 0 0 8px; font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+  .pipeline .step .cost-tag { font-size: 11px; color: var(--text-muted); }
+  .pipeline .arrow { align-self: center; font-size: 18px; color: var(--text-muted); }
+
+  /* --- Notas / próximos pasos --- */
+  .notes { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-top: 8px; }
+  .notes h2 { font-size: 15px; margin: 0 0 10px; }
+  .notes ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
+
+  h2.section-title { font-size: 16px; margin: 4px 0 4px; }
+  p.section-sub { font-size: 13px; color: var(--text-secondary); margin: 0 0 12px; }
+</style>
+</head>
+<body>
+<div class="viz-root">
+  <div class="wrap">
+
+    <header>
+      <h1>KOL Radar — cómo se construyó esto</h1>
+      <p>Vista interna (no es lo que ve un MSL): red de conexiones cruda, costo del pipeline de automatización, y cómo se arma un perfil. La vista de producto está en <a href="index.html">index.html</a>.</p>
+      <p class="refs">Datos y fuentes: <a href="../data/sample/perfiles-muestra.json">data/sample/perfiles-muestra.json</a> · <a href="../COSTS.md">COSTS.md</a> · <a href="../README.md">README.md</a></p>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-panel="red">Red de conexiones</button>
+      <button role="tab" aria-selected="false" data-panel="costos">Costos</button>
+      <button role="tab" aria-selected="false" data-panel="pipeline">Cómo funciona</button>
+    </nav>
+
+    <section class="panel active" id="panel-red">
+      <h2 class="section-title">Red de conexiones — muestra de cáncer de pulmón en Chile</h2>
+      <p class="section-sub">23 entidades reales, 18 vínculos. Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.</p>
+      <div class="graph-layout">
+        <div class="graph-box">
+          <svg id="graph" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div class="graph-legend">
+            <span><span class="swatch" style="background:var(--series-persona)"></span>Persona</span>
+            <span><span class="swatch" style="background:var(--series-institucion)"></span>Institución</span>
+            <span><span class="swatch" style="background:var(--series-ensayo)"></span>Ensayo clínico</span>
+          </div>
+        </div>
+        <div class="detail-panel" id="detail-panel">
+          <p class="placeholder">Click en un nodo del grafo para ver sus hechos y fuentes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-costos">
+      <h2 class="section-title">Costo del pipeline de automatización (1.000 perfiles)</h2>
+      <p class="section-sub">Estimación verificada en <a href="../COSTS.md">COSTS.md</a>. Creación inicial vs. mantenimiento (re-detectar actividad nueva, no solo re-revisar lo existente), con y sin Batches API.</p>
+      <div class="cost-bars" id="cost-bars"></div>
+      <h2 class="section-title">Estimación a escala</h2>
+      <table class="cost-table">
+        <thead><tr><th>Perfiles</th><th class="num">Creación (estándar)</th><th class="num">Creación (Batches, -50%)</th></tr></thead>
+        <tbody>
+          <tr><td>100 (piloto una especialidad)</td><td class="num">$2.30</td><td class="num">$1.15</td></tr>
+          <tr><td>1.000 (cobertura amplia)</td><td class="num">$23</td><td class="num">$11.50</td></tr>
+          <tr><td>10.000 (multi-especialidad)</td><td class="num">$230*</td><td class="num">$115*</td></tr>
+        </tbody>
+      </table>
+      <p class="section-sub" style="margin-top:8px;">* A esta escala el Resolutor sube con apellidos comunes chilenos — ver advertencia en COSTS.md.</p>
+    </section>
+
+    <section class="panel" id="panel-pipeline">
+      <h2 class="section-title">Cómo se arma un perfil</h2>
+      <p class="section-sub">Cuatro pasos, cada uno con su propio costo y su propio límite de autonomía — ningún hecho llega a "confirmado" sin revisión humana.</p>
+      <div class="pipeline">
+        <div class="step">
+          <h4>1. Recolector</h4>
+          <p>Consulta PubMed y ClinicalTrials.gov. Código plano, sin LLM.</p>
+          <span class="cost-tag">$0 (APIs públicas gratuitas)</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step">
+          <h4>2. Extractor</h4>
+          <p>Convierte una fuente cruda en hechos estructurados (hecho/fuente/fecha).</p>
+          <span class="cost-tag">Claude Haiku 4.5 · ~$0.002/llamada</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step">
+          <h4>3. Resolutor</h4>
+          <p>¿Es la misma persona? Match exacto por código; casos ambiguos van a un modelo.</p>
+          <span class="cost-tag">Claude Sonnet 5 · solo casos ambiguos</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step">
+          <h4>4. Revisor</h4>
+          <p>Marca datos viejos, contradicciones o evidencia débil.</p>
+          <span class="cost-tag">Claude Sonnet 5 · ~$0.009/perfil</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step">
+          <h4>5. Revisión humana</h4>
+          <p>Una persona aprueba, corrige o rechaza. Recién ahí un hecho pasa a "confirmado".</p>
+          <span class="cost-tag">No automatizable — a propósito</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="notes">
+      <h2>Qué mejorar después (esto es un prototipo de prueba, no la página final)</h2>
+      <ul>
+        <li>Los datos del grafo están hardcodeados en este HTML — pasar a cargarlos desde <code>data/sample/perfiles-muestra.json</code> (o eventualmente una API) para que crecer la muestra no signifique editar código.</li>
+        <li>El layout del grafo es una simulación de fuerzas simple corrida una sola vez al cargar — con más de ~50 nodos va a necesitar un layout incremental o una librería real (D3, Cytoscape).</li>
+        <li>No hay buscador ni filtro por especialidad, ciudad o institución — el spec original lo pide para la página final.</li>
+        <li>El panel de detalle solo muestra hechos; falta el indicador de confianza (confirmado/probable/pendiente) y el botón de "corregir este dato" del modelo de datos.</li>
+        <li>No hay mapa de Chile con centros geolocalizados — está en el roadmap del README como parte de la pantalla principal.</li>
+        <li>Sin backend: todo vive en un archivo estático. La Fase 4 (automatizar PubMed/ClinicalTrials.gov) va a necesitar una base de datos real y la bandeja de revisión humana descrita en el spec.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- Datos (Fase 3 prototipo: hardcodeados a propósito, ver nota "qué mejorar") ----
+  var nodes = [
+    { id: "carlos-rojas", label: "Carlos Rojas", type: "persona", hechos: [
+      { t: "Coautor con afiliación chilena (Bradford Hill, Santiago) en ensayo fase 3 de nivolumab en NSCLC estadio III, publicado en Nature Cancer.", u: "https://pubmed.ncbi.nlm.nih.gov/42129521/", f: "2026-07" },
+      { t: "Investigador principal de sitio en el ensayo SUNRAY-02 (NCT06890598), centro 'Bradfordhill' — vínculo por coincidencia de nombre, no confirmado por ORCID.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
+    ]},
+    { id: "mauricio-burotto", label: "Mauricio Burotto", type: "persona", hechos: [
+      { t: "Coautor en actualización de resultados de atezolizumab subcutáneo vs. intravenoso en NSCLC.", u: "https://pubmed.ncbi.nlm.nih.gov/42214243/", f: "2026-07" },
+      { t: "Coautor de revisión sobre atezolizumab subcutáneo en NSCLC; ORCID registrado en PubMed 0000-0002-7150-4033.", u: "https://pubmed.ncbi.nlm.nih.gov/41946650/", f: "2026-03" }
+    ]},
+    { id: "roberto-gonzalez", label: "Roberto González L.", type: "persona", hechos: [
+      { t: "Autor de correspondencia del estudio de cohorte sobre cáncer pulmonar en un hospital público de Concepción.", u: "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", f: "2022-01" }
+    ]},
+    { id: "andres-rojas", label: "Andrés Rojas G.", type: "persona", hechos: [
+      { t: "Autor de correspondencia de revisión sobre evaluación preoperatoria en resección de cáncer de pulmón. Nota: comparte apellido con 'Carlos Rojas' pero son personas distintas.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", f: "2015-06" }
+    ]},
+    { id: "fernando-saldias", label: "Fernando Saldías P.", type: "persona", hechos: [
+      { t: "Coautor de estudio sobre factores pronósticos en cáncer pulmonar, Red de Salud UC.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", f: "2014-12" }
+    ]},
+    { id: "javiera-martinez", label: "Javiera Martinez-Gutierrez", type: "persona", hechos: [
+      { t: "Coautora de estudio sobre screening de cáncer de pulmón; base laboral principal en University of Melbourne, afiliación secundaria a la PUC.", u: "https://pubmed.ncbi.nlm.nih.gov/41421033/", f: "2026-01" }
+    ]},
+    { id: "rodrigo-uribe", label: "Rodrigo Uribe", type: "persona", hechos: [
+      { t: "Investigador principal del sitio FALP en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
+    ]},
+    { id: "pamela-salman", label: "Pamela Salman", type: "persona", hechos: [
+      { t: "Investigadora principal del sitio Centro de Oncología de Precisión en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
+    ]},
+    { id: "pablo-rodriguez", label: "Pablo Rodríguez Monarca", type: "persona", hechos: [
+      { t: "Investigador principal del sitio K2 Oncology en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
+    ]},
+    { id: "bradford-hill", label: "Bradford Hill Clinical Research Center", type: "institucion", hechos: [
+      { t: "Afiliación de Carlos Rojas y Mauricio Burotto en múltiples publicaciones sobre NSCLC.", u: "https://pubmed.ncbi.nlm.nih.gov/41946650/", f: "2026-03" }
+    ]},
+    { id: "falp", label: "Fundación Arturo López Pérez (FALP)", type: "institucion", hechos: [
+      { t: "Sitio activo en 3 ensayos clínicos distintos sobre NSCLC (WU-KONG1, REZILIENT3, BE6A LUNG-02). Aparece con 4 nombres distintos entre fuentes — ver nota de normalización en DATA_SAMPLE.md.", u: "https://clinicaltrials.gov/study/NCT06758401", f: "2026-07-22" }
+    ]},
+    { id: "torax", label: "Instituto Nacional del Tórax", type: "institucion", hechos: [
+      { t: "Directorio público con Dra. Begoña Yarza (Directora) y Dra. Claudia Sepúlveda (Subdirectora Médica). Sin fecha de actualización visible en la página.", u: "https://torax.cl/equipo-directivo-2/", f: "sin fecha en la fuente" }
+    ]},
+    { id: "james-lind", label: "James Lind Centro de Investigación del Cáncer", type: "institucion", hechos: [
+      { t: "Sitio activo en 2 ensayos clínicos sobre NSCLC (WU-KONG1, PROCLAIM).", u: "https://clinicaltrials.gov/study/NCT03974022", f: "2026-01-29" }
+    ]},
+    { id: "hosp-concepcion", label: "Hospital Clínico Regional de Concepción", type: "institucion", hechos: [
+      { t: "Afiliación de Roberto González L. y equipo, estudio de cohorte sobre cáncer pulmonar.", u: "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", f: "2022-01" }
+    ]},
+    { id: "hosp-puerto-montt", label: "Hospital Puerto Montt", type: "institucion", hechos: [
+      { t: "Afiliación de Andrés Rojas G., revisión sobre evaluación preoperatoria en cáncer de pulmón.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", f: "2015-06" }
+    ]},
+    { id: "puc", label: "Pontificia Universidad Católica de Chile", type: "institucion", hechos: [
+      { t: "Afiliación de Fernando Saldías P. y (secundaria) de Javiera Martinez-Gutierrez.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", f: "2014-12" }
+    ]},
+    { id: "k2-oncology", label: "K2 Oncology", type: "institucion", hechos: [
+      { t: "Sitio del ensayo SUNRAY-02, PI Pablo Rodríguez Monarca.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
+    ]},
+    { id: "centro-precision", label: "Centro de Oncología de Precisión", type: "institucion", hechos: [
+      { t: "Sitio del ensayo SUNRAY-02, PI Pamela Salman.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
+    ]},
+    { id: "nct06890598", label: "SUNRAY-02 (NCT06890598)", type: "ensayo", hechos: [
+      { t: "Fase III, Eli Lilly, olomorasib en NSCLC KRAS G12C. Único de 8 ensayos muestreados que expone PIs reales por sitio en Chile.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
+    ]},
+    { id: "nct03974022", label: "WU-KONG1 (NCT03974022)", type: "ensayo", hechos: [
+      { t: "Fase I/II, Dizal Pharmaceuticals, sunvozertinib en NSCLC EGFR/HER2. 4 sitios en Chile.", u: "https://clinicaltrials.gov/study/NCT03974022", f: "2026-01-29" }
+    ]},
+    { id: "nct05973773", label: "REZILIENT3 (NCT05973773)", type: "ensayo", hechos: [
+      { t: "Fase III, Taiho Oncology, zipalertinib en NSCLC EGFR exón 20. 3 sitios en Chile.", u: "https://clinicaltrials.gov/study/NCT05973773", f: "2026-07-30" }
+    ]},
+    { id: "nct06758401", label: "BE6A LUNG-02 (NCT06758401)", type: "ensayo", hechos: [
+      { t: "Fase III, Pfizer, sigvotatug vedotin + pembrolizumab en NSCLC. 12 registros de sitio en Chile.", u: "https://clinicaltrials.gov/study/NCT06758401", f: "2026-07-22" }
+    ]},
+    { id: "nct03937154", label: "PROCLAIM (NCT03937154)", type: "ensayo", hechos: [
+      { t: "Fase III, Amgen, romiplostim para trombocitopenia inducida por quimioterapia en NSCLC y otros cánceres.", u: "https://clinicaltrials.gov/study/NCT03937154", f: "2026-04-07" }
+    ]}
+  ];
+
+  var edges = [
+    ["carlos-rojas", "bradford-hill"], ["mauricio-burotto", "bradford-hill"],
+    ["carlos-rojas", "nct06890598"],
+    ["rodrigo-uribe", "falp"], ["rodrigo-uribe", "nct06890598"],
+    ["pamela-salman", "centro-precision"], ["pamela-salman", "nct06890598"],
+    ["pablo-rodriguez", "k2-oncology"], ["pablo-rodriguez", "nct06890598"],
+    ["falp", "nct03974022"], ["falp", "nct05973773"], ["falp", "nct06758401"],
+    ["james-lind", "nct03974022"], ["james-lind", "nct03937154"],
+    ["roberto-gonzalez", "hosp-concepcion"],
+    ["andres-rojas", "hosp-puerto-montt"],
+    ["fernando-saldias", "puc"], ["javiera-martinez", "puc"]
+  ];
+
+  // ---- Layout: simulación de fuerzas mínima, corrida una vez al cargar ----
+  var W = 720, H = 480;
+  var byId = {};
+  nodes.forEach(function (n, i) {
+    byId[n.id] = n;
+    var angle = (i / nodes.length) * Math.PI * 2;
+    n.x = W / 2 + Math.cos(angle) * 120 + (Math.random() - 0.5) * 20;
+    n.y = H / 2 + Math.sin(angle) * 120 + (Math.random() - 0.5) * 20;
+    n.vx = 0; n.vy = 0;
+  });
+
+  for (var iter = 0; iter < 260; iter++) {
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        var a = nodes[i], b = nodes[j];
+        var dx = a.x - b.x, dy = a.y - b.y;
+        var distSq = dx * dx + dy * dy || 0.01;
+        var dist = Math.sqrt(distSq);
+        var force = 1400 / distSq;
+        var fx = (dx / dist) * force, fy = (dy / dist) * force;
+        a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
+      }
+    }
+    edges.forEach(function (e) {
+      var a = byId[e[0]], b = byId[e[1]];
+      var dx = b.x - a.x, dy = b.y - a.y;
+      var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
+      var force = (dist - 95) * 0.02;
+      var fx = (dx / dist) * force, fy = (dy / dist) * force;
+      a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
+    });
+    nodes.forEach(function (n) {
+      n.vx += (W / 2 - n.x) * 0.0015;
+      n.vy += (H / 2 - n.y) * 0.0015;
+      n.x += n.vx * 0.15; n.y += n.vy * 0.15;
+      n.vx *= 0.82; n.vy *= 0.82;
+      n.x = Math.max(30, Math.min(W - 30, n.x));
+      n.y = Math.max(20, Math.min(H - 20, n.y));
+    });
+  }
+
+  // ---- Render SVG ----
+  var svg = document.getElementById("graph");
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  var NS = "http://www.w3.org/2000/svg";
+  var colorByType = { persona: "var(--series-persona)", institucion: "var(--series-institucion)", ensayo: "var(--series-ensayo)" };
+
+  edges.forEach(function (e) {
+    var a = byId[e[0]], b = byId[e[1]];
+    var line = document.createElementNS(NS, "line");
+    line.setAttribute("class", "edge-line");
+    line.setAttribute("x1", a.x); line.setAttribute("y1", a.y);
+    line.setAttribute("x2", b.x); line.setAttribute("y2", b.y);
+    svg.appendChild(line);
+  });
+
+  nodes.forEach(function (n) {
+    var r = n.type === "persona" ? 6 : n.type === "institucion" ? 8 : 7;
+    var circle = document.createElementNS(NS, "circle");
+    circle.setAttribute("class", "node-circle");
+    circle.setAttribute("cx", n.x); circle.setAttribute("cy", n.y);
+    circle.setAttribute("r", r);
+    circle.setAttribute("fill", colorByType[n.type]);
+    circle.setAttribute("data-id", n.id);
+    circle.addEventListener("click", function () { selectNode(n.id); });
+    svg.appendChild(circle);
+
+    var label = document.createElementNS(NS, "text");
+    label.setAttribute("class", "node-label");
+    label.setAttribute("x", n.x + r + 3);
+    label.setAttribute("y", n.y + 3);
+    label.textContent = n.label.length > 26 ? n.label.slice(0, 24) + "…" : n.label;
+    svg.appendChild(label);
+  });
+
+  function selectNode(id) {
+    svg.querySelectorAll(".node-circle").forEach(function (c) {
+      c.classList.toggle("selected", c.getAttribute("data-id") === id);
+    });
+    var n = byId[id];
+    var panel = document.getElementById("detail-panel");
+    panel.innerHTML = "";
+    var h3 = document.createElement("h3"); h3.textContent = n.label; panel.appendChild(h3);
+    var tag = document.createElement("span"); tag.className = "type-tag"; tag.textContent = n.type; panel.appendChild(tag);
+    var ul = document.createElement("ul");
+    n.hechos.forEach(function (h) {
+      var li = document.createElement("li");
+      li.appendChild(document.createTextNode(h.t + " ("+ h.f +") — "));
+      var a = document.createElement("a");
+      a.href = h.u; a.target = "_blank"; a.rel = "noopener"; a.textContent = "ver fuente";
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    panel.appendChild(ul);
+  }
+
+  // ---- Costos: barras ----
+  var costData = [
+    { label: "Creación estándar", value: 23, max: 23 },
+    { label: "Creación (Batches, -50%)", value: 11.5, max: 23 },
+    { label: "Mantenimiento estándar", value: 23, max: 23 }
+  ];
+  var costBars = document.getElementById("cost-bars");
+  costData.forEach(function (d) {
+    var row = document.createElement("div");
+    row.className = "cost-row";
+    var label = document.createElement("div"); label.textContent = d.label;
+    var track = document.createElement("div"); track.className = "track";
+    var fill = document.createElement("div"); fill.className = "fill";
+    fill.style.width = Math.round((d.value / d.max) * 100) + "%";
+    track.appendChild(fill);
+    var value = document.createElement("div"); value.className = "value"; value.textContent = "$" + d.value;
+    row.appendChild(label); row.appendChild(track); row.appendChild(value);
+    costBars.appendChild(row);
+  });
+
+  // ---- Tabs ----
+  var tabs = document.querySelectorAll("nav.tabs button");
+  tabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      tabs.forEach(function (b) { b.setAttribute("aria-selected", "false"); });
+      btn.setAttribute("aria-selected", "true");
+      document.querySelectorAll("section.panel").forEach(function (p) { p.classList.remove("active"); });
+      document.getElementById("panel-" + btn.getAttribute("data-panel")).classList.add("active");
+    });
+  });
+})();
+</script>
+</body>
+</html>

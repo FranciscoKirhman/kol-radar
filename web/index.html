@@ -3,23 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>KOL Radar — prototipo</title>
+<title>KOL Radar — Cáncer de pulmón (demo)</title>
 <style>
-  .viz-root {
+  :root {
     color-scheme: light;
     --surface-0: #ffffff;
-    --surface-1: #fcfcfb;
-    --surface-2: #f0efec;
+    --surface-1: #f7f6f3;
+    --surface-2: #eeece6;
     --border: #e2e0da;
-    --text-primary: #0b0b0b;
+    --text-primary: #16150f;
     --text-secondary: #52514e;
     --text-muted: #85837c;
-    --series-persona: #2a78d6;   /* slot 1 blue */
-    --series-institucion: #eb6834; /* slot 2 orange */
-    --series-ensayo: #1baf7a;    /* slot 3 aqua */
+    --accent: #2a78d6;
+    --accent-ink: #ffffff;
+    --persona: #2a78d6;
+    --institucion: #eb6834;
+    --ensayo: #1baf7a;
   }
   @media (prefers-color-scheme: dark) {
-    .viz-root {
+    :root {
       color-scheme: dark;
       --surface-0: #121211;
       --surface-1: #1a1a19;
@@ -28,262 +30,261 @@
       --text-primary: #ffffff;
       --text-secondary: #c3c2b7;
       --text-muted: #85837c;
-      --series-persona: #3987e5;
-      --series-institucion: #d95926;
-      --series-ensayo: #199e70;
+      --accent: #3987e5;
+      --persona: #3987e5;
+      --institucion: #d95926;
+      --ensayo: #199e70;
     }
   }
   * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
   body {
-    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Header ---------- */
+  header.topbar {
+    position: sticky; top: 0; z-index: 20;
     background: var(--surface-0);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+  }
+  .topbar-row { display: flex; align-items: center; gap: 10px; max-width: 1080px; margin: 0 auto; flex-wrap: wrap; }
+  .brand { font-weight: 700; font-size: 16px; white-space: nowrap; }
+  .specialty-badge {
+    font-size: 11px; font-weight: 500; color: var(--text-secondary);
+    background: var(--surface-2); border-radius: 999px; padding: 3px 10px;
+    white-space: nowrap;
+  }
+  .search-wrap { flex: 1 1 220px; min-width: 180px; position: relative; }
+  .search-wrap input {
+    width: 100%; font: inherit; font-size: 14px; padding: 9px 12px 9px 34px;
+    border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1);
     color: var(--text-primary);
   }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 20px 64px; }
-  header h1 { font-size: 22px; margin: 0 0 4px; }
-  header p { color: var(--text-secondary); margin: 0 0 4px; font-size: 14px; }
-  header .refs { font-size: 12px; color: var(--text-muted); }
-  header .refs a { color: var(--text-secondary); }
+  .search-wrap input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .search-wrap .icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 14px; pointer-events: none; }
 
-  nav.tabs {
-    display: flex; gap: 4px; margin: 20px 0 16px;
-    border-bottom: 1px solid var(--border);
+  .filters-row {
+    display: flex; gap: 6px; padding: 10px 16px; max-width: 1080px; margin: 0 auto;
+    overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none;
   }
-  nav.tabs button {
-    font: inherit; font-size: 14px; padding: 8px 14px; border: none;
-    background: none; color: var(--text-secondary); cursor: pointer;
-    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  .filters-row::-webkit-scrollbar { display: none; }
+  .chip {
+    font: inherit; font-size: 12.5px; white-space: nowrap; padding: 6px 12px;
+    border-radius: 999px; border: 1px solid var(--border); background: var(--surface-0);
+    color: var(--text-secondary); cursor: pointer;
   }
-  nav.tabs button[aria-selected="true"] {
-    color: var(--text-primary); border-bottom-color: var(--series-persona); font-weight: 600;
-  }
-  section.panel { display: none; }
-  section.panel.active { display: block; }
+  .chip[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-0); border-color: var(--text-primary); }
+  .chip.spacer { margin-left: auto; }
+  .chip.network-toggle { color: var(--accent); border-color: var(--accent); }
 
-  /* --- Red de conexiones --- */
-  .graph-layout { display: flex; gap: 16px; flex-wrap: wrap; }
-  .graph-box { flex: 2 1 480px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  svg#graph { display: block; width: 100%; height: auto; }
-  .graph-legend { display: flex; gap: 16px; padding: 8px 12px; font-size: 12px; color: var(--text-secondary); border-top: 1px solid var(--border); }
-  .graph-legend .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
-  .node-circle { cursor: pointer; stroke: var(--surface-1); stroke-width: 2px; }
-  .node-circle:hover, .node-circle.selected { stroke: var(--text-primary); }
-  .edge-line { stroke: var(--border); stroke-width: 1.5px; }
+  /* ---------- Main / list ---------- */
+  main { max-width: 1080px; margin: 0 auto; padding: 6px 16px 48px; }
+  .results-meta { font-size: 12.5px; color: var(--text-muted); margin: 6px 2px 12px; }
+  .cards { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 640px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+
+  .card {
+    text-align: left; width: 100%; font: inherit; cursor: pointer;
+    background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 14px; display: flex; flex-direction: column; gap: 6px;
+    transition: border-color .12s, transform .12s;
+  }
+  .card:hover, .card:focus-visible { border-color: var(--accent); }
+  .card:active { transform: scale(0.99); }
+  .card-top { display: flex; align-items: flex-start; gap: 8px; }
+  .type-dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 5px; flex: none; }
+  .type-dot.persona { background: var(--persona); }
+  .type-dot.institucion { background: var(--institucion); }
+  .type-dot.ensayo { background: var(--ensayo); }
+  .card-name { font-weight: 600; font-size: 14.5px; line-height: 1.3; }
+  .card-sub { font-size: 12.5px; color: var(--text-secondary); }
+  .card-meta { font-size: 11.5px; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--surface-2); }
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 13.5px; }
+
+  /* ---------- Network view ---------- */
+  #network-view { display: none; }
+  #network-view.active { display: block; }
+  #network-view svg { width: 100%; height: auto; display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; }
+  .network-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); padding: 10px 4px 0; }
+  .network-legend .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
+  .node-circle { cursor: pointer; stroke: var(--surface-0); stroke-width: 2px; }
+  .node-circle:hover { stroke: var(--text-primary); }
+  .edge-line { stroke: var(--border); stroke-width: 1.4px; }
   .node-label { font-size: 9px; fill: var(--text-secondary); pointer-events: none; }
+  #list-view.active { display: block; }
+  #list-view { display: none; }
 
-  .detail-panel { flex: 1 1 260px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-size: 13px; min-height: 200px; }
-  .detail-panel h3 { margin: 0 0 4px; font-size: 15px; }
-  .detail-panel .type-tag { display: inline-block; font-size: 11px; color: var(--text-secondary); background: var(--surface-2); border-radius: 4px; padding: 2px 6px; margin-bottom: 10px; }
-  .detail-panel ul { margin: 0; padding-left: 18px; }
-  .detail-panel li { margin-bottom: 10px; line-height: 1.4; }
-  .detail-panel li a { color: var(--series-persona); font-size: 12px; }
-  .detail-panel .placeholder { color: var(--text-muted); }
+  /* ---------- Detail sheet / panel ---------- */
+  .backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 40;
+    opacity: 0; pointer-events: none; transition: opacity .15s;
+  }
+  .backdrop.open { opacity: 1; pointer-events: auto; }
 
-  /* --- Costos --- */
-  .cost-bars { margin: 8px 0 24px; }
-  .cost-row { display: grid; grid-template-columns: 190px 1fr 70px; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; }
-  .cost-row .track { background: var(--surface-2); border-radius: 4px; height: 20px; position: relative; }
-  .cost-row .fill { background: var(--series-persona); height: 20px; border-radius: 4px 10px 10px 4px; }
-  .cost-row .value { text-align: right; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-  table.cost-table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 8px; }
-  table.cost-table th, table.cost-table td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
-  table.cost-table th { color: var(--text-secondary); font-weight: 600; }
-  table.cost-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .detail-sheet {
+    position: fixed; z-index: 50; background: var(--surface-0);
+    left: 0; right: 0; bottom: 0; max-height: 85vh;
+    border-radius: 16px 16px 0 0; border: 1px solid var(--border); border-bottom: none;
+    transform: translateY(100%); transition: transform .18s ease-out;
+    overflow-y: auto; padding: 10px 20px 28px;
+  }
+  .detail-sheet.open { transform: translateY(0); }
+  @media (min-width: 720px) {
+    .detail-sheet {
+      left: auto; top: 0; bottom: 0; right: 0; max-height: none;
+      width: 400px; border-radius: 0; border: none; border-left: 1px solid var(--border);
+      transform: translateX(100%);
+    }
+    .detail-sheet.open { transform: translateX(0); }
+  }
+  .sheet-handle { width: 36px; height: 4px; border-radius: 4px; background: var(--surface-2); margin: 0 auto 10px; }
+  @media (min-width: 720px) { .sheet-handle { display: none; } }
+  .sheet-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 18px; color: var(--text-muted); cursor: pointer; padding: 4px 8px; }
+  .sheet-name { font-size: 18px; font-weight: 700; margin: 4px 0 4px; padding-right: 28px; }
+  .sheet-type-tag { display: inline-block; font-size: 11px; color: var(--text-secondary); background: var(--surface-2); border-radius: 4px; padding: 2px 8px; margin-bottom: 4px; }
+  .sheet-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+  .sheet-section-title { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; color: var(--text-muted); margin: 0 0 8px; }
+  .hecho-list { list-style: none; margin: 0 0 4px; padding: 0; }
+  .hecho-item { padding: 12px 0; border-top: 1px solid var(--surface-2); font-size: 13.5px; line-height: 1.5; }
+  .hecho-item:first-child { border-top: none; }
+  .hecho-fecha { display: block; font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+  .hecho-fecha a { color: var(--accent); text-decoration: none; margin-left: 4px; }
+  .hecho-fecha a:hover { text-decoration: underline; }
+  .confianza-note { font-size: 11.5px; color: var(--text-muted); background: var(--surface-1); border-radius: 6px; padding: 8px 10px; margin-top: 14px; }
 
-  /* --- Cómo funciona --- */
-  .pipeline { display: flex; gap: 6px; flex-wrap: wrap; align-items: stretch; margin: 12px 0 20px; }
-  .pipeline .step { flex: 1 1 180px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
-  .pipeline .step h4 { margin: 0 0 6px; font-size: 14px; }
-  .pipeline .step p { margin: 0 0 8px; font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
-  .pipeline .step .cost-tag { font-size: 11px; color: var(--text-muted); }
-  .pipeline .arrow { align-self: center; font-size: 18px; color: var(--text-muted); }
-
-  /* --- Notas / próximos pasos --- */
-  .notes { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-top: 8px; }
-  .notes h2 { font-size: 15px; margin: 0 0 10px; }
-  .notes ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
-
-  h2.section-title { font-size: 16px; margin: 4px 0 4px; }
-  p.section-sub { font-size: 13px; color: var(--text-secondary); margin: 0 0 12px; }
+  footer.page-footer { max-width: 1080px; margin: 20px auto 0; padding: 16px; text-align: center; font-size: 12px; color: var(--text-muted); }
+  footer.page-footer a { color: var(--text-secondary); }
 </style>
 </head>
 <body>
-<div class="viz-root">
-  <div class="wrap">
 
-    <header>
-      <h1>KOL Radar — prototipo (Fase 3)</h1>
-      <p>Visualización de prueba con datos reales de la muestra: red de conexiones, costo del pipeline de automatización, y cómo se arma un perfil.</p>
-      <p class="refs">Datos y fuentes: <a href="../data/sample/perfiles-muestra.json">data/sample/perfiles-muestra.json</a> · <a href="../COSTS.md">COSTS.md</a> · <a href="../README.md">README.md</a></p>
-    </header>
-
-    <nav class="tabs" role="tablist">
-      <button role="tab" aria-selected="true" data-panel="red">Red de conexiones</button>
-      <button role="tab" aria-selected="false" data-panel="costos">Costos</button>
-      <button role="tab" aria-selected="false" data-panel="pipeline">Cómo funciona</button>
-    </nav>
-
-    <section class="panel active" id="panel-red">
-      <h2 class="section-title">Red de conexiones — muestra de cáncer de pulmón en Chile</h2>
-      <p class="section-sub">23 entidades reales, 18 vínculos. Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.</p>
-      <div class="graph-layout">
-        <div class="graph-box">
-          <svg id="graph" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg"></svg>
-          <div class="graph-legend">
-            <span><span class="swatch" style="background:var(--series-persona)"></span>Persona</span>
-            <span><span class="swatch" style="background:var(--series-institucion)"></span>Institución</span>
-            <span><span class="swatch" style="background:var(--series-ensayo)"></span>Ensayo clínico</span>
-          </div>
-        </div>
-        <div class="detail-panel" id="detail-panel">
-          <p class="placeholder">Click en un nodo del grafo para ver sus hechos y fuentes.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="panel-costos">
-      <h2 class="section-title">Costo del pipeline de automatización (1.000 perfiles)</h2>
-      <p class="section-sub">Estimación verificada en <a href="../COSTS.md">COSTS.md</a>. Creación inicial vs. mantenimiento (re-detectar actividad nueva, no solo re-revisar lo existente), con y sin Batches API.</p>
-      <div class="cost-bars" id="cost-bars"></div>
-      <h2 class="section-title">Estimación a escala</h2>
-      <table class="cost-table">
-        <thead><tr><th>Perfiles</th><th class="num">Creación (estándar)</th><th class="num">Creación (Batches, -50%)</th></tr></thead>
-        <tbody>
-          <tr><td>100 (piloto una especialidad)</td><td class="num">$2.30</td><td class="num">$1.15</td></tr>
-          <tr><td>1.000 (cobertura amplia)</td><td class="num">$23</td><td class="num">$11.50</td></tr>
-          <tr><td>10.000 (multi-especialidad)</td><td class="num">$230*</td><td class="num">$115*</td></tr>
-        </tbody>
-      </table>
-      <p class="section-sub" style="margin-top:8px;">* A esta escala el Resolutor sube con apellidos comunes chilenos — ver advertencia en COSTS.md.</p>
-    </section>
-
-    <section class="panel" id="panel-pipeline">
-      <h2 class="section-title">Cómo se arma un perfil</h2>
-      <p class="section-sub">Cuatro pasos, cada uno con su propio costo y su propio límite de autonomía — ningún hecho llega a "confirmado" sin revisión humana.</p>
-      <div class="pipeline">
-        <div class="step">
-          <h4>1. Recolector</h4>
-          <p>Consulta PubMed y ClinicalTrials.gov. Código plano, sin LLM.</p>
-          <span class="cost-tag">$0 (APIs públicas gratuitas)</span>
-        </div>
-        <div class="arrow">→</div>
-        <div class="step">
-          <h4>2. Extractor</h4>
-          <p>Convierte una fuente cruda en hechos estructurados (hecho/fuente/fecha).</p>
-          <span class="cost-tag">Claude Haiku 4.5 · ~$0.002/llamada</span>
-        </div>
-        <div class="arrow">→</div>
-        <div class="step">
-          <h4>3. Resolutor</h4>
-          <p>¿Es la misma persona? Match exacto por código; casos ambiguos van a un modelo.</p>
-          <span class="cost-tag">Claude Sonnet 5 · solo casos ambiguos</span>
-        </div>
-        <div class="arrow">→</div>
-        <div class="step">
-          <h4>4. Revisor</h4>
-          <p>Marca datos viejos, contradicciones o evidencia débil.</p>
-          <span class="cost-tag">Claude Sonnet 5 · ~$0.009/perfil</span>
-        </div>
-        <div class="arrow">→</div>
-        <div class="step">
-          <h4>5. Revisión humana</h4>
-          <p>Una persona aprueba, corrige o rechaza. Recién ahí un hecho pasa a "confirmado".</p>
-          <span class="cost-tag">No automatizable — a propósito</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="notes">
-      <h2>Qué mejorar después (esto es un prototipo de prueba, no la página final)</h2>
-      <ul>
-        <li>Los datos del grafo están hardcodeados en este HTML — pasar a cargarlos desde <code>data/sample/perfiles-muestra.json</code> (o eventualmente una API) para que crecer la muestra no signifique editar código.</li>
-        <li>El layout del grafo es una simulación de fuerzas simple corrida una sola vez al cargar — con más de ~50 nodos va a necesitar un layout incremental o una librería real (D3, Cytoscape).</li>
-        <li>No hay buscador ni filtro por especialidad, ciudad o institución — el spec original lo pide para la página final.</li>
-        <li>El panel de detalle solo muestra hechos; falta el indicador de confianza (confirmado/probable/pendiente) y el botón de "corregir este dato" del modelo de datos.</li>
-        <li>No hay mapa de Chile con centros geolocalizados — está en el roadmap del README como parte de la pantalla principal.</li>
-        <li>Sin backend: todo vive en un archivo estático. La Fase 4 (automatizar PubMed/ClinicalTrials.gov) va a necesitar una base de datos real y la bandeja de revisión humana descrita en el spec.</li>
-      </ul>
+<header class="topbar">
+  <div class="topbar-row">
+    <span class="brand">KOL Radar</span>
+    <span class="specialty-badge">Cáncer de pulmón · demo</span>
+    <div class="search-wrap">
+      <span class="icon">⌕</span>
+      <input id="search" type="search" placeholder="Buscar por nombre, institución o ciudad…" autocomplete="off" />
     </div>
-
   </div>
+  <div class="filters-row">
+    <button class="chip" data-filter="todos" aria-pressed="true">Todos</button>
+    <button class="chip" data-filter="persona" aria-pressed="false">Personas</button>
+    <button class="chip" data-filter="institucion" aria-pressed="false">Instituciones</button>
+    <button class="chip" data-filter="ensayo" aria-pressed="false">Ensayos clínicos</button>
+    <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false">Ver red de conexiones</button>
+  </div>
+</header>
+
+<main>
+  <section id="list-view" class="active">
+    <p class="results-meta" id="results-meta"></p>
+    <div class="cards" id="cards"></div>
+    <div class="empty-state" id="empty-state" hidden>Sin resultados para esa búsqueda.</div>
+  </section>
+
+  <section id="network-view">
+    <svg id="graph" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="network-legend">
+      <span><span class="swatch" style="background:var(--persona)"></span>Persona</span>
+      <span><span class="swatch" style="background:var(--institucion)"></span>Institución</span>
+      <span><span class="swatch" style="background:var(--ensayo)"></span>Ensayo clínico</span>
+    </div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  Datos de muestra (sin revisión humana todavía) · <a href="../DATA_SAMPLE.md">de dónde salen</a> · <a href="interno.html">cómo se construyó esto</a>
+</footer>
+
+<div class="backdrop" id="backdrop"></div>
+<div class="detail-sheet" id="detail-sheet" role="dialog" aria-modal="true">
+  <div class="sheet-handle"></div>
+  <button class="sheet-close" id="sheet-close" aria-label="Cerrar">✕</button>
+  <div id="detail-content"></div>
 </div>
 
 <script>
 (function () {
   "use strict";
 
-  // ---- Datos (Fase 3 prototipo: hardcodeados a propósito, ver nota "qué mejorar") ----
+  // ---- Datos de muestra (Fase 3 demo — ver "cómo se construyó esto" para el plan de cargarlos dinámicos) ----
   var nodes = [
-    { id: "carlos-rojas", label: "Carlos Rojas", type: "persona", hechos: [
+    { id: "carlos-rojas", label: "Carlos Rojas", type: "persona", ciudad: "Santiago", sub: "Bradford Hill Clinical Research Center", hechos: [
       { t: "Coautor con afiliación chilena (Bradford Hill, Santiago) en ensayo fase 3 de nivolumab en NSCLC estadio III, publicado en Nature Cancer.", u: "https://pubmed.ncbi.nlm.nih.gov/42129521/", f: "2026-07" },
       { t: "Investigador principal de sitio en el ensayo SUNRAY-02 (NCT06890598), centro 'Bradfordhill' — vínculo por coincidencia de nombre, no confirmado por ORCID.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
     ]},
-    { id: "mauricio-burotto", label: "Mauricio Burotto", type: "persona", hechos: [
+    { id: "mauricio-burotto", label: "Mauricio Burotto", type: "persona", ciudad: "Santiago", sub: "Bradford Hill Clinical Research Center", hechos: [
       { t: "Coautor en actualización de resultados de atezolizumab subcutáneo vs. intravenoso en NSCLC.", u: "https://pubmed.ncbi.nlm.nih.gov/42214243/", f: "2026-07" },
       { t: "Coautor de revisión sobre atezolizumab subcutáneo en NSCLC; ORCID registrado en PubMed 0000-0002-7150-4033.", u: "https://pubmed.ncbi.nlm.nih.gov/41946650/", f: "2026-03" }
     ]},
-    { id: "roberto-gonzalez", label: "Roberto González L.", type: "persona", hechos: [
+    { id: "roberto-gonzalez", label: "Roberto González L.", type: "persona", ciudad: "Concepción", sub: "Hospital Clínico Regional de Concepción", hechos: [
       { t: "Autor de correspondencia del estudio de cohorte sobre cáncer pulmonar en un hospital público de Concepción.", u: "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", f: "2022-01" }
     ]},
-    { id: "andres-rojas", label: "Andrés Rojas G.", type: "persona", hechos: [
+    { id: "andres-rojas", label: "Andrés Rojas G.", type: "persona", ciudad: "Puerto Montt", sub: "Hospital Puerto Montt", hechos: [
       { t: "Autor de correspondencia de revisión sobre evaluación preoperatoria en resección de cáncer de pulmón. Nota: comparte apellido con 'Carlos Rojas' pero son personas distintas.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", f: "2015-06" }
     ]},
-    { id: "fernando-saldias", label: "Fernando Saldías P.", type: "persona", hechos: [
+    { id: "fernando-saldias", label: "Fernando Saldías P.", type: "persona", ciudad: "Santiago", sub: "Pontificia Universidad Católica de Chile", hechos: [
       { t: "Coautor de estudio sobre factores pronósticos en cáncer pulmonar, Red de Salud UC.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", f: "2014-12" }
     ]},
-    { id: "javiera-martinez", label: "Javiera Martinez-Gutierrez", type: "persona", hechos: [
+    { id: "javiera-martinez", label: "Javiera Martinez-Gutierrez", type: "persona", ciudad: "Santiago (afiliación secundaria)", sub: "Pontificia Universidad Católica de Chile", hechos: [
       { t: "Coautora de estudio sobre screening de cáncer de pulmón; base laboral principal en University of Melbourne, afiliación secundaria a la PUC.", u: "https://pubmed.ncbi.nlm.nih.gov/41421033/", f: "2026-01" }
     ]},
-    { id: "rodrigo-uribe", label: "Rodrigo Uribe", type: "persona", hechos: [
+    { id: "rodrigo-uribe", label: "Rodrigo Uribe", type: "persona", ciudad: "Santiago", sub: "Fundación Arturo López Pérez (FALP)", hechos: [
       { t: "Investigador principal del sitio FALP en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
     ]},
-    { id: "pamela-salman", label: "Pamela Salman", type: "persona", hechos: [
+    { id: "pamela-salman", label: "Pamela Salman", type: "persona", ciudad: "Santiago", sub: "Centro de Oncología de Precisión", hechos: [
       { t: "Investigadora principal del sitio Centro de Oncología de Precisión en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
     ]},
-    { id: "pablo-rodriguez", label: "Pablo Rodríguez Monarca", type: "persona", hechos: [
+    { id: "pablo-rodriguez", label: "Pablo Rodríguez Monarca", type: "persona", ciudad: "Santiago (Providencia)", sub: "K2 Oncology", hechos: [
       { t: "Investigador principal del sitio K2 Oncology en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
     ]},
-    { id: "bradford-hill", label: "Bradford Hill Clinical Research Center", type: "institucion", hechos: [
+    { id: "bradford-hill", label: "Bradford Hill Clinical Research Center", type: "institucion", ciudad: "Santiago", sub: "Centro de investigación clínica", hechos: [
       { t: "Afiliación de Carlos Rojas y Mauricio Burotto en múltiples publicaciones sobre NSCLC.", u: "https://pubmed.ncbi.nlm.nih.gov/41946650/", f: "2026-03" }
     ]},
-    { id: "falp", label: "Fundación Arturo López Pérez (FALP)", type: "institucion", hechos: [
+    { id: "falp", label: "Fundación Arturo López Pérez (FALP)", type: "institucion", ciudad: "Santiago (Providencia)", sub: "Centro oncológico", hechos: [
       { t: "Sitio activo en 3 ensayos clínicos distintos sobre NSCLC (WU-KONG1, REZILIENT3, BE6A LUNG-02). Aparece con 4 nombres distintos entre fuentes — ver nota de normalización en DATA_SAMPLE.md.", u: "https://clinicaltrials.gov/study/NCT06758401", f: "2026-07-22" }
     ]},
-    { id: "torax", label: "Instituto Nacional del Tórax", type: "institucion", hechos: [
+    { id: "torax", label: "Instituto Nacional del Tórax", type: "institucion", ciudad: "Santiago", sub: "Hospital público", hechos: [
       { t: "Directorio público con Dra. Begoña Yarza (Directora) y Dra. Claudia Sepúlveda (Subdirectora Médica). Sin fecha de actualización visible en la página.", u: "https://torax.cl/equipo-directivo-2/", f: "sin fecha en la fuente" }
     ]},
-    { id: "james-lind", label: "James Lind Centro de Investigación del Cáncer", type: "institucion", hechos: [
+    { id: "james-lind", label: "James Lind Centro de Investigación del Cáncer", type: "institucion", ciudad: "Temuco", sub: "Centro de investigación clínica", hechos: [
       { t: "Sitio activo en 2 ensayos clínicos sobre NSCLC (WU-KONG1, PROCLAIM).", u: "https://clinicaltrials.gov/study/NCT03974022", f: "2026-01-29" }
     ]},
-    { id: "hosp-concepcion", label: "Hospital Clínico Regional de Concepción", type: "institucion", hechos: [
+    { id: "hosp-concepcion", label: "Hospital Clínico Regional de Concepción", type: "institucion", ciudad: "Concepción", sub: "Hospital público", hechos: [
       { t: "Afiliación de Roberto González L. y equipo, estudio de cohorte sobre cáncer pulmonar.", u: "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", f: "2022-01" }
     ]},
-    { id: "hosp-puerto-montt", label: "Hospital Puerto Montt", type: "institucion", hechos: [
+    { id: "hosp-puerto-montt", label: "Hospital Puerto Montt", type: "institucion", ciudad: "Puerto Montt", sub: "Hospital público", hechos: [
       { t: "Afiliación de Andrés Rojas G., revisión sobre evaluación preoperatoria en cáncer de pulmón.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", f: "2015-06" }
     ]},
-    { id: "puc", label: "Pontificia Universidad Católica de Chile", type: "institucion", hechos: [
+    { id: "puc", label: "Pontificia Universidad Católica de Chile", type: "institucion", ciudad: "Santiago", sub: "Universidad / red de salud", hechos: [
       { t: "Afiliación de Fernando Saldías P. y (secundaria) de Javiera Martinez-Gutierrez.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", f: "2014-12" }
     ]},
-    { id: "k2-oncology", label: "K2 Oncology", type: "institucion", hechos: [
+    { id: "k2-oncology", label: "K2 Oncology", type: "institucion", ciudad: "Santiago (Providencia)", sub: "Centro oncológico", hechos: [
       { t: "Sitio del ensayo SUNRAY-02, PI Pablo Rodríguez Monarca.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
     ]},
-    { id: "centro-precision", label: "Centro de Oncología de Precisión", type: "institucion", hechos: [
+    { id: "centro-precision", label: "Centro de Oncología de Precisión", type: "institucion", ciudad: "Santiago", sub: "Centro oncológico", hechos: [
       { t: "Sitio del ensayo SUNRAY-02, PI Pamela Salman.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
     ]},
-    { id: "nct06890598", label: "SUNRAY-02 (NCT06890598)", type: "ensayo", hechos: [
+    { id: "nct06890598", label: "SUNRAY-02 (NCT06890598)", type: "ensayo", ciudad: "Santiago (+3 sitios)", sub: "Fase III · Eli Lilly", hechos: [
       { t: "Fase III, Eli Lilly, olomorasib en NSCLC KRAS G12C. Único de 8 ensayos muestreados que expone PIs reales por sitio en Chile.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
     ]},
-    { id: "nct03974022", label: "WU-KONG1 (NCT03974022)", type: "ensayo", hechos: [
+    { id: "nct03974022", label: "WU-KONG1 (NCT03974022)", type: "ensayo", ciudad: "Santiago (+3 sitios)", sub: "Fase I/II · Dizal Pharmaceuticals", hechos: [
       { t: "Fase I/II, Dizal Pharmaceuticals, sunvozertinib en NSCLC EGFR/HER2. 4 sitios en Chile.", u: "https://clinicaltrials.gov/study/NCT03974022", f: "2026-01-29" }
     ]},
-    { id: "nct05973773", label: "REZILIENT3 (NCT05973773)", type: "ensayo", hechos: [
+    { id: "nct05973773", label: "REZILIENT3 (NCT05973773)", type: "ensayo", ciudad: "Santiago (+2 sitios)", sub: "Fase III · Taiho Oncology", hechos: [
       { t: "Fase III, Taiho Oncology, zipalertinib en NSCLC EGFR exón 20. 3 sitios en Chile.", u: "https://clinicaltrials.gov/study/NCT05973773", f: "2026-07-30" }
     ]},
-    { id: "nct06758401", label: "BE6A LUNG-02 (NCT06758401)", type: "ensayo", hechos: [
+    { id: "nct06758401", label: "BE6A LUNG-02 (NCT06758401)", type: "ensayo", ciudad: "Santiago (+11 sitios)", sub: "Fase III · Pfizer", hechos: [
       { t: "Fase III, Pfizer, sigvotatug vedotin + pembrolizumab en NSCLC. 12 registros de sitio en Chile.", u: "https://clinicaltrials.gov/study/NCT06758401", f: "2026-07-22" }
     ]},
-    { id: "nct03937154", label: "PROCLAIM (NCT03937154)", type: "ensayo", hechos: [
+    { id: "nct03937154", label: "PROCLAIM (NCT03937154)", type: "ensayo", ciudad: "Temuco (+1 sitio)", sub: "Fase III · Amgen", hechos: [
       { t: "Fase III, Amgen, romiplostim para trombocitopenia inducida por quimioterapia en NSCLC y otros cánceres.", u: "https://clinicaltrials.gov/study/NCT03937154", f: "2026-04-07" }
     ]}
   ];
@@ -301,132 +302,214 @@
     ["fernando-saldias", "puc"], ["javiera-martinez", "puc"]
   ];
 
-  // ---- Layout: simulación de fuerzas mínima, corrida una vez al cargar ----
-  var W = 720, H = 480;
   var byId = {};
-  nodes.forEach(function (n, i) {
-    byId[n.id] = n;
-    var angle = (i / nodes.length) * Math.PI * 2;
-    n.x = W / 2 + Math.cos(angle) * 120 + (Math.random() - 0.5) * 20;
-    n.y = H / 2 + Math.sin(angle) * 120 + (Math.random() - 0.5) * 20;
-    n.vx = 0; n.vy = 0;
+  nodes.forEach(function (n) { byId[n.id] = n; });
+
+  function sortableDate(fecha) {
+    var m = fecha && fecha.match(/(\d{4})(-(\d{2}))?(-(\d{2}))?/);
+    if (!m) return "0000-00-00";
+    return m[1] + "-" + (m[3] || "01") + "-" + (m[5] || "01");
+  }
+  function mostRecentHecho(n) {
+    var best = n.hechos[0], bestKey = sortableDate(best.f);
+    n.hechos.forEach(function (h) {
+      var k = sortableDate(h.f);
+      if (k > bestKey) { bestKey = k; best = h; }
+    });
+    return best;
+  }
+
+  var typeLabel = { persona: "Persona", institucion: "Institución", ensayo: "Ensayo clínico" };
+
+  // ---- Render cards ----
+  var state = { filter: "todos", query: "" };
+  var cardsEl = document.getElementById("cards");
+  var metaEl = document.getElementById("results-meta");
+  var emptyEl = document.getElementById("empty-state");
+
+  function matches(n) {
+    if (state.filter !== "todos" && n.type !== state.filter) return false;
+    if (!state.query) return true;
+    var q = state.query.toLowerCase();
+    return n.label.toLowerCase().indexOf(q) !== -1 ||
+           n.ciudad.toLowerCase().indexOf(q) !== -1 ||
+           n.sub.toLowerCase().indexOf(q) !== -1;
+  }
+
+  function renderCards() {
+    var list = nodes.filter(matches).sort(function (a, b) {
+      return sortableDate(mostRecentHecho(b).f).localeCompare(sortableDate(mostRecentHecho(a).f));
+    });
+    cardsEl.innerHTML = "";
+    metaEl.textContent = list.length + (list.length === 1 ? " resultado" : " resultados");
+    emptyEl.hidden = list.length !== 0;
+    list.forEach(function (n) {
+      var card = document.createElement("button");
+      card.className = "card";
+      card.setAttribute("data-id", n.id);
+
+      var top = document.createElement("div"); top.className = "card-top";
+      var dot = document.createElement("span"); dot.className = "type-dot " + n.type;
+      var nameWrap = document.createElement("div");
+      var name = document.createElement("div"); name.className = "card-name"; name.textContent = n.label;
+      var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.sub + " · " + n.ciudad;
+      nameWrap.appendChild(name); nameWrap.appendChild(sub);
+      top.appendChild(dot); top.appendChild(nameWrap);
+
+      var meta = document.createElement("div"); meta.className = "card-meta";
+      var hechosCount = document.createElement("span");
+      hechosCount.textContent = n.hechos.length + (n.hechos.length === 1 ? " hecho registrado" : " hechos registrados");
+      var recent = mostRecentHecho(n);
+      var fecha = document.createElement("span"); fecha.textContent = recent.f === "sin fecha en la fuente" ? "sin fecha" : recent.f;
+      meta.appendChild(hechosCount); meta.appendChild(fecha);
+
+      card.appendChild(top); card.appendChild(meta);
+      card.addEventListener("click", function () { openDetail(n.id); });
+      cardsEl.appendChild(card);
+    });
+  }
+
+  document.getElementById("search").addEventListener("input", function (e) {
+    state.query = e.target.value;
+    renderCards();
   });
 
-  for (var iter = 0; iter < 260; iter++) {
-    for (var i = 0; i < nodes.length; i++) {
-      for (var j = i + 1; j < nodes.length; j++) {
-        var a = nodes[i], b = nodes[j];
-        var dx = a.x - b.x, dy = a.y - b.y;
-        var distSq = dx * dx + dy * dy || 0.01;
-        var dist = Math.sqrt(distSq);
-        var force = 1400 / distSq;
-        var fx = (dx / dist) * force, fy = (dy / dist) * force;
-        a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
+  document.querySelectorAll(".chip[data-filter]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".chip[data-filter]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+      btn.setAttribute("aria-pressed", "true");
+      state.filter = btn.getAttribute("data-filter");
+      renderCards();
+    });
+  });
+
+  // ---- Toggle red / lista ----
+  var networkBtn = document.getElementById("toggle-network");
+  var listView = document.getElementById("list-view");
+  var networkView = document.getElementById("network-view");
+  var networkBuilt = false;
+
+  networkBtn.addEventListener("click", function () {
+    var showingNetwork = networkView.classList.toggle("active");
+    listView.classList.toggle("active", !showingNetwork);
+    networkBtn.setAttribute("aria-pressed", String(showingNetwork));
+    networkBtn.textContent = showingNetwork ? "Ver lista" : "Ver red de conexiones";
+    if (showingNetwork && !networkBuilt) { buildNetwork(); networkBuilt = true; }
+  });
+
+  // ---- Red de conexiones (simulación de fuerzas mínima, una sola vez) ----
+  function buildNetwork() {
+    var W = 720, H = 460;
+    nodes.forEach(function (n, i) {
+      var angle = (i / nodes.length) * Math.PI * 2;
+      n._x = W / 2 + Math.cos(angle) * 120 + (Math.random() - 0.5) * 20;
+      n._y = H / 2 + Math.sin(angle) * 120 + (Math.random() - 0.5) * 20;
+      n._vx = 0; n._vy = 0;
+    });
+    for (var iter = 0; iter < 260; iter++) {
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var a = nodes[i], b = nodes[j];
+          var dx = a._x - b._x, dy = a._y - b._y;
+          var distSq = dx * dx + dy * dy || 0.01;
+          var dist = Math.sqrt(distSq);
+          var force = 1400 / distSq;
+          var fx = (dx / dist) * force, fy = (dy / dist) * force;
+          a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
+        }
       }
+      edges.forEach(function (e) {
+        var a = byId[e[0]], b = byId[e[1]];
+        var dx = b._x - a._x, dy = b._y - a._y;
+        var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
+        var force = (dist - 95) * 0.02;
+        var fx = (dx / dist) * force, fy = (dy / dist) * force;
+        a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
+      });
+      nodes.forEach(function (n) {
+        n._vx += (W / 2 - n._x) * 0.0015;
+        n._vy += (H / 2 - n._y) * 0.0015;
+        n._x += n._vx * 0.15; n._y += n._vy * 0.15;
+        n._vx *= 0.82; n._vy *= 0.82;
+        n._x = Math.max(30, Math.min(W - 30, n._x));
+        n._y = Math.max(20, Math.min(H - 20, n._y));
+      });
     }
+
+    var svg = document.getElementById("graph");
+    var NS = "http://www.w3.org/2000/svg";
     edges.forEach(function (e) {
       var a = byId[e[0]], b = byId[e[1]];
-      var dx = b.x - a.x, dy = b.y - a.y;
-      var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-      var force = (dist - 95) * 0.02;
-      var fx = (dx / dist) * force, fy = (dy / dist) * force;
-      a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
+      var line = document.createElementNS(NS, "line");
+      line.setAttribute("class", "edge-line");
+      line.setAttribute("x1", a._x); line.setAttribute("y1", a._y);
+      line.setAttribute("x2", b._x); line.setAttribute("y2", b._y);
+      svg.appendChild(line);
     });
     nodes.forEach(function (n) {
-      n.vx += (W / 2 - n.x) * 0.0015;
-      n.vy += (H / 2 - n.y) * 0.0015;
-      n.x += n.vx * 0.15; n.y += n.vy * 0.15;
-      n.vx *= 0.82; n.vy *= 0.82;
-      n.x = Math.max(30, Math.min(W - 30, n.x));
-      n.y = Math.max(20, Math.min(H - 20, n.y));
+      var r = n.type === "persona" ? 6 : n.type === "institucion" ? 8 : 7;
+      var circle = document.createElementNS(NS, "circle");
+      circle.setAttribute("class", "node-circle");
+      circle.setAttribute("cx", n._x); circle.setAttribute("cy", n._y);
+      circle.setAttribute("r", r);
+      circle.setAttribute("fill", "var(--" + n.type + ")");
+      circle.addEventListener("click", function () { openDetail(n.id); });
+      svg.appendChild(circle);
+
+      var label = document.createElementNS(NS, "text");
+      label.setAttribute("class", "node-label");
+      label.setAttribute("x", n._x + r + 3);
+      label.setAttribute("y", n._y + 3);
+      label.textContent = n.label.length > 24 ? n.label.slice(0, 22) + "…" : n.label;
+      svg.appendChild(label);
     });
   }
 
-  // ---- Render SVG ----
-  var svg = document.getElementById("graph");
-  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
-  var NS = "http://www.w3.org/2000/svg";
-  var colorByType = { persona: "var(--series-persona)", institucion: "var(--series-institucion)", ensayo: "var(--series-ensayo)" };
+  // ---- Detail sheet ----
+  var backdrop = document.getElementById("backdrop");
+  var sheet = document.getElementById("detail-sheet");
+  var content = document.getElementById("detail-content");
 
-  edges.forEach(function (e) {
-    var a = byId[e[0]], b = byId[e[1]];
-    var line = document.createElementNS(NS, "line");
-    line.setAttribute("class", "edge-line");
-    line.setAttribute("x1", a.x); line.setAttribute("y1", a.y);
-    line.setAttribute("x2", b.x); line.setAttribute("y2", b.y);
-    svg.appendChild(line);
-  });
-
-  nodes.forEach(function (n) {
-    var r = n.type === "persona" ? 6 : n.type === "institucion" ? 8 : 7;
-    var circle = document.createElementNS(NS, "circle");
-    circle.setAttribute("class", "node-circle");
-    circle.setAttribute("cx", n.x); circle.setAttribute("cy", n.y);
-    circle.setAttribute("r", r);
-    circle.setAttribute("fill", colorByType[n.type]);
-    circle.setAttribute("data-id", n.id);
-    circle.addEventListener("click", function () { selectNode(n.id); });
-    svg.appendChild(circle);
-
-    var label = document.createElementNS(NS, "text");
-    label.setAttribute("class", "node-label");
-    label.setAttribute("x", n.x + r + 3);
-    label.setAttribute("y", n.y + 3);
-    label.textContent = n.label.length > 26 ? n.label.slice(0, 24) + "…" : n.label;
-    svg.appendChild(label);
-  });
-
-  function selectNode(id) {
-    svg.querySelectorAll(".node-circle").forEach(function (c) {
-      c.classList.toggle("selected", c.getAttribute("data-id") === id);
-    });
+  function openDetail(id) {
     var n = byId[id];
-    var panel = document.getElementById("detail-panel");
-    panel.innerHTML = "";
-    var h3 = document.createElement("h3"); h3.textContent = n.label; panel.appendChild(h3);
-    var tag = document.createElement("span"); tag.className = "type-tag"; tag.textContent = n.type; panel.appendChild(tag);
-    var ul = document.createElement("ul");
-    n.hechos.forEach(function (h) {
-      var li = document.createElement("li");
-      li.appendChild(document.createTextNode(h.t + " ("+ h.f +") — "));
-      var a = document.createElement("a");
-      a.href = h.u; a.target = "_blank"; a.rel = "noopener"; a.textContent = "ver fuente";
-      li.appendChild(a);
+    content.innerHTML = "";
+    var tag = document.createElement("span"); tag.className = "sheet-type-tag"; tag.textContent = typeLabel[n.type];
+    var name = document.createElement("div"); name.className = "sheet-name"; name.textContent = n.label;
+    var sub = document.createElement("div"); sub.className = "sheet-sub"; sub.textContent = n.sub + " · " + n.ciudad;
+    var sectionTitle = document.createElement("div"); sectionTitle.className = "sheet-section-title";
+    sectionTitle.textContent = "Evidencia (" + n.hechos.length + ")";
+    content.appendChild(tag); content.appendChild(name); content.appendChild(sub); content.appendChild(sectionTitle);
+
+    var ul = document.createElement("ul"); ul.className = "hecho-list";
+    n.hechos.slice().sort(function (a, b) { return sortableDate(b.f).localeCompare(sortableDate(a.f)); }).forEach(function (h) {
+      var li = document.createElement("li"); li.className = "hecho-item";
+      li.appendChild(document.createTextNode(h.t));
+      var fechaLine = document.createElement("span"); fechaLine.className = "hecho-fecha";
+      fechaLine.textContent = (h.f === "sin fecha en la fuente" ? "sin fecha en la fuente" : h.f);
+      var a = document.createElement("a"); a.href = h.u; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Ver fuente →";
+      fechaLine.appendChild(a);
+      li.appendChild(fechaLine);
       ul.appendChild(li);
     });
-    panel.appendChild(ul);
+    content.appendChild(ul);
+
+    var note = document.createElement("div"); note.className = "confianza-note";
+    note.textContent = "Confianza: pendiente de revisión humana. Esto es una muestra de datos públicos, no una evaluación de desempeño profesional.";
+    content.appendChild(note);
+
+    backdrop.classList.add("open");
+    sheet.classList.add("open");
   }
 
-  // ---- Costos: barras ----
-  var costData = [
-    { label: "Creación estándar", value: 23, max: 23 },
-    { label: "Creación (Batches, -50%)", value: 11.5, max: 23 },
-    { label: "Mantenimiento estándar", value: 23, max: 23 }
-  ];
-  var costBars = document.getElementById("cost-bars");
-  costData.forEach(function (d) {
-    var row = document.createElement("div");
-    row.className = "cost-row";
-    var label = document.createElement("div"); label.textContent = d.label;
-    var track = document.createElement("div"); track.className = "track";
-    var fill = document.createElement("div"); fill.className = "fill";
-    fill.style.width = Math.round((d.value / d.max) * 100) + "%";
-    track.appendChild(fill);
-    var value = document.createElement("div"); value.className = "value"; value.textContent = "$" + d.value;
-    row.appendChild(label); row.appendChild(track); row.appendChild(value);
-    costBars.appendChild(row);
-  });
+  function closeDetail() {
+    backdrop.classList.remove("open");
+    sheet.classList.remove("open");
+  }
+  document.getElementById("sheet-close").addEventListener("click", closeDetail);
+  backdrop.addEventListener("click", closeDetail);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDetail(); });
 
-  // ---- Tabs ----
-  var tabs = document.querySelectorAll("nav.tabs button");
-  tabs.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      tabs.forEach(function (b) { b.setAttribute("aria-selected", "false"); });
-      btn.setAttribute("aria-selected", "true");
-      document.querySelectorAll("section.panel").forEach(function (p) { p.classList.remove("active"); });
-      document.getElementById("panel-" + btn.getAttribute("data-panel")).classList.add("active");
-    });
-  });
+  renderCards();
 })();
 </script>
 </body>
