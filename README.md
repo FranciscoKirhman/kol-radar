@@ -3,9 +3,11 @@
 Radar científico de especialistas, centros y evidencia pública en Chile, pensado como
 herramienta de apoyo para Medical Science Liaisons (MSL) y Medical Affairs.
 
-Este documento es el spec inicial del proyecto (Fase 1: planificación). No hay código
-todavía — el objetivo de este commit es dejar por escrito qué hace la herramienta, qué
-no hace, de dónde saca la información y bajo qué límites opera, antes de construir nada.
+**Demo en vivo**: <https://franciscokirhman.github.io/kol-radar/>
+
+Este documento es el spec del proyecto (objetivo, alcance, fuentes, modelo de datos,
+disclaimers) escrito antes de construir nada. Desde entonces se armó un prototipo de
+Fase 3 con datos reales de muestra — ver "Estado actual" al final de este archivo.
 
 ## Objetivo
 
