@@ -85,9 +85,14 @@
   /* ---------- Main / list ---------- */
   main { max-width: 1080px; margin: 0 auto; padding: 6px 16px 48px; }
   .results-meta { font-size: 12.5px; color: var(--text-muted); margin: 6px 2px 12px; }
-  .cards { display: grid; grid-template-columns: 1fr; gap: 10px; }
-  @media (min-width: 640px) { .cards { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 980px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  .type-section-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    color: var(--text-muted); margin: 22px 2px 10px;
+  }
+  .type-section-title:first-child { margin-top: 4px; }
+  .cards-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 640px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
 
   .card {
     text-align: left; width: 100%; font: inherit; cursor: pointer;
@@ -172,6 +177,7 @@
   .sheet-section-title:first-of-type { margin-top: 0; }
   .hecho-list { list-style: none; margin: 0 0 4px; padding: 0; }
   .hecho-item { padding: 12px 0; border-top: 1px solid var(--surface-2); font-size: 13.5px; line-height: 1.5; }
+  .hecho-tag { display: inline-block; font-size: 10.5px; font-weight: 600; color: var(--accent); background: var(--surface-1); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; margin: 0 6px 2px 0; vertical-align: middle; }
   .hecho-item:first-child { border-top: none; }
   .hecho-fecha { display: block; font-size: 11px; color: var(--text-muted); margin-top: 6px; }
   .hecho-fecha a { color: var(--accent); text-decoration: none; margin-left: 4px; }
@@ -198,7 +204,7 @@
     <button class="chip" data-filter="persona" aria-pressed="false">Personas</button>
     <button class="chip" data-filter="institucion" aria-pressed="false">Instituciones</button>
     <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Ensayos clínicos</button>
-    <button class="chip sort-toggle" id="sort-toggle" data-sort="senales">Ordenar: señales</button>
+    <button class="chip sort-toggle" id="sort-toggle" data-sort="senales">Ordenar: puntaje</button>
     <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false">Ver red de conexiones</button>
   </div>
 </header>
@@ -272,17 +278,29 @@
   function connectionCount(id) {
     return vinculos.filter(function (v) { return v.origen === id || v.destino === id; }).length;
   }
-  // El "puntaje" es la suma sin ponderar de señales contables (publicaciones + ensayos + conexiones).
-  // A propósito no es un número inventado ni oculto: cada componente se puede abrir y ver de qué hechos sale.
+  // Un ensayo fase III/IV pesa el doble que uno fase I/II: es el único peso que no inventamos,
+  // porque ClinicalTrials.gov ya entrega la fase como dato estructurado real.
+  function ensayoPeso(h) {
+    var fase = (h.fase || "").toLowerCase();
+    return (fase.indexOf("iii") !== -1 || fase.indexOf("iv") !== -1) ? 2 : 1;
+  }
+  // El "puntaje" combina señales contables. Publicaciones y conexiones valen 1 cada una porque
+  // no tenemos un dato real de impacto que pesarlas de forma honesta (ver revista en el detalle,
+  // que se muestra sin pesar). Los ensayos sí se pesan por fase. Nunca es un número oculto: cada
+  // componente se puede abrir y ver de qué hechos sale.
   function computeSenales(n) {
-    var publicaciones = countByTipo(n.hechos, "publicacion");
-    var ensayos = countByTipo(n.hechos, "ensayo_clinico");
+    var pubHechos = n.hechos.filter(function (h) { return h.tipo === "publicacion"; });
+    var ensayoHechos = n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; });
+    var docenciaHechos = n.hechos.filter(function (h) { return h.tipo === "congreso"; });
     var conexiones = connectionCount(n.id);
+    var ensayosPts = ensayoHechos.reduce(function (sum, h) { return sum + ensayoPeso(h); }, 0);
     return {
-      publicaciones: publicaciones,
-      ensayos: ensayos,
+      publicaciones: pubHechos.length,
+      ensayos: ensayoHechos.length,
+      ensayosPts: ensayosPts,
+      docencia: docenciaHechos.length,
       conexiones: conexiones,
-      total: publicaciones + ensayos + conexiones
+      total: pubHechos.length + ensayosPts + conexiones + docenciaHechos.length
     };
   }
 
@@ -323,50 +341,79 @@
            n.subtitulo.toLowerCase().indexOf(q) !== -1;
   }
 
-  function renderCards() {
-    var list = entidades.filter(matches);
+  var TIPO_ORDEN = ["persona", "institucion", "ensayo_clinico"];
+  var TIPO_GRUPO_LABEL = { persona: "Personas", institucion: "Instituciones", ensayo_clinico: "Ensayos clínicos" };
+
+  function sortList(list) {
     if (state.sort === "senales") {
       list.sort(function (a, b) { return computeSenales(b).total - computeSenales(a).total; });
     } else {
       list.sort(function (a, b) { return sortableDate(mostRecentHecho(b).fecha).localeCompare(sortableDate(mostRecentHecho(a).fecha)); });
     }
+    return list;
+  }
+
+  function buildCard(n) {
+    var senales = computeSenales(n);
+    var card = document.createElement("button");
+    card.className = "card";
+    card.setAttribute("data-id", n.id);
+
+    var top = document.createElement("div"); top.className = "card-top";
+    var dot = document.createElement("span"); dot.className = "type-dot " + n.tipo;
+    var nameRow = document.createElement("div"); nameRow.className = "card-name-row";
+    var nameWrap = document.createElement("div");
+    var name = document.createElement("div"); name.className = "card-name"; name.textContent = n.nombre;
+    var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
+    nameWrap.appendChild(name); nameWrap.appendChild(sub);
+    var scoreBadge = document.createElement("span"); scoreBadge.className = "score-badge"; scoreBadge.textContent = senales.total + " pts";
+    nameRow.appendChild(nameWrap); nameRow.appendChild(scoreBadge);
+    top.appendChild(dot); top.appendChild(nameRow);
+
+    var signalRow = document.createElement("div"); signalRow.className = "signal-row";
+    if (senales.publicaciones) { var c1 = document.createElement("span"); c1.className = "signal-chip"; c1.textContent = senales.publicaciones + " public."; signalRow.appendChild(c1); }
+    if (senales.ensayos) {
+      var c2 = document.createElement("span"); c2.className = "signal-chip";
+      c2.textContent = senales.ensayos + " ensayo" + (senales.ensayos > 1 ? "s" : "") + (senales.ensayosPts !== senales.ensayos ? " (" + senales.ensayosPts + " pts)" : "");
+      signalRow.appendChild(c2);
+    }
+    if (senales.conexiones) { var c3 = document.createElement("span"); c3.className = "signal-chip"; c3.textContent = senales.conexiones + " conexion" + (senales.conexiones > 1 ? "es" : ""); signalRow.appendChild(c3); }
+    if (senales.docencia) { var c4 = document.createElement("span"); c4.className = "signal-chip"; c4.textContent = senales.docencia + " congreso" + (senales.docencia > 1 ? "s" : ""); signalRow.appendChild(c4); }
+
+    var meta = document.createElement("div"); meta.className = "card-meta";
+    var hechosCount = document.createElement("span");
+    hechosCount.textContent = n.hechos.length + (n.hechos.length === 1 ? " hecho registrado" : " hechos registrados");
+    var recent = mostRecentHecho(n);
+    var fecha = document.createElement("span"); fecha.textContent = recent.fecha === "sin fecha en la fuente" ? "sin fecha" : recent.fecha;
+    meta.appendChild(hechosCount); meta.appendChild(fecha);
+
+    card.appendChild(top);
+    if (signalRow.childNodes.length) card.appendChild(signalRow);
+    card.appendChild(meta);
+    card.addEventListener("click", function () { openDetail(n.id); });
+    return card;
+  }
+
+  // Agrupada por tipo a propósito: mezclar personas, instituciones y ensayos en una sola
+  // grilla hace parecer comparables cosas que no lo son (un médico no compite con un hospital).
+  function renderCards() {
+    var list = entidades.filter(matches);
     cardsEl.innerHTML = "";
     metaEl.textContent = list.length + (list.length === 1 ? " resultado" : " resultados");
     emptyEl.hidden = list.length !== 0 || entidades.length === 0;
-    list.forEach(function (n) {
-      var senales = computeSenales(n);
-      var card = document.createElement("button");
-      card.className = "card";
-      card.setAttribute("data-id", n.id);
 
-      var top = document.createElement("div"); top.className = "card-top";
-      var dot = document.createElement("span"); dot.className = "type-dot " + n.tipo;
-      var nameRow = document.createElement("div"); nameRow.className = "card-name-row";
-      var nameWrap = document.createElement("div");
-      var name = document.createElement("div"); name.className = "card-name"; name.textContent = n.nombre;
-      var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
-      nameWrap.appendChild(name); nameWrap.appendChild(sub);
-      var scoreBadge = document.createElement("span"); scoreBadge.className = "score-badge"; scoreBadge.textContent = senales.total + " señ.";
-      nameRow.appendChild(nameWrap); nameRow.appendChild(scoreBadge);
-      top.appendChild(dot); top.appendChild(nameRow);
-
-      var signalRow = document.createElement("div"); signalRow.className = "signal-row";
-      if (senales.publicaciones) { var c1 = document.createElement("span"); c1.className = "signal-chip"; c1.textContent = senales.publicaciones + " public."; signalRow.appendChild(c1); }
-      if (senales.ensayos) { var c2 = document.createElement("span"); c2.className = "signal-chip"; c2.textContent = senales.ensayos + " ensayo" + (senales.ensayos > 1 ? "s" : ""); signalRow.appendChild(c2); }
-      if (senales.conexiones) { var c3 = document.createElement("span"); c3.className = "signal-chip"; c3.textContent = senales.conexiones + " conexion" + (senales.conexiones > 1 ? "es" : ""); signalRow.appendChild(c3); }
-
-      var meta = document.createElement("div"); meta.className = "card-meta";
-      var hechosCount = document.createElement("span");
-      hechosCount.textContent = n.hechos.length + (n.hechos.length === 1 ? " hecho registrado" : " hechos registrados");
-      var recent = mostRecentHecho(n);
-      var fecha = document.createElement("span"); fecha.textContent = recent.fecha === "sin fecha en la fuente" ? "sin fecha" : recent.fecha;
-      meta.appendChild(hechosCount); meta.appendChild(fecha);
-
-      card.appendChild(top);
-      if (signalRow.childNodes.length) card.appendChild(signalRow);
-      card.appendChild(meta);
-      card.addEventListener("click", function () { openDetail(n.id); });
-      cardsEl.appendChild(card);
+    var showHeaders = state.filter === "todos";
+    TIPO_ORDEN.forEach(function (tipo) {
+      var grupo = sortList(list.filter(function (n) { return n.tipo === tipo; }));
+      if (!grupo.length) return;
+      if (showHeaders) {
+        var section = document.createElement("div"); section.className = "type-section-title";
+        section.textContent = TIPO_GRUPO_LABEL[tipo] + " (" + grupo.length + ")";
+        cardsEl.appendChild(section);
+      }
+      var grid = document.createElement("div"); grid.className = "cards-grid";
+      grupo.forEach(function (n) { grid.appendChild(buildCard(n)); });
+      cardsEl.appendChild(grid);
     });
   }
 
@@ -386,7 +433,7 @@
 
   document.getElementById("sort-toggle").addEventListener("click", function (btn) {
     state.sort = state.sort === "senales" ? "reciente" : "senales";
-    this.textContent = "Ordenar: " + (state.sort === "senales" ? "señales" : "más reciente");
+    this.textContent = "Ordenar: " + (state.sort === "senales" ? "puntaje" : "más reciente");
     renderCards();
   });
 
@@ -461,7 +508,7 @@
       circle.setAttribute("class", "node-circle");
       circle.setAttribute("cx", n._x); circle.setAttribute("cy", n._y);
       circle.setAttribute("r", r);
-      circle.setAttribute("fill", "var(--" + n.tipo + ")");
+      circle.setAttribute("fill", "var(--" + (n.tipo === "ensayo_clinico" ? "ensayo" : n.tipo) + ")");
       circle.addEventListener("click", function () { openDetail(n.id); });
       svg.appendChild(circle);
 
@@ -493,11 +540,18 @@
     var scorePanel = document.createElement("div"); scorePanel.className = "score-panel";
     var scoreTitle = document.createElement("div"); scoreTitle.className = "score-panel-title";
     var scoreNum = document.createElement("span"); scoreNum.className = "num"; scoreNum.textContent = senales.total;
-    var scoreLbl = document.createElement("span"); scoreLbl.className = "label"; scoreLbl.textContent = "señales";
+    var scoreLbl = document.createElement("span"); scoreLbl.className = "label"; scoreLbl.textContent = "puntos";
     scoreTitle.appendChild(scoreNum); scoreTitle.appendChild(scoreLbl);
     scorePanel.appendChild(scoreTitle);
     var breakdown = document.createElement("div"); breakdown.className = "score-breakdown";
-    [["Publicaciones", senales.publicaciones], ["Ensayos clínicos", senales.ensayos], ["Conexiones en la red", senales.conexiones]].forEach(function (row) {
+    var ensayosLabel = "Ensayos clínicos" + (senales.ensayosPts !== senales.ensayos ? " (pesados por fase)" : "");
+    var filas = [
+      ["Publicaciones", senales.publicaciones],
+      [ensayosLabel, senales.ensayos + (senales.ensayosPts !== senales.ensayos ? " → " + senales.ensayosPts + " pts" : "")],
+      ["Conexiones en la red", senales.conexiones],
+      ["Docencia y congresos", senales.docencia]
+    ];
+    filas.forEach(function (row) {
       var r = document.createElement("div"); r.className = "score-breakdown-row";
       var l = document.createElement("span"); l.textContent = row[0];
       var v = document.createElement("b"); v.textContent = row[1];
@@ -506,7 +560,10 @@
     });
     scorePanel.appendChild(breakdown);
     var scoreNote = document.createElement("div"); scoreNote.className = "score-note";
-    scoreNote.textContent = "No es un ranking oculto: es la suma de menciones públicas verificables listadas abajo, cada una con su fuente.";
+    scoreNote.textContent = "No es un ranking oculto: es la suma de menciones públicas verificables listadas abajo, cada una con su fuente. " +
+      "Los ensayos fase III/IV pesan el doble que fase I/II porque ClinicalTrials.gov entrega esa fase como dato estructurado real — " +
+      "publicaciones y conexiones valen 1 punto cada una porque no tenemos un dato real de impacto para pesarlas sin inventar. " +
+      (senales.docencia === 0 ? "Docencia y congresos está en 0: nuestras fuentes actuales (PubMed, ClinicalTrials.gov) no capturan cursos ni charlas — no significa que esta persona no las dicte." : "");
     scorePanel.appendChild(scoreNote);
     content.appendChild(scorePanel);
 
@@ -525,6 +582,14 @@
       var ul = document.createElement("ul"); ul.className = "hecho-list";
       hechos.slice().sort(function (a, b) { return sortableDate(b.fecha).localeCompare(sortableDate(a.fecha)); }).forEach(function (h) {
         var li = document.createElement("li"); li.className = "hecho-item";
+        if (h.tipo === "ensayo_clinico" && h.fase) {
+          var faseTag = document.createElement("span"); faseTag.className = "hecho-tag"; faseTag.textContent = h.fase;
+          li.appendChild(faseTag);
+        }
+        if (h.tipo === "publicacion" && h.revista) {
+          var revistaTag = document.createElement("span"); revistaTag.className = "hecho-tag"; revistaTag.textContent = h.revista;
+          li.appendChild(revistaTag);
+        }
         li.appendChild(document.createTextNode(h.hecho));
         var fechaLine = document.createElement("span"); fechaLine.className = "hecho-fecha";
         fechaLine.textContent = h.fecha;
