@@ -104,6 +104,43 @@ evita sobre-interpretar una coautoría como una relación de poder.
 Toda incorporación automática entra a una bandeja de revisión. Una persona acepta,
 corrige o rechaza antes de que el dato pase a `confirmado`.
 
+## Cómo correr el prototipo (Fase 3)
+
+`web/index.html` carga los datos con `fetch()`, así que necesita servirse por HTTP —
+abrirlo con doble-click (`file://`) no funciona, el navegador bloquea esa llamada.
+
+**Opción 1 — Python (ya viene instalado en macOS/Linux):**
+
+```bash
+cd kol-radar
+python3 -m http.server 8000
+```
+
+Después abre <http://localhost:8000/web/index.html> en el navegador. Para parar el
+servidor: `Ctrl+C` en la terminal donde corre.
+
+**Opción 2 — Node, si no tienes Python o preferís npm:**
+
+```bash
+cd kol-radar
+npx serve .
+```
+
+Te va a mostrar la URL exacta en la terminal (normalmente `http://localhost:3000`) —
+agrégale `/web/index.html` al final.
+
+**Si el puerto ya está ocupado** (`Address already in use`), cambia el número de puerto
+(ej. `python3 -m http.server 8001`) y ajusta la URL igual.
+
+**Qué vas a ver:**
+- `web/index.html` — la vista de producto (búsqueda, lista con señales, red de
+  conexiones, detalle con evidencia). Esto es lo que probaría un MSL.
+- `web/interno.html` — cómo se construyó (costos, arquitectura de agentes, pipeline).
+  Enlazada desde el pie de página de `index.html`, no pensada para el usuario final.
+
+Si ves un mensaje de error en pantalla en vez de la lista, es casi siempre que abriste
+el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no `file://`.
+
 ## Roadmap
 
 1. **Fase 1 (este commit)** — spec: qué hace, qué no hace, fuentes, modelo de datos,
@@ -119,4 +156,14 @@ corrige o rechaza antes de que el dato pase a `confirmado`.
 
 ## Estado actual
 
-En planificación. Sin código todavía.
+Prototipo de Fase 3 funcionando con datos reales de muestra (una especialidad,
+cáncer de pulmón): [COMPETITORS.md](COMPETITORS.md) (panorama competitivo),
+[DATA_SAMPLE.md](DATA_SAMPLE.md) + [data/sample/perfiles-muestra.json](data/sample/perfiles-muestra.json)
+(23 entidades reales con fuentes verificadas), [COSTS.md](COSTS.md) (modelo de costos
+del pipeline de automatización, verificado adversarialmente), y `web/index.html`
+(la página de producto — ver "Cómo correr el prototipo" arriba).
+
+Sin automatizar todavía: Fase 2 (validación manual de 30 fichas) no se hizo formalmente
+porque se saltó directo a construir con datos de muestra ya verificados; Fase 4
+(automatización real vía los cuatro agentes) sigue sin implementar — el pipeline
+descrito en `COSTS.md` es una estimación, no código corriendo.
