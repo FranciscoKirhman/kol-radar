@@ -197,12 +197,13 @@
     <div class="notes">
       <h2>Qué mejorar después (esto es un prototipo de prueba, no la página final)</h2>
       <ul>
-        <li>Los datos del grafo están hardcodeados en este HTML — pasar a cargarlos desde <code>data/sample/perfiles-muestra.json</code> (o eventualmente una API) para que crecer la muestra no signifique editar código.</li>
+        <li><s>Los datos del grafo están hardcodeados</s> — resuelto: <code>web/index.html</code> ahora carga <code>data/sample/perfiles-muestra.json</code> en vivo vía <code>fetch()</code> (necesita servirse por HTTP, no <code>file://</code>). Esta página (<code>interno.html</code>) todavía tiene su copia hardcodeada — pendiente de migrar si se sigue usando.</li>
+        <li><s>Falta el puntaje</s> — resuelto en <code>index.html</code>: "señales" transparentes (publicaciones + ensayos + conexiones) con desglose siempre visible, nunca un número oculto.</li>
         <li>El layout del grafo es una simulación de fuerzas simple corrida una sola vez al cargar — con más de ~50 nodos va a necesitar un layout incremental o una librería real (D3, Cytoscape).</li>
-        <li>No hay buscador ni filtro por especialidad, ciudad o institución — el spec original lo pide para la página final.</li>
-        <li>El panel de detalle solo muestra hechos; falta el indicador de confianza (confirmado/probable/pendiente) y el botón de "corregir este dato" del modelo de datos.</li>
+        <li>No hay filtro por especialidad (solo por tipo de entidad y texto libre) — el spec original pide filtrar también por biomarcador, algo que los datos actuales no sostienen de forma confiable.</li>
+        <li>El indicador de confianza (confirmado/probable/pendiente) se muestra como nota fija de texto, no como estado real por hecho — falta el botón de "corregir este dato" del modelo de datos.</li>
         <li>No hay mapa de Chile con centros geolocalizados — está en el roadmap del README como parte de la pantalla principal.</li>
-        <li>Sin backend: todo vive en un archivo estático. La Fase 4 (automatizar PubMed/ClinicalTrials.gov) va a necesitar una base de datos real y la bandeja de revisión humana descrita en el spec.</li>
+        <li>Sin backend real: los datos siguen viviendo en un archivo JSON estático, no en una base de datos. La Fase 4 (automatizar PubMed/ClinicalTrials.gov) va a necesitar eso y la bandeja de revisión humana descrita en el spec.</li>
       </ul>
     </div>
 

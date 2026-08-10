@@ -15,7 +15,6 @@
     --text-secondary: #52514e;
     --text-muted: #85837c;
     --accent: #2a78d6;
-    --accent-ink: #ffffff;
     --persona: #2a78d6;
     --institucion: #eb6834;
     --ensayo: #1baf7a;
@@ -81,6 +80,7 @@
   .chip[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-0); border-color: var(--text-primary); }
   .chip.spacer { margin-left: auto; }
   .chip.network-toggle { color: var(--accent); border-color: var(--accent); }
+  .chip.sort-toggle { color: var(--text-secondary); }
 
   /* ---------- Main / list ---------- */
   main { max-width: 1080px; margin: 0 auto; padding: 6px 16px 48px; }
@@ -92,7 +92,7 @@
   .card {
     text-align: left; width: 100%; font: inherit; cursor: pointer;
     background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px;
-    padding: 14px 14px; display: flex; flex-direction: column; gap: 6px;
+    padding: 14px 14px; display: flex; flex-direction: column; gap: 8px;
     transition: border-color .12s, transform .12s;
   }
   .card:hover, .card:focus-visible { border-color: var(--accent); }
@@ -101,11 +101,20 @@
   .type-dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 5px; flex: none; }
   .type-dot.persona { background: var(--persona); }
   .type-dot.institucion { background: var(--institucion); }
-  .type-dot.ensayo { background: var(--ensayo); }
+  .type-dot.ensayo_clinico { background: var(--ensayo); }
+  .card-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; flex: 1; }
   .card-name { font-weight: 600; font-size: 14.5px; line-height: 1.3; }
   .card-sub { font-size: 12.5px; color: var(--text-secondary); }
+  .score-badge {
+    flex: none; font-size: 11px; font-weight: 600; color: var(--text-secondary);
+    background: var(--surface-2); border-radius: 6px; padding: 3px 7px;
+    white-space: nowrap;
+  }
+  .signal-row { display: flex; flex-wrap: wrap; gap: 5px; }
+  .signal-chip { font-size: 10.5px; color: var(--text-secondary); background: var(--surface-1); border: 1px solid var(--border); border-radius: 5px; padding: 2px 6px; }
   .card-meta { font-size: 11.5px; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--surface-2); }
-  .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 13.5px; }
+  .empty-state, .loading-state, .error-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 13.5px; }
+  .error-state { color: var(--institucion); }
 
   /* ---------- Network view ---------- */
   #network-view { display: none; }
@@ -138,7 +147,7 @@
   @media (min-width: 720px) {
     .detail-sheet {
       left: auto; top: 0; bottom: 0; right: 0; max-height: none;
-      width: 400px; border-radius: 0; border: none; border-left: 1px solid var(--border);
+      width: 420px; border-radius: 0; border: none; border-left: 1px solid var(--border);
       transform: translateX(100%);
     }
     .detail-sheet.open { transform: translateX(0); }
@@ -148,8 +157,19 @@
   .sheet-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 18px; color: var(--text-muted); cursor: pointer; padding: 4px 8px; }
   .sheet-name { font-size: 18px; font-weight: 700; margin: 4px 0 4px; padding-right: 28px; }
   .sheet-type-tag { display: inline-block; font-size: 11px; color: var(--text-secondary); background: var(--surface-2); border-radius: 4px; padding: 2px 8px; margin-bottom: 4px; }
-  .sheet-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
-  .sheet-section-title { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; color: var(--text-muted); margin: 0 0 8px; }
+  .sheet-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
+
+  .score-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; }
+  .score-panel-title { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .score-panel-title .num { font-size: 20px; font-weight: 700; }
+  .score-panel-title .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .03em; }
+  .score-breakdown { display: flex; flex-direction: column; gap: 5px; }
+  .score-breakdown-row { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-secondary); }
+  .score-breakdown-row b { color: var(--text-primary); font-weight: 600; }
+  .score-note { font-size: 11px; color: var(--text-muted); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); line-height: 1.4; }
+
+  .sheet-section-title { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; color: var(--text-muted); margin: 18px 0 8px; }
+  .sheet-section-title:first-of-type { margin-top: 0; }
   .hecho-list { list-style: none; margin: 0 0 4px; padding: 0; }
   .hecho-item { padding: 12px 0; border-top: 1px solid var(--surface-2); font-size: 13.5px; line-height: 1.5; }
   .hecho-item:first-child { border-top: none; }
@@ -177,7 +197,8 @@
     <button class="chip" data-filter="todos" aria-pressed="true">Todos</button>
     <button class="chip" data-filter="persona" aria-pressed="false">Personas</button>
     <button class="chip" data-filter="institucion" aria-pressed="false">Instituciones</button>
-    <button class="chip" data-filter="ensayo" aria-pressed="false">Ensayos clínicos</button>
+    <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Ensayos clínicos</button>
+    <button class="chip sort-toggle" id="sort-toggle" data-sort="senales">Ordenar: señales</button>
     <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false">Ver red de conexiones</button>
   </div>
 </header>
@@ -186,6 +207,8 @@
   <section id="list-view" class="active">
     <p class="results-meta" id="results-meta"></p>
     <div class="cards" id="cards"></div>
+    <div class="loading-state" id="loading-state">Cargando datos de <code>data/sample/perfiles-muestra.json</code>…</div>
+    <div class="error-state" id="error-state" hidden></div>
     <div class="empty-state" id="empty-state" hidden>Sin resultados para esa búsqueda.</div>
   </section>
 
@@ -200,7 +223,8 @@
 </main>
 
 <footer class="page-footer">
-  Datos de muestra (sin revisión humana todavía) · <a href="../DATA_SAMPLE.md">de dónde salen</a> · <a href="interno.html">cómo se construyó esto</a>
+  Datos de muestra (sin revisión humana todavía), cargados en vivo desde <code>data/sample/perfiles-muestra.json</code> ·
+  <a href="../DATA_SAMPLE.md">de dónde salen</a> · <a href="interno.html">cómo se construyó esto</a>
 </footer>
 
 <div class="backdrop" id="backdrop"></div>
@@ -214,96 +238,20 @@
 (function () {
   "use strict";
 
-  // ---- Datos de muestra (Fase 3 demo — ver "cómo se construyó esto" para el plan de cargarlos dinámicos) ----
-  var nodes = [
-    { id: "carlos-rojas", label: "Carlos Rojas", type: "persona", ciudad: "Santiago", sub: "Bradford Hill Clinical Research Center", hechos: [
-      { t: "Coautor con afiliación chilena (Bradford Hill, Santiago) en ensayo fase 3 de nivolumab en NSCLC estadio III, publicado en Nature Cancer.", u: "https://pubmed.ncbi.nlm.nih.gov/42129521/", f: "2026-07" },
-      { t: "Investigador principal de sitio en el ensayo SUNRAY-02 (NCT06890598), centro 'Bradfordhill' — vínculo por coincidencia de nombre, no confirmado por ORCID.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "mauricio-burotto", label: "Mauricio Burotto", type: "persona", ciudad: "Santiago", sub: "Bradford Hill Clinical Research Center", hechos: [
-      { t: "Coautor en actualización de resultados de atezolizumab subcutáneo vs. intravenoso en NSCLC.", u: "https://pubmed.ncbi.nlm.nih.gov/42214243/", f: "2026-07" },
-      { t: "Coautor de revisión sobre atezolizumab subcutáneo en NSCLC; ORCID registrado en PubMed 0000-0002-7150-4033.", u: "https://pubmed.ncbi.nlm.nih.gov/41946650/", f: "2026-03" }
-    ]},
-    { id: "roberto-gonzalez", label: "Roberto González L.", type: "persona", ciudad: "Concepción", sub: "Hospital Clínico Regional de Concepción", hechos: [
-      { t: "Autor de correspondencia del estudio de cohorte sobre cáncer pulmonar en un hospital público de Concepción.", u: "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", f: "2022-01" }
-    ]},
-    { id: "andres-rojas", label: "Andrés Rojas G.", type: "persona", ciudad: "Puerto Montt", sub: "Hospital Puerto Montt", hechos: [
-      { t: "Autor de correspondencia de revisión sobre evaluación preoperatoria en resección de cáncer de pulmón. Nota: comparte apellido con 'Carlos Rojas' pero son personas distintas.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", f: "2015-06" }
-    ]},
-    { id: "fernando-saldias", label: "Fernando Saldías P.", type: "persona", ciudad: "Santiago", sub: "Pontificia Universidad Católica de Chile", hechos: [
-      { t: "Coautor de estudio sobre factores pronósticos en cáncer pulmonar, Red de Salud UC.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", f: "2014-12" }
-    ]},
-    { id: "javiera-martinez", label: "Javiera Martinez-Gutierrez", type: "persona", ciudad: "Santiago (afiliación secundaria)", sub: "Pontificia Universidad Católica de Chile", hechos: [
-      { t: "Coautora de estudio sobre screening de cáncer de pulmón; base laboral principal en University of Melbourne, afiliación secundaria a la PUC.", u: "https://pubmed.ncbi.nlm.nih.gov/41421033/", f: "2026-01" }
-    ]},
-    { id: "rodrigo-uribe", label: "Rodrigo Uribe", type: "persona", ciudad: "Santiago", sub: "Fundación Arturo López Pérez (FALP)", hechos: [
-      { t: "Investigador principal del sitio FALP en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "pamela-salman", label: "Pamela Salman", type: "persona", ciudad: "Santiago", sub: "Centro de Oncología de Precisión", hechos: [
-      { t: "Investigadora principal del sitio Centro de Oncología de Precisión en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "pablo-rodriguez", label: "Pablo Rodríguez Monarca", type: "persona", ciudad: "Santiago (Providencia)", sub: "K2 Oncology", hechos: [
-      { t: "Investigador principal del sitio K2 Oncology en el ensayo SUNRAY-02.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "bradford-hill", label: "Bradford Hill Clinical Research Center", type: "institucion", ciudad: "Santiago", sub: "Centro de investigación clínica", hechos: [
-      { t: "Afiliación de Carlos Rojas y Mauricio Burotto en múltiples publicaciones sobre NSCLC.", u: "https://pubmed.ncbi.nlm.nih.gov/41946650/", f: "2026-03" }
-    ]},
-    { id: "falp", label: "Fundación Arturo López Pérez (FALP)", type: "institucion", ciudad: "Santiago (Providencia)", sub: "Centro oncológico", hechos: [
-      { t: "Sitio activo en 3 ensayos clínicos distintos sobre NSCLC (WU-KONG1, REZILIENT3, BE6A LUNG-02). Aparece con 4 nombres distintos entre fuentes — ver nota de normalización en DATA_SAMPLE.md.", u: "https://clinicaltrials.gov/study/NCT06758401", f: "2026-07-22" }
-    ]},
-    { id: "torax", label: "Instituto Nacional del Tórax", type: "institucion", ciudad: "Santiago", sub: "Hospital público", hechos: [
-      { t: "Directorio público con Dra. Begoña Yarza (Directora) y Dra. Claudia Sepúlveda (Subdirectora Médica). Sin fecha de actualización visible en la página.", u: "https://torax.cl/equipo-directivo-2/", f: "sin fecha en la fuente" }
-    ]},
-    { id: "james-lind", label: "James Lind Centro de Investigación del Cáncer", type: "institucion", ciudad: "Temuco", sub: "Centro de investigación clínica", hechos: [
-      { t: "Sitio activo en 2 ensayos clínicos sobre NSCLC (WU-KONG1, PROCLAIM).", u: "https://clinicaltrials.gov/study/NCT03974022", f: "2026-01-29" }
-    ]},
-    { id: "hosp-concepcion", label: "Hospital Clínico Regional de Concepción", type: "institucion", ciudad: "Concepción", sub: "Hospital público", hechos: [
-      { t: "Afiliación de Roberto González L. y equipo, estudio de cohorte sobre cáncer pulmonar.", u: "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", f: "2022-01" }
-    ]},
-    { id: "hosp-puerto-montt", label: "Hospital Puerto Montt", type: "institucion", ciudad: "Puerto Montt", sub: "Hospital público", hechos: [
-      { t: "Afiliación de Andrés Rojas G., revisión sobre evaluación preoperatoria en cáncer de pulmón.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", f: "2015-06" }
-    ]},
-    { id: "puc", label: "Pontificia Universidad Católica de Chile", type: "institucion", ciudad: "Santiago", sub: "Universidad / red de salud", hechos: [
-      { t: "Afiliación de Fernando Saldías P. y (secundaria) de Javiera Martinez-Gutierrez.", u: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", f: "2014-12" }
-    ]},
-    { id: "k2-oncology", label: "K2 Oncology", type: "institucion", ciudad: "Santiago (Providencia)", sub: "Centro oncológico", hechos: [
-      { t: "Sitio del ensayo SUNRAY-02, PI Pablo Rodríguez Monarca.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "centro-precision", label: "Centro de Oncología de Precisión", type: "institucion", ciudad: "Santiago", sub: "Centro oncológico", hechos: [
-      { t: "Sitio del ensayo SUNRAY-02, PI Pamela Salman.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "nct06890598", label: "SUNRAY-02 (NCT06890598)", type: "ensayo", ciudad: "Santiago (+3 sitios)", sub: "Fase III · Eli Lilly", hechos: [
-      { t: "Fase III, Eli Lilly, olomorasib en NSCLC KRAS G12C. Único de 8 ensayos muestreados que expone PIs reales por sitio en Chile.", u: "https://clinicaltrials.gov/study/NCT06890598", f: "2026-08-07" }
-    ]},
-    { id: "nct03974022", label: "WU-KONG1 (NCT03974022)", type: "ensayo", ciudad: "Santiago (+3 sitios)", sub: "Fase I/II · Dizal Pharmaceuticals", hechos: [
-      { t: "Fase I/II, Dizal Pharmaceuticals, sunvozertinib en NSCLC EGFR/HER2. 4 sitios en Chile.", u: "https://clinicaltrials.gov/study/NCT03974022", f: "2026-01-29" }
-    ]},
-    { id: "nct05973773", label: "REZILIENT3 (NCT05973773)", type: "ensayo", ciudad: "Santiago (+2 sitios)", sub: "Fase III · Taiho Oncology", hechos: [
-      { t: "Fase III, Taiho Oncology, zipalertinib en NSCLC EGFR exón 20. 3 sitios en Chile.", u: "https://clinicaltrials.gov/study/NCT05973773", f: "2026-07-30" }
-    ]},
-    { id: "nct06758401", label: "BE6A LUNG-02 (NCT06758401)", type: "ensayo", ciudad: "Santiago (+11 sitios)", sub: "Fase III · Pfizer", hechos: [
-      { t: "Fase III, Pfizer, sigvotatug vedotin + pembrolizumab en NSCLC. 12 registros de sitio en Chile.", u: "https://clinicaltrials.gov/study/NCT06758401", f: "2026-07-22" }
-    ]},
-    { id: "nct03937154", label: "PROCLAIM (NCT03937154)", type: "ensayo", ciudad: "Temuco (+1 sitio)", sub: "Fase III · Amgen", hechos: [
-      { t: "Fase III, Amgen, romiplostim para trombocitopenia inducida por quimioterapia en NSCLC y otros cánceres.", u: "https://clinicaltrials.gov/study/NCT03937154", f: "2026-04-07" }
-    ]}
-  ];
+  var DATA_URL = "../data/sample/perfiles-muestra.json";
+  var TIPO_HECHO_LABEL = {
+    publicacion: "Publicaciones",
+    ensayo_clinico: "Ensayos clínicos",
+    afiliacion: "Afiliación / rol institucional",
+    congreso: "Congresos",
+    otro: "Otros hechos"
+  };
+  var typeLabel = { persona: "Persona", institucion: "Institución", ensayo_clinico: "Ensayo clínico" };
 
-  var edges = [
-    ["carlos-rojas", "bradford-hill"], ["mauricio-burotto", "bradford-hill"],
-    ["carlos-rojas", "nct06890598"],
-    ["rodrigo-uribe", "falp"], ["rodrigo-uribe", "nct06890598"],
-    ["pamela-salman", "centro-precision"], ["pamela-salman", "nct06890598"],
-    ["pablo-rodriguez", "k2-oncology"], ["pablo-rodriguez", "nct06890598"],
-    ["falp", "nct03974022"], ["falp", "nct05973773"], ["falp", "nct06758401"],
-    ["james-lind", "nct03974022"], ["james-lind", "nct03937154"],
-    ["roberto-gonzalez", "hosp-concepcion"],
-    ["andres-rojas", "hosp-puerto-montt"],
-    ["fernando-saldias", "puc"], ["javiera-martinez", "puc"]
-  ];
-
+  var entidades = [];
+  var vinculos = [];
   var byId = {};
-  nodes.forEach(function (n) { byId[n.id] = n; });
+  var state = { filter: "todos", query: "", sort: "senales" };
 
   function sortableDate(fecha) {
     var m = fecha && fecha.match(/(\d{4})(-(\d{2}))?(-(\d{2}))?/);
@@ -311,59 +259,112 @@
     return m[1] + "-" + (m[3] || "01") + "-" + (m[5] || "01");
   }
   function mostRecentHecho(n) {
-    var best = n.hechos[0], bestKey = sortableDate(best.f);
+    var best = n.hechos[0], bestKey = sortableDate(best.fecha);
     n.hechos.forEach(function (h) {
-      var k = sortableDate(h.f);
+      var k = sortableDate(h.fecha);
       if (k > bestKey) { bestKey = k; best = h; }
     });
     return best;
   }
+  function countByTipo(hechos, tipo) {
+    return hechos.filter(function (h) { return h.tipo === tipo; }).length;
+  }
+  function connectionCount(id) {
+    return vinculos.filter(function (v) { return v.origen === id || v.destino === id; }).length;
+  }
+  // El "puntaje" es la suma sin ponderar de señales contables (publicaciones + ensayos + conexiones).
+  // A propósito no es un número inventado ni oculto: cada componente se puede abrir y ver de qué hechos sale.
+  function computeSenales(n) {
+    var publicaciones = countByTipo(n.hechos, "publicacion");
+    var ensayos = countByTipo(n.hechos, "ensayo_clinico");
+    var conexiones = connectionCount(n.id);
+    return {
+      publicaciones: publicaciones,
+      ensayos: ensayos,
+      conexiones: conexiones,
+      total: publicaciones + ensayos + conexiones
+    };
+  }
 
-  var typeLabel = { persona: "Persona", institucion: "Institución", ensayo: "Ensayo clínico" };
+  // ---------------- Carga de datos ----------------
+  fetch(DATA_URL)
+    .then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      entidades = data.entidades || [];
+      vinculos = data.vinculos || [];
+      entidades.forEach(function (n) { byId[n.id] = n; });
+      document.getElementById("loading-state").hidden = true;
+      renderCards();
+    })
+    .catch(function (err) {
+      document.getElementById("loading-state").hidden = true;
+      var errEl = document.getElementById("error-state");
+      errEl.hidden = false;
+      errEl.textContent = "No se pudo cargar " + DATA_URL + " (" + err.message + "). " +
+        "Si abriste este archivo directo (file://), el navegador bloquea fetch() a archivos locales — " +
+        "corre un servidor estático desde la raíz del repo (por ejemplo: python3 -m http.server) y abre " +
+        "http://localhost:8000/web/index.html en vez de abrir el archivo directamente.";
+    });
 
-  // ---- Render cards ----
-  var state = { filter: "todos", query: "" };
+  // ---------------- Render de cards ----------------
   var cardsEl = document.getElementById("cards");
   var metaEl = document.getElementById("results-meta");
   var emptyEl = document.getElementById("empty-state");
 
   function matches(n) {
-    if (state.filter !== "todos" && n.type !== state.filter) return false;
+    if (state.filter !== "todos" && n.tipo !== state.filter) return false;
     if (!state.query) return true;
     var q = state.query.toLowerCase();
-    return n.label.toLowerCase().indexOf(q) !== -1 ||
+    return n.nombre.toLowerCase().indexOf(q) !== -1 ||
            n.ciudad.toLowerCase().indexOf(q) !== -1 ||
-           n.sub.toLowerCase().indexOf(q) !== -1;
+           n.subtitulo.toLowerCase().indexOf(q) !== -1;
   }
 
   function renderCards() {
-    var list = nodes.filter(matches).sort(function (a, b) {
-      return sortableDate(mostRecentHecho(b).f).localeCompare(sortableDate(mostRecentHecho(a).f));
-    });
+    var list = entidades.filter(matches);
+    if (state.sort === "senales") {
+      list.sort(function (a, b) { return computeSenales(b).total - computeSenales(a).total; });
+    } else {
+      list.sort(function (a, b) { return sortableDate(mostRecentHecho(b).fecha).localeCompare(sortableDate(mostRecentHecho(a).fecha)); });
+    }
     cardsEl.innerHTML = "";
     metaEl.textContent = list.length + (list.length === 1 ? " resultado" : " resultados");
-    emptyEl.hidden = list.length !== 0;
+    emptyEl.hidden = list.length !== 0 || entidades.length === 0;
     list.forEach(function (n) {
+      var senales = computeSenales(n);
       var card = document.createElement("button");
       card.className = "card";
       card.setAttribute("data-id", n.id);
 
       var top = document.createElement("div"); top.className = "card-top";
-      var dot = document.createElement("span"); dot.className = "type-dot " + n.type;
+      var dot = document.createElement("span"); dot.className = "type-dot " + n.tipo;
+      var nameRow = document.createElement("div"); nameRow.className = "card-name-row";
       var nameWrap = document.createElement("div");
-      var name = document.createElement("div"); name.className = "card-name"; name.textContent = n.label;
-      var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.sub + " · " + n.ciudad;
+      var name = document.createElement("div"); name.className = "card-name"; name.textContent = n.nombre;
+      var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
       nameWrap.appendChild(name); nameWrap.appendChild(sub);
-      top.appendChild(dot); top.appendChild(nameWrap);
+      var scoreBadge = document.createElement("span"); scoreBadge.className = "score-badge"; scoreBadge.textContent = senales.total + " señ.";
+      nameRow.appendChild(nameWrap); nameRow.appendChild(scoreBadge);
+      top.appendChild(dot); top.appendChild(nameRow);
+
+      var signalRow = document.createElement("div"); signalRow.className = "signal-row";
+      if (senales.publicaciones) { var c1 = document.createElement("span"); c1.className = "signal-chip"; c1.textContent = senales.publicaciones + " public."; signalRow.appendChild(c1); }
+      if (senales.ensayos) { var c2 = document.createElement("span"); c2.className = "signal-chip"; c2.textContent = senales.ensayos + " ensayo" + (senales.ensayos > 1 ? "s" : ""); signalRow.appendChild(c2); }
+      if (senales.conexiones) { var c3 = document.createElement("span"); c3.className = "signal-chip"; c3.textContent = senales.conexiones + " conexion" + (senales.conexiones > 1 ? "es" : ""); signalRow.appendChild(c3); }
 
       var meta = document.createElement("div"); meta.className = "card-meta";
       var hechosCount = document.createElement("span");
       hechosCount.textContent = n.hechos.length + (n.hechos.length === 1 ? " hecho registrado" : " hechos registrados");
       var recent = mostRecentHecho(n);
-      var fecha = document.createElement("span"); fecha.textContent = recent.f === "sin fecha en la fuente" ? "sin fecha" : recent.f;
+      var fecha = document.createElement("span"); fecha.textContent = recent.fecha === "sin fecha en la fuente" ? "sin fecha" : recent.fecha;
       meta.appendChild(hechosCount); meta.appendChild(fecha);
 
-      card.appendChild(top); card.appendChild(meta);
+      card.appendChild(top);
+      if (signalRow.childNodes.length) card.appendChild(signalRow);
+      card.appendChild(meta);
       card.addEventListener("click", function () { openDetail(n.id); });
       cardsEl.appendChild(card);
     });
@@ -383,7 +384,13 @@
     });
   });
 
-  // ---- Toggle red / lista ----
+  document.getElementById("sort-toggle").addEventListener("click", function (btn) {
+    state.sort = state.sort === "senales" ? "reciente" : "senales";
+    this.textContent = "Ordenar: " + (state.sort === "senales" ? "señales" : "más reciente");
+    renderCards();
+  });
+
+  // ---------------- Toggle red / lista ----------------
   var networkBtn = document.getElementById("toggle-network");
   var listView = document.getElementById("list-view");
   var networkView = document.getElementById("network-view");
@@ -394,22 +401,22 @@
     listView.classList.toggle("active", !showingNetwork);
     networkBtn.setAttribute("aria-pressed", String(showingNetwork));
     networkBtn.textContent = showingNetwork ? "Ver lista" : "Ver red de conexiones";
-    if (showingNetwork && !networkBuilt) { buildNetwork(); networkBuilt = true; }
+    if (showingNetwork && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
   });
 
-  // ---- Red de conexiones (simulación de fuerzas mínima, una sola vez) ----
+  // ---------------- Red de conexiones (simulación de fuerzas mínima, una sola vez) ----------------
   function buildNetwork() {
     var W = 720, H = 460;
-    nodes.forEach(function (n, i) {
-      var angle = (i / nodes.length) * Math.PI * 2;
+    entidades.forEach(function (n, i) {
+      var angle = (i / entidades.length) * Math.PI * 2;
       n._x = W / 2 + Math.cos(angle) * 120 + (Math.random() - 0.5) * 20;
       n._y = H / 2 + Math.sin(angle) * 120 + (Math.random() - 0.5) * 20;
       n._vx = 0; n._vy = 0;
     });
     for (var iter = 0; iter < 260; iter++) {
-      for (var i = 0; i < nodes.length; i++) {
-        for (var j = i + 1; j < nodes.length; j++) {
-          var a = nodes[i], b = nodes[j];
+      for (var i = 0; i < entidades.length; i++) {
+        for (var j = i + 1; j < entidades.length; j++) {
+          var a = entidades[i], b = entidades[j];
           var dx = a._x - b._x, dy = a._y - b._y;
           var distSq = dx * dx + dy * dy || 0.01;
           var dist = Math.sqrt(distSq);
@@ -418,15 +425,16 @@
           a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
         }
       }
-      edges.forEach(function (e) {
-        var a = byId[e[0]], b = byId[e[1]];
+      vinculos.forEach(function (e) {
+        var a = byId[e.origen], b = byId[e.destino];
+        if (!a || !b) return;
         var dx = b._x - a._x, dy = b._y - a._y;
         var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
         var force = (dist - 95) * 0.02;
         var fx = (dx / dist) * force, fy = (dy / dist) * force;
         a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
       });
-      nodes.forEach(function (n) {
+      entidades.forEach(function (n) {
         n._vx += (W / 2 - n._x) * 0.0015;
         n._vy += (H / 2 - n._y) * 0.0015;
         n._x += n._vx * 0.15; n._y += n._vy * 0.15;
@@ -438,21 +446,22 @@
 
     var svg = document.getElementById("graph");
     var NS = "http://www.w3.org/2000/svg";
-    edges.forEach(function (e) {
-      var a = byId[e[0]], b = byId[e[1]];
+    vinculos.forEach(function (e) {
+      var a = byId[e.origen], b = byId[e.destino];
+      if (!a || !b) return;
       var line = document.createElementNS(NS, "line");
       line.setAttribute("class", "edge-line");
       line.setAttribute("x1", a._x); line.setAttribute("y1", a._y);
       line.setAttribute("x2", b._x); line.setAttribute("y2", b._y);
       svg.appendChild(line);
     });
-    nodes.forEach(function (n) {
-      var r = n.type === "persona" ? 6 : n.type === "institucion" ? 8 : 7;
+    entidades.forEach(function (n) {
+      var r = n.tipo === "persona" ? 6 : n.tipo === "institucion" ? 8 : 7;
       var circle = document.createElementNS(NS, "circle");
       circle.setAttribute("class", "node-circle");
       circle.setAttribute("cx", n._x); circle.setAttribute("cy", n._y);
       circle.setAttribute("r", r);
-      circle.setAttribute("fill", "var(--" + n.type + ")");
+      circle.setAttribute("fill", "var(--" + n.tipo + ")");
       circle.addEventListener("click", function () { openDetail(n.id); });
       svg.appendChild(circle);
 
@@ -460,38 +469,72 @@
       label.setAttribute("class", "node-label");
       label.setAttribute("x", n._x + r + 3);
       label.setAttribute("y", n._y + 3);
-      label.textContent = n.label.length > 24 ? n.label.slice(0, 22) + "…" : n.label;
+      label.textContent = n.nombre.length > 24 ? n.nombre.slice(0, 22) + "…" : n.nombre;
       svg.appendChild(label);
     });
   }
 
-  // ---- Detail sheet ----
+  // ---------------- Detail sheet ----------------
   var backdrop = document.getElementById("backdrop");
   var sheet = document.getElementById("detail-sheet");
   var content = document.getElementById("detail-content");
 
   function openDetail(id) {
     var n = byId[id];
+    var senales = computeSenales(n);
     content.innerHTML = "";
-    var tag = document.createElement("span"); tag.className = "sheet-type-tag"; tag.textContent = typeLabel[n.type];
-    var name = document.createElement("div"); name.className = "sheet-name"; name.textContent = n.label;
-    var sub = document.createElement("div"); sub.className = "sheet-sub"; sub.textContent = n.sub + " · " + n.ciudad;
-    var sectionTitle = document.createElement("div"); sectionTitle.className = "sheet-section-title";
-    sectionTitle.textContent = "Evidencia (" + n.hechos.length + ")";
-    content.appendChild(tag); content.appendChild(name); content.appendChild(sub); content.appendChild(sectionTitle);
 
-    var ul = document.createElement("ul"); ul.className = "hecho-list";
-    n.hechos.slice().sort(function (a, b) { return sortableDate(b.f).localeCompare(sortableDate(a.f)); }).forEach(function (h) {
-      var li = document.createElement("li"); li.className = "hecho-item";
-      li.appendChild(document.createTextNode(h.t));
-      var fechaLine = document.createElement("span"); fechaLine.className = "hecho-fecha";
-      fechaLine.textContent = (h.f === "sin fecha en la fuente" ? "sin fecha en la fuente" : h.f);
-      var a = document.createElement("a"); a.href = h.u; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Ver fuente →";
-      fechaLine.appendChild(a);
-      li.appendChild(fechaLine);
-      ul.appendChild(li);
+    var tag = document.createElement("span"); tag.className = "sheet-type-tag"; tag.textContent = typeLabel[n.tipo];
+    var name = document.createElement("div"); name.className = "sheet-name"; name.textContent = n.nombre;
+    var sub = document.createElement("div"); sub.className = "sheet-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
+    content.appendChild(tag); content.appendChild(name); content.appendChild(sub);
+
+    // Panel de señales — el "puntaje", siempre con su desglose al lado, nunca solo.
+    var scorePanel = document.createElement("div"); scorePanel.className = "score-panel";
+    var scoreTitle = document.createElement("div"); scoreTitle.className = "score-panel-title";
+    var scoreNum = document.createElement("span"); scoreNum.className = "num"; scoreNum.textContent = senales.total;
+    var scoreLbl = document.createElement("span"); scoreLbl.className = "label"; scoreLbl.textContent = "señales";
+    scoreTitle.appendChild(scoreNum); scoreTitle.appendChild(scoreLbl);
+    scorePanel.appendChild(scoreTitle);
+    var breakdown = document.createElement("div"); breakdown.className = "score-breakdown";
+    [["Publicaciones", senales.publicaciones], ["Ensayos clínicos", senales.ensayos], ["Conexiones en la red", senales.conexiones]].forEach(function (row) {
+      var r = document.createElement("div"); r.className = "score-breakdown-row";
+      var l = document.createElement("span"); l.textContent = row[0];
+      var v = document.createElement("b"); v.textContent = row[1];
+      r.appendChild(l); r.appendChild(v);
+      breakdown.appendChild(r);
     });
-    content.appendChild(ul);
+    scorePanel.appendChild(breakdown);
+    var scoreNote = document.createElement("div"); scoreNote.className = "score-note";
+    scoreNote.textContent = "No es un ranking oculto: es la suma de menciones públicas verificables listadas abajo, cada una con su fuente.";
+    scorePanel.appendChild(scoreNote);
+    content.appendChild(scorePanel);
+
+    // Evidencia agrupada por tipo — así se ve el listado de publicaciones separado de ensayos/afiliación.
+    var tiposEnOrden = ["publicacion", "ensayo_clinico", "afiliacion", "congreso", "otro"];
+    var hechosPorTipo = {};
+    n.hechos.forEach(function (h) {
+      (hechosPorTipo[h.tipo] = hechosPorTipo[h.tipo] || []).push(h);
+    });
+    tiposEnOrden.forEach(function (tipo) {
+      var hechos = hechosPorTipo[tipo];
+      if (!hechos || !hechos.length) return;
+      var st = document.createElement("div"); st.className = "sheet-section-title";
+      st.textContent = TIPO_HECHO_LABEL[tipo] + " (" + hechos.length + ")";
+      content.appendChild(st);
+      var ul = document.createElement("ul"); ul.className = "hecho-list";
+      hechos.slice().sort(function (a, b) { return sortableDate(b.fecha).localeCompare(sortableDate(a.fecha)); }).forEach(function (h) {
+        var li = document.createElement("li"); li.className = "hecho-item";
+        li.appendChild(document.createTextNode(h.hecho));
+        var fechaLine = document.createElement("span"); fechaLine.className = "hecho-fecha";
+        fechaLine.textContent = h.fecha;
+        var a = document.createElement("a"); a.href = h.fuente_url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Ver fuente →";
+        fechaLine.appendChild(a);
+        li.appendChild(fechaLine);
+        ul.appendChild(li);
+      });
+      content.appendChild(ul);
+    });
 
     var note = document.createElement("div"); note.className = "confianza-note";
     note.textContent = "Confianza: pendiente de revisión humana. Esto es una muestra de datos públicos, no una evaluación de desempeño profesional.";
@@ -508,8 +551,6 @@
   document.getElementById("sheet-close").addEventListener("click", closeDetail);
   backdrop.addEventListener("click", closeDetail);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDetail(); });
-
-  renderCards();
 })();
 </script>
 </body>
