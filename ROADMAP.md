@@ -262,8 +262,14 @@ esfuerzo/dependencias, no por importancia:
    de los `hechos` ya recolectados, sin nueva fuente.
 5. **Catálogo de instituciones de Chile** (§3.3) — importar el dataset DEIS una vez, definir la
    llave estable, y migrar las instituciones actuales para que apunten a ese catálogo.
-6. **Vista de red**: zoom/pan + reconstrucción según filtros + forma/color/tamaño (§3.5) — encaja
-   en el código ya existente del grafo, sin librería nueva.
+6. ~~**Vista de red**: zoom/pan + reconstrucción según filtros + forma/color/tamaño (§3.5)~~ —
+   hecho (2026-08-14): zoom con rueda centrado en cursor + botones +/-, pan con Pointer Events, el
+   grafo se reconstruye según el filtro/búsqueda activos (respetando `matches()`, la misma lógica
+   de la lista), tamaño de nodo por grado de conexión, hover/foco resalta vecinos y atenúa el
+   resto (con tooltip custom y etiquetas de tipo de vínculo en las aristas resaltadas), glow por
+   tipo de entidad y animación de entrada/pulso sutil (respeta `prefers-reduced-motion`). Solo en
+   el grafo global — el mini-grafo ego-céntrico del panel de detalle se queda simple a propósito
+   (clases CSS separadas, `.global-node`/`.global-edge`).
 7. **Gráfico de tendencia temporal / rising stars** — depende de resolver primero la decisión de
    OpenAlex (§3.1, el problema de la API key) o construirlo con datos de fecha que ya existen en
    los hechos actuales como primera versión más simple, sin esperar a OpenAlex.

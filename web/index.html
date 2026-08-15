@@ -126,7 +126,8 @@
   /* ---------- Network view ---------- */
   #network-view { display: none; }
   #network-view.active { display: block; }
-  #network-view svg { width: 100%; height: auto; display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; }
+  .network-view-wrap { position: relative; }
+  #network-view svg { width: 100%; height: auto; display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
   .network-hint { font-size: 12.5px; color: var(--text-muted); margin: 0 0 10px; }
   .network-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); padding: 10px 4px 0; }
   .network-legend .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
@@ -134,6 +135,46 @@
   .node-circle:hover { stroke: var(--text-primary); }
   .edge-line { stroke: var(--border); stroke-width: 1.4px; }
   .node-label { font-size: 9px; fill: var(--text-secondary); pointer-events: none; }
+
+  /* Capa "futurista" — solo el grafo global (.global-node/.global-edge), el mini-grafo
+     ego-céntrico del panel de detalle se queda simple a propósito. */
+  .network-toolbar { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 4px; z-index: 2; }
+  .zoom-btn {
+    width: 28px; height: 28px; border-radius: 7px; border: 1px solid var(--border);
+    background: var(--surface-1); color: var(--text-secondary); font-size: 15px; line-height: 1;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  .zoom-btn:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+  .zoom-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .global-node { transition: opacity .2s, stroke-width .2s; transform-box: fill-box; transform-origin: center; }
+  .global-node.hovered { stroke: var(--text-primary); stroke-width: 2.5px; }
+  .global-node.persona-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--persona) 70%, transparent)); }
+  .global-node.institucion-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--institucion) 70%, transparent)); }
+  .global-node.ensayo-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--ensayo) 70%, transparent)); }
+  .global-node.entering { opacity: 0; transform: scale(.3); }
+  .global-node.entered { opacity: 1; transform: scale(1); transition: opacity .45s ease-out, transform .45s cubic-bezier(.2,1.4,.4,1), stroke-width .2s; }
+  /* .faded declarado después de .entered para que gane en especificidad-por-orden cuando ambas clases coinciden */
+  .global-node.faded { opacity: .16; }
+  @media (prefers-reduced-motion: no-preference) {
+    .global-node.pulse { animation: nodePulse 3.6s ease-in-out infinite; }
+  }
+  @keyframes nodePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+  .global-edge { transition: opacity .2s, stroke-width .2s, stroke .2s; }
+  .global-edge.faded { opacity: .08; }
+  .global-edge.hovered { stroke-width: 2.4px; }
+  .global-label { transition: opacity .2s; }
+  .global-label.faded { opacity: .12; }
+  .edge-focus-label { font-size: 8.5px; fill: var(--text-muted); pointer-events: none; }
+  .node-tooltip {
+    position: absolute; z-index: 3; pointer-events: none; max-width: 220px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; font-size: 12px; color: var(--text-primary); opacity: 0;
+    transition: opacity .12s; box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  }
+  .node-tooltip.show { opacity: 1; }
+  .node-tooltip .tt-type { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 2px; }
+  .node-tooltip .tt-name { font-weight: 600; margin-bottom: 2px; }
+  .node-tooltip .tt-meta { font-size: 11px; color: var(--text-secondary); }
   .node-circle-center { stroke: var(--text-primary); stroke-width: 2px; cursor: default; }
   .ego-center-label { font-weight: 600; fill: var(--text-primary); }
   .ego-graph-wrap { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; margin: 4px 0 16px; }
@@ -231,9 +272,18 @@
   </section>
 
   <section id="network-view">
-    <p class="network-hint">Mapa completo de las 23 entidades — para ver con qué se conecta una persona o
-      institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa.</p>
-    <svg id="graph" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"></svg>
+    <p class="network-hint" id="network-hint">Mapa completo — para ver con qué se conecta una persona o
+      institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa. Pasa el
+      mouse sobre un nodo para resaltar sus conexiones.</p>
+    <div class="network-view-wrap">
+      <svg id="graph" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="network-toolbar">
+        <button type="button" class="zoom-btn" id="zoom-in" aria-label="Acercar">+</button>
+        <button type="button" class="zoom-btn" id="zoom-out" aria-label="Alejar">−</button>
+        <button type="button" class="zoom-btn" id="zoom-reset" aria-label="Restablecer vista" title="Restablecer vista">⟲</button>
+      </div>
+      <div class="node-tooltip" id="node-tooltip" role="status" aria-live="polite"></div>
+    </div>
     <div class="network-legend">
       <span><span class="swatch" style="background:var(--persona)"></span>Persona</span>
       <span><span class="swatch" style="background:var(--institucion)"></span>Institución</span>
@@ -444,9 +494,19 @@
     });
   }
 
+  function invalidateNetwork() {
+    if (networkView.classList.contains("active") && entidades.length) {
+      buildNetwork();
+      networkBuilt = true;
+    } else {
+      networkBuilt = false;
+    }
+  }
+
   document.getElementById("search").addEventListener("input", function (e) {
     state.query = e.target.value;
     renderCards();
+    invalidateNetwork();
   });
 
   document.querySelectorAll(".chip[data-filter]").forEach(function (btn) {
@@ -455,6 +515,7 @@
       btn.setAttribute("aria-pressed", "true");
       state.filter = btn.getAttribute("data-filter");
       renderCards();
+      invalidateNetwork();
     });
   });
 
@@ -478,19 +539,47 @@
     if (showingNetwork && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
   });
 
-  // ---------------- Red de conexiones (simulación de fuerzas mínima, una sola vez) ----------------
+  // ---------------- Red de conexiones (simulación de fuerzas mínima + capa interactiva) ----------------
+  function currentNetworkSubset() {
+    var nodes = entidades.filter(matches);
+    var ids = {};
+    nodes.forEach(function (n) { ids[n.id] = true; });
+    var edges = vinculos.filter(function (v) { return ids[v.origen] && ids[v.destino]; });
+    return { nodes: nodes, edges: edges };
+  }
+
   function buildNetwork() {
+    var subset = currentNetworkSubset();
+    var nodes = subset.nodes, edges = subset.edges;
+    var hint = document.getElementById("network-hint");
+    hint.textContent = nodes.length === entidades.length
+      ? "Mapa completo — para ver con qué se conecta una persona o institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa. Pasa el mouse sobre un nodo para resaltar sus conexiones."
+      : "Mostrando " + nodes.length + " de " + entidades.length + " entidades según el filtro/búsqueda activos — quita el filtro para ver el mapa completo. Pasa el mouse sobre un nodo para resaltar sus conexiones.";
+
+    var svg = document.getElementById("graph");
+    svg.innerHTML = "";
+    resetZoom();
+
+    var NS = "http://www.w3.org/2000/svg";
+    if (!nodes.length) {
+      var msg = document.createElementNS(NS, "text");
+      msg.setAttribute("x", "360"); msg.setAttribute("y", "230"); msg.setAttribute("text-anchor", "middle");
+      msg.setAttribute("class", "node-label"); msg.textContent = "Sin resultados para ese filtro.";
+      svg.appendChild(msg);
+      return;
+    }
+
     var W = 720, H = 460;
-    entidades.forEach(function (n, i) {
-      var angle = (i / entidades.length) * Math.PI * 2;
+    nodes.forEach(function (n, i) {
+      var angle = (i / nodes.length) * Math.PI * 2;
       n._x = W / 2 + Math.cos(angle) * 120 + (Math.random() - 0.5) * 20;
       n._y = H / 2 + Math.sin(angle) * 120 + (Math.random() - 0.5) * 20;
       n._vx = 0; n._vy = 0;
     });
     for (var iter = 0; iter < 260; iter++) {
-      for (var i = 0; i < entidades.length; i++) {
-        for (var j = i + 1; j < entidades.length; j++) {
-          var a = entidades[i], b = entidades[j];
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var a = nodes[i], b = nodes[j];
           var dx = a._x - b._x, dy = a._y - b._y;
           var distSq = dx * dx + dy * dy || 0.01;
           var dist = Math.sqrt(distSq);
@@ -499,7 +588,7 @@
           a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
         }
       }
-      vinculos.forEach(function (e) {
+      edges.forEach(function (e) {
         var a = byId[e.origen], b = byId[e.destino];
         if (!a || !b) return;
         var dx = b._x - a._x, dy = b._y - a._y;
@@ -508,7 +597,7 @@
         var fx = (dx / dist) * force, fy = (dy / dist) * force;
         a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
       });
-      entidades.forEach(function (n) {
+      nodes.forEach(function (n) {
         n._vx += (W / 2 - n._x) * 0.0015;
         n._vy += (H / 2 - n._y) * 0.0015;
         n._x += n._vx * 0.15; n._y += n._vy * 0.15;
@@ -518,40 +607,207 @@
       });
     }
 
-    var svg = document.getElementById("graph");
-    var NS = "http://www.w3.org/2000/svg";
-    vinculos.forEach(function (e) {
+    // Vecinos directos por id, para resaltar/atenuar al pasar el mouse o el foco.
+    var neighborsOf = {};
+    nodes.forEach(function (n) { neighborsOf[n.id] = {}; });
+    edges.forEach(function (e) {
+      if (neighborsOf[e.origen]) neighborsOf[e.origen][e.destino] = true;
+      if (neighborsOf[e.destino]) neighborsOf[e.destino][e.origen] = true;
+    });
+
+    var edgeEls = {};
+    nodes.forEach(function (n) { edgeEls[n.id] = []; });
+
+    edges.forEach(function (e) {
       var a = byId[e.origen], b = byId[e.destino];
       if (!a || !b) return;
       var line = document.createElementNS(NS, "line");
-      line.setAttribute("class", "edge-line");
+      line.setAttribute("class", "edge-line global-edge");
       line.setAttribute("x1", a._x); line.setAttribute("y1", a._y);
       line.setAttribute("x2", b._x); line.setAttribute("y2", b._y);
+      line.setAttribute("data-origen", e.origen);
+      line.setAttribute("data-destino", e.destino);
       if (e.tipo) {
         var edgeTitle = document.createElementNS(NS, "title");
         edgeTitle.textContent = e.tipo;
         line.appendChild(edgeTitle);
       }
       svg.appendChild(line);
+
+      var edgeLabel = document.createElementNS(NS, "text");
+      edgeLabel.setAttribute("class", "edge-focus-label");
+      edgeLabel.setAttribute("x", (a._x + b._x) / 2);
+      edgeLabel.setAttribute("y", (a._y + b._y) / 2 - 3);
+      edgeLabel.setAttribute("text-anchor", "middle");
+      edgeLabel.setAttribute("opacity", "0");
+      edgeLabel.textContent = e.tipo || "";
+      svg.appendChild(edgeLabel);
+
+      if (edgeEls[e.origen]) edgeEls[e.origen].push({ line: line, label: edgeLabel });
+      if (edgeEls[e.destino]) edgeEls[e.destino].push({ line: line, label: edgeLabel });
     });
-    entidades.forEach(function (n) {
-      var r = n.tipo === "persona" ? 6 : n.tipo === "institucion" ? 8 : 7;
+
+    var tooltipEl = document.getElementById("node-tooltip");
+    var wrapEl = document.querySelector(".network-view-wrap");
+
+    function showNodeTooltip(n, deg) {
+      var ctm = svg.getScreenCTM();
+      if (!ctm) return;
+      var pt = svg.createSVGPoint();
+      pt.x = n._x; pt.y = n._y;
+      var screenPt = pt.matrixTransform(ctm);
+      var wrapRect = wrapEl.getBoundingClientRect();
+      tooltipEl.innerHTML = "";
+      var typeEl = document.createElement("div"); typeEl.className = "tt-type"; typeEl.textContent = typeLabel[n.tipo] || n.tipo;
+      var nameEl = document.createElement("div"); nameEl.className = "tt-name"; nameEl.textContent = n.nombre;
+      var metaEl2 = document.createElement("div"); metaEl2.className = "tt-meta";
+      metaEl2.textContent = (n.subtitulo ? n.subtitulo + " · " : "") + deg + " conexion" + (deg === 1 ? "" : "es");
+      tooltipEl.appendChild(typeEl); tooltipEl.appendChild(nameEl); tooltipEl.appendChild(metaEl2);
+      var left = screenPt.x - wrapRect.left + 14;
+      var top = screenPt.y - wrapRect.top - 10;
+      tooltipEl.style.left = Math.max(4, Math.min(wrapRect.width - 224, left)) + "px";
+      tooltipEl.style.top = Math.max(4, top) + "px";
+      tooltipEl.classList.add("show");
+    }
+
+    function highlightNode(id) {
+      Object.keys(nodeEls).forEach(function (nid) {
+        nodeEls[nid].classList.toggle("hovered", nid === id);
+        nodeEls[nid].classList.toggle("faded", nid !== id && !neighborsOf[id][nid]);
+      });
+      svg.querySelectorAll(".global-label").forEach(function (lbl) {
+        var nid = lbl.getAttribute("data-id");
+        lbl.classList.toggle("faded", nid !== id && !neighborsOf[id][nid]);
+      });
+      svg.querySelectorAll(".global-edge").forEach(function (line) {
+        var touches = line.getAttribute("data-origen") === id || line.getAttribute("data-destino") === id;
+        line.classList.toggle("hovered", touches);
+        line.classList.toggle("faded", !touches);
+      });
+      (edgeEls[id] || []).forEach(function (pair) { pair.label.setAttribute("opacity", "1"); });
+    }
+
+    function clearHighlight() {
+      svg.querySelectorAll(".global-node").forEach(function (el) { el.classList.remove("hovered", "faded"); });
+      svg.querySelectorAll(".global-edge").forEach(function (el) { el.classList.remove("hovered", "faded"); });
+      svg.querySelectorAll(".global-label").forEach(function (el) { el.classList.remove("faded"); });
+      svg.querySelectorAll(".edge-focus-label").forEach(function (el) { el.setAttribute("opacity", "0"); });
+      tooltipEl.classList.remove("show");
+    }
+
+    var nodeEls = {};
+    nodes.forEach(function (n) {
+      var deg = connectionCount(n.id);
+      var baseR = n.tipo === "persona" ? 6 : n.tipo === "institucion" ? 8 : 7;
+      var r = baseR + Math.min(deg, 8) * 0.9;
+      var typeClass = (n.tipo === "ensayo_clinico" ? "ensayo" : n.tipo) + "-type";
       var circle = document.createElementNS(NS, "circle");
-      circle.setAttribute("class", "node-circle");
+      circle.setAttribute("class", "node-circle global-node entering " + typeClass);
       circle.setAttribute("cx", n._x); circle.setAttribute("cy", n._y);
       circle.setAttribute("r", r);
       circle.setAttribute("fill", "var(--" + (n.tipo === "ensayo_clinico" ? "ensayo" : n.tipo) + ")");
+      circle.setAttribute("tabindex", "0");
+      circle.setAttribute("role", "button");
+      circle.setAttribute("aria-label", n.nombre + " — " + (typeLabel[n.tipo] || n.tipo) + ", " + deg + " conexion" + (deg === 1 ? "" : "es"));
       circle.addEventListener("click", function () { openDetail(n.id); });
+      circle.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); openDetail(n.id); } });
+      circle.addEventListener("mouseenter", function () { highlightNode(n.id); showNodeTooltip(n, deg); });
+      circle.addEventListener("focus", function () { highlightNode(n.id); showNodeTooltip(n, deg); });
+      circle.addEventListener("mouseleave", clearHighlight);
+      circle.addEventListener("blur", clearHighlight);
       svg.appendChild(circle);
+      nodeEls[n.id] = circle;
 
       var label = document.createElementNS(NS, "text");
-      label.setAttribute("class", "node-label");
+      label.setAttribute("class", "node-label global-label");
+      label.setAttribute("data-id", n.id);
       label.setAttribute("x", n._x + r + 3);
       label.setAttribute("y", n._y + 3);
       label.textContent = n.nombre.length > 24 ? n.nombre.slice(0, 22) + "…" : n.nombre;
       svg.appendChild(label);
+
+      // Entrada animada + pulso sutil escalonado (respeta prefers-reduced-motion vía CSS).
+      requestAnimationFrame(function () {
+        circle.classList.remove("entering");
+        circle.classList.add("entered");
+        setTimeout(function () {
+          circle.style.animationDelay = (Math.random() * 2.4).toFixed(2) + "s";
+          circle.classList.add("pulse");
+        }, 450);
+      });
     });
   }
+
+  // ---------------- Zoom y pan del grafo global (manipulación directa de viewBox) ----------------
+  var NETWORK_VB = { x: 0, y: 0, w: 720, h: 460 };
+  var networkVB = { x: 0, y: 0, w: 720, h: 460 };
+
+  function applyNetworkVB() {
+    var svg = document.getElementById("graph");
+    svg.setAttribute("viewBox", networkVB.x + " " + networkVB.y + " " + networkVB.w + " " + networkVB.h);
+  }
+
+  function resetZoom() {
+    networkVB = { x: NETWORK_VB.x, y: NETWORK_VB.y, w: NETWORK_VB.w, h: NETWORK_VB.h };
+    applyNetworkVB();
+  }
+
+  function zoomNetworkAt(factor, cx, cy) {
+    var newW = Math.max(120, Math.min(NETWORK_VB.w * 3, networkVB.w * factor));
+    var newH = newW * (networkVB.h / networkVB.w);
+    networkVB.x = cx - (cx - networkVB.x) * (newW / networkVB.w);
+    networkVB.y = cy - (cy - networkVB.y) * (newH / networkVB.h);
+    networkVB.w = newW; networkVB.h = newH;
+    applyNetworkVB();
+  }
+
+  function networkSvgPoint(clientX, clientY) {
+    var svg = document.getElementById("graph");
+    var ctm = svg.getScreenCTM();
+    if (!ctm) return { x: networkVB.x + networkVB.w / 2, y: networkVB.y + networkVB.h / 2 };
+    var pt = svg.createSVGPoint();
+    pt.x = clientX; pt.y = clientY;
+    return pt.matrixTransform(ctm.inverse());
+  }
+
+  (function () {
+    var svg = document.getElementById("graph");
+
+    svg.addEventListener("wheel", function (evt) {
+      evt.preventDefault();
+      var p = networkSvgPoint(evt.clientX, evt.clientY);
+      zoomNetworkAt(evt.deltaY > 0 ? 1.12 : 0.89, p.x, p.y);
+    }, { passive: false });
+
+    document.getElementById("zoom-in").addEventListener("click", function () {
+      zoomNetworkAt(0.8, networkVB.x + networkVB.w / 2, networkVB.y + networkVB.h / 2);
+    });
+    document.getElementById("zoom-out").addEventListener("click", function () {
+      zoomNetworkAt(1.25, networkVB.x + networkVB.w / 2, networkVB.y + networkVB.h / 2);
+    });
+    document.getElementById("zoom-reset").addEventListener("click", resetZoom);
+
+    var panning = false, panStart = null, vbStart = null;
+    svg.addEventListener("pointerdown", function (evt) {
+      if (evt.target.closest(".node-circle")) return;
+      panning = true;
+      panStart = { x: evt.clientX, y: evt.clientY };
+      vbStart = { x: networkVB.x, y: networkVB.y };
+      svg.setPointerCapture(evt.pointerId);
+    });
+    svg.addEventListener("pointermove", function (evt) {
+      if (!panning) return;
+      var rect = svg.getBoundingClientRect();
+      if (!rect.width) return;
+      var scale = networkVB.w / rect.width;
+      networkVB.x = vbStart.x - (evt.clientX - panStart.x) * scale;
+      networkVB.y = vbStart.y - (evt.clientY - panStart.y) * scale;
+      applyNetworkVB();
+    });
+    ["pointerup", "pointercancel", "pointerleave"].forEach(function (evName) {
+      svg.addEventListener(evName, function () { panning = false; });
+    });
+  })();
 
   // Mini-grafo ego-céntrico: la entidad al centro + sus vecinos directos en círculo,
   // layout radial estático (sin simulación de fuerzas — con ≤6 nodos no hace falta).
