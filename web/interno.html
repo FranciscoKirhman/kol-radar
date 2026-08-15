@@ -126,7 +126,7 @@
 
     <section class="panel active" id="panel-red">
       <h2 class="section-title">Red de conexiones — muestra de cáncer de pulmón en Chile</h2>
-      <p class="section-sub">23 entidades reales, 18 vínculos. Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.</p>
+      <p class="section-sub">23 entidades reales, 19 vínculos. Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.</p>
       <div class="graph-layout">
         <div class="graph-box">
           <svg id="graph" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -227,9 +227,9 @@
           al cargar — con más de ~50 nodos va a necesitar un layout incremental o una librería real (D3,
           Cytoscape). El mini-grafo del panel de detalle no tiene este problema: usa un layout radial
           estático porque nunca muestra más de un puñado de vecinos.</li>
-        <li>No hay filtro por especialidad (solo por tipo de entidad y texto libre) — el spec original pide filtrar también por biomarcador, algo que los datos actuales no sostienen de forma confiable.</li>
+        <li>No hay filtro por especialidad (solo por tipo de entidad y texto libre) — filtrar por biomarcador es una idea de <code>ROADMAP.md</code> (no una promesa del spec original, README.md nunca menciona biomarcadores), y los datos actuales tampoco la sostienen de forma confiable todavía.</li>
         <li><s>La confianza se mostraba como nota fija de texto, no por hecho</s> — resuelto: cada hecho ahora muestra su propio <code>confianza</code> (index.html y esta página). Sigue faltando el botón de "corregir este dato" del modelo de datos, y el canal de contacto para pedirlo (README.md tiene el placeholder sin completar).</li>
-        <li>No hay mapa de Chile con centros geolocalizados — está en el roadmap del README como parte de la pantalla principal.</li>
+        <li>No hay mapa de Chile con centros geolocalizados — es una pregunta abierta en <code>ROADMAP.md</code> (todavía sin decidir), no un compromiso del roadmap de README.md, que no la menciona.</li>
         <li>Sin backend real: los datos siguen viviendo en un archivo JSON estático, no en una base de datos. La Fase 4 (automatizar PubMed/ClinicalTrials.gov) va a necesitar eso y la bandeja de revisión humana descrita en el spec.</li>
       </ul>
     </div>
@@ -265,8 +265,12 @@
       layoutYRenderRed();
     })
     .catch(function (err) {
-      document.getElementById("detail-panel").innerHTML =
-        "<p class=\"placeholder\">No se pudo cargar " + DATA_URL + " (" + err.message + "). Sirve este archivo por HTTP (no file://) — ver \"Cómo correr el prototipo\" en README.md.</p>";
+      var panel = document.getElementById("detail-panel");
+      panel.innerHTML = "";
+      var p = document.createElement("p");
+      p.className = "placeholder";
+      p.textContent = "No se pudo cargar " + DATA_URL + " (" + err.message + "). Sirve este archivo por HTTP (no file://) — ver \"Cómo correr el prototipo\" en README.md.";
+      panel.appendChild(p);
     });
 
   // ---- Layout: simulación de fuerzas mínima, corrida una vez al cargar ----

@@ -6,15 +6,19 @@ diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
 validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
 2 (esa etapa formal sigue sin hacerse). Los datos completos están en
 [`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 23
-entidades reales (personas, instituciones, 5 ensayos clínicos) y 18 vínculos
+entidades reales (personas, instituciones, 5 ensayos clínicos) y 19 vínculos
 entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza del modelo
 de datos, con un campo `tipo` adicional y (según el caso) `fase` del ensayo o
 `revista` de la publicación.
 
 Metodología: 4 agentes en paralelo, cada uno restringido a una sola fuente y
 obligado a citar la URL exacta de donde sacó cada dato — sin inventar
-autores, afiliaciones ni fechas. Fuentes: PubMed (E-utilities), ClinicalTrials.gov
-(API v2), SciELO Chile, e Instituto Nacional del Tórax / SER Chile.
+autores, afiliaciones ni fechas. Fuentes que sí aportaron datos a esta
+muestra: PubMed (E-utilities), ClinicalTrials.gov (API v2), SciELO Chile, e
+Instituto Nacional del Tórax. SER Chile se intentó como quinta fuente, pero
+sus páginas de directivas/congresos devolvieron HTTP 404 al momento de
+recolectar — no hay ningún hecho de esta muestra citando serchile.cl (ver
+`campos_faltantes_o_dificiles` en el JSON).
 
 ## Lo que encontró (perfiles reales)
 
@@ -59,10 +63,12 @@ mostrar siempre.
    "por nombre + institución" marcadas explícitamente como no confirmadas
    (ver el caso Carlos Rojas vs. Andrés Rojas G. — mismo apellido, personas
    distintas, sin ninguna relación).
-4. **Las páginas institucionales (torax.cl, serchile.cl) no tienen fecha de
+4. **Las páginas institucionales (ej. torax.cl) no tienen fecha de
    revisión.** Ninguna. Hay que asumir que ese campo va a estar vacío la
    mayoría de las veces para este tipo de fuente, y mostrarlo como tal en vez
-   de inferir una fecha falsa.
+   de inferir una fecha falsa. (serchile.cl no entra en esta observación —
+   sus páginas devolvieron HTTP 404 al recolectar, nunca se pudieron leer;
+   ver Metodología arriba.)
 5. **SciELO bloquea fetch directo (HTTP 403)** — hace falta navegador
    embebido para leerlo, no una llamada HTTP simple. Relevante para el
    presupuesto de ingeniería de la Fase 4.

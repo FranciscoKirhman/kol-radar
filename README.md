@@ -112,6 +112,15 @@ Tipos de arista, deliberadamente pocos y literales al inicio:
 Se llaman "conexiones científicas observables", no "influencia" — es más honesto y
 evita sobre-interpretar una coautoría como una relación de poder.
 
+*(Nota del 2026-08-14: en la muestra de Fase 3, el campo `vinculos[].tipo` real usa
+un vocabulario más específico que estos cinco — "afiliación", "afiliación
+secundaria", "investigador de sitio", "sitio del ensayo" (ensayo sin PI nombrado,
+el centro es la entidad principal) y "coautoría" cuando dos personas citan
+independientemente la misma publicación como fuente. Los tipos "ponente o
+moderador → Congreso" y "produce evidencia sobre → Tema clínico" están diseñados
+pero todavía no tienen ningún vínculo en la muestra — la fuente de docencia/
+congresos sigue sin capturarse de forma confiable, ver "Estado actual".)*
+
 ## Arquitectura de agentes (para cuando se automatice — no en el primer commit de código)
 
 | Agente | Hace | No decide |
