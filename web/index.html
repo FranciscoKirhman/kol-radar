@@ -18,6 +18,8 @@
     --persona: #2a78d6;
     --institucion: #eb6834;
     --ensayo: #1baf7a;
+    --tier-alta-bg: #fdf1d9; --tier-alta-fg: #8a5a12;
+    --tier-media-bg: #e4edf9; --tier-media-fg: #1f4a8c;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -33,6 +35,8 @@
       --persona: #3987e5;
       --institucion: #d95926;
       --ensayo: #199e70;
+      --tier-alta-bg: #3a2c12; --tier-alta-fg: #e8c184;
+      --tier-media-bg: #1c2c47; --tier-media-fg: #a9c6f2;
     }
   }
   * { box-sizing: border-box; }
@@ -117,6 +121,14 @@
     background: var(--surface-2); border-radius: 6px; padding: 3px 7px;
     white-space: nowrap;
   }
+  .tier-badge {
+    flex: none; font-size: 10px; font-weight: 700; letter-spacing: .02em;
+    text-transform: uppercase; border-radius: 6px; padding: 3px 7px; white-space: nowrap;
+  }
+  .tier-badge.alta { background: var(--tier-alta-bg); color: var(--tier-alta-fg); }
+  .tier-badge.media { background: var(--tier-media-bg); color: var(--tier-media-fg); }
+  .tier-badge.monitorear { background: var(--surface-2); color: var(--text-muted); }
+  .confidence-row { font-size: 11px; color: var(--text-muted); margin: -2px 0 10px; }
   .signal-row { display: flex; flex-wrap: wrap; gap: 5px; }
   .signal-chip { font-size: 10.5px; color: var(--text-secondary); background: var(--surface-1); border: 1px solid var(--border); border-radius: 5px; padding: 2px 6px; }
   .card-meta { font-size: 11.5px; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--surface-2); }
@@ -381,6 +393,70 @@
     };
   }
 
+  // ---------------- Prioridad v2 (PRODUCT_CHARTER.md / SCORING.md) — solo para personas ----------------
+  // El charter limita el ranking al primer caso de uso (médicos); instituciones y ensayos son
+  // contexto, nunca llevan tier. Ver SCORING.md para el razonamiento completo de cada número.
+  var GUIA_KEYWORDS = ["guía", "guia", "consenso", "guideline", "consensus", "recomendaciones de"];
+  function esGuiaOConsenso(h) {
+    var t = (h.hecho || "").toLowerCase();
+    return GUIA_KEYWORDS.some(function (kw) { return t.indexOf(kw) !== -1; });
+  }
+
+  // Decae por hecho, no por entidad — un hecho viejo nunca se oculta, solo deja de sumar.
+  function recencyMultiplier(fecha) {
+    var key = sortableDate(fecha);
+    if (key === "0000-00-00") return 0.4; // sin fecha en la fuente: incertidumbre media, no castigo máximo
+    var d = new Date(key);
+    if (isNaN(d.getTime())) return 0.4;
+    var years = (Date.now() - d.getTime()) / (365.25 * 24 * 3600 * 1000);
+    if (years < 1) return 1.0;
+    if (years < 3) return 0.7;
+    if (years < 5) return 0.4;
+    return 0; // > 5 años: sigue visible en la ficha como historia, deja de sumar prioridad
+  }
+
+  function computePriority(n) {
+    var ensayoHechos = n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; });
+    var pubHechos = n.hechos.filter(function (h) { return h.tipo === "publicacion"; });
+    var guiaHechos = pubHechos.filter(esGuiaOConsenso);
+    var pubNoGuia = pubHechos.filter(function (h) { return !esGuiaOConsenso(h); });
+    var congresoHechos = n.hechos.filter(function (h) { return h.tipo === "congreso"; });
+
+    function dimensionPts(hechos, cap, basePts, tope) {
+      var raw = hechos.slice(0, cap).reduce(function (sum, h) {
+        return sum + basePts(h) * recencyMultiplier(h.fecha);
+      }, 0);
+      return Math.min(tope, Math.round(raw));
+    }
+
+    var ensayosPts = dimensionPts(ensayoHechos, 5, function (h) { return ensayoPeso(h) * 2; }, 20);
+    var pubPts = dimensionPts(pubNoGuia, 5, function () { return 2; }, 10);
+    var guiaPts = dimensionPts(guiaHechos, 2, function () { return 4; }, 8);
+    var congresoPts = dimensionPts(congresoHechos, 5, function () { return 1; }, 5);
+    var sociedadesPts = 0; // sin fuente identificada todavía — visible en la UI como 0, no oculto
+    var redPts = Math.min(5, connectionCount(n.id));
+
+    var total = ensayosPts + pubPts + guiaPts + congresoPts + sociedadesPts + redPts;
+    var tier = total >= 12 ? "alta" : total >= 4 ? "media" : "monitorear";
+
+    var confianzas = n.hechos.map(function (h) { return h.confianza; }).filter(Boolean);
+    var confirmados = confianzas.filter(function (c) { return c === "confirmado"; }).length;
+    var confianzaLabel = confianzas.length === 0 ? "sin datos"
+      : confirmados === confianzas.length ? "alta"
+      : confirmados > 0 ? "media"
+      : "pendiente de revisión";
+
+    return {
+      ensayosPts: ensayosPts, pubPts: pubPts, guiaPts: guiaPts, congresoPts: congresoPts,
+      sociedadesPts: sociedadesPts, redPts: redPts, total: total, tier: tier,
+      confianzaLabel: confianzaLabel,
+      nGuias: Math.min(2, guiaHechos.length), nEnsayos: Math.min(5, ensayoHechos.length),
+      nPub: Math.min(5, pubNoGuia.length), nCongreso: Math.min(5, congresoHechos.length)
+    };
+  }
+
+  var TIER_LABEL = { alta: "Prioridad alta", media: "Prioridad media", monitorear: "Monitorear" };
+
   // ---------------- Carga de datos ----------------
   fetch(DATA_URL)
     .then(function (res) {
@@ -421,9 +497,12 @@
   var TIPO_ORDEN = ["persona", "institucion", "ensayo_clinico"];
   var TIPO_GRUPO_LABEL = { persona: "Personas", institucion: "Instituciones", ensayo_clinico: "Ensayos clínicos" };
 
+  function totalParaOrdenar(n) {
+    return n.tipo === "persona" ? computePriority(n).total : computeSenales(n).total;
+  }
   function sortList(list) {
     if (state.sort === "senales") {
-      list.sort(function (a, b) { return computeSenales(b).total - computeSenales(a).total; });
+      list.sort(function (a, b) { return totalParaOrdenar(b) - totalParaOrdenar(a); });
     } else {
       list.sort(function (a, b) { return sortableDate(mostRecentHecho(b).fecha).localeCompare(sortableDate(mostRecentHecho(a).fecha)); });
     }
@@ -443,7 +522,17 @@
     var name = document.createElement("div"); name.className = "card-name"; name.textContent = n.nombre;
     var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
     nameWrap.appendChild(name); nameWrap.appendChild(sub);
-    var scoreBadge = document.createElement("span"); scoreBadge.className = "score-badge"; scoreBadge.textContent = senales.total + " pts";
+    // El tier de prioridad (PRODUCT_CHARTER.md) solo aplica a personas — instituciones y ensayos
+    // son contexto, no candidatos a priorizar, así que mantienen el conteo crudo de señales.
+    var scoreBadge;
+    if (n.tipo === "persona") {
+      var priority = computePriority(n);
+      scoreBadge = document.createElement("span");
+      scoreBadge.className = "tier-badge " + priority.tier;
+      scoreBadge.textContent = TIER_LABEL[priority.tier];
+    } else {
+      scoreBadge = document.createElement("span"); scoreBadge.className = "score-badge"; scoreBadge.textContent = senales.total + " pts";
+    }
     nameRow.appendChild(nameWrap); nameRow.appendChild(scoreBadge);
     top.appendChild(dot); top.appendChild(nameRow);
 
@@ -904,33 +993,66 @@
     content.appendChild(tag); content.appendChild(name); content.appendChild(sub);
 
     // Panel de señales — el "puntaje", siempre con su desglose al lado, nunca solo.
+    // Personas usan el modelo de prioridad v2 (PRODUCT_CHARTER.md / SCORING.md); instituciones y
+    // ensayos no son candidatos a priorizar, así que siguen con el conteo de señales v1.
     var scorePanel = document.createElement("div"); scorePanel.className = "score-panel";
     var scoreTitle = document.createElement("div"); scoreTitle.className = "score-panel-title";
-    var scoreNum = document.createElement("span"); scoreNum.className = "num"; scoreNum.textContent = senales.total;
-    var scoreLbl = document.createElement("span"); scoreLbl.className = "label"; scoreLbl.textContent = "puntos";
-    scoreTitle.appendChild(scoreNum); scoreTitle.appendChild(scoreLbl);
-    scorePanel.appendChild(scoreTitle);
     var breakdown = document.createElement("div"); breakdown.className = "score-breakdown";
-    var ensayosLabel = "Ensayos clínicos" + (senales.ensayosPts !== senales.ensayos ? " (pesados por fase)" : "");
-    var filas = [
-      ["Publicaciones", senales.publicaciones],
-      [ensayosLabel, senales.ensayos + (senales.ensayosPts !== senales.ensayos ? " → " + senales.ensayosPts + " pts" : "")],
-      ["Conexiones en la red", senales.conexiones],
-      ["Docencia y congresos", senales.docencia]
-    ];
-    filas.forEach(function (row) {
-      var r = document.createElement("div"); r.className = "score-breakdown-row";
-      var l = document.createElement("span"); l.textContent = row[0];
-      var v = document.createElement("b"); v.textContent = row[1];
-      r.appendChild(l); r.appendChild(v);
-      breakdown.appendChild(r);
-    });
-    scorePanel.appendChild(breakdown);
     var scoreNote = document.createElement("div"); scoreNote.className = "score-note";
-    scoreNote.appendChild(document.createTextNode("Suma de señales verificables, cada una con su fuente abajo. "));
     var scoreNoteLink = document.createElement("a");
     scoreNoteLink.href = "interno.html#puntaje"; scoreNoteLink.target = "_blank"; scoreNoteLink.rel = "noopener";
     scoreNoteLink.textContent = "Cómo se calcula →";
+
+    if (n.tipo === "persona") {
+      var priority = computePriority(n);
+      var scoreNum = document.createElement("span"); scoreNum.className = "num"; scoreNum.textContent = priority.total;
+      var scoreLbl = document.createElement("span"); scoreLbl.className = "label"; scoreLbl.textContent = "puntos";
+      var tierBadge = document.createElement("span"); tierBadge.className = "tier-badge " + priority.tier;
+      tierBadge.textContent = TIER_LABEL[priority.tier]; tierBadge.style.marginLeft = "8px";
+      scoreTitle.appendChild(scoreNum); scoreTitle.appendChild(scoreLbl); scoreTitle.appendChild(tierBadge);
+      scorePanel.appendChild(scoreTitle);
+      var filas = [
+        ["Ensayos clínicos" + (priority.nEnsayos ? " (pesados por fase)" : ""), priority.ensayosPts],
+        ["Publicaciones", priority.pubPts],
+        ["Guías y consensos", priority.guiaPts],
+        ["Congresos y docencia", priority.congresoPts],
+        ["Sociedades y liderazgo", priority.sociedadesPts + (priority.sociedadesPts === 0 ? " (sin fuente identificada todavía)" : "")],
+        ["Red y afiliaciones (tope 5)", priority.redPts]
+      ];
+      filas.forEach(function (row) {
+        var r = document.createElement("div"); r.className = "score-breakdown-row";
+        var l = document.createElement("span"); l.textContent = row[0];
+        var v = document.createElement("b"); v.textContent = row[1];
+        r.appendChild(l); r.appendChild(v);
+        breakdown.appendChild(r);
+      });
+      scorePanel.appendChild(breakdown);
+      var confRow = document.createElement("div"); confRow.className = "confidence-row";
+      confRow.textContent = "Confianza de la evidencia: " + priority.confianzaLabel + ".";
+      scorePanel.appendChild(confRow);
+      scoreNote.appendChild(document.createTextNode("Prioridad de investigación, no un ranking de valor profesional — cada componente pesa por recencia y tiene un tope para que ninguna señal domine sola. "));
+    } else {
+      var scoreNum2 = document.createElement("span"); scoreNum2.className = "num"; scoreNum2.textContent = senales.total;
+      var scoreLbl2 = document.createElement("span"); scoreLbl2.className = "label"; scoreLbl2.textContent = "puntos";
+      scoreTitle.appendChild(scoreNum2); scoreTitle.appendChild(scoreLbl2);
+      scorePanel.appendChild(scoreTitle);
+      var ensayosLabel = "Ensayos clínicos" + (senales.ensayosPts !== senales.ensayos ? " (pesados por fase)" : "");
+      var filasV1 = [
+        ["Publicaciones", senales.publicaciones],
+        [ensayosLabel, senales.ensayos + (senales.ensayosPts !== senales.ensayos ? " → " + senales.ensayosPts + " pts" : "")],
+        ["Conexiones en la red", senales.conexiones],
+        ["Docencia y congresos", senales.docencia]
+      ];
+      filasV1.forEach(function (row) {
+        var r = document.createElement("div"); r.className = "score-breakdown-row";
+        var l = document.createElement("span"); l.textContent = row[0];
+        var v = document.createElement("b"); v.textContent = row[1];
+        r.appendChild(l); r.appendChild(v);
+        breakdown.appendChild(r);
+      });
+      scorePanel.appendChild(breakdown);
+      scoreNote.appendChild(document.createTextNode("Suma de señales verificables, cada una con su fuente abajo. Sin tier de prioridad — ese concepto es solo para personas. "));
+    }
     scoreNote.appendChild(scoreNoteLink);
     scorePanel.appendChild(scoreNote);
     content.appendChild(scorePanel);

@@ -161,16 +161,39 @@
     <section class="panel" id="panel-pipeline">
       <h2 class="section-title" id="puntaje">Cómo se calcula el puntaje</h2>
       <p class="section-sub">
-        Suma sin ponderar de señales contables: publicaciones (1 pt c/u) + ensayos clínicos
-        (2 pts si son fase III/IV, 1 pt si son fase I/II — el único peso que usamos, porque
-        ClinicalTrials.gov entrega la fase como dato estructurado real) + conexiones en la red
-        (1 pt c/u) + docencia/congresos (1 pt c/u, hoy siempre en 0 porque nuestras fuentes
-        actuales no lo capturan). No pesamos "impacto" de una publicación porque no tenemos un
-        dato real de impacto — mostramos la revista como texto para que el criterio lo pongas
-        vos. Un mismo hecho real (ej. un rol de investigador principal) puede quedar registrado
-        en dos entidades relacionadas (la persona y la institución) — cada una lo cuenta desde
-        su propia perspectiva, así que los puntajes de dos entidades no son sumables entre sí
-        como si cada punto fuera un hecho único del mundo real.
+        Desde el 2026-08-16 el puntaje sigue el modelo de prioridad de
+        <code>PRODUCT_CHARTER.md</code> (ver también <code>SCORING.md</code> para el detalle
+        completo) — <strong>solo aplica a personas</strong>, no a instituciones ni ensayos, porque
+        el charter limita el primer caso de uso a priorizar médicos para investigar, no a rankear
+        instituciones. Seis dimensiones visibles, cada una con un tope para que ninguna señal
+        domine sola: ensayos clínicos (tope 20 pts, sigue pesando ×2 si la fase es III/IV),
+        publicaciones (tope 10), guías y consensos (tope 8 — una re-clasificación de
+        publicaciones cuyo propio texto declara ser guía/consenso/recomendación, no un dato
+        nuevo), congresos y docencia (tope 5, hoy casi siempre 0 porque nuestras fuentes actuales
+        no lo capturan de forma confiable), sociedades y liderazgo (siempre 0 hoy — sin fuente
+        identificada todavía, se muestra igual en vez de ocultarse) y red/afiliaciones (tope 5,
+        para que el tamaño de la red no domine el puntaje de nadie).
+      </p>
+      <p class="section-sub">
+        Cada hecho se pesa además por su propia fecha antes de sumar: menos de 1 año vale 100%,
+        1–3 años vale 70%, 3–5 años vale 40%, más de 5 años vale 0 para el puntaje — pero el
+        hecho nunca se oculta, sigue visible en la ficha como evidencia histórica. El total se
+        traduce en un tier interpretativo (Prioridad alta ≥12, Prioridad media 4–11, Monitorear
+        1–3) que es lo que se muestra primero en las tarjetas, no el número crudo — el charter
+        pide que la interfaz no deje que un puntaje se vea más absoluto o más cierto de lo que la
+        evidencia permite. Por la misma razón, la <strong>confianza de la evidencia</strong> se
+        muestra aparte del puntaje, nunca mezclada: hoy es "pendiente de revisión" para el 100%
+        de la muestra porque ningún hecho ha pasado por revisión humana todavía (Fase 2 del
+        Roadmap de README.md sigue sin hacerse formalmente) — no es un error del cálculo, es
+        honestidad sobre el estado real del dataset.
+      </p>
+      <p class="section-sub">
+        Un mismo hecho real (ej. un rol de investigador principal) puede quedar registrado en dos
+        entidades relacionadas (la persona y la institución) — cada una lo cuenta desde su propia
+        perspectiva, así que los puntajes de dos entidades no son sumables entre sí como si cada
+        punto fuera un hecho único del mundo real. Instituciones y ensayos siguen mostrando su
+        conteo de señales v1 (sin tier, sin recencia) porque el charter no los trata como
+        candidatos a priorizar.
       </p>
       <h2 class="section-title">Cómo se arma un perfil</h2>
       <p class="section-sub">Cuatro pasos, cada uno con su propio costo y su propio límite de autonomía — ningún hecho llega a "confirmado" sin revisión humana.</p>

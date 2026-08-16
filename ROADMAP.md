@@ -292,8 +292,38 @@ esfuerzo/dependencias, no por importancia:
 - **Capa privada / CRM**: confirmado como roadmap futuro — ¿en qué momento se retoma la
   conversación de cómo se separaría del repo público?
 
+## 6. PRODUCT_CHARTER.md (2026-08-16) — estado de la brecha que señala §14
+
+Francisco trajo `PRODUCT_CHARTER.md` (documento suyo, copiado tal cual al repo) como el marco de
+producto rector desde ahora — más completo que este ROADMAP.md en el "por qué" (usuario, job to be
+done, qué significa el puntaje), mientras que este documento se queda con el "cómo" (factibilidad,
+plan de implementación). §14 del charter listaba 9 limitaciones de la página contra su propio
+diseño. Estado real después de esta sesión:
+
+- **Resuelto**: #2 "score too coarse" y #3 "weak priority explanation" — implementado en
+  `SCORING.md` + `computePriority()` en `web/index.html`: 6 dimensiones visibles con tope,
+  decaimiento por recencia por hecho, tier interpretativo (Alta/Media/Monitorear) en vez del
+  número crudo, confianza de la evidencia mostrada aparte del puntaje. Solo aplica a personas —
+  instituciones y ensayos no llevan tier (el charter limita el ranking a médicos).
+- **Parcialmente resuelto**: #6 "affiliation model not explicit enough" — el modelo de datos ya
+  guardaba afiliaciones múltiples con fecha y fuente por persona (`tipo: "afiliacion"` /
+  `"afiliacion secundaria"`, ej. Mauricio Burotto con Bradford Hill + Clínica Alemana), y ya se
+  muestran todas en la ficha — pero `subtitulo` sigue mostrando una sola afiliación "principal"
+  sin que siempre esté explícitamente marcada como tal por la fuente. Ajustar eso queda pendiente.
+- **Sin resolver todavía**: #1 (scope fijo de demo, sin brief de búsqueda configurable por el
+  usuario), #4 (sin triage MSL dedicado: shortlist, comparación, resumen listo para entrevista),
+  #5 (sin filtros por región/período/tipo de evidencia/tier/rol de ensayo/confianza), #7 (pipeline
+  de evidencia no visible como comportamiento de producto — cadencia de refresco, cobertura de
+  fuentes, cola de revisión), #8 (ORCID/ROR y las capas de fuente adicionales del charter §13 no
+  integradas), #9 (canal de corrección/privacidad — gap conocido desde antes, sigue sin resolver).
+
+Las Etapas 1–7 del "Working method" del charter (§11) todavía no se corrieron formalmente — esta
+sesión fue directo a implementar la Etapa 2 (modelo de puntaje) porque Francisco pidió "proceder e
+implementar", pero las Etapas 1, 3 y 4 (brief de búsqueda, pipeline de evidencia, flujo de usuario)
+siguen sin un "decision gate" documentado como el charter los define.
+
 ---
 *Generado a partir de: auditoría propia + auditorías externas de ChatGPT y Gemini (feedback del
 usuario), decisiones de producto tomadas en conversación, e investigación de factibilidad de 5
-hilos en paralelo con verificación en vivo contra APIs/sitios reales. No commiteado — pendiente de
-decisión aparte.*
+hilos en paralelo con verificación en vivo contra APIs/sitios reales. Actualizado 2026-08-16 con
+la adopción de PRODUCT_CHARTER.md y el modelo de puntaje v2.*
