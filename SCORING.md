@@ -86,13 +86,17 @@ campo `confianza` que ya existe por hecho:
 ## Tier de prioridad — interpretación, no el número crudo
 
 El charter pide que el usuario vea un tier (Alta/Media/Monitorear), no solo un número (§5, tabla
-de prioridad). Umbrales v1, calibrados contra el máximo teórico de 48 puntos:
+de prioridad). Umbrales v1, recalibrados el 2026-08-16 contra el **rango real logrado en la
+muestra actual** (1–11 puntos, 18 personas), no el máximo teórico de 48 — con el primer umbral
+(≥12) nadie en el dataset alcanzaba nunca "Prioridad alta", lo cual se veía roto más que
+riguroso. Van a necesitar recalibrarse de nuevo a medida que la muestra crezca y el rango real
+de puntajes se mueva:
 
 | Tier | Puntaje (post-recencia) |
 |---|---|
-| **Alta** | ≥ 12 |
-| **Media** | 4–11 |
-| **Monitorear** | 1–3 |
+| **Alta** | ≥ 8 |
+| **Media** | 3–7 |
+| **Monitorear** | 1–2 |
 
 Una persona con **0 puntos no debería aparecer** como candidato priorizable — pero el charter dice
 explícitamente que una sola señal ya alcanza para entrar al mapa (§5, "How the ranked output is

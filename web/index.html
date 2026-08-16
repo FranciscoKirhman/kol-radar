@@ -87,6 +87,26 @@
   .chip.spacer { margin-left: auto; }
   .chip.network-toggle { color: var(--accent); border-color: var(--accent); }
   .chip.sort-toggle { color: var(--text-secondary); }
+  .chip.small { font-size: 11.5px; padding: 4px 10px; }
+  #toggle-advanced[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); background: var(--surface-0); }
+
+  .advanced-filters {
+    max-width: 1080px; margin: 0 auto; padding: 4px 16px 14px; display: flex;
+    flex-direction: column; gap: 14px; border-top: 1px solid var(--surface-2);
+  }
+  .filter-group { display: flex; flex-direction: column; gap: 6px; }
+  .filter-group-title {
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
+    color: var(--text-muted); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .tag-group-label { font-size: 10.5px; color: var(--text-muted); margin: 2px 0 -2px; }
+  .tag-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .andor-toggle, .chip-clear {
+    font: inherit; font-size: 10.5px; text-transform: none; letter-spacing: 0;
+    border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary);
+    border-radius: 999px; padding: 2px 8px; cursor: pointer;
+  }
+  .andor-toggle:hover, .chip-clear:hover { color: var(--text-primary); }
 
   /* ---------- Main / list ---------- */
   main { max-width: 1080px; margin: 0 auto; padding: 6px 16px 48px; }
@@ -270,7 +290,38 @@
     <button class="chip" data-filter="institucion" aria-pressed="false">Instituciones</button>
     <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Ensayos clínicos</button>
     <button class="chip sort-toggle" id="sort-toggle" data-sort="reciente">Ordenar: más reciente</button>
+    <button class="chip" id="toggle-advanced" aria-pressed="false" aria-expanded="false">Filtros avanzados ▾</button>
     <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false" title="Vista avanzada — para ver de qué se conecta una persona en particular, abre su ficha en la lista">Mapa completo (avanzado)</button>
+  </div>
+  <div class="advanced-filters" id="advanced-filters" hidden>
+    <div class="filter-group">
+      <div class="filter-group-title">
+        Temas y biomarcadores
+        <button class="andor-toggle" id="tag-andor" data-mode="or" title="Decisión de producto: no es el default del mercado (que fija OR dentro de un mismo grupo), es una elección deliberada para este caso de uso.">Coincide con: cualquiera (OR)</button>
+        <button class="chip-clear" id="tags-clear" hidden>Limpiar temas</button>
+      </div>
+      <div id="tag-groups"></div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-group-title">Período de evidencia (hecho más reciente)</div>
+      <div class="tag-chips" id="period-chips">
+        <button class="chip small" data-periodo="todo" aria-pressed="true">Todo</button>
+        <button class="chip small" data-periodo="menos-1" aria-pressed="false">Último año</button>
+        <button class="chip small" data-periodo="1-3" aria-pressed="false">1–3 años</button>
+        <button class="chip small" data-periodo="3-5" aria-pressed="false">3–5 años</button>
+        <button class="chip small" data-periodo="mas-5" aria-pressed="false">Más de 5 años</button>
+        <button class="chip small" data-periodo="sin-fecha" aria-pressed="false">Sin fecha</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-group-title">Prioridad (solo personas)</div>
+      <div class="tag-chips" id="tier-chips">
+        <button class="chip small" data-tier="todas" aria-pressed="true">Todas</button>
+        <button class="chip small" data-tier="alta" aria-pressed="false">Prioridad alta</button>
+        <button class="chip small" data-tier="media" aria-pressed="false">Prioridad media</button>
+        <button class="chip small" data-tier="monitorear" aria-pressed="false">Monitorear</button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -338,7 +389,7 @@
   // Orden por defecto = "reciente", no "senales": el producto no debe decidir por
   // adelantado un ranking de "a quién contactar primero" -- eso es una decisión del
   // usuario, que puede activarla explícitamente con el chip de abajo.
-  var state = { filter: "todos", query: "", sort: "reciente" };
+  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas" };
 
   // Los datos de hoy son 100% https:// verificados, pero el JSON viene de una fuente
   // externa y en el futuro (Fase 4) va a poblarse con un Extractor automatizado sin
@@ -403,17 +454,21 @@
   }
 
   // Decae por hecho, no por entidad — un hecho viejo nunca se oculta, solo deja de sumar.
-  function recencyMultiplier(fecha) {
+  // Bucket es la fuente de verdad (para el filtro de período); el multiplicador de puntaje
+  // se deriva del mismo bucket, así que ambos nunca pueden desalinearse entre sí.
+  function recencyBucket(fecha) {
     var key = sortableDate(fecha);
-    if (key === "0000-00-00") return 0.4; // sin fecha en la fuente: incertidumbre media, no castigo máximo
+    if (key === "0000-00-00") return "sin-fecha";
     var d = new Date(key);
-    if (isNaN(d.getTime())) return 0.4;
+    if (isNaN(d.getTime())) return "sin-fecha";
     var years = (Date.now() - d.getTime()) / (365.25 * 24 * 3600 * 1000);
-    if (years < 1) return 1.0;
-    if (years < 3) return 0.7;
-    if (years < 5) return 0.4;
-    return 0; // > 5 años: sigue visible en la ficha como historia, deja de sumar prioridad
+    if (years < 1) return "menos-1";
+    if (years < 3) return "1-3";
+    if (years < 5) return "3-5";
+    return "mas-5";
   }
+  var RECENCY_MULT = { "menos-1": 1.0, "1-3": 0.7, "3-5": 0.4, "mas-5": 0, "sin-fecha": 0.4 };
+  function recencyMultiplier(fecha) { return RECENCY_MULT[recencyBucket(fecha)]; }
 
   function computePriority(n) {
     var ensayoHechos = n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; });
@@ -437,7 +492,10 @@
     var redPts = Math.min(5, connectionCount(n.id));
 
     var total = ensayosPts + pubPts + guiaPts + congresoPts + sociedadesPts + redPts;
-    var tier = total >= 12 ? "alta" : total >= 4 ? "media" : "monitorear";
+    // Umbrales recalibrados (2026-08-16) contra el rango real de puntajes logrados en la
+    // muestra (1-11), no solo el máximo teórico de 48 — con el umbral original (>=12) nadie
+    // en el dataset actual alcanzaba nunca "Prioridad alta", que se veía roto, no riguroso.
+    var tier = total >= 8 ? "alta" : total >= 3 ? "media" : "monitorear";
 
     var confianzas = n.hechos.map(function (h) { return h.confianza; }).filter(Boolean);
     var confirmados = confianzas.filter(function (c) { return c === "confirmado"; }).length;
@@ -485,13 +543,72 @@
   var metaEl = document.getElementById("results-meta");
   var emptyEl = document.getElementById("empty-state");
 
+  // Temas/biomarcadores: re-clasificación de texto ya citado en los hechos, no un dato nuevo.
+  // Límites de palabra en la regex a propósito — "MET" e "ALK" sin límite matchean dentro de
+  // "metastásico"/"biomarcador" y otras palabras comunes; ya se verificó contra los datos reales.
+  var TAG_RULES = [
+    { tag: "EGFR", categoria: "Biomarcadores", kw: ["EGFR"] },
+    { tag: "ALK", categoria: "Biomarcadores", kw: ["ALK"] },
+    { tag: "ROS1", categoria: "Biomarcadores", kw: ["ROS1"] },
+    { tag: "KRAS", categoria: "Biomarcadores", kw: ["KRAS"] },
+    { tag: "MET", categoria: "Biomarcadores", kw: ["MET"] },
+    { tag: "RET", categoria: "Biomarcadores", kw: ["RET"] },
+    { tag: "HER2", categoria: "Biomarcadores", kw: ["HER2"] },
+    { tag: "NTRK", categoria: "Biomarcadores", kw: ["NTRK"] },
+    { tag: "PD-L1", categoria: "Biomarcadores", kw: ["PD-L1", "PDL1"] },
+    { tag: "BRAF", categoria: "Biomarcadores", kw: ["BRAF"] },
+    { tag: "Inmunoterapia", categoria: "Tratamiento", kw: ["pembrolizumab", "nivolumab", "atezolizumab", "durvalumab", "inmunoterapia", "checkpoint"] },
+    { tag: "Terapia dirigida", categoria: "Tratamiento", kw: ["osimertinib", "crizotinib", "sotorasib", "adagrasib", "trastuzumab", "terapia dirigida"] },
+    { tag: "Quimioterapia", categoria: "Tratamiento", kw: ["quimioterapia", "chemotherapy"] },
+    { tag: "Radioterapia", categoria: "Tratamiento", kw: ["radioterapia", "radiotherapy"] },
+    { tag: "Cirugía", categoria: "Tratamiento", kw: ["cirugía", "cirugia", "surgery", "quirúrgic"] },
+    { tag: "NSCLC", categoria: "Tipo de cáncer", kw: ["NSCLC"] },
+    { tag: "SCLC", categoria: "Tipo de cáncer", kw: ["SCLC"] },
+    { tag: "Tamizaje", categoria: "Detección", kw: ["tamizaje", "screening", "detección precoz", "detección temprana"] }
+  ];
+  function buildTagRegex(kw) {
+    var esc = kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp("(?:^|[^a-zA-Z0-9])" + esc + "(?:$|[^a-zA-Z0-9])", "i");
+  }
+  TAG_RULES.forEach(function (r) { r.regexes = r.kw.map(buildTagRegex); });
+  var TAG_CATEGORIAS = ["Biomarcadores", "Tratamiento", "Tipo de cáncer", "Detección"];
+
+  function entidadTexto(n) {
+    return n.hechos.map(function (h) { return (h.hecho || "") + " " + (h.revista || ""); }).join(" ");
+  }
+  function tagsFor(n) {
+    if (n._tagsCache) return n._tagsCache;
+    var texto = entidadTexto(n);
+    n._tagsCache = TAG_RULES.filter(function (r) {
+      return r.regexes.some(function (re) { return re.test(texto); });
+    }).map(function (r) { return r.tag; });
+    return n._tagsCache;
+  }
+
   function matches(n) {
     if (state.filter !== "todos" && n.tipo !== state.filter) return false;
-    if (!state.query) return true;
-    var q = state.query.toLowerCase();
-    return n.nombre.toLowerCase().indexOf(q) !== -1 ||
-           n.ciudad.toLowerCase().indexOf(q) !== -1 ||
-           n.subtitulo.toLowerCase().indexOf(q) !== -1;
+    if (state.query) {
+      var q = state.query.toLowerCase();
+      var enCampos = n.nombre.toLowerCase().indexOf(q) !== -1 ||
+                     n.ciudad.toLowerCase().indexOf(q) !== -1 ||
+                     n.subtitulo.toLowerCase().indexOf(q) !== -1;
+      var enHechos = n.hechos.some(function (h) { return (h.hecho || "").toLowerCase().indexOf(q) !== -1; });
+      if (!enCampos && !enHechos) return false;
+    }
+    if (state.tags.length) {
+      var nTags = tagsFor(n);
+      var tagOk = state.tagMode === "and"
+        ? state.tags.every(function (t) { return nTags.indexOf(t) !== -1; })
+        : state.tags.some(function (t) { return nTags.indexOf(t) !== -1; });
+      if (!tagOk) return false;
+    }
+    if (state.periodo !== "todo") {
+      if (recencyBucket(mostRecentHecho(n).fecha) !== state.periodo) return false;
+    }
+    if (state.tier !== "todas") {
+      if (n.tipo !== "persona" || computePriority(n).tier !== state.tier) return false;
+    }
+    return true;
   }
 
   var TIPO_ORDEN = ["persona", "institucion", "ensayo_clinico"];
@@ -612,6 +729,85 @@
     state.sort = state.sort === "senales" ? "reciente" : "senales";
     this.textContent = "Ordenar: " + (state.sort === "senales" ? "puntaje" : "más reciente");
     renderCards();
+  });
+
+  // ---------------- Filtros avanzados: temas/biomarcadores, período, prioridad ----------------
+  var advancedPanel = document.getElementById("advanced-filters");
+  var toggleAdvancedBtn = document.getElementById("toggle-advanced");
+  toggleAdvancedBtn.addEventListener("click", function () {
+    var open = advancedPanel.hidden;
+    advancedPanel.hidden = !open;
+    toggleAdvancedBtn.setAttribute("aria-pressed", String(open));
+    toggleAdvancedBtn.setAttribute("aria-expanded", String(open));
+    toggleAdvancedBtn.textContent = "Filtros avanzados " + (open ? "▴" : "▾");
+  });
+
+  var tagGroupsEl = document.getElementById("tag-groups");
+  TAG_CATEGORIAS.forEach(function (categoria) {
+    var label = document.createElement("div"); label.className = "tag-group-label"; label.textContent = categoria;
+    var row = document.createElement("div"); row.className = "tag-chips";
+    TAG_RULES.filter(function (r) { return r.categoria === categoria; }).forEach(function (r) {
+      var btn = document.createElement("button");
+      btn.type = "button"; btn.className = "chip small"; btn.setAttribute("aria-pressed", "false");
+      btn.setAttribute("data-tag", r.tag);
+      btn.textContent = r.tag;
+      row.appendChild(btn);
+    });
+    tagGroupsEl.appendChild(label);
+    tagGroupsEl.appendChild(row);
+  });
+
+  var tagsClearBtn = document.getElementById("tags-clear");
+  tagGroupsEl.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-tag]");
+    if (!btn) return;
+    var tag = btn.getAttribute("data-tag");
+    var pressed = btn.getAttribute("aria-pressed") === "true";
+    btn.setAttribute("aria-pressed", String(!pressed));
+    if (pressed) {
+      state.tags = state.tags.filter(function (t) { return t !== tag; });
+    } else {
+      state.tags.push(tag);
+    }
+    tagsClearBtn.hidden = state.tags.length === 0;
+    renderCards();
+    invalidateNetwork();
+  });
+
+  tagsClearBtn.addEventListener("click", function () {
+    state.tags = [];
+    tagGroupsEl.querySelectorAll("[data-tag]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+    tagsClearBtn.hidden = true;
+    renderCards();
+    invalidateNetwork();
+  });
+
+  document.getElementById("tag-andor").addEventListener("click", function () {
+    state.tagMode = state.tagMode === "or" ? "and" : "or";
+    this.setAttribute("data-mode", state.tagMode);
+    this.textContent = "Coincide con: " + (state.tagMode === "and" ? "todos (AND)" : "cualquiera (OR)");
+    renderCards();
+    invalidateNetwork();
+  });
+
+  document.querySelectorAll("#period-chips [data-periodo]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("#period-chips [data-periodo]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+      btn.setAttribute("aria-pressed", "true");
+      state.periodo = btn.getAttribute("data-periodo");
+      renderCards();
+      invalidateNetwork();
+    });
+  });
+
+  document.querySelectorAll("#tier-chips [data-tier]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("#tier-chips [data-tier]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+      btn.setAttribute("aria-pressed", "true");
+      state.tier = btn.getAttribute("data-tier");
+      renderCards();
+      invalidateNetwork();
+    });
   });
 
   // ---------------- Toggle red / lista ----------------
@@ -991,6 +1187,20 @@
       sub.appendChild(subFuente);
     }
     content.appendChild(tag); content.appendChild(name); content.appendChild(sub);
+
+    // Charter §3: nunca dar a entender que hay una sola afiliación "principal" si la fuente no lo
+    // dice explícito. n.subtitulo es la que se mostró primero al armar la muestra, no
+    // necesariamente la única ni la más reciente — si hay más hechos de afiliación, se avisa.
+    if (n.tipo === "persona") {
+      var otrasAfiliaciones = n.hechos.filter(function (h) { return h.tipo === "afiliacion"; });
+      if (otrasAfiliaciones.length) {
+        var afilNote = document.createElement("div"); afilNote.className = "confidence-row";
+        afilNote.textContent = otrasAfiliaciones.length === 1
+          ? "Hay otra afiliación documentada más abajo (sección \"Afiliación / rol institucional\") — ninguna fuente declara cuál es la actual."
+          : "Hay " + otrasAfiliaciones.length + " afiliaciones adicionales documentadas más abajo — ninguna fuente declara cuál es la actual.";
+        content.appendChild(afilNote);
+      }
+    }
 
     // Panel de señales — el "puntaje", siempre con su desglose al lado, nunca solo.
     // Personas usan el modelo de prioridad v2 (PRODUCT_CHARTER.md / SCORING.md); instituciones y
