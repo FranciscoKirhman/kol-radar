@@ -1,212 +1,2149 @@
 {
-  "descripcion": "Muestra de 23 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
+  "descripcion": "Muestra de 77 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
   "generado": "2026-08-09",
-  "actualizado": "2026-08-10",
+  "actualizado": "2026-08-15",
   "especialidad_muestra": "cáncer de pulmón",
   "entidades": [
     {
-      "id": "carlos-rojas", "nombre": "Carlos Rojas", "tipo": "persona",
-      "ciudad": "Santiago", "subtitulo": "Bradford Hill Clinical Research Center",
+      "id": "carlos-rojas",
+      "nombre": "Carlos Rojas",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Bradford Hill Clinical Research Center",
       "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/42129521/",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Coautor con afiliación chilena (Bradford Hill, Santiago) en ensayo fase 3 de nivolumab en NSCLC estadio III, publicado en Nature Cancer.", "revista": "Nature Cancer", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42129521/", "fecha": "2026-07", "confianza": "pendiente" },
-        { "tipo": "publicacion", "hecho": "Aparece como 'Rojas, Carlos I' en artículo de revisión sobre atezolizumab subcutáneo en NSCLC, misma afiliación (Bradford Hill / Finis Terrae University, Santiago).", "revista": "Therapeutic delivery", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/", "fecha": "2026-03", "confianza": "pendiente" },
-        { "tipo": "ensayo_clinico", "hecho": "Investigador principal de sitio en el ensayo SUNRAY-02 (NCT06890598), centro 'Bradfordhill' — vínculo por coincidencia de nombre, no confirmado por ORCID.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor con afiliación chilena (Bradford Hill, Santiago) en ensayo fase 3 de nivolumab en NSCLC estadio III, publicado en Nature Cancer.",
+          "revista": "Nature Cancer",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42129521/",
+          "fecha": "2026-07",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Aparece como 'Rojas, Carlos I' en artículo de revisión sobre atezolizumab subcutáneo en NSCLC, misma afiliación (Bradford Hill / Finis Terrae University, Santiago).",
+          "revista": "Therapeutic delivery",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/",
+          "fecha": "2026-03",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Investigador principal de sitio en el ensayo SUNRAY-02 (NCT06890598), centro 'Bradfordhill' — vínculo por coincidencia de nombre, no confirmado por ORCID.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "mauricio-burotto", "nombre": "Mauricio Burotto", "tipo": "persona",
-      "ciudad": "Santiago", "subtitulo": "Bradford Hill Clinical Research Center",
+      "id": "mauricio-burotto",
+      "nombre": "Mauricio Burotto",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Bradford Hill Clinical Research Center",
       "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/42214243/",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Coautor en actualización de resultados de atezolizumab subcutáneo vs. intravenoso en NSCLC (estudios IMscin001/IMscin002).", "revista": null, "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42214243/", "fecha": "2026-07", "confianza": "pendiente" },
-        { "tipo": "publicacion", "hecho": "Coautor de revisión sobre atezolizumab subcutáneo en NSCLC; ORCID registrado en PubMed 0000-0002-7150-4033.", "revista": "Therapeutic delivery", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/", "fecha": "2026-03", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor en actualización de resultados de atezolizumab subcutáneo vs. intravenoso en NSCLC (estudios IMscin001/IMscin002).",
+          "revista": null,
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42214243/",
+          "fecha": "2026-07",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de revisión sobre atezolizumab subcutáneo en NSCLC; ORCID registrado en PubMed 0000-0002-7150-4033.",
+          "revista": "Therapeutic delivery",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/",
+          "fecha": "2026-03",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "Citado como 'Jefe de Oncología, Clínica Alemana de Santiago' en artículo SciELO — afiliación secundaria a Bradford Hill.",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0717-73482017000300219",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "roberto-gonzalez", "nombre": "Roberto González L.", "tipo": "persona",
-      "ciudad": "Concepción", "subtitulo": "Hospital Clínico Regional de Concepción",
+      "id": "roberto-gonzalez",
+      "nombre": "Roberto González L.",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Hospital Clínico Regional de Concepción",
       "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Autor de correspondencia del estudio de cohorte sobre cáncer pulmonar en un hospital público de Concepción (Rev Med Chile 2022;150(1)).", "revista": "Revista Médica de Chile", "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", "fecha": "2022-01", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de correspondencia del estudio de cohorte sobre cáncer pulmonar en un hospital público de Concepción (Rev Med Chile 2022;150(1)).",
+          "revista": "Revista Médica de Chile",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Texto completo accedido del artículo ya citado — antes solo referenciado como subtitulo_fuente.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "andres-rojas", "nombre": "Andrés Rojas G.", "tipo": "persona",
-      "ciudad": "Puerto Montt", "subtitulo": "Hospital Puerto Montt",
+      "id": "andres-rojas",
+      "nombre": "Andrés Rojas G.",
+      "tipo": "persona",
+      "ciudad": "Puerto Montt",
+      "subtitulo": "Hospital Puerto Montt",
       "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Autor de correspondencia de revisión sobre evaluación preoperatoria en resección de cáncer de pulmón. Nota: comparte apellido con 'Carlos Rojas' pero son personas distintas.", "revista": "Revista Médica de Chile", "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", "fecha": "2015-06", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de correspondencia de revisión sobre evaluación preoperatoria en resección de cáncer de pulmón. Nota: comparte apellido con 'Carlos Rojas' pero son personas distintas.",
+          "revista": "Revista Médica de Chile",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+          "fecha": "2015-06",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Listado completo de coautores confirmado en el artículo ya citado sobre evaluación preoperatoria y predictores de morbilidad.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "fernando-saldias", "nombre": "Fernando Saldías P.", "tipo": "persona",
-      "ciudad": "Santiago", "subtitulo": "Pontificia Universidad Católica de Chile",
+      "id": "fernando-saldias",
+      "nombre": "Fernando Saldías P.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Pontificia Universidad Católica de Chile",
       "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Coautor del artículo 'Factores pronósticos y sobrevida a mediano plazo... cáncer pulmonar... Red de Salud UC' (Rev Chil Enferm Respir 2014;30(4)).", "revista": "Revista Chilena de Enfermedades Respiratorias", "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", "fecha": "2014-12", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del artículo 'Factores pronósticos y sobrevida a mediano plazo... cáncer pulmonar... Red de Salud UC' (Rev Chil Enferm Respir 2014;30(4)).",
+          "revista": "Revista Chilena de Enfermedades Respiratorias",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+          "fecha": "2014-12",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Texto completo accedido del artículo ya citado sobre factores pronósticos y sobrevida a mediano plazo — confirma listado completo de coautores.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Texto completo accedido del artículo ya citado sobre detección precoz de cáncer pulmonar con TC de baja dosis.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "javiera-martinez", "nombre": "Javiera Martinez-Gutierrez", "tipo": "persona",
-      "ciudad": "Santiago (afiliación secundaria)", "subtitulo": "Pontificia Universidad Católica de Chile",
+      "id": "javiera-martinez",
+      "nombre": "Javiera Martinez-Gutierrez",
+      "tipo": "persona",
+      "ciudad": "Santiago (afiliación secundaria)",
+      "subtitulo": "Pontificia Universidad Católica de Chile",
       "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/41421033/",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Coautora de estudio sobre screening de cáncer de pulmón; afiliación principal a University of Melbourne (Australia), secundaria a la PUC.", "revista": "Lung Cancer (Amsterdam)", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41421033/", "fecha": "2026-01", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora de estudio sobre screening de cáncer de pulmón; afiliación principal a University of Melbourne (Australia), secundaria a la PUC.",
+          "revista": "Lung Cancer (Amsterdam)",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41421033/",
+          "fecha": "2026-01",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "rodrigo-uribe", "nombre": "Rodrigo Uribe", "tipo": "persona",
-      "ciudad": "Santiago", "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "id": "rodrigo-uribe",
+      "nombre": "Rodrigo Uribe",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Fundación Arturo López Pérez (FALP)",
       "subtitulo_fuente": "https://clinicaltrials.gov/study/NCT06890598",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Investigador principal del sitio FALP en el ensayo SUNRAY-02 (NCT06890598).", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Investigador principal del sitio FALP en el ensayo SUNRAY-02 (NCT06890598).",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "pamela-salman", "nombre": "Pamela Salman", "tipo": "persona",
-      "ciudad": "Santiago", "subtitulo": "Centro de Oncología de Precisión",
+      "id": "pamela-salman",
+      "nombre": "Pamela Salman",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro de Oncología de Precisión",
       "subtitulo_fuente": "https://clinicaltrials.gov/study/NCT06890598",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Investigadora principal del sitio Centro de Oncología de Precisión en el ensayo SUNRAY-02 (NCT06890598).", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Investigadora principal del sitio Centro de Oncología de Precisión en el ensayo SUNRAY-02 (NCT06890598).",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Investigadora principal del sitio Centro de Oncología de Precisión en el ensayo ALKAZAR (NCT06765109) — rol PRINCIPAL_INVESTIGATOR declarado en la fuente.",
+          "fase": "no declarada en la muestra",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06765109",
+          "fecha": "2026-08",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "pablo-rodriguez", "nombre": "Pablo Rodríguez Monarca", "tipo": "persona",
-      "ciudad": "Santiago (Providencia)", "subtitulo": "K2 Oncology",
+      "id": "pablo-rodriguez",
+      "nombre": "Pablo Rodríguez Monarca",
+      "tipo": "persona",
+      "ciudad": "Santiago (Providencia)",
+      "subtitulo": "K2 Oncology",
       "subtitulo_fuente": "https://clinicaltrials.gov/study/NCT06890598",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Investigador principal del sitio K2 Oncology en el ensayo SUNRAY-02 (NCT06890598).", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Investigador principal del sitio K2 Oncology en el ensayo SUNRAY-02 (NCT06890598).",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "bradford-hill", "nombre": "Bradford Hill Clinical Research Center", "tipo": "institucion",
-      "ciudad": "Santiago", "subtitulo": "Centro de investigación clínica",
+      "id": "bradford-hill",
+      "nombre": "Bradford Hill Clinical Research Center",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro de investigación clínica",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Afiliación de Carlos Rojas y Mauricio Burotto en múltiples publicaciones sobre NSCLC.", "revista": "Therapeutic delivery", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/", "fecha": "2026-03", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Afiliación de Carlos Rojas y Mauricio Burotto en múltiples publicaciones sobre NSCLC.",
+          "revista": "Therapeutic delivery",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41946650/",
+          "fecha": "2026-03",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Además de Carlos Rojas y Mauricio Burotto, PubMed muestra otros investigadores clínicos activos en ensayos internacionales de NSCLC: Suraj Samtani (CLICaP, FRESTON, PACIFIC, STRIKE) y Osvaldo Arén Frontera (CheckMate 017/057, CheckMate 817, BFAST, JAVELIN Lung 200), producción 2020-2026.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33449799/",
+          "fecha": "2021-03-01",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "falp", "nombre": "Fundación Arturo López Pérez (FALP)", "tipo": "institucion",
-      "ciudad": "Santiago (Providencia)", "subtitulo": "Centro oncológico",
+      "id": "falp",
+      "nombre": "Fundación Arturo López Pérez (FALP)",
+      "tipo": "institucion",
+      "ciudad": "Santiago (Providencia)",
+      "subtitulo": "Centro oncológico",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Afiliación de 3 autores (Muñoz-Navarro, Caglevic, Sapunar) en estudio de cohorte sobre diagnóstico tardío de cáncer (incluye pulmón) en adultos mayores chilenos.", "revista": null, "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42416231/", "fecha": "2026-04-29", "confianza": "pendiente" },
-        { "tipo": "publicacion", "hecho": "Afiliación de 2 autores (Vidal, Villarroel-Espindola) en estudio preclínico sobre inhibidor de poliaminas SAM486A en NSCLC.", "revista": "Biological Research", "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41715254/", "fecha": "2026-02-19", "confianza": "pendiente" },
-        { "tipo": "ensayo_clinico", "hecho": "Sitio activo (uno de 4 en Chile) en ensayo WU-KONG1 (NCT03974022, fase I/II, Dizal Pharmaceuticals) sobre sunvozertinib en NSCLC EGFR/HER2.", "fase": "Fase I/II", "fuente_url": "https://clinicaltrials.gov/study/NCT03974022", "fecha": "2026-01-29", "confianza": "pendiente" },
-        { "tipo": "ensayo_clinico", "hecho": "Sitio en ensayo REZILIENT3 (NCT05973773, fase III, Taiho Oncology) sobre zipalertinib en NSCLC EGFR exón 20.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT05973773", "fecha": "2026-07-30", "confianza": "pendiente" },
-        { "tipo": "ensayo_clinico", "hecho": "3 registros de sitio (variantes de nombre/dirección de la misma institución) en ensayo BE6A LUNG-02 (NCT06758401, fase III, Pfizer) sobre sigvotatug vedotin + pembrolizumab en NSCLC.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06758401", "fecha": "2026-07-22", "confianza": "pendiente" },
-        { "tipo": "ensayo_clinico", "hecho": "Rodrigo Uribe listado como investigador principal del sitio FALP en el ensayo SUNRAY-02 (NCT06890598).", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Afiliación de 3 autores (Muñoz-Navarro, Caglevic, Sapunar) en estudio de cohorte sobre diagnóstico tardío de cáncer (incluye pulmón) en adultos mayores chilenos.",
+          "revista": null,
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/42416231/",
+          "fecha": "2026-04-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Afiliación de 2 autores (Vidal, Villarroel-Espindola) en estudio preclínico sobre inhibidor de poliaminas SAM486A en NSCLC.",
+          "revista": "Biological Research",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41715254/",
+          "fecha": "2026-02-19",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Sitio activo (uno de 4 en Chile) en ensayo WU-KONG1 (NCT03974022, fase I/II, Dizal Pharmaceuticals) sobre sunvozertinib en NSCLC EGFR/HER2.",
+          "fase": "Fase I/II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03974022",
+          "fecha": "2026-01-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Sitio en ensayo REZILIENT3 (NCT05973773, fase III, Taiho Oncology) sobre zipalertinib en NSCLC EGFR exón 20.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05973773",
+          "fecha": "2026-07-30",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "3 registros de sitio (variantes de nombre/dirección de la misma institución) en ensayo BE6A LUNG-02 (NCT06758401, fase III, Pfizer) sobre sigvotatug vedotin + pembrolizumab en NSCLC.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06758401",
+          "fecha": "2026-07-22",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Rodrigo Uribe listado como investigador principal del sitio FALP en el ensayo SUNRAY-02 (NCT06890598).",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "torax", "nombre": "Instituto Nacional del Tórax", "tipo": "institucion",
-      "ciudad": "Santiago", "subtitulo": "Hospital público",
+      "id": "torax",
+      "nombre": "Instituto Nacional del Tórax",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Hospital público",
       "hechos": [
-        { "tipo": "afiliacion", "hecho": "Dra. Begoña Yarza Sáez, Directora (seleccionada vía Alta Dirección Pública), médica pediatra, ex Ministra de Salud (marzo-septiembre 2022).", "fuente_url": "https://torax.cl/equipo-directivo-2/", "fecha": "sin fecha en la fuente", "confianza": "pendiente" },
-        { "tipo": "afiliacion", "hecho": "Dra. Claudia Sepúlveda Landeros, Subdirectora Médica, especialista en trasplante pulmonar y fibrosis pulmonar, miembro de la Sociedad Chilena de Enfermedades Respiratorias.", "fuente_url": "https://torax.cl/equipo-directivo-2/", "fecha": "sin fecha en la fuente", "confianza": "pendiente" },
-        { "tipo": "afiliacion", "hecho": "Dr. Francisco Orlandi, director del equipo de cáncer pulmonar del Instituto Nacional del Tórax (nota institucional de 2019).", "fuente_url": "https://www.torax.cl/cancer-pulmonar/", "fecha": "2019-02-04", "confianza": "pendiente" },
-        { "tipo": "afiliacion", "hecho": "Dra. María Paz Saavedra, Jefa (S) de Oncología, citada indicando que ~75% de los pacientes con cáncer pulmonar consultan en etapa avanzada.", "fuente_url": "https://www.torax.cl/cancer-pulmonar/", "fecha": "2019-02-04", "confianza": "pendiente" }
+        {
+          "tipo": "afiliacion",
+          "hecho": "Dra. Begoña Yarza Sáez, Directora (seleccionada vía Alta Dirección Pública), médica pediatra, ex Ministra de Salud (marzo-septiembre 2022).",
+          "fuente_url": "https://torax.cl/equipo-directivo-2/",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "Dra. Claudia Sepúlveda Landeros, Subdirectora Médica, especialista en trasplante pulmonar y fibrosis pulmonar, miembro de la Sociedad Chilena de Enfermedades Respiratorias.",
+          "fuente_url": "https://torax.cl/equipo-directivo-2/",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "Dr. Francisco Orlandi, director del equipo de cáncer pulmonar del Instituto Nacional del Tórax (nota institucional de 2019).",
+          "fuente_url": "https://www.torax.cl/cancer-pulmonar/",
+          "fecha": "2019-02-04",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "Dra. María Paz Saavedra, Jefa (S) de Oncología, citada indicando que ~75% de los pacientes con cáncer pulmonar consultan en etapa avanzada.",
+          "fuente_url": "https://www.torax.cl/cancer-pulmonar/",
+          "fecha": "2019-02-04",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Francisco Orlandi (ya mencionado en hecho existente de esta institución) es coautor del ensayo fase III IMpower132.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33333328/",
+          "fecha": "2021-04",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "María Paz Saavedra (ya mencionada en hecho existente de esta institución) es coautora del consenso nacional de tamizaje de cáncer de pulmón en Chile.",
+          "revista": "Revista Médica de Chile",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "Afiliación citada en fuente SciELO adicional, no capturada en la recolección original.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "james-lind", "nombre": "James Lind Centro de Investigación del Cáncer", "tipo": "institucion",
-      "ciudad": "Temuco", "subtitulo": "Centro de investigación clínica",
+      "id": "james-lind",
+      "nombre": "James Lind Centro de Investigación del Cáncer",
+      "tipo": "institucion",
+      "ciudad": "Temuco",
+      "subtitulo": "Centro de investigación clínica",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Sitio activo en ensayo WU-KONG1 (NCT03974022, fase I/II, Dizal Pharmaceuticals) sobre sunvozertinib en NSCLC.", "fase": "Fase I/II", "fuente_url": "https://clinicaltrials.gov/study/NCT03974022", "fecha": "2026-01-29", "confianza": "pendiente" },
-        { "tipo": "ensayo_clinico", "hecho": "Sitio en ensayo PROCLAIM (NCT03937154, fase III, Amgen) sobre romiplostim para trombocitopenia inducida por quimioterapia en NSCLC/otros cánceres.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT03937154", "fecha": "2026-04-07", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Sitio activo en ensayo WU-KONG1 (NCT03974022, fase I/II, Dizal Pharmaceuticals) sobre sunvozertinib en NSCLC.",
+          "fase": "Fase I/II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03974022",
+          "fecha": "2026-01-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Sitio en ensayo PROCLAIM (NCT03937154, fase III, Amgen) sobre romiplostim para trombocitopenia inducida por quimioterapia en NSCLC/otros cánceres.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03937154",
+          "fecha": "2026-04-07",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "hosp-concepcion", "nombre": "Hospital Clínico Regional de Concepción", "tipo": "institucion",
-      "ciudad": "Concepción", "subtitulo": "Hospital público",
+      "id": "hosp-concepcion",
+      "nombre": "Hospital Clínico Regional de Concepción",
+      "tipo": "institucion",
+      "ciudad": "Concepción",
+      "subtitulo": "Hospital público",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Afiliación de Roberto González L. y equipo, estudio de cohorte sobre cáncer pulmonar.", "revista": "Revista Médica de Chile", "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext", "fecha": "2022-01", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Afiliación de Roberto González L. y equipo, estudio de cohorte sobre cáncer pulmonar.",
+          "revista": "Revista Médica de Chile",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Roberto González Lagos declarado explícitamente como autor de correspondencia del Departamento (fuente ya citada).",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "hosp-puerto-montt", "nombre": "Hospital Puerto Montt", "tipo": "institucion",
-      "ciudad": "Puerto Montt", "subtitulo": "Hospital público",
+      "id": "hosp-puerto-montt",
+      "nombre": "Hospital Puerto Montt",
+      "tipo": "institucion",
+      "ciudad": "Puerto Montt",
+      "subtitulo": "Hospital público",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Afiliación de Andrés Rojas G., revisión sobre evaluación preoperatoria en cáncer de pulmón.", "revista": "Revista Médica de Chile", "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009", "fecha": "2015-06", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Afiliación de Andrés Rojas G., revisión sobre evaluación preoperatoria en cáncer de pulmón.",
+          "revista": "Revista Médica de Chile",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+          "fecha": "2015-06",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "puc", "nombre": "Pontificia Universidad Católica de Chile", "tipo": "institucion",
-      "ciudad": "Santiago", "subtitulo": "Universidad / red de salud",
+      "id": "puc",
+      "nombre": "Pontificia Universidad Católica de Chile",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Universidad / red de salud",
       "hechos": [
-        { "tipo": "publicacion", "hecho": "Afiliación de Fernando Saldías P. y (secundaria) de Javiera Martinez-Gutierrez.", "revista": "Revista Chilena de Enfermedades Respiratorias", "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004", "fecha": "2014-12", "confianza": "pendiente" }
+        {
+          "tipo": "publicacion",
+          "hecho": "Afiliación de Fernando Saldías P. y (secundaria) de Javiera Martinez-Gutierrez.",
+          "revista": "Revista Chilena de Enfermedades Respiratorias",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+          "fecha": "2014-12",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Además de Fernando Saldías P. y Javiera Martinez-Gutierrez, PubMed muestra otros investigadores activos en cáncer de pulmón: Pablo Muñoz-Schuffenegger (Radioterapia, subcomité IASLC) y Alejandro H. Corvalán (ACCDiS, virus EBV/VPH en cáncer de pulmón).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41934464/",
+          "fecha": "2026-06",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "Afiliación de autores adicionales confirmada en dos artículos SciELO ya citados.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872014000400004",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "k2-oncology", "nombre": "K2 Oncology", "tipo": "institucion",
-      "ciudad": "Santiago (Providencia)", "subtitulo": "Centro oncológico",
+      "id": "k2-oncology",
+      "nombre": "K2 Oncology",
+      "tipo": "institucion",
+      "ciudad": "Santiago (Providencia)",
+      "subtitulo": "Centro oncológico",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Sitio del ensayo SUNRAY-02 (NCT06890598), PI Pablo Rodríguez Monarca.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Sitio del ensayo SUNRAY-02 (NCT06890598), PI Pablo Rodríguez Monarca.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "centro-precision", "nombre": "Centro de Oncología de Precisión", "tipo": "institucion",
-      "ciudad": "Santiago", "subtitulo": "Centro oncológico",
+      "id": "centro-precision",
+      "nombre": "Centro de Oncología de Precisión",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro oncológico",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Sitio del ensayo SUNRAY-02 (NCT06890598), PI Pamela Salman.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Sitio del ensayo SUNRAY-02 (NCT06890598), PI Pamela Salman.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "nct06890598", "nombre": "SUNRAY-02 (NCT06890598)", "tipo": "ensayo_clinico",
-      "ciudad": "Santiago (+3 sitios)", "subtitulo": "Fase III · Eli Lilly",
+      "id": "nct06890598",
+      "nombre": "SUNRAY-02 (NCT06890598)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Santiago (+3 sitios)",
+      "subtitulo": "Fase III · Eli Lilly",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Fase III, patrocinado por Eli Lilly, evalúa olomorasib + estándar de cuidado en NSCLC KRAS G12C-mutante. Único de 8 ensayos muestreados que expone PIs reales por sitio en Chile.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06890598", "fecha": "2026-08-07", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Eli Lilly, evalúa olomorasib + estándar de cuidado en NSCLC KRAS G12C-mutante. Único de 8 ensayos muestreados que expone PIs reales por sitio en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06890598",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "nct03974022", "nombre": "WU-KONG1 (NCT03974022)", "tipo": "ensayo_clinico",
-      "ciudad": "Santiago (+3 sitios)", "subtitulo": "Fase I/II · Dizal Pharmaceuticals",
+      "id": "nct03974022",
+      "nombre": "WU-KONG1 (NCT03974022)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Santiago (+3 sitios)",
+      "subtitulo": "Fase I/II · Dizal Pharmaceuticals",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Fase I/II, Dizal Pharmaceuticals, sunvozertinib en NSCLC EGFR/HER2. 4 sitios en Chile.", "fase": "Fase I/II", "fuente_url": "https://clinicaltrials.gov/study/NCT03974022", "fecha": "2026-01-29", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase I/II, Dizal Pharmaceuticals, sunvozertinib en NSCLC EGFR/HER2. 4 sitios en Chile.",
+          "fase": "Fase I/II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03974022",
+          "fecha": "2026-01-29",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "nct05973773", "nombre": "REZILIENT3 (NCT05973773)", "tipo": "ensayo_clinico",
-      "ciudad": "Santiago (+2 sitios)", "subtitulo": "Fase III · Taiho Oncology",
+      "id": "nct05973773",
+      "nombre": "REZILIENT3 (NCT05973773)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Santiago (+2 sitios)",
+      "subtitulo": "Fase III · Taiho Oncology",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Fase III, Taiho Oncology, zipalertinib en NSCLC EGFR exón 20. 3 sitios en Chile.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT05973773", "fecha": "2026-07-30", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, Taiho Oncology, zipalertinib en NSCLC EGFR exón 20. 3 sitios en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05973773",
+          "fecha": "2026-07-30",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "nct06758401", "nombre": "BE6A LUNG-02 (NCT06758401)", "tipo": "ensayo_clinico",
-      "ciudad": "Santiago (+11 sitios)", "subtitulo": "Fase III · Pfizer",
+      "id": "nct06758401",
+      "nombre": "BE6A LUNG-02 (NCT06758401)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Santiago (+11 sitios)",
+      "subtitulo": "Fase III · Pfizer",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Fase III, Pfizer, sigvotatug vedotin + pembrolizumab en NSCLC. 12 registros de sitio en Chile.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT06758401", "fecha": "2026-07-22", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, Pfizer, sigvotatug vedotin + pembrolizumab en NSCLC. 12 registros de sitio en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06758401",
+          "fecha": "2026-07-22",
+          "confianza": "pendiente"
+        }
       ]
     },
     {
-      "id": "nct03937154", "nombre": "PROCLAIM (NCT03937154)", "tipo": "ensayo_clinico",
-      "ciudad": "Temuco (+1 sitio)", "subtitulo": "Fase III · Amgen",
+      "id": "nct03937154",
+      "nombre": "PROCLAIM (NCT03937154)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Temuco (+1 sitio)",
+      "subtitulo": "Fase III · Amgen",
       "hechos": [
-        { "tipo": "ensayo_clinico", "hecho": "Fase III, Amgen, romiplostim para trombocitopenia inducida por quimioterapia en NSCLC y otros cánceres.", "fase": "Fase III", "fuente_url": "https://clinicaltrials.gov/study/NCT03937154", "fecha": "2026-04-07", "confianza": "pendiente" }
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, Amgen, romiplostim para trombocitopenia inducida por quimioterapia en NSCLC y otros cánceres.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03937154",
+          "fecha": "2026-04-07",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06780137",
+      "nombre": "A Study to Evaluate the Safety... (NCT06780137)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase I/Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase I/Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa Gocatamig, Ifinatamab Deruxtecan (I-DXd), Durvalumab en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase I/Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06780137",
+          "fecha": "2026-07-06",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06875310",
+      "nombre": "A Study of Adagrasib Plus Pembrolizumab... (NCT06875310)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "Fase III · Mirati Therapeutics Inc.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Mirati Therapeutics Inc., evalúa Adagrasib, Pembrolizumab, Carboplatin en NSCLC. 2 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06875310",
+          "fecha": "2026-08-14",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct05555732",
+      "nombre": "Datopotamab Deruxtecan (Dato-DXd) and Pembrolizumab With... (NCT05555732)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Daiichi Sankyo",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Daiichi Sankyo, evalúa Datopotamab Deruxtecan, Pembrolizumab, Pemetrexed en NSCLC. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05555732",
+          "fecha": "2026-06-23",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct05609968",
+      "nombre": "Study of Pembrolizumab (MK-3475) Monotherapy Versus... (NCT05609968)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Sacituzumab Govitecan, Pembrolizumab en NSCLC. 2 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05609968",
+          "fecha": "2025-12-24",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06077760",
+      "nombre": "INTerpath-002 (NCT06077760)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Intismeran autogene, Pembrolizumab, Placebo en NSCLC. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06077760",
+          "fecha": "2026-07-31",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06345729",
+      "nombre": "A Study of Calderasib (MK-1084) Plus... (NCT06345729)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Calderasib, Placebo, Pembrolizumab en NSCLC. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06345729",
+          "fecha": "2026-06-15",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06312137",
+      "nombre": "TroFuse-019 (NCT06312137)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Sacituzumab tirumotecan, Pembrolizumab, Cisplatin en NSCLC. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06312137",
+          "fecha": "2026-08-14",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06430866",
+      "nombre": "Eucalyptus (NCT06430866)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (8 sitios)",
+      "subtitulo": "Fase III · Amgen",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Amgen, evalúa ABP 234, Pembrolizumab en NSCLC. 8 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06430866",
+          "fecha": "2026-04-01",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06623422",
+      "nombre": "A Study of Pembrolizumab (MK-3475) With... (NCT06623422)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Pembrolizumab, Cisplatin, Carboplatin en NSCLC. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06623422",
+          "fecha": "2026-08-10",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06780085",
+      "nombre": "A Study of Investigational Agents in... (NCT06780085)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa Raludotatug Deruxtecan, Ifinatamab Deruxtecan, Docetetaxel en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06780085",
+          "fecha": "2026-07-06",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06780098",
+      "nombre": "Substudy 01I: A Study of Investigational... (NCT06780098)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa R-DXD, I-DXD, Docetaxel en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06780098",
+          "fecha": "2026-07-10",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct07190248",
+      "nombre": "A Clinical Study of Calderasib (MK-1084)... (NCT07190248)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Calderasib, Pembrolizumab (+) Berahyaluronidase alfa, Pemetrexed en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07190248",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06012435",
+      "nombre": "A Study of SGN-B6A Versus Docetaxel... (NCT06012435)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "Fase III · Seagen, a wholly owned subsidiary of Pfizer",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Seagen, a wholly owned subsidiary of Pfizer, evalúa sigvotatug vedotin, docetaxel en NSCLC. 2 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06012435",
+          "fecha": "2026-07-23",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct07361510",
+      "nombre": "A Study to Evaluate the Efficacy... (NCT07361510)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Bristol-Myers Squibb",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Bristol-Myers Squibb, evalúa Pumitamig, Pembrolizumab en NSCLC. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07361510",
+          "fecha": "2026-08-10",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06765109",
+      "nombre": "ALKAZAR (NCT06765109)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (4 sitios)",
+      "subtitulo": "Fase III · Nuvalent Inc.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Nuvalent Inc., evalúa Neladalkib (NVL-655), Alectinib en NSCLC. 4 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06765109",
+          "fecha": "2026-07-21",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct04928846",
+      "nombre": "A Study to Assess Disease Activity... (NCT04928846)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · AbbVie",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por AbbVie, evalúa Telisotuzumab Vedotin, Docetaxel en NSCLC. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04928846",
+          "fecha": "2026-07-28",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06635824",
+      "nombre": "Trial to Evaluate Acasunlimab and Pembrolizumab... (NCT06635824)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (4 sitios)",
+      "subtitulo": "Fase III · Genmab",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Genmab, evalúa Acasunlimab, Pembrolizumab, Docetaxel en NSCLC. 4 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06635824",
+          "fecha": "2026-08-04",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06140836",
+      "nombre": "A Study of Repotrectinib Versus Crizotinib... (NCT06140836)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "Fase III · Bristol-Myers Squibb",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Bristol-Myers Squibb, evalúa Repotrectinib, Crizotinib en NSCLC. 2 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06140836",
+          "fecha": "2025-11-21",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06726265",
+      "nombre": "Study of Eftilagimod Alfa (Efti) in... (NCT06726265)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "Fase III · Immutep S.A.S.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Immutep S.A.S., evalúa eftilagimod alfa, carboplatin plus paclitaxel, cisplatin or carboplatin + pemetrexed en NSCLC. 2 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06726265",
+          "fecha": "2026-03-18",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06170788",
+      "nombre": "TroFuse-007 (NCT06170788)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Sacituzumab tirumotecan, Pembrolizumab, Supportive care measures en NSCLC. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06170788",
+          "fecha": "2026-07-30",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06899126",
+      "nombre": "DESTINY-Lung06 (NCT06899126)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Daiichi Sankyo",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Daiichi Sankyo, evalúa Trastuzumab Deruxtecan, pembrolizumab, Pemetrexed en NSCLC. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06899126",
+          "fecha": "2026-07-21",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct05920356",
+      "nombre": "A Study Evaluating Sotorasib Platinum Doublet... (NCT05920356)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Amgen",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Amgen, evalúa Sotorasib, Pembrolizumab en NSCLC. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05920356",
+          "fecha": "2026-08-13",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06161441",
+      "nombre": "A Trial to Learn if the... (NCT06161441)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (4 sitios)",
+      "subtitulo": "Fase II · Regeneron Pharmaceuticals",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Regeneron Pharmaceuticals, evalúa Fianlimab, Cemiplimab, Pemetrexed en NSCLC. 4 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06161441",
+          "fecha": "2026-08-10",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct07286149",
+      "nombre": "A Clinical Study of MK-1084 With... (NCT07286149)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase I/Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase I/Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa MK-1084, Patritumab deruxtecan, Sacituzumab tirumotecan en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase I/Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07286149",
+          "fecha": "2026-08-06",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct05298423",
+      "nombre": "KEYVIBE-006 (NCT05298423)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa pembrolizumab/vibostolimab, durvalumab, cisplatin en NSCLC. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05298423",
+          "fecha": "2026-06-26",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06561386",
+      "nombre": "RELATIVITY1093 (NCT06561386)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (7 sitios)",
+      "subtitulo": "Fase III · Bristol-Myers Squibb",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Bristol-Myers Squibb, evalúa Nivolumab, Relatlimab, Pembrolizumab en NSCLC. 7 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06561386",
+          "fecha": "2026-07-20",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct07472517",
+      "nombre": "DAREON ® -Lung-1: A Study in... (NCT07472517)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Boehringer Ingelheim",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Boehringer Ingelheim, evalúa obrixtamig, atezolizumab, carboplatin en NSCLC. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07472517",
+          "fecha": "2026-08-06",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06099782",
+      "nombre": "A Study of Participant Reported Preference... (NCT06099782)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (7 sitios)",
+      "subtitulo": "Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa Pembrolizumab (+) Berahyaluronidase alfa, Pembrolizumab en NSCLC. 7 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06099782",
+          "fecha": "2026-04-08",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06311721",
+      "nombre": "A Study to Compare ABP 234... (NCT06311721)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (7 sitios)",
+      "subtitulo": "Fase III · Amgen",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Amgen, evalúa ABP 234, Pembrolizumab (US), Pembrolizumab (EU) en NSCLC. 7 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06311721",
+          "fecha": "2026-05-06",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06236438",
+      "nombre": "LIVIGNO-4 (NCT06236438)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase II/Fase III · AbbVie",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II/Fase III, patrocinado por AbbVie, evalúa Livmoniplimab, Budigalimab, Pembrolizumab en NSCLC. 5 sitio(s) en Chile.",
+          "fase": "Fase II/Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06236438",
+          "fecha": "2026-02-23",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06074588",
+      "nombre": "Sacituzumab Tirumotecan (MK-2870) Versus Chemotherapy in... (NCT06074588)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (10 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Sacituzumab tirumotecan, Docetaxel, Pemetrexed en NSCLC. 10 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06074588",
+          "fecha": "2026-08-14",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct05502237",
+      "nombre": "STAR-121 (NCT05502237)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (7 sitios)",
+      "subtitulo": "Fase III · Gilead Sciences",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Gilead Sciences, evalúa Zimberelimab, Domvanalimab, Pembrolizumab en NSCLC. 7 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05502237",
+          "fecha": "2026-01-30",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct03178552",
+      "nombre": "B-FAST (NCT03178552)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile",
+      "subtitulo": "Fase II/Fase III · Hoffmann-La Roche",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II/Fase III, patrocinado por Hoffmann-La Roche, evalúa Alectinib, Atezolizumab, Pemetrexed en NSCLC. 1 sitio(s) en Chile.",
+          "fase": "Fase II/Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03178552",
+          "fecha": "2026-06-05",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct04380636",
+      "nombre": "Study of Pembrolizumab With Concurrent Chemoradiation... (NCT04380636)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Pembrolizumab, Olaparib, Placebo for olaparib en NSCLC. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04380636",
+          "fecha": "2026-05-15",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct07252739",
+      "nombre": "KEYMAKER-U01 Substudy 01J: A Study of... (NCT07252739)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa MK-1084, Pembrolizumab, Cetuximab en NSCLC. 2 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07252739",
+          "fecha": "2026-07-30",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06731907",
+      "nombre": "A Study of Pembrolizumab With or... (NCT06731907)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa Pembrolizumab, Carboplatin, Paclitaxel en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06731907",
+          "fecha": "2026-05-26",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct07227597",
+      "nombre": "A Clinical Study of Gocatamig (MK-6070)... (NCT07227597)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase I/Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase I/Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa Gocatamig, I-DXd, Atezolizumab en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase I/Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07227597",
+          "fecha": "2026-08-03",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06422143",
+      "nombre": "Pembrolizumab With or Without Maintenance Sacituzumab... (NCT06422143)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Pembrolizumab, sac-TMT, Carboplatin en NSCLC. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06422143",
+          "fecha": "2026-08-07",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct07195695",
+      "nombre": "Beamion LUNG-3: Adjuvant Zongertinib vs Standard... (NCT07195695)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "Fase III · Boehringer Ingelheim",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Boehringer Ingelheim, evalúa Zongertinib, Pembrolizumab, Atezolizumab en NSCLC. 2 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07195695",
+          "fecha": "2026-08-13",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct04152499",
+      "nombre": "MK-2870-001 (NCT04152499)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase I/Fase II · Klus Pharma Inc.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase I/Fase II, patrocinado por Klus Pharma Inc., evalúa SKB264 en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase I/Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04152499",
+          "fecha": "2026-05-11",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct07221474",
+      "nombre": "INTerpath-13 (NCT07221474)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (4 sitios)",
+      "subtitulo": "Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa Intismeran Autogene, Pembrolizumab, Carboplatin en NSCLC. 4 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07221474",
+          "fecha": "2026-07-10",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06151574",
+      "nombre": "Beamion LUNG-2: A Study to Test... (NCT06151574)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile",
+      "subtitulo": "Fase III · Boehringer Ingelheim",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Boehringer Ingelheim, evalúa zongertinib, pembrolizumab, cisplatin en NSCLC. 1 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06151574",
+          "fecha": "2026-07-23",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct05722015",
+      "nombre": "A Study of Subcutaneous (SC) Pembrolizumab... (NCT05722015)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (7 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Pembrolizumab Formulated with Berahyaluronidase Alfa, Pemetrexed, Cisplatin en NSCLC. 7 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05722015",
+          "fecha": "2025-09-11",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct06788912",
+      "nombre": "Pembrolizumab (MK-3475) Plus Investigational Agents in... (NCT06788912)",
+      "tipo": "ensayo_clinico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase II · Merck Sharp & Dohme LLC",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa Pembrolizumab (neoadjuvant), Cisplatin, Gemcitabine en NSCLC. 3 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06788912",
+          "fecha": "2026-06-26",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "christian-caglevic",
+      "nombre": "Christian Caglevic",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/36306479/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de resultados a 5 años de KEYNOTE-042 (pembrolizumab vs. quimioterapia de primera línea en NSCLC PD-L1 TPS ≥1%).",
+          "revista": "Journal of Clinical Oncology",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/36306479/",
+          "fecha": "2023-04-10",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de recomendaciones del grupo THOCOoP para priorización y tratamiento de pacientes de oncología torácica durante COVID-19 (alcance general, no exclusivo de cáncer de pulmón).",
+          "revista": "Critical Reviews in Oncology/Hematology",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/32650215/",
+          "fecha": "2020-09",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio fase 1 de farmacocinética de pembrolizumab con berahialuronidasa alfa para administración subcutánea en tumores sólidos avanzados (incluye NSCLC).",
+          "revista": "European Journal of Cancer",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/40957773/",
+          "fecha": "2025-11-17",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Investigador principal del sitio FALP en el ensayo ALKAZAR (NCT06765109) — rol PRINCIPAL_INVESTIGATOR declarado en la fuente.",
+          "fase": "no declarada en la muestra",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06765109",
+          "fecha": "2026-08",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "hector-galindo",
+      "nombre": "Héctor Galindo",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro de Investigaciones Clínicas UC (PUC)",
+      "subtitulo_fuente": "https://clinicaltrials.gov/study/NCT06765109",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Investigador principal del sitio Centro de Investigaciones Clínicas UC (CICUC) en el ensayo ALKAZAR (NCT06765109) — rol PRINCIPAL_INVESTIGATOR declarado en la fuente.",
+          "fase": "no declarada en la muestra",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06765109",
+          "fecha": "2026-08",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "alejandra-maldonado",
+      "nombre": "Alejandra Maldonado Villegas",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "subtitulo_fuente": "https://www.falp.org/equipo/alejandra-maldonado-villegas/",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Listada en el directorio público de equipo médico de FALP.",
+          "fuente_url": "https://www.falp.org/equipo/alejandra-maldonado-villegas/",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "antonio-hernandez",
+      "nombre": "Antonio Alexis Hernández Morelle",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "subtitulo_fuente": "https://www.falp.org/equipo/antonio-alexis-hernandez-morelle/",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Listado en el directorio público de equipo médico de FALP.",
+          "fuente_url": "https://www.falp.org/equipo/antonio-alexis-hernandez-morelle/",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "pedro-carrasco",
+      "nombre": "Pedro Alejandro Carrasco Galleguillos",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "subtitulo_fuente": "https://www.falp.org/equipo/pedro-alejandro-carrasco-galleguillos/",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Listado en el directorio público de equipo médico de FALP.",
+          "fuente_url": "https://www.falp.org/equipo/pedro-alejandro-carrasco-galleguillos/",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "jorge-salguero",
+      "nombre": "Jorge Eduardo Salguero Aparicio",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "subtitulo_fuente": "https://www.falp.org/equipo/jorge-salguero-aparicio/",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Listado en el directorio público de equipo médico de FALP.",
+          "fuente_url": "https://www.falp.org/equipo/jorge-salguero-aparicio/",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "juan-cheyre",
+      "nombre": "Juan Emilio Cheyre Forestier",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "subtitulo_fuente": "https://www.falp.org/equipo/juan-cheyre/",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Listado en el directorio público de equipo médico de FALP.",
+          "fuente_url": "https://www.falp.org/equipo/juan-cheyre/",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nicolas-von-jentschyk",
+      "nombre": "Nicolás Von Jentschyk Rojas",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Fundación Arturo López Pérez (FALP)",
+      "subtitulo_fuente": "https://www.falp.org/equipo/nicolas-von-jentschyk-rojas/",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Listado en el directorio público de equipo médico de FALP.",
+          "fuente_url": "https://www.falp.org/equipo/nicolas-von-jentschyk-rojas/",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "hernan-cabello",
+      "nombre": "Hernán Patricio Cabello Araya",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Clínica Alemana",
+      "subtitulo_fuente": "https://www.clinicaalemana.cl/profesionales/perfil?rut=7046176-5",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Listado en el directorio público de profesionales de Clínica Alemana.",
+          "fuente_url": "https://www.clinicaalemana.cl/profesionales/perfil?rut=7046176-5",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "clinica-alemana",
+      "nombre": "Clínica Alemana Santiago",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro clínico privado",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Directorio público de especialistas buscable por área médica.",
+          "fuente_url": "https://www.clinicaalemana.cl/profesionales/?searchType=especialidad&idAreaMedica=104",
+          "fecha": "sin fecha en la fuente",
+          "confianza": "pendiente"
+        }
       ]
     }
   ],
   "vinculos": [
-    { "origen": "carlos-rojas", "destino": "bradford-hill", "tipo": "afiliación" },
-    { "origen": "mauricio-burotto", "destino": "bradford-hill", "tipo": "afiliación" },
-    { "origen": "carlos-rojas", "destino": "mauricio-burotto", "tipo": "coautoría" },
-    { "origen": "carlos-rojas", "destino": "nct06890598", "tipo": "investigador de sitio" },
-    { "origen": "rodrigo-uribe", "destino": "falp", "tipo": "investigador de sitio" },
-    { "origen": "rodrigo-uribe", "destino": "nct06890598", "tipo": "investigador de sitio" },
-    { "origen": "pamela-salman", "destino": "centro-precision", "tipo": "investigador de sitio" },
-    { "origen": "pamela-salman", "destino": "nct06890598", "tipo": "investigador de sitio" },
-    { "origen": "pablo-rodriguez", "destino": "k2-oncology", "tipo": "investigador de sitio" },
-    { "origen": "pablo-rodriguez", "destino": "nct06890598", "tipo": "investigador de sitio" },
-    { "origen": "falp", "destino": "nct03974022", "tipo": "sitio del ensayo" },
-    { "origen": "falp", "destino": "nct05973773", "tipo": "sitio del ensayo" },
-    { "origen": "falp", "destino": "nct06758401", "tipo": "sitio del ensayo" },
-    { "origen": "james-lind", "destino": "nct03974022", "tipo": "sitio del ensayo" },
-    { "origen": "james-lind", "destino": "nct03937154", "tipo": "sitio del ensayo" },
-    { "origen": "roberto-gonzalez", "destino": "hosp-concepcion", "tipo": "afiliación" },
-    { "origen": "andres-rojas", "destino": "hosp-puerto-montt", "tipo": "afiliación" },
-    { "origen": "fernando-saldias", "destino": "puc", "tipo": "afiliación" },
-    { "origen": "javiera-martinez", "destino": "puc", "tipo": "afiliación secundaria" }
+    {
+      "origen": "carlos-rojas",
+      "destino": "bradford-hill",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "mauricio-burotto",
+      "destino": "bradford-hill",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "carlos-rojas",
+      "destino": "mauricio-burotto",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "carlos-rojas",
+      "destino": "nct06890598",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "rodrigo-uribe",
+      "destino": "falp",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "rodrigo-uribe",
+      "destino": "nct06890598",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "pamela-salman",
+      "destino": "centro-precision",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "pamela-salman",
+      "destino": "nct06890598",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "pablo-rodriguez",
+      "destino": "k2-oncology",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "pablo-rodriguez",
+      "destino": "nct06890598",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03974022",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct05973773",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06758401",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct03974022",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct03937154",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "roberto-gonzalez",
+      "destino": "hosp-concepcion",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "andres-rojas",
+      "destino": "hosp-puerto-montt",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "fernando-saldias",
+      "destino": "puc",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "javiera-martinez",
+      "destino": "puc",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06780137",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06780137",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06780137",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06875310",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06875310",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct05555732",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct05609968",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06077760",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06077760",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06077760",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06345729",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct06345729",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06345729",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06312137",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06312137",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct06430866",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06430866",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "k2-oncology",
+      "destino": "nct06430866",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06623422",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06623422",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06780085",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06780085",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06780098",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06780098",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07190248",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07190248",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06012435",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07361510",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct07361510",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct06765109",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06765109",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06765109",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04928846",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06635824",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06635824",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06140836",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct06726265",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06170788",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06170788",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06899126",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct06899126",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct05920356",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct05920356",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct06161441",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07286149",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07286149",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct05298423",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct05298423",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct05298423",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct05298423",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06561386",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06561386",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06561386",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07472517",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07472517",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06099782",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06099782",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct06099782",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06099782",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "k2-oncology",
+      "destino": "nct06311721",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06236438",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06074588",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06074588",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct06074588",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "k2-oncology",
+      "destino": "nct06074588",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06074588",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct05502237",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct03178552",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct04380636",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct04380636",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct07252739",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07252739",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06731907",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06731907",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07227597",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07227597",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct07227597",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06422143",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06422143",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06422143",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07195695",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct04152499",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct04152499",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07221474",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07221474",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06151574",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct05722015",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct05722015",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct05722015",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06788912",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06788912",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "christian-caglevic",
+      "destino": "falp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "hector-galindo",
+      "destino": "puc",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "alejandra-maldonado",
+      "destino": "falp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "antonio-hernandez",
+      "destino": "falp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "pedro-carrasco",
+      "destino": "falp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "jorge-salguero",
+      "destino": "falp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "juan-cheyre",
+      "destino": "falp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "nicolas-von-jentschyk",
+      "destino": "falp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "hernan-cabello",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "christian-caglevic",
+      "destino": "nct06765109",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "hector-galindo",
+      "destino": "nct06765109",
+      "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "pamela-salman",
+      "destino": "nct06765109",
+      "tipo": "investigador de sitio"
+    }
   ],
   "campos_confiables": [
     "nombre de la entidad (persona/institución/ensayo) — presente en el 100% de los hallazgos de las 4 fuentes",

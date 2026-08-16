@@ -5,11 +5,11 @@ documentadas en `README.md`, para descubrir qué campos son confiables antes de
 diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
 validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
 2 (esa etapa formal sigue sin hacerse). Los datos completos están en
-[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 23
-entidades reales (personas, instituciones, 5 ensayos clínicos) y 19 vínculos
-entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza del modelo
-de datos, con un campo `tipo` adicional y (según el caso) `fase` del ensayo o
-`revista` de la publicación.
+[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 77
+entidades reales (18 personas, 10 instituciones, 49 ensayos clínicos) y 122
+vínculos entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza
+del modelo de datos, con un campo `tipo` adicional y (según el caso) `fase`
+del ensayo o `revista` de la publicación.
 
 Metodología: 4 agentes en paralelo, cada uno restringido a una sola fuente y
 obligado a citar la URL exacta de donde sacó cada dato — sin inventar
@@ -19,6 +19,21 @@ Instituto Nacional del Tórax. SER Chile se intentó como quinta fuente, pero
 sus páginas de directivas/congresos devolvieron HTTP 404 al momento de
 recolectar — no hay ningún hecho de esta muestra citando serchile.cl (ver
 `campos_faltantes_o_dificiles` en el JSON).
+
+**Ronda de expansión (2026-08-15):** una segunda recolección, con el mismo
+principio de citar URL exacta y no inventar, amplió la muestra de 23 a 77
+entidades: 44 ensayos clínicos nuevos de ClinicalTrials.gov con sitio real en
+alguna institución ya conocida (verificados uno por uno contra la API en
+vivo antes de integrarlos, no solo confiados a lo que devolvió el agente),
+9 personas nuevas (Christian Caglevic y Héctor Galindo, ambos investigadores
+principales confirmados en el ensayo ALKAZAR/NCT06765109; 6 miembros del
+equipo médico de FALP y 1 de Clínica Alemana desde sus directorios públicos),
+1 institución nueva (Clínica Alemana), y 13 hechos nuevos sobre entidades ya
+existentes. Quedó **pendiente, deliberadamente no integrado todavía**: 21
+personas candidatas de PubMed y 43 de SciELO que la recolección encontró
+pero no se revisaron una por una — su volumen no permitía la misma revisión
+individual que sí se le dio a este lote. Quedan como trabajo futuro, no
+descartadas.
 
 ## Lo que encontró (perfiles reales)
 
