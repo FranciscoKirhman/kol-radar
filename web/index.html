@@ -107,6 +107,34 @@
     border-radius: 999px; padding: 2px 8px; cursor: pointer;
   }
   .andor-toggle:hover, .chip-clear:hover { color: var(--text-primary); }
+  .chip.shortlist-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .shortlist-btn {
+    font: inherit; font-size: 11px; padding: 3px 9px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface-0); color: var(--text-secondary);
+    cursor: pointer; white-space: nowrap;
+  }
+  .shortlist-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .shortlist-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .card-actions { display: flex; justify-content: flex-end; margin-top: 6px; }
+
+  .resumen-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 60; }
+  .resumen-modal {
+    position: fixed; z-index: 61; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: min(760px, calc(100vw - 32px)); max-height: 84vh; overflow-y: auto;
+    background: var(--surface-0); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .resumen-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .resumen-head h2 { font-size: 17px; margin: 0; }
+  .resumen-head .sheet-close { position: static; }
+  .resumen-hint { font-size: 12.5px; color: var(--text-muted); margin: 0; line-height: 1.5; }
+  #resumen-copy { align-self: flex-start; }
+  .resumen-text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px; line-height: 1.55; color: var(--text-primary);
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px; margin: 0; white-space: pre-wrap; word-break: break-word;
+  }
 
   /* ---------- Main / list ---------- */
   main { max-width: 1080px; margin: 0 auto; padding: 6px 16px 48px; }
@@ -291,6 +319,8 @@
     <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Ensayos clínicos</button>
     <button class="chip sort-toggle" id="sort-toggle" data-sort="reciente">Ordenar: más reciente</button>
     <button class="chip" id="toggle-advanced" aria-pressed="false" aria-expanded="false">Filtros avanzados ▾</button>
+    <button class="chip shortlist-chip" id="toggle-shortlist" aria-pressed="false">Mi shortlist (0)</button>
+    <button class="chip" id="open-resumen" hidden>Resumen para entrevista ↗</button>
     <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false" title="Vista avanzada — para ver de qué se conecta una persona en particular, abre su ficha en la lista">Mapa completo (avanzado)</button>
   </div>
   <div class="advanced-filters" id="advanced-filters" hidden>
@@ -321,6 +351,10 @@
         <button class="chip small" data-tier="media" aria-pressed="false">Prioridad media</button>
         <button class="chip small" data-tier="monitorear" aria-pressed="false">Monitorear</button>
       </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-group-title">Región</div>
+      <div class="tag-chips" id="region-chips"></div>
     </div>
   </div>
 </header>
@@ -369,6 +403,18 @@
   <div id="detail-content"></div>
 </div>
 
+<div class="resumen-backdrop" id="resumen-backdrop" hidden></div>
+<div class="resumen-modal" id="resumen-modal" role="dialog" aria-modal="true" aria-labelledby="resumen-title" hidden>
+  <div class="resumen-head">
+    <h2 id="resumen-title">Resumen para entrevista</h2>
+    <button class="sheet-close" id="resumen-close" aria-label="Cerrar">✕</button>
+  </div>
+  <p class="resumen-hint">Generado desde tu shortlist y la evidencia citada. Copiálo y editálo —
+    es un primer borrador defendible, no una conclusión: el criterio científico sigue siendo tuyo.</p>
+  <button class="chip" id="resumen-copy">Copiar texto</button>
+  <pre class="resumen-text" id="resumen-text"></pre>
+</div>
+
 <script>
 (function () {
   "use strict";
@@ -389,7 +435,25 @@
   // Orden por defecto = "reciente", no "senales": el producto no debe decidir por
   // adelantado un ranking de "a quién contactar primero" -- eso es una decisión del
   // usuario, que puede activarla explícitamente con el chip de abajo.
-  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas" };
+  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", soloShortlist: false };
+
+  // Shortlist del MSL (PRODUCT_CHARTER.md §4: "produce a concise, defensible research shortlist").
+  // Vive solo en localStorage del navegador — no se envía a ningún servidor ni se comitea al repo.
+  var SHORTLIST_KEY = "kol-radar-shortlist";
+  var shortlist = [];
+  try {
+    var stored = window.localStorage.getItem(SHORTLIST_KEY);
+    if (stored) shortlist = JSON.parse(stored) || [];
+  } catch (e) { shortlist = []; }
+  function saveShortlist() {
+    try { window.localStorage.setItem(SHORTLIST_KEY, JSON.stringify(shortlist)); } catch (e) { /* modo privado: se pierde al cerrar, no es un error fatal */ }
+  }
+  function enShortlist(id) { return shortlist.indexOf(id) !== -1; }
+  function toggleShortlist(id) {
+    if (enShortlist(id)) { shortlist = shortlist.filter(function (x) { return x !== id; }); }
+    else { shortlist.push(id); }
+    saveShortlist();
+  }
 
   // Los datos de hoy son 100% https:// verificados, pero el JSON viene de una fuente
   // externa y en el futuro (Fase 4) va a poblarse con un Extractor automatizado sin
@@ -525,7 +589,13 @@
       entidades = data.entidades || [];
       vinculos = data.vinculos || [];
       entidades.forEach(function (n) { byId[n.id] = n; });
+      // Una shortlist guardada puede apuntar a ids que ya no existen (el dataset cambia entre
+      // versiones) — se limpian en silencio en vez de romper el resumen más adelante.
+      shortlist = shortlist.filter(function (id) { return !!byId[id]; });
+      saveShortlist();
       document.getElementById("loading-state").hidden = true;
+      buildRegionChips();
+      refreshShortlistUI();
       renderCards();
     })
     .catch(function (err) {
@@ -573,6 +643,23 @@
   TAG_RULES.forEach(function (r) { r.regexes = r.kw.map(buildTagRegex); });
   var TAG_CATEGORIAS = ["Biomarcadores", "Tratamiento", "Tipo de cáncer", "Detección"];
 
+  // Región derivada del campo ciudad. Los ensayos multi-sitio ("Chile (5 sitios)") NO reciben una
+  // región inventada — se marcan como multi-sitio, que es lo que la fuente realmente dice.
+  var REGION_RULES = [
+    { region: "Región Metropolitana", kw: ["santiago", "providencia", "recoleta", "vitacura", "las condes"] },
+    { region: "Biobío", kw: ["concepción", "concepcion"] },
+    { region: "La Araucanía", kw: ["temuco"] },
+    { region: "Los Lagos", kw: ["puerto montt"] },
+    { region: "Valparaíso", kw: ["viña del mar", "vina del mar", "valparaíso", "valparaiso"] }
+  ];
+  function regionOf(n) {
+    var c = (n.ciudad || "").toLowerCase();
+    var hit = REGION_RULES.find(function (r) { return r.kw.some(function (k) { return c.indexOf(k) !== -1; }); });
+    if (hit) return hit.region;
+    if (c.indexOf("sitio") !== -1 || c === "chile") return "Multi-sitio / nacional";
+    return "Sin región identificada";
+  }
+
   function entidadTexto(n) {
     return n.hechos.map(function (h) { return (h.hecho || "") + " " + (h.revista || ""); }).join(" ");
   }
@@ -608,6 +695,8 @@
     if (state.tier !== "todas") {
       if (n.tipo !== "persona" || computePriority(n).tier !== state.tier) return false;
     }
+    if (state.region !== "todas" && regionOf(n) !== state.region) return false;
+    if (state.soloShortlist && shortlist.indexOf(n.id) === -1) return false;
     return true;
   }
 
@@ -628,8 +717,12 @@
 
   function buildCard(n) {
     var senales = computeSenales(n);
-    var card = document.createElement("button");
+    // div + role=button, no <button>: la tarjeta contiene su propio botón de shortlist y anidar
+    // <button> dentro de <button> es HTML inválido (el navegador rompe el DOM al corregirlo).
+    var card = document.createElement("div");
     card.className = "card";
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
     card.setAttribute("data-id", n.id);
 
     var top = document.createElement("div"); top.className = "card-top";
@@ -673,7 +766,31 @@
     card.appendChild(top);
     if (signalRow.childNodes.length) card.appendChild(signalRow);
     card.appendChild(meta);
+
+    // Shortlist solo para personas — el charter prioriza médicos, no instituciones ni ensayos.
+    if (n.tipo === "persona") {
+      var actions = document.createElement("div"); actions.className = "card-actions";
+      var slBtn = document.createElement("button");
+      slBtn.type = "button"; slBtn.className = "shortlist-btn";
+      slBtn.setAttribute("aria-pressed", String(enShortlist(n.id)));
+      slBtn.textContent = enShortlist(n.id) ? "✓ En shortlist" : "+ Shortlist";
+      slBtn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        toggleShortlist(n.id);
+        slBtn.setAttribute("aria-pressed", String(enShortlist(n.id)));
+        slBtn.textContent = enShortlist(n.id) ? "✓ En shortlist" : "+ Shortlist";
+        refreshShortlistUI();
+        if (state.soloShortlist) renderCards();
+      });
+      actions.appendChild(slBtn);
+      card.appendChild(actions);
+    }
+
     card.addEventListener("click", function () { openDetail(n.id); });
+    card.addEventListener("keydown", function (ev) {
+      if (ev.target !== card) return;
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); openDetail(n.id); }
+    });
     return card;
   }
 
@@ -807,6 +924,156 @@
       state.tier = btn.getAttribute("data-tier");
       renderCards();
       invalidateNetwork();
+    });
+  });
+
+  // Los chips de región se generan desde los datos reales, no desde una lista fija de regiones
+  // de Chile — así nunca ofrecemos filtrar por una región donde no hay ninguna entidad.
+  function buildRegionChips() {
+    var regionsEl = document.getElementById("region-chips");
+    regionsEl.innerHTML = "";
+    var presentes = [];
+    entidades.forEach(function (n) {
+      var r = regionOf(n);
+      if (presentes.indexOf(r) === -1) presentes.push(r);
+    });
+    presentes.sort();
+    var todas = document.createElement("button");
+    todas.type = "button"; todas.className = "chip small";
+    todas.setAttribute("data-region", "todas");
+    todas.setAttribute("aria-pressed", String(state.region === "todas"));
+    todas.textContent = "Todas";
+    regionsEl.appendChild(todas);
+    presentes.forEach(function (r) {
+      var count = entidades.filter(function (n) { return regionOf(n) === r; }).length;
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip small";
+      b.setAttribute("data-region", r);
+      b.setAttribute("aria-pressed", String(state.region === r));
+      b.textContent = r + " (" + count + ")";
+      regionsEl.appendChild(b);
+    });
+    regionsEl.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-region]");
+      if (!btn) return;
+      regionsEl.querySelectorAll("[data-region]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+      btn.setAttribute("aria-pressed", "true");
+      state.region = btn.getAttribute("data-region");
+      renderCards();
+      invalidateNetwork();
+    });
+  }
+
+  // ---------------- Shortlist y resumen para entrevista (PRODUCT_CHARTER.md §4) ----------------
+  var shortlistBtn = document.getElementById("toggle-shortlist");
+  var resumenBtn = document.getElementById("open-resumen");
+
+  function refreshShortlistUI() {
+    shortlistBtn.textContent = "Mi shortlist (" + shortlist.length + ")";
+    resumenBtn.hidden = shortlist.length === 0;
+    if (shortlist.length === 0 && state.soloShortlist) {
+      state.soloShortlist = false;
+      shortlistBtn.setAttribute("aria-pressed", "false");
+    }
+  }
+
+  shortlistBtn.addEventListener("click", function () {
+    if (!shortlist.length) return;
+    state.soloShortlist = !state.soloShortlist;
+    shortlistBtn.setAttribute("aria-pressed", String(state.soloShortlist));
+    renderCards();
+    invalidateNetwork();
+  });
+
+  function tierResumen(tier) {
+    if (tier === "alta") return "Investigar en profundidad y preparar una posible interacción científica.";
+    if (tier === "media") return "Revisar la evidencia y evaluar el encaje con la estrategia médica.";
+    return "Mantener en el mapa y reevaluar cuando cambie la evidencia.";
+  }
+
+  function generarResumen() {
+    var seleccionados = shortlist.map(function (id) { return byId[id]; }).filter(Boolean);
+    seleccionados.sort(function (a, b) { return computePriority(b).total - computePriority(a).total; });
+
+    var L = [];
+    L.push("MAPA DE PRIMERA PASADA — CÁNCER DE PULMÓN, CHILE");
+    L.push("Generado con KOL Radar · " + new Date().toISOString().slice(0, 10));
+    L.push("");
+    L.push("MÉTODO");
+    L.push("Evidencia pública de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales.");
+    L.push("Cada candidato entra al mapa con al menos una señal pública verificable. La prioridad");
+    L.push("combina seis dimensiones con tope (ensayos, publicaciones, guías, congresos/docencia,");
+    L.push("sociedades, red), cada señal pesada por su recencia. No es un ranking de calidad");
+    L.push("profesional ni una decisión de contacto: es dónde invertir tiempo de investigación.");
+    L.push("");
+    L.push("CANDIDATOS PRIORIZADOS (" + seleccionados.length + ")");
+    L.push("");
+
+    seleccionados.forEach(function (n, i) {
+      var p = computePriority(n);
+      L.push((i + 1) + ". " + n.nombre + " — " + TIER_LABEL[p.tier] + " (" + p.total + " pts)");
+      L.push("   Afiliación observada: " + n.subtitulo + " · " + n.ciudad);
+      var porQue = [];
+      if (p.ensayosPts) porQue.push(p.nEnsayos + " ensayo(s) clínico(s) [" + p.ensayosPts + " pts]");
+      if (p.pubPts) porQue.push(p.nPub + " publicación(es) [" + p.pubPts + " pts]");
+      if (p.guiaPts) porQue.push(p.nGuias + " guía(s)/consenso [" + p.guiaPts + " pts]");
+      if (p.congresoPts) porQue.push(p.nCongreso + " congreso(s) [" + p.congresoPts + " pts]");
+      if (p.redPts) porQue.push(p.redPts + " conexión(es) en la red");
+      L.push("   Por qué: " + (porQue.length ? porQue.join("; ") : "sin señales puntuables vigentes"));
+      L.push("   Siguiente paso: " + tierResumen(p.tier));
+      L.push("   Confianza de la evidencia: " + p.confianzaLabel);
+      var tags = tagsFor(n);
+      if (tags.length) L.push("   Temas detectados: " + tags.join(", "));
+      L.push("   Evidencia (" + n.hechos.length + " hecho(s)):");
+      n.hechos.forEach(function (h) {
+        var fechaTxt = h.fecha || "sin fecha en la fuente";
+        L.push("     - [" + (TIPO_HECHO_LABEL[h.tipo] || h.tipo) + "] " + h.hecho);
+        L.push("       " + fechaTxt + " · " + (h.fuente_url || "sin URL"));
+      });
+      L.push("");
+    });
+
+    L.push("LO QUE ESTE MAPA NO SABE");
+    L.push("- Ningún hecho pasó revisión humana todavía: toda la evidencia está como 'pendiente'.");
+    L.push("- Docencia, congresos y roles en sociedades científicas casi no están capturados —");
+    L.push("  aparecen en 0 no porque la persona no los tenga, sino porque no tenemos fuente.");
+    L.push("- Las fuentes actuales favorecen perfiles académicos: un clínico muy influyente que");
+    L.push("  publica poco puede no aparecer. Ausencia de evidencia no es evidencia de ausencia.");
+    L.push("- La identidad se resuelve por nombre y afiliación, sin ORCID en la mayoría de los");
+    L.push("  casos: dos homónimos podrían estar mezclados. Verificá antes de citar.");
+    L.push("- La afiliación mostrada es la observada en la fuente, no necesariamente la actual.");
+    return L.join("\n");
+  }
+
+  var resumenModal = document.getElementById("resumen-modal");
+  var resumenBackdrop = document.getElementById("resumen-backdrop");
+  var resumenTextEl = document.getElementById("resumen-text");
+
+  function abrirResumen() {
+    resumenTextEl.textContent = generarResumen();
+    resumenModal.hidden = false;
+    resumenBackdrop.hidden = false;
+    document.getElementById("resumen-close").focus();
+  }
+  function cerrarResumen() {
+    resumenModal.hidden = true;
+    resumenBackdrop.hidden = true;
+    resumenBtn.focus();
+  }
+  resumenBtn.addEventListener("click", abrirResumen);
+  document.getElementById("resumen-close").addEventListener("click", cerrarResumen);
+  resumenBackdrop.addEventListener("click", cerrarResumen);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !resumenModal.hidden) cerrarResumen();
+  });
+  document.getElementById("resumen-copy").addEventListener("click", function () {
+    var btn = this;
+    navigator.clipboard.writeText(resumenTextEl.textContent).then(function () {
+      btn.textContent = "Copiado ✓";
+      setTimeout(function () { btn.textContent = "Copiar texto"; }, 1800);
+    }).catch(function () {
+      btn.textContent = "No se pudo copiar — seleccioná el texto a mano";
+      setTimeout(function () { btn.textContent = "Copiar texto"; }, 2600);
     });
   });
 

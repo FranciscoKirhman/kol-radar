@@ -5,9 +5,22 @@ herramienta de apoyo para Medical Science Liaisons (MSL) y Medical Affairs.
 
 **Demo en vivo**: <https://franciscokirhman.github.io/kol-radar/>
 
-Este documento es el spec del proyecto (objetivo, alcance, fuentes, modelo de datos,
+Este documento es el spec técnico del proyecto (alcance, fuentes, modelo de datos,
 disclaimers) escrito antes de construir nada. Desde entonces se armó un prototipo de
 Fase 3 con datos reales de muestra — ver "Estado actual" al final de este archivo.
+
+## Documentos del proyecto
+
+| Archivo | Qué contiene |
+|---|---|
+| [PRODUCT_CHARTER.md](PRODUCT_CHARTER.md) | **Documento rector**: el problema, el usuario, qué significa el puntaje, qué queda como juicio humano, y el método de trabajo por etapas |
+| README.md (este) | Spec técnico: fuentes, modelo de datos, marco legal, cómo correr el prototipo |
+| [SCORING.md](SCORING.md) | Especificación del modelo de prioridad v2: las dimensiones, sus topes, la curva de recencia y los umbrales de tier |
+| [ROADMAP.md](ROADMAP.md) | Decisiones de producto tomadas, investigación de factibilidad de fuentes, y estado de la brecha contra el charter |
+| [DECISIONS.md](DECISIONS.md) | **Decisiones abiertas que le tocan a Francisco**, con pasos y links — canal de corrección, OpenAlex, cadencia del pipeline, capa privada |
+| [DATA_SAMPLE.md](DATA_SAMPLE.md) | Qué trajo cada fuente y qué campos resultaron confiables o débiles |
+| [COMPETITORS.md](COMPETITORS.md) | Panorama competitivo |
+| [COSTS.md](COSTS.md) | Modelo de costos del pipeline de automatización |
 
 ## Objetivo
 
