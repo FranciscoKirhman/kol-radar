@@ -530,7 +530,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 4,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "olomorasib + estándar de cuidado"
+      ],
+      "acronimo": "SUNRAY-02"
     },
     {
       "id": "nct03974022",
@@ -558,7 +562,8 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 4,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "acronimo": "WU-KONG1"
     },
     {
       "id": "nct05973773",
@@ -586,7 +591,8 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 3,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "acronimo": "REZILIENT3"
     },
     {
       "id": "nct06758401",
@@ -642,7 +648,8 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "acronimo": "PROCLAIM"
     },
     {
       "id": "nct06780137",
@@ -670,7 +677,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 3,
-      "sitios_chile_reclutando": 3
+      "sitios_chile_reclutando": 3,
+      "intervenciones": [
+        "Gocatamig",
+        "Ifinatamab Deruxtecan (I-DXd)"
+      ]
     },
     {
       "id": "nct06875310",
@@ -698,7 +709,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 2
+      "sitios_chile_reclutando": 2,
+      "intervenciones": [
+        "Adagrasib",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct05555732",
@@ -726,7 +741,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 6,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Datopotamab Deruxtecan",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct05609968",
@@ -754,7 +773,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Sacituzumab Govitecan",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct06077760",
@@ -782,7 +805,12 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 5,
-      "sitios_chile_reclutando": 5
+      "sitios_chile_reclutando": 5,
+      "intervenciones": [
+        "Intismeran autogene",
+        "Pembrolizumab"
+      ],
+      "acronimo": "INTerpath-002"
     },
     {
       "id": "nct06345729",
@@ -810,7 +838,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 5,
-      "sitios_chile_reclutando": 5
+      "sitios_chile_reclutando": 5,
+      "intervenciones": [
+        "Calderasib",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct06312137",
@@ -838,7 +870,12 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 5,
-      "sitios_chile_reclutando": 5
+      "sitios_chile_reclutando": 5,
+      "intervenciones": [
+        "Sacituzumab tirumotecan",
+        "Pembrolizumab"
+      ],
+      "acronimo": "TroFuse-019"
     },
     {
       "id": "nct06430866",
@@ -866,7 +903,12 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 8,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "ABP 234",
+        "Pembrolizumab"
+      ],
+      "acronimo": "Eucalyptus"
     },
     {
       "id": "nct06623422",
@@ -894,7 +936,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 6,
-      "sitios_chile_reclutando": 6
+      "sitios_chile_reclutando": 6,
+      "intervenciones": [
+        "Pembrolizumab",
+        "Cisplatin"
+      ]
     },
     {
       "id": "nct06780085",
@@ -922,7 +968,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 3,
-      "sitios_chile_reclutando": 3
+      "sitios_chile_reclutando": 3,
+      "intervenciones": [
+        "Raludotatug Deruxtecan",
+        "Ifinatamab Deruxtecan"
+      ]
     },
     {
       "id": "nct06780098",
@@ -950,7 +1000,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 3,
-      "sitios_chile_reclutando": 3
+      "sitios_chile_reclutando": 3,
+      "intervenciones": [
+        "R-DXD",
+        "I-DXD"
+      ]
     },
     {
       "id": "nct07190248",
@@ -978,7 +1032,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 2
+      "sitios_chile_reclutando": 2,
+      "intervenciones": [
+        "Calderasib",
+        "Pembrolizumab (+) Berahyaluronidase alfa"
+      ]
     },
     {
       "id": "nct06012435",
@@ -1006,7 +1064,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "sigvotatug vedotin",
+        "docetaxel"
+      ]
     },
     {
       "id": "nct07361510",
@@ -1034,7 +1096,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 5,
-      "sitios_chile_reclutando": 3
+      "sitios_chile_reclutando": 3,
+      "intervenciones": [
+        "Pumitamig",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct06765109",
@@ -1062,7 +1128,12 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 4,
-      "sitios_chile_reclutando": 4
+      "sitios_chile_reclutando": 4,
+      "intervenciones": [
+        "Neladalkib (NVL-655)",
+        "Alectinib"
+      ],
+      "acronimo": "ALKAZAR"
     },
     {
       "id": "nct04928846",
@@ -1090,7 +1161,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 6,
-      "sitios_chile_reclutando": 5
+      "sitios_chile_reclutando": 5,
+      "intervenciones": [
+        "Telisotuzumab Vedotin",
+        "Docetaxel"
+      ]
     },
     {
       "id": "nct06635824",
@@ -1118,7 +1193,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 4,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Acasunlimab",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct06140836",
@@ -1146,7 +1225,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Repotrectinib",
+        "Crizotinib"
+      ]
     },
     {
       "id": "nct06726265",
@@ -1174,7 +1257,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "eftilagimod alfa",
+        "carboplatin plus paclitaxel"
+      ]
     },
     {
       "id": "nct06170788",
@@ -1202,7 +1289,12 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 5,
-      "sitios_chile_reclutando": 5
+      "sitios_chile_reclutando": 5,
+      "intervenciones": [
+        "Sacituzumab tirumotecan",
+        "Pembrolizumab"
+      ],
+      "acronimo": "TroFuse-007"
     },
     {
       "id": "nct06899126",
@@ -1230,7 +1322,12 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 6,
-      "sitios_chile_reclutando": 6
+      "sitios_chile_reclutando": 6,
+      "intervenciones": [
+        "Trastuzumab Deruxtecan",
+        "pembrolizumab"
+      ],
+      "acronimo": "DESTINY-Lung06"
     },
     {
       "id": "nct05920356",
@@ -1258,7 +1355,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 6,
-      "sitios_chile_reclutando": 2
+      "sitios_chile_reclutando": 2,
+      "intervenciones": [
+        "Sotorasib",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct06161441",
@@ -1286,7 +1387,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 4,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Fianlimab",
+        "Cemiplimab"
+      ]
     },
     {
       "id": "nct07286149",
@@ -1314,7 +1419,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 3,
-      "sitios_chile_reclutando": 3
+      "sitios_chile_reclutando": 3,
+      "intervenciones": [
+        "MK-1084",
+        "Patritumab deruxtecan"
+      ]
     },
     {
       "id": "nct05298423",
@@ -1342,7 +1451,12 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 6,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "pembrolizumab/vibostolimab",
+        "durvalumab"
+      ],
+      "acronimo": "KEYVIBE-006"
     },
     {
       "id": "nct06561386",
@@ -1370,7 +1484,12 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 6,
-      "sitios_chile_reclutando": 5
+      "sitios_chile_reclutando": 5,
+      "intervenciones": [
+        "Nivolumab",
+        "Relatlimab"
+      ],
+      "acronimo": "RELATIVITY1093"
     },
     {
       "id": "nct07472517",
@@ -1398,7 +1517,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 5,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "obrixtamig",
+        "atezolizumab"
+      ]
     },
     {
       "id": "nct06099782",
@@ -1426,7 +1549,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 7,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Pembrolizumab (+) Berahyaluronidase alfa",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct06311721",
@@ -1454,7 +1581,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 7,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "ABP 234",
+        "Pembrolizumab (US)"
+      ]
     },
     {
       "id": "nct06236438",
@@ -1482,7 +1613,12 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 5,
-      "sitios_chile_reclutando": 5
+      "sitios_chile_reclutando": 5,
+      "intervenciones": [
+        "Livmoniplimab",
+        "Budigalimab"
+      ],
+      "acronimo": "LIVIGNO-4"
     },
     {
       "id": "nct06074588",
@@ -1510,7 +1646,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 10,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Sacituzumab tirumotecan",
+        "Docetaxel"
+      ]
     },
     {
       "id": "nct05502237",
@@ -1538,7 +1678,12 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 7,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Zimberelimab",
+        "Domvanalimab"
+      ],
+      "acronimo": "STAR-121"
     },
     {
       "id": "nct03178552",
@@ -1566,7 +1711,12 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 1,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Alectinib",
+        "Atezolizumab"
+      ],
+      "acronimo": "B-FAST"
     },
     {
       "id": "nct04380636",
@@ -1594,7 +1744,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 5,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Pembrolizumab",
+        "Olaparib"
+      ]
     },
     {
       "id": "nct07252739",
@@ -1622,7 +1776,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 2
+      "sitios_chile_reclutando": 2,
+      "intervenciones": [
+        "MK-1084",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct06731907",
@@ -1650,7 +1808,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 3,
-      "sitios_chile_reclutando": 3
+      "sitios_chile_reclutando": 3,
+      "intervenciones": [
+        "Pembrolizumab",
+        "Carboplatin"
+      ]
     },
     {
       "id": "nct06422143",
@@ -1678,7 +1840,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 6,
-      "sitios_chile_reclutando": 5
+      "sitios_chile_reclutando": 5,
+      "intervenciones": [
+        "Pembrolizumab",
+        "sac-TMT"
+      ]
     },
     {
       "id": "nct07195695",
@@ -1706,7 +1872,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 2,
-      "sitios_chile_reclutando": 2
+      "sitios_chile_reclutando": 2,
+      "intervenciones": [
+        "Zongertinib",
+        "Pembrolizumab"
+      ]
     },
     {
       "id": "nct04152499",
@@ -1734,7 +1904,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 3,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "SKB264"
+      ],
+      "acronimo": "MK-2870-001"
     },
     {
       "id": "nct07221474",
@@ -1762,7 +1936,12 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 4,
-      "sitios_chile_reclutando": 4
+      "sitios_chile_reclutando": 4,
+      "intervenciones": [
+        "Intismeran Autogene",
+        "Pembrolizumab"
+      ],
+      "acronimo": "INTerpath-13"
     },
     {
       "id": "nct06151574",
@@ -1790,7 +1969,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 1,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "zongertinib",
+        "pembrolizumab"
+      ]
     },
     {
       "id": "nct05722015",
@@ -1818,7 +2001,11 @@
       ],
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 7,
-      "sitios_chile_reclutando": 0
+      "sitios_chile_reclutando": 0,
+      "intervenciones": [
+        "Pembrolizumab Formulated with Berahyaluronidase Alfa",
+        "Pemetrexed"
+      ]
     },
     {
       "id": "nct06788912",
@@ -1846,7 +2033,11 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 3,
-      "sitios_chile_reclutando": 3
+      "sitios_chile_reclutando": 3,
+      "intervenciones": [
+        "Pembrolizumab (neoadjuvant)",
+        "Cisplatin"
+      ]
     },
     {
       "id": "christian-caglevic",

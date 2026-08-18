@@ -186,6 +186,13 @@
   .signal-chip.reclutando { color: var(--ensayo); border-color: var(--ensayo); }
   .identity-warn { color: var(--tier-alta-fg); background: var(--tier-alta-bg); border-color: transparent; }
   .identity-warn-row { color: var(--tier-alta-fg); }
+  .match-reason {
+    font-size: 11.5px; line-height: 1.45; color: var(--text-secondary);
+    background: var(--surface-1); border-left: 2px solid var(--accent);
+    border-radius: 0 5px 5px 0; padding: 6px 8px;
+  }
+  .match-reason .match-label { color: var(--text-muted); font-size: 10.5px; text-transform: uppercase; letter-spacing: .03em; }
+  .match-reason mark { background: var(--tier-alta-bg); color: var(--tier-alta-fg); font-weight: 600; border-radius: 2px; padding: 0 2px; }
   .signal-row { display: flex; flex-wrap: wrap; gap: 5px; }
   .signal-chip { font-size: 10.5px; color: var(--text-secondary); background: var(--surface-1); border: 1px solid var(--border); border-radius: 5px; padding: 2px 6px; }
   .card-meta { font-size: 11.5px; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--surface-2); }
@@ -197,6 +204,11 @@
   #network-view.active { display: block; }
   .network-view-wrap { position: relative; }
   #network-view svg { width: 100%; height: auto; display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
+  /* B: con el viewBox 720x460 al 100% de ancho, en un teléfono el grafo colapsaba a ~220px
+     de alto — ilegible con 147 nodos. Se le da altura real y se deja que el SVG rellene. */
+  @media (max-width: 720px) {
+    #network-view svg { height: 65vh; min-height: 380px; }
+  }
   .network-hint { font-size: 12.5px; color: var(--text-muted); margin: 0 0 10px; }
   .network-layers { display: flex; flex-direction: column; gap: 8px; padding: 12px 4px 0; }
   .layer-block { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
@@ -209,6 +221,8 @@
     border-radius: 999px; padding: 4px 10px; cursor: pointer;
   }
   .legend-toggle[aria-pressed="false"] { opacity: .45; text-decoration: line-through; }
+  /* Los presets se eligen de a uno (radio), no se apagan: tacharlos los hacía ver como error. */
+  .legend-toggle.preset[aria-pressed="false"] { opacity: .7; text-decoration: none; }
   .legend-toggle:hover { border-color: var(--text-secondary); color: var(--text-primary); }
   .legend-toggle.preset[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; opacity: 1; text-decoration: none; }
   .forma-leyenda { font-size: 11px; color: var(--text-muted); }
@@ -731,6 +745,9 @@
       saveShortlist();
       document.getElementById("loading-state").hidden = true;
       construirTemas();
+      // B: en pantalla chica el ecosistema completo (147 nodos) es ilegible; se arranca en la
+      // vista más simple, que igual se puede cambiar.
+      if (window.matchMedia("(max-width: 720px)").matches) aplicarVista("donde");
       buildRegionChips();
       refreshShortlistUI();
       renderCards();
@@ -858,13 +875,61 @@
   function totalParaOrdenar(n) {
     return n.tipo === "persona" ? computePriority(n).total : computeSenales(n).total;
   }
+  var TIER_RANK = { alta: 0, media: 1, monitorear: 2 };
   function sortList(list) {
-    if (state.sort === "senales") {
+    if (state.sort === "prioridad") {
+      list.sort(function (a, b) {
+        // Instituciones y ensayos no tienen tier: van después de las personas, por recencia.
+        var ra = a.tipo === "persona" ? TIER_RANK[computePriority(a).tier] : 3;
+        var rb = b.tipo === "persona" ? TIER_RANK[computePriority(b).tier] : 3;
+        if (ra !== rb) return ra - rb;
+        return sortableDate(mostRecentHecho(b).fecha).localeCompare(sortableDate(mostRecentHecho(a).fecha));
+      });
+    } else if (state.sort === "senales") {
       list.sort(function (a, b) { return totalParaOrdenar(b) - totalParaOrdenar(a); });
     } else {
       list.sort(function (a, b) { return sortableDate(mostRecentHecho(b).fecha).localeCompare(sortableDate(mostRecentHecho(a).fecha)); });
     }
     return list;
+  }
+
+  // Devuelve un nodo con el fragmento del hecho donde apareció el término, resaltado.
+  // Se arma con nodos de texto, nunca con innerHTML: el texto viene del JSON.
+  function etiquetaCorta(n) {
+    if (n.tipo !== "ensayo_clinico") return n.nombre;
+    var base = n.acronimo || n.id.toUpperCase();
+    if (n.intervenciones && n.intervenciones.length) {
+      return base + " · " + n.intervenciones.join(" + ");
+    }
+    return base;
+  }
+
+  function fragmentoCoincidente(n, q) {
+    var ql = q.toLowerCase();
+    var hecho = null, pos = -1;
+    for (var i = 0; i < n.hechos.length; i++) {
+      var t = n.hechos[i].hecho || "";
+      var idx = t.toLowerCase().indexOf(ql);
+      if (idx !== -1) { hecho = n.hechos[i]; pos = idx; break; }
+    }
+    if (!hecho) return null;
+    var texto = hecho.hecho;
+    var desde = Math.max(0, pos - 45);
+    var hasta = Math.min(texto.length, pos + ql.length + 75);
+    var wrap = document.createElement("div");
+    wrap.className = "match-reason";
+    var etq = document.createElement("span");
+    etq.className = "match-label";
+    etq.textContent = (TIPO_HECHO_LABEL[hecho.tipo] || hecho.tipo) + ": ";
+    wrap.appendChild(etq);
+    if (desde > 0) wrap.appendChild(document.createTextNode("…"));
+    wrap.appendChild(document.createTextNode(texto.slice(desde, pos)));
+    var mk = document.createElement("mark");
+    mk.textContent = texto.slice(pos, pos + ql.length);
+    wrap.appendChild(mk);
+    wrap.appendChild(document.createTextNode(texto.slice(pos + ql.length, hasta)));
+    if (hasta < texto.length) wrap.appendChild(document.createTextNode("…"));
+    return wrap;
   }
 
   function buildCard(n) {
@@ -881,7 +946,11 @@
     var dot = document.createElement("span"); dot.className = "type-dot " + n.tipo;
     var nameRow = document.createElement("div"); nameRow.className = "card-name-row";
     var nameWrap = document.createElement("div");
-    var name = document.createElement("div"); name.className = "card-name"; name.textContent = n.nombre;
+    var name = document.createElement("div"); name.className = "card-name";
+    // F: 48 ensayos con títulos largos en inglés dominaban la lista. Se muestra el acrónimo
+    // (o el NCT) y las drogas evaluadas, que es lo que un MSL reconoce; el título completo
+    // sigue entero en la ficha.
+    name.textContent = etiquetaCorta(n);
     var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
     nameWrap.appendChild(name); nameWrap.appendChild(sub);
     // El tier de prioridad (PRODUCT_CHARTER.md) solo aplica a personas — instituciones y ensayos
@@ -923,6 +992,14 @@
         cid.title = ident.razones.join("; ");
         signalRow.appendChild(cid);
       }
+    }
+
+    // A: cuando hay búsqueda activa, mostrar DÓNDE coincidió. Sin esto el usuario tiene que
+    // abrir la ficha para saber por qué apareció un resultado — justo en el caso de uso central
+    // (buscar por biomarcador o droga).
+    if (state.query) {
+      var frag = fragmentoCoincidente(n, state.query);
+      if (frag) card.appendChild(frag);
     }
 
     var meta = document.createElement("div"); meta.className = "card-meta";
@@ -1011,9 +1088,13 @@
     });
   });
 
-  document.getElementById("sort-toggle").addEventListener("click", function (btn) {
-    state.sort = state.sort === "senales" ? "reciente" : "senales";
-    this.textContent = "Ordenar: " + (state.sort === "senales" ? "puntaje" : "más reciente");
+  // E: tres órdenes, no dos. "prioridad" no es lo mismo que "puntaje": agrupa por tier y
+  // dentro de cada tier ordena por recencia, que es como un MSL realmente prioriza.
+  var ORDENES = ["reciente", "prioridad", "senales"];
+  var ORDEN_LABEL = { reciente: "más reciente", prioridad: "prioridad", senales: "puntaje" };
+  document.getElementById("sort-toggle").addEventListener("click", function () {
+    state.sort = ORDENES[(ORDENES.indexOf(state.sort) + 1) % ORDENES.length];
+    this.textContent = "Ordenar: " + ORDEN_LABEL[state.sort];
     renderCards();
   });
 
@@ -1368,18 +1449,29 @@
 
     var svg = document.getElementById("graph");
     svg.innerHTML = "";
-    resetZoom();
 
     var NS = "http://www.w3.org/2000/svg";
     if (!nodes.length) {
       var msg = document.createElementNS(NS, "text");
-      msg.setAttribute("x", "360"); msg.setAttribute("y", "230"); msg.setAttribute("text-anchor", "middle");
+      msg.setAttribute("x", "360"); msg.setAttribute("y", "230");
+      svg.setAttribute("viewBox", "0 0 720 460"); msg.setAttribute("text-anchor", "middle");
       msg.setAttribute("class", "node-label"); msg.textContent = "Sin resultados para ese filtro.";
       svg.appendChild(msg);
       return;
     }
 
-    var W = 720, H = 460;
+    // El viewBox se adapta a la forma real del contenedor. Con uno fijo apaisado (720x460),
+    // en un teléfono el SVG mantiene proporción y deja franjas vacías arriba y abajo con todos
+    // los nodos aplastados al medio. Acá el lienzo toma la forma del hueco disponible.
+    var caja = svg.getBoundingClientRect();
+    var W = 720;
+    // Se acota la PROPORCIÓN, no solo el alto: si el SVG se mide con ancho ~0 (panel oculto,
+    // transición de layout), la razón alto/ancho se dispara y el viewBox sale inservible.
+    var razon = (caja.width > 40 && caja.height > 40) ? caja.height / caja.width : 460 / 720;
+    razon = Math.max(0.5, Math.min(1.8, razon));
+    var H = Math.round(W * razon);
+    NETWORK_VB.w = W; NETWORK_VB.h = H;
+    resetZoom();
 
     // ---- Layout agrupado por institución ----
     // Un force layout plano deja la posición sin significado: con 147 nodos se vuelve una
