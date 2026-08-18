@@ -1,5 +1,5 @@
 {
-  "descripcion": "Muestra de 147 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
+  "descripcion": "Muestra de 174 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
   "generado": "2026-08-09",
   "actualizado": "2026-08-18",
   "especialidad_muestra": "cáncer de pulmón",
@@ -36,7 +36,8 @@
           "fecha": "2026-08-07",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "mauricio-burotto",
@@ -69,7 +70,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "roberto-gonzalez",
@@ -94,7 +96,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "andres-rojas",
@@ -119,7 +122,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "fernando-saldias",
@@ -151,7 +155,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "javiera-martinez",
@@ -169,7 +174,8 @@
           "fecha": "2026-01",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "rodrigo-uribe",
@@ -187,7 +193,8 @@
           "fecha": "2026-08-07",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "pamela-salman",
@@ -213,7 +220,8 @@
           "fecha": "2026-08",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "pablo-rodriguez",
@@ -231,7 +239,8 @@
           "fecha": "2026-08-07",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "bradford-hill",
@@ -255,7 +264,8 @@
           "fecha": "2021-03-01",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "falp",
@@ -312,7 +322,8 @@
           "fecha": "2026-08-07",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "torax",
@@ -371,7 +382,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "james-lind",
@@ -396,7 +408,8 @@
           "fecha": "2026-04-07",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "hosp-concepcion",
@@ -420,7 +433,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "hosp-puerto-montt",
@@ -437,7 +451,8 @@
           "fecha": "2015-06",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "puc",
@@ -468,7 +483,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "k2-oncology",
@@ -485,7 +501,8 @@
           "fecha": "2026-08-07",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "centro-precision",
@@ -502,7 +519,8 @@
           "fecha": "2026-08-07",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06890598",
@@ -534,7 +552,8 @@
       "intervenciones": [
         "olomorasib + estándar de cuidado"
       ],
-      "acronimo": "SUNRAY-02"
+      "acronimo": "SUNRAY-02",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct03974022",
@@ -563,7 +582,8 @@
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 4,
       "sitios_chile_reclutando": 0,
-      "acronimo": "WU-KONG1"
+      "acronimo": "WU-KONG1",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct05973773",
@@ -592,7 +612,8 @@
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 3,
       "sitios_chile_reclutando": 0,
-      "acronimo": "REZILIENT3"
+      "acronimo": "REZILIENT3",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06758401",
@@ -620,7 +641,8 @@
       ],
       "estado_reclutamiento": "Reclutando",
       "sitios_chile": 12,
-      "sitios_chile_reclutando": 12
+      "sitios_chile_reclutando": 12,
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct03937154",
@@ -649,7 +671,8 @@
       "estado_reclutamiento": "Activo, sin reclutar",
       "sitios_chile": 2,
       "sitios_chile_reclutando": 0,
-      "acronimo": "PROCLAIM"
+      "acronimo": "PROCLAIM",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06780137",
@@ -681,7 +704,8 @@
       "intervenciones": [
         "Gocatamig",
         "Ifinatamab Deruxtecan (I-DXd)"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06875310",
@@ -713,7 +737,8 @@
       "intervenciones": [
         "Adagrasib",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct05555732",
@@ -745,7 +770,8 @@
       "intervenciones": [
         "Datopotamab Deruxtecan",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct05609968",
@@ -777,7 +803,8 @@
       "intervenciones": [
         "Sacituzumab Govitecan",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06077760",
@@ -810,7 +837,8 @@
         "Intismeran autogene",
         "Pembrolizumab"
       ],
-      "acronimo": "INTerpath-002"
+      "acronimo": "INTerpath-002",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06345729",
@@ -842,7 +870,8 @@
       "intervenciones": [
         "Calderasib",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06312137",
@@ -875,7 +904,8 @@
         "Sacituzumab tirumotecan",
         "Pembrolizumab"
       ],
-      "acronimo": "TroFuse-019"
+      "acronimo": "TroFuse-019",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06430866",
@@ -908,7 +938,8 @@
         "ABP 234",
         "Pembrolizumab"
       ],
-      "acronimo": "Eucalyptus"
+      "acronimo": "Eucalyptus",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06623422",
@@ -940,7 +971,8 @@
       "intervenciones": [
         "Pembrolizumab",
         "Cisplatin"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06780085",
@@ -972,7 +1004,8 @@
       "intervenciones": [
         "Raludotatug Deruxtecan",
         "Ifinatamab Deruxtecan"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06780098",
@@ -1004,7 +1037,8 @@
       "intervenciones": [
         "R-DXD",
         "I-DXD"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct07190248",
@@ -1036,7 +1070,8 @@
       "intervenciones": [
         "Calderasib",
         "Pembrolizumab (+) Berahyaluronidase alfa"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06012435",
@@ -1068,7 +1103,8 @@
       "intervenciones": [
         "sigvotatug vedotin",
         "docetaxel"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct07361510",
@@ -1100,7 +1136,8 @@
       "intervenciones": [
         "Pumitamig",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06765109",
@@ -1133,7 +1170,8 @@
         "Neladalkib (NVL-655)",
         "Alectinib"
       ],
-      "acronimo": "ALKAZAR"
+      "acronimo": "ALKAZAR",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct04928846",
@@ -1165,7 +1203,8 @@
       "intervenciones": [
         "Telisotuzumab Vedotin",
         "Docetaxel"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06635824",
@@ -1197,7 +1236,8 @@
       "intervenciones": [
         "Acasunlimab",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06140836",
@@ -1229,7 +1269,8 @@
       "intervenciones": [
         "Repotrectinib",
         "Crizotinib"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06726265",
@@ -1261,7 +1302,8 @@
       "intervenciones": [
         "eftilagimod alfa",
         "carboplatin plus paclitaxel"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06170788",
@@ -1294,7 +1336,8 @@
         "Sacituzumab tirumotecan",
         "Pembrolizumab"
       ],
-      "acronimo": "TroFuse-007"
+      "acronimo": "TroFuse-007",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06899126",
@@ -1327,7 +1370,8 @@
         "Trastuzumab Deruxtecan",
         "pembrolizumab"
       ],
-      "acronimo": "DESTINY-Lung06"
+      "acronimo": "DESTINY-Lung06",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct05920356",
@@ -1359,7 +1403,8 @@
       "intervenciones": [
         "Sotorasib",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06161441",
@@ -1391,7 +1436,8 @@
       "intervenciones": [
         "Fianlimab",
         "Cemiplimab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct07286149",
@@ -1423,7 +1469,8 @@
       "intervenciones": [
         "MK-1084",
         "Patritumab deruxtecan"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct05298423",
@@ -1456,7 +1503,8 @@
         "pembrolizumab/vibostolimab",
         "durvalumab"
       ],
-      "acronimo": "KEYVIBE-006"
+      "acronimo": "KEYVIBE-006",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06561386",
@@ -1489,7 +1537,8 @@
         "Nivolumab",
         "Relatlimab"
       ],
-      "acronimo": "RELATIVITY1093"
+      "acronimo": "RELATIVITY1093",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct07472517",
@@ -1521,7 +1570,8 @@
       "intervenciones": [
         "obrixtamig",
         "atezolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06099782",
@@ -1553,7 +1603,8 @@
       "intervenciones": [
         "Pembrolizumab (+) Berahyaluronidase alfa",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06311721",
@@ -1585,7 +1636,8 @@
       "intervenciones": [
         "ABP 234",
         "Pembrolizumab (US)"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06236438",
@@ -1618,7 +1670,8 @@
         "Livmoniplimab",
         "Budigalimab"
       ],
-      "acronimo": "LIVIGNO-4"
+      "acronimo": "LIVIGNO-4",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06074588",
@@ -1650,7 +1703,8 @@
       "intervenciones": [
         "Sacituzumab tirumotecan",
         "Docetaxel"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct05502237",
@@ -1683,7 +1737,8 @@
         "Zimberelimab",
         "Domvanalimab"
       ],
-      "acronimo": "STAR-121"
+      "acronimo": "STAR-121",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct03178552",
@@ -1716,7 +1771,8 @@
         "Alectinib",
         "Atezolizumab"
       ],
-      "acronimo": "B-FAST"
+      "acronimo": "B-FAST",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct04380636",
@@ -1748,7 +1804,8 @@
       "intervenciones": [
         "Pembrolizumab",
         "Olaparib"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct07252739",
@@ -1780,7 +1837,8 @@
       "intervenciones": [
         "MK-1084",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06731907",
@@ -1812,7 +1870,8 @@
       "intervenciones": [
         "Pembrolizumab",
         "Carboplatin"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06422143",
@@ -1844,7 +1903,8 @@
       "intervenciones": [
         "Pembrolizumab",
         "sac-TMT"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct07195695",
@@ -1876,7 +1936,8 @@
       "intervenciones": [
         "Zongertinib",
         "Pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct04152499",
@@ -1908,7 +1969,8 @@
       "intervenciones": [
         "SKB264"
       ],
-      "acronimo": "MK-2870-001"
+      "acronimo": "MK-2870-001",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct07221474",
@@ -1941,7 +2003,8 @@
         "Intismeran Autogene",
         "Pembrolizumab"
       ],
-      "acronimo": "INTerpath-13"
+      "acronimo": "INTerpath-13",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06151574",
@@ -1973,7 +2036,8 @@
       "intervenciones": [
         "zongertinib",
         "pembrolizumab"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct05722015",
@@ -2005,7 +2069,8 @@
       "intervenciones": [
         "Pembrolizumab Formulated with Berahyaluronidase Alfa",
         "Pemetrexed"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nct06788912",
@@ -2037,7 +2102,8 @@
       "intervenciones": [
         "Pembrolizumab (neoadjuvant)",
         "Cisplatin"
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "christian-caglevic",
@@ -2079,7 +2145,8 @@
           "fecha": "2026-08",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "hector-galindo",
@@ -2097,7 +2164,8 @@
           "fecha": "2026-08",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "alejandra-maldonado",
@@ -2114,7 +2182,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "antonio-hernandez",
@@ -2131,7 +2200,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "pedro-carrasco",
@@ -2148,7 +2218,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "jorge-salguero",
@@ -2165,7 +2236,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "juan-cheyre",
@@ -2182,7 +2254,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "nicolas-von-jentschyk",
@@ -2199,7 +2272,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "hernan-cabello",
@@ -2216,7 +2290,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "clinica-alemana",
@@ -2232,7 +2307,8 @@
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "suraj-samtani",
@@ -2266,7 +2342,8 @@
           "confianza": "pendiente",
           "revista": "Clinical Lung Cancer"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "osvaldo-aren-frontera",
@@ -2300,7 +2377,8 @@
           "confianza": "pendiente",
           "revista": "Journal of Thoracic Oncology"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "francisco-orlandi",
@@ -2334,7 +2412,8 @@
           "confianza": "pendiente",
           "revista": "International Journal of Cancer"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "pablo-munoz-schuffenegger",
@@ -2368,7 +2447,8 @@
           "confianza": "pendiente",
           "revista": "Journal of Thoracic Oncology"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "francisco-suarez",
@@ -2403,7 +2483,8 @@
           "revista": "Journal of Thoracic Disease"
         }
       ],
-      "nota_identidad": "El nombre completo con inicial de segundo apellido ('Francisco Suárez V') en el consenso de tamizaje de 2024 (Sociedad Chilena de Enfermedades Respiratorias) y el nombre sin esa inicial en los papers del IASLC Staging Project (Clínica Santa María/U. de Los Andes) podrían ser la misma persona con doble afiliación (sociedad médica + hospital) o dos personas distintas -- no hay identificador único (ORCID) que lo confirme, se reporta como una sola entidad candidata con esta advertencia explícita."
+      "nota_identidad": "El nombre completo con inicial de segundo apellido ('Francisco Suárez V') en el consenso de tamizaje de 2024 (Sociedad Chilena de Enfermedades Respiratorias) y el nombre sin esa inicial en los papers del IASLC Staging Project (Clínica Santa María/U. de Los Andes) podrían ser la misma persona con doble afiliación (sociedad médica + hospital) o dos personas distintas -- no hay identificador único (ORCID) que lo confirme, se reporta como una sola entidad candidata con esta advertencia explícita.",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "maria-paz-saavedra",
@@ -2430,7 +2511,8 @@
           "revista": "Journal of Clinical Oncology"
         }
       ],
-      "nota_identidad": "Ya existe una 'Dra. María Paz Saavedra, Jefa (S) de Oncología' mencionada en los hechos de la entidad existente 'Instituto Nacional del Tórax' (fuente torax.cl, sin fecha declarada). Estas dos publicaciones nuevas de PubMed muestran el mismo nombre completo pero con afiliaciones distintas que no mencionan al Instituto Nacional del Tórax -- no se puede confirmar si es la misma médica con afiliación cambiante/múltiple o una coincidencia de nombre; no se fusiona, se deja explícito."
+      "nota_identidad": "Ya existe una 'Dra. María Paz Saavedra, Jefa (S) de Oncología' mencionada en los hechos de la entidad existente 'Instituto Nacional del Tórax' (fuente torax.cl, sin fecha declarada). Estas dos publicaciones nuevas de PubMed muestran el mismo nombre completo pero con afiliaciones distintas que no mencionan al Instituto Nacional del Tórax -- no se puede confirmar si es la misma médica con afiliación cambiante/múltiple o una coincidencia de nombre; no se fusiona, se deja explícito.",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "claudio-silva-f",
@@ -2448,7 +2530,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "jaime-verdugo-b",
@@ -2466,7 +2549,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "felipe-sanchez-t",
@@ -2484,7 +2568,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "claudio-sole-p",
@@ -2502,7 +2587,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "ruben-valenzuela-m",
@@ -2520,7 +2606,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "alfredo-jalilie-e",
@@ -2538,7 +2625,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "roberto-diaz-pena",
@@ -2572,7 +2660,8 @@
           "confianza": "pendiente",
           "revista": "Molecular & Cellular Proteomics"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "ricardo-armisen",
@@ -2606,7 +2695,8 @@
           "confianza": "pendiente",
           "revista": "International Journal of Molecular Sciences"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "solange-rivas",
@@ -2632,7 +2722,8 @@
           "confianza": "pendiente",
           "revista": "BMC Cancer"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "gonzalo-labarca",
@@ -2658,7 +2749,8 @@
           "confianza": "pendiente",
           "revista": "Chest"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "alejandro-h-corvalan",
@@ -2684,7 +2776,8 @@
           "confianza": "pendiente",
           "revista": "International Journal of Molecular Sciences"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "francisco-aguayo",
@@ -2710,7 +2803,8 @@
           "confianza": "pendiente",
           "revista": "Biological Research"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "martin-montecino",
@@ -2736,7 +2830,8 @@
           "confianza": "pendiente",
           "revista": "Current Issues in Molecular Biology"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "rodrigo-lopez-munoz",
@@ -2762,7 +2857,8 @@
           "confianza": "pendiente",
           "revista": "Metabolomics"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "antonia-martin-martin",
@@ -2788,7 +2884,8 @@
           "confianza": "pendiente",
           "revista": "Biomolecules"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "alejandra-riquelme-u",
@@ -2806,7 +2903,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "rodrigo-reyes-m",
@@ -2824,7 +2922,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "m-loreto-spencer-l",
@@ -2842,7 +2941,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "enrique-seguel-s",
@@ -2860,7 +2960,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "aleck-stockins-l",
@@ -2878,7 +2979,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "andres-jadue-t",
@@ -2896,7 +2998,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "emilio-alarcon-c",
@@ -2914,7 +3017,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "juan-carlos-diaz-p",
@@ -2933,7 +3037,8 @@
           "revista": "Revista Médica de Chile"
         }
       ],
-      "nota_identidad": "Existe otro 'Juan Carlos Díaz Patiño' (radiólogo, Departamento de Imágenes, Clínica Alemana de Santiago / Clínica Alemana Universidad del Desarrollo) como primer autor del artículo Rev Med Chile 2018;146(10) sobre neoplasia pulmonar quística. Mismo nombre y apellido, misma ciudad y especialidad (radiología), pero afiliación institucional distinta y 2 años de diferencia entre publicaciones -- podría ser la misma persona que cambió de institución, o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados."
+      "nota_identidad": "Existe otro 'Juan Carlos Díaz Patiño' (radiólogo, Departamento de Imágenes, Clínica Alemana de Santiago / Clínica Alemana Universidad del Desarrollo) como primer autor del artículo Rev Med Chile 2018;146(10) sobre neoplasia pulmonar quística. Mismo nombre y apellido, misma ciudad y especialidad (radiología), pero afiliación institucional distinta y 2 años de diferencia entre publicaciones -- podría ser la misma persona que cambió de institución, o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados.",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "rodrigo-diaz-t",
@@ -2951,7 +3056,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "orlando-diaz-p",
@@ -2977,7 +3083,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "marcela-opazo-v",
@@ -2995,7 +3102,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "marcela-hernandez-p",
@@ -3013,7 +3121,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "paulina-avila-v",
@@ -3031,7 +3140,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "daniel-villalobos-s",
@@ -3049,7 +3159,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "waldo-adonis-r",
@@ -3067,7 +3178,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "francisco-aguayo-g",
@@ -3085,7 +3197,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "eugenia-cordero-s",
@@ -3103,7 +3216,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "luis-rodriguez-a",
@@ -3121,7 +3235,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "darwins-castillo-a",
@@ -3139,7 +3254,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "leda-guzman-m",
@@ -3157,7 +3273,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "david-ladron-de-guevara-h",
@@ -3175,7 +3292,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "raul-pefaur-d",
@@ -3193,7 +3311,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "arturo-morales-s",
@@ -3211,7 +3330,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "sergio-gonzalez-b",
@@ -3229,7 +3349,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "juan-carlos-diaz-patino",
@@ -3248,7 +3369,8 @@
           "revista": "Revista Médica de Chile"
         }
       ],
-      "nota_identidad": "Existe otro 'Juan Carlos Díaz P.' (radiólogo, Departamento de Radiología, Hospital Clínico Universidad de Chile) como coautor del artículo Rev Med Chile 2016;144(2) de Fernando Saldías P. Mismo nombre, misma ciudad y especialidad, pero institución distinta y 2 años de diferencia -- podría ser la misma persona que cambió de institución o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados."
+      "nota_identidad": "Existe otro 'Juan Carlos Díaz P.' (radiólogo, Departamento de Radiología, Hospital Clínico Universidad de Chile) como coautor del artículo Rev Med Chile 2016;144(2) de Fernando Saldías P. Mismo nombre, misma ciudad y especialidad, pero institución distinta y 2 años de diferencia -- podría ser la misma persona que cambió de institución o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados.",
+      "area": "cáncer de pulmón"
     },
     {
       "id": "julia-alegria-bobadilla",
@@ -3266,7 +3388,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "yumay-pires",
@@ -3284,7 +3407,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "guillermo-chong-medel",
@@ -3302,7 +3426,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "claudio-silva-fuente-alba",
@@ -3320,7 +3445,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "g-cristobal-ramos-gomez",
@@ -3338,7 +3464,8 @@
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "marcia-erazo-b",
@@ -3356,7 +3483,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "juan-guillermo-gormaz-a",
@@ -3374,7 +3502,8 @@
           "confianza": "pendiente",
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "clinica-las-condes",
@@ -3390,7 +3519,8 @@
           "fecha": "2024-01",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "orlandi",
@@ -3406,7 +3536,8 @@
           "fecha": "2021-04",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "clinica-santa-maria",
@@ -3422,7 +3553,8 @@
           "fecha": "2024-05",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "uandes",
@@ -3438,7 +3570,8 @@
           "fecha": "2024-05",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "ser-chile",
@@ -3454,7 +3587,8 @@
           "fecha": "2024-05",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "sochradi",
@@ -3470,7 +3604,8 @@
           "fecha": "2024-05",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "sochradioterapia",
@@ -3486,7 +3621,8 @@
           "fecha": "2024-05",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "soc-cirujanos",
@@ -3502,7 +3638,8 @@
           "fecha": "2024-05",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "uautonoma",
@@ -3518,7 +3655,8 @@
           "fecha": "2021-05",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "uchile",
@@ -3534,7 +3672,8 @@
           "fecha": "2021-09",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "uss",
@@ -3550,7 +3689,8 @@
           "fecha": "2018-10",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "udec",
@@ -3566,7 +3706,8 @@
           "fecha": "2018-10",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "utarapaca",
@@ -3582,7 +3723,8 @@
           "fecha": "2022-11-23",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "unab",
@@ -3598,7 +3740,8 @@
           "fecha": "2022",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "uach",
@@ -3614,7 +3757,8 @@
           "fecha": "2024-10-29",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "hosp-uchile",
@@ -3630,7 +3774,8 @@
           "fecha": "2016-02",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "hosp-carabineros",
@@ -3646,7 +3791,8 @@
           "fecha": "2016-02",
           "confianza": "pendiente"
         }
-      ]
+      ],
+      "area": "cáncer de pulmón"
     },
     {
       "id": "isp",
@@ -3662,6 +3808,684 @@
           "fecha": "2006-03",
           "confianza": "pendiente"
         }
+      ],
+      "area": "cáncer de pulmón"
+    },
+    {
+      "id": "nct04022109",
+      "nombre": "VOGAS (NCT04022109)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer gástrico",
+      "ciudad": "Chile",
+      "subtitulo": "Fase no declarada · University of Latvia · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 1,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase no declarada, patrocinado por University of Latvia, evalúa Breath sampling for VOC detection, Surgery material collection for VOC headspace analysis en cáncer gástrico. 1 sitio(s) en Chile.",
+          "fase": "Fase no declarada",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04022109",
+          "fecha": "2021-07-26",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "VOGAS",
+      "intervenciones": [
+        "Breath sampling for VOC detection",
+        "Surgery material collection for VOC headspace analysis"
+      ]
+    },
+    {
+      "id": "nct04704934",
+      "nombre": "NCT04704934",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer gástrico",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase III · Daiichi Sankyo · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 3,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Daiichi Sankyo, evalúa Trastuzumab deruxtecan, Ramucirumab en cáncer gástrico. 3 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04704934",
+          "fecha": "2026-05-27",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Trastuzumab deruxtecan",
+        "Ramucirumab"
+      ]
+    },
+    {
+      "id": "nct06532006",
+      "nombre": "NCT06532006",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer gástrico",
+      "ciudad": "Chile (4 sitios)",
+      "subtitulo": "Fase III · Shanghai Henlius Biotech · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 4,
+      "sitios_chile_reclutando": 4,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Shanghai Henlius Biotech, evalúa HLX22, Pembrolizumab en cáncer gástrico. 4 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06532006",
+          "fecha": "2026-02-27",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "HLX22",
+        "Pembrolizumab"
+      ]
+    },
+    {
+      "id": "nct05152147",
+      "nombre": "HERIZON-GEA-01 (NCT05152147)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer gástrico",
+      "ciudad": "Chile (7 sitios)",
+      "subtitulo": "Fase III · Jazz Pharmaceuticals · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 7,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Jazz Pharmaceuticals, evalúa Zanidatamab, Tislelizumab en cáncer gástrico. 7 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05152147",
+          "fecha": "2026-07-17",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "HERIZON-GEA-01",
+      "intervenciones": [
+        "Zanidatamab",
+        "Tislelizumab"
+      ]
+    },
+    {
+      "id": "nct06731478",
+      "nombre": "NCT06731478",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer gástrico",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Daiichi Sankyo · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 6,
+      "sitios_chile_reclutando": 5,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Daiichi Sankyo, evalúa Trastuzumab Deruxtecan, pembrolizumab en cáncer gástrico. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06731478",
+          "fecha": "2026-08-10",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Trastuzumab Deruxtecan",
+        "pembrolizumab"
+      ]
+    },
+    {
+      "id": "nct04895358",
+      "nombre": "NCT04895358",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 6,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa pembrolizumab, paclitaxel en cáncer de mama. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04895358",
+          "fecha": "2026-07-22",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "pembrolizumab",
+        "paclitaxel"
+      ]
+    },
+    {
+      "id": "nct05382299",
+      "nombre": "ASCENT-03 (NCT05382299)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Gilead Sciences · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 5,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Gilead Sciences, evalúa Sacituzumab Govitecan-hziy, Paclitaxel en cáncer de mama. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05382299",
+          "fecha": "2026-04-06",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "ASCENT-03",
+      "intervenciones": [
+        "Sacituzumab Govitecan-hziy",
+        "Paclitaxel"
+      ]
+    },
+    {
+      "id": "nct03646955",
+      "nombre": "NCT03646955",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile",
+      "subtitulo": "NA · Danish Breast Cancer Cooperative Group · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 1,
+      "sitios_chile_reclutando": 1,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "NA, patrocinado por Danish Breast Cancer Cooperative Group, evalúa No partial breast irradiation en cáncer de mama. 1 sitio(s) en Chile.",
+          "fase": "NA",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03646955",
+          "fecha": "2020-10-06",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "No partial breast irradiation"
+      ]
+    },
+    {
+      "id": "nct04961996",
+      "nombre": "NCT04961996",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (14 sitios)",
+      "subtitulo": "Fase III · Hoffmann-La Roche · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 14,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Hoffmann-La Roche, evalúa Giredestrant, Physician's Choice of Endocrine Therapy en cáncer de mama. 14 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04961996",
+          "fecha": "2026-06-17",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Giredestrant",
+        "Physician's Choice of Endocrine Therapy"
+      ]
+    },
+    {
+      "id": "nct06065748",
+      "nombre": "NCT06065748",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (7 sitios)",
+      "subtitulo": "Fase III · Hoffmann-La Roche · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 7,
+      "sitios_chile_reclutando": 7,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Hoffmann-La Roche, evalúa Giredestrant, Fulvestrant en cáncer de mama. 7 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06065748",
+          "fecha": "2026-08-05",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Giredestrant",
+        "Fulvestrant"
+      ]
+    },
+    {
+      "id": "nct06312176",
+      "nombre": "NCT06312176",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 6,
+      "sitios_chile_reclutando": 6,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Sacituzumab tirumotecan, Pembrolizumab en cáncer de mama. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06312176",
+          "fecha": "2026-08-14",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Sacituzumab tirumotecan",
+        "Pembrolizumab"
+      ]
+    },
+    {
+      "id": "nct05382286",
+      "nombre": "ASCENT-04 (NCT05382286)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Gilead Sciences · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 5,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Gilead Sciences, evalúa Sacituzumab Govitecan-hziy, Pembrolizumab en cáncer de mama. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05382286",
+          "fecha": "2025-09-18",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "ASCENT-04",
+      "intervenciones": [
+        "Sacituzumab Govitecan-hziy",
+        "Pembrolizumab"
+      ]
+    },
+    {
+      "id": "nct07060807",
+      "nombre": "NCT07060807",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 6,
+      "sitios_chile_reclutando": 6,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Patritumab deruxtecan, Paclitaxel en cáncer de mama. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07060807",
+          "fecha": "2026-08-14",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Patritumab deruxtecan",
+        "Paclitaxel"
+      ]
+    },
+    {
+      "id": "nct06618287",
+      "nombre": "NCT06618287",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase I/Fase II · Bristol-Myers Squibb · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 5,
+      "sitios_chile_reclutando": 2,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase I/Fase II, patrocinado por Bristol-Myers Squibb, evalúa BMS-986507, Osimertinib en cáncer de mama. 5 sitio(s) en Chile.",
+          "fase": "Fase I/Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06618287",
+          "fecha": "2026-08-18",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "BMS-986507",
+        "Osimertinib"
+      ]
+    },
+    {
+      "id": "nct02167490",
+      "nombre": "SOUND (NCT02167490)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile",
+      "subtitulo": "NA · European Institute of Oncology · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 1,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "NA, patrocinado por European Institute of Oncology, evalúa Arm 1: sentinel node biopsy en cáncer de mama. 1 sitio(s) en Chile.",
+          "fase": "NA",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02167490",
+          "fecha": "2024-11-25",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "SOUND",
+      "intervenciones": [
+        "Arm 1: sentinel node biopsy"
+      ]
+    },
+    {
+      "id": "nct06428396",
+      "nombre": "NCT06428396",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (4 sitios)",
+      "subtitulo": "Fase II · Merck Sharp & Dohme LLC · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 4,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II, patrocinado por Merck Sharp & Dohme LLC, evalúa Belzutifan, Fulvestrant en cáncer de mama. 4 sitio(s) en Chile.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06428396",
+          "fecha": "2026-07-10",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Belzutifan",
+        "Fulvestrant"
+      ]
+    },
+    {
+      "id": "nct06309290",
+      "nombre": "NEO STRONG (NCT06309290)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "NA · Universidad de La Frontera · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 2,
+      "sitios_chile_reclutando": 2,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "NA, patrocinado por Universidad de La Frontera, evalúa Prehabilitation with resistance-exercise training, Usual care program en cáncer de mama. 2 sitio(s) en Chile.",
+          "fase": "NA",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06309290",
+          "fecha": "2026-06-12",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "NEO STRONG",
+      "intervenciones": [
+        "Prehabilitation with resistance-exercise training",
+        "Usual care program"
+      ]
+    },
+    {
+      "id": "nct06841354",
+      "nombre": "NCT06841354",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 6,
+      "sitios_chile_reclutando": 6,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Sacituzumab tirumotecan, Pembrolizumab en cáncer de mama. 6 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06841354",
+          "fecha": "2026-08-14",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Sacituzumab tirumotecan",
+        "Pembrolizumab"
+      ]
+    },
+    {
+      "id": "nct05840211",
+      "nombre": "ASCENT-07 (NCT05840211)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Gilead Sciences · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 5,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Gilead Sciences, evalúa Sacituzumab Govitecan-hziy, Paclitaxel en cáncer de mama. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05840211",
+          "fecha": "2025-10-03",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "ASCENT-07",
+      "intervenciones": [
+        "Sacituzumab Govitecan-hziy",
+        "Paclitaxel"
+      ]
+    },
+    {
+      "id": "nct06529302",
+      "nombre": "NCT06529302",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (2 sitios)",
+      "subtitulo": "Fase no declarada · University Hospital, Basel, Switzerland · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 2,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase no declarada, patrocinado por University Hospital, Basel, Switzerland en cáncer de mama. 2 sitio(s) en Chile.",
+          "fase": "Fase no declarada",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06529302",
+          "fecha": "2025-01-24",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "nct03144648",
+      "nombre": "PRECAMA (NCT03144648)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase no declarada · International Agency for Research on Cancer · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 3,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase no declarada, patrocinado por International Agency for Research on Cancer, evalúa lifestyle en cáncer de mama. 3 sitio(s) en Chile.",
+          "fase": "Fase no declarada",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03144648",
+          "fecha": "2025-05-06",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "PRECAMA",
+      "intervenciones": [
+        "lifestyle"
+      ]
+    },
+    {
+      "id": "nct04622319",
+      "nombre": "NCT04622319",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (3 sitios)",
+      "subtitulo": "Fase III · Daiichi Sankyo · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 3,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Daiichi Sankyo, evalúa DS-8201a, T-DM1 en cáncer de mama. 3 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04622319",
+          "fecha": "2026-05-15",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "DS-8201a",
+        "T-DM1"
+      ]
+    },
+    {
+      "id": "nct05132582",
+      "nombre": "HER2CLIMB-05 (NCT05132582)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase III · Seagen, a wholly owned subsidiary of Pfizer · Activo, sin reclutar",
+      "estado_reclutamiento": "Activo, sin reclutar",
+      "sitios_chile": 5,
+      "sitios_chile_reclutando": 0,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Seagen, a wholly owned subsidiary of Pfizer, evalúa Tucatinib, Trastuzumab en cáncer de mama. 5 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05132582",
+          "fecha": "2026-07-22",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "HER2CLIMB-05",
+      "intervenciones": [
+        "Tucatinib",
+        "Trastuzumab"
+      ]
+    },
+    {
+      "id": "nct07413939",
+      "nombre": "BREnnA (NCT07413939)",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (6 sitios)",
+      "subtitulo": "Fase II/Fase III · Hoffmann-La Roche · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 6,
+      "sitios_chile_reclutando": 6,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II/Fase III, patrocinado por Hoffmann-La Roche, evalúa RO7771950, Tucatinib en cáncer de mama. 6 sitio(s) en Chile.",
+          "fase": "Fase II/Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07413939",
+          "fecha": "2026-08-05",
+          "confianza": "pendiente"
+        }
+      ],
+      "acronimo": "BREnnA",
+      "intervenciones": [
+        "RO7771950",
+        "Tucatinib"
+      ]
+    },
+    {
+      "id": "nct06966700",
+      "nombre": "NCT06966700",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (4 sitios)",
+      "subtitulo": "Fase III · Merck Sharp & Dohme LLC · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 4,
+      "sitios_chile_reclutando": 4,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase III, patrocinado por Merck Sharp & Dohme LLC, evalúa Sacituzumab tirumotecan, Pembrolizumab en cáncer de mama. 4 sitio(s) en Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06966700",
+          "fecha": "2026-08-14",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Sacituzumab tirumotecan",
+        "Pembrolizumab"
+      ]
+    },
+    {
+      "id": "nct06926868",
+      "nombre": "NCT06926868",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase II/Fase III · Bristol-Myers Squibb · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 5,
+      "sitios_chile_reclutando": 5,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase II/Fase III, patrocinado por Bristol-Myers Squibb, evalúa Iza-bren, Nab-paclitaxel en cáncer de mama. 5 sitio(s) en Chile.",
+          "fase": "Fase II/Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06926868",
+          "fecha": "2026-08-10",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Iza-bren",
+        "Nab-paclitaxel"
+      ]
+    },
+    {
+      "id": "nct06330064",
+      "nombre": "NCT06330064",
+      "tipo": "ensayo_clinico",
+      "area": "cáncer de mama",
+      "ciudad": "Chile (5 sitios)",
+      "subtitulo": "Fase I/Fase II · Daiichi Sankyo · Reclutando",
+      "estado_reclutamiento": "Reclutando",
+      "sitios_chile": 5,
+      "sitios_chile_reclutando": 3,
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "Fase I/Fase II, patrocinado por Daiichi Sankyo, evalúa Ifinatamab deruxtecan en cáncer de mama. 5 sitio(s) en Chile.",
+          "fase": "Fase I/Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06330064",
+          "fecha": "2026-08-05",
+          "confianza": "pendiente"
+        }
+      ],
+      "intervenciones": [
+        "Ifinatamab deruxtecan"
       ]
     }
   ],
@@ -5155,6 +5979,261 @@
       "origen": "julia-alegria-bobadilla",
       "destino": "yumay-pires",
       "tipo": "coautoría"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct04022109",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04704934",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct06532006",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06532006",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct05152147",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06731478",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "uchile",
+      "destino": "nct06731478",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct04895358",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04895358",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct04895358",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct05382299",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "clinica-alemana",
+      "destino": "nct05382299",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct05382299",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct03646955",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "clinica-alemana",
+      "destino": "nct04961996",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04961996",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "hosp-puerto-montt",
+      "destino": "nct06065748",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06312176",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06312176",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06312176",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "clinica-alemana",
+      "destino": "nct05382286",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct05382286",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07060807",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct07060807",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07060807",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06618287",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct02167490",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06428396",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06428396",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06428396",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06309290",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06841354",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06841354",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct05840211",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct05840211",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct05840211",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06529302",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03144648",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04622319",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "uchile",
+      "destino": "nct04622319",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct05132582",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "clinica-alemana",
+      "destino": "nct05132582",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct05132582",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct07413939",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06966700",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06966700",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06926868",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "clinica-alemana",
+      "destino": "nct06926868",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06926868",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06926868",
+      "tipo": "sitio del ensayo"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct06330064",
+      "tipo": "sitio del ensayo"
     }
   ],
   "campos_confiables": [

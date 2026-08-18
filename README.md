@@ -206,7 +206,7 @@ el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no
 Prototipo de Fase 3 funcionando con datos reales de muestra (una especialidad,
 cáncer de pulmón): [COMPETITORS.md](COMPETITORS.md) (panorama competitivo),
 [DATA_SAMPLE.md](DATA_SAMPLE.md) + [data/sample/perfiles-muestra.json](data/sample/perfiles-muestra.json)
-(147 entidades reales con fuentes verificadas), [COSTS.md](COSTS.md) (modelo de costos
+(174 entidades reales con fuentes verificadas), [COSTS.md](COSTS.md) (modelo de costos
 del pipeline de automatización, verificado adversarialmente), y `web/index.html`
 (la página de producto — ver "Cómo correr el prototipo" arriba).
 

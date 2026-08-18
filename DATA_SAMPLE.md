@@ -1,12 +1,12 @@
-# Muestra de datos — cáncer de pulmón en Chile
+# Muestra de datos — oncología en Chile
 
 Ejercicio de traer datos **reales** (no sintéticos) de las fuentes ya
 documentadas en `README.md`, para descubrir qué campos son confiables antes de
 diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
 validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
 2 (esa etapa formal sigue sin hacerse). Los datos completos están en
-[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 147
-entidades reales (71 personas, 28 instituciones, 48 ensayos clínicos) y 298
+[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 174
+entidades reales (71 personas, 28 instituciones, 75 ensayos clínicos) y 349
 vínculos entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza
 del modelo de datos, con un campo `tipo` adicional y (según el caso) `fase`
 del ensayo o `revista` de la publicación.
@@ -19,6 +19,21 @@ Instituto Nacional del Tórax. SER Chile se intentó como quinta fuente, pero
 sus páginas de directivas/congresos devolvieron HTTP 404 al momento de
 recolectar — no hay ningún hecho de esta muestra citando serchile.cl (ver
 `campos_faltantes_o_dificiles` en el JSON).
+
+**Más de una enfermedad (2026-08-18):** la muestra dejó de estar clavada a cáncer de pulmón
+— el gap #1 del `PRODUCT_CHARTER.md` §14 ("fixed demo scope"). Se sumaron ensayos con sitio real
+en Chile de **cáncer de mama** (22 entidades) y **cáncer gástrico**
+(5), traídos de ClinicalTrials.gov con la misma consulta Essie ya
+verificada y conectados solo a instituciones que ya conocíamos. Se descartaron 20 ensayos cuyos
+sitios chilenos no corresponden a ninguna institución de la muestra: entrarían como nodos sueltos.
+Cada entidad lleva ahora un campo `area`, y la interfaz filtra por él.
+
+Eso además arregló la capa de **temas**, que no tenía sentido: en un conjunto de una sola
+enfermedad, "NSCLC" tocaba al 21% de las personas y "Tamizaje" al 20% — eran el tema del dataset
+entero, no un rasgo de nadie, y como nodos del grafo se volvían hubs que no distinguían nada. Ahora
+se descarta todo tema que cubra más del 18% del conjunto visible, y el umbral se relaja al filtrar
+por área porque ahí el conjunto ya está acotado. Quedan los que sí discriminan: EGFR, ALK, PD-L1,
+inmunoterapia, terapia dirigida, quimioterapia, radioterapia.
 
 **Instituciones y coautoría (2026-08-18):** dos huecos que se notaban en el grafo, ambos
 resueltos sin recolectar nada nuevo — solo usando mejor lo ya citado:

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>KOL Radar — Cáncer de pulmón (demo)</title>
+<title>KOL Radar — oncología en Chile (demo)</title>
 <style>
   /* Dirección visual "publicación científica": papel cálido, tinta serif en los nombres,
      el grafo presentado como figura. Paleta categórica validada con validate_palette.js
@@ -101,6 +101,9 @@
   .chip.network-toggle { color: var(--accent); border-color: var(--accent); }
   .chip.sort-toggle { color: var(--text-secondary); }
   .chip.small { font-size: 11.5px; padding: 4px 10px; }
+  .chip-sep { width: 1px; align-self: stretch; background: var(--border); margin: 0 4px; flex: none; }
+  .area-chips { display: flex; gap: 6px; }
+  .chip.area[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
   #toggle-advanced[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); background: var(--surface-0); }
 
   .advanced-filters {
@@ -361,7 +364,7 @@
 <header class="topbar">
   <div class="topbar-row">
     <span class="brand">KOL Radar</span>
-    <span class="specialty-badge">Cáncer de pulmón · demo</span>
+    <span class="specialty-badge" id="specialty-badge">demo</span>
     <div class="search-wrap">
       <span class="icon">⌕</span>
       <input id="search" type="search" placeholder="Buscar por nombre, institución o ciudad…" autocomplete="off" />
@@ -374,6 +377,8 @@
     <button class="chip" data-filter="institucion" aria-pressed="false">Instituciones</button>
     <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Ensayos clínicos</button>
     <button class="chip sort-toggle" id="sort-toggle" data-sort="reciente">Ordenar: más reciente</button>
+    <span class="chip-sep" aria-hidden="true"></span>
+    <span class="area-chips" id="area-chips"></span>
     <button class="chip" id="toggle-advanced" aria-pressed="false" aria-expanded="false">Filtros avanzados ▾</button>
     <button class="chip shortlist-chip" id="toggle-shortlist" aria-pressed="false">Mi shortlist (0)</button>
     <button class="chip" id="open-resumen" hidden>Resumen para entrevista ↗</button>
@@ -528,7 +533,7 @@
   // Orden por defecto = "reciente", no "senales": el producto no debe decidir por
   // adelantado un ranking de "a quién contactar primero" -- eso es una decisión del
   // usuario, que puede activarla explícitamente con el chip de abajo.
-  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", soloShortlist: false, reclutando: false };
+  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", area: "todas", soloShortlist: false, reclutando: false };
 
   // Capas del grafo: qué tipos de nodo y qué tipos de conexión se dibujan. Es distinto del
   // filtro de la lista (state.filter) a propósito — acá se compone un mapa, no se filtra
@@ -762,6 +767,7 @@
       shortlist = shortlist.filter(function (id) { return !!byId[id]; });
       saveShortlist();
       document.getElementById("loading-state").hidden = true;
+      buildAreaChips();
       construirTemas();
       // B: en pantalla chica el ecosistema completo (147 nodos) es ilegible; se arranca en la
       // vista más simple, que igual se puede cambiar.
@@ -867,6 +873,7 @@
     if (state.tier !== "todas") {
       if (n.tipo !== "persona" || computePriority(n).tier !== state.tier) return false;
     }
+    if (state.area !== "todas" && (n.area || "cáncer de pulmón") !== state.area) return false;
     if (state.region !== "todas" && regionOf(n) !== state.region) return false;
     // Filtro de reclutamiento: aplica al ensayo, y también a personas/instituciones ligadas a
     // al menos un ensayo que hoy recluta en Chile — que es la pregunta real del MSL.
@@ -1197,6 +1204,45 @@
 
   // Los chips de región se generan desde los datos reales, no desde una lista fija de regiones
   // de Chile — así nunca ofrecemos filtrar por una región donde no hay ninguna entidad.
+  // El área terapéutica sale de los datos, no de una lista fija: la demo deja de estar clavada
+  // a cáncer de pulmón (PRODUCT_CHARTER.md §14 #1, "fixed demo scope").
+  function buildAreaChips() {
+    var cont = document.getElementById("area-chips");
+    var areas = [];
+    entidades.forEach(function (n) {
+      var a = n.area || "cáncer de pulmón";
+      if (areas.indexOf(a) === -1) areas.push(a);
+    });
+    areas.sort();
+    if (areas.length < 2) return;   // con una sola área el filtro no aporta nada
+    cont.innerHTML = "";
+    var todas = document.createElement("button");
+    todas.type = "button"; todas.className = "chip area";
+    todas.setAttribute("data-area", "todas"); todas.setAttribute("aria-pressed", "true");
+    todas.textContent = "Todas las áreas";
+    cont.appendChild(todas);
+    // El badge del header ya no puede decir "cáncer de pulmón": el conjunto es multi-área.
+    document.getElementById("specialty-badge").textContent = areas.length + " áreas · demo";
+    areas.forEach(function (a) {
+      var cuenta = entidades.filter(function (x) { return (x.area || "cáncer de pulmón") === a; }).length;
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip area";
+      b.setAttribute("data-area", a); b.setAttribute("aria-pressed", "false");
+      b.textContent = a.charAt(0).toUpperCase() + a.slice(1) + " (" + cuenta + ")";
+      cont.appendChild(b);
+    });
+    cont.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-area]");
+      if (!b) return;
+      cont.querySelectorAll("[data-area]").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      state.area = b.getAttribute("data-area");
+      construirTemas();
+      renderCards();
+      invalidateNetwork();
+    });
+  }
+
   function buildRegionChips() {
     var regionsEl = document.getElementById("region-chips");
     regionsEl.innerHTML = "";
@@ -1381,9 +1427,17 @@
       if (n.tipo !== "persona") return;
       tagsFor(n).forEach(function (t) { (porTag[t] = porTag[t] || []).push(n.id); });
     });
+    // Un tema solo informa si DISTINGUE. En un conjunto de una sola enfermedad, "NSCLC"
+    // tocaba al 21% de las personas y "Tamizaje" al 20%: eran el tema del dataset entero,
+    // no un rasgo de nadie, y como nodos del grafo se volvían hubs que no decían nada.
+    // Se descartan los que cubren demasiado; el umbral se relaja al filtrar por un área,
+    // porque ahí el conjunto ya está acotado y un tema amplio vuelve a discriminar.
+    var universo = entidades.filter(function (n) { return n.tipo === "persona" && matches(n); }).length || 1;
+    var TECHO = 0.18;
     Object.keys(porTag).forEach(function (t) {
       // Un tema con una sola persona no aporta estructura al grafo.
       if (porTag[t].length < 2) return;
+      if (porTag[t].length / universo > TECHO && porTag[t].length > 5) return;
       var id = "tema:" + t;
       var regla = TAG_RULES.filter(function (r) { return r.tag === t; })[0];
       var ent = {
