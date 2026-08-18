@@ -55,6 +55,13 @@ jobs:
           # de YAML (GitHub deja de parsear el workflow y desaparece workflow_dispatch).
           python3 scripts/cuerpo_pr.py "data/pending/openalex-$FECHA.json" > /tmp/pr-body.md
 
-          gh pr create \
-            --title "Propuesta OpenAlex — $FECHA" \
-            --body-file /tmp/pr-body.md
+          # Si ya hay un PR abierto para esta rama, se actualiza su cuerpo en vez de fallar:
+          # re-correr el workflow el mismo día es el caso normal, no un error.
+          if gh pr view "$RAMA" --json number >/dev/null 2>&1; then
+            gh pr edit "$RAMA" --body-file /tmp/pr-body.md
+            echo "PR ya existente actualizado: $(gh pr view "$RAMA" --json url --jq .url)"
+          else
+            gh pr create \
+              --title "Propuesta OpenAlex — $FECHA" \
+              --body-file /tmp/pr-body.md
+          fi
