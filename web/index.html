@@ -177,6 +177,8 @@
   .tier-badge.media { background: var(--tier-media-bg); color: var(--tier-media-fg); }
   .tier-badge.monitorear { background: var(--surface-2); color: var(--text-muted); }
   .confidence-row { font-size: 11px; color: var(--text-muted); margin: -2px 0 10px; }
+  .identity-warn { color: var(--tier-alta-fg); background: var(--tier-alta-bg); border-color: transparent; }
+  .identity-warn-row { color: var(--tier-alta-fg); }
   .signal-row { display: flex; flex-wrap: wrap; gap: 5px; }
   .signal-chip { font-size: 10.5px; color: var(--text-secondary); background: var(--surface-1); border: 1px solid var(--border); border-radius: 5px; padding: 2px 6px; }
   .card-meta { font-size: 11.5px; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--surface-2); }
@@ -579,6 +581,63 @@
 
   var TIER_LABEL = { alta: "Prioridad alta", media: "Prioridad media", monitorear: "Monitorear" };
 
+  // ---------------- Confianza de IDENTIDAD (PRODUCT_CHARTER.md §5B) ----------------
+  // "¿Es la misma persona en todas las fuentes?" es una pregunta distinta a "¿alguien revisó
+  // este hecho?". Mezclarlas esconde justo el error que DATA_SAMPLE.md documenta: Carlos Rojas
+  // y Andrés Rojas G. comparten apellido y son personas distintas, sin relación entre sí.
+  var ORCID_RE = /\b\d{4}-\d{4}-\d{4}-\d{3}[\dX]\b/;
+  var DUDA_RE = /(no confirmad|coincidencia de nombre|sin confirmar|no verificad|homónim|homonim)/i;
+
+  function apellidosDe(nombre) {
+    return nombre.toLowerCase().replace(/[.,]/g, "").split(/\s+/)
+      .slice(1).filter(function (w) { return w.length > 2; });
+  }
+  var _apellidoIndex = null;
+  function apellidoIndex() {
+    if (_apellidoIndex) return _apellidoIndex;
+    _apellidoIndex = {};
+    entidades.filter(function (n) { return n.tipo === "persona"; }).forEach(function (n) {
+      apellidosDe(n.nombre).forEach(function (a) {
+        (_apellidoIndex[a] = _apellidoIndex[a] || []).push(n.nombre);
+      });
+    });
+    return _apellidoIndex;
+  }
+
+  function computeIdentity(n) {
+    if (n.tipo !== "persona") return null;
+    var texto = n.hechos.map(function (h) { return h.hecho || ""; }).join(" ");
+    var razones = [];
+    var tieneOrcid = ORCID_RE.test(texto);
+    var dudaExplicita = DUDA_RE.test(texto);
+
+    var idx = apellidoIndex();
+    var comparten = [];
+    apellidosDe(n.nombre).forEach(function (a) {
+      (idx[a] || []).forEach(function (otro) {
+        if (otro !== n.nombre && comparten.indexOf(otro) === -1) comparten.push(otro);
+      });
+    });
+
+    var nivel;
+    if (dudaExplicita) {
+      nivel = "baja";
+      razones.push("la fuente declara explícitamente que el vínculo no está confirmado");
+    } else if (tieneOrcid) {
+      nivel = "alta";
+      razones.push("ORCID presente en la fuente");
+    } else {
+      nivel = "media";
+      razones.push("identidad resuelta por nombre + afiliación, sin ORCID");
+    }
+    if (comparten.length) {
+      if (nivel === "alta") nivel = "media";
+      razones.push("comparte apellido con " + comparten.join(", ") + " en esta misma muestra");
+    }
+    return { nivel: nivel, razones: razones, comparten: comparten, tieneOrcid: tieneOrcid };
+  }
+  var IDENTITY_LABEL = { alta: "Identidad: alta", media: "Identidad: media", baja: "Identidad: por verificar" };
+
   // ---------------- Carga de datos ----------------
   fetch(DATA_URL)
     .then(function (res) {
@@ -755,6 +814,15 @@
     }
     if (senales.conexiones) { var c3 = document.createElement("span"); c3.className = "signal-chip"; c3.textContent = senales.conexiones + " conexion" + (senales.conexiones > 1 ? "es" : ""); signalRow.appendChild(c3); }
     if (senales.docencia) { var c4 = document.createElement("span"); c4.className = "signal-chip"; c4.textContent = senales.docencia + " congreso" + (senales.docencia > 1 ? "s" : ""); signalRow.appendChild(c4); }
+    if (n.tipo === "persona") {
+      var ident = computeIdentity(n);
+      if (ident && ident.nivel === "baja") {
+        var cid = document.createElement("span"); cid.className = "signal-chip identity-warn";
+        cid.textContent = "⚠ Identidad por verificar";
+        cid.title = ident.razones.join("; ");
+        signalRow.appendChild(cid);
+      }
+    }
 
     var meta = document.createElement("div"); meta.className = "card-meta";
     var hechosCount = document.createElement("span");
@@ -1022,6 +1090,8 @@
       L.push("   Por qué: " + (porQue.length ? porQue.join("; ") : "sin señales puntuables vigentes"));
       L.push("   Siguiente paso: " + tierResumen(p.tier));
       L.push("   Confianza de la evidencia: " + p.confianzaLabel);
+      var idn = computeIdentity(n);
+      if (idn) L.push("   " + IDENTITY_LABEL[idn.nivel] + " — " + idn.razones.join("; "));
       var tags = tagsFor(n);
       if (tags.length) L.push("   Temas detectados: " + tags.join(", "));
       L.push("   Evidencia (" + n.hechos.length + " hecho(s)):");
@@ -1507,6 +1577,13 @@
       var confRow = document.createElement("div"); confRow.className = "confidence-row";
       confRow.textContent = "Confianza de la evidencia: " + priority.confianzaLabel + ".";
       scorePanel.appendChild(confRow);
+      var ident = computeIdentity(n);
+      if (ident) {
+        var idRow = document.createElement("div");
+        idRow.className = "confidence-row" + (ident.nivel === "baja" ? " identity-warn-row" : "");
+        idRow.textContent = IDENTITY_LABEL[ident.nivel] + " — " + ident.razones.join("; ") + ".";
+        scorePanel.appendChild(idRow);
+      }
       scoreNote.appendChild(document.createTextNode("Prioridad de investigación, no un ranking de valor profesional — cada componente pesa por recencia y tiene un tope para que ninguna señal domine sola. "));
     } else {
       var scoreNum2 = document.createElement("span"); scoreNum2.className = "num"; scoreNum2.textContent = senales.total;

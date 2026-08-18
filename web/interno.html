@@ -189,6 +189,16 @@
         honestidad sobre el estado real del dataset.
       </p>
       <p class="section-sub">
+        Desde el 2026-08-18 se muestra además una <strong>confianza de identidad</strong> separada,
+        que responde otra pregunta: ¿es la misma persona en todas las fuentes? Alta si hay un ORCID
+        real en algún hecho; media si la identidad se resolvió por nombre + afiliación (el caso por
+        defecto); "por verificar" si la propia fuente declara que el vínculo no está confirmado.
+        Compartir apellido con otra persona de la muestra baja el nivel y se anota explícitamente,
+        porque es el error que <code>DATA_SAMPLE.md</code> ya documenta (Carlos Rojas vs. Andrés
+        Rojas G. son personas distintas). No modifica el puntaje: se muestra al lado, para que una
+        advertencia de identidad no quede escondida dentro de un número.
+      </p>
+      <p class="section-sub">
         Un mismo hecho real (ej. un rol de investigador principal) puede quedar registrado en dos
         entidades relacionadas (la persona y la institución) — cada una lo cuenta desde su propia
         perspectiva, así que los puntajes de dos entidades no son sumables entre sí como si cada

@@ -83,6 +83,33 @@ campo `confianza` que ya existe por hecho:
 - **Media**: mezcla de `confirmado` y `probable`/`pendiente` (no aplica todavía, pero el mecanismo
   ya queda construido para cuando la revisión humana empiece a diferenciar).
 
+## Confianza de IDENTIDAD — la segunda pregunta, separada
+
+El charter (§5B) pide distinguir dos preguntas que el campo `confianza` original mezclaba:
+"¿alguien revisó este hecho?" (verificación, arriba) y **"¿es la misma persona en todas las
+fuentes?"** (identidad). Implementado el 2026-08-18 con señales que ya están en los datos, sin
+inventar ninguna:
+
+| Nivel | Cuándo |
+|---|---|
+| **Alta** | Hay un ORCID real (patrón `0000-0000-0000-0000`) en algún hecho de la persona |
+| **Media** | Identidad resuelta por nombre + afiliación, sin ORCID — el caso por defecto |
+| **Por verificar** | La propia fuente declara que el vínculo no está confirmado (texto con "no confirmado", "coincidencia de nombre", "sin confirmar", "homónimo") |
+
+Modificador adicional: **compartir apellido con otra persona de la muestra baja "alta" a "media"**
+y se anota siempre en la razón, porque es exactamente el error que `DATA_SAMPLE.md` documenta
+(Carlos Rojas vs. Andrés Rojas G. — mismo apellido, personas distintas, sin relación).
+
+Caso real en la muestra actual: **Carlos Rojas** es el candidato de mayor prioridad (11 pts,
+"Prioridad alta") y a la vez el único con identidad "por verificar" — sus propios datos dicen
+"vínculo por coincidencia de nombre, no confirmado por ORCID". Sin este cálculo, un MSL lo
+pondría primero en su shortlist sin saber que la atribución podría estar mal.
+
+La identidad **no modifica el puntaje** en esta versión: se muestra al lado, nunca mezclada. El
+charter deja abierta la opción de reducir puntos por identidad ambigua ("reduced credit"); no lo
+hice todavía porque con una muestra de 18 personas el efecto sería más ruido que señal, y prefiero
+que la advertencia sea visible a que quede escondida dentro de un número.
+
 ## Tier de prioridad — interpretación, no el número crudo
 
 El charter pide que el usuario vea un tier (Alta/Media/Monitorear), no solo un número (§5, tabla
