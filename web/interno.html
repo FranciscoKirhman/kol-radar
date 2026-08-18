@@ -246,6 +246,17 @@
       <ul>
         <li><s>Los datos del grafo están hardcodeados</s> — resuelto en ambas páginas: <code>web/index.html</code> y <code>web/interno.html</code> ahora cargan <code>data/sample/perfiles-muestra.json</code> en vivo vía <code>fetch()</code> (necesita servirse por HTTP, no <code>file://</code>). Antes de este fix, esta página mostraba una copia hardcodeada con menos hechos de los que realmente existen en el JSON — auditoría del 2026-08-10 lo detectó.</li>
         <li><s>Falta el puntaje</s> — resuelto en <code>index.html</code>: "señales" transparentes (publicaciones + ensayos + conexiones) con desglose siempre visible, nunca un número oculto.</li>
+        <li><s>El grafo era una maraña donde la posición no significaba nada</s> — resuelto
+          (2026-08-18): el layout ahora agrupa por institución (cada institución recibe un ancla
+          repartida por espiral de Vogel y atrae a sus personas/ensayos), así que la posición
+          codifica la afiliación y se leen barrios en vez de una nube. Además: forma por tipo de
+          nodo — círculo persona, cuadrado institución, triángulo ensayo, rombo tema — para que la
+          categoría no dependa solo del color; capas apagables de nodos y de tipos de conexión;
+          una capa nueva de <strong>temas</strong> derivada de los biomarcadores/tratamientos ya
+          detectados en el texto de los hechos, que conecta personas que trabajan en lo mismo
+          aunque estén en instituciones distintas; y cinco vistas preconfiguradas (ecosistema,
+          quién trabaja dónde, red de coautoría, temas, actividad en ensayos) para no obligar a
+          componer capas a mano.</li>
         <li><s>El grafo global de 23 nodos era la única forma de ver con qué se conecta una persona</s> —
           resuelto en <code>index.html</code>: se investigó cómo resuelven esto LinkedIn, ResearchGate,
           Google Scholar, Connected Papers, Obsidian y herramientas de relationship-mapping como Veeva

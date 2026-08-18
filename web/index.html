@@ -18,6 +18,7 @@
     --persona: #2a78d6;
     --institucion: #eb6834;
     --ensayo: #1baf7a;
+    --tema: #8b5fc4;
     --tier-alta-bg: #fdf1d9; --tier-alta-fg: #8a5a12;
     --tier-media-bg: #e4edf9; --tier-media-fg: #1f4a8c;
   }
@@ -35,6 +36,7 @@
       --persona: #3987e5;
       --institucion: #d95926;
       --ensayo: #199e70;
+      --tema: #a884d8;
       --tier-alta-bg: #3a2c12; --tier-alta-fg: #e8c184;
       --tier-media-bg: #1c2c47; --tier-media-fg: #a9c6f2;
     }
@@ -208,6 +210,8 @@
   }
   .legend-toggle[aria-pressed="false"] { opacity: .45; text-decoration: line-through; }
   .legend-toggle:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+  .legend-toggle.preset[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; opacity: 1; text-decoration: none; }
+  .forma-leyenda { font-size: 11px; color: var(--text-muted); }
   .network-legend .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
   .node-circle { cursor: pointer; stroke: var(--surface-0); stroke-width: 2px; }
   .node-circle:hover { stroke: var(--text-primary); }
@@ -409,11 +413,22 @@
     </div>
     <div class="network-layers">
       <div class="layer-block">
+        <span class="layer-title">Vista</span>
+        <div class="network-legend" id="vistas-preset">
+          <button class="legend-toggle preset" data-vista="ecosistema" aria-pressed="true">Ecosistema completo</button>
+          <button class="legend-toggle preset" data-vista="donde" aria-pressed="false">Quién trabaja dónde</button>
+          <button class="legend-toggle preset" data-vista="coautoria" aria-pressed="false">Red de coautoría</button>
+          <button class="legend-toggle preset" data-vista="temas" aria-pressed="false">Temas de investigación</button>
+          <button class="legend-toggle preset" data-vista="ensayos" aria-pressed="false">Actividad en ensayos</button>
+        </div>
+      </div>
+      <div class="layer-block">
         <span class="layer-title">Mostrar nodos</span>
         <div class="network-legend" id="capa-nodos">
           <button class="legend-toggle" data-capa="persona" aria-pressed="true"><span class="swatch" style="background:var(--persona)"></span>Personas</button>
           <button class="legend-toggle" data-capa="institucion" aria-pressed="true"><span class="swatch" style="background:var(--institucion)"></span>Instituciones</button>
           <button class="legend-toggle" data-capa="ensayo_clinico" aria-pressed="true"><span class="swatch" style="background:var(--ensayo)"></span>Ensayos clínicos</button>
+          <button class="legend-toggle" data-capa="tema" aria-pressed="false"><span class="swatch" style="background:var(--tema)"></span>Temas</button>
         </div>
       </div>
       <div class="layer-block">
@@ -424,10 +439,12 @@
           <button class="legend-toggle" data-arista="institucion|ensayo_clinico" aria-pressed="true">Institución ↔ Ensayo</button>
           <button class="legend-toggle" data-arista="persona|persona" aria-pressed="true">Persona ↔ Persona</button>
           <button class="legend-toggle" data-arista="institucion|institucion" aria-pressed="true">Institución ↔ Institución</button>
+          <button class="legend-toggle" data-arista="persona|tema" aria-pressed="true">Persona ↔ Tema</button>
         </div>
       </div>
       <div class="layer-block">
         <label class="layer-checkbox"><input type="checkbox" id="ocultar-aislados" /> Ocultar nodos que quedan sin conexiones</label>
+        <span class="forma-leyenda">Formas: ● persona · ■ institución · ▲ ensayo · ◆ tema</span>
       </div>
     </div>
   </section>
@@ -471,7 +488,7 @@
     congreso: "Congresos",
     otro: "Otros hechos"
   };
-  var typeLabel = { persona: "Persona", institucion: "Institución", ensayo_clinico: "Ensayo clínico" };
+  var typeLabel = { persona: "Persona", institucion: "Institución", ensayo_clinico: "Ensayo clínico", tema: "Tema" };
 
   var entidades = [];
   var vinculos = [];
@@ -485,11 +502,11 @@
   // filtro de la lista (state.filter) a propósito — acá se compone un mapa, no se filtra
   // un listado: se puede querer ver solo personas-con-personas sin salir del mapa completo.
   var capas = {
-    nodos: { persona: true, institucion: true, ensayo_clinico: true },
+    nodos: { persona: true, institucion: true, ensayo_clinico: true, tema: false },
     aristas: {
       "persona|institucion": true, "persona|ensayo_clinico": true,
       "institucion|ensayo_clinico": true, "persona|persona": true,
-      "institucion|institucion": true
+      "institucion|institucion": true, "persona|tema": true
     },
     ocultarAislados: false
   };
@@ -713,6 +730,7 @@
       shortlist = shortlist.filter(function (id) { return !!byId[id]; });
       saveShortlist();
       document.getElementById("loading-state").hidden = true;
+      construirTemas();
       buildRegionChips();
       refreshShortlistUI();
       renderCards();
@@ -1252,11 +1270,78 @@
   });
 
   // ---------------- Red de conexiones (simulación de fuerzas mínima + capa interactiva) ----------------
+  // ---- Capa de temas ----
+  // Nodos derivados de TAG_RULES, no del JSON: conectan personas que trabajan en lo mismo
+  // aunque estén en instituciones distintas — la relación que ninguna otra capa muestra.
+  // No entran a la lista (TIPO_ORDEN no los incluye), solo al grafo.
+  var temaEntidades = [], temaVinculos = [];
+  function construirTemas() {
+    temaEntidades = []; temaVinculos = [];
+    var porTag = {};
+    entidades.forEach(function (n) {
+      if (n.tipo !== "persona") return;
+      tagsFor(n).forEach(function (t) { (porTag[t] = porTag[t] || []).push(n.id); });
+    });
+    Object.keys(porTag).forEach(function (t) {
+      // Un tema con una sola persona no aporta estructura al grafo.
+      if (porTag[t].length < 2) return;
+      var id = "tema:" + t;
+      var regla = TAG_RULES.filter(function (r) { return r.tag === t; })[0];
+      var ent = {
+        id: id, nombre: t, tipo: "tema",
+        ciudad: "—", subtitulo: (regla ? regla.categoria : "Tema"),
+        hechos: [], _personas: porTag[t].length
+      };
+      temaEntidades.push(ent);
+      byId[id] = ent;
+      porTag[t].forEach(function (pid) {
+        temaVinculos.push({ origen: pid, destino: id, tipo: "trabaja en" });
+      });
+    });
+  }
+
+  function colorVar(tipo) {
+    if (tipo === "ensayo_clinico") return "ensayo";
+    if (tipo === "tema") return "tema";
+    return tipo;
+  }
+  // Devuelve el elemento SVG con la forma que corresponde al tipo, centrado en (x,y).
+  function formaNodo(NS, tipo, x, y, r) {
+    if (tipo === "institucion") {
+      var sq = document.createElementNS(NS, "rect");
+      sq.setAttribute("x", x - r); sq.setAttribute("y", y - r);
+      sq.setAttribute("width", r * 2); sq.setAttribute("height", r * 2);
+      sq.setAttribute("rx", 1.5);
+      return sq;
+    }
+    if (tipo === "ensayo_clinico") {
+      var tri = document.createElementNS(NS, "polygon");
+      var h = r * 1.15;
+      tri.setAttribute("points", [x + "," + (y - h), (x + h) + "," + (y + h * 0.72), (x - h) + "," + (y + h * 0.72)].join(" "));
+      return tri;
+    }
+    if (tipo === "tema") {
+      var d = document.createElementNS(NS, "polygon");
+      var k = r * 1.25;
+      d.setAttribute("points", [x + "," + (y - k), (x + k) + "," + y, x + "," + (y + k), (x - k) + "," + y].join(" "));
+      return d;
+    }
+    var c = document.createElementNS(NS, "circle");
+    c.setAttribute("cx", x); c.setAttribute("cy", y); c.setAttribute("r", r);
+    return c;
+  }
+
   function currentNetworkSubset() {
     var nodes = entidades.filter(matches).filter(function (n) { return capas.nodos[n.tipo]; });
     var ids = {};
     nodes.forEach(function (n) { ids[n.id] = true; });
-    var edges = vinculos.filter(function (v) {
+    if (capas.nodos.tema) {
+      temaEntidades.filter(function (t) {
+        return temaVinculos.some(function (v) { return v.destino === t.id && ids[v.origen]; });
+      }).forEach(function (t) { nodes.push(t); ids[t.id] = true; });
+    }
+    var todosVinculos = capas.nodos.tema ? vinculos.concat(temaVinculos) : vinculos;
+    var edges = todosVinculos.filter(function (v) {
       if (!ids[v.origen] || !ids[v.destino]) return false;
       var k = claveArista(byId[v.origen].tipo, byId[v.destino].tipo);
       return capas.aristas[k] !== false;
@@ -1295,42 +1380,111 @@
     }
 
     var W = 720, H = 460;
+
+    // ---- Layout agrupado por institución ----
+    // Un force layout plano deja la posición sin significado: con 147 nodos se vuelve una
+    // maraña donde no se lee a qué institución pertenece cada persona. Acá la posición SÍ
+    // codifica esa relación: cada institución recibe un ancla fija repartida en el lienzo, y
+    // las personas/ensayos ligados a ella son atraídos a su ancla. El resultado son barrios
+    // legibles por institución en vez de una nube uniforme.
+    var anclas = {};
+    var instsPresentes = nodes.filter(function (n) { return n.tipo === "institucion"; });
+    // Instituciones grandes al centro, chicas al borde: reduce el cruce de aristas.
+    instsPresentes.sort(function (a, b) {
+      var ga = 0, gb = 0;
+      edges.forEach(function (e) {
+        if (e.origen === a.id || e.destino === a.id) ga++;
+        if (e.origen === b.id || e.destino === b.id) gb++;
+      });
+      return gb - ga;
+    });
+    instsPresentes.forEach(function (inst, i) {
+      var total = instsPresentes.length;
+      // Espiral de Vogel: reparte anclas de forma pareja, sin los anillos visibles que deja
+      // repartir en círculos concéntricos.
+      var t = (i + 0.5) / total;
+      var radio = Math.sqrt(t) * Math.min(W, H) * 0.42;
+      var ang = i * 2.399963229728653; // ángulo áureo
+      anclas[inst.id] = { x: W / 2 + Math.cos(ang) * radio, y: H / 2 + Math.sin(ang) * radio };
+    });
+
+    // A qué ancla pertenece cada nodo (su primera institución conectada).
+    var anclaDe = {};
+    nodes.forEach(function (n) {
+      if (n.tipo === "institucion") { anclaDe[n.id] = n.id; return; }
+      var inst = null;
+      for (var k = 0; k < edges.length; k++) {
+        var e = edges[k];
+        var otro = e.origen === n.id ? e.destino : (e.destino === n.id ? e.origen : null);
+        if (otro && byId[otro] && byId[otro].tipo === "institucion" && anclas[otro]) { inst = otro; break; }
+      }
+      if (inst) anclaDe[n.id] = inst;
+    });
+
     nodes.forEach(function (n, i) {
-      var angle = (i / nodes.length) * Math.PI * 2;
-      n._x = W / 2 + Math.cos(angle) * 120 + (Math.random() - 0.5) * 20;
-      n._y = H / 2 + Math.sin(angle) * 120 + (Math.random() - 0.5) * 20;
+      var a = anclas[anclaDe[n.id]];
+      var ang = (i / nodes.length) * Math.PI * 2;
+      if (a) {
+        n._x = a.x + Math.cos(ang) * 26 + (Math.random() - 0.5) * 12;
+        n._y = a.y + Math.sin(ang) * 26 + (Math.random() - 0.5) * 12;
+      } else {
+        n._x = W / 2 + Math.cos(ang) * 150 + (Math.random() - 0.5) * 20;
+        n._y = H / 2 + Math.sin(ang) * 150 + (Math.random() - 0.5) * 20;
+      }
       n._vx = 0; n._vy = 0;
     });
-    for (var iter = 0; iter < 260; iter++) {
+
+    for (var iter = 0; iter < 300; iter++) {
       for (var i = 0; i < nodes.length; i++) {
         for (var j = i + 1; j < nodes.length; j++) {
           var a = nodes[i], b = nodes[j];
           var dx = a._x - b._x, dy = a._y - b._y;
           var distSq = dx * dx + dy * dy || 0.01;
           var dist = Math.sqrt(distSq);
-          var force = 1400 / distSq;
+          // Repulsión más suave entre nodos del mismo barrio: deben quedar juntos.
+          var mismoGrupo = anclaDe[a.id] && anclaDe[a.id] === anclaDe[b.id];
+          var force = (mismoGrupo ? 420 : 1500) / distSq;
           var fx = (dx / dist) * force, fy = (dy / dist) * force;
           a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
         }
       }
       edges.forEach(function (e) {
         var a = byId[e.origen], b = byId[e.destino];
-        if (!a || !b) return;
+        if (!a || !b || a._x === undefined || b._x === undefined) return;
         var dx = b._x - a._x, dy = b._y - a._y;
         var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-        var force = (dist - 95) * 0.02;
+        var force = (dist - 70) * 0.02;
         var fx = (dx / dist) * force, fy = (dy / dist) * force;
         a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
       });
       nodes.forEach(function (n) {
-        n._vx += (W / 2 - n._x) * 0.0015;
-        n._vy += (H / 2 - n._y) * 0.0015;
+        var a = anclas[anclaDe[n.id]];
+        if (a) {
+          // La atracción al ancla es lo que crea el barrio. La institución misma se clava
+          // más fuerte para que sea el centro visual de su grupo.
+          var k = n.tipo === "institucion" ? 0.08 : 0.03;
+          n._vx += (a.x - n._x) * k;
+          n._vy += (a.y - n._y) * k;
+        } else {
+          n._vx += (W / 2 - n._x) * 0.0015;
+          n._vy += (H / 2 - n._y) * 0.0015;
+        }
         n._x += n._vx * 0.15; n._y += n._vy * 0.15;
         n._vx *= 0.82; n._vy *= 0.82;
         n._x = Math.max(30, Math.min(W - 30, n._x));
         n._y = Math.max(20, Math.min(H - 20, n._y));
       });
     }
+
+    // Grado dentro de la vista actual. No se usa connectionCount(): ese cuenta solo vinculos
+    // reales (correcto para el puntaje, porque los temas son derivados y no evidencia), pero
+    // el tamaño del nodo debe reflejar lo que se está viendo ahora.
+    var gradoEnVista = {};
+    nodes.forEach(function (n) { gradoEnVista[n.id] = 0; });
+    edges.forEach(function (e) {
+      if (gradoEnVista[e.origen] !== undefined) gradoEnVista[e.origen]++;
+      if (gradoEnVista[e.destino] !== undefined) gradoEnVista[e.destino]++;
+    });
 
     // Vecinos directos por id, para resaltar/atenuar al pasar el mouse o el foco.
     var neighborsOf = {};
@@ -1386,7 +1540,9 @@
       var typeEl = document.createElement("div"); typeEl.className = "tt-type"; typeEl.textContent = typeLabel[n.tipo] || n.tipo;
       var nameEl = document.createElement("div"); nameEl.className = "tt-name"; nameEl.textContent = n.nombre;
       var metaEl2 = document.createElement("div"); metaEl2.className = "tt-meta";
-      metaEl2.textContent = (n.subtitulo ? n.subtitulo + " · " : "") + deg + " conexion" + (deg === 1 ? "" : "es");
+      metaEl2.textContent = n.tipo === "tema"
+        ? n.subtitulo + " · " + deg + " persona" + (deg === 1 ? "" : "s") + " trabajan en esto"
+        : (n.subtitulo ? n.subtitulo + " · " : "") + deg + " conexion" + (deg === 1 ? "" : "es");
       tooltipEl.appendChild(typeEl); tooltipEl.appendChild(nameEl); tooltipEl.appendChild(metaEl2);
       var left = screenPt.x - wrapRect.left + 14;
       var top = screenPt.y - wrapRect.top - 10;
@@ -1424,25 +1580,41 @@
 
     // Umbral adaptativo: con pocos nodos se muestran todas las etiquetas; al crecer el grafo
     // se reservan para los mejor conectados.
-    var grados = nodes.map(function (x) { return connectionCount(x.id); }).sort(function (a, b) { return b - a; });
+    var grados = nodes.map(function (x) { return gradoEnVista[x.id]; }).sort(function (a, b) { return b - a; });
     var umbralEtiqueta = nodes.length <= 30 ? 0 : Math.max(2, grados[Math.min(24, grados.length - 1)] || 2);
 
     var nodeEls = {};
     nodes.forEach(function (n) {
-      var deg = connectionCount(n.id);
-      var baseR = n.tipo === "persona" ? 6 : n.tipo === "institucion" ? 8 : 7;
+      var deg = gradoEnVista[n.id];
+      var baseR = n.tipo === "persona" ? 6 : n.tipo === "institucion" ? 8 : n.tipo === "tema" ? 7 : 7;
       var r = baseR + Math.min(deg, 8) * 0.9;
       var typeClass = (n.tipo === "ensayo_clinico" ? "ensayo" : n.tipo) + "-type";
-      var circle = document.createElementNS(NS, "circle");
+      // Forma además de color: la identidad de categoría nunca debe depender solo del color
+      // (daltonismo, impresión, forced-colors). Círculo=persona, cuadrado=institución,
+      // triángulo=ensayo, rombo=tema.
+      var circle = formaNodo(NS, n.tipo, n._x, n._y, r);
       circle.setAttribute("class", "node-circle global-node entering " + typeClass);
-      circle.setAttribute("cx", n._x); circle.setAttribute("cy", n._y);
-      circle.setAttribute("r", r);
-      circle.setAttribute("fill", "var(--" + (n.tipo === "ensayo_clinico" ? "ensayo" : n.tipo) + ")");
+      circle.setAttribute("fill", "var(--" + colorVar(n.tipo) + ")");
       circle.setAttribute("tabindex", "0");
       circle.setAttribute("role", "button");
-      circle.setAttribute("aria-label", n.nombre + " — " + (typeLabel[n.tipo] || n.tipo) + ", " + deg + " conexion" + (deg === 1 ? "" : "es"));
-      circle.addEventListener("click", function () { openDetail(n.id); });
-      circle.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); openDetail(n.id); } });
+      circle.setAttribute("aria-label", n.tipo === "tema"
+        ? "Tema " + n.nombre + " — " + deg + " persona" + (deg === 1 ? "" : "s") + " trabajan en esto"
+        : n.nombre + " — " + (typeLabel[n.tipo] || n.tipo) + ", " + deg + " conexion" + (deg === 1 ? "" : "es"));
+      var activar = n.tipo === "tema"
+        ? function () {
+            // Un tema no tiene ficha propia (no es un hecho con fuente): al tocarlo se filtra
+            // la lista por ese tag, que es la acción útil.
+            if (state.tags.indexOf(n.nombre) === -1) state.tags.push(n.nombre);
+            var chip = document.querySelector('[data-tag="' + n.nombre + '"]');
+            if (chip) chip.setAttribute("aria-pressed", "true");
+            document.getElementById("tags-clear").hidden = false;
+            if (advancedPanel.hidden) document.getElementById("toggle-advanced").click();
+            networkBtn.click();
+            renderCards();
+          }
+        : function () { openDetail(n.id); };
+      circle.addEventListener("click", activar);
+      circle.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); activar(); } });
       circle.addEventListener("mouseenter", function () { highlightNode(n.id); showNodeTooltip(n, deg); });
       circle.addEventListener("focus", function () { highlightNode(n.id); showNodeTooltip(n, deg); });
       circle.addEventListener("mouseleave", clearHighlight);
@@ -1486,6 +1658,7 @@
     var t = b.getAttribute("data-capa");
     capas.nodos[t] = !capas.nodos[t];
     b.setAttribute("aria-pressed", String(capas.nodos[t]));
+    limpiarPresetActivo();
     rebuildNetworkIfVisible();
   });
   document.getElementById("capa-aristas").addEventListener("click", function (e) {
@@ -1494,12 +1667,63 @@
     var k = b.getAttribute("data-arista");
     capas.aristas[k] = !capas.aristas[k];
     b.setAttribute("aria-pressed", String(capas.aristas[k]));
+    limpiarPresetActivo();
     rebuildNetworkIfVisible();
   });
   document.getElementById("ocultar-aislados").addEventListener("change", function () {
     capas.ocultarAislados = this.checked;
+    limpiarPresetActivo();
     rebuildNetworkIfVisible();
   });
+
+  // Presets: configuran todas las capas de una. Componer capas a mano sirve para explorar,
+  // pero obliga a saber de antemano qué se busca; cada preset responde una pregunta concreta.
+  var VISTAS = {
+    ecosistema: { nodos: { persona: 1, institucion: 1, ensayo_clinico: 1, tema: 0 },
+                  aristas: { "persona|institucion": 1, "persona|ensayo_clinico": 1, "institucion|ensayo_clinico": 1, "persona|persona": 1, "institucion|institucion": 1, "persona|tema": 1 },
+                  aislados: false },
+    donde:      { nodos: { persona: 1, institucion: 1, ensayo_clinico: 0, tema: 0 },
+                  aristas: { "persona|institucion": 1, "persona|ensayo_clinico": 0, "institucion|ensayo_clinico": 0, "persona|persona": 0, "institucion|institucion": 0, "persona|tema": 0 },
+                  aislados: false },
+    coautoria:  { nodos: { persona: 1, institucion: 0, ensayo_clinico: 0, tema: 0 },
+                  aristas: { "persona|institucion": 0, "persona|ensayo_clinico": 0, "institucion|ensayo_clinico": 0, "persona|persona": 1, "institucion|institucion": 0, "persona|tema": 0 },
+                  aislados: true },
+    temas:      { nodos: { persona: 1, institucion: 0, ensayo_clinico: 0, tema: 1 },
+                  aristas: { "persona|institucion": 0, "persona|ensayo_clinico": 0, "institucion|ensayo_clinico": 0, "persona|persona": 0, "institucion|institucion": 0, "persona|tema": 1 },
+                  aislados: true },
+    ensayos:    { nodos: { persona: 1, institucion: 1, ensayo_clinico: 1, tema: 0 },
+                  aristas: { "persona|institucion": 0, "persona|ensayo_clinico": 1, "institucion|ensayo_clinico": 1, "persona|persona": 0, "institucion|institucion": 0, "persona|tema": 0 },
+                  aislados: true }
+  };
+  function sincronizarBotonesCapas() {
+    document.querySelectorAll("#capa-nodos [data-capa]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(!!capas.nodos[b.getAttribute("data-capa")]));
+    });
+    document.querySelectorAll("#capa-aristas [data-arista]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(capas.aristas[b.getAttribute("data-arista")] !== false));
+    });
+    document.getElementById("ocultar-aislados").checked = capas.ocultarAislados;
+  }
+  function aplicarVista(nombre) {
+    var v = VISTAS[nombre];
+    if (!v) return;
+    Object.keys(v.nodos).forEach(function (k) { capas.nodos[k] = !!v.nodos[k]; });
+    Object.keys(v.aristas).forEach(function (k) { capas.aristas[k] = !!v.aristas[k]; });
+    capas.ocultarAislados = v.aislados;
+    document.querySelectorAll("#vistas-preset [data-vista]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-vista") === nombre));
+    });
+    sincronizarBotonesCapas();
+    rebuildNetworkIfVisible();
+  }
+  document.getElementById("vistas-preset").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-vista]");
+    if (b) aplicarVista(b.getAttribute("data-vista"));
+  });
+  // Tocar una capa a mano deja de corresponder a un preset: se apagan todos.
+  function limpiarPresetActivo() {
+    document.querySelectorAll("#vistas-preset [data-vista]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+  }
 
   // ---------------- Zoom y pan del grafo global (manipulación directa de viewBox) ----------------
   var NETWORK_VB = { x: 0, y: 0, w: 720, h: 460 };
@@ -1604,10 +1828,9 @@
       svg.appendChild(line);
     });
 
-    var centerFill = "var(--" + (centerNode.tipo === "ensayo_clinico" ? "ensayo" : centerNode.tipo) + ")";
-    var centerCircle = document.createElementNS(NS, "circle");
+    var centerFill = "var(--" + colorVar(centerNode.tipo) + ")";
+    var centerCircle = formaNodo(NS, centerNode.tipo, cx, cy, 9);
     centerCircle.setAttribute("class", "node-circle node-circle-center");
-    centerCircle.setAttribute("cx", cx); centerCircle.setAttribute("cy", cy); centerCircle.setAttribute("r", 9);
     centerCircle.setAttribute("fill", centerFill);
     svg.appendChild(centerCircle);
     var centerLabel = document.createElementNS(NS, "text");
@@ -1619,10 +1842,9 @@
 
     neighbors.forEach(function (nb) {
       var r = nb.node.tipo === "persona" ? 6 : nb.node.tipo === "institucion" ? 8 : 7;
-      var fill = "var(--" + (nb.node.tipo === "ensayo_clinico" ? "ensayo" : nb.node.tipo) + ")";
-      var circle = document.createElementNS(NS, "circle");
+      var fill = "var(--" + colorVar(nb.node.tipo) + ")";
+      var circle = formaNodo(NS, nb.node.tipo, nb._ex, nb._ey, r);
       circle.setAttribute("class", "node-circle");
-      circle.setAttribute("cx", nb._ex); circle.setAttribute("cy", nb._ey); circle.setAttribute("r", r);
       circle.setAttribute("fill", fill);
       circle.addEventListener("click", function () { openDetail(nb.id); });
       svg.appendChild(circle);
