@@ -5,40 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KOL Radar — Cáncer de pulmón (demo)</title>
 <style>
+  /* Dirección visual "publicación científica": papel cálido, tinta serif en los nombres,
+     el grafo presentado como figura. Paleta categórica validada con validate_palette.js
+     (banda de luminosidad, croma, separación CVD y contraste) en ambos modos. La separación
+     CVD queda en la banda 6-8, aceptable porque cada tipo de nodo ya lleva forma propia. */
   :root {
     color-scheme: light;
-    --surface-0: #ffffff;
-    --surface-1: #f7f6f3;
-    --surface-2: #eeece6;
-    --border: #e2e0da;
-    --text-primary: #16150f;
-    --text-secondary: #52514e;
-    --text-muted: #85837c;
-    --accent: #2a78d6;
-    --persona: #2a78d6;
-    --institucion: #eb6834;
-    --ensayo: #1baf7a;
-    --tema: #8b5fc4;
-    --tier-alta-bg: #fdf1d9; --tier-alta-fg: #8a5a12;
-    --tier-media-bg: #e4edf9; --tier-media-fg: #1f4a8c;
+    --surface-0: #faf8f4;
+    --surface-1: #f2eee6;
+    --surface-2: #e7e1d5;
+    --border: #ddd6c9;
+    --text-primary: #1a1814;
+    --text-secondary: #554e44;
+    --text-muted: #857c6e;
+    --accent: #8a4b2a;
+    --persona: #1f5fa8;
+    --institucion: #b35519;
+    --ensayo: #0f7a52;
+    --tema: #7a3fa8;
+    --tier-alta-bg: #efe3cd; --tier-alta-fg: #7a5312;
+    --tier-media-bg: #dfe6ef; --tier-media-fg: #1f4a7a;
+    --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       color-scheme: dark;
-      --surface-0: #121211;
-      --surface-1: #1a1a19;
-      --surface-2: #232320;
-      --border: #34332e;
-      --text-primary: #ffffff;
-      --text-secondary: #c3c2b7;
-      --text-muted: #85837c;
-      --accent: #3987e5;
-      --persona: #3987e5;
-      --institucion: #d95926;
-      --ensayo: #199e70;
-      --tema: #a884d8;
-      --tier-alta-bg: #3a2c12; --tier-alta-fg: #e8c184;
-      --tier-media-bg: #1c2c47; --tier-media-fg: #a9c6f2;
+      --surface-0: #16150f;
+      --surface-1: #1e1c16;
+      --surface-2: #292620;
+      --border: #3a352c;
+      --text-primary: #f2ede2;
+      --text-secondary: #c2baa9;
+      --text-muted: #8d8677;
+      --accent: #c9855c;
+      --persona: #4d8ecb;
+      --institucion: #d4783f;
+      --ensayo: #3fa37a;
+      --tema: #a87ad0;
+      --tier-alta-bg: #3a3020; --tier-alta-fg: #e0be86;
+      --tier-media-bg: #22303f; --tier-media-fg: #a6c2dd;
     }
   }
   * { box-sizing: border-box; }
@@ -64,7 +69,7 @@
   .topbar-row { display: flex; align-items: center; gap: 10px; max-width: 1080px; margin: 0 auto; flex-wrap: wrap; }
   .dev-link { margin-left: auto; font-size: 11px; color: var(--text-muted); white-space: nowrap; text-decoration: none; }
   .dev-link:hover { text-decoration: underline; }
-  .brand { font-weight: 700; font-size: 16px; white-space: nowrap; }
+  .brand { font-weight: 700; font-size: 17px; white-space: nowrap; font-family: var(--serif); letter-spacing: -.01em; }
   .specialty-badge {
     font-size: 11px; font-weight: 500; color: var(--text-secondary);
     background: var(--surface-2); border-radius: 999px; padding: 3px 10px;
@@ -168,7 +173,7 @@
   .type-dot.institucion { background: var(--institucion); }
   .type-dot.ensayo_clinico { background: var(--ensayo); }
   .card-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; flex: 1; }
-  .card-name { font-weight: 600; font-size: 14.5px; line-height: 1.3; }
+  .card-name { font-weight: 600; font-size: 15px; line-height: 1.3; font-family: var(--serif); }
   .card-sub { font-size: 12.5px; color: var(--text-secondary); }
   .score-badge {
     flex: none; font-size: 11px; font-weight: 600; color: var(--text-secondary);
@@ -229,7 +234,7 @@
   .network-legend .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
   .node-circle { cursor: pointer; stroke: var(--surface-0); stroke-width: 2px; }
   .node-circle:hover { stroke: var(--text-primary); }
-  .edge-line { stroke: var(--border); stroke-width: 1.4px; }
+  .edge-line { stroke: color-mix(in srgb, var(--text-muted) 45%, transparent); stroke-width: 1px; }
   .node-label { font-size: 9px; fill: var(--text-secondary); pointer-events: none; }
 
   /* Capa "futurista" — solo el grafo global (.global-node/.global-edge), el mini-grafo
@@ -244,9 +249,17 @@
   .zoom-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .global-node { transition: opacity .2s, stroke-width .2s; transform-box: fill-box; transform-origin: center; }
   .global-node.hovered { stroke: var(--text-primary); stroke-width: 2.5px; }
-  .global-node.persona-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--persona) 70%, transparent)); }
-  .global-node.institucion-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--institucion) 70%, transparent)); }
-  .global-node.ensayo-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--ensayo) 70%, transparent)); }
+  /* El resplandor sirve sobre fondo oscuro; sobre papel claro lava el color y los nodos se
+     ven desteñidos. Se limita al modo oscuro. En claro, un borde fino da la misma separación. */
+  .global-node { stroke: var(--surface-0); stroke-width: 1.5px; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .global-node.persona-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--persona) 70%, transparent)); }
+    :root:not([data-theme="light"]) .global-node.institucion-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--institucion) 70%, transparent)); }
+    :root:not([data-theme="light"]) .global-node.ensayo-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--ensayo) 70%, transparent)); }
+  }
+  :root[data-theme="dark"] .global-node.persona-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--persona) 70%, transparent)); }
+  :root[data-theme="dark"] .global-node.institucion-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--institucion) 70%, transparent)); }
+  :root[data-theme="dark"] .global-node.ensayo-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--ensayo) 70%, transparent)); }
   .global-node.entering { opacity: 0; transform: scale(.3); }
   .global-node.entered { opacity: 1; transform: scale(1); transition: opacity .45s ease-out, transform .45s cubic-bezier(.2,1.4,.4,1), stroke-width .2s; }
   /* .faded declarado después de .entered para que gane en especificidad-por-orden cuando ambas clases coinciden */
@@ -306,7 +319,7 @@
   .sheet-handle { width: 36px; height: 4px; border-radius: 4px; background: var(--surface-2); margin: 0 auto 10px; }
   @media (min-width: 720px) { .sheet-handle { display: none; } }
   .sheet-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 18px; color: var(--text-muted); cursor: pointer; padding: 4px 8px; }
-  .sheet-name { font-size: 18px; font-weight: 700; margin: 4px 0 4px; padding-right: 28px; }
+  .sheet-name { font-size: 20px; font-weight: 600; margin: 4px 0 4px; padding-right: 28px; font-family: var(--serif); letter-spacing: -.01em; }
   .sheet-type-tag { display: inline-block; font-size: 11px; color: var(--text-secondary); background: var(--surface-2); border-radius: 4px; padding: 2px 8px; margin-bottom: 4px; }
   .sheet-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
   .sheet-sub-fuente { color: var(--text-muted); text-decoration: underline; }
