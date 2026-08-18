@@ -50,37 +50,11 @@ jobs:
           git commit -m "Propuesta de enriquecimiento OpenAlex ($FECHA)"
           git push -u origin "$RAMA" --force
 
-          ARCHIVO="data/pending/openalex-$FECHA.json"
-          RESUMEN=$(python3 -c "import json;print(json.dumps(json.load(open('$ARCHIVO'))['resumen'],ensure_ascii=False,indent=2))")
+          # El cuerpo del PR se arma con un script Python en vez de un heredoc de shell:
+          # el terminador de un heredoc va en columna 0, y eso cortaría este bloque "run: |"
+          # de YAML (GitHub deja de parsear el workflow y desaparece workflow_dispatch).
+          python3 scripts/cuerpo_pr.py "data/pending/openalex-$FECHA.json" > /tmp/pr-body.md
 
           gh pr create \
             --title "Propuesta OpenAlex — $FECHA" \
-            --body "$(cat <<EOF
-Generado automáticamente por \`scripts/enriquecer_openalex.py\`.
-
-**Esto es una propuesta, no un cambio aplicado.** No toca \`data/sample/perfiles-muestra.json\`.
-Nada entra a la muestra hasta que una persona lo apruebe.
-
-## Resumen
-
-\`\`\`json
-$RESUMEN
-\`\`\`
-
-## Cómo revisar
-
-1. Abrí la pestaña **Files changed** de este PR.
-2. Por cada entrada en \`propuestas\`, mirá \`razones_match\`.
-3. Prestá atención especial a las marcadas con:
-   - \`"match_ambiguo": true\` — había otro candidato casi igual de bueno; revisá \`candidatos_alternativos\`.
-   - \`"afiliacion_no_coincide": true\` — ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra. Puede ser una segunda afiliación real, o puede ser otra persona con el mismo nombre.
-4. Si algo no cuadra, **cerrá el PR sin mergear** — no se pierde nada, el script se puede volver a correr.
-5. Si está bien, mergealo. Eso deja la propuesta registrada en el repo, todavía como \`"confianza": "pendiente"\`.
-
-## Lo que este PR NO hace
-
-- No marca ningún hecho como \`confirmado\`.
-- No fusiona identidades automáticamente.
-- No modifica los datos que ya ve el sitio público.
-EOF
-)"
+            --body-file /tmp/pr-body.md
