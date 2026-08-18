@@ -1,5 +1,5 @@
 {
-  "descripcion": "Muestra de 129 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
+  "descripcion": "Muestra de 147 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
   "generado": "2026-08-09",
   "actualizado": "2026-08-18",
   "especialidad_muestra": "cáncer de pulmón",
@@ -3184,6 +3184,294 @@
           "revista": "Revista Chilena de Enfermedades Respiratorias"
         }
       ]
+    },
+    {
+      "id": "clinica-las-condes",
+      "nombre": "Clínica Las Condes",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro clínico privado",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/37572870/",
+          "fecha": "2024-01",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "orlandi",
+      "nombre": "Orlandi Oncología",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro oncológico privado",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33333328/",
+          "fecha": "2021-04",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "clinica-santa-maria",
+      "nombre": "Clínica Santa María",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro clínico privado",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/38320664/",
+          "fecha": "2024-05",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "uandes",
+      "nombre": "Universidad de los Andes",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Universidad",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/38320664/",
+          "fecha": "2024-05",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "ser-chile",
+      "nombre": "Sociedad Chilena de Enfermedades Respiratorias",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad científica",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/38320664/",
+          "fecha": "2024-05",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "sochradi",
+      "nombre": "Sociedad Chilena de Radiología",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad científica",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "sochradioterapia",
+      "nombre": "Sociedad Chilena de Radioterapia",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad científica",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "soc-cirujanos",
+      "nombre": "Sociedad de Cirujanos de Chile",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad científica",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "uautonoma",
+      "nombre": "Universidad Autónoma de Chile",
+      "tipo": "institucion",
+      "ciudad": "Talca",
+      "subtitulo": "Universidad",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33113004/",
+          "fecha": "2021-05",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "uchile",
+      "nombre": "Universidad de Chile",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Universidad",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/34186175/",
+          "fecha": "2021-09",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "uss",
+      "nombre": "Universidad San Sebastián",
+      "tipo": "institucion",
+      "ciudad": "Concepción",
+      "subtitulo": "Universidad",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/30011388/",
+          "fecha": "2018-10",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "udec",
+      "nombre": "Universidad de Concepción",
+      "tipo": "institucion",
+      "ciudad": "Concepción",
+      "subtitulo": "Universidad",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/30011388/",
+          "fecha": "2018-10",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "utarapaca",
+      "nombre": "Universidad de Tarapacá",
+      "tipo": "institucion",
+      "ciudad": "Arica",
+      "subtitulo": "Universidad",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/36552201/",
+          "fecha": "2022-11-23",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "unab",
+      "nombre": "Universidad Andrés Bello",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Universidad",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/36510562/",
+          "fecha": "2022",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "uach",
+      "nombre": "Universidad Austral de Chile",
+      "tipo": "institucion",
+      "ciudad": "Valdivia",
+      "subtitulo": "Universidad",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39519155/",
+          "fecha": "2024-10-29",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "hosp-uchile",
+      "nombre": "Hospital Clínico Universidad de Chile",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Hospital universitario",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+          "fecha": "2016-02",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "hosp-carabineros",
+      "nombre": "Hospital de Carabineros",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Hospital institucional",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+          "fecha": "2016-02",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "isp",
+      "nombre": "Instituto de Salud Pública de Chile",
+      "tipo": "institucion",
+      "ciudad": "Santiago",
+      "subtitulo": "Organismo público",
+      "hechos": [
+        {
+          "tipo": "afiliacion",
+          "hecho": "Aparece como afiliación declarada de al menos un autor en la evidencia citada de esta muestra.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "2006-03",
+          "confianza": "pendiente"
+        }
+      ]
     }
   ],
   "vinculos": [
@@ -3921,6 +4209,761 @@
       "origen": "juan-guillermo-gormaz-a",
       "destino": "clinica-alemana",
       "tipo": "afiliación"
+    },
+    {
+      "origen": "suraj-samtani",
+      "destino": "clinica-las-condes",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "francisco-orlandi",
+      "destino": "orlandi",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "francisco-suarez",
+      "destino": "clinica-santa-maria",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "francisco-suarez",
+      "destino": "uandes",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "francisco-suarez",
+      "destino": "ser-chile",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "maria-paz-saavedra",
+      "destino": "orlandi",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "maria-paz-saavedra",
+      "destino": "ser-chile",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "claudio-silva-f",
+      "destino": "sochradi",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "jaime-verdugo-b",
+      "destino": "sochradi",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "felipe-sanchez-t",
+      "destino": "sochradi",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "claudio-sole-p",
+      "destino": "sochradioterapia",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "ruben-valenzuela-m",
+      "destino": "soc-cirujanos",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "alfredo-jalilie-e",
+      "destino": "ser-chile",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "roberto-diaz-pena",
+      "destino": "uautonoma",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "solange-rivas",
+      "destino": "uchile",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "gonzalo-labarca",
+      "destino": "uss",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "gonzalo-labarca",
+      "destino": "udec",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "francisco-aguayo",
+      "destino": "utarapaca",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "martin-montecino",
+      "destino": "unab",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "rodrigo-lopez-munoz",
+      "destino": "uach",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "antonia-martin-martin",
+      "destino": "uach",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "rodrigo-reyes-m",
+      "destino": "udec",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "enrique-seguel-s",
+      "destino": "udec",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "udec",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "emilio-alarcon-c",
+      "destino": "udec",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "juan-carlos-diaz-p",
+      "destino": "hosp-uchile",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "juan-carlos-diaz-p",
+      "destino": "uchile",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "rodrigo-diaz-t",
+      "destino": "hosp-carabineros",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "marcela-hernandez-p",
+      "destino": "uss",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "paulina-avila-v",
+      "destino": "uss",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "daniel-villalobos-s",
+      "destino": "uss",
+      "tipo": "afiliación secundaria"
+    },
+    {
+      "origen": "waldo-adonis-r",
+      "destino": "isp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "eugenia-cordero-s",
+      "destino": "isp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "luis-rodriguez-a",
+      "destino": "isp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "darwins-castillo-a",
+      "destino": "isp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "leda-guzman-m",
+      "destino": "isp",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "david-ladron-de-guevara-h",
+      "destino": "clinica-las-condes",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "raul-pefaur-d",
+      "destino": "clinica-las-condes",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "marcia-erazo-b",
+      "destino": "uchile",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "juan-guillermo-gormaz-a",
+      "destino": "marcia-erazo-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "juan-guillermo-gormaz-a",
+      "destino": "mauricio-burotto",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "marcia-erazo-b",
+      "destino": "mauricio-burotto",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "alejandra-riquelme-u",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "andres-jadue-t",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "emilio-alarcon-c",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "enrique-seguel-s",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "m-loreto-spencer-l",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "roberto-gonzalez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "rodrigo-reyes-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alejandra-riquelme-u",
+      "destino": "andres-jadue-t",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alejandra-riquelme-u",
+      "destino": "emilio-alarcon-c",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alejandra-riquelme-u",
+      "destino": "enrique-seguel-s",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alejandra-riquelme-u",
+      "destino": "m-loreto-spencer-l",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alejandra-riquelme-u",
+      "destino": "roberto-gonzalez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alejandra-riquelme-u",
+      "destino": "rodrigo-reyes-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-jadue-t",
+      "destino": "emilio-alarcon-c",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-jadue-t",
+      "destino": "enrique-seguel-s",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-jadue-t",
+      "destino": "m-loreto-spencer-l",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-jadue-t",
+      "destino": "roberto-gonzalez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-jadue-t",
+      "destino": "rodrigo-reyes-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "emilio-alarcon-c",
+      "destino": "enrique-seguel-s",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "emilio-alarcon-c",
+      "destino": "m-loreto-spencer-l",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "emilio-alarcon-c",
+      "destino": "roberto-gonzalez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "emilio-alarcon-c",
+      "destino": "rodrigo-reyes-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "enrique-seguel-s",
+      "destino": "m-loreto-spencer-l",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "enrique-seguel-s",
+      "destino": "roberto-gonzalez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "enrique-seguel-s",
+      "destino": "rodrigo-reyes-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "m-loreto-spencer-l",
+      "destino": "roberto-gonzalez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "m-loreto-spencer-l",
+      "destino": "rodrigo-reyes-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "roberto-gonzalez",
+      "destino": "rodrigo-reyes-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-rojas",
+      "destino": "daniel-villalobos-s",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-rojas",
+      "destino": "marcela-hernandez-p",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-rojas",
+      "destino": "marcela-opazo-v",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "andres-rojas",
+      "destino": "paulina-avila-v",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "daniel-villalobos-s",
+      "destino": "marcela-hernandez-p",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "daniel-villalobos-s",
+      "destino": "marcela-opazo-v",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "daniel-villalobos-s",
+      "destino": "paulina-avila-v",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "marcela-hernandez-p",
+      "destino": "marcela-opazo-v",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "marcela-hernandez-p",
+      "destino": "paulina-avila-v",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "marcela-opazo-v",
+      "destino": "paulina-avila-v",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "arturo-morales-s",
+      "destino": "fernando-saldias",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "arturo-morales-s",
+      "destino": "orlando-diaz-p",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "arturo-morales-s",
+      "destino": "sergio-gonzalez-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "fernando-saldias",
+      "destino": "orlando-diaz-p",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "fernando-saldias",
+      "destino": "sergio-gonzalez-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "orlando-diaz-p",
+      "destino": "sergio-gonzalez-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "fernando-saldias",
+      "destino": "juan-carlos-diaz-p",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "fernando-saldias",
+      "destino": "rodrigo-diaz-t",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "juan-carlos-diaz-p",
+      "destino": "orlando-diaz-p",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "juan-carlos-diaz-p",
+      "destino": "rodrigo-diaz-t",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "orlando-diaz-p",
+      "destino": "rodrigo-diaz-t",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alfredo-jalilie-e",
+      "destino": "claudio-silva-f",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alfredo-jalilie-e",
+      "destino": "claudio-sole-p",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alfredo-jalilie-e",
+      "destino": "felipe-sanchez-t",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alfredo-jalilie-e",
+      "destino": "francisco-suarez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alfredo-jalilie-e",
+      "destino": "jaime-verdugo-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alfredo-jalilie-e",
+      "destino": "maria-paz-saavedra",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "alfredo-jalilie-e",
+      "destino": "ruben-valenzuela-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-f",
+      "destino": "claudio-sole-p",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-f",
+      "destino": "felipe-sanchez-t",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-f",
+      "destino": "francisco-suarez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-f",
+      "destino": "jaime-verdugo-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-f",
+      "destino": "maria-paz-saavedra",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-f",
+      "destino": "ruben-valenzuela-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-sole-p",
+      "destino": "felipe-sanchez-t",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-sole-p",
+      "destino": "francisco-suarez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-sole-p",
+      "destino": "jaime-verdugo-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-sole-p",
+      "destino": "maria-paz-saavedra",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-sole-p",
+      "destino": "ruben-valenzuela-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "felipe-sanchez-t",
+      "destino": "francisco-suarez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "felipe-sanchez-t",
+      "destino": "jaime-verdugo-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "felipe-sanchez-t",
+      "destino": "maria-paz-saavedra",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "felipe-sanchez-t",
+      "destino": "ruben-valenzuela-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "francisco-suarez",
+      "destino": "jaime-verdugo-b",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "francisco-suarez",
+      "destino": "maria-paz-saavedra",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "francisco-suarez",
+      "destino": "ruben-valenzuela-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "jaime-verdugo-b",
+      "destino": "maria-paz-saavedra",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "jaime-verdugo-b",
+      "destino": "ruben-valenzuela-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "maria-paz-saavedra",
+      "destino": "ruben-valenzuela-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "ricardo-armisen",
+      "destino": "solange-rivas",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "darwins-castillo-a",
+      "destino": "eugenia-cordero-s",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "darwins-castillo-a",
+      "destino": "francisco-aguayo-g",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "darwins-castillo-a",
+      "destino": "leda-guzman-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "darwins-castillo-a",
+      "destino": "luis-rodriguez-a",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "darwins-castillo-a",
+      "destino": "waldo-adonis-r",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "eugenia-cordero-s",
+      "destino": "francisco-aguayo-g",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "eugenia-cordero-s",
+      "destino": "leda-guzman-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "eugenia-cordero-s",
+      "destino": "luis-rodriguez-a",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "eugenia-cordero-s",
+      "destino": "waldo-adonis-r",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "francisco-aguayo-g",
+      "destino": "leda-guzman-m",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "francisco-aguayo-g",
+      "destino": "luis-rodriguez-a",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "francisco-aguayo-g",
+      "destino": "waldo-adonis-r",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "leda-guzman-m",
+      "destino": "luis-rodriguez-a",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "leda-guzman-m",
+      "destino": "waldo-adonis-r",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "luis-rodriguez-a",
+      "destino": "waldo-adonis-r",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "david-ladron-de-guevara-h",
+      "destino": "raul-pefaur-d",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-fuente-alba",
+      "destino": "g-cristobal-ramos-gomez",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-fuente-alba",
+      "destino": "guillermo-chong-medel",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-fuente-alba",
+      "destino": "juan-carlos-diaz-patino",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-fuente-alba",
+      "destino": "julia-alegria-bobadilla",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "claudio-silva-fuente-alba",
+      "destino": "yumay-pires",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "g-cristobal-ramos-gomez",
+      "destino": "guillermo-chong-medel",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "g-cristobal-ramos-gomez",
+      "destino": "juan-carlos-diaz-patino",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "g-cristobal-ramos-gomez",
+      "destino": "julia-alegria-bobadilla",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "g-cristobal-ramos-gomez",
+      "destino": "yumay-pires",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "guillermo-chong-medel",
+      "destino": "juan-carlos-diaz-patino",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "guillermo-chong-medel",
+      "destino": "julia-alegria-bobadilla",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "guillermo-chong-medel",
+      "destino": "yumay-pires",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "juan-carlos-diaz-patino",
+      "destino": "julia-alegria-bobadilla",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "juan-carlos-diaz-patino",
+      "destino": "yumay-pires",
+      "tipo": "coautoría"
+    },
+    {
+      "origen": "julia-alegria-bobadilla",
+      "destino": "yumay-pires",
+      "tipo": "coautoría"
     }
   ],
   "campos_confiables": [

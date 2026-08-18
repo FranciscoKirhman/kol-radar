@@ -196,7 +196,18 @@
   .network-view-wrap { position: relative; }
   #network-view svg { width: 100%; height: auto; display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
   .network-hint { font-size: 12.5px; color: var(--text-muted); margin: 0 0 10px; }
-  .network-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); padding: 10px 4px 0; }
+  .network-layers { display: flex; flex-direction: column; gap: 8px; padding: 12px 4px 0; }
+  .layer-block { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .layer-title { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--text-muted); min-width: 132px; }
+  .layer-checkbox { font-size: 12px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; cursor: pointer; }
+  .network-legend { display: flex; gap: 6px; font-size: 12px; color: var(--text-secondary); flex-wrap: wrap; }
+  .legend-toggle {
+    font: inherit; font-size: 11.5px; display: inline-flex; align-items: center; gap: 5px;
+    border: 1px solid var(--border); background: var(--surface-0); color: var(--text-secondary);
+    border-radius: 999px; padding: 4px 10px; cursor: pointer;
+  }
+  .legend-toggle[aria-pressed="false"] { opacity: .45; text-decoration: line-through; }
+  .legend-toggle:hover { border-color: var(--text-secondary); color: var(--text-primary); }
   .network-legend .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
   .node-circle { cursor: pointer; stroke: var(--surface-0); stroke-width: 2px; }
   .node-circle:hover { stroke: var(--text-primary); }
@@ -396,10 +407,28 @@
       </div>
       <div class="node-tooltip" id="node-tooltip" role="status" aria-live="polite"></div>
     </div>
-    <div class="network-legend">
-      <span><span class="swatch" style="background:var(--persona)"></span>Persona</span>
-      <span><span class="swatch" style="background:var(--institucion)"></span>Institución</span>
-      <span><span class="swatch" style="background:var(--ensayo)"></span>Ensayo clínico</span>
+    <div class="network-layers">
+      <div class="layer-block">
+        <span class="layer-title">Mostrar nodos</span>
+        <div class="network-legend" id="capa-nodos">
+          <button class="legend-toggle" data-capa="persona" aria-pressed="true"><span class="swatch" style="background:var(--persona)"></span>Personas</button>
+          <button class="legend-toggle" data-capa="institucion" aria-pressed="true"><span class="swatch" style="background:var(--institucion)"></span>Instituciones</button>
+          <button class="legend-toggle" data-capa="ensayo_clinico" aria-pressed="true"><span class="swatch" style="background:var(--ensayo)"></span>Ensayos clínicos</button>
+        </div>
+      </div>
+      <div class="layer-block">
+        <span class="layer-title">Mostrar conexiones</span>
+        <div class="network-legend" id="capa-aristas">
+          <button class="legend-toggle" data-arista="persona|institucion" aria-pressed="true">Persona ↔ Institución</button>
+          <button class="legend-toggle" data-arista="persona|ensayo_clinico" aria-pressed="true">Persona ↔ Ensayo</button>
+          <button class="legend-toggle" data-arista="institucion|ensayo_clinico" aria-pressed="true">Institución ↔ Ensayo</button>
+          <button class="legend-toggle" data-arista="persona|persona" aria-pressed="true">Persona ↔ Persona</button>
+          <button class="legend-toggle" data-arista="institucion|institucion" aria-pressed="true">Institución ↔ Institución</button>
+        </div>
+      </div>
+      <div class="layer-block">
+        <label class="layer-checkbox"><input type="checkbox" id="ocultar-aislados" /> Ocultar nodos que quedan sin conexiones</label>
+      </div>
     </div>
   </section>
 </main>
@@ -451,6 +480,20 @@
   // adelantado un ranking de "a quién contactar primero" -- eso es una decisión del
   // usuario, que puede activarla explícitamente con el chip de abajo.
   var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", soloShortlist: false, reclutando: false };
+
+  // Capas del grafo: qué tipos de nodo y qué tipos de conexión se dibujan. Es distinto del
+  // filtro de la lista (state.filter) a propósito — acá se compone un mapa, no se filtra
+  // un listado: se puede querer ver solo personas-con-personas sin salir del mapa completo.
+  var capas = {
+    nodos: { persona: true, institucion: true, ensayo_clinico: true },
+    aristas: {
+      "persona|institucion": true, "persona|ensayo_clinico": true,
+      "institucion|ensayo_clinico": true, "persona|persona": true,
+      "institucion|institucion": true
+    },
+    ocultarAislados: false
+  };
+  function claveArista(a, b) { return [a, b].sort().join("|"); }
 
   // Shortlist del MSL (PRODUCT_CHARTER.md §4: "produce a concise, defensible research shortlist").
   // Vive solo en localStorage del navegador — no se envía a ningún servidor ni se comitea al repo.
@@ -1210,10 +1253,19 @@
 
   // ---------------- Red de conexiones (simulación de fuerzas mínima + capa interactiva) ----------------
   function currentNetworkSubset() {
-    var nodes = entidades.filter(matches);
+    var nodes = entidades.filter(matches).filter(function (n) { return capas.nodos[n.tipo]; });
     var ids = {};
     nodes.forEach(function (n) { ids[n.id] = true; });
-    var edges = vinculos.filter(function (v) { return ids[v.origen] && ids[v.destino]; });
+    var edges = vinculos.filter(function (v) {
+      if (!ids[v.origen] || !ids[v.destino]) return false;
+      var k = claveArista(byId[v.origen].tipo, byId[v.destino].tipo);
+      return capas.aristas[k] !== false;
+    });
+    if (capas.ocultarAislados) {
+      var conectados = {};
+      edges.forEach(function (v) { conectados[v.origen] = true; conectados[v.destino] = true; });
+      nodes = nodes.filter(function (n) { return conectados[n.id]; });
+    }
     return { nodes: nodes, edges: edges };
   }
 
@@ -1221,9 +1273,13 @@
     var subset = currentNetworkSubset();
     var nodes = subset.nodes, edges = subset.edges;
     var hint = document.getElementById("network-hint");
-    hint.textContent = nodes.length === entidades.length
+    var capasApagadas = Object.keys(capas.nodos).filter(function (k) { return !capas.nodos[k]; }).length +
+                        Object.keys(capas.aristas).filter(function (k) { return !capas.aristas[k]; }).length;
+    hint.textContent = (nodes.length === entidades.length && !capasApagadas)
       ? "Mapa completo — para ver con qué se conecta una persona o institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa. Pasa el mouse sobre un nodo para resaltar sus conexiones."
-      : "Mostrando " + nodes.length + " de " + entidades.length + " entidades según el filtro/búsqueda activos — quita el filtro para ver el mapa completo. Pasa el mouse sobre un nodo para resaltar sus conexiones.";
+      : "Mostrando " + nodes.length + " de " + entidades.length + " entidades" +
+        (capasApagadas ? " (hay capas apagadas abajo)" : " según el filtro/búsqueda activos") +
+        ". Pasa el mouse sobre un nodo para resaltar sus conexiones.";
 
     var svg = document.getElementById("graph");
     svg.innerHTML = "";
@@ -1416,6 +1472,34 @@
       });
     });
   }
+
+  // ---------------- Capas del grafo ----------------
+  function rebuildNetworkIfVisible() {
+    if (networkView.classList.contains("active") && entidades.length) {
+      buildNetwork();
+      networkBuilt = true;
+    }
+  }
+  document.getElementById("capa-nodos").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-capa]");
+    if (!b) return;
+    var t = b.getAttribute("data-capa");
+    capas.nodos[t] = !capas.nodos[t];
+    b.setAttribute("aria-pressed", String(capas.nodos[t]));
+    rebuildNetworkIfVisible();
+  });
+  document.getElementById("capa-aristas").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-arista]");
+    if (!b) return;
+    var k = b.getAttribute("data-arista");
+    capas.aristas[k] = !capas.aristas[k];
+    b.setAttribute("aria-pressed", String(capas.aristas[k]));
+    rebuildNetworkIfVisible();
+  });
+  document.getElementById("ocultar-aislados").addEventListener("change", function () {
+    capas.ocultarAislados = this.checked;
+    rebuildNetworkIfVisible();
+  });
 
   // ---------------- Zoom y pan del grafo global (manipulación directa de viewBox) ----------------
   var NETWORK_VB = { x: 0, y: 0, w: 720, h: 460 };

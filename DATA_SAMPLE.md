@@ -5,8 +5,8 @@ documentadas en `README.md`, para descubrir qué campos son confiables antes de
 diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
 validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
 2 (esa etapa formal sigue sin hacerse). Los datos completos están en
-[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 129
-entidades reales (71 personas, 10 instituciones, 48 ensayos clínicos) y 147
+[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 147
+entidades reales (71 personas, 28 instituciones, 48 ensayos clínicos) y 298
 vínculos entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza
 del modelo de datos, con un campo `tipo` adicional y (según el caso) `fase`
 del ensayo o `revista` de la publicación.
@@ -19,6 +19,24 @@ Instituto Nacional del Tórax. SER Chile se intentó como quinta fuente, pero
 sus páginas de directivas/congresos devolvieron HTTP 404 al momento de
 recolectar — no hay ningún hecho de esta muestra citando serchile.cl (ver
 `campos_faltantes_o_dificiles` en el JSON).
+
+**Instituciones y coautoría (2026-08-18):** dos huecos que se notaban en el grafo, ambos
+resueltos sin recolectar nada nuevo — solo usando mejor lo ya citado:
+
+- **25 personas no tenían ninguna institución.** La causa era propia: al integrarlas tomé como
+  `subtitulo` el primer fragmento del texto de afiliación, que suele ser el departamento
+  ("Department of Thoracic Surgery") y no la organización ("Clínica Santa María"). Se releyó el
+  texto completo de afiliación de cada una y se crearon las 18 instituciones
+  reales que faltaban (universidades, clínicas, el ISP, y cuatro sociedades científicas). Hoy
+  ninguna persona queda sin institución, y quien tiene más de una afiliación declarada recibe
+  vínculos de tipo `afiliación` y `afiliación secundaria`, como pide el charter §3.
+- **Solo existía 1 vínculo persona↔persona en toda la muestra.** Al apagar las otras capas del
+  grafo quedaban 71 puntos sueltos y una sola línea. Se derivaron 112 vínculos de `coautoría`
+  nuevos con una regla estricta: dos personas quedan conectadas **solo si citan exactamente la
+  misma fuente** (mismo PMID o mismo artículo de SciELO) en sus propios hechos. No se infiere
+  coautoría por apellido, institución ni tema — se conectan dos hechos que ya estaban citados.
+  24 personas siguen sin coautores en la muestra, que es la respuesta honesta: su evidencia
+  actual no las conecta con nadie más de este conjunto.
 
 **Integración de candidatos pendientes (2026-08-18):** se revisaron los 64 candidatos que la
 recolección de agosto había encontrado pero dejado sin integrar. Resultado: **53 personas nuevas**
