@@ -5,8 +5,8 @@ documentadas en `README.md`, para descubrir qué campos son confiables antes de
 diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
 validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
 2 (esa etapa formal sigue sin hacerse). Los datos completos están en
-[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 174
-entidades reales (71 personas, 28 instituciones, 75 ensayos clínicos) y 349
+[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 173
+entidades reales (70 personas, 28 instituciones, 75 ensayos clínicos) y 349
 vínculos entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza
 del modelo de datos, con un campo `tipo` adicional y (según el caso) `fase`
 del ensayo o `revista` de la publicación.
@@ -19,6 +19,33 @@ Instituto Nacional del Tórax. SER Chile se intentó como quinta fuente, pero
 sus páginas de directivas/congresos devolvieron HTTP 404 al momento de
 recolectar — no hay ningún hecho de esta muestra citando serchile.cl (ver
 `campos_faltantes_o_dificiles` en el JSON).
+
+**Primera fusión de identidad (2026-08-18):** `claudio-silva-f` (como PubMed indexa el nombre) y
+`claudio-silva-fuente-alba` (como firma en SciELO) eran dos fichas de la misma persona. Se
+unificaron en una sola, con el id del nombre completo. Es la primera vez que se fusionan dos
+personas en esta muestra, y no se hizo automáticamente: la regla del proyecto es que ninguna fusión
+de identidad ocurre sin aprobación humana explícita, porque juntar a dos médicos distintos es un
+error grave y difícil de deshacer.
+
+La evidencia que la sostiene es directa, no inferida: el registro ORCID
+[0000-0003-2472-1833](https://orcid.org/0000-0003-2472-1833) lista *"Claudio Silva F."* y *"Claudio
+Silva Fuente-Alba"* entre las variantes del mismo nombre, y declara empleo en Radiología, Clínica
+Alemana. Esa cita quedó guardada como un hecho más de la ficha, con su URL y su fecha, así que
+cualquiera puede auditar la fusión sin creernos. La ficha además explica en `nota_identidad` que fue
+unificada y por qué.
+
+Efectos secundarios que hubo que resolver a mano: la persona quedaba con dos afiliaciones primarias
+(Clínica Alemana por SciELO, Sociedad Chilena de Radiología por PubMed). Se dejó a Clínica Alemana
+como `afiliación` — es el empleador y lo respalda ORCID — y a la sociedad científica como
+`afiliación secundaria`, como pide el charter §3. El `subtitulo` decía "Departamento de Imágenes",
+que es un departamento y no una organización: el mismo error de ingesta ya documentado más abajo.
+Ahora dice "Clínica Alemana", citando ORCID.
+
+Esto dejó la pregunta abierta de cuántos duplicados más hay. Un escaneo por apellido compartido
+encontró otros dos pares con exactamente la misma huella — una ficha con el apellido materno
+abreviado a inicial (formato SciELO) y otra con el apellido completo: `francisco-aguayo` /
+`francisco-aguayo-g` y `juan-carlos-diaz-p` / `juan-carlos-diaz-patino`. **No se fusionaron**: son
+plausibles, no probados, y siguen esperando la misma confirmación humana.
 
 **Más de una enfermedad (2026-08-18):** la muestra dejó de estar clavada a cáncer de pulmón
 — el gap #1 del `PRODUCT_CHARTER.md` §14 ("fixed demo scope"). Se sumaron ensayos con sitio real

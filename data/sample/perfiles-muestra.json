@@ -2515,25 +2515,6 @@
       "area": "cáncer de pulmón"
     },
     {
-      "id": "claudio-silva-f",
-      "nombre": "Claudio Silva F",
-      "tipo": "persona",
-      "ciudad": "Santiago",
-      "subtitulo": "Sociedad Chilena de Radiología",
-      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
-      "hechos": [
-        {
-          "tipo": "publicacion",
-          "hecho": "Coautor chileno del consenso nacional 'Consensus Recommendations for Lung Cancer Screening in Chile', representando a la Sociedad Chilena de Radiología (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
-          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
-          "fecha": "2024-05",
-          "confianza": "pendiente",
-          "revista": "Revista Médica de Chile"
-        }
-      ],
-      "area": "cáncer de pulmón"
-    },
-    {
       "id": "jaime-verdugo-b",
       "nombre": "Jaime Verdugo B",
       "tipo": "persona",
@@ -3434,8 +3415,8 @@
       "nombre": "Claudio Silva Fuente-Alba",
       "tipo": "persona",
       "ciudad": "Santiago",
-      "subtitulo": "Departamento de Imágenes",
-      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+      "subtitulo": "Clínica Alemana",
+      "subtitulo_fuente": "https://orcid.org/0000-0003-2472-1833",
       "hechos": [
         {
           "tipo": "publicacion",
@@ -3444,9 +3425,25 @@
           "fecha": "2018-12",
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor chileno del consenso nacional 'Consensus Recommendations for Lung Cancer Screening in Chile', representando a la Sociedad Chilena de Radiología (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "El registro ORCID 0000-0003-2472-1833 declara empleo como investigador en Radiología, Clínica Alemana, y lista 'Claudio Silva F.' y 'Claudio Silva Fuente-Alba' entre las variantes del mismo nombre.",
+          "fuente_url": "https://orcid.org/0000-0003-2472-1833",
+          "fecha": "2026-08-18",
+          "confianza": "confirmado"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "nota_identidad": "Ficha unificada el 2026-08-18: 'Claudio Silva F.' (indexado así en PubMed) y 'Claudio Silva Fuente-Alba' (SciELO) eran dos fichas de la misma persona. La fusión la aprobó una revisión humana y la respalda el registro ORCID 0000-0003-2472-1833, que lista ambas formas del nombre."
     },
     {
       "id": "g-cristobal-ramos-gomez",
@@ -5261,9 +5258,9 @@
       "tipo": "afiliación secundaria"
     },
     {
-      "origen": "claudio-silva-f",
+      "origen": "claudio-silva-fuente-alba",
       "destino": "sochradi",
-      "tipo": "afiliación"
+      "tipo": "afiliación secundaria"
     },
     {
       "origen": "jaime-verdugo-b",
@@ -5682,7 +5679,7 @@
     },
     {
       "origen": "alfredo-jalilie-e",
-      "destino": "claudio-silva-f",
+      "destino": "claudio-silva-fuente-alba",
       "tipo": "coautoría"
     },
     {
@@ -5716,32 +5713,32 @@
       "tipo": "coautoría"
     },
     {
-      "origen": "claudio-silva-f",
+      "origen": "claudio-silva-fuente-alba",
       "destino": "claudio-sole-p",
       "tipo": "coautoría"
     },
     {
-      "origen": "claudio-silva-f",
+      "origen": "claudio-silva-fuente-alba",
       "destino": "felipe-sanchez-t",
       "tipo": "coautoría"
     },
     {
-      "origen": "claudio-silva-f",
+      "origen": "claudio-silva-fuente-alba",
       "destino": "francisco-suarez",
       "tipo": "coautoría"
     },
     {
-      "origen": "claudio-silva-f",
+      "origen": "claudio-silva-fuente-alba",
       "destino": "jaime-verdugo-b",
       "tipo": "coautoría"
     },
     {
-      "origen": "claudio-silva-f",
+      "origen": "claudio-silva-fuente-alba",
       "destino": "maria-paz-saavedra",
       "tipo": "coautoría"
     },
     {
-      "origen": "claudio-silva-f",
+      "origen": "claudio-silva-fuente-alba",
       "destino": "ruben-valenzuela-m",
       "tipo": "coautoría"
     },
