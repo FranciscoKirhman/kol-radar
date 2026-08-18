@@ -5,8 +5,8 @@ documentadas en `README.md`, para descubrir qué campos son confiables antes de
 diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
 validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
 2 (esa etapa formal sigue sin hacerse). Los datos completos están en
-[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 77
-entidades reales (18 personas, 10 instituciones, 49 ensayos clínicos) y 122
+[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 76
+entidades reales (18 personas, 10 instituciones, 48 ensayos clínicos) y 119
 vínculos entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza
 del modelo de datos, con un campo `tipo` adicional y (según el caso) `fase`
 del ensayo o `revista` de la publicación.
@@ -19,6 +19,18 @@ Instituto Nacional del Tórax. SER Chile se intentó como quinta fuente, pero
 sus páginas de directivas/congresos devolvieron HTTP 404 al momento de
 recolectar — no hay ningún hecho de esta muestra citando serchile.cl (ver
 `campos_faltantes_o_dificiles` en el JSON).
+
+**Refresco de ensayos (2026-08-18):** se volvió a consultar ClinicalTrials.gov en vivo para
+los 49 ensayos de la muestra y se agregó a cada uno su **estado de reclutamiento** verificado
+(27 reclutando, 21 activos sin reclutar), incluyendo cuántos de sus sitios chilenos están
+reclutando hoy — dato de alto valor para un MSL que antes no capturábamos pese a estar
+disponible en la misma API que ya usábamos.
+
+Ese refresco detectó además un caso que justifica por sí solo tener cadencia de actualización:
+**NCT07227597 eliminó todos sus sitios en Chile** (actualización del 2026-08-17; hoy solo tiene
+sitios en China, Israel y Corea del Sur). Como el alcance de esta muestra es Chile, el ensayo se
+quitó junto con sus 3 vínculos a Bradford Hill, FALP y PUC — eran afirmaciones que la fuente ya
+no respalda. Se documenta acá en vez de borrarlo en silencio.
 
 **Ronda de expansión (2026-08-15):** una segunda recolección, con el mismo
 principio de citar URL exacta y no inventar, amplió la muestra de 23 a 77

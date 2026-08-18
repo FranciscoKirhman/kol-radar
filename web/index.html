@@ -40,6 +40,10 @@
     }
   }
   * { box-sizing: border-box; }
+  /* [hidden] es display:none en la hoja del navegador, con especificidad mínima: cualquier
+     regla de autor con display (ej. .resumen-modal{display:flex}) lo pisa y el elemento
+     aparece igual. Esta regla lo hace confiable en todo el archivo. */
+  [hidden] { display: none !important; }
   html, body { margin: 0; height: 100%; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -177,6 +181,7 @@
   .tier-badge.media { background: var(--tier-media-bg); color: var(--tier-media-fg); }
   .tier-badge.monitorear { background: var(--surface-2); color: var(--text-muted); }
   .confidence-row { font-size: 11px; color: var(--text-muted); margin: -2px 0 10px; }
+  .signal-chip.reclutando { color: var(--ensayo); border-color: var(--ensayo); }
   .identity-warn { color: var(--tier-alta-fg); background: var(--tier-alta-bg); border-color: transparent; }
   .identity-warn-row { color: var(--tier-alta-fg); }
   .signal-row { display: flex; flex-wrap: wrap; gap: 5px; }
@@ -355,6 +360,12 @@
       </div>
     </div>
     <div class="filter-group">
+      <div class="filter-group-title">Actividad de reclutamiento</div>
+      <div class="tag-chips">
+        <button class="chip small" id="filtro-reclutando" aria-pressed="false">Solo con reclutamiento activo en Chile</button>
+      </div>
+    </div>
+    <div class="filter-group">
       <div class="filter-group-title">Región</div>
       <div class="tag-chips" id="region-chips"></div>
     </div>
@@ -437,7 +448,7 @@
   // Orden por defecto = "reciente", no "senales": el producto no debe decidir por
   // adelantado un ranking de "a quién contactar primero" -- eso es una decisión del
   // usuario, que puede activarla explícitamente con el chip de abajo.
-  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", soloShortlist: false };
+  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", soloShortlist: false, reclutando: false };
 
   // Shortlist del MSL (PRODUCT_CHARTER.md §4: "produce a concise, defensible research shortlist").
   // Vive solo en localStorage del navegador — no se envía a ningún servidor ni se comitea al repo.
@@ -755,6 +766,21 @@
       if (n.tipo !== "persona" || computePriority(n).tier !== state.tier) return false;
     }
     if (state.region !== "todas" && regionOf(n) !== state.region) return false;
+    // Filtro de reclutamiento: aplica al ensayo, y también a personas/instituciones ligadas a
+    // al menos un ensayo que hoy recluta en Chile — que es la pregunta real del MSL.
+    if (state.reclutando) {
+      if (n.tipo === "ensayo_clinico") {
+        if (!n.sitios_chile_reclutando) return false;
+      } else {
+        var ligadoAReclutante = vinculos.some(function (v) {
+          var otro = v.origen === n.id ? v.destino : (v.destino === n.id ? v.origen : null);
+          if (!otro) return false;
+          var e = byId[otro];
+          return e && e.tipo === "ensayo_clinico" && e.sitios_chile_reclutando > 0;
+        });
+        if (!ligadoAReclutante) return false;
+      }
+    }
     if (state.soloShortlist && shortlist.indexOf(n.id) === -1) return false;
     return true;
   }
@@ -814,6 +840,14 @@
     }
     if (senales.conexiones) { var c3 = document.createElement("span"); c3.className = "signal-chip"; c3.textContent = senales.conexiones + " conexion" + (senales.conexiones > 1 ? "es" : ""); signalRow.appendChild(c3); }
     if (senales.docencia) { var c4 = document.createElement("span"); c4.className = "signal-chip"; c4.textContent = senales.docencia + " congreso" + (senales.docencia > 1 ? "s" : ""); signalRow.appendChild(c4); }
+    if (n.tipo === "ensayo_clinico" && n.estado_reclutamiento) {
+      var ce = document.createElement("span");
+      ce.className = "signal-chip" + (n.sitios_chile_reclutando ? " reclutando" : "");
+      ce.textContent = n.sitios_chile_reclutando
+        ? "Reclutando en Chile (" + n.sitios_chile_reclutando + ")"
+        : n.estado_reclutamiento;
+      signalRow.appendChild(ce);
+    }
     if (n.tipo === "persona") {
       var ident = computeIdentity(n);
       if (ident && ident.nivel === "baja") {
@@ -1031,6 +1065,13 @@
       invalidateNetwork();
     });
   }
+
+  document.getElementById("filtro-reclutando").addEventListener("click", function () {
+    state.reclutando = !state.reclutando;
+    this.setAttribute("aria-pressed", String(state.reclutando));
+    renderCards();
+    invalidateNetwork();
+  });
 
   // ---------------- Shortlist y resumen para entrevista (PRODUCT_CHARTER.md §4) ----------------
   var shortlistBtn = document.getElementById("toggle-shortlist");
