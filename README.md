@@ -70,7 +70,12 @@ debe servir para cualquier especialidad, no solo para una patología de ejemplo.
   canal todavía no existe**. El contacto de abajo sigue sin completarse, así que
   hoy esa promesa no es cumplible en la práctica. No compartir este proyecto más
   allá de una demo interna hasta llenar esto.
-- **Contacto**: [completar — nombre y correo de contacto del responsable del proyecto]
+- **Contacto**: pendiente. El canal ya no se escribe en este archivo ni en el HTML: vive en el
+  campo `contacto.canal` de [`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json).
+  Poné ahí una dirección de correo **o** la URL `https://` de un formulario y el pie de página del
+  sitio se completa solo. Mientras siga en `null`, el sitio dice que el canal todavía no existe —
+  que es la verdad. El campo se valida antes de usarse: una URL que no sea `http(s)` o un correo mal
+  formado se ignoran y el aviso honesto se mantiene, para que un dato malo nunca borre la advertencia.
 - **Disclaimer visible en la app** (implementado en el footer de `web/index.html`,
   visible siempre, no solo al abrir una ficha — versión actual, honesta sobre el
   contacto pendiente): "Información de fuentes públicas (...) — no es una evaluación

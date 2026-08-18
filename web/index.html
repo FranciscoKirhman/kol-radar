@@ -487,7 +487,7 @@
   </section>
 </main>
 
-<footer class="page-footer">
+<footer class="page-footer" id="page-footer">
   Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, sitios institucionales) —
   no es una evaluación de desempeño profesional ni un listado comercial. Datos de muestra, sin revisión
   humana todavía. ¿Eres un profesional listado acá y quieres corregir o eliminar tu información? El canal
@@ -768,6 +768,7 @@
       saveShortlist();
       document.getElementById("loading-state").hidden = true;
       buildAreaChips();
+      renderFooter(data.contacto);
       construirTemas();
       // B: en pantalla chica el ecosistema completo (147 nodos) es ilegible; se arranca en la
       // vista más simple, que igual se puede cambiar.
@@ -1206,6 +1207,28 @@
   // de Chile — así nunca ofrecemos filtrar por una región donde no hay ninguna entidad.
   // El área terapéutica sale de los datos, no de una lista fija: la demo deja de estar clavada
   // a cáncer de pulmón (PRODUCT_CHARTER.md §14 #1, "fixed demo scope").
+  // El canal de corrección que exige la Ley 19.628 vive en data.contacto.canal, no en este HTML:
+  // así se completa en un solo lugar. Mientras esté vacío, el pie de página que ya está escrito
+  // arriba dice la verdad — que el canal no existe todavía. Solo se reemplaza si hay uno real,
+  // nunca al revés, para que un error de carga no borre la advertencia honesta.
+  var CORREO_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+  function renderFooter(contacto) {
+    var canal = contacto && typeof contacto.canal === "string" ? contacto.canal.trim() : "";
+    if (!canal) return;
+    var href = esUrlSegura(canal) ? canal : (CORREO_RE.test(canal) ? "mailto:" + canal : "");
+    if (!href) return;
+    var pie = document.getElementById("page-footer");
+    pie.textContent = "Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, " +
+      "sitios institucionales) — no es una evaluación de desempeño profesional ni un listado " +
+      "comercial. ¿Eres un profesional listado aquí y quieres corregir o eliminar tu información? ";
+    var a = document.createElement("a");
+    a.href = href;
+    a.textContent = esUrlSegura(canal) ? "Escríbenos por este formulario" : "Escríbenos a " + canal;
+    if (esUrlSegura(canal)) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+    pie.appendChild(a);
+    pie.appendChild(document.createTextNode("."));
+  }
+
   function buildAreaChips() {
     var cont = document.getElementById("area-chips");
     var areas = [];

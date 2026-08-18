@@ -3,6 +3,11 @@
   "generado": "2026-08-09",
   "actualizado": "2026-08-18",
   "especialidad_muestra": "cáncer de pulmón",
+  "contacto": {
+    "_como_completar": "Poné en 'canal' UNA de dos cosas y listo — el pie de página del sitio cambia solo, no hay que tocar HTML: (a) una dirección de correo, ej. contacto@tudominio.cl; o (b) la URL https:// de un formulario. Mientras siga en null, el sitio dice honestamente que el canal todavía no existe.",
+    "canal": null,
+    "responsable": null
+  },
   "entidades": [
     {
       "id": "carlos-rojas",
