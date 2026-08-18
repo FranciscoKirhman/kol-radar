@@ -66,6 +66,22 @@ def nombre_compatible(a, b):
     return bool(ap_a & ap_b)
 
 
+# Palabras demasiado comunes en nombres de instituciones chilenas para probar identidad.
+GENERICAS = {
+    "instituto", "institute", "sociedad", "society", "chile", "chilena", "chileno",
+    "universidad", "university", "hospital", "clinica", "centro", "center", "centre",
+    "facultad", "faculty", "departamento", "department", "servicio", "unidad", "unit",
+    "nacional", "national", "medicina", "medicine", "salud", "health", "ciencias",
+    "escuela", "school", "laboratorio", "laboratory", "profesional", "regional",
+    "santiago", "pontificia", "catolica", "catholic", "investigacion", "research",
+}
+
+
+def palabras_distintivas(texto):
+    return {w for w in texto.replace(",", " ").replace(".", " ").split()
+            if len(w) > 4 and w not in GENERICAS}
+
+
 def evaluar(cand, persona):
     """Puntúa qué tan buena es la coincidencia. Solo señales verificables, sin adivinar."""
     razones, puntos = [], 0
@@ -84,12 +100,21 @@ def evaluar(cand, persona):
         razones.append("ORCID publicado")
 
     # ¿la afiliación declarada en nuestra muestra aparece en OpenAlex?
+    # Solo se comparan palabras DISTINTIVAS. Sin esto, "instituto", "sociedad", "chile" o
+    # "universidad" -- presentes en casi todo nombre de institución chilena -- producían falsas
+    # coincidencias que APAGABAN la advertencia: "Instituto Nacional del Tórax" matcheaba con
+    # "Instituto Profesional Providencia" por la palabra "instituto".
     sub = norm(persona.get("subtitulo", ""))
+    sub_dist = palabras_distintivas(sub)
     afil_ok = False
     for n in nombres_inst:
         nn = norm(n)
-        if sub and (nn in sub or sub in nn or
-                    any(w in nn for w in sub.split() if len(w) > 4)):
+        if not sub:
+            break
+        if nn in sub or sub in nn:
+            afil_ok = True
+            break
+        if sub_dist and (sub_dist & palabras_distintivas(nn)):
             afil_ok = True
             break
     if afil_ok:
