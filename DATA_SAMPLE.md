@@ -5,8 +5,8 @@ documentadas en `README.md`, para descubrir qué campos son confiables antes de
 diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
 validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
 2 (esa etapa formal sigue sin hacerse). Los datos completos están en
-[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 76
-entidades reales (18 personas, 10 instituciones, 48 ensayos clínicos) y 119
+[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 129
+entidades reales (71 personas, 10 instituciones, 48 ensayos clínicos) y 147
 vínculos entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza
 del modelo de datos, con un campo `tipo` adicional y (según el caso) `fase`
 del ensayo o `revista` de la publicación.
@@ -19,6 +19,25 @@ Instituto Nacional del Tórax. SER Chile se intentó como quinta fuente, pero
 sus páginas de directivas/congresos devolvieron HTTP 404 al momento de
 recolectar — no hay ningún hecho de esta muestra citando serchile.cl (ver
 `campos_faltantes_o_dificiles` en el JSON).
+
+**Integración de candidatos pendientes (2026-08-18):** se revisaron los 64 candidatos que la
+recolección de agosto había encontrado pero dejado sin integrar. Resultado: **53 personas nuevas**
+(18 → 71), con 76 hechos y 28 vínculos a instituciones ya conocidas.
+
+Criterios aplicados, en este orden:
+
+1. **Alcance del charter** — `PRODUCT_CHARTER.md` limita el primer caso de uso a médicos, así
+   que se excluyeron 11 candidatos cuya afiliación declarada dice estudiante de medicina, interno,
+   alumno, residente o enfermería. No es un juicio sobre su relevancia: es el alcance declarado.
+2. **Verificación contra la fuente, no contra el código de estado.** Las URLs de PubMed devuelven
+   HTTP 203 (caché) y las de SciELO 403 (bloqueo ya documentado), así que el status no prueba nada.
+   Se consultó la API de PubMed (esummary) para los 38 PMIDs citados y se comprobó que el autor
+   afirmado **figure realmente en la lista de autores** del paper: 46 de 46 hechos confirmados.
+   En el camino se corrigió un error propio de verificación — el chequeo inicial buscaba solo el
+   segundo token del nombre como apellido y marcaba como no encontrados a "Osvaldo Arén Frontera"
+   (PubMed lo indexa `Frontera OA`) y "María Paz Saavedra" (`Saavedra MP`); ambos eran correctos.
+3. **Sin fusionar homónimos** — 4 personas conservan la advertencia de identidad que traía la
+   recolección, ahora en un campo `nota_identidad` que la ficha muestra explícitamente.
 
 **Refresco de ensayos (2026-08-18):** se volvió a consultar ClinicalTrials.gov en vivo para
 los 49 ensayos de la muestra y se agregó a cada uno su **estado de reclutamiento** verificado

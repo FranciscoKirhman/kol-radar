@@ -231,6 +231,8 @@
   .global-edge.hovered { stroke-width: 2.4px; }
   .global-label { transition: opacity .2s; }
   .global-label.faded { opacity: .12; }
+  .global-label.label-oculta { opacity: 0; }
+  .global-label.label-oculta.destacada { opacity: 1; }
   .edge-focus-label { font-size: 8.5px; fill: var(--text-muted); pointer-events: none; }
   .node-tooltip {
     position: absolute; z-index: 3; pointer-events: none; max-width: 220px;
@@ -617,7 +619,9 @@
 
   function computeIdentity(n) {
     if (n.tipo !== "persona") return null;
-    var texto = n.hechos.map(function (h) { return h.hecho || ""; }).join(" ");
+    // nota_identidad viene de la recolección cuando la fuente ya advirtió una ambigüedad
+    // (ej. dos formas del mismo nombre que podrían ser personas distintas).
+    var texto = n.hechos.map(function (h) { return h.hecho || ""; }).join(" ") + " " + (n.nota_identidad || "");
     var razones = [];
     var tieneOrcid = ORCID_RE.test(texto);
     var dudaExplicita = DUDA_RE.test(texto);
@@ -633,7 +637,9 @@
     var nivel;
     if (dudaExplicita) {
       nivel = "baja";
-      razones.push("la fuente declara explícitamente que el vínculo no está confirmado");
+      razones.push(n.nota_identidad
+        ? "la recolección dejó una advertencia de identidad sobre esta persona"
+        : "la fuente declara explícitamente que el vínculo no está confirmado");
     } else if (tieneOrcid) {
       nivel = "alta";
       razones.push("ORCID presente en la fuente");
@@ -1340,7 +1346,9 @@
       });
       svg.querySelectorAll(".global-label").forEach(function (lbl) {
         var nid = lbl.getAttribute("data-id");
-        lbl.classList.toggle("faded", nid !== id && !neighborsOf[id][nid]);
+        var relacionado = nid === id || neighborsOf[id][nid];
+        lbl.classList.toggle("faded", !relacionado);
+        lbl.classList.toggle("destacada", !!relacionado);
       });
       svg.querySelectorAll(".global-edge").forEach(function (line) {
         var touches = line.getAttribute("data-origen") === id || line.getAttribute("data-destino") === id;
@@ -1353,10 +1361,15 @@
     function clearHighlight() {
       svg.querySelectorAll(".global-node").forEach(function (el) { el.classList.remove("hovered", "faded"); });
       svg.querySelectorAll(".global-edge").forEach(function (el) { el.classList.remove("hovered", "faded"); });
-      svg.querySelectorAll(".global-label").forEach(function (el) { el.classList.remove("faded"); });
+      svg.querySelectorAll(".global-label").forEach(function (el) { el.classList.remove("faded", "destacada"); });
       svg.querySelectorAll(".edge-focus-label").forEach(function (el) { el.setAttribute("opacity", "0"); });
       tooltipEl.classList.remove("show");
     }
+
+    // Umbral adaptativo: con pocos nodos se muestran todas las etiquetas; al crecer el grafo
+    // se reservan para los mejor conectados.
+    var grados = nodes.map(function (x) { return connectionCount(x.id); }).sort(function (a, b) { return b - a; });
+    var umbralEtiqueta = nodes.length <= 30 ? 0 : Math.max(2, grados[Math.min(24, grados.length - 1)] || 2);
 
     var nodeEls = {};
     nodes.forEach(function (n) {
@@ -1381,8 +1394,11 @@
       svg.appendChild(circle);
       nodeEls[n.id] = circle;
 
+      // Con muchos nodos las etiquetas se pisan y el grafo se vuelve ilegible. Patrón de
+      // VOSviewer (ver ROADMAP.md §3.5): mostrar solo las de los nodos más conectados; el
+      // resto aparece al pasar el mouse, que ya resalta el vecindario.
       var label = document.createElementNS(NS, "text");
-      label.setAttribute("class", "node-label global-label");
+      label.setAttribute("class", "node-label global-label" + (deg < umbralEtiqueta ? " label-oculta" : ""));
       label.setAttribute("data-id", n.id);
       label.setAttribute("x", n._x + r + 3);
       label.setAttribute("y", n._y + 3);
@@ -1624,6 +1640,12 @@
         idRow.className = "confidence-row" + (ident.nivel === "baja" ? " identity-warn-row" : "");
         idRow.textContent = IDENTITY_LABEL[ident.nivel] + " — " + ident.razones.join("; ") + ".";
         scorePanel.appendChild(idRow);
+        if (n.nota_identidad) {
+          var notaRow = document.createElement("div");
+          notaRow.className = "confidence-row identity-warn-row";
+          notaRow.textContent = "Nota de la recolección: " + n.nota_identidad;
+          scorePanel.appendChild(notaRow);
+        }
       }
       scoreNote.appendChild(document.createTextNode("Prioridad de investigación, no un ranking de valor profesional — cada componente pesa por recencia y tiene un tope para que ninguna señal domine sola. "));
     } else {

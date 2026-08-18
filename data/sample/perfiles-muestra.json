@@ -1,5 +1,5 @@
 {
-  "descripcion": "Muestra de 76 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
+  "descripcion": "Muestra de 129 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
   "generado": "2026-08-09",
   "actualizado": "2026-08-18",
   "especialidad_muestra": "cáncer de pulmón",
@@ -2042,6 +2042,1148 @@
           "confianza": "pendiente"
         }
       ]
+    },
+    {
+      "id": "suraj-samtani",
+      "nombre": "Suraj Samtani",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Bradford Hill Clinical Research Center",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/37572870/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio internacional sobre alteraciones genómicas concurrentes en NSCLC ALK-rearranged, afiliado a Bradford Hill Clinical Research Center.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/37572870/",
+          "fecha": "2024-01",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Oncology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio sobre impacto clínico y económico de terapias innovadoras para cáncer de pulmón avanzado en Latinoamérica, afiliado a Clínica Las Condes Cancer Center, Santiago.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/40688567/",
+          "fecha": "2025-09",
+          "confianza": "pendiente",
+          "revista": "The Lancet Regional Health - Americas"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio sobre mecanismos de resistencia a osimertinib de primera línea en pacientes hispanos con NSCLC EGFR mutado (registro FRESTON-CLICaP), Bradford Hill Clinical Research Center.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/35798634/",
+          "fecha": "2022-09",
+          "confianza": "pendiente",
+          "revista": "Clinical Lung Cancer"
+        }
+      ]
+    },
+    {
+      "id": "osvaldo-aren-frontera",
+      "nombre": "Osvaldo Arén Frontera",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro de Investigación Clínica Bradford Hill",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/33449799/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de resultados a 5 años de los ensayos fase III CheckMate 017/057 (nivolumab vs. docetaxel en NSCLC previamente tratado).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33449799/",
+          "fecha": "2021-03-01",
+          "confianza": "pendiente",
+          "revista": "Journal of Clinical Oncology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de CheckMate 817 (nivolumab + ipilimumab de primera línea en NSCLC metastásico, incluyendo poblaciones especiales).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/36725084/",
+          "fecha": "2023-02",
+          "confianza": "pendiente",
+          "revista": "Journal for ImmunoTherapy of Cancer"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de BFAST (cohorte ALK-positiva fase 2, screening de sangre en NSCLC avanzado virgen de tratamiento).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/34311110/",
+          "fecha": "2021-12",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Oncology"
+        }
+      ]
+    },
+    {
+      "id": "francisco-orlandi",
+      "nombre": "Francisco Orlandi",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Instituto Nacional del Tórax",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/33333328/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del ensayo fase III IMpower132 (atezolizumab + quimioterapia de primera línea en NSCLC no escamoso).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33333328/",
+          "fecha": "2021-04",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Oncology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de análisis actualizado de sobrevida global de IMpower133 (atezolizumab + carboplatino/etopósido en cáncer de pulmón de células pequeñas extenso).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33439693/",
+          "fecha": "2021-02-20",
+          "confianza": "pendiente",
+          "revista": "Journal of Clinical Oncology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de KEYNOTE-033 (pembrolizumab vs. docetaxel en NSCLC avanzado PD-L1 positivo, fase III).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/37141294/",
+          "fecha": "2023-08-01",
+          "confianza": "pendiente",
+          "revista": "International Journal of Cancer"
+        }
+      ]
+    },
+    {
+      "id": "pablo-munoz-schuffenegger",
+      "nombre": "Pablo Muñoz-Schuffenegger",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Radiation Oncology Unit",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/41934464/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del 'Consensus Statement' del subcomité de tecnología de radiación avanzada de la IASLC sobre radioterapia definitiva al tumor primario en NSCLC estadio IV (tipo de publicación PubMed: Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41934464/",
+          "fecha": "2026-06",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Oncology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de revisión sistemática de la IASLC sobre radioterapia hipofraccionada acelerada en NSCLC localmente avanzado.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39349294/",
+          "fecha": "2025-01",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Oncology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de guía práctica multidisciplinaria del subcomité de la IASLC sobre radioterapia en NSCLC localmente avanzado irresecable.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41242499/",
+          "fecha": "2026-03",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Oncology"
+        }
+      ]
+    },
+    {
+      "id": "francisco-suarez",
+      "nombre": "Francisco Suárez",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Department of Thoracic Surgery",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/38320664/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del proyecto de estadificación TNM del IASLC (9ª edición), propuesta de revisión de los descriptores M para cáncer de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/38320664/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Oncology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor chileno (como 'Francisco Suárez V', Sociedad Chilena de Enfermedades Respiratorias) del consenso nacional 'Consensus Recommendations for Lung Cancer Screening in Chile' (tipo de publicación PubMed: Practice Guideline / Consensus Statement), con participación conjunta de la Sociedad Chilena de Radiología, Sociedad Chilena de Radioterapia y Sociedad de Cirujanos de Chile.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio EARLY-EGFR Latinoamérica sobre prevalencia de mutaciones EGFR en NSCLC resecado estadio I-III.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41522158/",
+          "fecha": "2025-12-31",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Disease"
+        }
+      ],
+      "nota_identidad": "El nombre completo con inicial de segundo apellido ('Francisco Suárez V') en el consenso de tamizaje de 2024 (Sociedad Chilena de Enfermedades Respiratorias) y el nombre sin esa inicial en los papers del IASLC Staging Project (Clínica Santa María/U. de Los Andes) podrían ser la misma persona con doble afiliación (sociedad médica + hospital) o dos personas distintas -- no hay identificador único (ORCID) que lo confirme, se reporta como una sola entidad candidata con esta advertencia explícita."
+    },
+    {
+      "id": "maria-paz-saavedra",
+      "nombre": "María Paz Saavedra",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad Chilena de Enfermedades Respiratorias (consenso 202",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora chilena (Sociedad Chilena de Enfermedades Respiratorias) del consenso nacional de tamizaje de cáncer de pulmón (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora del estudio de osimertinib neoadyuvante en NSCLC EGFR-mutado resecable, afiliada a Orlandi Oncología, Santiago.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/40454705/",
+          "fecha": "2025-09-10",
+          "confianza": "pendiente",
+          "revista": "Journal of Clinical Oncology"
+        }
+      ],
+      "nota_identidad": "Ya existe una 'Dra. María Paz Saavedra, Jefa (S) de Oncología' mencionada en los hechos de la entidad existente 'Instituto Nacional del Tórax' (fuente torax.cl, sin fecha declarada). Estas dos publicaciones nuevas de PubMed muestran el mismo nombre completo pero con afiliaciones distintas que no mencionan al Instituto Nacional del Tórax -- no se puede confirmar si es la misma médica con afiliación cambiante/múltiple o una coincidencia de nombre; no se fusiona, se deja explícito."
+    },
+    {
+      "id": "claudio-silva-f",
+      "nombre": "Claudio Silva F",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad Chilena de Radiología",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor chileno del consenso nacional 'Consensus Recommendations for Lung Cancer Screening in Chile', representando a la Sociedad Chilena de Radiología (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "jaime-verdugo-b",
+      "nombre": "Jaime Verdugo B",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad Chilena de Radiología",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor chileno del consenso nacional de tamizaje de cáncer de pulmón, representando a la Sociedad Chilena de Radiología (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "felipe-sanchez-t",
+      "nombre": "Felipe Sánchez T",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad Chilena de Radiología",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor chileno del consenso nacional de tamizaje de cáncer de pulmón, representando a la Sociedad Chilena de Radiología (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "claudio-sole-p",
+      "nombre": "Claudio Solé P",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad Chilena de Radioterapia",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor chileno del consenso nacional de tamizaje de cáncer de pulmón, representando a la Sociedad Chilena de Radioterapia (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "ruben-valenzuela-m",
+      "nombre": "Rubén Valenzuela M",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad de Cirujanos de Chile",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor chileno del consenso nacional de tamizaje de cáncer de pulmón, representando a la Sociedad de Cirujanos de Chile (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "alfredo-jalilie-e",
+      "nombre": "Alfredo Jalilie E",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Sociedad Chilena de Enfermedades Respiratorias",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor chileno del consenso nacional de tamizaje de cáncer de pulmón, representando a la Sociedad Chilena de Enfermedades Respiratorias (tipo de publicación PubMed: Practice Guideline / Consensus Statement).",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39760579/",
+          "fecha": "2024-05",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "roberto-diaz-pena",
+      "nombre": "Roberto Díaz-Peña",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Facultad de Ciencias de la Salud",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/33113004/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de revisión sobre inmunoterapia en NSCLC y perspectivas de biopsia líquida.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33113004/",
+          "fecha": "2021-05",
+          "confianza": "pendiente",
+          "revista": "Cancer Immunology, Immunotherapy"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de estudio sobre perfil de metilación de ADN libre circulante para el diagnóstico de carcinoma escamoso de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/38410586/",
+          "fecha": "2024-01-30",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Disease"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de estudio sobre firma proteómica para predecir respuesta a inmunoterapia en NSCLC metastásico.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39216661/",
+          "fecha": "2024-10",
+          "confianza": "pendiente",
+          "revista": "Molecular & Cellular Proteomics"
+        }
+      ]
+    },
+    {
+      "id": "ricardo-armisen",
+      "nombre": "Ricardo Armisén",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro de Genética y Genómica",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/34186175/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio de concordancia de métodos de detección de fusión del gen ALK en pacientes con NSCLC de Chile, Brasil y Perú; en este artículo declara afiliación adicional a Pfizer Chile.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/34186175/",
+          "fecha": "2021-09",
+          "confianza": "pendiente",
+          "revista": "The Journal of Molecular Diagnostics"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de artículo panorámico 'Advances in Lung Cancer Basic and Translational Research 2025' enfocado en NSCLC.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/40473107/",
+          "fecha": "2025-10",
+          "confianza": "pendiente",
+          "revista": "Journal of Thoracic Oncology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio sobre variantes accionables por skipping del exón 14 de MET en pacientes latinoamericanos con NSCLC.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39769478/",
+          "fecha": "2024-12-22",
+          "confianza": "pendiente",
+          "revista": "International Journal of Molecular Sciences"
+        }
+      ]
+    },
+    {
+      "id": "solange-rivas",
+      "nombre": "Solange Rivas",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Centro de Investigación y Tratamiento del Cáncer",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/34186175/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora del estudio de concordancia de detección de fusión ALK en NSCLC de Chile, Brasil y Perú.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/34186175/",
+          "fecha": "2021-09",
+          "confianza": "pendiente",
+          "revista": "The Journal of Molecular Diagnostics"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora de estudio sobre disparidades genómicas en cáncer de pulmón entre fumadores y nunca-fumadores.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39097719/",
+          "fecha": "2024-08-03",
+          "confianza": "pendiente",
+          "revista": "BMC Cancer"
+        }
+      ]
+    },
+    {
+      "id": "gonzalo-labarca",
+      "nombre": "Gonzalo Labarca",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Facultad de Medicina",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/30011388/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de revisión sistemática y metaanálisis sobre adecuación de muestras obtenidas por ecobroncoscopía (EBUS-TBNA) para análisis molecular en NSCLC.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/30011388/",
+          "fecha": "2018-10",
+          "confianza": "pendiente",
+          "revista": "Annals of the American Thoracic Society"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de revisión sistemática sobre sensibilidad y seguridad de la broncoscopía por navegación electromagnética para diagnóstico de cáncer de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/32450240/",
+          "fecha": "2020-10",
+          "confianza": "pendiente",
+          "revista": "Chest"
+        }
+      ]
+    },
+    {
+      "id": "alejandro-h-corvalan",
+      "nombre": "Alejandro H. Corvalán",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Advanced Center for Chronic Diseases (ACCDiS)",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/35215076/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de revisión sobre infección por virus de Epstein-Barr en cáncer de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/35215076/",
+          "fecha": "2022-01-21",
+          "confianza": "pendiente",
+          "revista": "Pathogens"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio sobre regulación al alza de SLC7A11 en cáncer de pulmón asociado a VPH y tabaco.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39769017/",
+          "fecha": "2024-12-10",
+          "confianza": "pendiente",
+          "revista": "International Journal of Molecular Sciences"
+        }
+      ]
+    },
+    {
+      "id": "francisco-aguayo",
+      "nombre": "Francisco Aguayo",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Laboratorio de Oncovirología",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/36552201/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de revisión sobre infección por VPH de alto riesgo en cáncer de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/36552201/",
+          "fecha": "2022-11-23",
+          "confianza": "pendiente",
+          "revista": "Biology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio sobre resistencia a cisplatino y agresividad mediada por la enzima convertidora de endotelina en células de cáncer de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39443981/",
+          "fecha": "2024-10-24",
+          "confianza": "pendiente",
+          "revista": "Biological Research"
+        }
+      ]
+    },
+    {
+      "id": "martin-montecino",
+      "nombre": "Martín Montecino",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Institute of Biomedical Sciences",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/36510562/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Autor de estudio sobre el rol regulatorio del factor de transcripción RUNX2 en apoptosis de cáncer de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/36510562/",
+          "fecha": "2022",
+          "confianza": "pendiente",
+          "revista": "International Journal of Cell Biology"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio sobre el ARN largo no codificante TALAM1 como blanco transcripcional de RUNX2 en adenocarcinoma de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/37754231/",
+          "fecha": "2023-08-24",
+          "confianza": "pendiente",
+          "revista": "Current Issues in Molecular Biology"
+        }
+      ]
+    },
+    {
+      "id": "rodrigo-lopez-munoz",
+      "nombre": "Rodrigo López-Muñoz",
+      "tipo": "persona",
+      "ciudad": "Valdivia",
+      "subtitulo": "Instituto de Farmacología y Morfofisiología",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/39519155/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio sobre el impacto del ácido nordihidroguaiarético en proliferación, metabolismo energético y quimiosensibilización de líneas celulares de NSCLC.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39519155/",
+          "fecha": "2024-10-29",
+          "confianza": "pendiente",
+          "revista": "International Journal of Molecular Sciences"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de estudio sobre inhibición de AMD1 inducida por SAM486A con implicancias metabólicas y epigenéticas en células de NSCLC.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/40515967/",
+          "fecha": "2025-06-14",
+          "confianza": "pendiente",
+          "revista": "Metabolomics"
+        }
+      ]
+    },
+    {
+      "id": "antonia-martin-martin",
+      "nombre": "Antonia Martín-Martín",
+      "tipo": "persona",
+      "ciudad": "Valdivia",
+      "subtitulo": "Instituto de Farmacología y Morfofisiología",
+      "subtitulo_fuente": "https://pubmed.ncbi.nlm.nih.gov/41715254/",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora del estudio preclínico sobre el inhibidor de poliaminas SAM486A aumentando la eficacia de adagrasib en células de NSCLC con mutación KRAS G12C. Este mismo PMID ya está registrado como hecho de la entidad existente FALP (citando a los coautores Vidal y Villarroel-Espindola); esta autora aporta afiliación adicional no capturada antes (Universidad Austral de Chile), no FALP.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/41715254/",
+          "fecha": "2026-02-19",
+          "confianza": "pendiente",
+          "revista": "Biological Research"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora de estudio sobre indometacina induciendo SSAT1 vía el eje nucleolina-CDK1 en células de cáncer de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/37759783/",
+          "fecha": "2023-09-12",
+          "confianza": "pendiente",
+          "revista": "Biomolecules"
+        }
+      ]
+    },
+    {
+      "id": "alejandra-riquelme-u",
+      "nombre": "Alejandra Riquelme U.",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Servicio de Cirugía",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora del estudio de cohorte sobre cáncer pulmonar en el Hospital Clínico Regional de Concepción.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "rodrigo-reyes-m",
+      "nombre": "Rodrigo Reyes M.",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Centro Cardiovascular",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio de cohorte sobre cáncer pulmonar en el Hospital Clínico Regional de Concepción.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "m-loreto-spencer-l",
+      "nombre": "M. Loreto Spencer L.",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Unidad de Anatomía Patológica",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora (patóloga) del estudio de cohorte sobre cáncer pulmonar en el Hospital Clínico Regional de Concepción.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "enrique-seguel-s",
+      "nombre": "Enrique Seguel S.",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Centro Cardiovascular",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio de cohorte sobre cáncer pulmonar en el Hospital Clínico Regional de Concepción.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "aleck-stockins-l",
+      "nombre": "Aleck Stockins L.",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Centro Cardiovascular",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio de cohorte sobre cáncer pulmonar en el Hospital Clínico Regional de Concepción.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "andres-jadue-t",
+      "nombre": "Andrés Jadue T.",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Centro Cardiovascular",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio de cohorte sobre cáncer pulmonar en el Hospital Clínico Regional de Concepción.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "emilio-alarcon-c",
+      "nombre": "Emilio Alarcón C.",
+      "tipo": "persona",
+      "ciudad": "Concepción",
+      "subtitulo": "Centro Cardiovascular",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio de cohorte sobre cáncer pulmonar en el Hospital Clínico Regional de Concepción.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?pid=S0034-98872022000100007&script=sci_arttext",
+          "fecha": "2022-01",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "juan-carlos-diaz-p",
+      "nombre": "Juan Carlos Díaz P.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Radiología",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor (radiólogo) del artículo de Fernando Saldías P. sobre detección precoz de cáncer pulmonar con TC de tórax en pacientes EPOC.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+          "fecha": "2016-02",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ],
+      "nota_identidad": "Existe otro 'Juan Carlos Díaz Patiño' (radiólogo, Departamento de Imágenes, Clínica Alemana de Santiago / Clínica Alemana Universidad del Desarrollo) como primer autor del artículo Rev Med Chile 2018;146(10) sobre neoplasia pulmonar quística. Mismo nombre y apellido, misma ciudad y especialidad (radiología), pero afiliación institucional distinta y 2 años de diferencia entre publicaciones -- podría ser la misma persona que cambió de institución, o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados."
+    },
+    {
+      "id": "rodrigo-diaz-t",
+      "nombre": "Rodrigo Díaz T.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Servicio de Medicina",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del artículo de Fernando Saldías P. sobre detección precoz de cáncer pulmonar con TC de tórax.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+          "fecha": "2016-02",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "orlando-diaz-p",
+      "nombre": "Orlando Díaz P.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Enfermedades Respiratorias",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del artículo de Fernando Saldías P. sobre detección precoz de cáncer pulmonar con TC de tórax.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+          "fecha": "2016-02",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del artículo 'Factores pronósticos y sobrevida a mediano plazo... cáncer pulmonar... Red de Salud UC', junto a Fernando Saldías P. (entidad ya existente).",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+          "fecha": "2014-12",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "marcela-opazo-v",
+      "nombre": "Marcela Opazo V.",
+      "tipo": "persona",
+      "ciudad": "Puerto Montt",
+      "subtitulo": "Servicio de Medicina Interna",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora de la revisión de Andrés Rojas G. (entidad ya existente) sobre evaluación preoperatoria en resección de cáncer de pulmón.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+          "fecha": "2015-06",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "marcela-hernandez-p",
+      "nombre": "Marcela Hernández P.",
+      "tipo": "persona",
+      "ciudad": "Puerto Montt",
+      "subtitulo": "Servicio de Anestesia y Pabellón",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora de la revisión de Andrés Rojas G. sobre evaluación preoperatoria en resección de cáncer de pulmón.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+          "fecha": "2015-06",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "paulina-avila-v",
+      "nombre": "Paulina Ávila V.",
+      "tipo": "persona",
+      "ciudad": "Puerto Montt",
+      "subtitulo": "Servicio de Anestesia y Pabellón",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora de la revisión de Andrés Rojas G. sobre evaluación preoperatoria en resección de cáncer de pulmón.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+          "fecha": "2015-06",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "daniel-villalobos-s",
+      "nombre": "Daniel Villalobos S.",
+      "tipo": "persona",
+      "ciudad": "Puerto Montt",
+      "subtitulo": "Servicio de Anestesia y Pabellón",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor de la revisión de Andrés Rojas G. sobre evaluación preoperatoria en resección de cáncer de pulmón.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000600009",
+          "fecha": "2015-06",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "waldo-adonis-r",
+      "nombre": "Waldo Adonis R.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Laboratorio Nacional y de Referencia de Inmunología",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Primer autor del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón en pacientes chilenos.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "2006-03",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "francisco-aguayo-g",
+      "nombre": "Francisco Aguayo G.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Laboratorio de Biología Molecular",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón; único autor de este artículo afiliado al Instituto Nacional del Tórax (institución ya existente en la muestra).",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "2006-03",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "eugenia-cordero-s",
+      "nombre": "Eugenia Cordero S.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Laboratorio Nacional y de Referencia de Inmunología",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "2006-03",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "luis-rodriguez-a",
+      "nombre": "Luis Rodríguez A.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Laboratorio Nacional y de Referencia de Inmunología",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "2006-03",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "darwins-castillo-a",
+      "nombre": "Darwins Castillo A.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Laboratorio Nacional y de Referencia de Inmunología",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "2006-03",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "leda-guzman-m",
+      "nombre": "Leda Guzmán M.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Laboratorio Nacional y de Referencia de Inmunología",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Autora senior del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "2006-03",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "david-ladron-de-guevara-h",
+      "nombre": "David Ladrón de Guevara H.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Clínica Las Condes",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872010001200015",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Primer autor del artículo de revisión 'PET/CT en cáncer pulmonar'.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872010001200015",
+          "fecha": "2010-11",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "raul-pefaur-d",
+      "nombre": "Raúl Pefaur D.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Clínica Las Condes",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872010001200015",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del artículo de revisión 'PET/CT en cáncer pulmonar'.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872010001200015",
+          "fecha": "2010-11",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "arturo-morales-s",
+      "nombre": "Arturo Morales S.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Enfermedades Respiratorias",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Primer autor del artículo 'Factores pronósticos y sobrevida a mediano plazo... cáncer pulmonar... Red de Salud UC', junto a Fernando Saldías P. (entidad ya existente).",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+          "fecha": "2014-12",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "sergio-gonzalez-b",
+      "nombre": "Sergio González B.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Anatomía Patológica",
+      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor (patólogo) del artículo sobre factores pronósticos y sobrevida en cáncer pulmonar, Red de Salud UC.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482014000400004",
+          "fecha": "2014-12",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "juan-carlos-diaz-patino",
+      "nombre": "Juan Carlos Díaz Patiño",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Imágenes",
+      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Primer autor del reporte de 8 casos de neoplasia pulmonar con presentación atípica como lesiones quísticas.",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+          "fecha": "2018-12",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ],
+      "nota_identidad": "Existe otro 'Juan Carlos Díaz P.' (radiólogo, Departamento de Radiología, Hospital Clínico Universidad de Chile) como coautor del artículo Rev Med Chile 2016;144(2) de Fernando Saldías P. Mismo nombre, misma ciudad y especialidad, pero institución distinta y 2 años de diferencia -- podría ser la misma persona que cambió de institución o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados."
+    },
+    {
+      "id": "julia-alegria-bobadilla",
+      "nombre": "Julia Alegría Bobadilla",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Imágenes",
+      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora del reporte de 8 casos de neoplasia pulmonar con presentación atípica como lesiones quísticas.",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+          "fecha": "2018-12",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "yumay-pires",
+      "nombre": "Yumay Pires",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Anatomía Patológica",
+      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautora (patóloga) del reporte de 8 casos de neoplasia pulmonar con presentación atípica como lesiones quísticas.",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+          "fecha": "2018-12",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "guillermo-chong-medel",
+      "nombre": "Guillermo Chong Medel",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Imágenes",
+      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del reporte de 8 casos de neoplasia pulmonar con presentación atípica como lesiones quísticas.",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+          "fecha": "2018-12",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "claudio-silva-fuente-alba",
+      "nombre": "Claudio Silva Fuente-Alba",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Imágenes",
+      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del reporte de 8 casos de neoplasia pulmonar con presentación atípica como lesiones quísticas.",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+          "fecha": "2018-12",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "g-cristobal-ramos-gomez",
+      "nombre": "G. Cristóbal Ramos Gómez",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Departamento de Imágenes",
+      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del reporte de 8 casos de neoplasia pulmonar con presentación atípica como lesiones quísticas.",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001001102",
+          "fecha": "2018-12",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        }
+      ]
+    },
+    {
+      "id": "marcia-erazo-b",
+      "nombre": "Marcia Erazo B.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Escuela de Salud Pública",
+      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0717-73482017000300219",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Primera autora del artículo 'Cáncer pulmonar el peor efecto del tabaquismo', coautora junto a Mauricio Burotto P. (entidad ya existente 'Mauricio Burotto').",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0717-73482017000300219",
+          "fecha": "2017-09",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
+    },
+    {
+      "id": "juan-guillermo-gormaz-a",
+      "nombre": "Juan Guillermo Gormaz A.",
+      "tipo": "persona",
+      "ciudad": "Santiago",
+      "subtitulo": "Coordinador de Investigación en Oncología",
+      "subtitulo_fuente": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0717-73482017000300219",
+      "hechos": [
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del artículo 'Cáncer pulmonar el peor efecto del tabaquismo', junto a Mauricio Burotto P. (entidad ya existente).",
+          "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0717-73482017000300219",
+          "fecha": "2017-09",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        }
+      ]
     }
   ],
   "vinculos": [
@@ -2639,6 +3781,146 @@
       "origen": "pamela-salman",
       "destino": "nct06765109",
       "tipo": "investigador de sitio"
+    },
+    {
+      "origen": "suraj-samtani",
+      "destino": "bradford-hill",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "osvaldo-aren-frontera",
+      "destino": "bradford-hill",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "francisco-orlandi",
+      "destino": "torax",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "pablo-munoz-schuffenegger",
+      "destino": "puc",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "ricardo-armisen",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "alejandro-h-corvalan",
+      "destino": "puc",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "alejandra-riquelme-u",
+      "destino": "hosp-concepcion",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "rodrigo-reyes-m",
+      "destino": "hosp-concepcion",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "m-loreto-spencer-l",
+      "destino": "hosp-concepcion",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "enrique-seguel-s",
+      "destino": "hosp-concepcion",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "aleck-stockins-l",
+      "destino": "hosp-concepcion",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "andres-jadue-t",
+      "destino": "hosp-concepcion",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "emilio-alarcon-c",
+      "destino": "hosp-concepcion",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "orlando-diaz-p",
+      "destino": "puc",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "marcela-opazo-v",
+      "destino": "hosp-puerto-montt",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "marcela-hernandez-p",
+      "destino": "hosp-puerto-montt",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "paulina-avila-v",
+      "destino": "hosp-puerto-montt",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "daniel-villalobos-s",
+      "destino": "hosp-puerto-montt",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "francisco-aguayo-g",
+      "destino": "torax",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "arturo-morales-s",
+      "destino": "puc",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "sergio-gonzalez-b",
+      "destino": "puc",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "juan-carlos-diaz-patino",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "julia-alegria-bobadilla",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "yumay-pires",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "guillermo-chong-medel",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "claudio-silva-fuente-alba",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "g-cristobal-ramos-gomez",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
+    },
+    {
+      "origen": "juan-guillermo-gormaz-a",
+      "destino": "clinica-alemana",
+      "tipo": "afiliación"
     }
   ],
   "campos_confiables": [
