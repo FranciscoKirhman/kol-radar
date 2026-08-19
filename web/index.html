@@ -216,9 +216,10 @@
   #network-view { display: none; }
   #network-view.active { display: block; }
   .network-view-wrap { position: relative; }
-  #network-view svg { width: 100%; height: auto; display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
-  /* B: con el viewBox 720x460 al 100% de ancho, en un teléfono el grafo colapsaba a ~220px
-     de alto — ilegible con 147 nodos. Se le da altura real y se deja que el SVG rellene. */
+  /* El alto es DEFINIDO a propósito, nunca "auto". Con height:auto el alto del SVG lo decide
+     su propio viewBox, así que medirlo para calcular el viewBox es circular: buildNetwork leía
+     siempre la proporción que ya tenía y nunca convergía a la forma real del hueco. */
+  #network-view svg { width: 100%; height: min(72vh, 620px); display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
   @media (max-width: 720px) {
     #network-view svg { height: 65vh; min-height: 380px; }
   }
@@ -921,6 +922,41 @@
 
   // Devuelve un nodo con el fragmento del hecho donde apareció el término, resaltado.
   // Se arma con nodos de texto, nunca con innerHTML: el texto viene del JSON.
+  // Los nombres institucionales chilenos son largos ("Sociedad Chilena de Enfermedades
+  // Respiratorias", 46 caracteres). Truncar a ciegas producía "Fundación Arturo López…" y
+  // "Universidad de Concepc…", donde se pierde justo la parte que distingue. Estas reglas
+  // acortan por palabra conservando el núcleo; el nombre completo sigue en el tooltip y en la
+  // ficha, así que la abreviatura es solo de presentación.
+  var ABREV_EXACTAS = [
+    [/^Fundación Arturo López Pérez \(FALP\)$/, "FALP"],
+    [/^Pontificia Universidad Católica de Chile$/, "PUC"],
+    [/^Sociedad Chilena de Enfermedades Respiratorias$/, "Soc. Chilena Enf. Respiratorias"],
+    [/^James Lind Centro de Investigación del Cáncer$/, "James Lind"]
+  ];
+  // No van ancladas al inicio: "Hospital Clínico Universidad de Chile" necesita las dos
+  // reglas, y "Universidad" ahí no es la primera palabra. Se aplican todas las que calcen.
+  var ABREV_PALABRA = [
+    [/Hospital Clínico /g, "H. Clínico "],
+    [/Hospital /g, "Hosp. "],
+    [/Universidad /g, "U. "],
+    [/Instituto /g, "Inst. "],
+    [/Sociedad /g, "Soc. "]
+  ];
+  function etiquetaGrafo(n) {
+    if (n.tipo === "ensayo_clinico") return etiquetaCorta(n);
+    var nombre = n.nombre;
+    // Un acrónimo entre paréntesis es el que la propia institución se puso: se prefiere.
+    var par = nombre.match(/\(([A-ZÁÉÍÓÚÑ]{2,6})\)/);
+    if (par) return par[1];
+    for (var i = 0; i < ABREV_EXACTAS.length; i++) {
+      if (ABREV_EXACTAS[i][0].test(nombre)) return ABREV_EXACTAS[i][1];
+    }
+    for (var j = 0; j < ABREV_PALABRA.length; j++) {
+      nombre = nombre.replace(ABREV_PALABRA[j][0], ABREV_PALABRA[j][1]);
+    }
+    return nombre.length > 34 ? nombre.slice(0, 33) + "…" : nombre;
+  }
+
   function etiquetaCorta(n) {
     if (n.tipo !== "ensayo_clinico") return n.nombre;
     var base = n.acronimo || n.id.toUpperCase();
@@ -1547,10 +1583,37 @@
 
     var NS = "http://www.w3.org/2000/svg";
     if (!nodes.length) {
+      // Un "sin resultados" a secas es un callejón sin salida: al filtrar por cáncer de mama
+      // el grafo quedaba en blanco sin decir por qué. La razón casi nunca es que el filtro no
+      // encuentre nada — es que lo que encuentra es de un tipo que está apagado (esa área hoy
+      // son puros ensayos, y el preset por defecto muestra personas↔instituciones). Acá se
+      // distingue un caso del otro y se dice qué prender.
+      var porFiltro = entidades.filter(matches);
+      var fuera = {};
+      porFiltro.forEach(function (n) { if (!capas.nodos[n.tipo]) fuera[n.tipo] = (fuera[n.tipo] || 0) + 1; });
+      var apagados = Object.keys(fuera).map(function (t) {
+        return (typeLabel[t] || t).toLowerCase() + " (" + fuera[t] + ")";
+      });
+      var corto, largo;
+      if (!porFiltro.length) {
+        corto = "Sin resultados para ese filtro.";
+        largo = "Ninguna entidad coincide con la búsqueda o los filtros activos.";
+      } else if (apagados.length) {
+        corto = "Todo lo que calza está en una capa apagada.";
+        largo = "El filtro deja " + porFiltro.length + " entidad" + (porFiltro.length === 1 ? "" : "es") +
+          ", pero son de un tipo que está oculto: " + apagados.join(", ") +
+          ". Enciéndelo en «Mostrar nodos», más abajo.";
+      } else {
+        corto = "Nada quedó conectado con las capas activas.";
+        largo = "Las " + porFiltro.length + " entidades del filtro no tienen entre sí ninguna " +
+          "conexión de los tipos encendidos. Prueba encender más en «Mostrar conexiones», o " +
+          "desmarcar «Ocultar nodos que quedan sin conexiones».";
+      }
+      hint.textContent = largo;
       var msg = document.createElementNS(NS, "text");
       msg.setAttribute("x", "360"); msg.setAttribute("y", "230");
       svg.setAttribute("viewBox", "0 0 720 460"); msg.setAttribute("text-anchor", "middle");
-      msg.setAttribute("class", "node-label"); msg.textContent = "Sin resultados para ese filtro.";
+      msg.setAttribute("class", "node-label"); msg.textContent = corto;
       svg.appendChild(msg);
       return;
     }
@@ -1765,12 +1828,8 @@
       tooltipEl.classList.remove("show");
     }
 
-    // Umbral adaptativo: con pocos nodos se muestran todas las etiquetas; al crecer el grafo
-    // se reservan para los mejor conectados.
-    var grados = nodes.map(function (x) { return gradoEnVista[x.id]; }).sort(function (a, b) { return b - a; });
-    var umbralEtiqueta = nodes.length <= 30 ? 0 : Math.max(2, grados[Math.min(24, grados.length - 1)] || 2);
-
     var nodeEls = {};
+    var etiquetasPendientes = [];
     nodes.forEach(function (n) {
       var deg = gradoEnVista[n.id];
       var baseR = n.tipo === "persona" ? 6 : n.tipo === "institucion" ? 8 : n.tipo === "tema" ? 7 : 7;
@@ -1809,16 +1868,15 @@
       svg.appendChild(circle);
       nodeEls[n.id] = circle;
 
-      // Con muchos nodos las etiquetas se pisan y el grafo se vuelve ilegible. Patrón de
-      // VOSviewer (ver ROADMAP.md §3.5): mostrar solo las de los nodos más conectados; el
-      // resto aparece al pasar el mouse, que ya resalta el vecindario.
+      // Las etiquetas se colocan en una pasada aparte, después de crear todos los nodos: hay
+      // que conocer la geometría de todas para no pisarlas entre sí (ver colocarEtiquetas).
       var label = document.createElementNS(NS, "text");
-      label.setAttribute("class", "node-label global-label" + (deg < umbralEtiqueta ? " label-oculta" : ""));
+      label.setAttribute("class", "node-label global-label");
       label.setAttribute("data-id", n.id);
-      label.setAttribute("x", n._x + r + 3);
-      label.setAttribute("y", n._y + 3);
-      label.textContent = n.nombre.length > 24 ? n.nombre.slice(0, 22) + "…" : n.nombre;
+      label.setAttribute("dominant-baseline", "middle");
+      label.textContent = etiquetaGrafo(n);
       svg.appendChild(label);
+      etiquetasPendientes.push({ el: label, x: n._x, y: n._y, r: r, deg: deg, nodo: n });
 
       // Entrada animada + pulso sutil escalonado (respeta prefers-reduced-motion vía CSS).
       requestAnimationFrame(function () {
@@ -1829,6 +1887,98 @@
           circle.classList.add("pulse");
         }, 450);
       });
+    });
+
+    colocarEtiquetas(etiquetasPendientes, W, H);
+  }
+
+  // Antes las etiquetas se filtraban solo por grado: se dibujaban las de los ~25 nodos más
+  // conectados, en una posición fija a la derecha. Pero los nodos más conectados son justo los
+  // que el layout agrupa alrededor de las mismas instituciones, así que sus etiquetas caían
+  // unas encima de otras — medido en el navegador: 11 colisiones entre 30 etiquetas visibles.
+  // El grado dice qué etiqueta MERECE dibujarse; no dice si CABE. Acá se decide lo segundo con
+  // geometría: se recorre en orden de importancia y cada etiqueta se queda solo si encuentra
+  // una posición libre. La que no cabe se oculta y sigue apareciendo al pasar el mouse.
+  // Sin tope fijo: manda la geometría. Un número redondo dejaba fuera etiquetas que sí cabían.
+  var MAX_ETIQUETAS = 999;
+  function colocarEtiquetas(pendientes, W, H) {
+    if (!pendientes.length) return;
+    // Una sola lectura de geometría para todas: getBBox fuerza reflow, y alternar medir/escribir
+    // lo dispararía una vez por etiqueta.
+    pendientes.forEach(function (p) {
+      p.el.classList.remove("label-oculta");
+      var b;
+      try { b = p.el.getBBox(); } catch (e) { b = { width: p.el.textContent.length * 4.8, height: 9 }; }
+      p.w = b.width; p.h = b.height || 9;
+    });
+
+    // Qué etiqueta merece el espacio escaso. Ordenar solo por grado era tentador pero da el
+    // resultado equivocado: los nodos más conectados son los hubs, así que Carlos Rojas
+    // —prioridad alta, 3 conexiones— quedaba sin nombre mientras se etiquetaban ensayos.
+    // Las instituciones van primero porque son el esqueleto del mapa: sin ellas ubicadas, los
+    // barrios que arma el layout no se pueden leer. Después las personas por tier, que es la
+    // pregunta que el usuario le hace a esta herramienta.
+    // El tier se calcula UNA vez por etiqueta, no dentro del comparador: computePriority
+    // recorre todos los hechos, y en un sort serían O(n log n) llamadas para nada. Solo aplica
+    // a personas — en el resto de los tipos el tier no significa nada (ver SCORING.md).
+    var TIER_PESO = { alta: 1, media: 2, monitorear: 4 };
+    pendientes.forEach(function (p) {
+      if (p.nodo.tipo === "institucion") { p.peso = 0; return; }
+      if (p.nodo.tipo === "tema") { p.peso = 3; return; }
+      if (p.nodo.tipo !== "persona") { p.peso = 5; return; }
+      var t = TIER_PESO[computePriority(p.nodo).tier];
+      p.peso = typeof t === "number" ? t : 4;
+    });
+    pendientes.sort(function (a, b) {
+      if (a.peso !== b.peso) return a.peso - b.peso;
+      if (b.deg !== a.deg) return b.deg - a.deg;
+      return a.w - b.w;
+    });
+
+    // Los nodos ocupan lugar: una etiqueta encima de otro nodo tapa justo lo que hay que ver.
+    // Los nodos van con 2 unidades de holgura: la animación de pulso los agranda un poco, y
+    // sin ese margen alguna etiqueta terminaba rozando el nodo en el pico de la animación.
+    var HOLGURA = 2;
+    var ocupados = pendientes.map(function (p) {
+      return { x: p.x - p.r - HOLGURA, y: p.y - p.r - HOLGURA,
+               w: (p.r + HOLGURA) * 2, h: (p.r + HOLGURA) * 2 };
+    });
+    function libre(c) {
+      if (c.x < 2 || c.y < 2 || c.x + c.w > W - 2 || c.y + c.h > H - 2) return false;
+      for (var i = 0; i < ocupados.length; i++) {
+        var o = ocupados[i];
+        if (c.x < o.x + o.w && o.x < c.x + c.w && c.y < o.y + o.h && o.y < c.y + c.h) return false;
+      }
+      return true;
+    }
+
+    var puestas = 0;
+    pendientes.forEach(function (p) {
+      var G = 4;
+      var opciones = puestas >= MAX_ETIQUETAS ? [] : [
+        { x: p.x + p.r + G, y: p.y - p.h / 2, anchor: "start" },
+        { x: p.x - p.r - G - p.w, y: p.y - p.h / 2, anchor: "end" },
+        { x: p.x - p.w / 2, y: p.y - p.r - G - p.h, anchor: "middle" },
+        { x: p.x - p.w / 2, y: p.y + p.r + G, anchor: "middle" }
+      ];
+      var elegida = null;
+      for (var i = 0; i < opciones.length; i++) {
+        var o = opciones[i];
+        if (libre({ x: o.x, y: o.y, w: p.w, h: p.h })) { elegida = o; break; }
+      }
+      if (!elegida) {
+        // No cabe en ningún lado: se oculta, pero queda posicionada para el hover.
+        p.el.setAttribute("x", p.x + p.r + G);
+        p.el.setAttribute("y", p.y);
+        p.el.setAttribute("text-anchor", "start");
+        p.el.classList.add("label-oculta");
+        return;
+      }
+      ocupados.push({ x: elegida.x, y: elegida.y, w: p.w, h: p.h });
+      p.el.setAttribute("x", elegida.anchor === "end" ? elegida.x + p.w : elegida.anchor === "middle" ? p.x : elegida.x);
+      p.el.setAttribute("y", elegida.y + p.h / 2);
+      p.el.setAttribute("text-anchor", elegida.anchor);
+      puestas++;
     });
   }
 
