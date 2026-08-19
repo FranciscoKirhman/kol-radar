@@ -180,6 +180,106 @@ y lo agrego; es media hora de trabajo y cero riesgo.
 
 ---
 
+## Decisión 5 — Dos fusiones de identidad más, esperando tu OK
+
+### El problema concreto
+
+Confirmaste que Claudio Silva F. y Claudio Silva Fuente-Alba eran la misma persona, y ya están
+unificados. Eso me hizo preguntarme cuántos duplicados más había, así que corrí una auditoría sobre
+las 70 personas de la muestra con cuatro criterios distintos.
+
+La causa es siempre la misma y es estructural, no un descuido: las revistas chilenas abrevian el
+apellido materno a una inicial ("Fernando Saldías P.") y PubMed indexa por apellido + iniciales. La
+misma persona entra dos veces si la recolección la encuentra por SciELO y por PubMed en rondas
+distintas. Van a seguir apareciendo a medida que crezca la base.
+
+**Yo no fusiono a nadie sin que me lo confirmes.** El costo de equivocarse no es simétrico: dejar un
+duplicado es feo, pero atribuirle a un médico el trabajo de otro es un error grave, difícil de
+detectar después y que le afecta a una persona real.
+
+Aviso sobre el alcance de lo que sigue: la fase de verificación automática de esa auditoría **no
+alcanzó a correr** — se agotó el límite mensual de gasto de la cuenta y los cuatro verificadores
+murieron. Así que verifiqué a mano contra las fuentes, y abajo separo lo que comprobé yo de lo que no.
+
+---
+
+### 5.1 — Francisco Aguayo G. + Francisco Aguayo · **recomiendo fusionar**
+
+| | `francisco-aguayo-g` | `francisco-aguayo` |
+|---|---|---|
+| Nombre | Francisco Aguayo G. | Francisco Aguayo |
+| Institución | Instituto Nacional del Tórax | Universidad de Tarapacá |
+| Subtítulo | Laboratorio de Biología Molecular | Laboratorio de Oncovirología |
+| Evidencia | SciELO 2006, p16INK4a en cáncer escamoso de pulmón | PubMed 2022 y 2024 |
+
+Lo que comprobé yo, consultando las APIs:
+
+1. [ORCID 0000-0002-9619-7535](https://orcid.org/0000-0002-9619-7535) corresponde a **"Francisco
+   Aguayo González"**, con nombre de firma "Francisco Aguayo", empleado en el **Departamento de
+   Ciencias Biomédicas de la Universidad de Tarapacá** — la institución y el laboratorio de la ficha
+   `francisco-aguayo`. O sea: la "G." es González.
+2. Ese mismo ORCID **reclama como obra propia** el
+   [PMID 18449464](https://pubmed.ncbi.nlm.nih.gov/18449464/) — *"High frequency of p16 promoter
+   methylation in non-small cell lung carcinomas from Chile"*, Biol Res 2007 — donde firma como
+   "Aguayo, Francisco R".
+3. Los coautores de ese paper son **Darwins Castillo** y **Leda M. Guzmán**, que en nuestra propia
+   base son coautores de `francisco-aguayo-g` en el paper de SciELO de 2006. Mismo grupo, mismo
+   tema (metilación de p16 en cáncer de pulmón en Chile), mismos años.
+
+Lo que **no** pude comprobar, y por eso esto no es tan sólido como el caso Silva: el ORCID de Aguayo
+tiene el campo de variantes de nombre **vacío** — a diferencia del de Silva, no declara él mismo
+"Aguayo G." como forma alternativa. Y el artículo exacto de SciELO de 2006 no figura entre sus obras
+de ORCID (SciELO suele no sincronizar). El vínculo se apoya en coautores + tema + apellido, no en una
+declaración del propio investigador.
+
+**Si decís que sí**, la ficha resultante muestra 20 años de trayectoria — del Instituto Nacional del
+Tórax en 2006 a la Universidad de Tarapacá en 2024 — en vez de dos personas sueltas. Es justo el tipo
+de recorrido que a un MSL le sirve ver.
+
+---
+
+### 5.2 — Juan Carlos Díaz P. + Juan Carlos Díaz Patiño · **recomiendo fusionar**
+
+| | `juan-carlos-diaz-p` | `juan-carlos-diaz-patino` |
+|---|---|---|
+| Nombre | Juan Carlos Díaz P. | Juan Carlos Díaz Patiño |
+| Institución | Hospital Clínico U. de Chile | Clínica Alemana |
+| Subtítulo | Departamento de Radiología | Departamento de Imágenes |
+| Evidencia | Rev Med Chile 2016, TC de tórax en EPOC | Rev Med Chile 2018, neoplasia pulmonar quística |
+
+Lo que comprobé yo: el programa de la Universidad de Chile
+[*Estada de Perfeccionamiento en Imagenología de Tórax y Cardiovascular*](https://medichi.uchile.cl/estada-de-perfeccionamiento-en-imagenologia-de-torax-y-cardiovascular/)
+lista textualmente entre sus docentes **"Dr. Juan Carlos Díaz Patiño — Prof. Asociado — Facultad de
+Medicina U. de Chile"**. Es decir, el radiólogo de la U. de Chile se apellida **Díaz Patiño**, y su
+subespecialidad declarada es imagenología de tórax: exactamente el tema de los dos papers. La doble
+afiliación (universidad pública + clínica privada) es lo normal en Chile, no una contradicción.
+
+No encontré ORCID para él, así que no hay una declaración propia que liste ambas formas del nombre.
+
+**Cuidado con un vecino:** `orlando-diaz-p` **no** es la misma persona — es broncopulmonar de la PUC,
+no radiólogo. Comparten apellido y probablemente familia; no los toqués.
+
+---
+
+### 5.3 — `uchile` + `hosp-uchile` · **es criterio tuyo, no un error de dato**
+
+Esto es una institución, no una persona. Hay dos nodos para lo mismo, nacidos de una sola cadena de
+afiliación ("Departamento de Radiología, Hospital Clínico Universidad de Chile") que la recolección
+partió en dos. `hosp-uchile` no tiene ninguna otra persona ni ningún otro hecho colgando.
+
+Pero el Hospital Clínico es jurídicamente una entidad distinta de la Universidad, así que separarlos
+puede ser correcto a propósito. La pregunta de fondo es de producto: **¿el mapa modela organizaciones
+jurídicas o lugares donde alguien trabaja?** Para un MSL que planifica visitas, creo que lo segundo
+sirve más — pero es tu llamado, no mío.
+
+### Pasos
+
+Contestame `5.1 sí/no`, `5.2 sí/no`, `5.3 fusionar/separar`. Cada fusión que aprobés queda igual que
+la de Silva: una sola ficha, con la URL de la evidencia citada como hecho y una `nota_identidad`
+visible que dice que se unificó, quién lo aprobó y con qué respaldo. Nada se borra en silencio.
+
+---
+
 ## Resumen de qué necesito de ti
 
 | # | Decisión | Qué necesito | Bloquea |
@@ -188,6 +288,7 @@ y lo agrego; es media hora de trabajo y cero riesgo.
 | 2 | OpenAlex | Que crees la cuenta y guardes la key como secret del repo | Desambiguación de identidad + gráfico de tendencia/rising stars |
 | 3 | Cadencia del pipeline | Tres respuestas cortas (cada cuánto, dónde, qué hacer ante conflicto) | Automatizar la recolección |
 | 4 | Capa privada | Solo confirmar si querés el paso chico (notas locales) o nada por ahora | Nada urgente |
+| 5 | Fusiones de identidad | `sí/no` a dos pares de fichas duplicadas, y un criterio para las instituciones | Que el mapa no muestre a la misma persona dos veces |
 
 La #1 es la que yo movería primero. Las otras tres son mejoras; esa es una promesa incumplida en
 un sitio público sobre personas reales.
