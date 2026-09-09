@@ -21,6 +21,7 @@ Fase 3 con datos reales de muestra — ver "Estado actual" al final de este arch
 | [DATA_SAMPLE.md](DATA_SAMPLE.md) | Qué trajo cada fuente y qué campos resultaron confiables o débiles |
 | [COMPETITORS.md](COMPETITORS.md) | Panorama competitivo |
 | [COSTS.md](COSTS.md) | Modelo de costos del pipeline de automatización |
+| [COLABORACION_IA.md](COLABORACION_IA.md) | **Traspaso para colaboradores IA** (ChatGPT, Gemini): reglas duras, modelo de datos, y en qué conviene que aporten |
 
 ## Objetivo
 
