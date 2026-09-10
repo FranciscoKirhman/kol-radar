@@ -30100,5 +30100,172 @@
     "El orden por defecto de la lista NO debe ser por puntaje/importancia — eso equivale a un ranking de 'a quién contactar primero', algo que el proyecto declara explícitamente que no hace. El orden por defecto debe ser neutral (ej. actividad más reciente); ordenar por puntaje debe requerir una acción explícita del usuario.",
     "Un mismo hecho real (ej. un rol de investigador principal, una coautoría) puede quedar registrado como 'hecho' completo en más de una entidad relacionada (la persona y la institución, por ejemplo) -- cada una lo cuenta desde su propia perspectiva. Esto significa que los puntajes de dos entidades distintas no son sumables entre sí como si cada punto representara un hecho único del mundo real; hay que explicitarlo donde se muestre el puntaje, no dejarlo implícito."
   ],
-  "nota_beta": "Beta. La expansión del 2026-09-09 sumó ensayos de ClinicalTrials.gov con al menos una ubicación declarada en Chile. Ningún hecho pasó revisión humana: todos entran como 'pendiente'. Las sedes que no se pudieron ligar a una institución conocida quedan listadas en el propio ensayo como pendientes de resolución, no descartadas."
+  "nota_beta": "Beta. La expansión del 2026-09-09 sumó ensayos de ClinicalTrials.gov con al menos una ubicación declarada en Chile. Ningún hecho pasó revisión humana: todos entran como 'pendiente'. Las sedes que no se pudieron ligar a una institución conocida quedan listadas en el propio ensayo como pendientes de resolución, no descartadas.",
+  "geo": {
+    "_nota": "Coordenadas que ClinicalTrials.gov declara para cada ciudad. Son el CENTROIDE DE LA CIUDAD, no la dirección del centro: todos los centros de Santiago comparten punto. El contorno de Chile viene de world.geo.json (Natural Earth, dominio público), simplificado a 114 puntos.",
+    "proyeccion": {
+      "tipo": "equirectangular",
+      "k_lon": 0.755099,
+      "caja": {
+        "x": -57.119,
+        "y": 17.58,
+        "w": 6.558,
+        "h": 38.032
+      }
+    },
+    "contorno": [
+      "M-51.825,52.636 L-51.825,54.870 L-51.016,54.870 L-50.561,54.897 L-50.811,55.301 L-51.459,55.612 L-51.830,55.580 L-52.277,55.499 L-52.825,55.198 L-53.616,55.054 L-54.566,54.495 L-55.338,53.958 L-56.378,52.837 L-55.755,53.047 L-54.695,53.715 L-53.693,54.074 L-53.304,53.616 L-53.059,52.931 L-52.363,52.518 L-51.825,52.636 Z",
+      "M-51.513,21.494 L-51.217,22.873 L-50.672,22.736 L-50.580,22.986 L-50.840,24.025 L-51.662,24.519 L-51.638,26.185 L-51.796,26.507 L-51.570,26.899 L-52.103,27.521 L-52.597,28.459 L-52.867,29.368 L-52.796,30.336 L-53.261,31.365 L-52.913,33.091 L-52.717,33.274 L-52.719,34.194 L-53.150,35.170 L-53.132,36.005 L-53.704,36.658 L-53.702,37.577 L-53.472,38.553 L-53.924,38.916 L-54.126,39.808 L-54.303,40.832 L-54.176,42.051 L-54.480,42.255 L-54.303,43.409 L-53.962,43.788 L-54.211,44.207 L-53.861,44.408 L-53.780,44.784 L-54.110,44.974 L-54.029,45.561 L-54.305,46.885 L-54.705,47.739 L-54.617,48.244 L-54.857,48.879 L-55.436,49.318 L-55.370,50.379 L-55.104,50.741 L-54.601,50.677 L-54.616,51.426 L-54.303,52.009 L-52.478,52.143 L-51.778,52.299 L-52.450,52.292 L-52.814,52.538 L-53.495,52.899 L-53.617,53.833 L-53.937,53.856 L-54.788,53.531 L-55.653,52.835 L-55.653,52.835 L-56.592,52.263 L-56.829,51.629 L-56.615,51.043 L-56.995,50.378 L-57.091,48.674 L-56.770,47.712 L-55.973,46.939 L-57.119,46.648 L-56.400,45.764 L-56.143,44.103 L-55.304,44.455 L-54.909,42.383 L-55.416,42.118 L-55.652,43.366 L-56.128,43.225 L-55.891,41.795 L-55.633,39.942 L-55.286,39.259 L-55.504,38.283 L-55.566,37.156 L-55.248,37.124 L-54.785,35.509 L-54.263,33.909 L-53.943,32.419 L-54.117,30.921 L-53.891,30.096 L-53.982,28.861 L-53.540,27.640 L-53.404,25.706 L-53.162,23.629 L-52.926,21.393 L-52.981,19.756 L-53.138,18.348 L-52.750,18.093 L-52.548,17.580 L-52.177,18.260 L-52.077,18.982 L-51.681,19.405 L-51.918,20.373 L-51.513,21.494 Z"
+    ],
+    "ciudades": {
+      "Santiago": {
+        "lat": -33.45694,
+        "lon": -70.64827
+      },
+      "Antofagasta": {
+        "lat": -23.65094,
+        "lon": -70.39752
+      },
+      "Las Condes": {
+        "lat": -33.41636,
+        "lon": -70.56413
+      },
+      "Providencia": {
+        "lat": -33.43107,
+        "lon": -70.60454
+      },
+      "Arica": {
+        "lat": -18.47552,
+        "lon": -70.30058
+      },
+      "Temuco": {
+        "lat": -38.73628,
+        "lon": -72.59738
+      },
+      "Valdivia": {
+        "lat": -39.81422,
+        "lon": -73.24589
+      },
+      "Valparaíso": {
+        "lat": -33.036,
+        "lon": -71.62963
+      },
+      "Independencia": {
+        "lat": -33.41167,
+        "lon": -70.66647
+      },
+      "Recoleta": {
+        "lat": -33.41667,
+        "lon": -70.65
+      },
+      "Reñaca": {
+        "lat": -32.98298,
+        "lon": -71.54374
+      },
+      "Viña del Mar": {
+        "lat": -33.02457,
+        "lon": -71.55183
+      },
+      "Concepción": {
+        "lat": -36.82699,
+        "lon": -73.04977
+      },
+      "La Serena": {
+        "lat": -29.90591,
+        "lon": -71.25014
+      },
+      "Jardin Del Mar, Renaca": {
+        "lat": -32.98298,
+        "lon": -71.54374
+      },
+      "Rancagua": {
+        "lat": -34.1691,
+        "lon": -70.74053
+      },
+      "Peñalolén": {
+        "lat": -33.46836,
+        "lon": -70.53411
+      },
+      "Vitacura": {
+        "lat": -33.39227,
+        "lon": -70.58275
+      },
+      "La Reina": {
+        "lat": -33.44156,
+        "lon": -70.54417
+      },
+      "Santiago, Rm 8431657": {
+        "lat": -33.45694,
+        "lon": -70.64827
+      },
+      "Molina": {
+        "lat": -35.11428,
+        "lon": -71.28232
+      },
+      "Osorno": {
+        "lat": -40.57395,
+        "lon": -73.13348
+      },
+      "Puente Alto": {
+        "lat": -33.61169,
+        "lon": -70.57577
+      },
+      "Port Montt": {
+        "lat": -41.4693,
+        "lon": -72.94237
+      },
+      "Coquimbo": {
+        "lat": -29.95332,
+        "lon": -71.33947
+      },
+      "Curanilahue": {
+        "lat": -37.47793,
+        "lon": -73.34495
+      },
+      "Nueva Imperial": {
+        "lat": -38.74451,
+        "lon": -72.95025
+      },
+      "Victoria": {
+        "lat": -38.23291,
+        "lon": -72.33292
+      },
+      "Villarrica": {
+        "lat": -39.28569,
+        "lon": -72.2279
+      },
+      "Talca": {
+        "lat": -35.4232,
+        "lon": -71.64974
+      },
+      "San Miguel": {
+        "lat": -33.49168,
+        "lon": -70.65709
+      },
+      "La Florida": {
+        "lat": -33.53833,
+        "lon": -70.55446
+      },
+      "Maule": {
+        "lat": -35.52249,
+        "lon": -71.68891
+      },
+      "Talcahuano": {
+        "lat": -36.72494,
+        "lon": -73.11684
+      },
+      "Coyhaique": {
+        "lat": -45.57524,
+        "lon": -72.06619
+      },
+      "Lo Barnechea": {
+        "lat": -33.36071,
+        "lon": -70.51244
+      },
+      "Iquique": {
+        "lat": -20.21326,
+        "lon": -70.15027
+      }
+    }
+  }
 }

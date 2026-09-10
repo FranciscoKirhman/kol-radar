@@ -267,6 +267,15 @@
   }
   .area-acciones button:hover { color: var(--text-primary); border-color: var(--text-primary); }
   .card[data-area-color] { border-left-color: var(--area-color); }
+  #geo-view { display: none; }
+  #geo-view.active { display: block; }
+  #geomap { width: 100%; height: min(78vh, 760px); display: block; background: var(--surface-0);
+            border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
+  @media (max-width: 720px) { #geomap { height: 68vh; min-height: 380px; } }
+  .geo-pais { fill: var(--surface-2); stroke: var(--border); stroke-width: .12; }
+  .geo-ciudad { cursor: pointer; stroke: var(--surface-0); stroke-width: .1; }
+  .geo-ciudad:hover, .geo-ciudad.sel { stroke: var(--text-primary); stroke-width: .25; }
+  .geo-label { font-size: 1.1px; fill: var(--text-secondary); pointer-events: none; }
   /* ---------- Network view ---------- */
   #network-view { display: none; }
   #network-view.active { display: block; }
@@ -493,7 +502,8 @@
       <input id="search" type="search" placeholder="Buscar por nombre, institución o ciudad…" autocomplete="off" />
     </div>
     <div class="view-switch" role="group" aria-label="Cambiar de vista">
-      <button type="button" class="view-btn" id="view-mapa" aria-pressed="true">Mapa</button>
+      <button type="button" class="view-btn" id="view-mapa" aria-pressed="true">Conexiones</button>
+      <button type="button" class="view-btn" id="view-geo" aria-pressed="false">Chile</button>
       <button type="button" class="view-btn" id="view-lista" aria-pressed="false">Fichas</button>
     </div>
     <a class="dev-link" href="interno.html" title="Cómo se construyó esto y de dónde salen los datos">Detalles técnicos ↗</a>
@@ -575,6 +585,19 @@
     <div class="loading-state" id="loading-state">Cargando datos de <code>data/sample/perfiles-muestra.json</code>…</div>
     <div class="error-state" id="error-state" hidden></div>
     <div class="empty-state" id="empty-state" hidden>Sin resultados para esa búsqueda.</div>
+  </section>
+
+  <section id="geo-view">
+    <p class="network-hint" id="geo-hint"></p>
+    <div class="network-view-wrap geo-wrap">
+      <svg id="geomap" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="network-toolbar">
+        <button type="button" class="zoom-btn" id="geo-in" aria-label="Acercar">+</button>
+        <button type="button" class="zoom-btn" id="geo-out" aria-label="Alejar">−</button>
+        <button type="button" class="zoom-btn" id="geo-reset" aria-label="Restablecer vista" title="Restablecer vista">⟲</button>
+      </div>
+      <div class="node-tooltip" id="geo-tooltip" role="status" aria-live="polite"></div>
+    </div>
   </section>
 
   <section id="network-view" class="active">
@@ -686,7 +709,8 @@
   // Orden por defecto = "reciente", no "senales": el producto no debe decidir por
   // adelantado un ranking de "a quién contactar primero" -- eso es una decisión del
   // usuario, que puede activarla explícitamente con el chip de abajo.
-  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", areas: [], soloShortlist: false, reclutando: false };
+  var datosGeo = null;
+  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", areas: [], ciudad: null, soloShortlist: false, reclutando: false };
 
   // Capas del grafo: qué tipos de nodo y qué tipos de conexión se dibujan. Es distinto del
   // filtro de la lista (state.filter) a propósito — acá se compone un mapa, no se filtra
@@ -970,6 +994,7 @@
     })
     .then(function (data) {
       entidades = data.entidades || [];
+      datosGeo = data.geo || null;
       vinculos = data.vinculos || [];
       entidades.forEach(function (n) { byId[n.id] = n; });
       // Una shortlist guardada puede apuntar a ids que ya no existen (el dataset cambia entre
@@ -1046,13 +1071,34 @@
 
   // Región derivada del campo ciudad. Los ensayos multi-sitio ("Chile (5 sitios)") NO reciben una
   // región inventada — se marcan como multi-sitio, que es lo que la fuente realmente dice.
+  // Una regla por región, con las ciudades y comunas que aparecen en los datos. Antes solo
+  // había cinco regiones y ciudades reales como Antofagasta, La Serena, Valdivia, Rancagua,
+  // Talca o Arica caían en "Sin región identificada".
   var REGION_RULES = [
-    { region: "Región Metropolitana", kw: ["santiago", "providencia", "recoleta", "vitacura", "las condes"] },
-    { region: "Biobío", kw: ["concepción", "concepcion"] },
-    { region: "La Araucanía", kw: ["temuco"] },
-    { region: "Los Lagos", kw: ["puerto montt"] },
-    { region: "Valparaíso", kw: ["viña del mar", "vina del mar", "valparaíso", "valparaiso"] }
+    { region: "Arica y Parinacota", kw: ["arica"] },
+    { region: "Tarapacá", kw: ["iquique", "alto hospicio"] },
+    { region: "Antofagasta", kw: ["antofagasta", "calama"] },
+    { region: "Atacama", kw: ["copiapó", "copiapo"] },
+    { region: "Coquimbo", kw: ["la serena", "coquimbo", "ovalle"] },
+    { region: "Valparaíso", kw: ["viña del mar", "vina del mar", "valparaíso", "valparaiso",
+                                  "reñaca", "renaca", "quilpué", "quilpue", "san antonio"] },
+    { region: "Región Metropolitana", kw: ["santiago", "providencia", "recoleta", "vitacura",
+                                            "las condes", "independencia", "ñuñoa", "nunoa",
+                                            "maipú", "maipu", "puente alto", "la florida",
+                                            "peñalolén", "penalolen", "macul", "san miguel",
+                                            "huechuraba", "quilicura", "estación central",
+                                            "estacion central", "lo barnechea", "la reina"] },
+    { region: "O'Higgins", kw: ["rancagua", "san fernando"] },
+    { region: "Maule", kw: ["talca", "curicó", "curico", "linares"] },
+    { region: "Ñuble", kw: ["chillán", "chillan"] },
+    { region: "Biobío", kw: ["concepción", "concepcion", "talcahuano", "los ángeles", "los angeles"] },
+    { region: "La Araucanía", kw: ["temuco", "villarrica", "angol"] },
+    { region: "Los Ríos", kw: ["valdivia"] },
+    { region: "Los Lagos", kw: ["puerto montt", "port montt", "osorno", "puerto varas", "castro"] },
+    { region: "Aysén", kw: ["coyhaique", "coihaique"] },
+    { region: "Magallanes", kw: ["punta arenas"] }
   ];
+
   function regionOf(n) {
     var c = (n.ciudad || "").toLowerCase();
     var hit = REGION_RULES.find(function (r) { return r.kw.some(function (k) { return c.indexOf(k) !== -1; }); });
@@ -1147,6 +1193,7 @@
     }
     if (state.areas.length && state.areas.indexOf(n.area || "cáncer de pulmón") === -1) return false;
     if (state.region !== "todas" && regionOf(n) !== state.region) return false;
+    if (state.ciudad && ciudadDe(n) !== state.ciudad) return false;
     // Filtro de reclutamiento: aplica al ensayo, y también a personas/instituciones ligadas a
     // al menos un ensayo que hoy recluta en Chile — que es la pregunta real del MSL.
     if (state.reclutando) {
@@ -1893,15 +1940,163 @@
   var networkView = document.getElementById("network-view");
   var networkBuilt = false;
 
-  function mostrarVista(mapa) {
-    networkView.classList.toggle("active", mapa);
-    listView.classList.toggle("active", !mapa);
-    btnMapa.setAttribute("aria-pressed", String(mapa));
-    btnLista.setAttribute("aria-pressed", String(!mapa));
-    if (mapa && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
+  var geoView = document.getElementById("geo-view");
+  var btnGeo = document.getElementById("view-geo");
+
+  function mostrarVista(cual) {
+    if (cual === true) cual = "conexiones";
+    if (cual === false) cual = "fichas";
+    networkView.classList.toggle("active", cual === "conexiones");
+    geoView.classList.toggle("active", cual === "chile");
+    listView.classList.toggle("active", cual === "fichas");
+    btnMapa.setAttribute("aria-pressed", String(cual === "conexiones"));
+    btnGeo.setAttribute("aria-pressed", String(cual === "chile"));
+    btnLista.setAttribute("aria-pressed", String(cual === "fichas"));
+    if (cual === "conexiones" && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
+    if (cual === "chile" && entidades.length) buildGeo();
   }
-  btnMapa.addEventListener("click", function () { mostrarVista(true); });
-  btnLista.addEventListener("click", function () { mostrarVista(false); });
+  btnMapa.addEventListener("click", function () { mostrarVista("conexiones"); });
+  btnGeo.addEventListener("click", function () { mostrarVista("chile"); });
+  btnLista.addEventListener("click", function () { mostrarVista("fichas"); });
+
+  // ---------------- Mapa de Chile ----------------
+  // Puntos reales: la latitud y longitud que ClinicalTrials.gov declara para cada ciudad, y el
+  // contorno del país de Natural Earth (dominio público), ambos guardados en el JSON.
+  // Límite honesto: la fuente geocodifica a la CIUDAD, no a la dirección del centro. Todos los
+  // centros de Santiago comparten un punto, así que el mapa muestra dónde hay actividad, no
+  // dónde queda cada edificio. Por eso el punto se dimensiona por cuántas entidades hay ahí.
+  var GEO_VB = null, geoVB = null;
+
+  // A escala de país, las comunas del Gran Santiago son Santiago: la fuente las geocodifica a
+  // menos de 0,05° unas de otras y sus etiquetas se apilan sin decir nada. "Port Montt" es un
+  // error de tipeo de la propia fuente, no una ciudad distinta.
+  var COMUNAS_RM = ["providencia", "recoleta", "las condes", "independencia", "ñuñoa", "nunoa",
+                    "vitacura", "maipú", "maipu", "puente alto", "la florida", "macul",
+                    "huechuraba", "quilicura", "lo barnechea", "la reina", "san miguel",
+                    "peñalolén", "penalolen", "estación central", "estacion central"];
+  function ciudadDe(n) {
+    var c = (n.ciudad || "").split(" (")[0].trim();
+    var l = c.toLowerCase();
+    if (COMUNAS_RM.indexOf(l) !== -1) return "Santiago";
+    if (l === "port montt") return "Puerto Montt";
+    if (l === "reñaca" || l === "renaca") return "Viña del Mar";
+    return c;
+  }
+
+  function buildGeo() {
+    var g = datosGeo;
+    var svg = document.getElementById("geomap");
+    var hint = document.getElementById("geo-hint");
+    if (!g || !g.contorno) { hint.textContent = "Este conjunto no trae coordenadas."; return; }
+    svg.innerHTML = "";
+    var NS = "http://www.w3.org/2000/svg";
+    var caja = g.proyeccion.caja, K = g.proyeccion.k_lon;
+    var pad = 1.5;
+    GEO_VB = { x: caja.x - pad, y: caja.y - pad, w: caja.w + pad * 2, h: caja.h + pad * 2 };
+    if (!geoVB) geoVB = { x: GEO_VB.x, y: GEO_VB.y, w: GEO_VB.w, h: GEO_VB.h };
+    svg.setAttribute("viewBox", geoVB.x + " " + geoVB.y + " " + geoVB.w + " " + geoVB.h);
+    svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+
+    g.contorno.forEach(function (d) {
+      var pth = document.createElementNS(NS, "path");
+      pth.setAttribute("d", d); pth.setAttribute("class", "geo-pais");
+      svg.appendChild(pth);
+    });
+
+    // Cuántas entidades visibles hay en cada ciudad, respetando los filtros activos.
+    var porCiudad = {};
+    entidades.filter(matches).forEach(function (n) {
+      var c = ciudadDe(n);
+      if (!g.ciudades[c]) return;
+      (porCiudad[c] = porCiudad[c] || { total: 0, persona: 0, institucion: 0, ensayo_clinico: 0 });
+      porCiudad[c].total++; porCiudad[c][n.tipo]++;
+    });
+    var nombres = Object.keys(porCiudad).sort(function (a, b) { return porCiudad[b].total - porCiudad[a].total; });
+    var maxN = nombres.length ? porCiudad[nombres[0]].total : 1;
+    var sinCoords = entidades.filter(matches).filter(function (n) { return !g.ciudades[ciudadDe(n)]; }).length;
+
+    var tip = document.getElementById("geo-tooltip");
+    nombres.forEach(function (c, i) {
+      var cc = g.ciudades[c];
+      var x = cc.lon * K, y = -cc.lat;
+      var r = 0.35 + Math.sqrt(porCiudad[c].total / maxN) * 1.5;
+      var pt = document.createElementNS(NS, "circle");
+      pt.setAttribute("cx", x); pt.setAttribute("cy", y); pt.setAttribute("r", r);
+      pt.setAttribute("class", "geo-ciudad" + (state.ciudad === c ? " sel" : ""));
+      pt.setAttribute("fill", "var(--accent)");
+      pt.setAttribute("tabindex", "0"); pt.setAttribute("role", "button");
+      pt.setAttribute("aria-label", c + " — " + porCiudad[c].total + " entidades");
+      function detalle() {
+        return c + " · " + porCiudad[c].total + " entidades (" + porCiudad[c].persona + " personas, " +
+               porCiudad[c].institucion + " instituciones, " + porCiudad[c].ensayo_clinico + " ensayos)";
+      }
+      pt.addEventListener("mouseenter", function (ev) {
+        tip.textContent = detalle(); tip.classList.add("show");
+        tip.style.left = (ev.offsetX + 12) + "px"; tip.style.top = (ev.offsetY + 12) + "px";
+      });
+      pt.addEventListener("mouseleave", function () { tip.classList.remove("show"); });
+      pt.addEventListener("click", function () {
+        state.ciudad = (state.ciudad === c) ? null : c;
+        renderCards(); invalidateNetwork(); buildGeo();
+      });
+      pt.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pt.dispatchEvent(new MouseEvent("click")); }
+      });
+      svg.appendChild(pt);
+      if (i < 12 && porCiudad[c].total >= 3) {
+        var t = document.createElementNS(NS, "text");
+        var izq = i % 2 === 1;   // alternar lado: en el centro del país los puntos se apiñan
+        t.setAttribute("x", izq ? x - r - 0.4 : x + r + 0.4);
+        t.setAttribute("y", y + 0.4);
+        if (izq) t.setAttribute("text-anchor", "end");
+        t.setAttribute("class", "geo-label"); t.textContent = c;
+        svg.appendChild(t);
+      }
+    });
+
+    hint.textContent = nombres.length + (nombres.length === 1 ? " ciudad con actividad" : " ciudades con actividad") +
+      (state.ciudad ? " · filtrando por " + state.ciudad + " (tocá el punto otra vez para quitarlo)" : "") +
+      ". El punto crece con la cantidad de entidades. La fuente ubica cada centro en el centro de su " +
+      "ciudad, no en su dirección, así que los de una misma ciudad comparten posición" +
+      (sinCoords ? ". " + sinCoords + " entidades no tienen ciudad reconocida y no aparecen acá." : ".");
+  }
+
+  function aplicarGeoVB() {
+    document.getElementById("geomap").setAttribute("viewBox",
+      geoVB.x + " " + geoVB.y + " " + geoVB.w + " " + geoVB.h);
+  }
+  function zoomGeo(f) {
+    if (!geoVB || !GEO_VB) return;
+    var nw = Math.max(GEO_VB.w / 14, Math.min(GEO_VB.w, geoVB.w * f));
+    var nh = nw * (geoVB.h / geoVB.w);
+    geoVB.x += (geoVB.w - nw) / 2; geoVB.y += (geoVB.h - nh) / 2;
+    geoVB.w = nw; geoVB.h = nh; aplicarGeoVB();
+  }
+  document.getElementById("geo-in").addEventListener("click", function () { zoomGeo(0.75); });
+  document.getElementById("geo-out").addEventListener("click", function () { zoomGeo(1.33); });
+  document.getElementById("geo-reset").addEventListener("click", function () {
+    if (GEO_VB) { geoVB = { x: GEO_VB.x, y: GEO_VB.y, w: GEO_VB.w, h: GEO_VB.h }; aplicarGeoVB(); }
+  });
+  (function () {
+    var svg = document.getElementById("geomap");
+    svg.addEventListener("wheel", function (ev) { ev.preventDefault(); zoomGeo(ev.deltaY > 0 ? 1.12 : 0.89); },
+      { passive: false });
+    var pan = false, p0 = null, v0 = null;
+    svg.addEventListener("pointerdown", function (ev) {
+      if (ev.target.closest(".geo-ciudad")) return;
+      pan = true; p0 = { x: ev.clientX, y: ev.clientY }; v0 = { x: geoVB.x, y: geoVB.y };
+      svg.setPointerCapture(ev.pointerId);
+    });
+    svg.addEventListener("pointermove", function (ev) {
+      if (!pan || !geoVB) return;
+      var r = svg.getBoundingClientRect();
+      geoVB.x = v0.x - (ev.clientX - p0.x) * (geoVB.w / r.width);
+      geoVB.y = v0.y - (ev.clientY - p0.y) * (geoVB.h / r.height);
+      aplicarGeoVB();
+    });
+    svg.addEventListener("pointerup", function () { pan = false; });
+    svg.addEventListener("pointercancel", function () { pan = false; });
+  })();
 
   // ---------------- Foco: aislar la red de un nodo ----------------
   // Con 400 nodos dibujados, "¿con quién se conecta esta persona?" no se contesta mirando: la
