@@ -655,6 +655,8 @@
           <button class="legend-toggle" data-arista="persona|persona" aria-pressed="true">Persona ↔ Persona</button>
           <button class="legend-toggle" data-arista="institucion|institucion" aria-pressed="true">Institución ↔ Institución</button>
           <button class="legend-toggle" data-arista="persona|tema" aria-pressed="true">Persona ↔ Tema</button>
+          <button class="legend-toggle" data-arista="ensayo_clinico|tema" aria-pressed="true">Ensayo ↔ Tema</button>
+          <button class="legend-toggle" data-arista="institucion|tema" aria-pressed="true">Institución ↔ Tema</button>
         </div>
       </div>
       <div class="layer-block">
@@ -724,7 +726,8 @@
     aristas: {
       "persona|institucion": true, "persona|ensayo_clinico": true,
       "institucion|ensayo_clinico": true, "persona|persona": true,
-      "institucion|institucion": true, "persona|tema": true
+      "institucion|institucion": true, "persona|tema": true,
+      "ensayo_clinico|tema": true, "institucion|tema": true
     },
     ocultarAislados: false
   };
@@ -1112,7 +1115,11 @@
   }
 
   function entidadTexto(n) {
-    return n.hechos.map(function (h) { return (h.hecho || "") + " " + (h.revista || ""); }).join(" ");
+    // En un ensayo, el fármaco vive en `intervenciones` y el asunto en el título de la fuente;
+    // sin eso, las reglas de tema no tenían con qué reconocerlo.
+    return n.hechos.map(function (h) { return (h.hecho || "") + " " + (h.revista || ""); }).join(" ") +
+           " " + (n.intervenciones || []).join(" ") + " " + (n.titulo_fuente || "") +
+           " " + (n.condiciones || []).join(" ");
   }
   function tagsFor(n) {
     if (n._tagsCache) return n._tagsCache;
@@ -2236,10 +2243,15 @@
   var temaEntidades = [], temaVinculos = [];
   function construirTemas() {
     temaEntidades = []; temaVinculos = [];
-    var porTag = {};
+    var porTag = {}, ensayosPorTag = {};
     entidades.forEach(function (n) {
-      if (n.tipo !== "persona") return;
-      tagsFor(n).forEach(function (t) { (porTag[t] = porTag[t] || []).push(n.id); });
+      if (n.tipo === "persona") {
+        tagsFor(n).forEach(function (t) { (porTag[t] = porTag[t] || []).push(n.id); });
+      } else if (n.tipo === "ensayo_clinico") {
+        // Un ensayo trata sobre un tema tanto como una persona trabaja en él. Sin esta rama,
+        // temas y ensayos quedaban en el mismo grafo sin una sola arista entre ellos.
+        tagsFor(n).forEach(function (t) { (ensayosPorTag[t] = ensayosPorTag[t] || []).push(n.id); });
+      }
     });
     // Un tema solo informa si DISTINGUE. En un conjunto de una sola enfermedad, "NSCLC"
     // tocaba al 21% de las personas y "Tamizaje" al 20%: eran el tema del dataset entero,
@@ -2247,22 +2259,55 @@
     // Se descartan los que cubren demasiado; el umbral se relaja al filtrar por un área,
     // porque ahí el conjunto ya está acotado y un tema amplio vuelve a discriminar.
     var universo = entidades.filter(function (n) { return n.tipo === "persona" && matches(n); }).length || 1;
+    var universoEnsayos = entidades.filter(function (n) { return n.tipo === "ensayo_clinico" && matches(n); }).length || 1;
     var TECHO = 0.18;
-    Object.keys(porTag).forEach(function (t) {
-      // Un tema con una sola persona no aporta estructura al grafo.
-      if (porTag[t].length < 2) return;
-      if (porTag[t].length / universo > TECHO && porTag[t].length > 5) return;
+    // Una institución no declara temas: su texto propio es genérico ("figura como sede…").
+    // Su tema se deriva de lo que tiene colgando —los ensayos que aloja y la gente afiliada—,
+    // que es lo que de verdad se puede afirmar sobre ella.
+    var instPorTag = {};
+    var tagsDe = {};
+    Object.keys(porTag).forEach(function (t) { porTag[t].forEach(function (id) { (tagsDe[id] = tagsDe[id] || []).push(t); }); });
+    Object.keys(ensayosPorTag).forEach(function (t) { ensayosPorTag[t].forEach(function (id) { (tagsDe[id] = tagsDe[id] || []).push(t); }); });
+    vinculos.forEach(function (v) {
+      [[v.origen, v.destino], [v.destino, v.origen]].forEach(function (par) {
+        var inst = byId[par[0]], otro = par[1];
+        if (!inst || inst.tipo !== "institucion" || !tagsDe[otro]) return;
+        tagsDe[otro].forEach(function (t) {
+          var lista = (instPorTag[t] = instPorTag[t] || []);
+          if (lista.indexOf(par[0]) === -1) lista.push(par[0]);
+        });
+      });
+    });
+
+    var tags = Object.keys(porTag);
+    Object.keys(ensayosPorTag).forEach(function (t) { if (tags.indexOf(t) === -1) tags.push(t); });
+    Object.keys(instPorTag).forEach(function (t) { if (tags.indexOf(t) === -1) tags.push(t); });
+    tags.forEach(function (t) {
+      var personas = (porTag[t] || []).length, ensayos = (ensayosPorTag[t] || []).length;
+      // Un tema aporta estructura si conecta al menos dos personas, o varios ensayos.
+      if (personas < 2 && ensayos < 3) return;
+      if (personas / universo > TECHO && personas > 5) return;
+      // El mismo criterio para los ensayos. Sin esto, sumar ensayos revivía el problema que
+      // el techo resolvía: "Inmunoterapia" pasaba a tocar 227 de 579 ensayos —el 39%— y volvía
+      // a ser un hub conectado a todo, que es no decir nada.
+      if (ensayos / universoEnsayos > TECHO && ensayos > 15) return;
       var id = "tema:" + t;
       var regla = TAG_RULES.filter(function (r) { return r.tag === t; })[0];
       var ent = {
         id: id, nombre: t, tipo: "tema",
         ciudad: "—", subtitulo: (regla ? regla.categoria : "Tema"),
-        hechos: [], _personas: porTag[t].length
+        hechos: [], _personas: personas
       };
       temaEntidades.push(ent);
       byId[id] = ent;
-      porTag[t].forEach(function (pid) {
+      (porTag[t] || []).forEach(function (pid) {
         temaVinculos.push({ origen: pid, destino: id, tipo: "trabaja en" });
+      });
+      (ensayosPorTag[t] || []).forEach(function (eid) {
+        temaVinculos.push({ origen: eid, destino: id, tipo: "evalúa" });
+      });
+      (instPorTag[t] || []).forEach(function (iid) {
+        temaVinculos.push({ origen: iid, destino: id, tipo: "actividad en" });
       });
     });
   }
@@ -2741,7 +2786,8 @@
       circle.setAttribute("tabindex", "0");
       circle.setAttribute("role", "button");
       circle.setAttribute("aria-label", n.tipo === "tema"
-        ? "Tema " + n.nombre + " — " + deg + " persona" + (deg === 1 ? "" : "s") + " trabajan en esto"
+        ? "Tema " + n.nombre + " — " + deg + (deg === 1 ? " conexión" : " conexiones") +
+          (n._personas ? " (" + n._personas + " persona" + (n._personas === 1 ? "" : "s") + ")" : "")
         : n.nombre + " — " + (typeLabel[n.tipo] || n.tipo) + ", " + deg + " conexion" + (deg === 1 ? "" : "es"));
       var activar = n.tipo === "tema"
         ? function () { if (foco === n.id) limpiarFoco(); else aplicarFoco(n.id); }
@@ -2919,8 +2965,8 @@
     coautoria:  { nodos: { persona: 1, institucion: 0, ensayo_clinico: 0, tema: 0 },
                   aristas: { "persona|institucion": 0, "persona|ensayo_clinico": 0, "institucion|ensayo_clinico": 0, "persona|persona": 1, "institucion|institucion": 0, "persona|tema": 0 },
                   aislados: true },
-    temas:      { nodos: { persona: 1, institucion: 0, ensayo_clinico: 0, tema: 1 },
-                  aristas: { "persona|institucion": 0, "persona|ensayo_clinico": 0, "institucion|ensayo_clinico": 0, "persona|persona": 0, "institucion|institucion": 0, "persona|tema": 1 },
+    temas:      { nodos: { persona: 1, institucion: 1, ensayo_clinico: 1, tema: 1 },
+                  aristas: { "persona|institucion": 0, "persona|ensayo_clinico": 0, "institucion|ensayo_clinico": 0, "persona|persona": 0, "institucion|institucion": 0, "persona|tema": 1, "ensayo_clinico|tema": 1, "institucion|tema": 1 },
                   aislados: true },
     ensayos:    { nodos: { persona: 1, institucion: 1, ensayo_clinico: 1, tema: 0 },
                   aristas: { "persona|institucion": 0, "persona|ensayo_clinico": 1, "institucion|ensayo_clinico": 1, "persona|persona": 0, "institucion|institucion": 0, "persona|tema": 0 },
