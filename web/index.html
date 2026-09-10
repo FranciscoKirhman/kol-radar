@@ -237,8 +237,12 @@
   .area-menu > summary::-webkit-details-marker { display: none; }
   .area-menu > summary::after { content: " ▾"; color: var(--text-muted); }
   .area-menu[open] > summary { border-color: var(--text-primary); color: var(--text-primary); }
+  /* `position: fixed`, no `absolute`: la fila de filtros tiene `overflow-x: auto` y recortaba
+     el panel, que quedaba dibujado fuera del área visible y sin poder tocarse. "Filtros
+     avanzados" no tenía el problema porque su panel vive fuera de esa fila. Las coordenadas
+     las pone el JS al abrir, desde la posición real del botón. */
   .area-panel {
-    position: absolute; z-index: 25; top: calc(100% + 6px); left: 0;
+    position: fixed; z-index: 25;
     min-width: 300px; max-height: 60vh; overflow-y: auto;
     background: var(--surface-0); border: 1px solid var(--border);
     border-radius: 10px; padding: 8px; box-shadow: 0 8px 28px rgba(0,0,0,.28);
@@ -989,7 +993,11 @@
       renderCards();
       // El mapa es la vista de entrada, así que se construye acá: si se dejara para el primer
       // click del botón, al abrir el sitio se vería el panel vacío.
-      if (networkView.classList.contains("active")) { buildNetwork(); networkBuilt = true; }
+      // El grafo se arma en el tick siguiente: así el encabezado, los filtros y el aviso de
+      // beta se pintan de inmediato en vez de esperar a que termine la simulación.
+      if (networkView.classList.contains("active")) {
+        setTimeout(function () { buildNetwork(); networkBuilt = true; }, 0);
+      }
     })
     .catch(function (err) {
       document.getElementById("loading-state").hidden = true;
@@ -1706,6 +1714,17 @@
       var menu = document.getElementById("area-menu");
       if (menu && menu.hasAttribute("open") && !menu.contains(ev.target)) menu.removeAttribute("open");
     });
+
+    // Al abrir se ancla al botón. Si no cabe hacia la derecha, se pega al borde.
+    var menuEl = document.getElementById("area-menu");
+    menuEl.addEventListener("toggle", function () {
+      if (!menuEl.open) return;
+      var r = document.getElementById("area-summary").getBoundingClientRect();
+      var ancho = 300;
+      panel.style.top = Math.round(r.bottom + 6) + "px";
+      panel.style.left = Math.round(Math.max(8, Math.min(r.left, window.innerWidth - ancho - 8))) + "px";
+      panel.style.maxHeight = Math.round(window.innerHeight - r.bottom - 24) + "px";
+    });
   }
 
 
@@ -2231,7 +2250,7 @@
     // solución correcta sería un quadtree (Barnes-Hut); acá se acota el trabajo, que es lineal
     // en las iteraciones y se puede comprobar mirando el resultado. Las anclas ya hacen el
     // trabajo estructural, así que la simulación converge antes de lo que parece.
-    var ITERACIONES = nodes.length > 300 ? 45 : 300;
+    var ITERACIONES = nodes.length > 300 ? 22 : 300;
 
     for (var iter = 0; iter < ITERACIONES; iter++) {
       for (var v0 = 0; v0 < CELDAS.length; v0++) CELDAS[v0].length = 0;
