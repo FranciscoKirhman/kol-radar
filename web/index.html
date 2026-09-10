@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>KOL Radar — oncología en Chile (demo)</title>
+<title>KOL Radar — oncología en Chile (beta)</title>
 <style>
   /* Dirección visual "publicación científica": papel cálido, tinta serif en los nombres,
      el grafo presentado como figura. Paleta categórica validada con validate_palette.js
@@ -212,6 +212,23 @@
   .empty-state, .loading-state, .error-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 13.5px; }
   .error-state { color: var(--institucion); }
 
+  /* ---------- Aviso de beta ---------- */
+  .beta-bar {
+    max-width: 1080px; margin: 12px auto 0; padding: 12px 16px;
+    border: 1px solid var(--border); border-left: 3px solid var(--accent);
+    border-radius: 8px; background: var(--surface-1);
+    font-size: 12.5px; line-height: 1.5; color: var(--text-secondary);
+    display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap;
+  }
+  .beta-bar strong { color: var(--text-primary); }
+  .beta-bar .beta-txt { flex: 1 1 420px; }
+  .beta-bar a { color: var(--text-primary); }
+  .beta-cta {
+    font: inherit; font-size: 12.5px; font-weight: 600; white-space: nowrap;
+    padding: 7px 13px; border-radius: 999px; text-decoration: none;
+    border: 1px solid var(--text-primary); color: var(--text-primary);
+  }
+  .beta-cta:hover { background: var(--text-primary); color: var(--surface-0); }
   /* ---------- Network view ---------- */
   #network-view { display: none; }
   #network-view.active { display: block; }
@@ -219,11 +236,43 @@
   /* El alto es DEFINIDO a propósito, nunca "auto". Con height:auto el alto del SVG lo decide
      su propio viewBox, así que medirlo para calcular el viewBox es circular: buildNetwork leía
      siempre la proporción que ya tenía y nunca convergía a la forma real del hueco. */
-  #network-view svg { width: 100%; height: min(72vh, 620px); display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
+  #network-view svg { width: 100%; height: min(78vh, 760px); display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
   @media (max-width: 720px) {
     #network-view svg { height: 65vh; min-height: 380px; }
   }
   .network-hint { font-size: 12.5px; color: var(--text-muted); margin: 0 0 10px; }
+  /* Conmutador de vista. Antes era un chip al final de la fila de filtros, con la etiqueta del
+     estado CONTRARIO ("Ver lista" cuando estabas en el mapa): había que leerla dos veces para
+     saber dónde estabas. Acá los dos destinos se ven siempre y el activo está marcado. */
+  .view-switch {
+    display: inline-flex; border: 1px solid var(--border); border-radius: 999px;
+    overflow: hidden; background: var(--surface-1); flex: 0 0 auto;
+  }
+  .view-btn {
+    font: inherit; font-size: 12.5px; font-weight: 600; padding: 7px 16px;
+    border: none; background: none; color: var(--text-muted); cursor: pointer;
+  }
+  .view-btn[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-0); }
+  .view-btn:not([aria-pressed="true"]):hover { color: var(--text-primary); }
+
+  /* Barra de foco: aparece al aislar la red de un nodo. Lleva siempre la salida al lado. */
+  .foco-bar {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    margin: 0 0 10px; padding: 9px 14px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    font-size: 12.5px; color: var(--text-secondary);
+  }
+  .foco-bar strong { color: var(--text-primary); }
+  .foco-bar .foco-sep { flex: 1 1 auto; }
+  .foco-bar button {
+    font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;
+    padding: 5px 13px; border-radius: 999px; background: none;
+    border: 1px solid var(--text-primary); color: var(--text-primary);
+  }
+  .foco-bar button:hover { background: var(--text-primary); color: var(--surface-0); }
+  .network-presets {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 10px;
+  }
   .network-layers { display: flex; flex-direction: column; gap: 8px; padding: 12px 4px 0; }
   .layer-block { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .layer-title { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--text-muted); min-width: 132px; }
@@ -244,7 +293,11 @@
   .node-circle { cursor: pointer; stroke: var(--surface-0); stroke-width: 2px; }
   .node-circle:hover { stroke: var(--text-primary); }
   .edge-line { stroke: color-mix(in srgb, var(--text-muted) 45%, transparent); stroke-width: 1px; }
-  .node-label { font-size: 9px; fill: var(--text-secondary); pointer-events: none; }
+  /* El tamaño va en unidades del viewBox, así que al agrandar el lienzo para grafos grandes
+     el texto se encoge en pantalla. Se compensa con la raíz de la escala: no del todo —eso
+     devolvería la densidad original y anularía el beneficio de agrandar— pero lo suficiente
+     para que no quede microscópico. El resto lo resuelve el zoom. */
+  .node-label { font-size: calc(9px * var(--escala-etiqueta, 1)); fill: var(--text-secondary); pointer-events: none; }
 
   /* Capa "futurista" — solo el grafo global (.global-node/.global-edge), el mini-grafo
      ego-céntrico del panel de detalle se queda simple a propósito. */
@@ -365,10 +418,14 @@
 <header class="topbar">
   <div class="topbar-row">
     <span class="brand">KOL Radar</span>
-    <span class="specialty-badge" id="specialty-badge">demo</span>
+    <span class="specialty-badge" id="specialty-badge">beta</span>
     <div class="search-wrap">
       <span class="icon">⌕</span>
       <input id="search" type="search" placeholder="Buscar por nombre, institución o ciudad…" autocomplete="off" />
+    </div>
+    <div class="view-switch" role="group" aria-label="Cambiar de vista">
+      <button type="button" class="view-btn" id="view-mapa" aria-pressed="true">Mapa</button>
+      <button type="button" class="view-btn" id="view-lista" aria-pressed="false">Fichas</button>
     </div>
     <a class="dev-link" href="interno.html" title="Cómo se construyó esto y de dónde salen los datos">Detalles técnicos ↗</a>
   </div>
@@ -383,7 +440,6 @@
     <button class="chip" id="toggle-advanced" aria-pressed="false" aria-expanded="false">Filtros avanzados ▾</button>
     <button class="chip shortlist-chip" id="toggle-shortlist" aria-pressed="false">Mi shortlist (0)</button>
     <button class="chip" id="open-resumen" hidden>Resumen para entrevista ↗</button>
-    <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false" title="Vista avanzada — para ver de qué se conecta una persona en particular, abre su ficha en la lista">Mapa completo (avanzado)</button>
   </div>
   <div class="advanced-filters" id="advanced-filters" hidden>
     <div class="filter-group">
@@ -427,8 +483,21 @@
   </div>
 </header>
 
+<div class="beta-bar" role="note">
+  <div class="beta-txt">
+    <strong>Esto es una beta.</strong> Todo lo que ves sale de fuentes públicas —ClinicalTrials.gov,
+    PubMed, SciELO y sitios institucionales— y cada dato enlaza a la fuente exacta de donde salió.
+    <strong>La expansión todavía no fue revisada por una persona: 817 hechos están pendientes y
+    1 fue confirmado previamente.</strong> Pueden faltar personas, sobrar duplicados y haber
+    identidades sin confirmar. No es una evaluación de desempeño profesional ni un listado
+    comercial. Si algo está mal, lo mejor que podés hacer es avisarnos.
+  </div>
+  <a class="beta-cta" id="beta-feedback"
+     href="https://github.com/FranciscoKirhman/kol-radar/issues/new"
+     target="_blank" rel="noopener noreferrer">Reportar un error (reporte público)</a>
+</div>
 <main>
-  <section id="list-view" class="active">
+  <section id="list-view">
     <p class="results-meta" id="results-meta"></p>
     <div class="cards" id="cards"></div>
     <div class="loading-state" id="loading-state">Cargando datos de <code>data/sample/perfiles-muestra.json</code>…</div>
@@ -436,10 +505,26 @@
     <div class="empty-state" id="empty-state" hidden>Sin resultados para esa búsqueda.</div>
   </section>
 
-  <section id="network-view">
-    <p class="network-hint" id="network-hint">Mapa completo — para ver con qué se conecta una persona o
-      institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa. Pasa el
-      mouse sobre un nodo para resaltar sus conexiones.</p>
+  <section id="network-view" class="active">
+    <p class="network-hint" id="network-hint">Mapa de conexiones. Rueda del mouse o los botones + y −
+      para acercar, arrastrá para moverte. Pasá el mouse sobre un nodo para resaltar su red, y hacé
+      click para abrir su ficha con las fuentes.</p>
+    <div class="foco-bar" id="foco-bar" hidden>
+      <span id="foco-texto"></span>
+      <span class="foco-sep"></span>
+      <button type="button" id="foco-ficha">Ver ficha completa</button>
+      <button type="button" id="foco-salir">Ver todo el mapa</button>
+    </div>
+    <div class="network-presets">
+      <span class="layer-title">Vista</span>
+      <div class="network-legend" id="vistas-preset">
+        <button class="legend-toggle preset" data-vista="ecosistema" aria-pressed="true">Ecosistema completo</button>
+        <button class="legend-toggle preset" data-vista="donde" aria-pressed="false">Quién trabaja dónde</button>
+        <button class="legend-toggle preset" data-vista="coautoria" aria-pressed="false">Red de coautoría</button>
+        <button class="legend-toggle preset" data-vista="temas" aria-pressed="false">Temas de investigación</button>
+        <button class="legend-toggle preset" data-vista="ensayos" aria-pressed="false">Actividad en ensayos</button>
+      </div>
+    </div>
     <div class="network-view-wrap">
       <svg id="graph" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"></svg>
       <div class="network-toolbar">
@@ -450,16 +535,6 @@
       <div class="node-tooltip" id="node-tooltip" role="status" aria-live="polite"></div>
     </div>
     <div class="network-layers">
-      <div class="layer-block">
-        <span class="layer-title">Vista</span>
-        <div class="network-legend" id="vistas-preset">
-          <button class="legend-toggle preset" data-vista="ecosistema" aria-pressed="true">Ecosistema completo</button>
-          <button class="legend-toggle preset" data-vista="donde" aria-pressed="false">Quién trabaja dónde</button>
-          <button class="legend-toggle preset" data-vista="coautoria" aria-pressed="false">Red de coautoría</button>
-          <button class="legend-toggle preset" data-vista="temas" aria-pressed="false">Temas de investigación</button>
-          <button class="legend-toggle preset" data-vista="ensayos" aria-pressed="false">Actividad en ensayos</button>
-        </div>
-      </div>
       <div class="layer-block">
         <span class="layer-title">Mostrar nodos</span>
         <div class="network-legend" id="capa-nodos">
@@ -490,9 +565,11 @@
 
 <footer class="page-footer" id="page-footer">
   Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, sitios institucionales) —
-  no es una evaluación de desempeño profesional ni un listado comercial. Datos de muestra, sin revisión
-  humana todavía. ¿Eres un profesional listado acá y quieres corregir o eliminar tu información? El canal
-  de contacto para eso todavía no está definido — este es un prototipo, no un producto en producción.
+  no es una evaluación de desempeño profesional ni un listado comercial. La expansión todavía no fue
+  revisada por una persona: 817 hechos están pendientes y 1 fue confirmado previamente. ¿Eres un
+  profesional listado acá y quieres corregir o eliminar tu información? El canal privado para eso
+  todavía no está definido — "Reportar un error (reporte público)" abre un repositorio público, así
+  que no es el lugar para pedir que se retire tu ficha. Esta es una beta, no un producto en producción.
 </footer>
 
 <div class="backdrop" id="backdrop"></div>
@@ -592,6 +669,49 @@
   function countByTipo(hechos, tipo) {
     return hechos.filter(function (h) { return h.tipo === tipo; }).length;
   }
+  // Una misma fuente puede aportar más de una fila descriptiva sobre el MISMO recurso: de
+  // ClinicalTrials.gov, por ejemplo, entra una fila del estudio y otra del estado de
+  // reclutamiento, ambas con la misma `fuente_url`. Las señales cuentan publicaciones y ensayos
+  // distintos, no filas repetidas, así que contarlas dos veces inflaba el puntaje. Medido sobre
+  // la muestra: 53 entidades tenían al menos un recurso duplicado dentro de un mismo tipo.
+  // La evidencia completa se sigue mostrando en la ficha; esto solo afecta el cálculo.
+  // La fila representativa es la más reciente; los empates se resuelven por presencia de fase y
+  // luego por texto, nunca por el orden del JSON. Si la más reciente no declara fase, se
+  // conserva para el cálculo la fase declarada en otra fila del mismo recurso, sin tocar la
+  // evidencia guardada.
+  function hechosUnicosPorFuente(hechos) {
+    var grupos = {};
+    hechos.forEach(function (h) {
+      var clave = h.fuente_url || "__sin_fuente__" + JSON.stringify(h);
+      (grupos[clave] = grupos[clave] || []).push(h);
+    });
+    var resultado = [];
+    Object.keys(grupos).sort().forEach(function (clave) {
+      var grupo = grupos[clave].slice().sort(function (a, b) {
+        var fechaA = sortableDate(a.fecha), fechaB = sortableDate(b.fecha);
+        if (fechaA !== fechaB) return fechaB.localeCompare(fechaA);
+        var tieneFaseA = !!a.fase, tieneFaseB = !!b.fase;
+        if (tieneFaseA !== tieneFaseB) return tieneFaseA ? -1 : 1;
+        var textoA = (a.hecho || "") + "|" + (a.fase || "");
+        var textoB = (b.hecho || "") + "|" + (b.fase || "");
+        return textoA < textoB ? -1 : textoA > textoB ? 1 : 0;
+      });
+      var representativo = grupo[0];
+      if (!representativo.fase) {
+        for (var i = 1; i < grupo.length; i++) {
+          if (grupo[i].fase) {
+            var conFase = {};
+            Object.keys(representativo).forEach(function (prop) { conFase[prop] = representativo[prop]; });
+            conFase.fase = grupo[i].fase;
+            representativo = conFase;
+            break;
+          }
+        }
+      }
+      resultado.push(representativo);
+    });
+    return resultado;
+  }
   function connectionCount(id) {
     return vinculos.filter(function (v) { return v.origen === id || v.destino === id; }).length;
   }
@@ -606,9 +726,9 @@
   // que se muestra sin pesar). Los ensayos sí se pesan por fase. Nunca es un número oculto: cada
   // componente se puede abrir y ver de qué hechos sale.
   function computeSenales(n) {
-    var pubHechos = n.hechos.filter(function (h) { return h.tipo === "publicacion"; });
-    var ensayoHechos = n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; });
-    var docenciaHechos = n.hechos.filter(function (h) { return h.tipo === "congreso"; });
+    var pubHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "publicacion"; }));
+    var ensayoHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; }));
+    var docenciaHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "congreso"; }));
     var conexiones = connectionCount(n.id);
     var ensayosPts = ensayoHechos.reduce(function (sum, h) { return sum + ensayoPeso(h); }, 0);
     return {
@@ -648,16 +768,25 @@
   function recencyMultiplier(fecha) { return RECENCY_MULT[recencyBucket(fecha)]; }
 
   function computePriority(n) {
-    var ensayoHechos = n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; });
-    var pubHechos = n.hechos.filter(function (h) { return h.tipo === "publicacion"; });
+    var ensayoHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; }));
+    var pubHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "publicacion"; }));
     var guiaHechos = pubHechos.filter(esGuiaOConsenso);
     var pubNoGuia = pubHechos.filter(function (h) { return !esGuiaOConsenso(h); });
-    var congresoHechos = n.hechos.filter(function (h) { return h.tipo === "congreso"; });
+    var congresoHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "congreso"; }));
 
+    // El tope por dimensión toma los `cap` hechos que MÁS aportan, no los primeros que vengan.
+    // Antes tomaba `slice(0, cap)` sobre una lista ordenada por URL: mientras nadie superó los
+    // 5 recursos daba igual, pero al crecer la base eso elegiría un subconjunto arbitrario y
+    // dejaría fuera un ensayo fase III reciente por un fase I viejo cuya URL ordena antes.
     function dimensionPts(hechos, cap, basePts, tope) {
-      var raw = hechos.slice(0, cap).reduce(function (sum, h) {
-        return sum + basePts(h) * recencyMultiplier(h.fecha);
-      }, 0);
+      var aporte = hechos.map(function (h) {
+        return { h: h, pts: basePts(h) * recencyMultiplier(h.fecha) };
+      }).sort(function (a, b) {
+        if (b.pts !== a.pts) return b.pts - a.pts;
+        // Desempate estable y explícito, para que el puntaje no dependa del orden del JSON.
+        return sortableDate(b.h.fecha).localeCompare(sortableDate(a.h.fecha));
+      });
+      var raw = aporte.slice(0, cap).reduce(function (sum, x) { return sum + x.pts; }, 0);
       return Math.min(tope, Math.round(raw));
     }
 
@@ -754,7 +883,12 @@
   var IDENTITY_LABEL = { alta: "Identidad: alta", media: "Identidad: media", baja: "Identidad: por verificar" };
 
   // ---------------- Carga de datos ----------------
-  fetch(DATA_URL)
+  // `no-cache` obliga a revalidar contra el servidor en cada carga (usa ETag, así que si el
+  // archivo no cambió la respuesta sigue siendo un 304 barato). Sin esto, en GitHub Pages un
+  // tester que vuelve al sitio se queda con el dataset de su visita anterior y ve una versión
+  // vieja sin ningún indicio de que lo es — que en una beta que se va a corregir seguido es
+  // justo el error más difícil de diagnosticar.
+  fetch(DATA_URL, { cache: "no-cache" })
     .then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
@@ -771,12 +905,20 @@
       buildAreaChips();
       renderFooter(data.contacto);
       construirTemas();
-      // B: en pantalla chica el ecosistema completo (147 nodos) es ilegible; se arranca en la
-      // vista más simple, que igual se puede cambiar.
-      if (window.matchMedia("(max-width: 720px)").matches) aplicarVista("donde");
+      // En pantalla chica el ecosistema completo es ilegible, así que ahí se arranca en la vista
+      // más simple; igual se puede cambiar con un click.
+      // El ancho se comprueba explícitamente en vez de confiar solo en matchMedia: si el
+      // documento todavía no tiene layout, `innerWidth` vale 0 y la media query de "pantalla
+      // chica" da verdadero, con lo que un usuario de escritorio aterrizaba en la vista
+      // simplificada sin motivo. Medido: `innerWidth` 0 al cargar con el panel oculto.
+      var ancho = window.innerWidth || document.documentElement.clientWidth || 0;
+      if (ancho > 0 && ancho <= 720) aplicarVista("donde");
       buildRegionChips();
       refreshShortlistUI();
       renderCards();
+      // El mapa es la vista de entrada, así que se construye acá: si se dejara para el primer
+      // click del botón, al abrir el sitio se vería el panel vacío.
+      if (networkView.classList.contains("active")) { buildNetwork(); networkBuilt = true; }
     })
     .catch(function (err) {
       document.getElementById("loading-state").hidden = true;
@@ -852,13 +994,21 @@
     return n._tagsCache;
   }
 
+  // Una entidad puede no declarar ciudad: ClinicalTrials.gov no siempre la da para una sede,
+  // y forzar un texto ahí sería inventar un dato. Así que todo lo que muestre o busque sobre
+  // `subtitulo` y `ciudad` tiene que tolerar el nulo. Antes no lo hacía y `matches()` lanzaba
+  // una excepción que dejaba la búsqueda muerta sin ningún aviso en pantalla.
+  function subtituloLinea(n) {
+    return [n.subtitulo, n.ciudad].filter(function (x) { return x; }).join(" · ");
+  }
+
   function matches(n) {
     if (state.filter !== "todos" && n.tipo !== state.filter) return false;
     if (state.query) {
       var q = state.query.toLowerCase();
       var enCampos = n.nombre.toLowerCase().indexOf(q) !== -1 ||
-                     n.ciudad.toLowerCase().indexOf(q) !== -1 ||
-                     n.subtitulo.toLowerCase().indexOf(q) !== -1;
+                     (n.ciudad || "").toLowerCase().indexOf(q) !== -1 ||
+                     (n.subtitulo || "").toLowerCase().indexOf(q) !== -1;
       var enHechos = n.hechos.some(function (h) { return (h.hecho || "").toLowerCase().indexOf(q) !== -1; });
       if (!enCampos && !enHechos) return false;
     }
@@ -1013,7 +1163,7 @@
     // (o el NCT) y las drogas evaluadas, que es lo que un MSL reconoce; el título completo
     // sigue entero en la ficha.
     name.textContent = etiquetaCorta(n);
-    var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
+    var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = subtituloLinea(n);
     nameWrap.appendChild(name); nameWrap.appendChild(sub);
     // El tier de prioridad (PRODUCT_CHARTER.md) solo aplica a personas — instituciones y ensayos
     // son contexto, no candidatos a priorizar, así que mantienen el conteo crudo de señales.
@@ -1256,7 +1406,9 @@
     var pie = document.getElementById("page-footer");
     pie.textContent = "Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, " +
       "sitios institucionales) — no es una evaluación de desempeño profesional ni un listado " +
-      "comercial. ¿Eres un profesional listado aquí y quieres corregir o eliminar tu información? ";
+      "comercial. La expansión todavía no fue revisada por una persona: 817 hechos están " +
+      "pendientes y 1 fue confirmado previamente. ¿Eres un profesional listado aquí y quieres " +
+      "corregir o eliminar tu información? ";
     var a = document.createElement("a");
     a.href = href;
     a.textContent = esUrlSegura(canal) ? "Escríbenos por este formulario" : "Escríbenos a " + canal;
@@ -1281,7 +1433,7 @@
     todas.textContent = "Todas las áreas";
     cont.appendChild(todas);
     // El badge del header ya no puede decir "cáncer de pulmón": el conjunto es multi-área.
-    document.getElementById("specialty-badge").textContent = areas.length + " áreas · demo";
+    document.getElementById("specialty-badge").textContent = areas.length + " áreas · beta";
     areas.forEach(function (a) {
       var cuenta = entidades.filter(function (x) { return (x.area || "cáncer de pulmón") === a; }).length;
       var b = document.createElement("button");
@@ -1392,7 +1544,7 @@
     seleccionados.forEach(function (n, i) {
       var p = computePriority(n);
       L.push((i + 1) + ". " + n.nombre + " — " + TIER_LABEL[p.tier] + " (" + p.total + " pts)");
-      L.push("   Afiliación observada: " + n.subtitulo + " · " + n.ciudad);
+      L.push("   Afiliación observada: " + subtituloLinea(n));
       var porQue = [];
       if (p.ensayosPts) porQue.push(p.nEnsayos + " ensayo(s) clínico(s) [" + p.ensayosPts + " pts]");
       if (p.pubPts) porQue.push(p.nPub + " publicación(es) [" + p.pubPts + " pts]");
@@ -1416,7 +1568,8 @@
     });
 
     L.push("LO QUE ESTE MAPA NO SABE");
-    L.push("- Ningún hecho pasó revisión humana todavía: toda la evidencia está como 'pendiente'.");
+    L.push("- La expansión todavía no fue revisada por una persona: 817 hechos están pendientes y");
+    L.push("  1 fue confirmado previamente.");
     L.push("- Docencia, congresos y roles en sociedades científicas casi no están capturados —");
     L.push("  aparecen en 0 no porque la persona no los tenga, sino porque no tenemos fuente.");
     L.push("- Las fuentes actuales favorecen perfiles académicos: un clínico muy influyente que");
@@ -1460,17 +1613,71 @@
   });
 
   // ---------------- Toggle red / lista ----------------
-  var networkBtn = document.getElementById("toggle-network");
+  var btnMapa = document.getElementById("view-mapa");
+  var btnLista = document.getElementById("view-lista");
   var listView = document.getElementById("list-view");
   var networkView = document.getElementById("network-view");
   var networkBuilt = false;
 
-  networkBtn.addEventListener("click", function () {
-    var showingNetwork = networkView.classList.toggle("active");
-    listView.classList.toggle("active", !showingNetwork);
-    networkBtn.setAttribute("aria-pressed", String(showingNetwork));
-    networkBtn.textContent = showingNetwork ? "Ver lista" : "Mapa completo (avanzado)";
-    if (showingNetwork && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
+  function mostrarVista(mapa) {
+    networkView.classList.toggle("active", mapa);
+    listView.classList.toggle("active", !mapa);
+    btnMapa.setAttribute("aria-pressed", String(mapa));
+    btnLista.setAttribute("aria-pressed", String(!mapa));
+    if (mapa && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
+  }
+  btnMapa.addEventListener("click", function () { mostrarVista(true); });
+  btnLista.addEventListener("click", function () { mostrarVista(false); });
+
+  // ---------------- Foco: aislar la red de un nodo ----------------
+  // Con 400 nodos dibujados, "¿con quién se conecta esta persona?" no se contesta mirando: la
+  // línea se pierde entre las demás. Al tocar un nodo el mapa se queda solo con él y sus
+  // conexiones directas, y la barra de arriba lleva siempre la salida al lado, para que aislar
+  // no se sienta un callejón.
+  var foco = null;
+
+  function renderFocoBar() {
+    var bar = document.getElementById("foco-bar");
+    if (!foco || !byId[foco]) { bar.hidden = true; return; }
+    var n = byId[foco];
+    var grados = vinculos.filter(function (v) { return v.origen === foco || v.destino === foco; }).length;
+    var txt = document.getElementById("foco-texto");
+    txt.textContent = "";
+    txt.appendChild(document.createTextNode("Mostrando solo la red de "));
+    var b = document.createElement("strong");
+    b.textContent = n.nombre;
+    txt.appendChild(b);
+    txt.appendChild(document.createTextNode(
+      " · " + grados + (grados === 1 ? " conexión directa" : " conexiones directas")));
+    bar.hidden = false;
+  }
+
+  function aplicarFoco(id) {
+    foco = id;
+    if (!networkView.classList.contains("active")) mostrarVista(true);
+    buildNetwork();
+    networkBuilt = true;
+    renderFocoBar();
+    document.getElementById("foco-bar").scrollIntoView({ block: "nearest" });
+  }
+
+  function limpiarFoco() {
+    if (!foco) return;
+    foco = null;
+    buildNetwork();
+    networkBuilt = true;
+    renderFocoBar();
+  }
+
+  document.getElementById("foco-salir").addEventListener("click", limpiarFoco);
+  document.getElementById("foco-ficha").addEventListener("click", function () {
+    if (foco) openDetail(foco);
+  });
+  document.addEventListener("keydown", function (ev) {
+    // Escape sale del foco, salvo que haya una ficha abierta: ahí cierra la ficha primero.
+    if (ev.key === "Escape" && foco && document.getElementById("detail-sheet").classList.contains("open") === false) {
+      limpiarFoco();
+    }
   });
 
   // ---------------- Red de conexiones (simulación de fuerzas mínima + capa interactiva) ----------------
@@ -1558,6 +1765,18 @@
       var k = claveArista(byId[v.origen].tipo, byId[v.destino].tipo);
       return capas.aristas[k] !== false;
     });
+    if (typeof foco !== "undefined" && foco && ids[foco]) {
+      // El nodo en foco más sus vecinos directos. Se conservan también las aristas ENTRE los
+      // vecinos: son parte de lo que hay que entender del barrio, no ruido.
+      var vecinos = {};
+      vecinos[foco] = true;
+      edges.forEach(function (v) {
+        if (v.origen === foco) vecinos[v.destino] = true;
+        if (v.destino === foco) vecinos[v.origen] = true;
+      });
+      nodes = nodes.filter(function (n) { return vecinos[n.id]; });
+      edges = edges.filter(function (v) { return vecinos[v.origen] && vecinos[v.destino]; });
+    }
     if (capas.ocultarAislados) {
       var conectados = {};
       edges.forEach(function (v) { conectados[v.origen] = true; conectados[v.destino] = true; });
@@ -1566,17 +1785,48 @@
     return { nodes: nodes, edges: edges };
   }
 
+  // Tope duro de nodos que se dibujan de una vez. El costo del layout crece con el cuadrado de
+  // los nodos: medido en el navegador, 717 nodos bloqueaban el hilo principal 7,6 segundos con
+  // la página entera congelada. Acotar el dibujo mantiene el mapa usable por más que crezca la
+  // base, y lo que se recorta es lo que menos aporta a una vista de RED: los nodos con menos
+  // conexiones. Un ensayo sin institución resuelta tiene grado 0 y sería un punto suelto; sigue
+  // estando completo en la lista y en su ficha, que es donde se lo consulta.
+  var TOPE_NODOS_GRAFO = 400;
+
   function buildNetwork() {
     var subset = currentNetworkSubset();
     var nodes = subset.nodes, edges = subset.edges;
     var hint = document.getElementById("network-hint");
+    var recortados = 0;
+    if (nodes.length > TOPE_NODOS_GRAFO) {
+      var grado = {};
+      nodes.forEach(function (n) { grado[n.id] = 0; });
+      edges.forEach(function (e) {
+        if (grado[e.origen] !== undefined) grado[e.origen]++;
+        if (grado[e.destino] !== undefined) grado[e.destino]++;
+      });
+      var ordenados = nodes.slice().sort(function (a, b) {
+        if (grado[b.id] !== grado[a.id]) return grado[b.id] - grado[a.id];
+        // Desempate estable: sin esto el recorte cambiaría entre construcciones.
+        return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+      });
+      recortados = nodes.length - TOPE_NODOS_GRAFO;
+      nodes = ordenados.slice(0, TOPE_NODOS_GRAFO);
+      var visibles = {};
+      nodes.forEach(function (n) { visibles[n.id] = true; });
+      edges = edges.filter(function (e) { return visibles[e.origen] && visibles[e.destino]; });
+    }
     var capasApagadas = Object.keys(capas.nodos).filter(function (k) { return !capas.nodos[k]; }).length +
                         Object.keys(capas.aristas).filter(function (k) { return !capas.aristas[k]; }).length;
+    var avisoRecorte = recortados
+      ? " Se dibujan los " + TOPE_NODOS_GRAFO + " nodos con más conexiones; " + recortados +
+        " quedaron fuera del mapa por tener pocas o ninguna, y siguen en la lista y en su ficha."
+      : "";
     hint.textContent = (nodes.length === entidades.length && !capasApagadas)
       ? "Mapa completo — para ver con qué se conecta una persona o institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa. Pasa el mouse sobre un nodo para resaltar sus conexiones."
       : "Mostrando " + nodes.length + " de " + entidades.length + " entidades" +
         (capasApagadas ? " (hay capas apagadas abajo)" : " según el filtro/búsqueda activos") +
-        ". Pasa el mouse sobre un nodo para resaltar sus conexiones.";
+        ". Pasa el mouse sobre un nodo para resaltar sus conexiones." + avisoRecorte;
 
     var svg = document.getElementById("graph");
     svg.innerHTML = "";
@@ -1622,7 +1872,15 @@
     // en un teléfono el SVG mantiene proporción y deja franjas vacías arriba y abajo con todos
     // los nodos aplastados al medio. Acá el lienzo toma la forma del hueco disponible.
     var caja = svg.getBoundingClientRect();
-    var W = 720;
+    // El lienzo crece con la cantidad de nodos. Con un ancho fijo de 720, meter 717 nodos daba
+    // una densidad siete veces mayor que con 173: la simulación se volvía lenta —cada celda de
+    // la grilla contenía medio grafo— y solo entraban 15 etiquetas de 717 porque no quedaba
+    // hueco libre donde ponerlas. Al escalar por la raíz del número de nodos, la densidad se
+    // mantiene parecida a la que ya estaba ajustada. El usuario tiene zoom y arrastre para
+    // recorrerlo, y el tope de 2,2 evita que los nodos queden diminutos.
+    var escala = Math.min(2.2, Math.max(1, Math.sqrt(nodes.length / 180)));
+    var W = Math.round(720 * escala);
+    svg.style.setProperty("--escala-etiqueta", Math.sqrt(escala).toFixed(3));
     // Se acota la PROPORCIÓN, no solo el alto: si el SVG se mide con ancho ~0 (panel oculto,
     // transición de layout), la razón alto/ancho se dispara y el viewBox sale inservible.
     var razon = (caja.width > 40 && caja.height > 40) ? caja.height / caja.width : 460 / 720;
@@ -1684,18 +1942,72 @@
       n._vx = 0; n._vy = 0;
     });
 
-    for (var iter = 0; iter < 300; iter++) {
+    // La repulsión comparaba todos contra todos: O(n²). Con 173 nodos no se notaba; con 717
+    // son ~77 millones de cálculos por construcción y el hilo principal queda bloqueado 7,6
+    // segundos — medido, con la página congelada mientras tanto.
+    //
+    // La fuerza es 1500/d². A 110 unidades ya vale 0,12, mientras que la atracción al ancla a
+    // esa misma distancia vale 3,3: los pares lejanos cuestan tiempo y no mueven nada. Se usa
+    // una grilla uniforme del tamaño del corte y cada nodo se compara solo con su celda y las
+    // ocho vecinas.
+    //
+    // Dos detalles que costaron caro al medir: con un corte de 200 la grilla tenía 12 celdas
+    // para 717 nodos —cada celda era medio grafo y no podaba nada, quedó más lento que el
+    // O(n²) original— y usar un objeto con claves dinámicas por iteración era más caro que la
+    // comparación que ahorraba. Por eso el corte es 110 y las celdas son un arreglo plano que
+    // se reutiliza vaciándolo, sin volver a asignar memoria.
+    var CORTE = 110;
+    var COLS = Math.max(1, Math.ceil(W / CORTE)), FILAS = Math.max(1, Math.ceil(H / CORTE));
+    var CELDAS = new Array(COLS * FILAS);
+    for (var c0 = 0; c0 < CELDAS.length; c0++) CELDAS[c0] = [];
+    // El ancla se guarda en el propio nodo. Antes el bucle interno hacía `anclaDe[a.id]` y
+    // `anclaDe[b.id]` en CADA par: son dos búsquedas por hash sobre un objeto de cientos de
+    // claves, unos 4 millones de lecturas por construcción. Medido, la simulación se llevaba
+    // 2.600 ms de los 2.878 totales; la creación del DOM eran 30.
+    nodes.forEach(function (n, idx) { n._i = idx; n._ancla = anclaDe[n.id]; });
+    // Con muchos nodos las anclas por institución ya ubican los barrios, así que la simulación
+    // converge antes; 300 iteraciones estaban ajustadas para 173 nodos.
+    // Las 300 iteraciones estaban ajustadas para ~170 nodos. Con más, el costo sube mucho más
+    // rápido de lo que sugiere el conteo: el propio layout agrupa los nodos alrededor de las
+    // anclas de institución, así que se apilan en pocas celdas y la grilla deja de podar. La
+    // solución correcta sería un quadtree (Barnes-Hut); acá se acota el trabajo, que es lineal
+    // en las iteraciones y se puede comprobar mirando el resultado. Las anclas ya hacen el
+    // trabajo estructural, así que la simulación converge antes de lo que parece.
+    var ITERACIONES = nodes.length > 300 ? 45 : 300;
+
+    for (var iter = 0; iter < ITERACIONES; iter++) {
+      for (var v0 = 0; v0 < CELDAS.length; v0++) CELDAS[v0].length = 0;
+      for (var g = 0; g < nodes.length; g++) {
+        var ng = nodes[g];
+        var gx = ng._x / CORTE | 0, gy = ng._y / CORTE | 0;
+        if (gx < 0) gx = 0; else if (gx >= COLS) gx = COLS - 1;
+        if (gy < 0) gy = 0; else if (gy >= FILAS) gy = FILAS - 1;
+        CELDAS[gx * FILAS + gy].push(ng);
+      }
       for (var i = 0; i < nodes.length; i++) {
-        for (var j = i + 1; j < nodes.length; j++) {
-          var a = nodes[i], b = nodes[j];
-          var dx = a._x - b._x, dy = a._y - b._y;
-          var distSq = dx * dx + dy * dy || 0.01;
-          var dist = Math.sqrt(distSq);
-          // Repulsión más suave entre nodos del mismo barrio: deben quedar juntos.
-          var mismoGrupo = anclaDe[a.id] && anclaDe[a.id] === anclaDe[b.id];
-          var force = (mismoGrupo ? 420 : 1500) / distSq;
-          var fx = (dx / dist) * force, fy = (dy / dist) * force;
-          a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
+        var a = nodes[i];
+        var acx = a._x / CORTE | 0, acy = a._y / CORTE | 0;
+        if (acx < 0) acx = 0; else if (acx >= COLS) acx = COLS - 1;
+        if (acy < 0) acy = 0; else if (acy >= FILAS) acy = FILAS - 1;
+        var x0 = acx > 0 ? acx - 1 : 0, x1 = acx < COLS - 1 ? acx + 1 : COLS - 1;
+        var y0 = acy > 0 ? acy - 1 : 0, y1 = acy < FILAS - 1 ? acy + 1 : FILAS - 1;
+        for (var cx = x0; cx <= x1; cx++) {
+          for (var cy = y0; cy <= y1; cy++) {
+            var vecinos = CELDAS[cx * FILAS + cy];
+            for (var m = 0; m < vecinos.length; m++) {
+              var b = vecinos[m];
+              // Cada par una sola vez, en un orden que no depende de la grilla.
+              if (b._i <= a._i) continue;
+              var dx = a._x - b._x, dy = a._y - b._y;
+              var distSq = dx * dx + dy * dy || 0.01;
+              var dist = Math.sqrt(distSq);
+              // Repulsión más suave entre nodos del mismo barrio: deben quedar juntos.
+              var mismoGrupo = a._ancla !== undefined && a._ancla === b._ancla;
+              var force = (mismoGrupo ? 420 : 1500) / distSq;
+              var fx = (dx / dist) * force, fy = (dy / dist) * force;
+              a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
+            }
+          }
         }
       }
       edges.forEach(function (e) {
@@ -1828,6 +2140,36 @@
       tooltipEl.classList.remove("show");
     }
 
+    // El lienzo se encuadra al contenido en vez de quedarse en 0,0,W,H. Al aislar la red de
+    // una persona quedan cuatro o cinco nodos apiñados alrededor de su ancla, con el resto del
+    // lienzo vacío; encuadrando, ese puñado ocupa la pantalla y se lee de una. Se respeta la
+    // proporción del contenedor para no deformar nada.
+    var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    nodes.forEach(function (n) {
+      if (n._x < minX) minX = n._x;
+      if (n._x > maxX) maxX = n._x;
+      if (n._y < minY) minY = n._y;
+      if (n._y > maxY) maxY = n._y;
+    });
+    var MARCO = { x: 0, y: 0, w: W, h: H };
+    if (isFinite(minX)) {
+      // El margen es proporcional al contenido. Uno fijo de 70 unidades era casi nada con 400
+      // nodos y se comía dos tercios del encuadre con cinco.
+      var extension = Math.max(maxX - minX, maxY - minY);
+      var PAD = Math.max(34, Math.min(90, extension * 0.12));
+      var anchoUtil = Math.max(120, maxX - minX) + PAD * 2;
+      var altoUtil = Math.max(120, maxY - minY) + PAD * 2;
+      var fw = Math.max(anchoUtil, altoUtil / razon);
+      MARCO = { x: (minX + maxX) / 2 - fw / 2, y: (minY + maxY) / 2 - (fw * razon) / 2,
+                w: fw, h: fw * razon };
+      NETWORK_VB.x = MARCO.x; NETWORK_VB.y = MARCO.y;
+      NETWORK_VB.w = MARCO.w; NETWORK_VB.h = MARCO.h;
+      resetZoom();
+      // El texto se mide en unidades del viewBox: si el encuadre cambia la escala, el tamaño
+      // en pantalla cambia con ella y hay que compensarlo igual que con el lienzo.
+      svg.style.setProperty("--escala-etiqueta", Math.sqrt(Math.max(1, MARCO.w / 720)).toFixed(3));
+    }
+
     var nodeEls = {};
     var etiquetasPendientes = [];
     nodes.forEach(function (n) {
@@ -1855,10 +2197,16 @@
             if (chip) chip.setAttribute("aria-pressed", "true");
             document.getElementById("tags-clear").hidden = false;
             if (advancedPanel.hidden) document.getElementById("toggle-advanced").click();
-            networkBtn.click();
+            mostrarVista(false);
             renderCards();
           }
-        : function () { openDetail(n.id); };
+        : function () {
+            // Primer toque: aislar su red. Segundo toque sobre el mismo nodo: abrir la ficha.
+            // Así explorar el mapa y leer la evidencia son dos gestos distintos y ninguno
+            // tapa al otro; tocar un vecino salta el foco a ese vecino.
+            if (foco === n.id) openDetail(n.id);
+            else aplicarFoco(n.id);
+          };
       circle.addEventListener("click", activar);
       circle.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); activar(); } });
       circle.addEventListener("mouseenter", function () { highlightNode(n.id); showNodeTooltip(n, deg); });
@@ -1889,7 +2237,7 @@
       });
     });
 
-    colocarEtiquetas(etiquetasPendientes, W, H);
+    colocarEtiquetas(etiquetasPendientes, MARCO);
   }
 
   // Antes las etiquetas se filtraban solo por grado: se dibujaban las de los ~25 nodos más
@@ -1901,7 +2249,8 @@
   // una posición libre. La que no cabe se oculta y sigue apareciendo al pasar el mouse.
   // Sin tope fijo: manda la geometría. Un número redondo dejaba fuera etiquetas que sí cabían.
   var MAX_ETIQUETAS = 999;
-  function colocarEtiquetas(pendientes, W, H) {
+  function colocarEtiquetas(pendientes, marco) {
+    var W = marco.w, H = marco.h, X0 = marco.x, Y0 = marco.y;
     if (!pendientes.length) return;
     // Una sola lectura de geometría para todas: getBBox fuerza reflow, y alternar medir/escribir
     // lo dispararía una vez por etiqueta.
@@ -1944,7 +2293,7 @@
                w: (p.r + HOLGURA) * 2, h: (p.r + HOLGURA) * 2 };
     });
     function libre(c) {
-      if (c.x < 2 || c.y < 2 || c.x + c.w > W - 2 || c.y + c.h > H - 2) return false;
+      if (c.x < X0 + 2 || c.y < Y0 + 2 || c.x + c.w > X0 + W - 2 || c.y + c.h > Y0 + H - 2) return false;
       for (var i = 0; i < ocupados.length; i++) {
         var o = ocupados[i];
         if (c.x < o.x + o.w && o.x < c.x + c.w && c.y < o.y + o.h && o.y < c.y + c.h) return false;
@@ -2213,7 +2562,7 @@
     var tag = document.createElement("span"); tag.className = "sheet-type-tag"; tag.textContent = typeLabel[n.tipo];
     var name = document.createElement("div"); name.className = "sheet-name"; name.textContent = n.nombre;
     var sub = document.createElement("div"); sub.className = "sheet-sub";
-    sub.appendChild(document.createTextNode(n.subtitulo + " · " + n.ciudad));
+    sub.appendChild(document.createTextNode(subtituloLinea(n)));
     if (n.subtitulo_fuente && esUrlSegura(n.subtitulo_fuente)) {
       var subFuente = document.createElement("a");
       subFuente.className = "sheet-sub-fuente";

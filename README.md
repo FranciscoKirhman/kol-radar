@@ -22,6 +22,7 @@ Fase 3 con datos reales de muestra — ver "Estado actual" al final de este arch
 | [COMPETITORS.md](COMPETITORS.md) | Panorama competitivo |
 | [COSTS.md](COSTS.md) | Modelo de costos del pipeline de automatización |
 | [COLABORACION_IA.md](COLABORACION_IA.md) | **Traspaso para colaboradores IA** (ChatGPT, Gemini): reglas duras, modelo de datos, y en qué conviene que aporten |
+| [PENDIENTES_BETA.md](PENDIENTES_BETA.md) | **Lo que la beta dejó sin resolver a propósito**, con la razón de cada caso |
 
 ## Objetivo
 
@@ -212,7 +213,7 @@ el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no
 Prototipo de Fase 3 funcionando con datos reales de muestra (una especialidad,
 cáncer de pulmón): [COMPETITORS.md](COMPETITORS.md) (panorama competitivo),
 [DATA_SAMPLE.md](DATA_SAMPLE.md) + [data/sample/perfiles-muestra.json](data/sample/perfiles-muestra.json)
-(173 entidades reales con fuentes verificadas), [COSTS.md](COSTS.md) (modelo de costos
+(717 entidades reales con fuentes verificadas), [COSTS.md](COSTS.md) (modelo de costos
 del pipeline de automatización, verificado adversarialmente), y `web/index.html`
 (la página de producto — ver "Cómo correr el prototipo" arriba).
 

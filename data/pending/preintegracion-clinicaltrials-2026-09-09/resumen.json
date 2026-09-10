@@ -1,0 +1,44 @@
+{
+ "fecha_consulta": "2026-09-09",
+ "ensayos_admitidos": 314,
+ "ensayos_ya_en_la_muestra": 74,
+ "instituciones_canonicas": 47,
+ "instituciones_nuevas": 33,
+ "sedes_sin_resolver": 253,
+ "placeholders_excluidos": 645,
+ "personas_candidatas_por_clase": {
+  "no_persona_utilizable": 60,
+  "posible_coincidencia": 48,
+  "persona_nueva_propuesta": 5,
+  "reutilizacion_propuesta": 16
+ },
+ "por_area": {
+  "cáncer cervicouterino": 11,
+  "cáncer colorrectal": 15,
+  "cáncer de cabeza y cuello": 3,
+  "cáncer de endometrio": 8,
+  "cáncer de hígado": 7,
+  "cáncer de mama": 60,
+  "cáncer de ovario": 15,
+  "cáncer de próstata": 17,
+  "cáncer de pulmón": 93,
+  "cáncer de páncreas": 8,
+  "cáncer de vejiga": 10,
+  "cáncer gástrico": 29,
+  "cáncer renal": 21,
+  "leucemia": 17,
+  "linfoma": 37,
+  "melanoma": 14,
+  "mieloma múltiple": 5,
+  "sarcoma": 7,
+  "tumor cerebral": 2
+ },
+ "por_estado": {
+  "COMPLETED": 133,
+  "RECRUITING": 84,
+  "ACTIVE_NOT_RECRUITING": 72,
+  "UNKNOWN": 8,
+  "TERMINATED": 16,
+  "NOT_YET_RECRUITING": 1
+ }
+}
