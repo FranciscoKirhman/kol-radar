@@ -487,13 +487,14 @@
   <div class="beta-txt">
     <strong>Esto es una beta.</strong> Todo lo que ves sale de fuentes públicas —ClinicalTrials.gov,
     PubMed, SciELO y sitios institucionales— y cada dato enlaza a la fuente exacta de donde salió.
-    <strong>Ningún dato pasó todavía por revisión humana</strong>: pueden faltar personas, sobrar
-    duplicados y haber identidades sin confirmar. No es una evaluación de desempeño profesional ni
-    un listado comercial. Si algo está mal, lo mejor que podés hacer es avisarnos.
+    <strong>La expansión todavía no fue revisada por una persona: 817 hechos están pendientes y
+    1 fue confirmado previamente.</strong> Pueden faltar personas, sobrar duplicados y haber
+    identidades sin confirmar. No es una evaluación de desempeño profesional ni un listado
+    comercial. Si algo está mal, lo mejor que podés hacer es avisarnos.
   </div>
   <a class="beta-cta" id="beta-feedback"
      href="https://github.com/FranciscoKirhman/kol-radar/issues/new"
-     target="_blank" rel="noopener noreferrer">Reportar un error</a>
+     target="_blank" rel="noopener noreferrer">Reportar un error (reporte público)</a>
 </div>
 <main>
   <section id="list-view">
@@ -564,11 +565,11 @@
 
 <footer class="page-footer" id="page-footer">
   Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, sitios institucionales) —
-  no es una evaluación de desempeño profesional ni un listado comercial. Datos de muestra, sin revisión
-  humana todavía. ¿Eres un profesional listado acá y quieres corregir o eliminar tu información? El canal
-  privado para eso todavía no está definido — el enlace de "Reportar un error" va a un repositorio
-  público, así que no es el lugar para pedir que se retire tu ficha. Esta es una beta, no un producto
-  en producción.
+  no es una evaluación de desempeño profesional ni un listado comercial. La expansión todavía no fue
+  revisada por una persona: 817 hechos están pendientes y 1 fue confirmado previamente. ¿Eres un
+  profesional listado acá y quieres corregir o eliminar tu información? El canal privado para eso
+  todavía no está definido — "Reportar un error (reporte público)" abre un repositorio público, así
+  que no es el lugar para pedir que se retire tu ficha. Esta es una beta, no un producto en producción.
 </footer>
 
 <div class="backdrop" id="backdrop"></div>
@@ -1405,7 +1406,9 @@
     var pie = document.getElementById("page-footer");
     pie.textContent = "Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, " +
       "sitios institucionales) — no es una evaluación de desempeño profesional ni un listado " +
-      "comercial. ¿Eres un profesional listado aquí y quieres corregir o eliminar tu información? ";
+      "comercial. La expansión todavía no fue revisada por una persona: 817 hechos están " +
+      "pendientes y 1 fue confirmado previamente. ¿Eres un profesional listado aquí y quieres " +
+      "corregir o eliminar tu información? ";
     var a = document.createElement("a");
     a.href = href;
     a.textContent = esUrlSegura(canal) ? "Escríbenos por este formulario" : "Escríbenos a " + canal;
@@ -1565,7 +1568,8 @@
     });
 
     L.push("LO QUE ESTE MAPA NO SABE");
-    L.push("- Ningún hecho pasó revisión humana todavía: toda la evidencia está como 'pendiente'.");
+    L.push("- La expansión todavía no fue revisada por una persona: 817 hechos están pendientes y");
+    L.push("  1 fue confirmado previamente.");
     L.push("- Docencia, congresos y roles en sociedades científicas casi no están capturados —");
     L.push("  aparecen en 0 no porque la persona no los tenga, sino porque no tenemos fuente.");
     L.push("- Las fuentes actuales favorecen perfiles académicos: un clínico muy influyente que");
