@@ -1,0 +1,2950 @@
+[
+ {
+  "id_canonico": "falp",
+  "nombre_canonico": "Fundación Arturo López Pérez (FALP)",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 186,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Fundacion Arturo Lopez Perez",
+    30
+   ],
+   [
+    "FALP",
+    12
+   ],
+   [
+    "Fundación Arturo López Pérez",
+    11
+   ],
+   [
+    "Fundacion Arturo Lopez Perez ( Site 1201)",
+    6
+   ],
+   [
+    "FALP-UIDO ( Site 1401)",
+    6
+   ],
+   [
+    "FALP-UIDO ( Site 0401)",
+    4
+   ],
+   [
+    "FALP-UIDO ( Site 1500)",
+    4
+   ],
+   [
+    "FALP - Fundación Arturo López Pérez",
+    4
+   ],
+   [
+    "Fundacion Arturo Lopez Perez ( Site 1049)",
+    3
+   ],
+   [
+    "FALP ( Site 0501)",
+    3
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP",
+    3
+   ],
+   [
+    "FALP ( Site 0161)",
+    3
+   ],
+   [
+    "Fundación Arturo López Perez",
+    2
+   ],
+   [
+    "FALP-UIDO ( Site 2400)",
+    2
+   ],
+   [
+    "FALP-UIDO ( Site 2300)",
+    2
+   ],
+   [
+    "Instituto Oncológico Fundación Arturo López Pérez",
+    2
+   ],
+   [
+    "FALP-UIDO ( Site 1202)",
+    2
+   ],
+   [
+    "FALP-UIDO (Site 0509)",
+    2
+   ],
+   [
+    "Fundacion Arturo Lopez Perez ( Site 0401)",
+    2
+   ],
+   [
+    "Fundación Arturo López Pérez (FALP) - PPDS",
+    2
+   ],
+   [
+    "FALP ( Site 0500)",
+    2
+   ],
+   [
+    "Fundacion Arturo Lopez Perez ( Site 0167)",
+    2
+   ],
+   [
+    "FALP-UIDO ( Site 0501)",
+    2
+   ],
+   [
+    "FALP ( Site 0702)",
+    2
+   ],
+   [
+    "FALP-UIDO ( Site 0502)",
+    2
+   ],
+   [
+    "FALP ( Site 0160)",
+    2
+   ],
+   [
+    "Fundacion Arturo Lopez Perez (FALP)",
+    2
+   ],
+   [
+    "FALP-UIDO ( Site 0041)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0208)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez ( Site 0201)",
+    1
+   ],
+   [
+    "FALP ( Site 0353)",
+    1
+   ],
+   [
+    "FALP ( Site 0201)",
+    1
+   ],
+   [
+    "FALP ( Site 0232)",
+    1
+   ],
+   [
+    "FALP ( Site 0301)",
+    1
+   ],
+   [
+    "FALP ( Site 0303)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0200)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0421)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0303)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 2062)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 2251)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0400)",
+    1
+   ],
+   [
+    "FALP ( Site 0207)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez /ID# 242421",
+    1
+   ],
+   [
+    "FALP ( Site 0905)",
+    1
+   ],
+   [
+    "FALP ( Site 0607)",
+    1
+   ],
+   [
+    "FALP ( Site 0616)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 2800)",
+    1
+   ],
+   [
+    "FALP ( Site 2200)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0302)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 2100)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez ( Site 0400)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0902)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 4100)",
+    1
+   ],
+   [
+    "Fundación Arturo López Pérez (FALP)",
+    1
+   ],
+   [
+    "FALP ( Site 5151)",
+    1
+   ],
+   [
+    "FALP ( Site 1500)",
+    1
+   ],
+   [
+    "FALP ( Site 7056)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez ( Site 0064)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 1061)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0300)",
+    1
+   ],
+   [
+    "FALP ( Site 0701)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0602)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 1062)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0205)",
+    1
+   ],
+   [
+    "Fundación Arturo López Pérez - Instituto Oncológico FALP",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0509)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0383)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 3100)",
+    1
+   ],
+   [
+    "Fundación Arturo Lopéz Pérez",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez /ID# 261700",
+    1
+   ],
+   [
+    "FALP ( Site 2551)",
+    1
+   ],
+   [
+    "FundacionArturo Lopez Perez",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 1203)",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0505)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0203)",
+    1
+   ],
+   [
+    "FALP ( Site 0409)",
+    1
+   ],
+   [
+    "FALP ( Site 2100)",
+    1
+   ],
+   [
+    "FALP ( Site 0200)",
+    1
+   ],
+   [
+    "Instituto Oncologico Fundacion Arturo Lopez Perez (FALP)",
+    1
+   ],
+   [
+    "FALP ( Site 0300)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez /ID# 231151",
+    1
+   ],
+   [
+    "Instituto Oncológico FALP",
+    1
+   ],
+   [
+    "Arturo Lopez Perez Foundation",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez ( Site 0500)",
+    1
+   ],
+   [
+    "FALP ( Site 2000)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez (FALP) - Providencia - Jose Manuel Infante 805",
+    1
+   ],
+   [
+    "Instituto Oncologico Fundacion Arturo Lopez Perez",
+    1
+   ],
+   [
+    "FALP-UIDO ( Site 0451)",
+    1
+   ],
+   [
+    "FALP ( Site 0400)",
+    1
+   ],
+   [
+    "FALP ( Site 4102)",
+    1
+   ],
+   [
+    "FALP ( Site 6200)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0501)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0286)",
+    1
+   ],
+   [
+    "Fundacion Arturo Lopez Perez FALP ( Site 0302)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "bradford-hill",
+  "nombre_canonico": "Bradford Hill Clinical Research Center",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 139,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Centro de Investigacion Clinica Bradford Hill",
+    13
+   ],
+   [
+    "Bradfordhill",
+    11
+   ],
+   [
+    "Bradford Hill Centro de Investigaciones Clinicas",
+    8
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 1402)",
+    6
+   ],
+   [
+    "Bradfordhill ( Site 0200)",
+    5
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0402)",
+    3
+   ],
+   [
+    "Bradford Hill- Centro de Investigacion Clinica",
+    3
+   ],
+   [
+    "Bradfordhill ( Site 0160)",
+    3
+   ],
+   [
+    "Bradfordhill ( Site 2403)",
+    2
+   ],
+   [
+    "Bradford Hill Centro de Investigaciones Clinicas ( Site 1044)",
+    2
+   ],
+   [
+    "Bradford Hill",
+    2
+   ],
+   [
+    "Bradford Hill Norte ( Site 0308)",
+    2
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 2310)",
+    2
+   ],
+   [
+    "Bradfordhill-Clinical Area (Site 0507)",
+    2
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0400)",
+    2
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 1501)",
+    2
+   ],
+   [
+    "Bradfordhill ( Site 0501)",
+    2
+   ],
+   [
+    "Bradfordhill ( Site 0168)",
+    2
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0504)",
+    2
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0501)",
+    2
+   ],
+   [
+    "Bradford Hill Norte",
+    2
+   ],
+   [
+    "Bradfordhill ( Site 0162)",
+    2
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0047)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0351)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 0357)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0231)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 1044)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0300)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0301)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0302)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 2401)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 2061)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 2252)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0502)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0202)",
+    1
+   ],
+   [
+    "Bradford Hill /ID# 262795",
+    1
+   ],
+   [
+    "Centro de Investigación Clínica Bradford Hill",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0605)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0610)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0305)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 0303)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 6101)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 1201)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 2101)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0400)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0401)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0003)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 4101)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 0503)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 7051)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 7052)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0066)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0702)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0603)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0703)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 1070)",
+    1
+   ],
+   [
+    "Bradford Hill Centro de Investigaciones Clinicas; Bradford Hill Centro de Investigaciones Clinicas",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0507)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 0516)",
+    1
+   ],
+   [
+    "Bradford Hill Centro de Investigaciones Clinicas ( Site 0387)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 0204)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0701)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 0708)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 3103)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 2552)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 2563)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 1202)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0510)",
+    1
+   ],
+   [
+    "Bradfordhill-Clinical Area ( Site 0407)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 0420)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 2101)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0201)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0301)",
+    1
+   ],
+   [
+    "Centro de Investigacion Clínica Bradford Hill",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 2001)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0452)",
+    1
+   ],
+   [
+    "Bradford Hill Norte ( Site 0456)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0401)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 0500)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 4100)",
+    1
+   ],
+   [
+    "Bradfordhill ( Site 6202)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "puc",
+  "nombre_canonico": "Pontificia Universidad Católica de Chile",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 101,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Pontificia Universidad Catolica de Chile",
+    12
+   ],
+   [
+    "Centro Del Cancer UC",
+    7
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 1202)",
+    6
+   ],
+   [
+    "Centro de Cancer de Nuestra Senora de la Esperanza, Red de Salud UC CHRISTUS",
+    5
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile - CICUC",
+    5
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0502)",
+    4
+   ],
+   [
+    "Pontificia Universidad Católica de Chile",
+    4
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 1047)",
+    3
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Hemato-Oncology ( Site 0407)",
+    3
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0206)",
+    2
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 1503)",
+    2
+   ],
+   [
+    "Pontificia Universidad Catolica",
+    2
+   ],
+   [
+    "Clínica San Carlos de Apoquindo Red Salud UC Christus ( Site 0252)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Hemato-Oncology ( Site 0354)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 2402)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0303)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Hemato-Oncology ( Site 0304)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0201)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0422)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Hemato-Oncology ( Site 1204)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Centro del Cáncer ( Site 0609)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Centro del Cáncer ( Site 0900)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0602)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0611)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 2805)",
+    1
+   ],
+   [
+    "Centro de Investigacion Clinica UC CICUC ( Site 0402)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Centro del Cáncer ( Site 1205)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0904)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0070)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0302)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-CICUC ( Site 0706)",
+    1
+   ],
+   [
+    "San Jorge Medical Center UC-Christus Health Network",
+    1
+   ],
+   [
+    "Ancora San Francisco Medical Center UC Christus Health Network",
+    1
+   ],
+   [
+    "Cancer Centre UC-Christus Nuestra Sra de la Esperanza",
+    1
+   ],
+   [
+    "Santa Lucia Medical Center UC-Christus Health Network",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0604)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0705)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0404)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0382)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0332)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 3104)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Hemato-Oncology ( Site 1210)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile-Hemato-Oncology ( Site 0402)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 2102)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0202)",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0501)",
+    1
+   ],
+   [
+    "Centro del Cancer UC",
+    1
+   ],
+   [
+    "Hospital Clínico UC CHRISTUS",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0454)",
+    1
+   ],
+   [
+    "Centro de Investigación Clínica UC-CICUC",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 4108)",
+    1
+   ],
+   [
+    "Centro de Cancer Pontificia Universidad Catolica",
+    1
+   ],
+   [
+    "Hospital Clinico Pontificia Universidad Catolica de Chile",
+    1
+   ],
+   [
+    "Centro de especialidades médicas Marcoleta UC CHRISTUS",
+    1
+   ],
+   [
+    "Centro Médico UC-CHRISTUS San Joaquín",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0285)",
+    1
+   ],
+   [
+    "Centro de Cancer UC CHRISTUS",
+    1
+   ],
+   [
+    "Pontificia Universidad Catolica de Chile ( Site 0301)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "oncocentro",
+  "nombre_canonico": "Oncocentro APYS",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 97,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Oncocentro Apys",
+    13
+   ],
+   [
+    "Oncocentro",
+    12
+   ],
+   [
+    "Oncocentro APYS",
+    11
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0400)",
+    4
+   ],
+   [
+    "ONCOCENTRO APYS; Oncología",
+    3
+   ],
+   [
+    "Oncocentro Valdivia",
+    3
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY (Site 0500)",
+    2
+   ],
+   [
+    "Oncocentro ( Site 1065)",
+    2
+   ],
+   [
+    "Oncocentro Valdivia ( Site 0204)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 0203)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 0234)",
+    1
+   ],
+   [
+    "Oncocentro ( Site 2400)",
+    1
+   ],
+   [
+    "Oncocentro ( Site 1045)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0305)",
+    1
+   ],
+   [
+    "OncoCentro",
+    1
+   ],
+   [
+    "Oncocentro ( Site 0204)",
+    1
+   ],
+   [
+    "Oncocentro ( Site 0424)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 0307)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0300)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 2407)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 0506)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0904)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0603)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0612)",
+    1
+   ],
+   [
+    "Oncocentro ( Site 2801)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 0312)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0301)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 0408)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 1200)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 2103)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 0403)",
+    1
+   ],
+   [
+    "Oncocentro ( Site 0900)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 4103)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 1506)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 0507)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 0505)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 7055)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 7054)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0303)",
+    1
+   ],
+   [
+    "Oncocentro ( Site 0195)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0703)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 0704)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0203)",
+    1
+   ],
+   [
+    "Oncocentro APYS - Centro de Atencion Medica Oncologica Integral",
+    1
+   ],
+   [
+    "Oncocentro ( Site 0384)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0410)",
+    1
+   ],
+   [
+    "Oncocentro ( Site 0203)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 0715)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 3105)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 2554)",
+    1
+   ],
+   [
+    "Oncocentro Valdivia ( Site 1201)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS-ACEREY ( Site 0503)",
+    1
+   ],
+   [
+    "Oncocentro ( Site 0502)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 2005)",
+    1
+   ],
+   [
+    "ONCOCENTRO APYS ( Site 6204)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "james-lind",
+  "nombre_canonico": "James Lind Centro de Investigación del Cáncer",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 74,
+  "alias_textuales_en_la_fuente": [
+   [
+    "James Lind Centro de Investigacion del Cancer",
+    11
+   ],
+   [
+    "James Lind Centro de Investigacion Del Cancer",
+    7
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 1203)",
+    6
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 1404)",
+    6
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 1041)",
+    3
+   ],
+   [
+    "Centro Investigacion Cancer James Lind ( Site 0408)",
+    3
+   ],
+   [
+    "James Lind Centro de Investigación del Cáncer",
+    2
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 1503)",
+    2
+   ],
+   [
+    "Centro Investigacion Cancer James Lind ( Site 0513)",
+    2
+   ],
+   [
+    "James Lind Centro De Investigacion Del Cancer",
+    2
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 0048)",
+    1
+   ],
+   [
+    "Centro Investigacion Cancer James Lind ( Site 0204)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0251)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 2401)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0425)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 1200)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigación del Cáncer ( Site 2705)",
+    1
+   ],
+   [
+    "James Lind Centro de lnvestigacion del Cancer",
+    1
+   ],
+   [
+    "James Lind Centro de Investigación del Cáncer ( Site 0602)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigación del Cáncer ( Site 0903)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 2810)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 0307)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 2108)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 0402)",
+    1
+   ],
+   [
+    "Centro Investigacion Cancer James Lind ( Site 0402)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0004)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 4108)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0064)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0194)",
+    1
+   ],
+   [
+    "Centro De Investigación Del Cancer James Lind",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 1061)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 1504)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 0202)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0202)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigación Del Cáncer",
+    1
+   ],
+   [
+    "James Lind Centro de Investigacion del Cancer ( Site 0711)",
+    1
+   ],
+   [
+    "James Lind Centro de Investigación del Cáncer ( Site 0502)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0510)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0513)",
+    1
+   ],
+   [
+    "Centro Investigación del Cáncer James Lind ( Site 0300)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "cic-vina",
+  "nombre_canonico": "Centro de Investigaciones Clínicas Viña del Mar",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 50,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Centro de Investigaciones Clínicas Viña del Mar",
+    12
+   ],
+   [
+    "Centro de Investigaciones Clinicas Vina del Mar",
+    11
+   ],
+   [
+    "Hospital Clinico Vina Del Mar",
+    3
+   ],
+   [
+    "Hospital Clinico Vina del Mar",
+    3
+   ],
+   [
+    "Centro de Investigaciones Clinicas Viña del Mar",
+    3
+   ],
+   [
+    "Hospital Clinico Viña del Mar",
+    3
+   ],
+   [
+    "Centro de Investigaciones Clinicas Vina del Mar Ltda.",
+    3
+   ],
+   [
+    "Centro de Investigaciones Clínicas Viña del Mar (CIC)",
+    2
+   ],
+   [
+    "Centro de Investigaciones Clinicas Vina Del Mar",
+    2
+   ],
+   [
+    "Centro de Investigaciones Clinicas Vina del Mar ( Site 1042)",
+    1
+   ],
+   [
+    "Centro de Investigaciones Clínicas Vina del Mar Ltda.",
+    1
+   ],
+   [
+    "Centro de Investigaciones Clínicas Vina del Mar",
+    1
+   ],
+   [
+    "Hospital Clinico Vina del Mar?",
+    1
+   ],
+   [
+    "Hospital Clinico Vina del Mar ( Site 0400)",
+    1
+   ],
+   [
+    "Instituto Oncológico Limitada Viña del Mar",
+    1
+   ],
+   [
+    "Hospital Clinico Vina del Mar /ID# 130100",
+    1
+   ],
+   [
+    "Hospital Clinico Vina del Mar /ID# 148502",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "saga",
+  "nombre_canonico": "Centro de Estudios Clínicos SAGA",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 50,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Centro de Estudios Clínicos SAGA",
+    13
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA SpA",
+    4
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA-CECSAGA ( Site 1509)",
+    4
+   ],
+   [
+    "Centro de Estudios Clinicos SAGA",
+    4
+   ],
+   [
+    "Centro de Investigacion Clinica SAGA",
+    2
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA-CECSAGA ( Site 1907)",
+    2
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA (Site 0517)",
+    2
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA ( Site 0161)",
+    2
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA ( Site 0162)",
+    2
+   ],
+   [
+    "Centro de Estudios Clinicos SAGA Spa",
+    2
+   ],
+   [
+    "Centro de estudios clinicos SAGA",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA ( Site 0508)",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA ( Site 6110)",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA ( Site 0708)",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA-CECSAGA ( Site 1505)",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA-CECSAGA ( Site 0404)",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA-CECSAGA ( Site 0712)",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA-CECSAGA ( Site 0162)",
+    1
+   ],
+   [
+    "Centro de Estudios Clinicos Saga Spa",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA ( Site 0503)",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA ( Site 0307)",
+    1
+   ],
+   [
+    "SAGA",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos SAGA ( Site 6205)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "oncovida",
+  "nombre_canonico": "Oncovida",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 45,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Oncovida",
+    8
+   ],
+   [
+    "Oncovida ( Site 1405)",
+    6
+   ],
+   [
+    "Oncovida - Santiago",
+    5
+   ],
+   [
+    "Oncovida ( Site 0403)",
+    3
+   ],
+   [
+    "Oncovida- Santiago",
+    2
+   ],
+   [
+    "Oncovida ( Site 0209)",
+    1
+   ],
+   [
+    "Sociedad Oncovida S.A. ( Site 0250)",
+    1
+   ],
+   [
+    "Oncovida ( Site 0304)",
+    1
+   ],
+   [
+    "Oncovida ( Site 2257)",
+    1
+   ],
+   [
+    "Oncovida ( Site 0603)",
+    1
+   ],
+   [
+    "Sociedad Oncovida S.A. ( Site 2807)",
+    1
+   ],
+   [
+    "Oncovida ( Site 0306)",
+    1
+   ],
+   [
+    "Oncovida ( Site 2107)",
+    1
+   ],
+   [
+    "Oncovida SA",
+    1
+   ],
+   [
+    "Sociedad Oncovida S.A. ( Site 1069)",
+    1
+   ],
+   [
+    "Sociedad Oncovida S.A. ( Site 0196)",
+    1
+   ],
+   [
+    "Oncovida ( Site 0334)",
+    1
+   ],
+   [
+    "Sociedad Oncovida SA",
+    1
+   ],
+   [
+    "Oncovida ( Site 1209)",
+    1
+   ],
+   [
+    "ONCOVIDA",
+    1
+   ],
+   [
+    "Sociedad Oncovida /ID# 231152",
+    1
+   ],
+   [
+    "Oncovida ( Site 0453)",
+    1
+   ],
+   [
+    "Oncovida ( Site 0402)",
+    1
+   ],
+   [
+    "Oncovida ( Site 0514)",
+    1
+   ],
+   [
+    "Sociedad Oncovida S.A. ( Site 0508)",
+    1
+   ],
+   [
+    "Sociedad Oncovida S.A",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "inc",
+  "nombre_canonico": "Instituto Nacional del Cáncer",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 43,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Instituto Nacional del Cancer",
+    20
+   ],
+   [
+    "Instituto Nacional del Cáncer (INCANCER)",
+    5
+   ],
+   [
+    "Instituto Nacional Del Cancer",
+    5
+   ],
+   [
+    "Instituto Nacional del Cáncer",
+    3
+   ],
+   [
+    "Instituto Nacional del Cancer ( Site 1205)",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer ( Site 0912)",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer ( Site 0406)",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer Oncology",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer - Servicio de Radioterapia",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer-CR Investigación ( Site 1211)",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer ( Site 0207)",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer /ID# 129343",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer-CR Investigación ( Site 0511)",
+    1
+   ],
+   [
+    "Instituto Nacional del Cancer ( Site 0303)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "clinica-alemana",
+  "nombre_canonico": "Clínica Alemana Santiago",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 35,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Clinica Alemana de Santiago",
+    9
+   ],
+   [
+    "Clinica Alemana",
+    4
+   ],
+   [
+    "Clínica Alemana de Santiago-Unidad de Investigaciones ( Site 2306)",
+    2
+   ],
+   [
+    "Clínica Alemana de Santiago ( Site 1903)",
+    2
+   ],
+   [
+    "Clínica Alemana de Santiago",
+    2
+   ],
+   [
+    "Clinica Alemana de Temuco",
+    2
+   ],
+   [
+    "Clínica Alemana",
+    2
+   ],
+   [
+    "Clinica Alemana ( Site 2408)",
+    1
+   ],
+   [
+    "Clínica Alemana de Santiago ( Site 1206)",
+    1
+   ],
+   [
+    "Clínica Alemana de Santiago ( Site 2704)",
+    1
+   ],
+   [
+    "Clinica Alemana de Santiago /ID# 244139",
+    1
+   ],
+   [
+    "Clínica Alemana de Santiago ( Site 1608)",
+    1
+   ],
+   [
+    "Clinica Alemana - Vitacura",
+    1
+   ],
+   [
+    "Clínica Alemana de Santiago ( Site 0610)",
+    1
+   ],
+   [
+    "Clinica Alemana de Osorno",
+    1
+   ],
+   [
+    "Clínica Alemana Valdivia",
+    1
+   ],
+   [
+    "Clinica Alemana de Santiago S.A.",
+    1
+   ],
+   [
+    "Clinica Alemana Temuco",
+    1
+   ],
+   [
+    "Clínica Alemana Temuco",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "centro-precision",
+  "nombre_canonico": "Centro de Oncología de Precisión",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 32,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Centro de Oncologia de Precision",
+    7
+   ],
+   [
+    "Centro Oncologia de Precision Universidad Mayor",
+    6
+   ],
+   [
+    "Centro de Oncología de Precisión",
+    3
+   ],
+   [
+    "Centro de Oncologia de Precision de la Universidad Mayor",
+    2
+   ],
+   [
+    "Centro de Oncología de Precisión ( Site 0160)",
+    2
+   ],
+   [
+    "Centro de Oncología de Precisión-Oncology ( Site 0502)",
+    2
+   ],
+   [
+    "Centro de Oncologia de Precision (Medicina de Precision Celerity)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión ( Site 0207)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión ( Site 0241)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión ( Site 2203)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión-Oncology ( Site 0068)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión ( Site 0209)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión-Oncology ( Site 0503)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión ( Site 0515)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión (COP)",
+    1
+   ],
+   [
+    "Centro de Oncología de Precisión ( Site 0410)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "ic-la-serena",
+  "nombre_canonico": "IC La Serena Research",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 32,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Ic La Serena Research",
+    7
+   ],
+   [
+    "IC La Serena Research ( Site 1506)",
+    4
+   ],
+   [
+    "IC La Serena Research",
+    3
+   ],
+   [
+    "IC La Serena Research ( Site 1909)",
+    2
+   ],
+   [
+    "IC La Serena Research ( Site 0710)",
+    2
+   ],
+   [
+    "IC La Serena Research ( Site 0202)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 0356)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 2406)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 2254)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 2405)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 0504)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 0204)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 0405)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 0403)",
+    1
+   ],
+   [
+    "Centro de Estudios Clínicos IC La Serena Research",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 1207)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 0511)",
+    1
+   ],
+   [
+    "IC La Serena Research ( Site 2007)",
+    1
+   ],
+   [
+    "IC La Serena Research SpA",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "icos",
+  "nombre_canonico": "Instituto Clínico Oncológico del Sur (ICOS)",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 31,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Instituto Clinico Oncologico del Sur",
+    7
+   ],
+   [
+    "Instituto Clinico Oncologico del Sur (ICOS)",
+    5
+   ],
+   [
+    "Instituto Clinico Oncologico del Sur ICOS",
+    3
+   ],
+   [
+    "Instituto Clínico Oncológico del Sur - ICOS",
+    3
+   ],
+   [
+    "Instituto Clínico Oncológico del Sur",
+    2
+   ],
+   [
+    "Instituto Oncologico del sur",
+    2
+   ],
+   [
+    "Instituto Clinico Oncologico del Sur ( Site 0203)",
+    1
+   ],
+   [
+    "Instituto Oncologico del Sur",
+    1
+   ],
+   [
+    "Instituto Clinico Oncologico del Sur ( Site 0067)",
+    1
+   ],
+   [
+    "Instituto Clinico Oncologica del Sur (ICOS)",
+    1
+   ],
+   [
+    "Instituto Clinico Oncologico del Sur ( Site 1062)",
+    1
+   ],
+   [
+    "Instituto Clínico Oncológico del Sur (ICOS)",
+    1
+   ],
+   [
+    "ICOS - Inst Clinic Oncology /ID# 125236",
+    1
+   ],
+   [
+    "Instituto Clinico Oncologico del Sur ( Site 0500)",
+    1
+   ],
+   [
+    "Instituto Clinico del Sur. ICOS ( Site 0290)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "orlandi",
+  "nombre_canonico": "Orlandi Oncología",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 29,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Orlandi Oncologia",
+    9
+   ],
+   [
+    "Orlandi Oncologia-Oncology ( Site 0504)",
+    3
+   ],
+   [
+    "OrlandiOncología",
+    3
+   ],
+   [
+    "Orlandioncologia",
+    2
+   ],
+   [
+    "Orlandi Oncologia-Oncology ( Site 0503)",
+    2
+   ],
+   [
+    "Sociedad Prosalud Montes y Orlandi Ltda. Fantasy name (Orlandi Oncologia)",
+    1
+   ],
+   [
+    "Soc. Prosalud Montes y Orlandi Ltda (Orlandi Oncologia) ( Site 0401)",
+    1
+   ],
+   [
+    "Orlandi Oncología",
+    1
+   ],
+   [
+    "OrlandiOncologia ( Site 0381)",
+    1
+   ],
+   [
+    "OrlandiOncologia ( Site 0201)",
+    1
+   ],
+   [
+    "Orlandi Oncologia ( Site 0700)",
+    1
+   ],
+   [
+    "Orlandi Oncologia-Oncology ( Site 3102)",
+    1
+   ],
+   [
+    "Orlandi Oncologia ( Site 2555)",
+    1
+   ],
+   [
+    "Sociedad Prosalud Montes y Orlandi /ID# 231154",
+    1
+   ],
+   [
+    "Orlandi Oncología - Centro Médico Health & Care",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-uchile",
+  "nombre_canonico": "Hospital Clínico Universidad de Chile",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 22,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Clinico Universidad de Chile",
+    8
+   ],
+   [
+    "Hospital Clinico Universidad de Chile ( Site 1200)",
+    6
+   ],
+   [
+    "Hospital Clinico Universidad de Chile, Seccion de Oncologia",
+    3
+   ],
+   [
+    "Hospital Clínico Universidad de Chile",
+    2
+   ],
+   [
+    "Hospital Clinico Universidad de Chile, Departamento Dermatologia",
+    1
+   ],
+   [
+    "Hospital Clinico Universidad de Chile ( Site 0905)",
+    1
+   ],
+   [
+    "Hospital Clinico Universidad de Chile ( Site 0287)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "biocenter",
+  "nombre_canonico": "Biocenter",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 22,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Biocenter",
+    11
+   ],
+   [
+    "Biocenter ( Site 1507)",
+    4
+   ],
+   [
+    "Biocenter ( Site 2401)",
+    1
+   ],
+   [
+    "Biocenter ( Site 0510)",
+    1
+   ],
+   [
+    "Biocenter ( Site 0203)",
+    1
+   ],
+   [
+    "Biocenter ( Site 0208)",
+    1
+   ],
+   [
+    "Servicios Medicos e Investigacion Biocenter SpA",
+    1
+   ],
+   [
+    "Biocenter ( Site 0514)",
+    1
+   ],
+   [
+    "Biocenter ( Site 2009)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "redsalud",
+  "nombre_canonico": "Clínica RedSalud",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 21,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Clinica Redsalud Vitacura",
+    8
+   ],
+   [
+    "Clínica RedSalud Vitacura (Site 0511)",
+    2
+   ],
+   [
+    "RedSalud Vitacura",
+    2
+   ],
+   [
+    "Clinica Redsalud Vitacura, Instituto del Cancer",
+    1
+   ],
+   [
+    "Clínica RedSalud Vitacura ( Site 0202)",
+    1
+   ],
+   [
+    "Clínica RedSalud Vitacura ( Site 2409)",
+    1
+   ],
+   [
+    "Clínica RedSalud Vitacura ( Site 0512)",
+    1
+   ],
+   [
+    "Clínica RedSalud Vitacura ( Site 0412)",
+    1
+   ],
+   [
+    "Clínica RedSalud Vitacura ( Site 2556)",
+    1
+   ],
+   [
+    "Clínica RedSalud Vitacura ( Site 0455)",
+    1
+   ],
+   [
+    "Clínica RedSalud Vitacura ( Site 0515)",
+    1
+   ],
+   [
+    "Instituto del Cancer RedSalud Vitacura",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "ucm",
+  "nombre_canonico": "Clínica Universidad Católica del Maule",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 21,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Clinica Universidad Catolica del Maule",
+    3
+   ],
+   [
+    "Clinica Universidad Catolica del Maule-Oncology ( Site 0501)",
+    3
+   ],
+   [
+    "Clinica Universidad Catolica del Maule-Oncology ( Site 0500)",
+    2
+   ],
+   [
+    "Clinica Universidad Catolica del Maule-Oncology ( Site 0355)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule ( Site 0236)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule ( Site 2407)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule-Oncology ( Site 0304)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule-Oncology ( Site 0306)",
+    1
+   ],
+   [
+    "Clinical Universidad Catolica del Maule, Ltda",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule ( Site 0065)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule ( Site 0413)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule ( Site 0385)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule-Oncology ( Site 0703)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule ( Site 0208)",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule /ID# 231294",
+    1
+   ],
+   [
+    "Clinica Universidad Catolica del Maule ( Site 0305)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "inmunocel",
+  "nombre_canonico": "Inmunocel",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 17,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Inmunocel",
+    6
+   ],
+   [
+    "Clínica Inmunocel ( Site 1511)",
+    4
+   ],
+   [
+    "Clínica Inmunocel ( Site 1910)",
+    2
+   ],
+   [
+    "Clínica Inmunocel ( Site 0407)",
+    1
+   ],
+   [
+    "Clínica Inmunocel ( Site 2404)",
+    1
+   ],
+   [
+    "Clinica Inmunocel ( Site 0503)",
+    1
+   ],
+   [
+    "Clínica Inmunocel ( Site 0201)",
+    1
+   ],
+   [
+    "Clínica Inmunocel",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "sim",
+  "nombre_canonico": "Sociedad de Investigaciones Médicas (SIM)",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 17,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Sociedad de Investigaciones Medicas Ltda (SIM)",
+    8
+   ],
+   [
+    "Sociedad de Investigaciones Médicas Limitada",
+    2
+   ],
+   [
+    "Sociedad de Investigaciones Medicas Limitada",
+    2
+   ],
+   [
+    "Sociedad de Investigaciones Medicas Ltda",
+    1
+   ],
+   [
+    "Sociedad de Investigaciones Medicas Limitadas ( Site 0913)",
+    1
+   ],
+   [
+    "SIM CRC",
+    1
+   ],
+   [
+    "Centro de Investigacion Clinica SIM",
+    1
+   ],
+   [
+    "SIM Centro de Investigacion Clinica",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "cecim",
+  "nombre_canonico": "CeCim Biocinetic",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 16,
+  "alias_textuales_en_la_fuente": [
+   [
+    "CeCim Biocinetic",
+    4
+   ],
+   [
+    "CECIM Biocinetic",
+    2
+   ],
+   [
+    "Biocinetic servicios medicos limitada",
+    2
+   ],
+   [
+    "Biocinetic",
+    2
+   ],
+   [
+    "Centro de Estudios Clinicos e Investigaciones Medicas CeCim",
+    2
+   ],
+   [
+    "CECIM ( Site 0210)",
+    1
+   ],
+   [
+    "CeCim - Centro de Estudios Clínicos e Investigaciones Médicas",
+    1
+   ],
+   [
+    "CECIM-Centro de Estudios Cliicos e Investigaciones Medicas",
+    1
+   ],
+   [
+    "BIOCINETIC SpA",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "ciec",
+  "nombre_canonico": "Centro Internacional de Estudios Clínicos (CIEC)",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 14,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Centro Internacional de Estudios Clínicos (CIEC)",
+    3
+   ],
+   [
+    "Centro Internacional de Estudios Clinicos",
+    3
+   ],
+   [
+    "Centro Internacional de Estudios Clínicos",
+    2
+   ],
+   [
+    "Centro Internacional de Estudios Clinicos - CIEC",
+    2
+   ],
+   [
+    "Centro Internacional de Estudios Clinicos, CIEC",
+    1
+   ],
+   [
+    "CIEC - Centro Internacional de Estudios Clínicos",
+    1
+   ],
+   [
+    "Centro Internacional de Estudios Clinicos (CIEC)",
+    1
+   ],
+   [
+    "Centro Internacional de Estudios Clinicos CIEC",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "clinica-puerto-montt",
+  "nombre_canonico": "Clínica Puerto Montt",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 14,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Clínica Puerto Montt ( Site 0404)",
+    4
+   ],
+   [
+    "Clinica Puerto Montt",
+    2
+   ],
+   [
+    "Clinica Puerto Montt ( Site 0211)",
+    1
+   ],
+   [
+    "Clínica Puerto Montt ( Site 0206)",
+    1
+   ],
+   [
+    "Clínica Puerto Montt ( Site 0601)",
+    1
+   ],
+   [
+    "Clinica Puerto Montt ( Site 0606)",
+    1
+   ],
+   [
+    "Clinica Puerto Montt ( Site 0615)",
+    1
+   ],
+   [
+    "Clínica Puerto Montt ( Site 0309)",
+    1
+   ],
+   [
+    "Clínica Puerto Montt ( Site 0713)",
+    1
+   ],
+   [
+    "Clínica Puerto Montt",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "iceg",
+  "nombre_canonico": "Icegclinic",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 13,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Icegclinic",
+    7
+   ],
+   [
+    "Icegclinic Research & Care",
+    3
+   ],
+   [
+    "Icegclinic Research and Care",
+    2
+   ],
+   [
+    "Icegclinic /Id# 231212",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "clinica-santa-maria",
+  "nombre_canonico": "Clínica Santa María",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 12,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Clinica Santa Maria",
+    10
+   ],
+   [
+    "Clínica Santa María",
+    2
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-calvo-mackenna",
+  "nombre_canonico": "Hospital Luis Calvo Mackenna",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 9,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Luis Calvo Mackenna ( Site 1879)",
+    3
+   ],
+   [
+    "Hospital Luis Calvo Mackenna",
+    3
+   ],
+   [
+    "Hospital Dr Luis Calvo Mackenna",
+    2
+   ],
+   [
+    "Hospital Luis Calvo Mackenna; Oncologia",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-van-buren",
+  "nombre_canonico": "Hospital Carlos Van Buren",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 8,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Carlos Van Buren ( Site 1880)",
+    3
+   ],
+   [
+    "Hospital Carlos Van Buren",
+    3
+   ],
+   [
+    "Hospital Carlos Van Buren de Valparaiso",
+    1
+   ],
+   [
+    "Hospital Carlos Van Buren, Servicio de Oncologia",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-san-borja",
+  "nombre_canonico": "Hospital Clínico San Borja Arriarán",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 8,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Clinico San Borja Arriaran",
+    4
+   ],
+   [
+    "Hospital Clínico San Borja Arriaran",
+    1
+   ],
+   [
+    "Hospital San Borja Arriaran",
+    1
+   ],
+   [
+    "Hospital Clínico San Borja Arriarán",
+    1
+   ],
+   [
+    "Hospital San Borja Arriarán",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-sotero",
+  "nombre_canonico": "Hospital Sótero del Río",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 7,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Sotero del Rio",
+    3
+   ],
+   [
+    "Hospital Dr. Sotero Del Rio",
+    1
+   ],
+   [
+    "Complejo Asistencial Dr. Sótero del Río",
+    1
+   ],
+   [
+    "Hospital Sotero Del Rio",
+    1
+   ],
+   [
+    "Dr. Sótero del Río Hospital",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "uandes",
+  "nombre_canonico": "Universidad de los Andes",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 7,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Clinico Universidad de Los Andes",
+    3
+   ],
+   [
+    "Clínica Universidad de los Andes",
+    1
+   ],
+   [
+    "Clínica Universidad de Los Andes",
+    1
+   ],
+   [
+    "Hospital Clinico Universidad De Los Andes /ID# 262665",
+    1
+   ],
+   [
+    "Hospital Clinico Universidad De Los Andes /ID# 260974",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "iram",
+  "nombre_canonico": "Instituto de Radiomedicina (IRAM)",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 7,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Instituto de Radiomedicina",
+    4
+   ],
+   [
+    "Instituto de Radiomedicina-hemato-oncologia ( Site 0604)",
+    1
+   ],
+   [
+    "Instituto de Radiomedicina (IRAM)",
+    1
+   ],
+   [
+    "Instituto de Radiomedicina, IRAM",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-militar",
+  "nombre_canonico": "Hospital Militar de Santiago",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 6,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Militar",
+    4
+   ],
+   [
+    "Hospital Militar de Santiago ( Site 0911)",
+    1
+   ],
+   [
+    "Hospital Militar de Santiago",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-concepcion",
+  "nombre_canonico": "Hospital Clínico Regional de Concepción",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 5,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Clínico Regional Dr. Guillermo Grant Benavente ( Site 1881)",
+    3
+   ],
+   [
+    "Hospital Guillermo Grant Benavente",
+    2
+   ]
+  ]
+ },
+ {
+  "id_canonico": "k2-oncology",
+  "nombre_canonico": "K2 Oncology",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 5,
+  "alias_textuales_en_la_fuente": [
+   [
+    "K2 Oncology",
+    3
+   ],
+   [
+    "K2 Oncology (Site 0514)",
+    2
+   ]
+  ]
+ },
+ {
+  "id_canonico": "clinica-las-condes",
+  "nombre_canonico": "Clínica Las Condes",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 5,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Clinica Las Condes",
+    4
+   ],
+   [
+    "Institution: Clinica Las Condes",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "crchile",
+  "nombre_canonico": "Clinical Research Chile SpA",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 4,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Clinical Research Chile SpA",
+    3
+   ],
+   [
+    "Clinical Research Chile SpA ( Site 0358)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-salvador",
+  "nombre_canonico": "Hospital del Salvador",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 4,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital del Salvador",
+    2
+   ],
+   [
+    "Hospital Del Salvador",
+    1
+   ],
+   [
+    "Hospital del Salvador SSMO",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-rancagua",
+  "nombre_canonico": "Hospital Regional de Rancagua",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 4,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Regional Rancagua Libertador Bernardo O Higgins ( Site 0910)",
+    1
+   ],
+   [
+    "Centro de Cirugía Plástica y Reconstructiva. Dra. Viviana Spröhnle Hospital Regional de Rancagua",
+    1
+   ],
+   [
+    "Hospital Regional Rancagua",
+    1
+   ],
+   [
+    "Hospital Regional Rancagua Libertador Bernardo O Higgins ( Site 0299)",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "itop",
+  "nombre_canonico": "Instituto de Terapias Oncológicas Providencia",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 3,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Instituto de Terapias Oncologicas Providencia",
+    3
+   ]
+  ]
+ },
+ {
+  "id_canonico": "clinica-davila",
+  "nombre_canonico": "Clínica Dávila",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 2,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Clinica Davila",
+    2
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-barros-luco",
+  "nombre_canonico": "Hospital Barros Luco Trudeau",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 2,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Barros Luco",
+    1
+   ],
+   [
+    "Hospital Barros Luco Trudeau",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "torax",
+  "nombre_canonico": "Instituto Nacional del Tórax",
+  "ya_en_la_muestra": true,
+  "sedes_observadas": 2,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Instituto Nacional del Torax",
+    1
+   ],
+   [
+    "Instituto Nacional Del Torax",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-valdivia",
+  "nombre_canonico": "Hospital Base de Valdivia",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 2,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Base de Valdivia",
+    1
+   ],
+   [
+    "Hospital Clinico Regional de Valdivia at University Austral de Chile",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-temuco",
+  "nombre_canonico": "Hospital Hernán Henríquez Aravena",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 2,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Dr. Hernan Henriquez Aravena",
+    1
+   ],
+   [
+    "Hospital de Temuco",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-fricke",
+  "nombre_canonico": "Hospital Gustavo Fricke",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 1,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital Dr. Gustavo Fricke",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-talca",
+  "nombre_canonico": "Hospital Regional de Talca",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 1,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital de Talca",
+    1
+   ]
+  ]
+ },
+ {
+  "id_canonico": "hosp-sjd",
+  "nombre_canonico": "Hospital San Juan de Dios",
+  "ya_en_la_muestra": false,
+  "sedes_observadas": 1,
+  "alias_textuales_en_la_fuente": [
+   [
+    "Hospital San Juan de Dios",
+    1
+   ]
+  ]
+ }
+]

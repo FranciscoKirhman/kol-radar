@@ -5,8 +5,8 @@ documentadas en `README.md`, para descubrir qué campos son confiables antes de
 diseñar la página de perfil. Esto se hizo con una muestra de prueba, no la
 validación manual de 30 fichas que el Roadmap de `README.md` define como Fase
 2 (esa etapa formal sigue sin hacerse). Los datos completos están en
-[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 173
-entidades reales (70 personas, 28 instituciones, 75 ensayos clínicos) y 349
+[`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json) — 717
+entidades reales (77 personas, 61 instituciones, 579 ensayos clínicos) y 1198
 vínculos entre ellas, cada hecho en el formato hecho/fuente/fecha/confianza
 del modelo de datos, con un campo `tipo` adicional y (según el caso) `fase`
 del ensayo o `revista` de la publicación.

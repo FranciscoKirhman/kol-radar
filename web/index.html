@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>KOL Radar — oncología en Chile (demo)</title>
+<title>KOL Radar — oncología en Chile (beta)</title>
 <style>
   /* Dirección visual "publicación científica": papel cálido, tinta serif en los nombres,
      el grafo presentado como figura. Paleta categórica validada con validate_palette.js
@@ -212,6 +212,23 @@
   .empty-state, .loading-state, .error-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 13.5px; }
   .error-state { color: var(--institucion); }
 
+  /* ---------- Aviso de beta ---------- */
+  .beta-bar {
+    max-width: 1080px; margin: 12px auto 0; padding: 12px 16px;
+    border: 1px solid var(--border); border-left: 3px solid var(--accent);
+    border-radius: 8px; background: var(--surface-1);
+    font-size: 12.5px; line-height: 1.5; color: var(--text-secondary);
+    display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap;
+  }
+  .beta-bar strong { color: var(--text-primary); }
+  .beta-bar .beta-txt { flex: 1 1 420px; }
+  .beta-bar a { color: var(--text-primary); }
+  .beta-cta {
+    font: inherit; font-size: 12.5px; font-weight: 600; white-space: nowrap;
+    padding: 7px 13px; border-radius: 999px; text-decoration: none;
+    border: 1px solid var(--text-primary); color: var(--text-primary);
+  }
+  .beta-cta:hover { background: var(--text-primary); color: var(--surface-0); }
   /* ---------- Network view ---------- */
   #network-view { display: none; }
   #network-view.active { display: block; }
@@ -365,7 +382,7 @@
 <header class="topbar">
   <div class="topbar-row">
     <span class="brand">KOL Radar</span>
-    <span class="specialty-badge" id="specialty-badge">demo</span>
+    <span class="specialty-badge" id="specialty-badge">beta</span>
     <div class="search-wrap">
       <span class="icon">⌕</span>
       <input id="search" type="search" placeholder="Buscar por nombre, institución o ciudad…" autocomplete="off" />
@@ -427,6 +444,18 @@
   </div>
 </header>
 
+<div class="beta-bar" role="note">
+  <div class="beta-txt">
+    <strong>Esto es una beta.</strong> Todo lo que ves sale de fuentes públicas —ClinicalTrials.gov,
+    PubMed, SciELO y sitios institucionales— y cada dato enlaza a la fuente exacta de donde salió.
+    <strong>Ningún dato pasó todavía por revisión humana</strong>: pueden faltar personas, sobrar
+    duplicados y haber identidades sin confirmar. No es una evaluación de desempeño profesional ni
+    un listado comercial. Si algo está mal, lo mejor que podés hacer es avisarnos.
+  </div>
+  <a class="beta-cta" id="beta-feedback"
+     href="https://github.com/FranciscoKirhman/kol-radar/issues/new"
+     target="_blank" rel="noopener noreferrer">Reportar un error</a>
+</div>
 <main>
   <section id="list-view" class="active">
     <p class="results-meta" id="results-meta"></p>
@@ -492,7 +521,9 @@
   Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, sitios institucionales) —
   no es una evaluación de desempeño profesional ni un listado comercial. Datos de muestra, sin revisión
   humana todavía. ¿Eres un profesional listado acá y quieres corregir o eliminar tu información? El canal
-  de contacto para eso todavía no está definido — este es un prototipo, no un producto en producción.
+  privado para eso todavía no está definido — el enlace de "Reportar un error" va a un repositorio
+  público, así que no es el lugar para pedir que se retire tu ficha. Esta es una beta, no un producto
+  en producción.
 </footer>
 
 <div class="backdrop" id="backdrop"></div>
@@ -592,6 +623,49 @@
   function countByTipo(hechos, tipo) {
     return hechos.filter(function (h) { return h.tipo === tipo; }).length;
   }
+  // Una misma fuente puede aportar más de una fila descriptiva sobre el MISMO recurso: de
+  // ClinicalTrials.gov, por ejemplo, entra una fila del estudio y otra del estado de
+  // reclutamiento, ambas con la misma `fuente_url`. Las señales cuentan publicaciones y ensayos
+  // distintos, no filas repetidas, así que contarlas dos veces inflaba el puntaje. Medido sobre
+  // la muestra: 53 entidades tenían al menos un recurso duplicado dentro de un mismo tipo.
+  // La evidencia completa se sigue mostrando en la ficha; esto solo afecta el cálculo.
+  // La fila representativa es la más reciente; los empates se resuelven por presencia de fase y
+  // luego por texto, nunca por el orden del JSON. Si la más reciente no declara fase, se
+  // conserva para el cálculo la fase declarada en otra fila del mismo recurso, sin tocar la
+  // evidencia guardada.
+  function hechosUnicosPorFuente(hechos) {
+    var grupos = {};
+    hechos.forEach(function (h) {
+      var clave = h.fuente_url || "__sin_fuente__" + JSON.stringify(h);
+      (grupos[clave] = grupos[clave] || []).push(h);
+    });
+    var resultado = [];
+    Object.keys(grupos).sort().forEach(function (clave) {
+      var grupo = grupos[clave].slice().sort(function (a, b) {
+        var fechaA = sortableDate(a.fecha), fechaB = sortableDate(b.fecha);
+        if (fechaA !== fechaB) return fechaB.localeCompare(fechaA);
+        var tieneFaseA = !!a.fase, tieneFaseB = !!b.fase;
+        if (tieneFaseA !== tieneFaseB) return tieneFaseA ? -1 : 1;
+        var textoA = (a.hecho || "") + "|" + (a.fase || "");
+        var textoB = (b.hecho || "") + "|" + (b.fase || "");
+        return textoA < textoB ? -1 : textoA > textoB ? 1 : 0;
+      });
+      var representativo = grupo[0];
+      if (!representativo.fase) {
+        for (var i = 1; i < grupo.length; i++) {
+          if (grupo[i].fase) {
+            var conFase = {};
+            Object.keys(representativo).forEach(function (prop) { conFase[prop] = representativo[prop]; });
+            conFase.fase = grupo[i].fase;
+            representativo = conFase;
+            break;
+          }
+        }
+      }
+      resultado.push(representativo);
+    });
+    return resultado;
+  }
   function connectionCount(id) {
     return vinculos.filter(function (v) { return v.origen === id || v.destino === id; }).length;
   }
@@ -606,9 +680,9 @@
   // que se muestra sin pesar). Los ensayos sí se pesan por fase. Nunca es un número oculto: cada
   // componente se puede abrir y ver de qué hechos sale.
   function computeSenales(n) {
-    var pubHechos = n.hechos.filter(function (h) { return h.tipo === "publicacion"; });
-    var ensayoHechos = n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; });
-    var docenciaHechos = n.hechos.filter(function (h) { return h.tipo === "congreso"; });
+    var pubHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "publicacion"; }));
+    var ensayoHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; }));
+    var docenciaHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "congreso"; }));
     var conexiones = connectionCount(n.id);
     var ensayosPts = ensayoHechos.reduce(function (sum, h) { return sum + ensayoPeso(h); }, 0);
     return {
@@ -648,16 +722,25 @@
   function recencyMultiplier(fecha) { return RECENCY_MULT[recencyBucket(fecha)]; }
 
   function computePriority(n) {
-    var ensayoHechos = n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; });
-    var pubHechos = n.hechos.filter(function (h) { return h.tipo === "publicacion"; });
+    var ensayoHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "ensayo_clinico"; }));
+    var pubHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "publicacion"; }));
     var guiaHechos = pubHechos.filter(esGuiaOConsenso);
     var pubNoGuia = pubHechos.filter(function (h) { return !esGuiaOConsenso(h); });
-    var congresoHechos = n.hechos.filter(function (h) { return h.tipo === "congreso"; });
+    var congresoHechos = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "congreso"; }));
 
+    // El tope por dimensión toma los `cap` hechos que MÁS aportan, no los primeros que vengan.
+    // Antes tomaba `slice(0, cap)` sobre una lista ordenada por URL: mientras nadie superó los
+    // 5 recursos daba igual, pero al crecer la base eso elegiría un subconjunto arbitrario y
+    // dejaría fuera un ensayo fase III reciente por un fase I viejo cuya URL ordena antes.
     function dimensionPts(hechos, cap, basePts, tope) {
-      var raw = hechos.slice(0, cap).reduce(function (sum, h) {
-        return sum + basePts(h) * recencyMultiplier(h.fecha);
-      }, 0);
+      var aporte = hechos.map(function (h) {
+        return { h: h, pts: basePts(h) * recencyMultiplier(h.fecha) };
+      }).sort(function (a, b) {
+        if (b.pts !== a.pts) return b.pts - a.pts;
+        // Desempate estable y explícito, para que el puntaje no dependa del orden del JSON.
+        return sortableDate(b.h.fecha).localeCompare(sortableDate(a.h.fecha));
+      });
+      var raw = aporte.slice(0, cap).reduce(function (sum, x) { return sum + x.pts; }, 0);
       return Math.min(tope, Math.round(raw));
     }
 
@@ -754,7 +837,12 @@
   var IDENTITY_LABEL = { alta: "Identidad: alta", media: "Identidad: media", baja: "Identidad: por verificar" };
 
   // ---------------- Carga de datos ----------------
-  fetch(DATA_URL)
+  // `no-cache` obliga a revalidar contra el servidor en cada carga (usa ETag, así que si el
+  // archivo no cambió la respuesta sigue siendo un 304 barato). Sin esto, en GitHub Pages un
+  // tester que vuelve al sitio se queda con el dataset de su visita anterior y ve una versión
+  // vieja sin ningún indicio de que lo es — que en una beta que se va a corregir seguido es
+  // justo el error más difícil de diagnosticar.
+  fetch(DATA_URL, { cache: "no-cache" })
     .then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
@@ -852,13 +940,21 @@
     return n._tagsCache;
   }
 
+  // Una entidad puede no declarar ciudad: ClinicalTrials.gov no siempre la da para una sede,
+  // y forzar un texto ahí sería inventar un dato. Así que todo lo que muestre o busque sobre
+  // `subtitulo` y `ciudad` tiene que tolerar el nulo. Antes no lo hacía y `matches()` lanzaba
+  // una excepción que dejaba la búsqueda muerta sin ningún aviso en pantalla.
+  function subtituloLinea(n) {
+    return [n.subtitulo, n.ciudad].filter(function (x) { return x; }).join(" · ");
+  }
+
   function matches(n) {
     if (state.filter !== "todos" && n.tipo !== state.filter) return false;
     if (state.query) {
       var q = state.query.toLowerCase();
       var enCampos = n.nombre.toLowerCase().indexOf(q) !== -1 ||
-                     n.ciudad.toLowerCase().indexOf(q) !== -1 ||
-                     n.subtitulo.toLowerCase().indexOf(q) !== -1;
+                     (n.ciudad || "").toLowerCase().indexOf(q) !== -1 ||
+                     (n.subtitulo || "").toLowerCase().indexOf(q) !== -1;
       var enHechos = n.hechos.some(function (h) { return (h.hecho || "").toLowerCase().indexOf(q) !== -1; });
       if (!enCampos && !enHechos) return false;
     }
@@ -1013,7 +1109,7 @@
     // (o el NCT) y las drogas evaluadas, que es lo que un MSL reconoce; el título completo
     // sigue entero en la ficha.
     name.textContent = etiquetaCorta(n);
-    var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = n.subtitulo + " · " + n.ciudad;
+    var sub = document.createElement("div"); sub.className = "card-sub"; sub.textContent = subtituloLinea(n);
     nameWrap.appendChild(name); nameWrap.appendChild(sub);
     // El tier de prioridad (PRODUCT_CHARTER.md) solo aplica a personas — instituciones y ensayos
     // son contexto, no candidatos a priorizar, así que mantienen el conteo crudo de señales.
@@ -1281,7 +1377,7 @@
     todas.textContent = "Todas las áreas";
     cont.appendChild(todas);
     // El badge del header ya no puede decir "cáncer de pulmón": el conjunto es multi-área.
-    document.getElementById("specialty-badge").textContent = areas.length + " áreas · demo";
+    document.getElementById("specialty-badge").textContent = areas.length + " áreas · beta";
     areas.forEach(function (a) {
       var cuenta = entidades.filter(function (x) { return (x.area || "cáncer de pulmón") === a; }).length;
       var b = document.createElement("button");
@@ -1392,7 +1488,7 @@
     seleccionados.forEach(function (n, i) {
       var p = computePriority(n);
       L.push((i + 1) + ". " + n.nombre + " — " + TIER_LABEL[p.tier] + " (" + p.total + " pts)");
-      L.push("   Afiliación observada: " + n.subtitulo + " · " + n.ciudad);
+      L.push("   Afiliación observada: " + subtituloLinea(n));
       var porQue = [];
       if (p.ensayosPts) porQue.push(p.nEnsayos + " ensayo(s) clínico(s) [" + p.ensayosPts + " pts]");
       if (p.pubPts) porQue.push(p.nPub + " publicación(es) [" + p.pubPts + " pts]");
@@ -1566,17 +1662,48 @@
     return { nodes: nodes, edges: edges };
   }
 
+  // Tope duro de nodos que se dibujan de una vez. El costo del layout crece con el cuadrado de
+  // los nodos: medido en el navegador, 717 nodos bloqueaban el hilo principal 7,6 segundos con
+  // la página entera congelada. Acotar el dibujo mantiene el mapa usable por más que crezca la
+  // base, y lo que se recorta es lo que menos aporta a una vista de RED: los nodos con menos
+  // conexiones. Un ensayo sin institución resuelta tiene grado 0 y sería un punto suelto; sigue
+  // estando completo en la lista y en su ficha, que es donde se lo consulta.
+  var TOPE_NODOS_GRAFO = 400;
+
   function buildNetwork() {
     var subset = currentNetworkSubset();
     var nodes = subset.nodes, edges = subset.edges;
     var hint = document.getElementById("network-hint");
+    var recortados = 0;
+    if (nodes.length > TOPE_NODOS_GRAFO) {
+      var grado = {};
+      nodes.forEach(function (n) { grado[n.id] = 0; });
+      edges.forEach(function (e) {
+        if (grado[e.origen] !== undefined) grado[e.origen]++;
+        if (grado[e.destino] !== undefined) grado[e.destino]++;
+      });
+      var ordenados = nodes.slice().sort(function (a, b) {
+        if (grado[b.id] !== grado[a.id]) return grado[b.id] - grado[a.id];
+        // Desempate estable: sin esto el recorte cambiaría entre construcciones.
+        return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+      });
+      recortados = nodes.length - TOPE_NODOS_GRAFO;
+      nodes = ordenados.slice(0, TOPE_NODOS_GRAFO);
+      var visibles = {};
+      nodes.forEach(function (n) { visibles[n.id] = true; });
+      edges = edges.filter(function (e) { return visibles[e.origen] && visibles[e.destino]; });
+    }
     var capasApagadas = Object.keys(capas.nodos).filter(function (k) { return !capas.nodos[k]; }).length +
                         Object.keys(capas.aristas).filter(function (k) { return !capas.aristas[k]; }).length;
+    var avisoRecorte = recortados
+      ? " Se dibujan los " + TOPE_NODOS_GRAFO + " nodos con más conexiones; " + recortados +
+        " quedaron fuera del mapa por tener pocas o ninguna, y siguen en la lista y en su ficha."
+      : "";
     hint.textContent = (nodes.length === entidades.length && !capasApagadas)
       ? "Mapa completo — para ver con qué se conecta una persona o institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa. Pasa el mouse sobre un nodo para resaltar sus conexiones."
       : "Mostrando " + nodes.length + " de " + entidades.length + " entidades" +
         (capasApagadas ? " (hay capas apagadas abajo)" : " según el filtro/búsqueda activos") +
-        ". Pasa el mouse sobre un nodo para resaltar sus conexiones.";
+        ". Pasa el mouse sobre un nodo para resaltar sus conexiones." + avisoRecorte;
 
     var svg = document.getElementById("graph");
     svg.innerHTML = "";
@@ -1622,7 +1749,14 @@
     // en un teléfono el SVG mantiene proporción y deja franjas vacías arriba y abajo con todos
     // los nodos aplastados al medio. Acá el lienzo toma la forma del hueco disponible.
     var caja = svg.getBoundingClientRect();
-    var W = 720;
+    // El lienzo crece con la cantidad de nodos. Con un ancho fijo de 720, meter 717 nodos daba
+    // una densidad siete veces mayor que con 173: la simulación se volvía lenta —cada celda de
+    // la grilla contenía medio grafo— y solo entraban 15 etiquetas de 717 porque no quedaba
+    // hueco libre donde ponerlas. Al escalar por la raíz del número de nodos, la densidad se
+    // mantiene parecida a la que ya estaba ajustada. El usuario tiene zoom y arrastre para
+    // recorrerlo, y el tope de 2,2 evita que los nodos queden diminutos.
+    var escala = Math.min(2.2, Math.max(1, Math.sqrt(nodes.length / 180)));
+    var W = Math.round(720 * escala);
     // Se acota la PROPORCIÓN, no solo el alto: si el SVG se mide con ancho ~0 (panel oculto,
     // transición de layout), la razón alto/ancho se dispara y el viewBox sale inservible.
     var razon = (caja.width > 40 && caja.height > 40) ? caja.height / caja.width : 460 / 720;
@@ -1684,18 +1818,72 @@
       n._vx = 0; n._vy = 0;
     });
 
-    for (var iter = 0; iter < 300; iter++) {
+    // La repulsión comparaba todos contra todos: O(n²). Con 173 nodos no se notaba; con 717
+    // son ~77 millones de cálculos por construcción y el hilo principal queda bloqueado 7,6
+    // segundos — medido, con la página congelada mientras tanto.
+    //
+    // La fuerza es 1500/d². A 110 unidades ya vale 0,12, mientras que la atracción al ancla a
+    // esa misma distancia vale 3,3: los pares lejanos cuestan tiempo y no mueven nada. Se usa
+    // una grilla uniforme del tamaño del corte y cada nodo se compara solo con su celda y las
+    // ocho vecinas.
+    //
+    // Dos detalles que costaron caro al medir: con un corte de 200 la grilla tenía 12 celdas
+    // para 717 nodos —cada celda era medio grafo y no podaba nada, quedó más lento que el
+    // O(n²) original— y usar un objeto con claves dinámicas por iteración era más caro que la
+    // comparación que ahorraba. Por eso el corte es 110 y las celdas son un arreglo plano que
+    // se reutiliza vaciándolo, sin volver a asignar memoria.
+    var CORTE = 110;
+    var COLS = Math.max(1, Math.ceil(W / CORTE)), FILAS = Math.max(1, Math.ceil(H / CORTE));
+    var CELDAS = new Array(COLS * FILAS);
+    for (var c0 = 0; c0 < CELDAS.length; c0++) CELDAS[c0] = [];
+    // El ancla se guarda en el propio nodo. Antes el bucle interno hacía `anclaDe[a.id]` y
+    // `anclaDe[b.id]` en CADA par: son dos búsquedas por hash sobre un objeto de cientos de
+    // claves, unos 4 millones de lecturas por construcción. Medido, la simulación se llevaba
+    // 2.600 ms de los 2.878 totales; la creación del DOM eran 30.
+    nodes.forEach(function (n, idx) { n._i = idx; n._ancla = anclaDe[n.id]; });
+    // Con muchos nodos las anclas por institución ya ubican los barrios, así que la simulación
+    // converge antes; 300 iteraciones estaban ajustadas para 173 nodos.
+    // Las 300 iteraciones estaban ajustadas para ~170 nodos. Con más, el costo sube mucho más
+    // rápido de lo que sugiere el conteo: el propio layout agrupa los nodos alrededor de las
+    // anclas de institución, así que se apilan en pocas celdas y la grilla deja de podar. La
+    // solución correcta sería un quadtree (Barnes-Hut); acá se acota el trabajo, que es lineal
+    // en las iteraciones y se puede comprobar mirando el resultado. Las anclas ya hacen el
+    // trabajo estructural, así que la simulación converge antes de lo que parece.
+    var ITERACIONES = nodes.length > 300 ? 45 : 300;
+
+    for (var iter = 0; iter < ITERACIONES; iter++) {
+      for (var v0 = 0; v0 < CELDAS.length; v0++) CELDAS[v0].length = 0;
+      for (var g = 0; g < nodes.length; g++) {
+        var ng = nodes[g];
+        var gx = ng._x / CORTE | 0, gy = ng._y / CORTE | 0;
+        if (gx < 0) gx = 0; else if (gx >= COLS) gx = COLS - 1;
+        if (gy < 0) gy = 0; else if (gy >= FILAS) gy = FILAS - 1;
+        CELDAS[gx * FILAS + gy].push(ng);
+      }
       for (var i = 0; i < nodes.length; i++) {
-        for (var j = i + 1; j < nodes.length; j++) {
-          var a = nodes[i], b = nodes[j];
-          var dx = a._x - b._x, dy = a._y - b._y;
-          var distSq = dx * dx + dy * dy || 0.01;
-          var dist = Math.sqrt(distSq);
-          // Repulsión más suave entre nodos del mismo barrio: deben quedar juntos.
-          var mismoGrupo = anclaDe[a.id] && anclaDe[a.id] === anclaDe[b.id];
-          var force = (mismoGrupo ? 420 : 1500) / distSq;
-          var fx = (dx / dist) * force, fy = (dy / dist) * force;
-          a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
+        var a = nodes[i];
+        var acx = a._x / CORTE | 0, acy = a._y / CORTE | 0;
+        if (acx < 0) acx = 0; else if (acx >= COLS) acx = COLS - 1;
+        if (acy < 0) acy = 0; else if (acy >= FILAS) acy = FILAS - 1;
+        var x0 = acx > 0 ? acx - 1 : 0, x1 = acx < COLS - 1 ? acx + 1 : COLS - 1;
+        var y0 = acy > 0 ? acy - 1 : 0, y1 = acy < FILAS - 1 ? acy + 1 : FILAS - 1;
+        for (var cx = x0; cx <= x1; cx++) {
+          for (var cy = y0; cy <= y1; cy++) {
+            var vecinos = CELDAS[cx * FILAS + cy];
+            for (var m = 0; m < vecinos.length; m++) {
+              var b = vecinos[m];
+              // Cada par una sola vez, en un orden que no depende de la grilla.
+              if (b._i <= a._i) continue;
+              var dx = a._x - b._x, dy = a._y - b._y;
+              var distSq = dx * dx + dy * dy || 0.01;
+              var dist = Math.sqrt(distSq);
+              // Repulsión más suave entre nodos del mismo barrio: deben quedar juntos.
+              var mismoGrupo = a._ancla !== undefined && a._ancla === b._ancla;
+              var force = (mismoGrupo ? 420 : 1500) / distSq;
+              var fx = (dx / dist) * force, fy = (dy / dist) * force;
+              a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
+            }
+          }
         }
       }
       edges.forEach(function (e) {
@@ -2213,7 +2401,7 @@
     var tag = document.createElement("span"); tag.className = "sheet-type-tag"; tag.textContent = typeLabel[n.tipo];
     var name = document.createElement("div"); name.className = "sheet-name"; name.textContent = n.nombre;
     var sub = document.createElement("div"); sub.className = "sheet-sub";
-    sub.appendChild(document.createTextNode(n.subtitulo + " · " + n.ciudad));
+    sub.appendChild(document.createTextNode(subtituloLinea(n)));
     if (n.subtitulo_fuente && esUrlSegura(n.subtitulo_fuente)) {
       var subFuente = document.createElement("a");
       subFuente.className = "sheet-sub-fuente";

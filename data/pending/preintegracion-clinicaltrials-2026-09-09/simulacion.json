@@ -1,0 +1,52 @@
+{
+ "fecha": "2026-09-09",
+ "advertencia": "Simulación. No se modificó data/sample/perfiles-muestra.json. El escenario B no está autorizado: requiere revisión humana por persona.",
+ "actual": {
+  "entidades": 173,
+  "vinculos": 349,
+  "tiers": {
+   "alta": 12,
+   "media": 48,
+   "monitorear": 10
+  },
+  "activacion_de_topes": {
+   "redPts_en_el_tope_5": 35
+  }
+ },
+ "escenario_A_solo_ensayos_e_instituciones": {
+  "entidades": 446,
+  "vinculos": 1067,
+  "ensayos_nuevos": 240,
+  "instituciones_nuevas": 33,
+  "personas_con_puntaje_distinto": 0,
+  "tiers": {
+   "alta": 12,
+   "media": 48,
+   "monitorear": 10
+  },
+  "tiers_antes": {
+   "alta": 12,
+   "media": 48,
+   "monitorear": 10
+  },
+  "activacion_de_topes": {
+   "redPts_en_el_tope_5": 35
+  }
+ },
+ "escenario_B_si_se_aprobaran_las_personas": {
+  "entidades": 451,
+  "vinculos": 1088,
+  "personas_reutilizadas": 16,
+  "personas_creadas": 5,
+  "personas_con_puntaje_distinto": 7,
+  "tiers": {
+   "alta": 13,
+   "media": 52,
+   "monitorear": 10
+  },
+  "activacion_de_topes": {
+   "ensayo_clinico_sobre_tope": 1,
+   "redPts_en_el_tope_5": 38
+  }
+ }
+}
