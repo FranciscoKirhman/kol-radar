@@ -318,6 +318,9 @@
     box-shadow: 0 2px 10px rgba(0,0,0,.35);
   }
   .foco-salir-flotante:hover { filter: brightness(1.12); }
+  /* Debajo del de foco, para que nunca se tapen si están los dos. */
+  .geo-volver-btn { bottom: 64px; background: var(--text-primary); color: var(--surface-0);
+                    border-color: var(--text-primary); }
   .foco-salir-flotante:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
   /* Barra de foco: aparece al aislar la red de un nodo. Lleva siempre la salida al lado. */
   .foco-bar {
@@ -622,6 +625,7 @@
     </div>
     <div class="network-view-wrap">
       <svg id="graph" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"></svg>
+      <button type="button" class="foco-salir-flotante geo-volver-btn" id="geo-volver" hidden></button>
       <button type="button" class="foco-salir-flotante" id="foco-salir-flotante" hidden>
         ← Volver a todo el mapa
       </button>
@@ -1805,8 +1809,9 @@
       regionsEl.querySelectorAll("[data-region]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
       btn.setAttribute("aria-pressed", "true");
       state.region = btn.getAttribute("data-region");
-      renderCards();
-      invalidateNetwork();
+      state.ciudad = null;
+      if (state.region === "todas") { limpiarFiltroGeo(); return; }
+      verLugar();
     });
   }
 
@@ -1954,7 +1959,47 @@
     btnLista.setAttribute("aria-pressed", String(cual === "fichas"));
     if (cual === "conexiones" && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
     if (cual === "chile" && entidades.length) buildGeo();
+    renderBarraGeo();
   }
+
+  // Al elegir una región o una ciudad se muestran las DOS cosas a la vez: el mapa de conexiones
+  // de ese lugar y, debajo, las fichas. Separadas obligaban a ir y volver entre pestañas para
+  // contestar una sola pregunta ("quién hay acá y cómo se conectan").
+  function verLugar() {
+    networkView.classList.add("active");
+    listView.classList.add("active");
+    geoView.classList.remove("active");
+    btnMapa.setAttribute("aria-pressed", "true");
+    btnGeo.setAttribute("aria-pressed", "false");
+    btnLista.setAttribute("aria-pressed", "false");
+    renderCards();
+    buildNetwork(); networkBuilt = true;
+    renderBarraGeo();
+    document.querySelector(".network-view-wrap").scrollIntoView({ block: "nearest" });
+  }
+
+  function hayFiltroGeo() {
+    return !!state.ciudad || state.region !== "todas";
+  }
+
+  function renderBarraGeo() {
+    var b = document.getElementById("geo-volver");
+    if (!hayFiltroGeo()) { b.hidden = true; return; }
+    b.hidden = false;
+    b.textContent = "← Ver todos los puntos · " + (state.ciudad || state.region);
+  }
+
+  function limpiarFiltroGeo() {
+    state.ciudad = null;
+    state.region = "todas";
+    document.querySelectorAll("[data-region]").forEach(function (x) {
+      x.setAttribute("aria-pressed", String(x.getAttribute("data-region") === "todas"));
+    });
+    renderCards();
+    invalidateNetwork();
+    mostrarVista("chile");
+  }
+  document.getElementById("geo-volver").addEventListener("click", limpiarFiltroGeo);
   btnMapa.addEventListener("click", function () { mostrarVista("conexiones"); });
   btnGeo.addEventListener("click", function () { mostrarVista("chile"); });
   btnLista.addEventListener("click", function () { mostrarVista("fichas"); });
@@ -2036,8 +2081,10 @@
       });
       pt.addEventListener("mouseleave", function () { tip.classList.remove("show"); });
       pt.addEventListener("click", function () {
-        state.ciudad = (state.ciudad === c) ? null : c;
-        renderCards(); invalidateNetwork(); buildGeo();
+        if (state.ciudad === c) { limpiarFiltroGeo(); return; }
+        state.ciudad = c;
+        state.region = "todas";
+        verLugar();
       });
       pt.addEventListener("keydown", function (ev) {
         if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pt.dispatchEvent(new MouseEvent("click")); }
