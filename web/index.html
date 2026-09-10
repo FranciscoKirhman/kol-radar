@@ -241,6 +241,35 @@
     #network-view svg { height: 65vh; min-height: 380px; }
   }
   .network-hint { font-size: 12.5px; color: var(--text-muted); margin: 0 0 10px; }
+  /* Conmutador de vista. Antes era un chip al final de la fila de filtros, con la etiqueta del
+     estado CONTRARIO ("Ver lista" cuando estabas en el mapa): había que leerla dos veces para
+     saber dónde estabas. Acá los dos destinos se ven siempre y el activo está marcado. */
+  .view-switch {
+    display: inline-flex; border: 1px solid var(--border); border-radius: 999px;
+    overflow: hidden; background: var(--surface-1); flex: 0 0 auto;
+  }
+  .view-btn {
+    font: inherit; font-size: 12.5px; font-weight: 600; padding: 7px 16px;
+    border: none; background: none; color: var(--text-muted); cursor: pointer;
+  }
+  .view-btn[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-0); }
+  .view-btn:not([aria-pressed="true"]):hover { color: var(--text-primary); }
+
+  /* Barra de foco: aparece al aislar la red de un nodo. Lleva siempre la salida al lado. */
+  .foco-bar {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    margin: 0 0 10px; padding: 9px 14px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    font-size: 12.5px; color: var(--text-secondary);
+  }
+  .foco-bar strong { color: var(--text-primary); }
+  .foco-bar .foco-sep { flex: 1 1 auto; }
+  .foco-bar button {
+    font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;
+    padding: 5px 13px; border-radius: 999px; background: none;
+    border: 1px solid var(--text-primary); color: var(--text-primary);
+  }
+  .foco-bar button:hover { background: var(--text-primary); color: var(--surface-0); }
   .network-presets {
     display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 10px;
   }
@@ -394,6 +423,10 @@
       <span class="icon">⌕</span>
       <input id="search" type="search" placeholder="Buscar por nombre, institución o ciudad…" autocomplete="off" />
     </div>
+    <div class="view-switch" role="group" aria-label="Cambiar de vista">
+      <button type="button" class="view-btn" id="view-mapa" aria-pressed="true">Mapa</button>
+      <button type="button" class="view-btn" id="view-lista" aria-pressed="false">Fichas</button>
+    </div>
     <a class="dev-link" href="interno.html" title="Cómo se construyó esto y de dónde salen los datos">Detalles técnicos ↗</a>
   </div>
   <div class="filters-row">
@@ -407,7 +440,6 @@
     <button class="chip" id="toggle-advanced" aria-pressed="false" aria-expanded="false">Filtros avanzados ▾</button>
     <button class="chip shortlist-chip" id="toggle-shortlist" aria-pressed="false">Mi shortlist (0)</button>
     <button class="chip" id="open-resumen" hidden>Resumen para entrevista ↗</button>
-    <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="true" title="Alterna entre el mapa de conexiones y la lista de fichas">Ver lista</button>
   </div>
   <div class="advanced-filters" id="advanced-filters" hidden>
     <div class="filter-group">
@@ -476,6 +508,12 @@
     <p class="network-hint" id="network-hint">Mapa de conexiones. Rueda del mouse o los botones + y −
       para acercar, arrastrá para moverte. Pasá el mouse sobre un nodo para resaltar su red, y hacé
       click para abrir su ficha con las fuentes.</p>
+    <div class="foco-bar" id="foco-bar" hidden>
+      <span id="foco-texto"></span>
+      <span class="foco-sep"></span>
+      <button type="button" id="foco-ficha">Ver ficha completa</button>
+      <button type="button" id="foco-salir">Ver todo el mapa</button>
+    </div>
     <div class="network-presets">
       <span class="layer-title">Vista</span>
       <div class="network-legend" id="vistas-preset">
@@ -1571,17 +1609,71 @@
   });
 
   // ---------------- Toggle red / lista ----------------
-  var networkBtn = document.getElementById("toggle-network");
+  var btnMapa = document.getElementById("view-mapa");
+  var btnLista = document.getElementById("view-lista");
   var listView = document.getElementById("list-view");
   var networkView = document.getElementById("network-view");
   var networkBuilt = false;
 
-  networkBtn.addEventListener("click", function () {
-    var showingNetwork = networkView.classList.toggle("active");
-    listView.classList.toggle("active", !showingNetwork);
-    networkBtn.setAttribute("aria-pressed", String(showingNetwork));
-    networkBtn.textContent = showingNetwork ? "Ver lista" : "Ver mapa de conexiones";
-    if (showingNetwork && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
+  function mostrarVista(mapa) {
+    networkView.classList.toggle("active", mapa);
+    listView.classList.toggle("active", !mapa);
+    btnMapa.setAttribute("aria-pressed", String(mapa));
+    btnLista.setAttribute("aria-pressed", String(!mapa));
+    if (mapa && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
+  }
+  btnMapa.addEventListener("click", function () { mostrarVista(true); });
+  btnLista.addEventListener("click", function () { mostrarVista(false); });
+
+  // ---------------- Foco: aislar la red de un nodo ----------------
+  // Con 400 nodos dibujados, "¿con quién se conecta esta persona?" no se contesta mirando: la
+  // línea se pierde entre las demás. Al tocar un nodo el mapa se queda solo con él y sus
+  // conexiones directas, y la barra de arriba lleva siempre la salida al lado, para que aislar
+  // no se sienta un callejón.
+  var foco = null;
+
+  function renderFocoBar() {
+    var bar = document.getElementById("foco-bar");
+    if (!foco || !byId[foco]) { bar.hidden = true; return; }
+    var n = byId[foco];
+    var grados = vinculos.filter(function (v) { return v.origen === foco || v.destino === foco; }).length;
+    var txt = document.getElementById("foco-texto");
+    txt.textContent = "";
+    txt.appendChild(document.createTextNode("Mostrando solo la red de "));
+    var b = document.createElement("strong");
+    b.textContent = n.nombre;
+    txt.appendChild(b);
+    txt.appendChild(document.createTextNode(
+      " · " + grados + (grados === 1 ? " conexión directa" : " conexiones directas")));
+    bar.hidden = false;
+  }
+
+  function aplicarFoco(id) {
+    foco = id;
+    if (!networkView.classList.contains("active")) mostrarVista(true);
+    buildNetwork();
+    networkBuilt = true;
+    renderFocoBar();
+    document.getElementById("foco-bar").scrollIntoView({ block: "nearest" });
+  }
+
+  function limpiarFoco() {
+    if (!foco) return;
+    foco = null;
+    buildNetwork();
+    networkBuilt = true;
+    renderFocoBar();
+  }
+
+  document.getElementById("foco-salir").addEventListener("click", limpiarFoco);
+  document.getElementById("foco-ficha").addEventListener("click", function () {
+    if (foco) openDetail(foco);
+  });
+  document.addEventListener("keydown", function (ev) {
+    // Escape sale del foco, salvo que haya una ficha abierta: ahí cierra la ficha primero.
+    if (ev.key === "Escape" && foco && document.getElementById("detail-sheet").classList.contains("open") === false) {
+      limpiarFoco();
+    }
   });
 
   // ---------------- Red de conexiones (simulación de fuerzas mínima + capa interactiva) ----------------
@@ -1669,6 +1761,18 @@
       var k = claveArista(byId[v.origen].tipo, byId[v.destino].tipo);
       return capas.aristas[k] !== false;
     });
+    if (typeof foco !== "undefined" && foco && ids[foco]) {
+      // El nodo en foco más sus vecinos directos. Se conservan también las aristas ENTRE los
+      // vecinos: son parte de lo que hay que entender del barrio, no ruido.
+      var vecinos = {};
+      vecinos[foco] = true;
+      edges.forEach(function (v) {
+        if (v.origen === foco) vecinos[v.destino] = true;
+        if (v.destino === foco) vecinos[v.origen] = true;
+      });
+      nodes = nodes.filter(function (n) { return vecinos[n.id]; });
+      edges = edges.filter(function (v) { return vecinos[v.origen] && vecinos[v.destino]; });
+    }
     if (capas.ocultarAislados) {
       var conectados = {};
       edges.forEach(function (v) { conectados[v.origen] = true; conectados[v.destino] = true; });
@@ -2032,6 +2136,36 @@
       tooltipEl.classList.remove("show");
     }
 
+    // El lienzo se encuadra al contenido en vez de quedarse en 0,0,W,H. Al aislar la red de
+    // una persona quedan cuatro o cinco nodos apiñados alrededor de su ancla, con el resto del
+    // lienzo vacío; encuadrando, ese puñado ocupa la pantalla y se lee de una. Se respeta la
+    // proporción del contenedor para no deformar nada.
+    var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    nodes.forEach(function (n) {
+      if (n._x < minX) minX = n._x;
+      if (n._x > maxX) maxX = n._x;
+      if (n._y < minY) minY = n._y;
+      if (n._y > maxY) maxY = n._y;
+    });
+    var MARCO = { x: 0, y: 0, w: W, h: H };
+    if (isFinite(minX)) {
+      // El margen es proporcional al contenido. Uno fijo de 70 unidades era casi nada con 400
+      // nodos y se comía dos tercios del encuadre con cinco.
+      var extension = Math.max(maxX - minX, maxY - minY);
+      var PAD = Math.max(34, Math.min(90, extension * 0.12));
+      var anchoUtil = Math.max(120, maxX - minX) + PAD * 2;
+      var altoUtil = Math.max(120, maxY - minY) + PAD * 2;
+      var fw = Math.max(anchoUtil, altoUtil / razon);
+      MARCO = { x: (minX + maxX) / 2 - fw / 2, y: (minY + maxY) / 2 - (fw * razon) / 2,
+                w: fw, h: fw * razon };
+      NETWORK_VB.x = MARCO.x; NETWORK_VB.y = MARCO.y;
+      NETWORK_VB.w = MARCO.w; NETWORK_VB.h = MARCO.h;
+      resetZoom();
+      // El texto se mide en unidades del viewBox: si el encuadre cambia la escala, el tamaño
+      // en pantalla cambia con ella y hay que compensarlo igual que con el lienzo.
+      svg.style.setProperty("--escala-etiqueta", Math.sqrt(Math.max(1, MARCO.w / 720)).toFixed(3));
+    }
+
     var nodeEls = {};
     var etiquetasPendientes = [];
     nodes.forEach(function (n) {
@@ -2059,10 +2193,16 @@
             if (chip) chip.setAttribute("aria-pressed", "true");
             document.getElementById("tags-clear").hidden = false;
             if (advancedPanel.hidden) document.getElementById("toggle-advanced").click();
-            networkBtn.click();
+            mostrarVista(false);
             renderCards();
           }
-        : function () { openDetail(n.id); };
+        : function () {
+            // Primer toque: aislar su red. Segundo toque sobre el mismo nodo: abrir la ficha.
+            // Así explorar el mapa y leer la evidencia son dos gestos distintos y ninguno
+            // tapa al otro; tocar un vecino salta el foco a ese vecino.
+            if (foco === n.id) openDetail(n.id);
+            else aplicarFoco(n.id);
+          };
       circle.addEventListener("click", activar);
       circle.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); activar(); } });
       circle.addEventListener("mouseenter", function () { highlightNode(n.id); showNodeTooltip(n, deg); });
@@ -2093,7 +2233,7 @@
       });
     });
 
-    colocarEtiquetas(etiquetasPendientes, W, H);
+    colocarEtiquetas(etiquetasPendientes, MARCO);
   }
 
   // Antes las etiquetas se filtraban solo por grado: se dibujaban las de los ~25 nodos más
@@ -2105,7 +2245,8 @@
   // una posición libre. La que no cabe se oculta y sigue apareciendo al pasar el mouse.
   // Sin tope fijo: manda la geometría. Un número redondo dejaba fuera etiquetas que sí cabían.
   var MAX_ETIQUETAS = 999;
-  function colocarEtiquetas(pendientes, W, H) {
+  function colocarEtiquetas(pendientes, marco) {
+    var W = marco.w, H = marco.h, X0 = marco.x, Y0 = marco.y;
     if (!pendientes.length) return;
     // Una sola lectura de geometría para todas: getBBox fuerza reflow, y alternar medir/escribir
     // lo dispararía una vez por etiqueta.
@@ -2148,7 +2289,7 @@
                w: (p.r + HOLGURA) * 2, h: (p.r + HOLGURA) * 2 };
     });
     function libre(c) {
-      if (c.x < 2 || c.y < 2 || c.x + c.w > W - 2 || c.y + c.h > H - 2) return false;
+      if (c.x < X0 + 2 || c.y < Y0 + 2 || c.x + c.w > X0 + W - 2 || c.y + c.h > Y0 + H - 2) return false;
       for (var i = 0; i < ocupados.length; i++) {
         var o = ocupados[i];
         if (c.x < o.x + o.w && o.x < c.x + c.w && c.y < o.y + o.h && o.y < c.y + c.h) return false;
