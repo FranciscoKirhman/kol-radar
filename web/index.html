@@ -255,6 +255,23 @@
   .view-btn[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-0); }
   .view-btn:not([aria-pressed="true"]):hover { color: var(--text-primary); }
 
+  /* La salida del foco vive TAMBIÉN encima del lienzo, no solo en la barra de arriba. La barra
+     queda sobre el mapa, así que al tocar un nodo de la mitad hacia abajo la única salida
+     quedaba fuera de pantalla y aislar se sentía un callejón sin retorno. Este botón está
+     anclado al mapa: se ve donde sea que estés mirando. */
+  .foco-salir-flotante {
+    /* Anclado a la VENTANA, no al lienzo. Dentro del lienzo quedaba en top:-81 —fuera de
+       pantalla— cuando se tocaba un nodo con la página desplazada hacia abajo: medido. Fijo
+       abajo al centro se ve siempre, sin importar dónde estés mirando. El z-index queda por
+       debajo del velo de la ficha (40) para que la ficha lo tape al abrirse. */
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 30;
+    font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+    padding: 9px 16px; border-radius: 999px;
+    background: var(--accent); color: #fff; border: 1px solid var(--accent);
+    box-shadow: 0 2px 10px rgba(0,0,0,.35);
+  }
+  .foco-salir-flotante:hover { filter: brightness(1.12); }
+  .foco-salir-flotante:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
   /* Barra de foco: aparece al aislar la red de un nodo. Lleva siempre la salida al lado. */
   .foco-bar {
     display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
@@ -527,6 +544,9 @@
     </div>
     <div class="network-view-wrap">
       <svg id="graph" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"></svg>
+      <button type="button" class="foco-salir-flotante" id="foco-salir-flotante" hidden>
+        ← Volver a todo el mapa
+      </button>
       <div class="network-toolbar">
         <button type="button" class="zoom-btn" id="zoom-in" aria-label="Acercar">+</button>
         <button type="button" class="zoom-btn" id="zoom-out" aria-label="Alejar">−</button>
@@ -1002,15 +1022,54 @@
     return [n.subtitulo, n.ciudad].filter(function (x) { return x; }).join(" · ");
   }
 
+  // Sin tildes y en minúsculas: en Chile se escribe "cáncer" y se busca "cancer", y ninguna de
+  // las dos formas debería fallar. Los nombres de fármaco vienen en inglés desde la fuente.
+  function sinTildes(t) {
+    return (t || "").toLowerCase()
+      .replace(/[áàä]/g, "a").replace(/[éèë]/g, "e").replace(/[íìï]/g, "i")
+      .replace(/[óòö]/g, "o").replace(/[úùü]/g, "u");
+  }
+
+  // Todo lo que una entidad expone a la búsqueda. `intervenciones` es lo que hace que buscar
+  // un fármaco funcione: ClinicalTrials.gov trae ahí el nombre del compuesto, y sin esto
+  // "cetuximab" solo encontraba los estudios que lo mencionan en el título.
+  function textoBuscable(n) {
+    if (n._buscable) return n._buscable;
+    var partes = [n.nombre, n.ciudad, n.subtitulo, n.acronimo, n.estado_reclutamiento];
+    (n.intervenciones || []).forEach(function (i) { partes.push(i); });
+    (n.alias_en_la_fuente || []).forEach(function (a) { partes.push(a); });
+    (n.sedes_pendientes_resolucion || []).forEach(function (a) { partes.push(a); });
+    n.hechos.forEach(function (h) { partes.push(h.hecho); partes.push(h.revista); });
+    n._buscable = sinTildes(partes.filter(Boolean).join(" "));
+    return n._buscable;
+  }
+
+  // Buscar un fármaco tiene que contestar "¿quién trabaja en esto en Chile?", no solo "¿qué
+  // estudios lo usan?". Cuando la consulta calza con un ensayo, entran también el centro y los
+  // investigadores vinculados a ese ensayo: es la pregunta que un MSL le hace a esta
+  // herramienta. Se calcula una vez por consulta, no una vez por entidad.
+  var _cacheConsulta = { q: null, set: null };
+  function idsRelevantes(q) {
+    if (_cacheConsulta.q === q) return _cacheConsulta.set;
+    var directos = {}, set = {};
+    entidades.forEach(function (n) {
+      if (textoBuscable(n).indexOf(q) !== -1) { directos[n.id] = true; set[n.id] = true; }
+    });
+    vinculos.forEach(function (v) {
+      var o = byId[v.origen], d = byId[v.destino];
+      if (!o || !d) return;
+      if (directos[v.origen] && o.tipo === "ensayo_clinico" && d.tipo !== "ensayo_clinico") set[v.destino] = true;
+      if (directos[v.destino] && d.tipo === "ensayo_clinico" && o.tipo !== "ensayo_clinico") set[v.origen] = true;
+    });
+    _cacheConsulta = { q: q, set: set };
+    return set;
+  }
+
   function matches(n) {
     if (state.filter !== "todos" && n.tipo !== state.filter) return false;
     if (state.query) {
-      var q = state.query.toLowerCase();
-      var enCampos = n.nombre.toLowerCase().indexOf(q) !== -1 ||
-                     (n.ciudad || "").toLowerCase().indexOf(q) !== -1 ||
-                     (n.subtitulo || "").toLowerCase().indexOf(q) !== -1;
-      var enHechos = n.hechos.some(function (h) { return (h.hecho || "").toLowerCase().indexOf(q) !== -1; });
-      if (!enCampos && !enHechos) return false;
+      var q = sinTildes(state.query);
+      if (!idsRelevantes(q)[n.id]) return false;
     }
     if (state.tags.length) {
       var nTags = tagsFor(n);
@@ -1117,14 +1176,49 @@
   }
 
   function fragmentoCoincidente(n, q) {
-    var ql = q.toLowerCase();
+    var ql = sinTildes(q);
+    // Si lo que calzó es una intervención, se dice así: la tarjeta tiene que explicar por qué
+    // apareció. Y si la entidad entró por estar vinculada a un ensayo que calzó, también.
+    var inter = (n.intervenciones || []).filter(function (i) {
+      return sinTildes(i).indexOf(ql) !== -1;
+    });
+    if (inter.length) {
+      var w = document.createElement("div");
+      w.className = "match-reason";
+      var e0 = document.createElement("span");
+      e0.className = "match-label";
+      e0.textContent = "Intervención: ";
+      w.appendChild(e0);
+      var mk0 = document.createElement("mark");
+      mk0.textContent = inter[0];
+      w.appendChild(mk0);
+      if (inter.length > 1) w.appendChild(document.createTextNode(" +" + (inter.length - 1) + " más"));
+      return w;
+    }
     var hecho = null, pos = -1;
     for (var i = 0; i < n.hechos.length; i++) {
       var t = n.hechos[i].hecho || "";
-      var idx = t.toLowerCase().indexOf(ql);
+      var idx = sinTildes(t).indexOf(ql);
       if (idx !== -1) { hecho = n.hechos[i]; pos = idx; break; }
     }
-    if (!hecho) return null;
+    if (!hecho) {
+      if (n.tipo === "ensayo_clinico") return null;
+      var via = vinculos.filter(function (v) {
+        var otro = v.origen === n.id ? byId[v.destino] : (v.destino === n.id ? byId[v.origen] : null);
+        return otro && otro.tipo === "ensayo_clinico" && textoBuscable(otro).indexOf(ql) !== -1;
+      });
+      if (!via.length) return null;
+      var w2 = document.createElement("div");
+      w2.className = "match-reason";
+      var e2 = document.createElement("span");
+      e2.className = "match-label";
+      e2.textContent = "Vinculado a: ";
+      w2.appendChild(e2);
+      w2.appendChild(document.createTextNode(
+        via.length + " ensayo" + (via.length === 1 ? "" : "s") + " que coincide" +
+        (via.length === 1 ? "" : "n") + " con la búsqueda"));
+      return w2;
+    }
     var texto = hecho.hecho;
     var desde = Math.max(0, pos - 45);
     var hasta = Math.min(texto.length, pos + ql.length + 75);
@@ -1638,7 +1732,9 @@
 
   function renderFocoBar() {
     var bar = document.getElementById("foco-bar");
-    if (!foco || !byId[foco]) { bar.hidden = true; return; }
+    var flotante = document.getElementById("foco-salir-flotante");
+    if (!foco || !byId[foco]) { bar.hidden = true; flotante.hidden = true; return; }
+    flotante.hidden = false;
     var n = byId[foco];
     var grados = vinculos.filter(function (v) { return v.origen === foco || v.destino === foco; }).length;
     var txt = document.getElementById("foco-texto");
@@ -1658,7 +1754,7 @@
     buildNetwork();
     networkBuilt = true;
     renderFocoBar();
-    document.getElementById("foco-bar").scrollIntoView({ block: "nearest" });
+    document.querySelector(".network-view-wrap").scrollIntoView({ block: "nearest" });
   }
 
   function limpiarFoco() {
@@ -1670,6 +1766,7 @@
   }
 
   document.getElementById("foco-salir").addEventListener("click", limpiarFoco);
+  document.getElementById("foco-salir-flotante").addEventListener("click", limpiarFoco);
   document.getElementById("foco-ficha").addEventListener("click", function () {
     if (foco) openDetail(foco);
   });
