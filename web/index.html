@@ -2152,13 +2152,29 @@
   // no se sienta un callejón.
   var foco = null;
 
+  // Un tema es un nodo derivado de TAG_RULES: no está en `byId` ni sus aristas en `vinculos`.
+  // Por eso el foco no lo encontraba y al tocarlo no pasaba nada.
+  function nodoPorId(id) {
+    if (byId[id]) return byId[id];
+    for (var i = 0; i < temaEntidades.length; i++) if (temaEntidades[i].id === id) return temaEntidades[i];
+    return null;
+  }
+  function gradoTotal(id) {
+    var n = 0, todos = vinculos.concat(temaVinculos);
+    for (var i = 0; i < todos.length; i++) if (todos[i].origen === id || todos[i].destino === id) n++;
+    return n;
+  }
+
   function renderFocoBar() {
     var bar = document.getElementById("foco-bar");
     var flotante = document.getElementById("foco-salir-flotante");
-    if (!foco || !byId[foco]) { bar.hidden = true; flotante.hidden = true; return; }
+    var n = foco ? nodoPorId(foco) : null;
+    if (!n) { bar.hidden = true; flotante.hidden = true; return; }
     flotante.hidden = false;
-    var n = byId[foco];
-    var grados = vinculos.filter(function (v) { return v.origen === foco || v.destino === foco; }).length;
+    var grados = gradoTotal(foco);
+    // Un tema no tiene ficha con fuentes: el botón lleva a las fichas de quienes trabajan en él.
+    document.getElementById("foco-ficha").textContent =
+      n.tipo === "tema" ? "Ver fichas de este tema" : "Ver ficha completa";
     var txt = document.getElementById("foco-texto");
     txt.textContent = "";
     txt.appendChild(document.createTextNode("Mostrando solo la red de "));
@@ -2190,7 +2206,20 @@
   document.getElementById("foco-salir").addEventListener("click", limpiarFoco);
   document.getElementById("foco-salir-flotante").addEventListener("click", limpiarFoco);
   document.getElementById("foco-ficha").addEventListener("click", function () {
-    if (foco) openDetail(foco);
+    if (!foco) return;
+    var nf = nodoPorId(foco);
+    if (nf && nf.tipo === "tema") {
+      if (state.tags.indexOf(nf.nombre) === -1) state.tags.push(nf.nombre);
+      var chip = document.querySelector('[data-tag="' + nf.nombre + '"]');
+      if (chip) chip.setAttribute("aria-pressed", "true");
+      var lim = document.getElementById("tags-clear");
+      if (lim) lim.hidden = false;
+      renderCards();
+      listView.classList.add("active");
+      document.getElementById("cards").scrollIntoView({ block: "nearest" });
+      return;
+    }
+    openDetail(foco);
   });
   document.addEventListener("keydown", function (ev) {
     // Escape sale del foco, salvo que haya una ficha abierta: ahí cierra la ficha primero.
@@ -2715,17 +2744,7 @@
         ? "Tema " + n.nombre + " — " + deg + " persona" + (deg === 1 ? "" : "s") + " trabajan en esto"
         : n.nombre + " — " + (typeLabel[n.tipo] || n.tipo) + ", " + deg + " conexion" + (deg === 1 ? "" : "es"));
       var activar = n.tipo === "tema"
-        ? function () {
-            // Un tema no tiene ficha propia (no es un hecho con fuente): al tocarlo se filtra
-            // la lista por ese tag, que es la acción útil.
-            if (state.tags.indexOf(n.nombre) === -1) state.tags.push(n.nombre);
-            var chip = document.querySelector('[data-tag="' + n.nombre + '"]');
-            if (chip) chip.setAttribute("aria-pressed", "true");
-            document.getElementById("tags-clear").hidden = false;
-            if (advancedPanel.hidden) document.getElementById("toggle-advanced").click();
-            mostrarVista(false);
-            renderCards();
-          }
+        ? function () { if (foco === n.id) limpiarFoco(); else aplicarFoco(n.id); }
         : function () {
             // Primer toque: aislar su red. Segundo toque sobre el mismo nodo: abrir la ficha.
             // Así explorar el mapa y leer la evidencia son dos gestos distintos y ninguno
