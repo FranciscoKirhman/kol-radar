@@ -236,11 +236,14 @@
   /* El alto es DEFINIDO a propósito, nunca "auto". Con height:auto el alto del SVG lo decide
      su propio viewBox, así que medirlo para calcular el viewBox es circular: buildNetwork leía
      siempre la proporción que ya tenía y nunca convergía a la forma real del hueco. */
-  #network-view svg { width: 100%; height: min(72vh, 620px); display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
+  #network-view svg { width: 100%; height: min(78vh, 760px); display: block; background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
   @media (max-width: 720px) {
     #network-view svg { height: 65vh; min-height: 380px; }
   }
   .network-hint { font-size: 12.5px; color: var(--text-muted); margin: 0 0 10px; }
+  .network-presets {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 10px;
+  }
   .network-layers { display: flex; flex-direction: column; gap: 8px; padding: 12px 4px 0; }
   .layer-block { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .layer-title { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--text-muted); min-width: 132px; }
@@ -261,7 +264,11 @@
   .node-circle { cursor: pointer; stroke: var(--surface-0); stroke-width: 2px; }
   .node-circle:hover { stroke: var(--text-primary); }
   .edge-line { stroke: color-mix(in srgb, var(--text-muted) 45%, transparent); stroke-width: 1px; }
-  .node-label { font-size: 9px; fill: var(--text-secondary); pointer-events: none; }
+  /* El tamaño va en unidades del viewBox, así que al agrandar el lienzo para grafos grandes
+     el texto se encoge en pantalla. Se compensa con la raíz de la escala: no del todo —eso
+     devolvería la densidad original y anularía el beneficio de agrandar— pero lo suficiente
+     para que no quede microscópico. El resto lo resuelve el zoom. */
+  .node-label { font-size: calc(9px * var(--escala-etiqueta, 1)); fill: var(--text-secondary); pointer-events: none; }
 
   /* Capa "futurista" — solo el grafo global (.global-node/.global-edge), el mini-grafo
      ego-céntrico del panel de detalle se queda simple a propósito. */
@@ -400,7 +407,7 @@
     <button class="chip" id="toggle-advanced" aria-pressed="false" aria-expanded="false">Filtros avanzados ▾</button>
     <button class="chip shortlist-chip" id="toggle-shortlist" aria-pressed="false">Mi shortlist (0)</button>
     <button class="chip" id="open-resumen" hidden>Resumen para entrevista ↗</button>
-    <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="false" title="Vista avanzada — para ver de qué se conecta una persona en particular, abre su ficha en la lista">Mapa completo (avanzado)</button>
+    <button class="chip network-toggle spacer" id="toggle-network" aria-pressed="true" title="Alterna entre el mapa de conexiones y la lista de fichas">Ver lista</button>
   </div>
   <div class="advanced-filters" id="advanced-filters" hidden>
     <div class="filter-group">
@@ -457,7 +464,7 @@
      target="_blank" rel="noopener noreferrer">Reportar un error</a>
 </div>
 <main>
-  <section id="list-view" class="active">
+  <section id="list-view">
     <p class="results-meta" id="results-meta"></p>
     <div class="cards" id="cards"></div>
     <div class="loading-state" id="loading-state">Cargando datos de <code>data/sample/perfiles-muestra.json</code>…</div>
@@ -465,10 +472,20 @@
     <div class="empty-state" id="empty-state" hidden>Sin resultados para esa búsqueda.</div>
   </section>
 
-  <section id="network-view">
-    <p class="network-hint" id="network-hint">Mapa completo — para ver con qué se conecta una persona o
-      institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa. Pasa el
-      mouse sobre un nodo para resaltar sus conexiones.</p>
+  <section id="network-view" class="active">
+    <p class="network-hint" id="network-hint">Mapa de conexiones. Rueda del mouse o los botones + y −
+      para acercar, arrastrá para moverte. Pasá el mouse sobre un nodo para resaltar su red, y hacé
+      click para abrir su ficha con las fuentes.</p>
+    <div class="network-presets">
+      <span class="layer-title">Vista</span>
+      <div class="network-legend" id="vistas-preset">
+        <button class="legend-toggle preset" data-vista="ecosistema" aria-pressed="true">Ecosistema completo</button>
+        <button class="legend-toggle preset" data-vista="donde" aria-pressed="false">Quién trabaja dónde</button>
+        <button class="legend-toggle preset" data-vista="coautoria" aria-pressed="false">Red de coautoría</button>
+        <button class="legend-toggle preset" data-vista="temas" aria-pressed="false">Temas de investigación</button>
+        <button class="legend-toggle preset" data-vista="ensayos" aria-pressed="false">Actividad en ensayos</button>
+      </div>
+    </div>
     <div class="network-view-wrap">
       <svg id="graph" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg"></svg>
       <div class="network-toolbar">
@@ -479,16 +496,6 @@
       <div class="node-tooltip" id="node-tooltip" role="status" aria-live="polite"></div>
     </div>
     <div class="network-layers">
-      <div class="layer-block">
-        <span class="layer-title">Vista</span>
-        <div class="network-legend" id="vistas-preset">
-          <button class="legend-toggle preset" data-vista="ecosistema" aria-pressed="true">Ecosistema completo</button>
-          <button class="legend-toggle preset" data-vista="donde" aria-pressed="false">Quién trabaja dónde</button>
-          <button class="legend-toggle preset" data-vista="coautoria" aria-pressed="false">Red de coautoría</button>
-          <button class="legend-toggle preset" data-vista="temas" aria-pressed="false">Temas de investigación</button>
-          <button class="legend-toggle preset" data-vista="ensayos" aria-pressed="false">Actividad en ensayos</button>
-        </div>
-      </div>
       <div class="layer-block">
         <span class="layer-title">Mostrar nodos</span>
         <div class="network-legend" id="capa-nodos">
@@ -859,12 +866,20 @@
       buildAreaChips();
       renderFooter(data.contacto);
       construirTemas();
-      // B: en pantalla chica el ecosistema completo (147 nodos) es ilegible; se arranca en la
-      // vista más simple, que igual se puede cambiar.
-      if (window.matchMedia("(max-width: 720px)").matches) aplicarVista("donde");
+      // En pantalla chica el ecosistema completo es ilegible, así que ahí se arranca en la vista
+      // más simple; igual se puede cambiar con un click.
+      // El ancho se comprueba explícitamente en vez de confiar solo en matchMedia: si el
+      // documento todavía no tiene layout, `innerWidth` vale 0 y la media query de "pantalla
+      // chica" da verdadero, con lo que un usuario de escritorio aterrizaba en la vista
+      // simplificada sin motivo. Medido: `innerWidth` 0 al cargar con el panel oculto.
+      var ancho = window.innerWidth || document.documentElement.clientWidth || 0;
+      if (ancho > 0 && ancho <= 720) aplicarVista("donde");
       buildRegionChips();
       refreshShortlistUI();
       renderCards();
+      // El mapa es la vista de entrada, así que se construye acá: si se dejara para el primer
+      // click del botón, al abrir el sitio se vería el panel vacío.
+      if (networkView.classList.contains("active")) { buildNetwork(); networkBuilt = true; }
     })
     .catch(function (err) {
       document.getElementById("loading-state").hidden = true;
@@ -1565,7 +1580,7 @@
     var showingNetwork = networkView.classList.toggle("active");
     listView.classList.toggle("active", !showingNetwork);
     networkBtn.setAttribute("aria-pressed", String(showingNetwork));
-    networkBtn.textContent = showingNetwork ? "Ver lista" : "Mapa completo (avanzado)";
+    networkBtn.textContent = showingNetwork ? "Ver lista" : "Ver mapa de conexiones";
     if (showingNetwork && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
   });
 
@@ -1757,6 +1772,7 @@
     // recorrerlo, y el tope de 2,2 evita que los nodos queden diminutos.
     var escala = Math.min(2.2, Math.max(1, Math.sqrt(nodes.length / 180)));
     var W = Math.round(720 * escala);
+    svg.style.setProperty("--escala-etiqueta", Math.sqrt(escala).toFixed(3));
     // Se acota la PROPORCIÓN, no solo el alto: si el SVG se mide con ancho ~0 (panel oculto,
     // transición de layout), la razón alto/ancho se dispara y el viewBox sale inservible.
     var razon = (caja.width > 40 && caja.height > 40) ? caja.height / caja.width : 460 / 720;
