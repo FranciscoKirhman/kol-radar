@@ -28,6 +28,14 @@
     --tier-alta-bg: #0d0c0a; --tier-alta-fg: #fdfcfa;
     --tier-media-bg: #e0e6ee; --tier-media-fg: #163a6b;
     --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    /* Movimiento: tres curvas y nada más. Las de CSS (ease, ease-out) son demasiado blandas:
+       arrancan tibias justo en el instante en que el usuario está mirando.
+       --ease-out    entradas, salidas y respuesta a un toque
+       --ease-in-out algo que se mueve de un lado a otro ya en pantalla
+       --ease-drawer la ficha lateral (curva de hoja estilo iOS) */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -101,6 +109,20 @@
   .chip.network-toggle { color: var(--accent); border-color: var(--accent); }
   .chip.sort-toggle { color: var(--text-secondary); }
   .chip.small { font-size: 11.5px; padding: 4px 10px; }
+  /* Respuesta al toque en todo lo que se aprieta: un 3% hacia adentro mientras el dedo está
+     encima. Sin esto los botones cambian de color al soltar y se sienten sordos. Los colores
+     se funden con `ease` (es un cambio de color, no un movimiento); la escala usa la curva
+     fuerte para que la respuesta arranque en el primer cuadro. */
+  .chip, .andor-toggle, .chip-clear, .shortlist-btn, .beta-cta, .zoom-btn, .legend-toggle,
+  .foco-bar button, .area-acciones button, .sheet-close {
+    transition: transform 160ms var(--ease-out), background-color 150ms ease,
+                color 150ms ease, border-color 150ms ease, opacity 150ms ease;
+  }
+  .chip:active, .andor-toggle:active, .chip-clear:active, .shortlist-btn:active, .beta-cta:active,
+  .zoom-btn:active, .legend-toggle:active, .foco-bar button:active, .area-acciones button:active,
+  .sheet-close:active {
+    transform: scale(0.97);
+  }
   .chip-sep { width: 1px; align-self: stretch; background: var(--border); margin: 0 4px; flex: none; }
   .area-chips { display: flex; gap: 6px; }
   .chip.area[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -109,7 +131,11 @@
   .advanced-filters {
     max-width: 1080px; margin: 0 auto; padding: 4px 16px 14px; display: flex;
     flex-direction: column; gap: 14px; border-top: 1px solid var(--surface-2);
+    transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
   }
+  /* El panel empuja la página hacia abajo de golpe; un fundido corto con 4px de caída hace que
+     el contenido nuevo se lea como algo que se desplegó y no como un salto de diseño. */
+  @starting-style { .advanced-filters { opacity: 0; transform: translateY(-4px); } }
   .filter-group { display: flex; flex-direction: column; gap: 6px; }
   .filter-group-title {
     font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
@@ -133,12 +159,21 @@
   .shortlist-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
   .card-actions { display: flex; justify-content: flex-end; margin-top: 6px; }
 
-  .resumen-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 60; }
+  .resumen-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 60;
+                      transition: opacity 200ms ease; }
   .resumen-modal {
     position: fixed; z-index: 61; top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: min(760px, calc(100vw - 32px)); max-height: 84vh; overflow-y: auto;
     background: var(--surface-0); border: 1px solid var(--border); border-radius: 12px;
     padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 10px;
+    transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+  }
+  /* Entrada del resumen: aparece desde 96% y transparente, nunca desde la nada. El origen queda
+     al centro a propósito — un modal no sale de ningún botón en particular. Al cerrar desaparece
+     de inmediato: la salida debe ser más rápida que la entrada. */
+  @starting-style {
+    .resumen-backdrop { opacity: 0; }
+    .resumen-modal { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
   }
   .resumen-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
   .resumen-head h2 { font-size: 17px; margin: 0; }
@@ -171,10 +206,10 @@
        impreso y da un anclaje visual a la izquierda que las cajas redondeadas no tenían. */
     border-left: 3px solid var(--text-primary);
     padding: 13px 14px; display: flex; flex-direction: column; gap: 8px;
-    transition: border-color .12s, transform .12s;
+    transition: border-color 150ms ease, transform 160ms var(--ease-out);
   }
   .card:hover, .card:focus-visible { border-color: var(--accent); border-left-color: var(--accent); }
-  .card:active { transform: scale(0.99); }
+  .card:active { transform: scale(0.98); }
   .card-top { display: flex; align-items: flex-start; gap: 8px; }
   .type-dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 5px; flex: none; }
   .type-dot.persona { background: var(--persona); }
@@ -246,7 +281,14 @@
     min-width: 300px; max-height: 60vh; overflow-y: auto;
     background: var(--surface-0); border: 1px solid var(--border);
     border-radius: 10px; padding: 8px; box-shadow: 0 8px 28px rgba(0,0,0,.28);
+    /* Crece desde el botón que lo abre (arriba a la izquierda), no desde su propio centro: así
+       se entiende de dónde salió. */
+    transform-origin: top left;
+    transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out);
   }
+  @starting-style { .area-menu[open] .area-panel { opacity: 0; transform: scale(0.96); } }
+  /* Abierto con el teclado aparece en seco: lo que se repite con el teclado nunca se anima. */
+  .area-menu:has(> summary:focus-visible) .area-panel { transition: none; }
   .area-opt {
     display: flex; align-items: center; gap: 9px; padding: 6px 8px;
     border-radius: 7px; font-size: 12.5px; color: var(--text-secondary); cursor: pointer;
@@ -316,8 +358,13 @@
     padding: 9px 16px; border-radius: 999px;
     background: var(--accent); color: #fff; border: 1px solid var(--accent);
     box-shadow: 0 2px 10px rgba(0,0,0,.35);
+    transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out), filter 150ms ease;
   }
+  /* Sube 8px mientras aparece: flota sobre el mapa, y sin entrada se sentía como un parche que
+     se prende. El translateX(-50%) del centrado tiene que repetirse en cada estado. */
+  @starting-style { .foco-salir-flotante { opacity: 0; transform: translateX(-50%) translateY(8px); } }
   .foco-salir-flotante:hover { filter: brightness(1.12); }
+  .foco-salir-flotante:active { transform: translateX(-50%) scale(0.97); transition-duration: 160ms; }
   /* Debajo del de foco, para que nunca se tapen si están los dos. */
   .geo-volver-btn { bottom: 64px; background: var(--text-primary); color: var(--surface-0);
                     border-color: var(--text-primary); }
@@ -376,7 +423,10 @@
   }
   .zoom-btn:hover { color: var(--text-primary); border-color: var(--text-secondary); }
   .zoom-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-  .global-node { transition: opacity .2s, stroke-width .2s; transform-box: fill-box; transform-origin: center; }
+  /* Resaltar al pasar el mouse ocurre decenas de veces por minuto sobre ~1.500 elementos. Solo se
+     funde la opacidad, y rápido; el borde del nodo apuntado cambia en seco porque ES la respuesta
+     al puntero y no debe llegar tarde. */
+  .global-node { transition: opacity 150ms ease; }
   .global-node.hovered { stroke: var(--text-primary); stroke-width: 2.5px; }
   /* El resplandor sirve sobre fondo oscuro; sobre papel claro lava el color y los nodos se
      ven desteñidos. Se limita al modo oscuro. En claro, un borde fino da la misma separación. */
@@ -389,20 +439,21 @@
   :root[data-theme="dark"] .global-node.persona-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--persona) 70%, transparent)); }
   :root[data-theme="dark"] .global-node.institucion-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--institucion) 70%, transparent)); }
   :root[data-theme="dark"] .global-node.ensayo-type { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--ensayo) 70%, transparent)); }
-  .global-node.entering { opacity: 0; transform: scale(.3); }
-  .global-node.entered { opacity: 1; transform: scale(1); transition: opacity .45s ease-out, transform .45s cubic-bezier(.2,1.4,.4,1), stroke-width .2s; }
-  /* .faded declarado después de .entered para que gane en especificidad-por-orden cuando ambas clases coinciden */
+  /* Sin pulso ni entrada con rebote por nodo. Los 400 nodos latían sin parar (con drop-shadow en
+     modo oscuro, repintando el lienzo en cada cuadro) y cada tecla en el buscador reconstruía el
+     grafo y repetía un "pop" elástico de 450ms: datos que se están leyendo no deben moverse por
+     adorno. La entrada vive ahora en el lienzo entero (ver presentarGrafo y fundirGrafo). */
   .global-node.faded { opacity: .16; }
-  @media (prefers-reduced-motion: no-preference) {
-    .global-node.pulse { animation: nodePulse 3.6s ease-in-out infinite; }
-  }
-  @keyframes nodePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-  .global-edge { transition: opacity .2s, stroke-width .2s, stroke .2s; }
+  .global-edge { transition: opacity 150ms ease; }
   .global-edge.faded { opacity: .08; }
   .global-edge.hovered { stroke-width: 2.4px; }
-  .global-label { transition: opacity .2s; }
+  .global-label { transition: opacity 150ms ease; }
   .global-label.faded { opacity: .12; }
-  .global-label.label-oculta { opacity: 0; }
+  /* Sin transición en las etiquetas que no caben: colocarEtiquetas las mide ya dibujadas y recién
+     después las oculta, así que con fundido todas aparecían y se desvanecían en cada
+     reconstrucción del grafo (medido: 357 transiciones vivas tras una sola tecla). Al pasar el mouse
+     aparecen en seco, que es lo que tiene que hacer una respuesta al puntero. */
+  .global-label.label-oculta { opacity: 0; transition: none; }
   .global-label.label-oculta.destacada { opacity: 1; }
   .edge-focus-label { font-size: 8.5px; fill: var(--text-muted); pointer-events: none; }
   .node-tooltip {
@@ -425,18 +476,26 @@
   /* ---------- Detail sheet / panel ---------- */
   .backdrop {
     position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 40;
-    opacity: 0; pointer-events: none; transition: opacity .15s;
+    opacity: 0; pointer-events: none; transition: opacity 200ms ease;
   }
-  .backdrop.open { opacity: 1; pointer-events: auto; }
+  .backdrop.open { opacity: 1; pointer-events: auto; transition-duration: 300ms; }
 
+  /* La ficha entra en 300ms con curva de hoja y sale en 200ms: más lenta donde el usuario lee lo
+     que llega, rápida donde solo quiere quitarla de encima. Cerrada queda con visibility:hidden
+     (con retardo igual a la salida, para no cortar la animación): fuera de pantalla seguía
+     recibiendo el foco del tabulador y los lectores de pantalla la leían. */
   .detail-sheet {
     position: fixed; z-index: 50; background: var(--surface-0);
     left: 0; right: 0; bottom: 0; max-height: 85vh;
     border-radius: 16px 16px 0 0; border: 1px solid var(--border); border-bottom: none;
-    transform: translateY(100%); transition: transform .18s ease-out;
+    transform: translateY(100%); visibility: hidden;
+    transition: transform 200ms var(--ease-drawer), visibility 0s linear 200ms;
     overflow-y: auto; padding: 10px 20px 28px;
   }
-  .detail-sheet.open { transform: translateY(0); }
+  .detail-sheet.open {
+    transform: translateY(0); visibility: visible;
+    transition: transform 300ms var(--ease-drawer), visibility 0s;
+  }
   @media (min-width: 720px) {
     .detail-sheet {
       left: auto; top: 0; bottom: 0; right: 0; max-height: none;
@@ -492,6 +551,20 @@
 
   footer.page-footer { max-width: 1080px; margin: 20px auto 0; padding: 16px; text-align: center; font-size: 12px; color: var(--text-muted); }
   footer.page-footer a { color: var(--text-secondary); }
+
+  /* Movimiento reducido: menos, no cero. Se quedan los fundidos de opacidad y color, que ayudan
+     a entender qué cambió, y se va todo lo que se desplaza. La escala de 3% al apretar se
+     conserva: no desplaza nada y es la única confirmación de que el toque llegó. */
+  @media (prefers-reduced-motion: reduce) {
+    .detail-sheet, .detail-sheet.open { transform: none; }
+    .detail-sheet { opacity: 0; transition: opacity 200ms ease, visibility 0s linear 200ms; }
+    .detail-sheet.open { opacity: 1; transition: opacity 200ms ease, visibility 0s; }
+    @starting-style {
+      .resumen-modal { transform: translate(-50%, -50%); }
+      .advanced-filters, .area-menu[open] .area-panel { transform: none; }
+      .foco-salir-flotante { transform: translateX(-50%); }
+    }
+  }
 </style>
 </head>
 <body>
@@ -1981,6 +2054,7 @@
     btnLista.setAttribute("aria-pressed", "false");
     renderCards();
     buildNetwork(); networkBuilt = true;
+    fundirGrafo();
     renderBarraGeo();
     document.querySelector(".network-view-wrap").scrollIntoView({ block: "nearest" });
   }
@@ -2119,17 +2193,64 @@
     document.getElementById("geomap").setAttribute("viewBox",
       geoVB.x + " " + geoVB.y + " " + geoVB.w + " " + geoVB.h);
   }
+  function reducirMovimiento() {
+    return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }
+
+  // Cámara de un mapa (grafo o Chile). Los botones + − ⟲ mueven el encuadre con una transición
+  // corta en vez de saltar: con cientos de puntos, un salto de zoom hace perder de vista dónde
+  // estabas. La rueda y el arrastre siguen 1:1 —ahí la mano ya es la animación— y cortan
+  // cualquier transición en curso. Cada transición parte del encuadre ACTUAL, y un segundo
+  // toque a mitad de camino suma sobre el destino pendiente, así que nunca hay saltos ni zoom
+  // perdido. Con el teclado o con movimiento reducido el cambio es inmediato.
+  function crearCamara(leer, escribir) {
+    var raf = null, destino = null, DURACION = 240;
+    function cancelar() {
+      if (raf) cancelAnimationFrame(raf);
+      raf = null; destino = null;
+    }
+    function ir(meta, inmediato) {
+      cancelar();
+      if (inmediato || reducirMovimiento()) { escribir(meta); return; }
+      var a = leer(), desde = { x: a.x, y: a.y, w: a.w, h: a.h }, t0 = null;
+      destino = meta;
+      function paso(ahora) {
+        if (t0 === null) t0 = ahora;
+        var t = Math.min(1, (ahora - t0) / DURACION);
+        // Quíntica de salida: en la práctica la misma curva que --ease-out (0.23, 1, 0.32, 1).
+        var e = 1 - Math.pow(1 - t, 5);
+        escribir({ x: desde.x + (meta.x - desde.x) * e, y: desde.y + (meta.y - desde.y) * e,
+                   w: desde.w + (meta.w - desde.w) * e, h: desde.h + (meta.h - desde.h) * e });
+        if (t < 1) raf = requestAnimationFrame(paso);
+        else { raf = null; destino = null; }
+      }
+      raf = requestAnimationFrame(paso);
+    }
+    // Desde dónde calcular el próximo toque: el destino si hay una transición en curso.
+    function base() { return destino || leer(); }
+    return { ir: ir, cancelar: cancelar, base: base };
+  }
+
+  function encuadreGeo(vb, f) {
+    var nw = Math.max(GEO_VB.w / 14, Math.min(GEO_VB.w, vb.w * f));
+    var nh = nw * (vb.h / vb.w);
+    return { x: vb.x + (vb.w - nw) / 2, y: vb.y + (vb.h - nh) / 2, w: nw, h: nh };
+  }
+  var camaraGeo = crearCamara(function () { return geoVB; }, function (vb) { geoVB = vb; aplicarGeoVB(); });
   function zoomGeo(f) {
     if (!geoVB || !GEO_VB) return;
-    var nw = Math.max(GEO_VB.w / 14, Math.min(GEO_VB.w, geoVB.w * f));
-    var nh = nw * (geoVB.h / geoVB.w);
-    geoVB.x += (geoVB.w - nw) / 2; geoVB.y += (geoVB.h - nh) / 2;
-    geoVB.w = nw; geoVB.h = nh; aplicarGeoVB();
+    camaraGeo.cancelar();
+    geoVB = encuadreGeo(geoVB, f); aplicarGeoVB();
   }
-  document.getElementById("geo-in").addEventListener("click", function () { zoomGeo(0.75); });
-  document.getElementById("geo-out").addEventListener("click", function () { zoomGeo(1.33); });
-  document.getElementById("geo-reset").addEventListener("click", function () {
-    if (GEO_VB) { geoVB = { x: GEO_VB.x, y: GEO_VB.y, w: GEO_VB.w, h: GEO_VB.h }; aplicarGeoVB(); }
+  // `detail === 0` es un click que vino del teclado (Enter o espacio sobre el botón).
+  document.getElementById("geo-in").addEventListener("click", function (ev) {
+    if (geoVB && GEO_VB) camaraGeo.ir(encuadreGeo(camaraGeo.base(), 0.75), ev.detail === 0);
+  });
+  document.getElementById("geo-out").addEventListener("click", function (ev) {
+    if (geoVB && GEO_VB) camaraGeo.ir(encuadreGeo(camaraGeo.base(), 1.33), ev.detail === 0);
+  });
+  document.getElementById("geo-reset").addEventListener("click", function (ev) {
+    if (GEO_VB) camaraGeo.ir({ x: GEO_VB.x, y: GEO_VB.y, w: GEO_VB.w, h: GEO_VB.h }, ev.detail === 0);
   });
   (function () {
     var svg = document.getElementById("geomap");
@@ -2137,6 +2258,7 @@
       { passive: false });
     var pan = false, p0 = null, v0 = null;
     svg.addEventListener("pointerdown", function (ev) {
+      camaraGeo.cancelar();
       if (ev.target.closest(".geo-ciudad")) return;
       pan = true; p0 = { x: ev.clientX, y: ev.clientY }; v0 = { x: geoVB.x, y: geoVB.y };
       svg.setPointerCapture(ev.pointerId);
@@ -2198,6 +2320,7 @@
     if (!networkView.classList.contains("active")) mostrarVista(true);
     buildNetwork();
     networkBuilt = true;
+    fundirGrafo();
     renderFocoBar();
     document.querySelector(".network-view-wrap").scrollIntoView({ block: "nearest" });
   }
@@ -2207,6 +2330,7 @@
     foco = null;
     buildNetwork();
     networkBuilt = true;
+    fundirGrafo();
     renderFocoBar();
   }
 
@@ -2386,7 +2510,30 @@
   // estando completo en la lista y en su ficha, que es donde se lo consulta.
   var TOPE_NODOS_GRAFO = 400;
 
+  // El grafo se reconstruye entero —con layout nuevo— en cada cambio, así que no hay posiciones
+  // que interpolar entre un estado y otro. Lo que sí se puede es que el cambio no sea un corte
+  // seco. La primera vez el lienzo aparece con un fundido y 1,5% de escala; al aislar un nodo,
+  // salir del foco o cambiar capas, un fundido corto (fundirGrafo). Escribir en el buscador o
+  // tocar filtros NO pasa por acá: se repite muchas veces seguidas y cualquier animación lo
+  // haría sentir lento. Un solo elemento anima (el <svg>), no 1.500.
+  var grafoPresentado = false;
+  var soltarResaltadoTimer = null;
+  function presentarGrafo() {
+    var svg = document.getElementById("graph");
+    grafoPresentado = true;
+    if (!svg.animate) return;
+    svg.animate(reducirMovimiento()
+      ? [{ opacity: 0 }, { opacity: 1 }]
+      : [{ opacity: 0, transform: "scale(0.985)" }, { opacity: 1, transform: "none" }],
+      { duration: 300, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
+  }
+  function fundirGrafo() {
+    var svg = document.getElementById("graph");
+    if (svg.animate) svg.animate([{ opacity: 0.35 }, { opacity: 1 }], { duration: 200, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
+  }
+
   function buildNetwork() {
+    clearTimeout(soltarResaltadoTimer);
     var subset = currentNetworkSubset();
     var nodes = subset.nodes, edges = subset.edges;
     var hint = document.getElementById("network-hint");
@@ -2707,6 +2854,10 @@
     }
 
     function highlightNode(id) {
+      clearTimeout(soltarResaltadoTimer);
+      // Pasando de un nodo a otro no hay limpieza de por medio (ver soltarResaltado), así que las
+      // etiquetas de arista del nodo anterior se apagan acá.
+      svg.querySelectorAll(".edge-focus-label").forEach(function (el) { el.setAttribute("opacity", "0"); });
       Object.keys(nodeEls).forEach(function (nid) {
         nodeEls[nid].classList.toggle("hovered", nid === id);
         nodeEls[nid].classList.toggle("faded", nid !== id && !neighborsOf[id][nid]);
@@ -2731,6 +2882,16 @@
       svg.querySelectorAll(".global-label").forEach(function (el) { el.classList.remove("faded", "destacada"); });
       svg.querySelectorAll(".edge-focus-label").forEach(function (el) { el.setAttribute("opacity", "0"); });
       tooltipEl.classList.remove("show");
+    }
+
+    // Al salir de un nodo el resaltado espera 90ms antes de soltarse. Sin esa espera, ir de un
+    // nodo al vecino pasaba por el fondo: el mapa entero se reencendía un instante y volvía a
+    // apagarse (un parpadeo de 1.500 elementos). Si en ese margen llega otro nodo, el resaltado
+    // y el tooltip saltan directo al nuevo, sin fundido — como los tooltips de una barra de
+    // herramientas: una vez abierto el primero, los siguientes son instantáneos.
+    function soltarResaltado() {
+      clearTimeout(soltarResaltadoTimer);
+      soltarResaltadoTimer = setTimeout(clearHighlight, 90);
     }
 
     // El lienzo se encuadra al contenido en vez de quedarse en 0,0,W,H. Al aislar la red de
@@ -2774,7 +2935,7 @@
       // (daltonismo, impresión, forced-colors). Círculo=persona, cuadrado=institución,
       // triángulo=ensayo, rombo=tema.
       var circle = formaNodo(NS, n.tipo, n._x, n._y, r);
-      circle.setAttribute("class", "node-circle global-node entering " + typeClass);
+      circle.setAttribute("class", "node-circle global-node " + typeClass);
       circle.setAttribute("fill", "var(--" + colorVar(n.tipo) + ")");
       // El relleno sigue diciendo QUÉ es el nodo (persona, institución, ensayo); el área va en
       // el borde. Así se pueden leer las dos cosas a la vez sin que una tape a la otra.
@@ -2802,8 +2963,8 @@
       circle.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); activar(); } });
       circle.addEventListener("mouseenter", function () { highlightNode(n.id); showNodeTooltip(n, deg); });
       circle.addEventListener("focus", function () { highlightNode(n.id); showNodeTooltip(n, deg); });
-      circle.addEventListener("mouseleave", clearHighlight);
-      circle.addEventListener("blur", clearHighlight);
+      circle.addEventListener("mouseleave", soltarResaltado);
+      circle.addEventListener("blur", soltarResaltado);
       svg.appendChild(circle);
       nodeEls[n.id] = circle;
 
@@ -2816,19 +2977,10 @@
       label.textContent = etiquetaGrafo(n);
       svg.appendChild(label);
       etiquetasPendientes.push({ el: label, x: n._x, y: n._y, r: r, deg: deg, nodo: n });
-
-      // Entrada animada + pulso sutil escalonado (respeta prefers-reduced-motion vía CSS).
-      requestAnimationFrame(function () {
-        circle.classList.remove("entering");
-        circle.classList.add("entered");
-        setTimeout(function () {
-          circle.style.animationDelay = (Math.random() * 2.4).toFixed(2) + "s";
-          circle.classList.add("pulse");
-        }, 450);
-      });
     });
 
     colocarEtiquetas(etiquetasPendientes, MARCO);
+    if (!grafoPresentado) presentarGrafo();
   }
 
   // Antes las etiquetas se filtraban solo por grado: se dibujaban las de los ~25 nodos más
@@ -2927,6 +3079,7 @@
     if (networkView.classList.contains("active") && entidades.length) {
       buildNetwork();
       networkBuilt = true;
+      fundirGrafo();
     }
   }
   document.getElementById("capa-nodos").addEventListener("click", function (e) {
@@ -3011,17 +3164,24 @@
     svg.setAttribute("viewBox", networkVB.x + " " + networkVB.y + " " + networkVB.w + " " + networkVB.h);
   }
 
+  var camaraRed = crearCamara(function () { return networkVB; },
+                              function (vb) { networkVB = vb; applyNetworkVB(); });
+
   function resetZoom() {
+    camaraRed.cancelar();
     networkVB = { x: NETWORK_VB.x, y: NETWORK_VB.y, w: NETWORK_VB.w, h: NETWORK_VB.h };
     applyNetworkVB();
   }
 
+  function encuadreZoomRed(vb, factor, cx, cy) {
+    var newW = Math.max(120, Math.min(NETWORK_VB.w * 3, vb.w * factor));
+    var newH = newW * (vb.h / vb.w);
+    return { x: cx - (cx - vb.x) * (newW / vb.w), y: cy - (cy - vb.y) * (newH / vb.h), w: newW, h: newH };
+  }
+
   function zoomNetworkAt(factor, cx, cy) {
-    var newW = Math.max(120, Math.min(NETWORK_VB.w * 3, networkVB.w * factor));
-    var newH = newW * (networkVB.h / networkVB.w);
-    networkVB.x = cx - (cx - networkVB.x) * (newW / networkVB.w);
-    networkVB.y = cy - (cy - networkVB.y) * (newH / networkVB.h);
-    networkVB.w = newW; networkVB.h = newH;
+    camaraRed.cancelar();
+    networkVB = encuadreZoomRed(networkVB, factor, cx, cy);
     applyNetworkVB();
   }
 
@@ -3043,16 +3203,22 @@
       zoomNetworkAt(evt.deltaY > 0 ? 1.12 : 0.89, p.x, p.y);
     }, { passive: false });
 
-    document.getElementById("zoom-in").addEventListener("click", function () {
-      zoomNetworkAt(0.8, networkVB.x + networkVB.w / 2, networkVB.y + networkVB.h / 2);
+    // Botones animados (ver crearCamara); `detail === 0` es un click que vino del teclado.
+    function zoomBoton(factor) {
+      return function (evt) {
+        var b = camaraRed.base();
+        camaraRed.ir(encuadreZoomRed(b, factor, b.x + b.w / 2, b.y + b.h / 2), evt.detail === 0);
+      };
+    }
+    document.getElementById("zoom-in").addEventListener("click", zoomBoton(0.8));
+    document.getElementById("zoom-out").addEventListener("click", zoomBoton(1.25));
+    document.getElementById("zoom-reset").addEventListener("click", function (evt) {
+      camaraRed.ir({ x: NETWORK_VB.x, y: NETWORK_VB.y, w: NETWORK_VB.w, h: NETWORK_VB.h }, evt.detail === 0);
     });
-    document.getElementById("zoom-out").addEventListener("click", function () {
-      zoomNetworkAt(1.25, networkVB.x + networkVB.w / 2, networkVB.y + networkVB.h / 2);
-    });
-    document.getElementById("zoom-reset").addEventListener("click", resetZoom);
 
     var panning = false, panStart = null, vbStart = null;
     svg.addEventListener("pointerdown", function (evt) {
+      camaraRed.cancelar();
       if (evt.target.closest(".node-circle")) return;
       panning = true;
       panStart = { x: evt.clientX, y: evt.clientY };
