@@ -2532,6 +2532,20 @@
     if (svg.animate) svg.animate([{ opacity: 0.35 }, { opacity: 1 }], { duration: 200, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
   }
 
+  // El empujón inicial de cada nodo es pseudoaleatorio pero FIJO: sale de un hash de su id, no
+  // de Math.random. Con azar real, reconstruir con el mismo filtro dejaba otro mapa —medido: los
+  // 400 nodos cambiaban de lugar tras escribir y borrar una letra, y también al entrar y salir
+  // del foco—, así que volver a "todo el mapa" hacía perder de vista dónde estaba cada cosa. El
+  // resto del layout ya era determinista, así que con esto el mismo conjunto de nodos da
+  // exactamente el mismo mapa. Devuelve un valor en [-0,5, 0,5); `semilla` separa x de y.
+  function ruidoFijo(id, semilla) {
+    var h = 2166136261 ^ semilla, s = String(id);
+    for (var q = 0; q < s.length; q++) { h ^= s.charCodeAt(q); h = Math.imul(h, 16777619); }
+    // Mezcla final: ids casi iguales ("…-001", "…-002") no deben dar empujones casi iguales.
+    h ^= h >>> 16; h = Math.imul(h, 0x85ebca6b); h ^= h >>> 13; h = Math.imul(h, 0xc2b2ae35); h ^= h >>> 16;
+    return (h >>> 0) / 4294967296 - 0.5;
+  }
+
   function buildNetwork() {
     clearTimeout(soltarResaltadoTimer);
     var subset = currentNetworkSubset();
@@ -2672,12 +2686,13 @@
     nodes.forEach(function (n, i) {
       var a = anclas[anclaDe[n.id]];
       var ang = (i / nodes.length) * Math.PI * 2;
+      var jx = ruidoFijo(n.id, 1), jy = ruidoFijo(n.id, 2);
       if (a) {
-        n._x = a.x + Math.cos(ang) * 26 + (Math.random() - 0.5) * 12;
-        n._y = a.y + Math.sin(ang) * 26 + (Math.random() - 0.5) * 12;
+        n._x = a.x + Math.cos(ang) * 26 + jx * 12;
+        n._y = a.y + Math.sin(ang) * 26 + jy * 12;
       } else {
-        n._x = W / 2 + Math.cos(ang) * 150 + (Math.random() - 0.5) * 20;
-        n._y = H / 2 + Math.sin(ang) * 150 + (Math.random() - 0.5) * 20;
+        n._x = W / 2 + Math.cos(ang) * 150 + jx * 20;
+        n._y = H / 2 + Math.sin(ang) * 150 + jy * 20;
       }
       n._vx = 0; n._vy = 0;
     });
