@@ -1,0 +1,10 @@
+{
+ "fecha": "2026-09-15",
+ "geolocalizacion_osm_usada": "data/pending/geolocalizacion-osm-2026-09-15",
+ "instituciones_existentes": 61,
+ "A_instituciones": 36,
+ "B_sedes_por_resolver": 181,
+ "C_ensayos_sin_sede_nombrada": 226,
+ "D_personas_sin_institucion": 2,
+ "ensayos_sin_ninguna_conexion": 262
+}

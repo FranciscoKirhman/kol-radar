@@ -1,0 +1,37 @@
+id,nombre,ciudad_en_la_muestra,tarea,motivo,candidato_osm_url,candidato_osm_direccion
+bradford-hill,Bradford Hill Clinical Research Center,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+james-lind,James Lind Centro de Investigación del Cáncer,Temuco,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+hosp-concepcion,Hospital Clínico Regional de Concepción,Concepción,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+hosp-puerto-montt,Hospital Puerto Montt,Puerto Montt,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+k2-oncology,K2 Oncology,Santiago (Providencia),ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+centro-precision,Centro de Oncología de Precisión,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+orlandi,Orlandi Oncología,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+ser-chile,Sociedad Chilena de Enfermedades Respiratorias,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+sochradi,Sociedad Chilena de Radiología,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+sochradioterapia,Sociedad Chilena de Radioterapia,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+soc-cirujanos,Sociedad de Cirujanos de Chile,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+uchile,Universidad de Chile,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+hosp-uchile,Hospital Clínico Universidad de Chile,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+hosp-carabineros,Hospital de Carabineros,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+oncocentro,Oncocentro APYS,Viña del Mar,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+saga,Centro de Estudios Clínicos SAGA,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+oncovida,Oncovida,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+ic-la-serena,IC La Serena Research,La Serena,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+icos,Instituto Clínico Oncológico del Sur (ICOS),Temuco,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+biocenter,Biocenter,Concepción,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+inmunocel,Inmunocel,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+sim,Sociedad de Investigaciones Médicas (SIM),Temuco,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+cecim,CeCim Biocinetic,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+ciec,Centro Internacional de Estudios Clínicos (CIEC),Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+iceg,Icegclinic,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+hosp-sotero,Hospital Sótero del Río,Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+iram,Instituto de Radiomedicina (IRAM),Santiago,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+crchile,Clinical Research Chile SpA,Valdivia,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+itop,Instituto de Terapias Oncológicas Providencia,Providencia,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+hosp-valdivia,Hospital Base de Valdivia,Valdivia,ubicar,OpenStreetMap no tiene un objeto con ese nombre en la ciudad,,
+clinica-alemana,Clínica Alemana Santiago,Santiago,verificar,hay otra sede con el mismo nombre a más de 500 m,https://www.openstreetmap.org/relation/13179277,"Clínica Alemana, 5951, Avenida Vitacura, Vitacura, Santiago, Provincia de Santiago, Región Metropolitana de Santiago, 8320000, Chile"
+clinica-santa-maria,Clínica Santa María,Santiago,verificar,hay otra sede con el mismo nombre a más de 500 m,https://www.openstreetmap.org/way/37356304,"Clínica Santa María, 500, Avenida Santa María, Población León XIII, Providencia, Provincia de Santiago, Región Metropolitana de Santiago, 7500000, Chile"
+uss,Universidad San Sebastián,Concepción,verificar,hay otra sede con el mismo nombre a más de 500 m,https://www.openstreetmap.org/way/114254370,"Universidad San Sebastián, 1577, Cruz, Lientur, Barrio Norte, Concepción, Provincia de Concepción, Región del Biobío, 4081375, Chile"
+unab,Universidad Andrés Bello,Santiago,verificar,hay otra sede con el mismo nombre a más de 500 m,https://www.openstreetmap.org/way/625289635,"Universidad Andrés Bello, 2212, Sazié, Santiago, Provincia de Santiago, Región Metropolitana de Santiago, 8370136, Chile"
+uach,Universidad Austral de Chile,Valdivia,verificar,hay otra sede con el mismo nombre a más de 500 m,https://www.openstreetmap.org/way/136115984,"Universidad Austral de Chile, Cruce Ruta 202 - Aeródromo Las Marías - Río Cau Cau, Isla Teja, Valdivia, Provincia de Valdivia, Región de Los Ríos, 5110196, Chile"
+isp,Instituto de Salud Pública de Chile,Santiago,verificar,hay otra sede con el mismo nombre a más de 500 m,https://www.openstreetmap.org/way/152907976,"Instituto de Salud Pública de Chile (ISP), 1000, Pericles, Villa Olímpica, Ñuñoa, Santiago, Provincia de Santiago, Región Metropolitana de Santiago, 8320000, Chile"

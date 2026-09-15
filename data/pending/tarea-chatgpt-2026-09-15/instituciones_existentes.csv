@@ -1,0 +1,62 @@
+id,nombre,ciudad,tipo_segun_muestra,alias_en_la_fuente
+bradford-hill,Bradford Hill Clinical Research Center,Santiago,Centro de investigación clínica,
+falp,Fundación Arturo López Pérez (FALP),Santiago (Providencia),Centro oncológico,
+torax,Instituto Nacional del Tórax,Santiago,Hospital público,
+james-lind,James Lind Centro de Investigación del Cáncer,Temuco,Centro de investigación clínica,
+hosp-concepcion,Hospital Clínico Regional de Concepción,Concepción,Hospital público,
+hosp-puerto-montt,Hospital Puerto Montt,Puerto Montt,Hospital público,
+puc,Pontificia Universidad Católica de Chile,Santiago,Universidad / red de salud,
+k2-oncology,K2 Oncology,Santiago (Providencia),Centro oncológico,
+centro-precision,Centro de Oncología de Precisión,Santiago,Centro oncológico,
+clinica-alemana,Clínica Alemana Santiago,Santiago,Centro clínico privado,
+clinica-las-condes,Clínica Las Condes,Santiago,Centro clínico privado,
+orlandi,Orlandi Oncología,Santiago,Centro oncológico privado,
+clinica-santa-maria,Clínica Santa María,Santiago,Centro clínico privado,
+uandes,Universidad de los Andes,Santiago,Universidad,
+ser-chile,Sociedad Chilena de Enfermedades Respiratorias,Santiago,Sociedad científica,
+sochradi,Sociedad Chilena de Radiología,Santiago,Sociedad científica,
+sochradioterapia,Sociedad Chilena de Radioterapia,Santiago,Sociedad científica,
+soc-cirujanos,Sociedad de Cirujanos de Chile,Santiago,Sociedad científica,
+uautonoma,Universidad Autónoma de Chile,Talca,Universidad,
+uchile,Universidad de Chile,Santiago,Universidad,
+uss,Universidad San Sebastián,Concepción,Universidad,
+udec,Universidad de Concepción,Concepción,Universidad,
+utarapaca,Universidad de Tarapacá,Arica,Universidad,
+unab,Universidad Andrés Bello,Santiago,Universidad,
+uach,Universidad Austral de Chile,Valdivia,Universidad,
+hosp-uchile,Hospital Clínico Universidad de Chile,Santiago,Hospital universitario,
+hosp-carabineros,Hospital de Carabineros,Santiago,Hospital institucional,
+isp,Instituto de Salud Pública de Chile,Santiago,Organismo público,
+oncocentro,Oncocentro APYS,Viña del Mar,Centro con sitio de ensayos clínicos en Chile,ONCOCENTRO APYS | ONCOCENTRO APYS-ACEREY | ONCOCENTRO APYS-ACEREY (Site 0500) | ONCOCENTRO APYS; Oncología | OncoCentro | Oncocentro | Oncocentro APYS | Oncocentro APYS - Centro de Atencion Medica Oncologica Integral | Oncocentro Apys | Oncocentro Valdivia
+cic-vina,Centro de Investigaciones Clínicas Viña del Mar,Viña del Mar,Centro con sitio de ensayos clínicos en Chile,Centro de Investigaciones Clinicas Vina Del Mar | Centro de Investigaciones Clinicas Vina del Mar | Centro de Investigaciones Clinicas Vina del Mar Ltda. | Centro de Investigaciones Clinicas Viña del Mar | Centro de Investigaciones Clínicas Vina del Mar | Centro de Investigaciones Clínicas Vina del Mar Ltda. | Centro de Investigaciones Clínicas Viña del Mar | Centro de Investigaciones Clínicas Viñ
+saga,Centro de Estudios Clínicos SAGA,Santiago,Centro con sitio de ensayos clínicos en Chile,Centro de Estudios Clinicos SAGA | Centro de Estudios Clinicos SAGA Spa | Centro de Estudios Clinicos Saga Spa | Centro de Estudios Clínicos SAGA | Centro de Estudios Clínicos SAGA (Site 0517) | Centro de Estudios Clínicos SAGA SpA | Centro de Estudios Clínicos SAGA-CECSAGA | Centro de Investigacion Clinica SAGA | Centro de estudios clinicos SAGA | SAGA
+oncovida,Oncovida,Santiago,Centro con sitio de ensayos clínicos en Chile,ONCOVIDA | Oncovida | Oncovida - Santiago | Oncovida SA | Oncovida- Santiago | Sociedad Oncovida | Sociedad Oncovida S.A | Sociedad Oncovida S.A. | Sociedad Oncovida SA
+inc,Instituto Nacional del Cáncer,Santiago,Centro con sitio de ensayos clínicos en Chile,Instituto Nacional Del Cancer | Instituto Nacional del Cancer | Instituto Nacional del Cancer - Servicio de Radioterapia | Instituto Nacional del Cancer Oncology | Instituto Nacional del Cancer-CR Investigación | Instituto Nacional del Cáncer | Instituto Nacional del Cáncer (INCANCER)
+ic-la-serena,IC La Serena Research,La Serena,Centro con sitio de ensayos clínicos en Chile,Centro de Estudios Clínicos IC La Serena Research | IC La Serena Research | IC La Serena Research SpA | Ic La Serena Research
+icos,Instituto Clínico Oncológico del Sur (ICOS),Temuco,Centro con sitio de ensayos clínicos en Chile,ICOS - Inst Clinic Oncology | Instituto Clinico Oncologica del Sur (ICOS) | Instituto Clinico Oncologico del Sur | Instituto Clinico Oncologico del Sur (ICOS) | Instituto Clinico Oncologico del Sur ICOS | Instituto Clinico del Sur. ICOS | Instituto Clínico Oncológico del Sur | Instituto Clínico Oncológico del Sur (ICOS) | Instituto Clínico Oncológico del Sur - ICOS | Instituto Oncologico del Sur |
+biocenter,Biocenter,Concepción,Centro con sitio de ensayos clínicos en Chile,Biocenter | Servicios Medicos e Investigacion Biocenter SpA
+redsalud,Clínica RedSalud,Santiago,Centro con sitio de ensayos clínicos en Chile,"Clinica Redsalud Vitacura | Clinica Redsalud Vitacura, Instituto del Cancer | Clínica RedSalud Vitacura | Clínica RedSalud Vitacura (Site 0511) | Instituto del Cancer RedSalud Vitacura | RedSalud Vitacura"
+ucm,Clínica Universidad Católica del Maule,Talca,Centro con sitio de ensayos clínicos en Chile,"Clinica Universidad Catolica del Maule | Clinica Universidad Catolica del Maule-Oncology | Clinical Universidad Catolica del Maule, Ltda"
+inmunocel,Inmunocel,Santiago,Centro con sitio de ensayos clínicos en Chile,Clinica Inmunocel | Clínica Inmunocel | Inmunocel
+sim,Sociedad de Investigaciones Médicas (SIM),Temuco,Centro con sitio de ensayos clínicos en Chile,Centro de Investigacion Clinica SIM | SIM CRC | SIM Centro de Investigacion Clinica | Sociedad de Investigaciones Medicas Limitada | Sociedad de Investigaciones Medicas Limitadas | Sociedad de Investigaciones Medicas Ltda | Sociedad de Investigaciones Medicas Ltda (SIM) | Sociedad de Investigaciones Médicas Limitada
+cecim,CeCim Biocinetic,Santiago,Centro con sitio de ensayos clínicos en Chile,BIOCINETIC SpA | Biocinetic | Biocinetic servicios medicos limitada | CECIM | CECIM Biocinetic | CECIM-Centro de Estudios Cliicos e Investigaciones Medicas | CeCim - Centro de Estudios Clínicos e Investigaciones Médicas | CeCim Biocinetic | Centro de Estudios Clinicos e Investigaciones Medicas CeCim
+ciec,Centro Internacional de Estudios Clínicos (CIEC),Santiago,Centro con sitio de ensayos clínicos en Chile,"CIEC - Centro Internacional de Estudios Clínicos | Centro Internacional de Estudios Clinicos | Centro Internacional de Estudios Clinicos (CIEC) | Centro Internacional de Estudios Clinicos - CIEC | Centro Internacional de Estudios Clinicos CIEC | Centro Internacional de Estudios Clinicos, CIEC | Centro Internacional de Estudios Clínicos | Centro Internacional de Estudios Clínicos (CIEC)"
+clinica-puerto-montt,Clínica Puerto Montt,Port Montt,Centro con sitio de ensayos clínicos en Chile,Clinica Puerto Montt | Clínica Puerto Montt
+iceg,Icegclinic,Santiago,Centro con sitio de ensayos clínicos en Chile,Icegclinic | Icegclinic /Id# 231212 | Icegclinic Research & Care | Icegclinic Research and Care
+hosp-calvo-mackenna,Hospital Luis Calvo Mackenna,Santiago,Centro con sitio de ensayos clínicos en Chile,Hospital Dr Luis Calvo Mackenna | Hospital Luis Calvo Mackenna | Hospital Luis Calvo Mackenna; Oncologia
+hosp-van-buren,Hospital Carlos Van Buren,Valparaíso,Centro con sitio de ensayos clínicos en Chile,"Hospital Carlos Van Buren | Hospital Carlos Van Buren de Valparaiso | Hospital Carlos Van Buren, Servicio de Oncologia"
+hosp-san-borja,Hospital Clínico San Borja Arriarán,Santiago,Centro con sitio de ensayos clínicos en Chile,Hospital Clinico San Borja Arriaran | Hospital Clínico San Borja Arriaran | Hospital Clínico San Borja Arriarán | Hospital San Borja Arriaran | Hospital San Borja Arriarán
+hosp-sotero,Hospital Sótero del Río,Santiago,Centro con sitio de ensayos clínicos en Chile,Complejo Asistencial Dr. Sótero del Río | Dr. Sótero del Río Hospital | Hospital Dr. Sotero Del Rio | Hospital Sotero Del Rio | Hospital Sotero del Rio
+iram,Instituto de Radiomedicina (IRAM),Santiago,Centro con sitio de ensayos clínicos en Chile,"Instituto de Radiomedicina | Instituto de Radiomedicina (IRAM) | Instituto de Radiomedicina, IRAM | Instituto de Radiomedicina-hemato-oncologia"
+hosp-militar,Hospital Militar de Santiago,Santiago,Centro con sitio de ensayos clínicos en Chile,Hospital Militar | Hospital Militar de Santiago
+crchile,Clinical Research Chile SpA,Valdivia,Centro con sitio de ensayos clínicos en Chile,Clinical Research Chile SpA
+hosp-salvador,Hospital del Salvador,Santiago,Centro con sitio de ensayos clínicos en Chile,Hospital Del Salvador | Hospital del Salvador | Hospital del Salvador SSMO
+hosp-rancagua,Hospital Regional de Rancagua,Rancagua,Centro con sitio de ensayos clínicos en Chile,Centro de Cirugía Plástica y Reconstructiva. Dra. Viviana Spröhnle Hospital Regional de Rancagua | Hospital Regional Rancagua | Hospital Regional Rancagua Libertador Bernardo O Higgins
+itop,Instituto de Terapias Oncológicas Providencia,Providencia,Centro con sitio de ensayos clínicos en Chile,Instituto de Terapias Oncologicas Providencia
+clinica-davila,Clínica Dávila,Recoleta,Centro con sitio de ensayos clínicos en Chile,Clinica Davila
+hosp-barros-luco,Hospital Barros Luco Trudeau,Santiago,Centro con sitio de ensayos clínicos en Chile,Hospital Barros Luco | Hospital Barros Luco Trudeau
+hosp-valdivia,Hospital Base de Valdivia,Valdivia,Centro con sitio de ensayos clínicos en Chile,Hospital Base de Valdivia | Hospital Clinico Regional de Valdivia at University Austral de Chile
+hosp-temuco,Hospital Hernán Henríquez Aravena,Temuco,Centro con sitio de ensayos clínicos en Chile,Hospital Dr. Hernan Henriquez Aravena | Hospital de Temuco
+hosp-fricke,Hospital Gustavo Fricke,Viña del Mar,Centro con sitio de ensayos clínicos en Chile,Hospital Dr. Gustavo Fricke
+hosp-talca,Hospital Regional de Talca,Talca,Centro con sitio de ensayos clínicos en Chile,Hospital de Talca
+hosp-sjd,Hospital San Juan de Dios,Santiago,Centro con sitio de ensayos clínicos en Chile,Hospital San Juan de Dios

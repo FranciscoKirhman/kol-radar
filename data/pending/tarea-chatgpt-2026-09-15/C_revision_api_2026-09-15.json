@@ -1,0 +1,4978 @@
+{
+ "generado_por": "API v2 de ClinicalTrials.gov (reemplaza la tarea C de ChatGPT)",
+ "C": [
+  {
+   "nct": "NCT00130897",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00130897",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00130897",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00305188",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Administrative Office",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00305188",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00305188",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00418236",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00418236",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00418236",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02023697",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02023697",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02023697",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02162667",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02162667",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02162667",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00338286",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Arica"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Temuco"
+    },
+    {
+     "facility": "",
+     "city": "Valdivia"
+    },
+    {
+     "facility": "",
+     "city": "Valparaíso"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00338286",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00338286",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00075270",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00075270",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00075270",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02016534",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02016534",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02016534",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00681122",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00681122",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00681122",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01571284",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number 152001",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number 152003",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01571284",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01571284",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01673867",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0058",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0077",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0134",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0012",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01673867",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01673867",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00949910",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00949910",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00949910",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00481247",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00481247",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00481247",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01193244",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Las Condes"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Temuco"
+    },
+    {
+     "facility": "",
+     "city": "Valparaíso"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01193244",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01193244",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00073307",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00073307",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00073307",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00373113",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00373113",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00373113",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00574275",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Administrative Office",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00574275",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00574275",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00154102",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago-Las Condes"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago-Providencia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00154102",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00154102",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00490139",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Valdivia"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Valparaíso"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00490139",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00490139",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00556712",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00556712",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00556712",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00883909",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00883909",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00883909",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02119663",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Vitacura"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02119663",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02119663",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00171340",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00171340",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00171340",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01901146",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01901146",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01901146",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01482962",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Concepción"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01482962",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01482962",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01450761",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01450761",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01450761",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00334282",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00334282",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00334282",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01456325",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01456325",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01456325",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02125461",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02125461",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02125461",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02279862",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02279862",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02279862",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00089999",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00089999",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00089999",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00387764",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00387764",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00387764",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01646021",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01646021",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01646021",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01308580",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number 152005",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number 152004",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number 152002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number 152001",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01308580",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01308580",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01412957",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01412957",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01412957",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00806819",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Boehringer Ingelheim Investigational Site",
+     "city": "Jardin Del Mar, Renaca"
+    },
+    {
+     "facility": "Boehringer Ingelheim Investigational Site",
+     "city": "Las Condes"
+    },
+    {
+     "facility": "Boehringer Ingelheim Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Boehringer Ingelheim Investigational Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00806819",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00806819",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00532155",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Administrative Office",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00532155",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00532155",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00863746",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00863746",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00863746",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00561470",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Investigational Site Number 152002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Sanofi-Aventis Investigational Site Number 152003",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Sanofi-Aventis Investigational Site Number 152001",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Sanofi-Aventis Investigational Site Number 152005",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Sanofi-Aventis Investigational Site Number 152004",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00561470",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00561470",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01244191",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01244191",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01244191",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00174837",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Administrative Office",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00174837",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00174837",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00917384",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "ImClone Investigational Site",
+     "city": "Concepción"
+    },
+    {
+     "facility": "ImClone Investigational Site",
+     "city": "La Serena"
+    },
+    {
+     "facility": "ImClone Investigational Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00917384",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00917384",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00861614",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago - Independencia"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Vi?a Del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00861614",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00861614",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00678535",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research site",
+     "city": "Reñaca"
+    },
+    {
+     "facility": "Research site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research site",
+     "city": "Valparaíso"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00678535",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00678535",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01865747",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01865747",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01865747",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00300885",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00300885",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00300885",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00417209",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Administrative Office",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00417209",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00417209",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00324155",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00324155",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00324155",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00338247",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00338247",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00338247",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00113607",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Reneca"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00113607",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00113607",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01516736",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sandoz Investigational Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01516736",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01516736",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01642004",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0117",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0131",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0110",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution - 0161",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Local Institution - 0154",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01642004",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01642004",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00174863",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Administrative Office",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00174863",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00174863",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01204749",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Valparaíso"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01204749",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01204749",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00457392",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Independencia"
+    },
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Providencia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00457392",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00457392",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01450696",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01450696",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01450696",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01285609",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01285609",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01285609",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01500720",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number 152001",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number 152005",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01500720",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01500720",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00417079",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "sanofi-aventis Chile",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00417079",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00417079",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01234311",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Temuco"
+    },
+    {
+     "facility": "",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01234311",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01234311",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00457691",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00457691",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00457691",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00117598",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Providencia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00117598",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00117598",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00901901",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00901901",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00901901",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00474786",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Providencia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00474786",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00474786",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00680901",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00680901",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00680901",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01263886",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number 152005",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number 152002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number 152003",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number 152004",
+     "city": "Valparaíso"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01263886",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01263886",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00124566",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00124566",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00124566",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00558103",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00558103",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00558103",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00374322",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00374322",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00374322",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00556322",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00556322",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00556322",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00099437",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00099437",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00099437",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00625664",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Investigational Site Number 152001",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00625664",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00625664",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00105443",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago Región Metropolitana"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00105443",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00105443",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00043927",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Clinical Trials Call Center",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00043927",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00043927",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00034125",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Las Condes"
+    },
+    {
+     "facility": "",
+     "city": "Providencia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00034125",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00034125",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00519285",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis Administrative Office",
+     "city": "Providencia Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00519285",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00519285",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00056407",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00056407",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00056407",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01170663",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "ImClone Investigational Site",
+     "city": "Providencia"
+    },
+    {
+     "facility": "ImClone Investigational Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01170663",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01170663",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00858364",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Reñaca"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00858364",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00858364",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00174655",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Sanofi-Aventis",
+     "city": "Providencia Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00174655",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00174655",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00692770",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Reñaca"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00692770",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00692770",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01977651",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Site CL56001",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Site CL56004",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Site CL56002",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Site CL56003",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01977651",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01977651",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00073528",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00073528",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00073528",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01235962",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01235962",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01235962",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01933932",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01933932",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01933932",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01724021",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01724021",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01724021",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00626548",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00626548",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00626548",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02231749",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0101",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0102",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0144",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0103",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02231749",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02231749",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00034268",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Las Condes"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00034268",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00034268",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00560235",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Providencia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00560235",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00560235",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01057810",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01057810",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01057810",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01077154",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01077154",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01077154",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00428090",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Providencia / Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Puente Alto - Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00428090",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00428090",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01437566",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Temuco"
+    },
+    {
+     "facility": "",
+     "city": "Valparaíso"
+    },
+    {
+     "facility": "",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01437566",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01437566",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01715285",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01715285",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01715285",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01721772",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01721772",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01721772",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00673049",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Pfizer Investigational Site",
+     "city": "Independencia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00673049",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00673049",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00082433",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00082433",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00082433",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT00148798",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT00148798",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT00148798",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT01013740",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "ViÃ±a Del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT01013740",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT01013740",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04524689",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Centro de Investigacion y Desarrollo Oncologico (CIDO) Hochstetter 599 of. 602-603-1001, Temuco_Investigational Site Number :1520005",
+     "city": "Temuco"
+    },
+    {
+     "facility": "ONCOCENTRO APYS Av. La Marina 1702, 2do piso, Viña del Mar_Investigational Site Number :1520003",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Orlandi Oncologia General Salvo 159, Providencia_Investigational Site Number :1520002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "ICEGCLINIC Avenida Serafín Zamora 190 Torre B, piso 4. La Florida_Investigational Site Number :1520006",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04524689",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04524689",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05091437",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Concepción"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05091437",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05091437",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03800134",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03800134",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03800134",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02967692",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02967692",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02967692",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04039607",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0296",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Local Institution - 0094",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Local Institution - 0283",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0095",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0024",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0156",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0012",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution - 0216",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04039607",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04039607",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03138512",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0223",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Local Institution - 0246",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0221",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0222",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03138512",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03138512",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03732820",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03732820",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03732820",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02472964",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Mylan Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Mylan Investigational Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02472964",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02472964",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03662659",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0002",
+     "city": "Rancagua"
+    },
+    {
+     "facility": "Local Institution - 0080",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0001",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution - 0079",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03662659",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03662659",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05128773",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number :1521622",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05128773",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05128773",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04659603",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number : 1520002",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Investigational Site Number : 1520003",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520001",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04659603",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04659603",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04914897",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number : 1520005",
+     "city": "Santaigo"
+    },
+    {
+     "facility": "Investigational Site Number : 1520004",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520001",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520003",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04914897",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04914897",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04149574",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0011",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Local Institution - 0010",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Local Institution - 0072",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04149574",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04149574",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05104567",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number : 1520001",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05104567",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05104567",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04884360",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04884360",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04884360",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04475939",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04475939",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04475939",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04742192",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04742192",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04742192",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03980314",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0024",
+     "city": "Independencia"
+    },
+    {
+     "facility": "Local Institution - 0045",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0023",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0022",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03980314",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03980314",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05043090",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05043090",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05043090",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05519085",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0329",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0387",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0332",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05519085",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05519085",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05328908",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0015",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0033",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05328908",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05328908",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04493853",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04493853",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04493853",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04078152",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04078152",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04078152",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02869789",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0010",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0011",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02869789",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02869789",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03661320",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0053",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0052",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0210",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0054",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03661320",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03661320",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03830866",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03830866",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03830866",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03470922",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0001",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03470922",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03470922",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03873402",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0017",
+     "city": "Independencia"
+    },
+    {
+     "facility": "Local Institution - 0003",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0034",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0004",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution - 0012",
+     "city": "Viña El Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03873402",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03873402",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02386800",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02386800",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02386800",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02960022",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Site CL56007",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Site CL56005",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Site CL56006",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Site CL56004",
+     "city": "IX Region"
+    },
+    {
+     "facility": "Site CL56002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Site CL56001",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02960022",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02960022",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05329766",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Las Condes"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Talca"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05329766",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05329766",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03377361",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0117",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0118",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03377361",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03377361",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05625399",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0143",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Local Institution - 0178",
+     "city": "Port Montt"
+    },
+    {
+     "facility": "Local Institution - 0119",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0140",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Local Institution - 0144",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0010",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0074",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0028",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution - 0017",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05625399",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05625399",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05568095",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "La Florida"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Port Montt"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Talca"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05568095",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05568095",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03635983",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0174",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Local Institution - 0173",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03635983",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03635983",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03519256",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0154",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0069",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03519256",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03519256",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03725475",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03725475",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03725475",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02300831",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02300831",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02300831",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03338790",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0034",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0051",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03338790",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03338790",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05179603",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number : 1520003",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520004",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Investigational Site Number : 1520001",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05179603",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05179603",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05348577",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05348577",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05348577",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02588261",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Site CL56001",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Site CL56002",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Site CL56007",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02588261",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02588261",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02477826",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0173",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0131",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0174",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02477826",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02477826",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02369874",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02369874",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02369874",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03631199",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03631199",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03631199",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03732677",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Port Montt"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03732677",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03732677",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04964908",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Providencia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04964908",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04964908",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05405166",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number : 1520001",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Investigational Site Number : 1520003",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520006",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520004",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520005",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05405166",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05405166",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04711252",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Concepción"
+    },
+    {
+     "facility": "Research Site",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04711252",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04711252",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02475681",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02475681",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02475681",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04943900",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0025",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0026",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0024",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04943900",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04943900",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02437318",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02437318",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02437318",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02809053",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02809053",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02809053",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04810078",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0084",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Local Institution - 0005",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0104",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0076",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0077",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04810078",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04810078",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05211895",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Las Condes"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Port Montt"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05211895",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05211895",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05613088",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0030",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0036",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0029",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05613088",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05613088",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03798626",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03798626",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03798626",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03778229",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03778229",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03778229",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03200717",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03200717",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03200717",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03721289",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03721289",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03721289",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02481830",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0025",
+     "city": "Recoleta"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02481830",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02481830",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02872116",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0032",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Local Institution - 0058",
+     "city": "Independencia"
+    },
+    {
+     "facility": "Local Institution - 0057",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0031",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0033",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02872116",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02872116",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04581824",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04581824",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04581824",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02677896",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Site CL56002",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Site CL56001",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Site CL56007",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Site CL56005",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Site CL56004",
+     "city": "Reñaca"
+    },
+    {
+     "facility": "Site CL56003",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02677896",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02677896",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05002569",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0013",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0006",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0014",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05002569",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05002569",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04960709",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04960709",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04960709",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02559583",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02559583",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02559583",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04109066",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0197",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Local Institution - 0016",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0318",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0019",
+     "city": "Santiago Region Metropolitana"
+    },
+    {
+     "facility": "Local Institution - 0018",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution - 0326",
+     "city": "Antofagasta"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04109066",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04109066",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05005273",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0050",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0035",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Local Institution - 0015",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05005273",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05005273",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02752074",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Santiago"
+    },
+    {
+     "facility": "",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02752074",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02752074",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02542293",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02542293",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02542293",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04035486",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04035486",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04035486",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04567615",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0024",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Local Institution - 0029",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0018",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04567615",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04567615",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04623775",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0079",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0041",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0016",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04623775",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04623775",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03626545",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03626545",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03626545",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04913220",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number : 1520005",
+     "city": "Santaigo"
+    },
+    {
+     "facility": "Investigational Site Number : 1520002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520001",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520004",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520006",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Investigational Site Number : 1520003",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04913220",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04913220",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04266301",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04266301",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04266301",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02367040",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02367040",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02367040",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04026412",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0041",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0040",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04026412",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04026412",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03930953",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 354",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 350",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 355",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Local Institution - 353",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 352",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03930953",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03930953",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04613596",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - Unk028",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 007-699",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - Unk073",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04613596",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04613596",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02941926",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02941926",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02941926",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04351555",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Las Condes"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04351555",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04351555",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05261399",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05261399",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05261399",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03504397",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Site CL56003",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Site CL56008",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Site CL56005",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Site CL56007",
+     "city": "Valdivia"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03504397",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03504397",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04100018",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0026",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0378",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Local Institution - 0025",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0377",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0027",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04100018",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04100018",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03383458",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0248",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0246",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0245",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0247",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03383458",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03383458",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04915755",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "GSK Investigational Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04915755",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04915755",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02823574",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0115",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02823574",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02823574",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04109391",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Tanvex Investigational Site 4001E",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Tanvex Investigational Site 4002E",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04109391",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04109391",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03447769",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03447769",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03447769",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03056755",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Novartis Investigative Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03056755",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03056755",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04154956",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number : 1520007",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520006",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520009",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number : 1520001",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04154956",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04154956",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03141177",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0045",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03141177",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03141177",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03704077",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03704077",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03704077",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05577715",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0028",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Local Institution - 0030",
+     "city": "Independencia"
+    },
+    {
+     "facility": "Local Institution - 0027",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Local Institution - 0023",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05577715",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05577715",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT02352948",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT02352948",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT02352948",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT03215706",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0059",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0084",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0079",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT03215706",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT03215706",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04478266",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number :1520005",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Investigational Site Number :1520004",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Investigational Site Number :1520009",
+     "city": "Talca"
+    },
+    {
+     "facility": "Investigational Site Number :1520011",
+     "city": "Santaigo"
+    },
+    {
+     "facility": "Investigational Site Number :1520006",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number :1520002",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number :1520001",
+     "city": "Viña del Mar"
+    },
+    {
+     "facility": "Investigational Site Number :1520007",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Investigational Site Number :1520003",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04478266",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04478266",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT04008030",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0070",
+     "city": "Independencia"
+    },
+    {
+     "facility": "Local Institution - 0071",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0069",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT04008030",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT04008030",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06101134",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0015",
+     "city": "Las Condes"
+    },
+    {
+     "facility": "Local Institution - 0005",
+     "city": "Concepción"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06101134",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06101134",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT07680764",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0081",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0149",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0084",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT07680764",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT07680764",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06901531",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Site CL56004",
+     "city": "Las Condes"
+    },
+    {
+     "facility": "Site CL56001",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06901531",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06901531",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06356129",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0106",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0107",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0108",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0110",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0459",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0164",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06356129",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06356129",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT07221149",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0068",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0056",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0055",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT07221149",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT07221149",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT07221357",
+   "resultado": "sedes_nombradas",
+   "ubicaciones_chile": [
+    {
+     "facility": "Bradfordhill",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Fundacion Oncologia Arturo Lopez Perez",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0175",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [
+    {
+     "texto_en_clinicaltrials": "Bradfordhill",
+     "ciudad": "Recoleta"
+    },
+    {
+     "texto_en_clinicaltrials": "Fundacion Oncologia Arturo Lopez Perez",
+     "ciudad": "Santiago"
+    }
+   ],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT07221357",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT07221357",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06380751",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Talca"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06380751",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06380751",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06911502",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0154",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0155",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0153",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06911502",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06911502",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06090539",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0118",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Local Institution - 0105",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0109",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06090539",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06090539",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06425302",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0049",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0050",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06425302",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06425302",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT07100080",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0006",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0005",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0007",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT07100080",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT07100080",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06952803",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Concepción"
+    },
+    {
+     "facility": "Research Site",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06952803",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06952803",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06232707",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0027",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0030",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0026",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0029",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06232707",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06232707",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06646276",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0086",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0085",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0083",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0084",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0082",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06646276",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06646276",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05669989",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Investigational Site Number : 1520001",
+     "city": "Temuco"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05669989",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05669989",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT07063745",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0473",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Local Institution - 0476",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Local Institution - 0566",
+     "city": "Antofagasta"
+    },
+    {
+     "facility": "Local Institution - 0475",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT07063745",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT07063745",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05952557",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Concepción"
+    },
+    {
+     "facility": "Research Site",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Port Montt"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05952557",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05952557",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06767462",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06767462",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06767462",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06946797",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0067",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06946797",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06946797",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06868277",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Conception"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06868277",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06868277",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT05774951",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Concepción"
+    },
+    {
+     "facility": "Research Site",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Port Montt"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Talca"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT05774951",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT05774951",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06764875",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Port Montt"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Rancagua"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06764875",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06764875",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06764485",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Local Institution - 0236",
+     "city": "Valdivia"
+    },
+    {
+     "facility": "Local Institution - 0135",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0132",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Local Institution - 0127",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06764485",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06764485",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT07218809",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Port Montt"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT07218809",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT07218809",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT07476326",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Biocon Investigational Site",
+     "city": "Providencia"
+    },
+    {
+     "facility": "Biocon Investigational Site",
+     "city": "Recoleta"
+    },
+    {
+     "facility": "Biocon Investigational Site 1",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Biocon Investigational Site",
+     "city": "Santiago"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT07476326",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT07476326",
+   "fecha_consulta": "2026-09-15"
+  },
+  {
+   "nct": "NCT06120491",
+   "resultado": "solo_marcadores",
+   "ubicaciones_chile": [
+    {
+     "facility": "Research Site",
+     "city": "Concepción"
+    },
+    {
+     "facility": "Research Site",
+     "city": "La Serena"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Santiago"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Temuco"
+    },
+    {
+     "facility": "Research Site",
+     "city": "Viña del Mar"
+    }
+   ],
+   "sedes": [],
+   "evidencia_url": "https://clinicaltrials.gov/study/NCT06120491",
+   "fuente_api": "https://clinicaltrials.gov/api/v2/studies?filter.ids=NCT06120491",
+   "fecha_consulta": "2026-09-15"
+  }
+ ]
+}
