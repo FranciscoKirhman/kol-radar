@@ -1,0 +1,742 @@
+[
+ {
+  "id": "bradford-hill",
+  "nombre": "Bradford Hill Clinical Research Center",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Bradford Hill Clinical Research Center",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Bradford Hill Clinical Research Center",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "james-lind",
+  "nombre": "James Lind Centro de Investigación del Cáncer",
+  "ciudad_en_la_muestra": "Temuco",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "James Lind Centro de Investigación del Cáncer",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "James Lind Centro de Investigación del Cáncer",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "hosp-concepcion",
+  "nombre": "Hospital Clínico Regional de Concepción",
+  "ciudad_en_la_muestra": "Concepción",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Hospital Clínico Regional de Concepción",
+    "resultados": 2,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Hospital Clínico Regional de Concepción",
+    "resultados": 2,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "hosp-puerto-montt",
+  "nombre": "Hospital Puerto Montt",
+  "ciudad_en_la_muestra": "Puerto Montt",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Hospital Puerto Montt",
+    "resultados": 14,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Hospital Puerto Montt",
+    "resultados": 14,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "k2-oncology",
+  "nombre": "K2 Oncology",
+  "ciudad_en_la_muestra": "Santiago (Providencia)",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "K2 Oncology",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "K2 Oncology",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "centro-precision",
+  "nombre": "Centro de Oncología de Precisión",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Centro de Oncología de Precisión",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro de Oncología de Precisión",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "orlandi",
+  "nombre": "Orlandi Oncología",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Orlandi Oncología",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Orlandi Oncología",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "ser-chile",
+  "nombre": "Sociedad Chilena de Enfermedades Respiratorias",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Sociedad Chilena de Enfermedades Respiratorias",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad Chilena de Enfermedades Respiratorias",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "sochradi",
+  "nombre": "Sociedad Chilena de Radiología",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Sociedad Chilena de Radiología",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad Chilena de Radiología",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "sochradioterapia",
+  "nombre": "Sociedad Chilena de Radioterapia",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Sociedad Chilena de Radioterapia",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad Chilena de Radioterapia",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "soc-cirujanos",
+  "nombre": "Sociedad de Cirujanos de Chile",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Sociedad de Cirujanos de Chile",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad de Cirujanos de Chile",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "uchile",
+  "nombre": "Universidad de Chile",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Universidad de Chile",
+    "resultados": 5,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Universidad de Chile",
+    "resultados": 5,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "hosp-uchile",
+  "nombre": "Hospital Clínico Universidad de Chile",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Hospital Clínico Universidad de Chile",
+    "resultados": 1,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Hospital Clínico Universidad de Chile",
+    "resultados": 1,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "hosp-carabineros",
+  "nombre": "Hospital de Carabineros",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Hospital de Carabineros",
+    "resultados": 3,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Hospital de Carabineros",
+    "resultados": 3,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "oncocentro",
+  "nombre": "Oncocentro APYS",
+  "ciudad_en_la_muestra": "Viña del Mar",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Oncocentro APYS",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Oncocentro APYS",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Oncocentro",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "ONCOCENTRO APYS-ACEREY",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "ONCOCENTRO APYS; Oncología",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Oncocentro Valdivia",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "saga",
+  "nombre": "Centro de Estudios Clínicos SAGA",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Centro de Estudios Clínicos SAGA",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro de Estudios Clínicos SAGA",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro de Estudios Clínicos SAGA SpA",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro de Estudios Clínicos SAGA-CECSAGA",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro de Investigacion Clinica SAGA",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "SAGA",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "oncovida",
+  "nombre": "Oncovida",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Oncovida",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Oncovida",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Oncovida - Santiago",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Oncovida- Santiago",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad Oncovida S.A.",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Oncovida SA",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "ic-la-serena",
+  "nombre": "IC La Serena Research",
+  "ciudad_en_la_muestra": "La Serena",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "IC La Serena Research",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "IC La Serena Research",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro de Estudios Clínicos IC La Serena Research",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "IC La Serena Research SpA",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "icos",
+  "nombre": "Instituto Clínico Oncológico del Sur (ICOS)",
+  "ciudad_en_la_muestra": "Temuco",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Instituto Clínico Oncológico del Sur",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto Clínico Oncológico del Sur (ICOS)",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto Clinico Oncologico del Sur ICOS",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto Clínico Oncológico del Sur - ICOS",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto Oncologico del sur",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto Clinico Oncologica del Sur (ICOS)",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "biocenter",
+  "nombre": "Biocenter",
+  "ciudad_en_la_muestra": "Concepción",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Biocenter",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Biocenter",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Servicios Medicos e Investigacion Biocenter SpA",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "inmunocel",
+  "nombre": "Inmunocel",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Inmunocel",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Inmunocel",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Clínica Inmunocel",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "sim",
+  "nombre": "Sociedad de Investigaciones Médicas (SIM)",
+  "ciudad_en_la_muestra": "Temuco",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Sociedad de Investigaciones Médicas",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad de Investigaciones Médicas (SIM)",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad de Investigaciones Medicas Ltda (SIM)",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad de Investigaciones Médicas Limitada",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad de Investigaciones Medicas Ltda",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Sociedad de Investigaciones Medicas Limitadas",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "cecim",
+  "nombre": "CeCim Biocinetic",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "CeCim Biocinetic",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "CeCim Biocinetic",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Biocinetic servicios medicos limitada",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Biocinetic",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro de Estudios Clinicos e Investigaciones Medicas CeCim",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "CECIM",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "ciec",
+  "nombre": "Centro Internacional de Estudios Clínicos (CIEC)",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Centro Internacional de Estudios Clínicos",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro Internacional de Estudios Clínicos (CIEC)",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro Internacional de Estudios Clinicos - CIEC",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro Internacional de Estudios Clinicos, CIEC",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "CIEC - Centro Internacional de Estudios Clínicos",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Centro Internacional de Estudios Clinicos CIEC",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "iceg",
+  "nombre": "Icegclinic",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Icegclinic",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Icegclinic",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Icegclinic Research & Care",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Icegclinic Research and Care",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "hosp-sotero",
+  "nombre": "Hospital Sótero del Río",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Hospital Sótero del Río",
+    "resultados": 2,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Hospital Sótero del Río",
+    "resultados": 2,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Hospital Dr. Sotero Del Rio",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Complejo Asistencial Dr. Sótero del Río",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Dr. Sótero del Río Hospital",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "iram",
+  "nombre": "Instituto de Radiomedicina (IRAM)",
+  "ciudad_en_la_muestra": "Santiago",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Instituto de Radiomedicina",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto de Radiomedicina (IRAM)",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto de Radiomedicina-hemato-oncologia",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto de Radiomedicina, IRAM",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "crchile",
+  "nombre": "Clinical Research Chile SpA",
+  "ciudad_en_la_muestra": "Valdivia",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Clinical Research Chile SpA",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Clinical Research Chile SpA",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "itop",
+  "nombre": "Instituto de Terapias Oncológicas Providencia",
+  "ciudad_en_la_muestra": "Providencia",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Instituto de Terapias Oncológicas Providencia",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Instituto de Terapias Oncológicas Providencia",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ },
+ {
+  "id": "hosp-valdivia",
+  "nombre": "Hospital Base de Valdivia",
+  "ciudad_en_la_muestra": "Valdivia",
+  "motivo": "ningún objeto de OSM en la ciudad con un nombre suficientemente parecido",
+  "consultas_probadas": [
+   {
+    "consulta": "Hospital Base de Valdivia",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Hospital Base de Valdivia",
+    "resultados": 0,
+    "aceptables": 0
+   },
+   {
+    "consulta": "Hospital Clinico Regional de Valdivia at University Austral de Chile",
+    "resultados": 0,
+    "aceptables": 0
+   }
+  ]
+ }
+]
