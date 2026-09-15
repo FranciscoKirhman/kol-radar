@@ -93,6 +93,28 @@
   }
   .search-wrap input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
   .search-wrap .icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 14px; pointer-events: none; }
+  /* Sugerencias del buscador. Sin animación al abrir: se usa escribiendo, con el teclado, decenas
+     de veces por sesión, y cualquier fundido la haría sentir lenta. */
+  .sugerencias {
+    position: absolute; z-index: 45; top: calc(100% + 4px); left: 0; right: 0; min-width: 300px;
+    margin: 0; padding: 4px; list-style: none; max-height: min(420px, 70vh); overflow-y: auto;
+    background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.14);
+  }
+  .sug { display: flex; align-items: center; gap: 9px; padding: 7px 8px; border-radius: 7px; cursor: pointer; }
+  .sug[aria-selected="true"] { background: var(--surface-2); }
+  .sug-forma { flex: none; font-size: 10px; width: 12px; text-align: center; line-height: 1; }
+  .sug-forma.persona { color: var(--persona); }
+  .sug-forma.institucion { color: var(--institucion); }
+  .sug-forma.ensayo_clinico { color: var(--ensayo); }
+  .sug-texto { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+  .sug-nombre { font-size: 13px; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sug-nombre mark { background: none; color: var(--accent); font-weight: 700; }
+  .sug-sub { font-size: 11px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sug-tag { flex: none; font-size: 10px; color: var(--text-muted); border: 1px solid var(--border); border-radius: 999px; padding: 1px 6px; }
+  .sug.filtrar { border-top: 1px solid var(--surface-2); margin-top: 2px; }
+  .sug.filtrar .sug-nombre { color: var(--text-secondary); }
+  .sug-vacio { padding: 9px 10px; font-size: 12px; color: var(--text-muted); }
 
   .filters-row {
     display: flex; gap: 6px; padding: 10px 16px; max-width: 1080px; margin: 0 auto;
@@ -575,7 +597,10 @@
     <span class="specialty-badge" id="specialty-badge">beta</span>
     <div class="search-wrap">
       <span class="icon">⌕</span>
-      <input id="search" type="search" placeholder="Buscar por nombre, institución o ciudad…" autocomplete="off" />
+      <input id="search" type="search" placeholder="Buscar persona, institución o ensayo…" autocomplete="off"
+             role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias"
+             aria-label="Buscar persona, institución o ensayo" />
+      <ul class="sugerencias" id="sugerencias" role="listbox" hidden></ul>
     </div>
     <div class="view-switch" role="group" aria-label="Cambiar de vista">
       <button type="button" class="view-btn" id="view-mapa" aria-pressed="true">Conexiones</button>
@@ -1602,10 +1627,155 @@
     }
   }
 
-  document.getElementById("search").addEventListener("input", function (e) {
-    state.query = e.target.value;
+  // ---------------- Buscador: ubica, no filtra ----------------
+  // Antes cada tecla filtraba la lista y reconstruía el grafo entero (~700 ms por tecla con 400
+  // nodos, medido), y el mapa cambiaba bajo los dedos mientras se escribía. Ahora escribir solo
+  // sugiere fichas; elegir una aísla su red y abre su ficha con las fuentes, como el prototipo
+  // «Buscar primero» (prototipos/conexiones/). El filtro por texto sigue existiendo —es lo que
+  // encuentra personas por fármaco— pero se aplica a propósito, desde la última fila o con Enter
+  // cuando nada calza por nombre.
+  var buscador = document.getElementById("search");
+  var listaSug = document.getElementById("sugerencias");
+  var sugerencias = [], sugActiva = -1;
+  var FORMA_TIPO = { persona: "●", institucion: "■", ensayo_clinico: "▲" };
+
+  function sugerirFichas(texto, max) {
+    var q = sinTildes(texto).trim();
+    if (q.length < 2) return [];
+    var orden = { persona: 0, institucion: 1, ensayo_clinico: 2 };
+    var res = [];
+    entidades.forEach(function (n) {
+      var nombre = n._nombreBuscable || (n._nombreBuscable = sinTildes(n.nombre));
+      var p;
+      if (nombre.indexOf(q) === 0) p = 0;
+      else if (nombre.indexOf(" " + q) !== -1 || nombre.indexOf("(" + q) !== -1) p = 1;
+      else if (nombre.indexOf(q) !== -1) p = 2;
+      else if (sinTildes([n.subtitulo, n.ciudad, n.acronimo].filter(Boolean).join(" ")).indexOf(q) !== -1) p = 3;
+      else return;
+      res.push({ n: n, p: p });
+    });
+    res.sort(function (a, b) {
+      return a.p - b.p || orden[a.n.tipo] - orden[b.n.tipo] || a.n.nombre.localeCompare(b.n.nombre, "es");
+    });
+    return res.slice(0, max).map(function (r) { return r.n; });
+  }
+
+  function cerrarSugerencias() {
+    listaSug.hidden = true;
+    buscador.setAttribute("aria-expanded", "false");
+    buscador.removeAttribute("aria-activedescendant");
+    sugActiva = -1;
+  }
+
+  function marcarSugerencia(i) {
+    sugActiva = i;
+    Array.prototype.forEach.call(listaSug.children, function (li, j) { li.setAttribute("aria-selected", String(j === i)); });
+    var li = listaSug.children[i];
+    if (li) { buscador.setAttribute("aria-activedescendant", li.id); li.scrollIntoView({ block: "nearest" }); }
+  }
+
+  function pintarSugerencias() {
+    var texto = buscador.value;
+    var q = sinTildes(texto).trim();
+    listaSug.innerHTML = "";
+    if (q.length < 2) {
+      cerrarSugerencias();
+      // Vaciar el campo también quita un filtro por texto que se hubiera aplicado antes.
+      if (!texto && state.query) aplicarFiltroTexto("");
+      return;
+    }
+    var fichas = sugerirFichas(texto, 7);
+    sugerencias = fichas.map(function (n) { return { tipo: "ficha", n: n }; });
+    sugerencias.push({ tipo: "filtrar", texto: texto.trim() });
+    sugerencias.forEach(function (s, i) {
+      var li = document.createElement("li");
+      li.id = "sug-" + i;
+      li.setAttribute("role", "option");
+      li.className = "sug" + (s.tipo === "filtrar" ? " filtrar" : "");
+      var forma = document.createElement("span");
+      var cuerpo = document.createElement("span"); cuerpo.className = "sug-texto";
+      var nombre = document.createElement("span"); nombre.className = "sug-nombre";
+      var sub = document.createElement("span"); sub.className = "sug-sub";
+      if (s.tipo === "ficha") {
+        forma.className = "sug-forma " + s.n.tipo; forma.textContent = FORMA_TIPO[s.n.tipo] || "•";
+        var base = s.n._nombreBuscable, ini = base.indexOf(q);
+        if (ini !== -1 && base.length === s.n.nombre.length) {
+          nombre.appendChild(document.createTextNode(s.n.nombre.slice(0, ini)));
+          var mk = document.createElement("mark"); mk.textContent = s.n.nombre.slice(ini, ini + q.length);
+          nombre.appendChild(mk);
+          nombre.appendChild(document.createTextNode(s.n.nombre.slice(ini + q.length)));
+        } else {
+          nombre.textContent = s.n.nombre;
+        }
+        sub.textContent = (typeLabel[s.n.tipo] || s.n.tipo) + (s.n.subtitulo ? " · " + s.n.subtitulo : "");
+      } else {
+        forma.className = "sug-forma"; forma.textContent = "⌕";
+        nombre.textContent = "Filtrar todo por «" + s.texto + "»";
+        var cuantas = Object.keys(idsRelevantes(q)).length;
+        sub.textContent = cuantas + (cuantas === 1 ? " ficha menciona" : " fichas mencionan") +
+          " el texto en sus datos, fármacos o sedes";
+      }
+      cuerpo.appendChild(nombre); cuerpo.appendChild(sub);
+      li.appendChild(forma); li.appendChild(cuerpo);
+      if (s.tipo === "ficha" && !matches(s.n)) {
+        var tag = document.createElement("span"); tag.className = "sug-tag"; tag.textContent = "oculta por filtros";
+        li.appendChild(tag);
+      }
+      // pointerdown y no click: el click llega después del blur del campo, que ya cerró la lista.
+      li.addEventListener("pointerdown", function (ev) { ev.preventDefault(); elegirSugerencia(i); });
+      li.addEventListener("pointermove", function () { if (sugActiva !== i) marcarSugerencia(i); });
+      listaSug.appendChild(li);
+    });
+    if (!fichas.length) {
+      var vacio = document.createElement("li"); vacio.className = "sug-vacio";
+      vacio.textContent = "Ninguna ficha se llama así.";
+      listaSug.insertBefore(vacio, listaSug.firstChild);
+    }
+    listaSug.hidden = false;
+    buscador.setAttribute("aria-expanded", "true");
+    marcarSugerencia(fichas.length ? 0 : sugerencias.length - 1);
+  }
+
+  function aplicarFiltroTexto(texto) {
+    state.query = texto;
     renderCards();
     invalidateNetwork();
+  }
+
+  function elegirSugerencia(i) {
+    var s = sugerencias[i];
+    if (!s) return;
+    cerrarSugerencias();
+    if (s.tipo === "filtrar") { aplicarFiltroTexto(s.texto); return; }
+    var n = s.n;
+    // Elegir una ficha reemplaza un filtro por texto anterior: si no, la ficha elegida podría
+    // quedar fuera de lo que se dibuja.
+    buscador.value = "";
+    if (state.query) aplicarFiltroTexto("");
+    buscador.blur();
+    // Si los filtros la dejan fuera del mapa, igual se abre su ficha: la búsqueda no debe fallar
+    // en silencio, y aislar una red que no se dibuja mostraría una barra de foco mentirosa.
+    if (!listView.classList.contains("active") || networkView.classList.contains("active") || geoView.classList.contains("active")) {
+      if (n.tipo !== "tema" && matches(n)) aplicarFoco(n.id);
+    }
+    openDetail(n.id);
+  }
+
+  buscador.addEventListener("input", pintarSugerencias);
+  buscador.addEventListener("focus", function () { if (sinTildes(buscador.value).trim().length >= 2) pintarSugerencias(); });
+  buscador.addEventListener("blur", function () { setTimeout(cerrarSugerencias, 0); });
+  buscador.addEventListener("keydown", function (ev) {
+    if (ev.key === "ArrowDown") {
+      ev.preventDefault();
+      if (listaSug.hidden) pintarSugerencias(); else marcarSugerencia(Math.min(sugerencias.length - 1, sugActiva + 1));
+    } else if (ev.key === "ArrowUp") {
+      ev.preventDefault(); if (!listaSug.hidden) marcarSugerencia(Math.max(0, sugActiva - 1));
+    } else if (ev.key === "Enter") {
+      ev.preventDefault();
+      if (!listaSug.hidden && sugActiva >= 0) elegirSugerencia(sugActiva);
+    } else if (ev.key === "Escape") {
+      if (!listaSug.hidden) { ev.stopPropagation(); cerrarSugerencias(); }
+    }
   });
 
   document.querySelectorAll(".chip[data-filter]").forEach(function (btn) {
