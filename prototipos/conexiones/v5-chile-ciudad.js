@@ -3,9 +3,10 @@
  * o región, el «Explorador» sobre el mapa real de esa región, acercándose por comunas.
  *
  * Qué resuelve del desorden del Explorador:
- *   - Las instituciones no flotan en un layout de fuerzas: están en su dirección (OpenStreetMap,
- *     pendiente de revisión). Las que no tienen dirección verificada van a una bandeja aparte,
- *     nunca a un punto inventado.
+ *   - Las instituciones no flotan en un layout de fuerzas: están en su ubicación
+ *     (data/geo/ubicaciones-instituciones.json: DEIS, sitios oficiales y OpenStreetMap, pendiente de
+ *     revisión). Las que no tienen dirección verificada van a una bandeja aparte, nunca a un punto
+ *     inventado.
  *   - Las personas orbitan su institución y los ensayos se resumen en un número hasta que se elige
  *     la institución: de lejos no hay 579 triángulos.
  *   - Las conexiones se dibujan solo para lo seleccionado o bajo el puntero.
@@ -15,13 +16,22 @@
   "use strict";
   var KR = window.KR;
   var K = Math.cos(33.45 * Math.PI / 180);   // escala de longitud a la latitud de Santiago
-  var OSM_DIR = "../../data/pending/geolocalizacion-osm-2026-09-15/";
+  var FUENTE_TIPO = { sitio_oficial: "sitio oficial", superintendencia_salud: "Superintendencia de Salud", deis_minsal: "DEIS (Minsal)",
+    openstreetmap: "OpenStreetMap", geoboundaries: "límites comunales", otro: "otra fuente pública" };
 
   function json(r) { if (!r.ok) throw new Error(r.url + " → " + r.status); return r.json(); }
   function cargarGeo() {
     if (KR._geoCiudad) return Promise.resolve(KR._geoCiudad);
-    return Promise.all([fetch("../../data/geo/chile-regiones-comunas.json").then(json), fetch(OSM_DIR + "instituciones_ubicadas.json").then(json)])
-      .then(function (r) { KR._geoCiudad = { limites: r[0], ubicadas: r[1] }; return KR._geoCiudad; });
+    return Promise.all([fetch("../../data/geo/chile-regiones-comunas.json").then(json), fetch("../../data/geo/ubicaciones-instituciones.json").then(json)])
+      .then(function (r) {
+        // El mapa usa solo la sede principal; las demás se listan en la ficha.
+        var ubicadas = Object.keys(r[1].instituciones).map(function (id) {
+          var u = r[1].instituciones[id];
+          return { id: id, lat: u.principal.lat, lon: u.principal.lon, principal: u.principal, otras_sedes: u.otras_sedes, avisos: u.avisos };
+        });
+        KR._geoCiudad = { limites: r[0], ubicadas: ubicadas, resumen: r[1].resumen, sinUbicar: r[1].sin_ubicar };
+        return KR._geoCiudad;
+      });
   }
   function slug(s) { return KR.norm(s).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
   function corto(region) { return region.replace(/^Región (de la |de los |del |de )?/, "").replace("Metropolitana de Santiago", "Metropolitana"); }
@@ -144,7 +154,7 @@
           var w = aMundo(u.lon, u.lat); v.x = w[0]; v.y = w[1];
           v.comuna = comunaEn(u.lon, u.lat);
           if (v.comuna) v.comuna.inst++;
-          v.osm = u;
+          v.ubic = u;
         }
         var cc = v.comuna || comunaDeCiudad(n);
         v.region = cc ? cc.region : null;
@@ -529,7 +539,7 @@
         var n = g.byId[q.id], v = n._v5;
         if (n.tipo === "institucion") {
           mostrarTooltip(sx, sy, n.nombre, (v.comuna ? v.comuna.nombre + " · " : "") + KR.plural(v.pers.length, "persona", "personas") + " · " + KR.plural(v.nEns, "ensayo", "ensayos"),
-            "Ubicación: OpenStreetMap, pendiente de revisión");
+            v.ubic.principal.direccion + " · punto según " + (FUENTE_TIPO[v.ubic.principal.fuente_coordenadas.tipo] || "fuente") + ", pendiente de revisión");
         } else mostrarTooltip(sx, sy, n.nombre, KR.TIPO_LABEL[n.tipo] + (n.subtitulo ? " · " + n.subtitulo : ""));
       } else if (q.tipo === "lugar") {
         mostrarTooltip(sx, sy, q.L.nombre, KR.miles(q.L.ids.length) + " fichas · click para entrar a " + (q.L.region ? corto(q.L.region) : "la región"));
@@ -626,15 +636,25 @@
       var box = el("div", "v5-ubicacion");
       box.appendChild(el("p", "kr-ficha-sec", "Ubicación"));
       var v = n._v5;
-      if (v.osm) {
-        box.appendChild(el("p", "v5-ubic-dir", v.osm.direccion_osm));
+      function enlace(p, url, texto) {
+        if (!KR.esUrlSegura(url)) { p.appendChild(document.createTextNode(texto)); return; }
+        var a = el("a", "", texto + " ↗"); a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; p.appendChild(a);
+      }
+      if (v.ubic) {
+        var pr = v.ubic.principal;
+        box.appendChild(el("p", "v5-ubic-dir", pr.direccion + ", " + pr.comuna));
         var p = el("p", "kr-nota");
-        var a = el("a", "", "Objeto en OpenStreetMap ↗"); a.href = v.osm.fuente_url; a.target = "_blank"; a.rel = "noopener noreferrer";
-        p.appendChild(a);
-        p.appendChild(document.createTextNode(" · consultado " + v.osm.fecha + " · pendiente de revisión" + (v.osm.match_ambiguo ? " · hay otra sede con el mismo nombre" : "")));
+        p.appendChild(document.createTextNode("Dirección: ")); enlace(p, pr.fuente_direccion.url, FUENTE_TIPO[pr.fuente_direccion.tipo] || "fuente");
+        p.appendChild(document.createTextNode(" · punto: ")); enlace(p, pr.fuente_coordenadas.url, FUENTE_TIPO[pr.fuente_coordenadas.tipo] || "fuente");
+        p.appendChild(document.createTextNode(" (" + pr.precision + ") · pendiente de revisión"));
         box.appendChild(p);
+        if (v.ubic.otras_sedes.length) {
+          box.appendChild(el("p", "kr-nota", "Otras sedes, no dibujadas: " + v.ubic.otras_sedes.map(function (o) { return o.direccion + (o.comuna ? ", " + o.comuna : ""); }).join(" · ")));
+        }
+        v.ubic.avisos.forEach(function (a) { box.appendChild(el("p", "kr-nota", "Por revisar: " + a)); });
       } else {
-        box.appendChild(el("p", "kr-aviso", "Sin dirección verificada. No se ubica en el mapa hasta tener una fuente: está en la tarea de data/pending/tarea-chatgpt-2026-09-15/."));
+        var su = KR._geoCiudad.sinUbicar[n.id];
+        box.appendChild(el("p", "kr-aviso", "Sin dirección verificada" + (su ? ": " + su.motivo : "") + ". No se ubica en el mapa hasta tener una fuente citable."));
       }
       return box;
     }
@@ -816,7 +836,7 @@
       var s5 = seccion("De dónde sale cada ubicación");
       var geoRes = KR._geoCiudad ? KR._geoCiudad.ubicadas.length : 0;
       s5.appendChild(el("p", "kr-nota", geoRes + " de " + g.nodos.filter(function (n) { return n.tipo === "institucion"; }).length +
-        " instituciones ubicadas con OpenStreetMap, pendientes de revisión. Las demás van a la bandeja «Sin dirección verificada», no a un punto inventado."));
+        " instituciones ubicadas con el registro DEIS (Minsal), direcciones de sitios oficiales y OpenStreetMap, pendientes de revisión. Las demás van a la bandeja «Sin dirección verificada», no a un punto inventado."));
       s5.appendChild(el("p", "kr-nota", "Límites comunales: geoBoundaries, datos de la BCN (CC BY 3.0 IGO). Mapa base © colaboradores de OpenStreetMap."));
     }
 
