@@ -136,13 +136,13 @@
      se funden con `ease` (es un cambio de color, no un movimiento); la escala usa la curva
      fuerte para que la respuesta arranque en el primer cuadro. */
   .chip, .andor-toggle, .chip-clear, .shortlist-btn, .beta-cta, .zoom-btn, .legend-toggle,
-  .foco-bar button, .area-acciones button, .sheet-close {
+  .foco-bar button, .area-acciones button, .sheet-close, .geo-miga, .geo-chip, .geo-item, .geo-accion {
     transition: transform 160ms var(--ease-out), background-color 150ms ease,
                 color 150ms ease, border-color 150ms ease, opacity 150ms ease;
   }
   .chip:active, .andor-toggle:active, .chip-clear:active, .shortlist-btn:active, .beta-cta:active,
   .zoom-btn:active, .legend-toggle:active, .foco-bar button:active, .area-acciones button:active,
-  .sheet-close:active {
+  .sheet-close:active, .geo-miga:active, .geo-chip:active, .geo-item:active, .geo-accion:active {
     transform: scale(0.97);
   }
   .chip-sep { width: 1px; align-self: stretch; background: var(--border); margin: 0 4px; flex: none; }
@@ -333,13 +333,73 @@
   .card[data-area-color] { border-left-color: var(--area-color); }
   #geo-view { display: none; }
   #geo-view.active { display: block; }
+  /* El mapa a la izquierda y, al lado, la misma información como lista: un lienzo no se recorre
+     con teclado ni lo lee un lector de pantalla. En pantalla chica la lista va debajo. */
+  .geo-layout { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 12px; align-items: start; }
+  @media (max-width: 900px) { .geo-layout { grid-template-columns: minmax(0, 1fr); } }
   #geomap { width: 100%; height: min(78vh, 760px); display: block; background: var(--surface-0);
-            border: 1px solid var(--border); border-radius: 10px; touch-action: none; }
+            border: 1px solid var(--border); border-radius: 10px; touch-action: none; cursor: grab; }
+  #geomap.arrastrando { cursor: grabbing; }
   @media (max-width: 720px) { #geomap { height: 68vh; min-height: 380px; } }
-  .geo-pais { fill: var(--surface-2); stroke: var(--border); stroke-width: .12; }
-  .geo-ciudad { cursor: pointer; stroke: var(--surface-0); stroke-width: .1; }
-  .geo-ciudad:hover, .geo-ciudad.sel { stroke: var(--text-primary); stroke-width: .25; }
-  .geo-label { font-size: 1.1px; fill: var(--text-secondary); pointer-events: none; }
+  .geo-migas {
+    position: absolute; top: 10px; left: 10px; z-index: 2; display: flex; align-items: center; gap: 2px;
+    flex-wrap: wrap; max-width: calc(100% - 60px); padding: 3px; border-radius: 999px;
+    background: var(--surface-0); border: 1px solid var(--border); font-size: 12.5px;
+  }
+  .geo-miga {
+    font: inherit; font-weight: 600; border: none; background: none; color: var(--text-secondary);
+    padding: 3px 9px; border-radius: 999px; cursor: pointer;
+  }
+  .geo-miga:hover { color: var(--text-primary); background: var(--surface-2); }
+  .geo-miga[aria-current="location"] { color: var(--text-primary); cursor: default; background: none; }
+  .geo-miga-sep { color: var(--text-muted); }
+  /* Fuera de la vista pero leído por el lector de pantalla: el lienzo no puede anunciar nada. */
+  .sr-solo { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
+             clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+  .foco-bar.geo-foco { min-height: 40px; border-radius: 14px; }
+  .foco-bar.geo-foco.vacia { background: none; border-color: transparent; padding-left: 0; color: var(--text-muted); }
+  .foco-bar.geo-foco button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-0); }
+  .geo-fuera { display: inline-flex; align-items: center; gap: 2px; flex-wrap: wrap; color: var(--text-muted); }
+  .foco-bar .geo-fuera .geo-miga { border: none; padding: 2px 6px; font-weight: 600; }
+  .geo-bandeja {
+    position: absolute; left: 10px; bottom: 10px; z-index: 2; max-width: min(560px, calc(100% - 20px));
+    background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px; font-size: 12px;
+  }
+  .geo-bandeja summary { cursor: pointer; padding: 7px 12px; font-weight: 600; color: var(--text-secondary); }
+  .geo-bandeja-fila { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 0 10px 10px; max-height: 120px; overflow-y: auto; }
+  .geo-chip {
+    font: inherit; font-size: 11.5px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary);
+    border-radius: 999px; padding: 3px 9px;
+  }
+  .geo-chip:hover, .geo-chip[aria-pressed="true"] { border-color: var(--text-primary); color: var(--text-primary); }
+  .geo-nota { color: var(--text-muted); font-size: 11.5px; }
+  .geo-leyenda { display: flex; flex-direction: column; gap: 2px; margin: 0 6px 10px; font-size: 11.5px; color: var(--text-secondary); }
+  .geo-panel {
+    background: var(--surface-0); border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 12px 10px; font-size: 13px; max-height: min(78vh, 760px); overflow-y: auto;
+  }
+  @media (max-width: 900px) { .geo-panel { max-height: none; } }
+  .geo-panel h3 { font-family: var(--serif); font-size: 18px; margin: 0 0 4px 6px; }
+  .geo-resumen { color: var(--text-secondary); font-size: 12.5px; margin: 0 6px 10px; line-height: 1.45; }
+  .geo-lista { list-style: none; margin: 0 0 10px; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+  .geo-item {
+    font: inherit; width: 100%; text-align: left; display: flex; gap: 8px; align-items: baseline; cursor: pointer;
+    border: none; background: none; padding: 6px; border-radius: 7px; color: var(--text-primary);
+  }
+  .geo-item:hover, .geo-item[aria-pressed="true"] { background: var(--surface-2); }
+  .geo-item .sub { display: block; font-size: 11.5px; color: var(--text-muted); }
+  .geo-item .num { margin-left: auto; font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .geo-accion {
+    font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; margin: 0 6px 10px;
+    padding: 6px 12px; border-radius: 999px; border: 1px solid var(--text-primary); background: none; color: var(--text-primary);
+  }
+  .geo-accion:hover { background: var(--text-primary); color: var(--surface-0); }
+  .geo-fuentes { font-size: 11px; color: var(--text-muted); margin: 6px 6px 0; line-height: 1.45; }
+  .ubicacion-bloque { margin: 0 0 14px; }
+  .ubicacion-dir { font-size: 14px; margin: 0 0 6px; }
+  .ubicacion-meta { font-size: 12px; color: var(--text-secondary); margin: 0 0 4px; line-height: 1.45; }
+  .ubicacion-aviso { font-size: 11.5px; color: var(--text-muted); margin: 0 0 3px; }
   /* ---------- Network view ---------- */
   #network-view { display: none; }
   #network-view.active { display: block; }
@@ -603,8 +663,8 @@
       <ul class="sugerencias" id="sugerencias" role="listbox" hidden></ul>
     </div>
     <div class="view-switch" role="group" aria-label="Cambiar de vista">
-      <button type="button" class="view-btn" id="view-mapa" aria-pressed="true">Conexiones</button>
-      <button type="button" class="view-btn" id="view-geo" aria-pressed="false">Chile</button>
+      <button type="button" class="view-btn" id="view-geo" aria-pressed="true">Chile</button>
+      <button type="button" class="view-btn" id="view-mapa" aria-pressed="false">Conexiones</button>
       <button type="button" class="view-btn" id="view-lista" aria-pressed="false">Fichas</button>
     </div>
     <a class="dev-link" href="interno.html" title="Cómo se construyó esto y de dónde salen los datos">Detalles técnicos ↗</a>
@@ -688,20 +748,26 @@
     <div class="empty-state" id="empty-state" hidden>Sin resultados para esa búsqueda.</div>
   </section>
 
-  <section id="geo-view">
-    <p class="network-hint" id="geo-hint"></p>
-    <div class="network-view-wrap geo-wrap">
-      <svg id="geomap" xmlns="http://www.w3.org/2000/svg"></svg>
-      <div class="network-toolbar">
-        <button type="button" class="zoom-btn" id="geo-in" aria-label="Acercar">+</button>
-        <button type="button" class="zoom-btn" id="geo-out" aria-label="Alejar">−</button>
-        <button type="button" class="zoom-btn" id="geo-reset" aria-label="Restablecer vista" title="Restablecer vista">⟲</button>
+  <section id="geo-view" class="active">
+    <div class="foco-bar geo-foco vacia" id="geo-foco"></div>
+    <p class="sr-solo" id="geo-anuncio" role="status" aria-live="polite"></p>
+    <div class="geo-layout">
+      <div class="network-view-wrap geo-wrap">
+        <canvas id="geomap" role="img" aria-label="Mapa de Chile con las instituciones en su ubicación. La lista de al lado tiene lo mismo para navegar con teclado."></canvas>
+        <nav class="geo-migas" id="geo-migas" aria-label="Dónde estás en el mapa"></nav>
+        <div class="network-toolbar">
+          <button type="button" class="zoom-btn" id="geo-in" aria-label="Acercar">+</button>
+          <button type="button" class="zoom-btn" id="geo-out" aria-label="Alejar">−</button>
+          <button type="button" class="zoom-btn" id="geo-reset" aria-label="Encuadrar" title="Encuadrar">⟲</button>
+        </div>
+        <details class="geo-bandeja" id="geo-bandeja" hidden></details>
+        <div class="node-tooltip" id="geo-tooltip" role="status" aria-live="polite"></div>
       </div>
-      <div class="node-tooltip" id="geo-tooltip" role="status" aria-live="polite"></div>
+      <aside class="geo-panel" id="geo-panel" aria-label="Regiones e instituciones del mapa"></aside>
     </div>
   </section>
 
-  <section id="network-view" class="active">
+  <section id="network-view">
     <p class="network-hint" id="network-hint">Mapa de conexiones. Rueda del mouse o los botones + y −
       para acercar, arrastrá para moverte. Pasá el mouse sobre un nodo para resaltar su red, y hacé
       click para abrir su ficha con las fuentes.</p>
@@ -1128,6 +1194,9 @@
       if (networkView.classList.contains("active")) {
         setTimeout(function () { buildNetwork(); networkBuilt = true; }, 0);
       }
+      if (geoView.classList.contains("active")) mapaChile.mostrar();
+      // La ficha de una institución muestra su dirección: se pide ya, pesa poco.
+      cargarUbicaciones().catch(function () {});
     })
     .catch(function (err) {
       document.getElementById("loading-state").hidden = true;
@@ -1625,6 +1694,7 @@
     } else {
       networkBuilt = false;
     }
+    if (geoView.classList.contains("active")) mapaChile.refrescar();
   }
 
   // ---------------- Buscador: ubica, no filtra ----------------
@@ -1755,7 +1825,10 @@
     buscador.blur();
     // Si los filtros la dejan fuera del mapa, igual se abre su ficha: la búsqueda no debe fallar
     // en silencio, y aislar una red que no se dibuja mostraría una barra de foco mentirosa.
-    if (!listView.classList.contains("active") || networkView.classList.contains("active") || geoView.classList.contains("active")) {
+    // En el mapa de Chile se entra a la región de la ficha en vez de saltar a Conexiones.
+    if (geoView.classList.contains("active") && mapaChile.irA(n.id)) {
+      // ya quedó elegida sobre el mapa
+    } else if (!listView.classList.contains("active") || networkView.classList.contains("active") || geoView.classList.contains("active")) {
       if (n.tipo !== "tema" && matches(n)) aplicarFoco(n.id);
     }
     openDetail(n.id);
@@ -2078,6 +2151,7 @@
 
   function refreshShortlistUI() {
     shortlistBtn.textContent = "Mi shortlist (" + shortlist.length + ")";
+    mapaChile.redibujar();
     resumenBtn.hidden = shortlist.length === 0;
     if (shortlist.length === 0 && state.soloShortlist) {
       state.soloShortlist = false;
@@ -2208,7 +2282,7 @@
     btnGeo.setAttribute("aria-pressed", String(cual === "chile"));
     btnLista.setAttribute("aria-pressed", String(cual === "fichas"));
     if (cual === "conexiones" && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
-    if (cual === "chile" && entidades.length) buildGeo();
+    if (cual === "chile" && entidades.length) mapaChile.mostrar();
     renderBarraGeo();
   }
 
@@ -2256,12 +2330,19 @@
   btnLista.addEventListener("click", function () { mostrarVista("fichas"); });
 
   // ---------------- Mapa de Chile ----------------
-  // Puntos reales: la latitud y longitud que ClinicalTrials.gov declara para cada ciudad, y el
-  // contorno del país de Natural Earth (dominio público), ambos guardados en el JSON.
-  // Límite honesto: la fuente geocodifica a la CIUDAD, no a la dirección del centro. Todos los
-  // centros de Santiago comparten un punto, así que el mapa muestra dónde hay actividad, no
-  // dónde queda cada edificio. Por eso el punto se dimensiona por cuántas entidades hay ahí.
-  var GEO_VB = null, geoVB = null;
+  // Dos niveles, llevados del prototipo «Chile → ciudad» (prototipos/conexiones/v5-chile-ciudad.js):
+  //   País: las regiones sombreadas por cuántas fichas visibles tienen, las ciudades que declara
+  //   ClinicalTrials.gov y los ensayos que dos ciudades comparten. Chile se ve acostado (norte a la
+  //   izquierda) cuando el hueco es más ancho que alto, que es como entra en una pantalla.
+  //   Región: el mapa de sus comunas con el norte arriba. Cada institución en su ubicación
+  //   (data/geo/ubicaciones-instituciones.json), las personas en órbita de su institución y los
+  //   ensayos resumidos en "▲ N" hasta elegir la institución: de lejos no hay 579 triángulos.
+  // Las conexiones se dibujan solo para lo elegido o lo que está bajo el puntero; todas a la vez
+  // devolvían el ovillo del grafo. Lo que no tiene ubicación va a la bandeja de su región, nunca a
+  // un punto inventado.
+  var GEO_LIMITES_URL = "../data/geo/chile-regiones-comunas.json";
+  var GEO_UBICACIONES_URL = "../data/geo/ubicaciones-instituciones.json";
+  var ubicaciones = null, promesaUbicaciones = null;
 
   // A escala de país, las comunas del Gran Santiago son Santiago: la fuente las geocodifica a
   // menos de 0,05° unas de otras y sus etiquetas se apilan sin decir nada. "Port Montt" es un
@@ -2279,95 +2360,1247 @@
     return c;
   }
 
-  function buildGeo() {
-    var g = datosGeo;
-    var svg = document.getElementById("geomap");
-    var hint = document.getElementById("geo-hint");
-    if (!g || !g.contorno) { hint.textContent = "Este conjunto no trae coordenadas."; return; }
-    svg.innerHTML = "";
-    var NS = "http://www.w3.org/2000/svg";
-    var caja = g.proyeccion.caja, K = g.proyeccion.k_lon;
-    var pad = 1.5;
-    GEO_VB = { x: caja.x - pad, y: caja.y - pad, w: caja.w + pad * 2, h: caja.h + pad * 2 };
-    if (!geoVB) geoVB = { x: GEO_VB.x, y: GEO_VB.y, w: GEO_VB.w, h: GEO_VB.h };
-    svg.setAttribute("viewBox", geoVB.x + " " + geoVB.y + " " + geoVB.w + " " + geoVB.h);
-    svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+  // Nombres de geoBoundaries → los de REGION_RULES, que son los que usa el filtro por región.
+  var REGION_CORTA = {
+    "Región de Arica y Parinacota": "Arica y Parinacota", "Región de Tarapacá": "Tarapacá",
+    "Región de Antofagasta": "Antofagasta", "Región de Atacama": "Atacama", "Región de Coquimbo": "Coquimbo",
+    "Región de Valparaíso": "Valparaíso", "Región Metropolitana de Santiago": "Región Metropolitana",
+    "Región del Libertador Bernardo O'Higgins": "O'Higgins", "Región del Maule": "Maule",
+    "Región de Ñuble": "Ñuble", "Región del Bío-Bío": "Biobío", "Región de La Araucanía": "La Araucanía",
+    "Región de Los Ríos": "Los Ríos", "Región de Los Lagos": "Los Lagos",
+    "Región de Aysén del Gral.Ibañez del Campo": "Aysén", "Región de Magallanes y Antártica Chilena": "Magallanes"
+  };
+  var FUENTE_UBICACION = {
+    sitio_oficial: "sitio oficial", superintendencia_salud: "Superintendencia de Salud",
+    deis_minsal: "registro de establecimientos del DEIS (Minsal)", openstreetmap: "OpenStreetMap",
+    registro_empresas: "Registro de Empresas y Sociedades", geoboundaries: "límites comunales (BCN)",
+    otro: "otra fuente pública"
+  };
+  var PRECISION_TEXTO = {
+    establecimiento: "el establecimiento", direccion: "la dirección",
+    calle: "la calle (sin el número exacto)", comuna: "el centro de la comuna, no la dirección"
+  };
 
-    g.contorno.forEach(function (d) {
-      var pth = document.createElementNS(NS, "path");
-      pth.setAttribute("d", d); pth.setAttribute("class", "geo-pais");
-      svg.appendChild(pth);
+  function jsonOk(res) {
+    if (!res.ok) throw new Error(res.url + " → HTTP " + res.status);
+    return res.json();
+  }
+  // Pesa ~60 KB y la ficha de una institución también la usa, así que se pide al cargar.
+  // Un fallo NO se memoriza: si se guardara la promesa rechazada, un 404 o un corte de red dejaría
+  // el mapa y todas las fichas rotos hasta recargar la página.
+  function cargarUbicaciones() {
+    if (!promesaUbicaciones) {
+      promesaUbicaciones = fetch(GEO_UBICACIONES_URL, { cache: "no-cache" }).then(jsonOk)
+        .then(function (d) { ubicaciones = d; return d; },
+              function (err) { promesaUbicaciones = null; throw err; });
+    }
+    return promesaUbicaciones;
+  }
+
+  function easeOutJS(t) { return 1 - Math.pow(1 - t, 5); }
+  function easeInOutJS(t) { return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2; }
+
+  // Lienzo con cámara { cx, cy, k, rot }: el mapa de Chile tiene demasiados vértices (345 comunas)
+  // para SVG con zoom fluido. `rot` gira la vista: Chile acostado en el país, norte arriba en una
+  // región. La escala se interpola en logaritmo para que un zoom de 1× a 50× se sienta parejo.
+  function crearLienzo(canvas, opts) {
+    var ctx = canvas.getContext("2d");
+    var cam = { cx: 0, cy: 0, k: 1, rot: 0 }, w = 0, h = 0, dpr = 1;
+    var pendiente = false, anim = null;
+    var minK = opts.minK, maxK = opts.maxK;
+    var api = { cam: cam, w: 0, h: 0 };
+
+    function medir() {
+      var r = canvas.getBoundingClientRect();
+      var antes = w;
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      w = r.width; h = r.height;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      api.w = w; api.h = h;
+      // Oculto el lienzo mide 0: la primera vez que tiene tamaño hay que encuadrar de nuevo.
+      if (!antes && w && opts.alTenerTamano) opts.alTenerTamano();
+      api.dibujar();
+    }
+    api.medir = medir;
+    api.aPantalla = function (x, y) {
+      var dx = (x - cam.cx) * cam.k, dy = (y - cam.cy) * cam.k;
+      if (!cam.rot) return [dx + w / 2, dy + h / 2];
+      var c = Math.cos(cam.rot), s = Math.sin(cam.rot);
+      return [dx * c - dy * s + w / 2, dx * s + dy * c + h / 2];
+    };
+    function aMundoCon(camara, sx, sy) {
+      var dx = sx - w / 2, dy = sy - h / 2, c = Math.cos(camara.rot || 0), s = Math.sin(camara.rot || 0);
+      return [(dx * c + dy * s) / camara.k + camara.cx, (-dx * s + dy * c) / camara.k + camara.cy];
+    }
+    api.aMundo = function (sx, sy) { return aMundoCon(cam, sx, sy); };
+    // Centro de cámara que deja el punto del mundo `m` bajo el punto de pantalla `p`.
+    function centrarEn(m, p, k, rot) {
+      var dx = p[0] - w / 2, dy = p[1] - h / 2, c = Math.cos(rot || 0), s = Math.sin(rot || 0);
+      return { cx: m[0] - (dx * c + dy * s) / k, cy: m[1] - (-dx * s + dy * c) / k };
+    }
+    api.dibujar = function () {
+      if (pendiente) return;
+      pendiente = true;
+      requestAnimationFrame(function () {
+        pendiente = false;
+        if (!w) return;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+        opts.alDibujar(ctx, api);
+      });
+    };
+    api.cancelar = function () { if (anim) { cancelAnimationFrame(anim.raf); anim = null; } };
+    api.animarA = function (meta, dur, inmediato) {
+      api.cancelar();
+      meta.k = Math.max(minK, Math.min(maxK, meta.k));
+      if (meta.rot === undefined) meta.rot = cam.rot;
+      if (inmediato || reducirMovimiento() || !dur) {
+        cam.cx = meta.cx; cam.cy = meta.cy; cam.k = meta.k; cam.rot = meta.rot;
+        api.dibujar(); return;
+      }
+      var desde = { cx: cam.cx, cy: cam.cy, k: cam.k, rot: cam.rot }, t0 = null;
+      anim = { meta: meta };
+      function paso(t) {
+        if (!anim) return;
+        if (t0 === null) t0 = t;
+        var p = Math.min(1, (t - t0) / dur), e = easeInOutJS(p);
+        cam.k = Math.exp(Math.log(desde.k) + (Math.log(meta.k) - Math.log(desde.k)) * e);
+        cam.cx = desde.cx + (meta.cx - desde.cx) * e;
+        cam.cy = desde.cy + (meta.cy - desde.cy) * e;
+        cam.rot = desde.rot + (meta.rot - desde.rot) * e;
+        api.dibujar();
+        if (p < 1) anim.raf = requestAnimationFrame(paso); else anim = null;
+      }
+      anim.raf = requestAnimationFrame(paso);
+    };
+    api.base = function () { return anim ? anim.meta : { cx: cam.cx, cy: cam.cy, k: cam.k, rot: cam.rot }; };
+    api.encuadre = function (caja, pad, rot) {
+      // Girada 90°, el ancho del mundo ocupa el alto de la pantalla.
+      var bw = Math.max(1e-6, caja.x1 - caja.x0), bh = Math.max(1e-6, caja.y1 - caja.y0);
+      var c = Math.abs(Math.cos(rot)), s = Math.abs(Math.sin(rot));
+      var k = Math.min((w - pad * 2) / (bw * c + bh * s), (h - pad * 2) / (bw * s + bh * c));
+      return { cx: (caja.x0 + caja.x1) / 2, cy: (caja.y0 + caja.y1) / 2, k: Math.max(minK, Math.min(maxK, k)), rot: rot };
+    };
+    api.zoomEn = function (factor, sx, sy, dur, inmediato) {
+      var b = api.base(), k = Math.max(minK, Math.min(maxK, b.k * factor));
+      var c = centrarEn(aMundoCon(b, sx, sy), [sx, sy], k, b.rot);
+      api.animarA({ cx: c.cx, cy: c.cy, k: k, rot: b.rot }, dur, inmediato);
+    };
+
+    // Rueda y arrastre van 1:1 —ahí la mano ya es la animación— y cortan cualquier transición.
+    var punteros = {}, arrastre = null, pellizco = null;
+    function pos(ev) { var r = canvas.getBoundingClientRect(); return [ev.clientX - r.left, ev.clientY - r.top]; }
+    canvas.addEventListener("wheel", function (ev) {
+      ev.preventDefault();
+      var p = pos(ev), f = Math.exp(-ev.deltaY * (ev.ctrlKey ? 0.01 : 0.0022));
+      api.cancelar();
+      var k = Math.max(minK, Math.min(maxK, cam.k * f)), c = centrarEn(api.aMundo(p[0], p[1]), p, k, cam.rot);
+      cam.k = k; cam.cx = c.cx; cam.cy = c.cy;
+      api.dibujar();
+    }, { passive: false });
+    canvas.addEventListener("pointerdown", function (ev) {
+      canvas.setPointerCapture(ev.pointerId);
+      api.cancelar();
+      punteros[ev.pointerId] = pos(ev);
+      var ids = Object.keys(punteros);
+      if (ids.length === 2) {
+        var a = punteros[ids[0]], b = punteros[ids[1]];
+        pellizco = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), k: cam.k };
+        arrastre = null;
+      } else {
+        arrastre = { x: ev.clientX, y: ev.clientY, cx: cam.cx, cy: cam.cy, movio: false };
+      }
     });
-
-    // Cuántas entidades visibles hay en cada ciudad, respetando los filtros activos.
-    var porCiudad = {};
-    entidades.filter(matches).forEach(function (n) {
-      var c = ciudadDe(n);
-      if (!g.ciudades[c]) return;
-      (porCiudad[c] = porCiudad[c] || { total: 0, persona: 0, institucion: 0, ensayo_clinico: 0 });
-      porCiudad[c].total++; porCiudad[c][n.tipo]++;
+    canvas.addEventListener("pointermove", function (ev) {
+      var p = pos(ev);
+      if (punteros[ev.pointerId]) punteros[ev.pointerId] = p;
+      var ids = Object.keys(punteros);
+      if (pellizco && ids.length === 2) {
+        var a = punteros[ids[0]], b = punteros[ids[1]];
+        var mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], m = api.aMundo(mid[0], mid[1]);
+        cam.k = Math.max(minK, Math.min(maxK, pellizco.k * Math.hypot(a[0] - b[0], a[1] - b[1]) / pellizco.d));
+        var cc = centrarEn(m, mid, cam.k, cam.rot); cam.cx = cc.cx; cam.cy = cc.cy;
+        api.dibujar();
+        return;
+      }
+      if (arrastre) {
+        var dx = ev.clientX - arrastre.x, dy = ev.clientY - arrastre.y;
+        if (!arrastre.movio && Math.abs(dx) + Math.abs(dy) > 4) { arrastre.movio = true; canvas.classList.add("arrastrando"); }
+        if (arrastre.movio) {
+          var co = Math.cos(cam.rot), si = Math.sin(cam.rot);
+          cam.cx = arrastre.cx - (dx * co + dy * si) / cam.k; cam.cy = arrastre.cy - (-dx * si + dy * co) / cam.k;
+          api.dibujar();
+        }
+        return;
+      }
+      opts.alMover(p[0], p[1]);
     });
-    var nombres = Object.keys(porCiudad).sort(function (a, b) { return porCiudad[b].total - porCiudad[a].total; });
-    var maxN = nombres.length ? porCiudad[nombres[0]].total : 1;
-    var sinCoords = entidades.filter(matches).filter(function (n) { return !g.ciudades[ciudadDe(n)]; }).length;
+    function soltar(ev) {
+      var fueClick = arrastre && !arrastre.movio && Object.keys(punteros).length === 1;
+      delete punteros[ev.pointerId];
+      if (Object.keys(punteros).length < 2) pellizco = null;
+      arrastre = null;
+      canvas.classList.remove("arrastrando");
+      if (fueClick && ev.type === "pointerup") { var p = pos(ev); opts.alClick(p[0], p[1]); }
+    }
+    canvas.addEventListener("pointerup", soltar);
+    canvas.addEventListener("pointercancel", soltar);
+    canvas.addEventListener("pointerleave", function () { opts.alSalir(); });
+    new ResizeObserver(medir).observe(canvas);
+    return api;
+  }
 
+  // Etiquetas por nivel de detalle: se recorren en orden de importancia y cada una se queda solo
+  // si no pisa a otra ya puesta ni a un obstáculo ([x0, y0, x1, y1], las instituciones). Las
+  // etiquetas `fuerte` (lo elegido y su red) solo esquivan etiquetas: nombrar lo elegido manda.
+  function ubicarEtiquetasLienzo(ctx, candidatos, w, h, max, obstaculos) {
+    var CELDA = 64, grilla = {}, puestas = [];
+    (obstaculos || []).forEach(function (o) {
+      o.obstaculo = true;
+      for (var ox = Math.floor(o[0] / CELDA); ox <= Math.floor(o[2] / CELDA); ox++) {
+        for (var oy = Math.floor(o[1] / CELDA); oy <= Math.floor(o[3] / CELDA); oy++) (grilla[ox + ":" + oy] = grilla[ox + ":" + oy] || []).push(o);
+      }
+    });
+    for (var i = 0; i < candidatos.length && puestas.length < max; i++) {
+      var c = candidatos[i];
+      if (c.sx < -50 || c.sy < -20 || c.sx > w + 50 || c.sy > h + 20) continue;
+      var tw = ctx.measureText(c.texto).width;
+      var x0 = c.sx + c.r + 4, y0 = c.sy - 7, x1 = x0 + tw, y1 = c.sy + 7, libre = true;
+      var gx0 = Math.floor(x0 / CELDA), gx1 = Math.floor(x1 / CELDA), gy0 = Math.floor(y0 / CELDA), gy1 = Math.floor(y1 / CELDA);
+      for (var gx = gx0; gx <= gx1 && libre; gx++) {
+        for (var gy = gy0; gy <= gy1 && libre; gy++) {
+          var lista = grilla[gx + ":" + gy] || [];
+          for (var j = 0; j < lista.length; j++) {
+            var o = lista[j];
+            if (c.fuerte && o.obstaculo) continue;
+            if (x0 < o[2] && x1 > o[0] && y0 < o[3] && y1 > o[1]) { libre = false; break; }
+          }
+        }
+      }
+      if (!libre) continue;
+      var rect = [x0 - 2, y0 - 1, x1 + 2, y1 + 1];
+      for (gx = gx0; gx <= gx1; gx++) for (gy = gy0; gy <= gy1; gy++) (grilla[gx + ":" + gy] = grilla[gx + ":" + gy] || []).push(rect);
+      puestas.push({ c: c, x: x0, y: c.sy });
+    }
+    return puestas;
+  }
+
+  // Agrega la forma al trazo en curso sin abrir uno nuevo: cientos de nodos del mismo tipo se
+  // rellenan con UNA sola llamada a fill().
+  function trazarFormaLienzo(ctx, tipo, x, y, r) {
+    if (tipo === "persona") { ctx.moveTo(x + r, y); ctx.arc(x, y, r, 0, Math.PI * 2); }
+    else if (tipo === "institucion") ctx.rect(x - r * 0.9, y - r * 0.9, r * 1.8, r * 1.8);
+    else { ctx.moveTo(x, y - r * 1.1); ctx.lineTo(x + r, y + r * 0.8); ctx.lineTo(x - r, y + r * 0.8); ctx.closePath(); }
+  }
+
+  var mapaChile = (function () {
+    var K = Math.cos(33.45 * Math.PI / 180);   // escala de longitud a la latitud de Santiago
+    var TIPOS = ["persona", "institucion", "ensayo_clinico"];
+    var FUENTE = '11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    var canvas = document.getElementById("geomap");
+    var migas = document.getElementById("geo-migas");
     var tip = document.getElementById("geo-tooltip");
-    nombres.forEach(function (c, i) {
-      var cc = g.ciudades[c];
-      var x = cc.lon * K, y = -cc.lat;
-      var r = 0.35 + Math.sqrt(porCiudad[c].total / maxN) * 1.5;
-      var pt = document.createElementNS(NS, "circle");
-      pt.setAttribute("cx", x); pt.setAttribute("cy", y); pt.setAttribute("r", r);
-      pt.setAttribute("class", "geo-ciudad" + (state.ciudad === c ? " sel" : ""));
-      pt.setAttribute("fill", "var(--accent)");
-      pt.setAttribute("tabindex", "0"); pt.setAttribute("role", "button");
-      pt.setAttribute("aria-label", c + " — " + porCiudad[c].total + " entidades");
-      function detalle() {
-        return c + " · " + porCiudad[c].total + " entidades (" + porCiudad[c].persona + " personas, " +
-               porCiudad[c].institucion + " instituciones, " + porCiudad[c].ensayo_clinico + " ensayos)";
+    var barra = document.getElementById("geo-foco");
+    var anuncio = document.getElementById("geo-anuncio");
+    var bandeja = document.getElementById("geo-bandeja");
+    bandeja.addEventListener("toggle", function () { bandejaAbierta = bandeja.open; });
+    var panel = document.getElementById("geo-panel");
+    var limites = null, promesa = null, preparado = false, presentado = false, ubicFallo = false;
+    var regiones = [], porRegion = {}, comunas = [], adj = {}, info = {}, porCortaRegion = {};
+    var nivel = "pais", regionSel = null, comunaSel = null, sel = null, hover = null, saltos = 1;
+    var visibles = {}, lugares = [], flujos = [], marcas = [], C = null;
+
+    function colores() {
+      var cs = getComputedStyle(document.documentElement);
+      function v(n) { return cs.getPropertyValue("--" + n).trim(); }
+      return { s0: v("surface-0"), s1: v("surface-1"), s2: v("surface-2"), borde: v("border"),
+               texto: v("text-primary"), texto2: v("text-secondary"), tenue: v("text-muted"), acento: v("accent"),
+               persona: v("persona"), institucion: v("institucion"), ensayo_clinico: v("ensayo") };
+    }
+    function plural(n, uno, varios) { return n + " " + (n === 1 ? uno : varios); }
+    function corto(region) { return REGION_CORTA[region] || region; }
+    function etiqueta(n) { return n.tipo === "ensayo_clinico" ? n.nombre.split(" (")[0] : n.nombre; }
+    function el(tag, clase, texto) {
+      var e = document.createElement(tag);
+      if (clase) e.className = clase;
+      if (texto !== undefined) e.textContent = texto;
+      return e;
+    }
+    function dentro(x, y, plano) {
+      var n = plano.length / 2, c = false, j = n - 1;
+      for (var i = 0; i < n; i++) {
+        var xi = plano[2 * i], yi = plano[2 * i + 1], xj = plano[2 * j], yj = plano[2 * j + 1];
+        if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / ((yj - yi) || 1e-12) + xi) c = !c;
+        j = i;
       }
-      pt.addEventListener("mouseenter", function (ev) {
-        tip.textContent = detalle(); tip.classList.add("show");
-        tip.style.left = (ev.offsetX + 12) + "px"; tip.style.top = (ev.offsetY + 12) + "px";
+      return c;
+    }
+    function cajaDe(planos) {
+      var c = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
+      planos.forEach(function (p) {
+        for (var i = 0; i < p.length; i += 2) {
+          if (p[i] < c.x0) c.x0 = p[i]; if (p[i] > c.x1) c.x1 = p[i];
+          if (p[i + 1] < c.y0) c.y0 = p[i + 1]; if (p[i + 1] > c.y1) c.y1 = p[i + 1];
+        }
       });
-      pt.addEventListener("mouseleave", function () { tip.classList.remove("show"); });
-      pt.addEventListener("click", function () {
-        if (state.ciudad === c) { limpiarFiltroGeo(); return; }
-        state.ciudad = c;
-        state.region = "todas";
-        verLugar();
-      });
-      pt.addEventListener("keydown", function (ev) {
-        if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pt.dispatchEvent(new MouseEvent("click")); }
-      });
-      svg.appendChild(pt);
-      if (i < 12 && porCiudad[c].total >= 3) {
-        var t = document.createElementNS(NS, "text");
-        var izq = i % 2 === 1;   // alternar lado: en el centro del país los puntos se apiñan
-        t.setAttribute("x", izq ? x - r - 0.4 : x + r + 0.4);
-        t.setAttribute("y", y + 0.4);
-        if (izq) t.setAttribute("text-anchor", "end");
-        t.setAttribute("class", "geo-label"); t.textContent = c;
-        svg.appendChild(t);
+      return c;
+    }
+    function cruza(a, b) { return !(a.x1 < b.x0 || a.x0 > b.x1 || a.y1 < b.y0 || a.y0 > b.y1); }
+    function comunaEn(lon, lat) {
+      var x = lon * K, y = -lat;
+      for (var i = 0; i < comunas.length; i++) {
+        var c = comunas[i];
+        if (x < c.caja.x0 || x > c.caja.x1 || y < c.caja.y0 || y > c.caja.y1) continue;
+        if (c.crudos.some(function (p) { return dentro(lon, lat, p); })) return c;
       }
+      return null;
+    }
+    function lugarGeo(nombre) {
+      var cs = (datosGeo && datosGeo.ciudades) || {};
+      return cs[nombre] || cs[{ "Puerto Montt": "Port Montt" }[nombre]] || null;
+    }
+
+    // ------------------------------------------------------------ modelo
+    function preparar() {
+      // Isla de Pascua y Juan Fernández quedan fuera: a esta escala alejan el encuadre 3.000 km.
+      function continental(p) { return p[0] > -76.5 && p[1] > -56.5; }
+      function aMundo(p) { var o = []; for (var i = 0; i < p.length; i += 2) o.push(p[i] * K, -p[i + 1]); return o; }
+      var porCorta = {};
+      regiones = limites.regiones.map(function (r) {
+        var crudos = r.anillos.filter(continental), mundo = crudos.map(aMundo);
+        porCorta[corto(r.nombre)] = r.nombre;
+        return { nombre: r.nombre, crudos: crudos, anillos: mundo, caja: cajaDe(mundo), comunas: [] };
+      });
+      regiones.forEach(function (r) { porRegion[r.nombre] = r; });
+      limites.comunas.forEach(function (c) {
+        var crudos = c.anillos.filter(continental);
+        if (!crudos.length) return;
+        var mundo = crudos.map(aMundo);
+        var co = { nombre: c.nombre, region: c.region, crudos: crudos, anillos: mundo, caja: cajaDe(mundo),
+                   centro: [c.centro[0] * K, -c.centro[1]] };
+        comunas.push(co);
+        if (porRegion[c.region]) porRegion[c.region].comunas.push(co);
+      });
+      entidades.forEach(function (n) { adj[n.id] = []; });
+      vinculos.forEach(function (v) {
+        if (!adj[v.origen] || !adj[v.destino]) return;
+        adj[v.origen].push({ otro: v.destino, tipo: v.tipo });
+        adj[v.destino].push({ otro: v.origen, tipo: v.tipo });
+      });
+      porCortaRegion = porCorta;
+      preparado = true;
+      ubicarEntidades();
+    }
+
+    // Dónde cae cada ficha. Se puede volver a correr: si el archivo de ubicaciones llega tarde o
+    // se reintenta después de un error, las instituciones pasan de la bandeja al mapa sin recargar.
+    function ubicarEntidades() {
+      var ub = (ubicaciones && ubicaciones.instituciones) || {};
+      var porCorta = porCortaRegion;
+      function regionSegunMuestra(n) { return porCorta[regionOf(n)] || null; }
+      comunas.forEach(function (c) { c.inst = 0; });
+      entidades.forEach(function (n) { info[n.id] = { x: null, y: null, comuna: null, region: null, regiones: [], inst: null, ubic: null }; });
+      entidades.forEach(function (n) {
+        if (n.tipo !== "institucion") return;
+        var v = info[n.id], u = ub[n.id];
+        if (u) {
+          v.ubic = u; v.x = u.principal.lon * K; v.y = -u.principal.lat;
+          v.comuna = comunaEn(u.principal.lon, u.principal.lat);
+        }
+        v.region = v.comuna ? v.comuna.region : regionSegunMuestra(n);
+        v.regiones = v.region ? [v.region] : [];
+      });
+      entidades.forEach(function (n) {
+        var v = info[n.id];
+        if (n.tipo === "persona") {
+          // La afiliación manda; si no hay, la institución donde es investigador de sitio.
+          var mejor = null, rango = 9;
+          adj[n.id].forEach(function (a) {
+            var o = byId[a.otro];
+            if (o.tipo !== "institucion") return;
+            var r = a.tipo === "afiliación" ? 0 : a.tipo === "afiliación secundaria" ? 1 : 2;
+            if (r < rango) { rango = r; mejor = o; }
+          });
+          v.inst = mejor;
+          v.region = mejor ? info[mejor.id].region : regionSegunMuestra(n);
+          v.regiones = v.region ? [v.region] : [];
+        } else if (n.tipo === "ensayo_clinico") {
+          // Un ensayo con sedes en dos regiones está en las dos.
+          var rs = [];
+          adj[n.id].forEach(function (a) {
+            var o = byId[a.otro], r = o.tipo === "institucion" ? info[o.id].region : null;
+            if (r && rs.indexOf(r) === -1) rs.push(r);
+          });
+          if (!rs.length) { var rm = regionSegunMuestra(n); if (rm) rs.push(rm); }
+          v.regiones = rs; v.region = rs[0] || null;
+        }
+      });
+    }
+
+    // Ciudades del nivel país: los centroides que declara ClinicalTrials.gov. Un ensayo cuenta en
+    // la ciudad de cada institución donde se hace; si no tiene ninguna, en la suya.
+    function recalcular() {
+      visibles = {};
+      entidades.forEach(function (n) { if (matches(n)) visibles[n.id] = true; });
+      var porNombre = {};
+      entidades.forEach(function (n) {
+        if (!visibles[n.id]) return;
+        var cs = [];
+        if (n.tipo === "ensayo_clinico") {
+          adj[n.id].forEach(function (a) {
+            var o = byId[a.otro];
+            if (o.tipo === "institucion") { var c = ciudadDe(o); if (lugarGeo(c) && cs.indexOf(c) === -1) cs.push(c); }
+          });
+        }
+        if (!cs.length && lugarGeo(ciudadDe(n))) cs.push(ciudadDe(n));
+        cs.forEach(function (c) {
+          var L = porNombre[c];
+          if (!L) {
+            var g = lugarGeo(c), co = comunaEn(g.lon, g.lat);
+            L = porNombre[c] = { nombre: c, x: g.lon * K, y: -g.lat, ids: [], cuenta: { persona: 0, institucion: 0, ensayo_clinico: 0 },
+                                 region: co ? co.region : null };
+          }
+          L.ids.push(n.id); L.cuenta[n.tipo]++;
+        });
+      });
+      lugares = Object.keys(porNombre).map(function (k) { return porNombre[k]; })
+        .sort(function (a, b) { return b.ids.length - a.ids.length; });
+      var pares = {};
+      entidades.forEach(function (n) {
+        if (n.tipo !== "ensayo_clinico" || !visibles[n.id]) return;
+        var cs = [];
+        adj[n.id].forEach(function (a) {
+          var o = byId[a.otro];
+          if (o.tipo === "institucion" && visibles[o.id]) { var c = ciudadDe(o); if (porNombre[c] && cs.indexOf(c) === -1) cs.push(c); }
+        });
+        for (var i = 0; i < cs.length; i++) for (var j = i + 1; j < cs.length; j++) {
+          var k = cs[i] < cs[j] ? cs[i] + "|" + cs[j] : cs[j] + "|" + cs[i];
+          (pares[k] = pares[k] || { a: porNombre[cs[i]], b: porNombre[cs[j]], n: 0 }).n++;
+        }
+      });
+      flujos = Object.keys(pares).map(function (k) { return pares[k]; }).sort(function (a, b) { return b.n - a.n; });
+    }
+
+    function vecindario(id) {
+      var dist = {}; dist[id] = 0;
+      var frente = [id];
+      for (var s = 1; s <= saltos; s++) {
+        var nuevo = [];
+        frente.forEach(function (x) {
+          adj[x].forEach(function (a) {
+            if (dist[a.otro] !== undefined || !visibles[a.otro]) return;
+            dist[a.otro] = s; nuevo.push(a.otro);
+          });
+        });
+        frente = nuevo;
+      }
+      return dist;
+    }
+    function focoActual() {
+      var id = hover && hover.tipo === "ficha" ? hover.id : sel;
+      return id ? vecindario(id) : null;
+    }
+    function enRegion(n, region) { return info[n.id].regiones.indexOf(region) !== -1; }
+
+    // ------------------------------------------------------------ dibujo
+    function trazarPlanos(ctx, lz, planos) {
+      planos.forEach(function (p) {
+        for (var i = 0; i < p.length; i += 2) {
+          var s = lz.aPantalla(p[i], p[i + 1]);
+          if (i) ctx.lineTo(s[0], s[1]); else ctx.moveTo(s[0], s[1]);
+        }
+        ctx.closePath();
+      });
+    }
+    function vistaMundo(lz) {
+      var e = [lz.aMundo(0, 0), lz.aMundo(lz.w, 0), lz.aMundo(0, lz.h), lz.aMundo(lz.w, lz.h)];
+      return { x0: Math.min(e[0][0], e[1][0], e[2][0], e[3][0]), x1: Math.max(e[0][0], e[1][0], e[2][0], e[3][0]),
+               y0: Math.min(e[0][1], e[1][1], e[2][1], e[3][1]), y1: Math.max(e[0][1], e[1][1], e[2][1], e[3][1]) };
+    }
+    function pintarEtiquetas(ctx, lz, cands, max, obstaculos) {
+      ctx.font = FUENTE; ctx.textBaseline = "middle"; ctx.lineJoin = "round";
+      ubicarEtiquetasLienzo(ctx, cands, lz.w, lz.h, max, obstaculos).forEach(function (pu) {
+        ctx.lineWidth = 3; ctx.strokeStyle = C.s0; ctx.globalAlpha = 0.95; ctx.strokeText(pu.c.texto, pu.x, pu.y);
+        ctx.globalAlpha = 1; ctx.fillStyle = pu.c.fuerte ? C.texto : C.texto2; ctx.fillText(pu.c.texto, pu.x, pu.y);
+      });
+    }
+
+    function dibujar(ctx, lz) {
+      if (!preparado) return;
+      C = colores();
+      marcas = [];
+      var vista = vistaMundo(lz), foco = focoActual();
+      var fichasPorRegion = {}, maxF = 1;
+      entidades.forEach(function (n) {
+        if (!visibles[n.id]) return;
+        info[n.id].regiones.forEach(function (r) { fichasPorRegion[r] = (fichasPorRegion[r] || 0) + 1; });
+      });
+      Object.keys(fichasPorRegion).forEach(function (k) { maxF = Math.max(maxF, fichasPorRegion[k]); });
+
+      regiones.forEach(function (r) {
+        if (!cruza(r.caja, vista)) return;
+        ctx.beginPath(); trazarPlanos(ctx, lz, r.anillos);
+        if (nivel === "pais") {
+          ctx.fillStyle = C.s2; ctx.globalAlpha = 1; ctx.fill();
+          ctx.fillStyle = C.acento; ctx.globalAlpha = 0.06 + Math.sqrt((fichasPorRegion[r.nombre] || 0) / maxF) * 0.34; ctx.fill();
+        } else {
+          ctx.fillStyle = r.nombre === regionSel ? C.s0 : C.s2; ctx.globalAlpha = r.nombre === regionSel ? 1 : 0.6; ctx.fill();
+        }
+        var hv = hover && hover.tipo === "region" && hover.id === r.nombre;
+        ctx.globalAlpha = 1; ctx.strokeStyle = hv ? C.texto : C.borde; ctx.lineWidth = hv ? 2 : 1; ctx.stroke();
+      });
+      if (nivel === "pais") { dibujarPais(ctx, lz, foco); return; }
+
+      var reg = porRegion[regionSel];
+      reg.comunas.forEach(function (c) {
+        if (!cruza(c.caja, vista)) return;
+        ctx.beginPath(); trazarPlanos(ctx, lz, c.anillos);
+        var hv = hover && hover.tipo === "comuna" && hover.id === c;
+        if (c.nombre === comunaSel || hv) { ctx.fillStyle = C.s1; ctx.globalAlpha = 1; ctx.fill(); }
+        ctx.strokeStyle = C.borde; ctx.globalAlpha = 0.9; ctx.lineWidth = c.nombre === comunaSel ? 1.8 : 0.8; ctx.stroke();
+      });
+      ctx.globalAlpha = 1;
+      dibujarRegion(ctx, lz, reg, foco, vista);
+    }
+
+    function dibujarPais(ctx, lz, foco) {
+      flujos.slice(0, 40).forEach(function (f) {
+        var a = lz.aPantalla(f.a.x, f.a.y), b = lz.aPantalla(f.b.x, f.b.y);
+        var mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, dx = b[0] - a[0], dy = b[1] - a[1];
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.quadraticCurveTo(mx - dy * 0.16, my + dx * 0.16, b[0], b[1]);
+        ctx.strokeStyle = C.tenue; ctx.globalAlpha = 0.45; ctx.lineWidth = Math.min(8, 1 + Math.sqrt(f.n) * 0.9); ctx.stroke();
+      });
+      ctx.globalAlpha = 1;
+      var cands = [];
+      lugares.forEach(function (L) {
+        var s = lz.aPantalla(L.x, L.y), r = Math.max(4, Math.min(34, 3 + Math.sqrt(L.ids.length) * 2.2));
+        ctx.globalAlpha = foco && !L.ids.some(function (id) { return foco[id] !== undefined; }) ? 0.25 : 1;
+        ctx.beginPath(); ctx.arc(s[0], s[1], r, 0, Math.PI * 2); ctx.fillStyle = C.s0; ctx.fill();
+        // Anillo repartido por tipo: cuánto de cada cosa hay en la ciudad.
+        var ang = -Math.PI / 2;
+        TIPOS.forEach(function (t) {
+          if (!L.cuenta[t]) return;
+          var a1 = ang + (L.cuenta[t] / L.ids.length) * Math.PI * 2;
+          ctx.beginPath(); ctx.arc(s[0], s[1], r - 1.5, ang, a1); ctx.strokeStyle = C[t]; ctx.lineWidth = Math.max(2.5, r * 0.28); ctx.stroke();
+          ang = a1;
+        });
+        if (hover && hover.tipo === "lugar" && hover.id === L) {
+          ctx.beginPath(); ctx.arc(s[0], s[1], r + 4, 0, Math.PI * 2); ctx.strokeStyle = C.texto; ctx.lineWidth = 2; ctx.stroke();
+        }
+        marcas.push({ tipo: "lugar", L: L, sx: s[0], sy: s[1], r: r + 3 });
+        cands.push({ sx: s[0], sy: s[1], r: r, texto: L.nombre + " · " + L.ids.length });
+      });
+      ctx.globalAlpha = 1;
+      pintarEtiquetas(ctx, lz, cands, 30);
+    }
+
+    // Institución: su ubicación. Persona: en órbita de su institución. Ensayo: en abanico alrededor
+    // de su institución, solo si esa institución está "abierta".
+    function dibujarRegion(ctx, lz, reg, foco, vista) {
+      var k = lz.cam.k, pos = {};
+      var escala = Math.max(0.8, Math.min(1.25, Math.log(k / 40 + 1)));
+      // Las instituciones ubicadas son el ANCLA de la región, estén o no visibles: con el filtro en
+      // "Personas" las instituciones desaparecen, pero las personas se siguen dibujando donde
+      // trabajan en vez de dejar el mapa vacío.
+      var anclas = entidades.filter(function (n) {
+        return n.tipo === "institucion" && info[n.id].region === regionSel && info[n.id].x !== null;
+      });
+      var insts = anclas.filter(function (n) { return visibles[n.id]; });
+      anclas.forEach(function (n) {
+        var v = info[n.id], ens = 0, pers = [];
+        adj[n.id].forEach(function (a) {
+          var o = byId[a.otro];
+          if (!visibles[o.id]) return;
+          if (o.tipo === "ensayo_clinico") ens++;
+          if (o.tipo === "persona" && info[o.id].inst === n) pers.push(o);
+        });
+        v.real = lz.aPantalla(v.x, v.y); v.r = (3.5 + Math.min(7, Math.sqrt(adj[n.id].length) * 0.6)) * escala;
+        v.nEns = ens; v.pers = pers;
+      });
+      // En Providencia hay seis instituciones en diez cuadras: a zoom de región sus cuadrados se
+      // tapaban enteros. Se separan lo justo para no tocarse (hasta SEPARACION_MAX px) y una línea
+      // fina lleva de vuelta al punto real, así que ningún punto se mueve sin decirlo.
+      var SEPARACION_MAX = 60;
+      anclas.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n, orden, lista) {
+        var v = info[n.id], d = [v.real[0], v.real[1]];
+        for (var pasada = 0; pasada < 6; pasada++) {
+          var movio = false;
+          for (var j = 0; j < orden; j++) {
+            var o = info[lista[j].id], dx = d[0] - o.s[0], dy = d[1] - o.s[1], dist = Math.hypot(dx, dy), min = v.r + o.r + 3;
+            if (dist >= min) continue;
+            // Mismo punto exacto: se abre en ángulo áureo según el orden, siempre igual.
+            if (dist < 0.01) { dx = Math.cos(orden * 2.39996); dy = Math.sin(orden * 2.39996); dist = 1; min = v.r + o.r + 3; }
+            d[0] += dx / dist * (min - dist); d[1] += dy / dist * (min - dist); movio = true;
+          }
+          if (!movio) break;
+        }
+        var desv = Math.hypot(d[0] - v.real[0], d[1] - v.real[1]);
+        if (desv > SEPARACION_MAX) { d[0] = v.real[0] + (d[0] - v.real[0]) / desv * SEPARACION_MAX; d[1] = v.real[1] + (d[1] - v.real[1]) / desv * SEPARACION_MAX; }
+        v.s = d;
+        pos[n.id] = d;
+      });
+      ctx.strokeStyle = C.tenue; ctx.fillStyle = C.tenue; ctx.lineWidth = 1; ctx.globalAlpha = 0.7;
+      insts.forEach(function (n) {
+        var v = info[n.id];
+        if (Math.hypot(v.s[0] - v.real[0], v.s[1] - v.real[1]) < 4) return;
+        ctx.beginPath(); ctx.moveTo(v.real[0], v.real[1]); ctx.lineTo(v.s[0], v.s[1]); ctx.stroke();
+        ctx.beginPath(); ctx.arc(v.real[0], v.real[1], 1.8, 0, Math.PI * 2); ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      // Abierta: la elegida, la sede de un ensayo elegido, o las que de tan cerca tienen espacio.
+      var selN = sel ? byId[sel] : null, abiertas = {};
+      insts.forEach(function (n) {
+        var v = info[n.id];
+        var holgura = insts.every(function (m) { return m === n || Math.hypot(info[m.id].s[0] - v.s[0], info[m.id].s[1] - v.s[1]) > 170; });
+        var sedeDeSel = selN && selN.tipo === "ensayo_clinico" && adj[sel].some(function (a) { return a.otro === n.id; });
+        if (sel === n.id || sedeDeSel || (holgura && v.nEns <= 60 && k > 900)) abiertas[n.id] = true;
+      });
+      anclas.forEach(function (n) {
+        var v = info[n.id];
+        v.pers.forEach(function (p, i) {
+          var porAnillo = 10, anillo = Math.floor(i / porAnillo), enAnillo = Math.min(porAnillo, v.pers.length - anillo * porAnillo);
+          var ang = -Math.PI / 2 + ((i % porAnillo) / enAnillo) * Math.PI * 2, rad = v.r + 10 + anillo * 8;
+          pos[p.id] = [v.s[0] + Math.cos(ang) * rad, v.s[1] + Math.sin(ang) * rad];
+        });
+        v.resto = 0;
+        if (!abiertas[n.id]) return;
+        var ens = adj[n.id].map(function (a) { return byId[a.otro]; })
+          .filter(function (o) { return o.tipo === "ensayo_clinico" && visibles[o.id]; })
+          .sort(function (a, b) {
+            var ka = sortableDate(mostRecentHecho(a).fecha), kb = sortableDate(mostRecentHecho(b).fecha);
+            return ka < kb ? 1 : ka > kb ? -1 : 0;   // más reciente primero, y estable cuando empatan
+          });
+        var lim = Math.min(ens.length, 48), radE = v.r + 34 + Math.ceil(v.pers.length / 10) * 8;
+        ens.slice(0, lim).forEach(function (e, i) {
+          if (pos[e.id]) return;
+          var ang = -Math.PI / 2 + (i / lim) * Math.PI * 2, rr = radE + (i % 2) * 12;
+          pos[e.id] = [v.s[0] + Math.cos(ang) * rr, v.s[1] + Math.sin(ang) * rr];
+        });
+        v.resto = ens.length - lim;
+      });
+
+      // Conexiones de lo elegido o apuntado. Un ensayo cerrado se dibuja como su institución.
+      var centro = hover && hover.tipo === "ficha" ? hover.id : sel;
+      if (centro && pos[centro]) {
+        var pc = pos[centro], hacia = {};
+        adj[centro].forEach(function (a) {
+          var o = byId[a.otro];
+          if (!visibles[o.id]) return;
+          if (pos[o.id]) { hacia[o.id] = (hacia[o.id] || 0) + 1; return; }
+          if (o.tipo === "ensayo_clinico") {
+            adj[o.id].forEach(function (b) {
+              var ins = byId[b.otro];
+              if (ins.tipo === "institucion" && ins.id !== centro && pos[ins.id]) hacia[ins.id] = (hacia[ins.id] || 0) + 1;
+            });
+          }
+        });
+        Object.keys(hacia).forEach(function (id) {
+          var p = pos[id], dx = p[0] - pc[0], dy = p[1] - pc[1];
+          ctx.beginPath(); ctx.moveTo(pc[0], pc[1]);
+          ctx.quadraticCurveTo((pc[0] + p[0]) / 2 - dy * 0.12, (pc[1] + p[1]) / 2 + dx * 0.12, p[0], p[1]);
+          ctx.strokeStyle = C[byId[centro].tipo]; ctx.globalAlpha = 0.75;
+          ctx.lineWidth = Math.min(6, 1.2 + Math.log(hacia[id]) / Math.LN2 * 1.1); ctx.stroke();
+        });
+        ctx.globalAlpha = 1;
+      }
+
+      function tenue(id) { return !!(foco && foco[id] === undefined); }
+      TIPOS.forEach(function (t) {
+        [true, false].forEach(function (dim) {
+          var hay = false;
+          ctx.beginPath();
+          Object.keys(pos).forEach(function (id) {
+            var n = byId[id];
+            if (n.tipo !== t || tenue(id) !== dim || !visibles[id]) return;
+            // Una institución ubicada solo por su comuna se dibuja hueca, más abajo.
+            if (t === "institucion" && info[id].ubic.principal.precision === "comuna") return;
+            var p = pos[id], r = t === "institucion" ? info[id].r : t === "persona" ? 3.4 * escala : 3 * escala;
+            trazarFormaLienzo(ctx, t, p[0], p[1], r); hay = true;
+          });
+          if (!hay) return;
+          ctx.fillStyle = C[t]; ctx.globalAlpha = dim ? 0.18 : 1; ctx.fill();
+          if (t === "institucion") { ctx.strokeStyle = C.s0; ctx.lineWidth = 1.5; ctx.stroke(); }
+        });
+      });
+      ctx.globalAlpha = 1;
+      Object.keys(pos).forEach(function (id) {
+        var n = byId[id], r = n.tipo === "institucion" ? info[id].r : 3.4 * escala;
+        if (!visibles[id]) return;
+        if (n.tipo === "institucion" && info[id].ubic.principal.precision === "comuna") {
+          ctx.beginPath(); trazarFormaLienzo(ctx, "institucion", pos[id][0], pos[id][1], r);
+          ctx.fillStyle = C.s0; ctx.globalAlpha = tenue(id) ? 0.3 : 1; ctx.fill();
+          ctx.setLineDash([3, 2]); ctx.strokeStyle = C.institucion; ctx.lineWidth = 2; ctx.stroke(); ctx.setLineDash([]);
+          ctx.globalAlpha = 1;
+        }
+        marcas.push({ tipo: "ficha", id: id, sx: pos[id][0], sy: pos[id][1], r: Math.max(r + 2, 6) });
+      });
+      // "▲ N": ensayos de cada institución cerrada; "+N" los que no entraron en el abanico. Un número
+      // que pisaría otro cuadrado u otro número no se dibuja: se lee en el tooltip.
+      var cuadros = anclas.map(function (n) {
+        var v = info[n.id];
+        return [v.s[0] - v.r, v.s[1] - v.r, v.s[0] + v.r, v.s[1] + v.r, n.id];
+      });
+      function choca(a, lista, ignorar) {
+        return lista.some(function (b) { return b[4] !== ignorar && a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1]; });
+      }
+      ctx.font = '600 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+      ctx.textBaseline = "middle";
+      var numeros = [];
+      insts.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
+        var v = info[n.id];
+        if (tenue(n.id)) return;
+        var txt = abiertas[n.id] ? (v.resto ? "+" + v.resto : "") : v.nEns ? "▲ " + v.nEns : "";
+        if (!txt) return;
+        // Centrado debajo del cuadrado: a la derecha queda el nombre.
+        var tw = ctx.measureText(txt).width, x = v.s[0] - tw / 2, y = v.s[1] + Math.max(v.r, 6) + 9;
+        var caja = [x - 3, y - 7, x + tw + 3, y + 7, n.id];
+        if (choca(caja, cuadros, n.id) || choca(caja, numeros)) return;
+        numeros.push(caja);
+        ctx.fillStyle = C.s0; ctx.globalAlpha = 0.9; ctx.beginPath(); ctx.rect(x - 3, y - 7, tw + 6, 14); ctx.fill();
+        ctx.globalAlpha = 1; ctx.fillStyle = C.ensayo_clinico; ctx.fillText(txt, x, y);
+      });
+      shortlist.forEach(function (id) {
+        if (!pos[id]) return;
+        ctx.beginPath(); ctx.arc(pos[id][0], pos[id][1], (byId[id].tipo === "institucion" ? info[id].r : 3.4 * escala) + 4, 0, Math.PI * 2);
+        ctx.strokeStyle = C.acento; ctx.lineWidth = 2; ctx.stroke();
+      });
+      if (sel && pos[sel]) {
+        ctx.beginPath(); trazarFormaLienzo(ctx, byId[sel].tipo, pos[sel][0], pos[sel][1], (byId[sel].tipo === "institucion" ? info[sel].r : 4 * escala) + 3);
+        ctx.strokeStyle = C.texto; ctx.lineWidth = 2.5; ctx.stroke();
+      }
+
+      // Etiquetas: lo elegido, su red, las instituciones y, de muy cerca, las personas. Los ensayos
+      // del abanico se nombran recién de muy cerca: de a 40 tapaban la institución recién elegida.
+      var cands = [];
+      function radioEtiqueta(id) { return byId[id].tipo === "institucion" ? info[id].r : 6; }
+      if (sel && pos[sel]) cands.push({ sx: pos[sel][0], sy: pos[sel][1], r: radioEtiqueta(sel), texto: etiqueta(byId[sel]), fuerte: true });
+      if (foco) Object.keys(foco).forEach(function (id) {
+        if (!pos[id] || id === sel || (byId[id].tipo === "ensayo_clinico" && k < 6000)) return;
+        cands.push({ sx: pos[id][0], sy: pos[id][1], r: radioEtiqueta(id), texto: etiqueta(byId[id]), fuerte: true });
+      });
+      insts.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
+        if (!tenue(n.id)) cands.push({ sx: info[n.id].s[0], sy: info[n.id].s[1], r: info[n.id].r, texto: etiqueta(n) });
+      });
+      if (k > 2200) Object.keys(pos).forEach(function (id) {
+        if (byId[id].tipo === "persona" && !tenue(id)) cands.push({ sx: pos[id][0], sy: pos[id][1], r: 4, texto: byId[id].nombre });
+      });
+      pintarEtiquetas(ctx, lz, cands, 60, cuadros.concat(numeros).map(function (c) { return [c[0] - 1, c[1] - 1, c[2] + 1, c[3] + 1]; }));
+      // Nombres de comuna en gris, solo donde la comuna tiene ancho para su nombre.
+      ctx.font = '600 9.5px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+      ctx.textAlign = "center"; ctx.fillStyle = C.tenue; ctx.globalAlpha = 0.55;
+      reg.comunas.forEach(function (c) {
+        if (!cruza(c.caja, vista) || ((c.caja.x1 - c.caja.x0) * k < 70 && c.nombre !== comunaSel)) return;
+        var s = lz.aPantalla(c.centro[0], c.centro[1]);
+        ctx.fillText(c.nombre.toUpperCase(), s[0], s[1]);
+      });
+      ctx.textAlign = "start"; ctx.globalAlpha = 1;
+      pintarBandeja();
+    }
+
+    var lz = crearLienzo(canvas, {
+      minK: 3, maxK: 60000,
+      alDibujar: dibujar,
+      alMover: apuntar,
+      alSalir: function () { hover = null; tip.classList.remove("show"); lz.dibujar(); },
+      alClick: tocar,
+      alTenerTamano: function () { if (presentado) encuadrarNivel(true); }
     });
 
-    hint.textContent = nombres.length + (nombres.length === 1 ? " ciudad con actividad" : " ciudades con actividad") +
-      (state.ciudad ? " · filtrando por " + state.ciudad + " (tocá el punto otra vez para quitarlo)" : "") +
-      ". El punto crece con la cantidad de entidades. La fuente ubica cada centro en el centro de su " +
-      "ciudad, no en su dirección, así que los de una misma ciudad comparten posición" +
-      (sinCoords ? ". " + sinCoords + " entidades no tienen ciudad reconocida y no aparecen acá." : ".");
+    // ------------------------------------------------------------ puntería
+    function queHay(sx, sy) {
+      for (var i = marcas.length - 1; i >= 0; i--) {
+        var m = marcas[i];
+        if (Math.hypot(m.sx - sx, m.sy - sy) <= m.r) return m;
+      }
+      var w = lz.aMundo(sx, sy), lat = -w[1], lon = w[0] / K;
+      if (nivel === "region") {
+        var cs = porRegion[regionSel].comunas;
+        for (var j = 0; j < cs.length; j++) {
+          var c = cs[j];
+          if (w[0] < c.caja.x0 || w[0] > c.caja.x1 || w[1] < c.caja.y0 || w[1] > c.caja.y1) continue;
+          if (c.crudos.some(function (p) { return dentro(lon, lat, p); })) return { tipo: "comuna", id: c };
+        }
+      }
+      for (var r = 0; r < regiones.length; r++) {
+        var R = regiones[r];
+        if (w[0] < R.caja.x0 || w[0] > R.caja.x1 || w[1] < R.caja.y0 || w[1] > R.caja.y1) continue;
+        if (R.crudos.some(function (p) { return dentro(lon, lat, p); })) return { tipo: "region", id: R.nombre };
+      }
+      return null;
+    }
+    function mostrarTip(sx, sy, tipo, nombre, meta) {
+      tip.innerHTML = "";
+      if (tipo) tip.appendChild(el("div", "tt-type", tipo));
+      tip.appendChild(el("div", "tt-name", nombre));
+      if (meta) tip.appendChild(el("div", "tt-meta", meta));
+      tip.style.left = Math.max(8, Math.min(sx + 14, lz.w - 230)) + "px";
+      tip.style.top = Math.max(8, Math.min(sy + 14, lz.h - 90)) + "px";
+      tip.classList.add("show");
+    }
+    function apuntar(sx, sy) {
+      if (!preparado) return;
+      var q = queHay(sx, sy);
+      var antes = hover;
+      hover = !q ? null : q.tipo === "lugar" ? { tipo: "lugar", id: q.L } : q;
+      // Mover el mouse dispara esto decenas de veces por segundo: solo se redibuja si cambió lo
+      // apuntado, porque un cuadro completo de la región cuesta milisegundos, no microsegundos.
+      var cambio = (antes && antes.tipo) !== (hover && hover.tipo) || (antes && antes.id) !== (hover && hover.id);
+      canvas.style.cursor = q ? "pointer" : "";
+      if (!q) { tip.classList.remove("show"); if (cambio) lz.dibujar(); return; }
+      if (q.tipo === "ficha") {
+        var n = byId[q.id], v = info[q.id];
+        if (n.tipo === "institucion") {
+          var p = v.ubic.principal;
+          mostrarTip(sx, sy, typeLabel[n.tipo], n.nombre,
+            p.direccion + ", " + p.comuna + " · " + plural(v.pers.length, "persona", "personas") + " · " +
+            plural(v.nEns, "ensayo", "ensayos") + (p.precision === "comuna" ? " · punto aproximado: centro de la comuna" : ""));
+        } else {
+          mostrarTip(sx, sy, typeLabel[n.tipo], etiqueta(n), n.subtitulo || "");
+        }
+      } else if (q.tipo === "lugar") {
+        mostrarTip(sx, sy, "Ciudad", q.L.nombre, plural(q.L.ids.length, "ficha", "fichas") + (q.L.region ? " · click para entrar a " + corto(q.L.region) : ""));
+      } else if (q.tipo === "region") {
+        var cuantas = entidades.filter(function (m) { return visibles[m.id] && enRegion(m, q.id); }).length;
+        mostrarTip(sx, sy, "Región", corto(q.id), plural(cuantas, "ficha", "fichas") + (nivel === "pais" || q.id !== regionSel ? " · click para entrar" : ""));
+      } else {
+        var nInst = entidades.filter(function (m) { return m.tipo === "institucion" && visibles[m.id] && info[m.id].comuna === q.id; }).length;
+        mostrarTip(sx, sy, "Comuna", q.id.nombre, plural(nInst, "institución", "instituciones") + " · click para acercar");
+      }
+      if (cambio) lz.dibujar();
+    }
+    function tocar(sx, sy) {
+      if (!preparado) return;
+      var q = queHay(sx, sy);
+      if (!q) { if (sel) seleccionar(null); return; }
+      if (q.tipo === "ficha") { seleccionar(q.id === sel ? null : q.id); return; }
+      if (q.tipo === "lugar") { if (q.L.region) entrarRegion(q.L.region); return; }
+      if (q.tipo === "region") {
+        if (nivel === "pais" || q.id !== regionSel) entrarRegion(q.id); else if (sel) seleccionar(null);
+        return;
+      }
+      if (sel) { seleccionar(null); return; }
+      comunaSel = comunaSel === q.id.nombre ? null : q.id.nombre;
+      if (comunaSel) lz.animarA(lz.encuadre(q.id.caja, 50, 0), 520); else encuadrarNivel(false);
+      pintarMigas(); lz.dibujar();
+    }
+
+    // ------------------------------------------------------------ navegación
+    function rotPais() { return lz.w / Math.max(1, lz.h) > 1.15 ? -Math.PI / 2 : 0; }
+    function cajaPais() {
+      var c = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
+      lugares.forEach(function (L) {
+        c.x0 = Math.min(c.x0, L.x); c.x1 = Math.max(c.x1, L.x); c.y0 = Math.min(c.y0, L.y); c.y1 = Math.max(c.y1, L.y);
+      });
+      if (isFinite(c.x0)) return { x0: c.x0 - 1.4, x1: c.x1 + 1.4, y0: c.y0 - 1.4, y1: c.y1 + 1.4 };
+      regiones.forEach(function (r) {
+        c.x0 = Math.min(c.x0, r.caja.x0); c.x1 = Math.max(c.x1, r.caja.x1); c.y0 = Math.min(c.y0, r.caja.y0); c.y1 = Math.max(c.y1, r.caja.y1);
+      });
+      return c;
+    }
+    function cajaRegion(region) {
+      var pts = entidades.filter(function (n) { return n.tipo === "institucion" && info[n.id].region === region && info[n.id].x !== null; });
+      if (!pts.length) return porRegion[region].caja;
+      // Se encuadra el 80% de instituciones más cercanas a la mediana: el Sótero del Río, en Puente
+      // Alto, achicaba a la mitad el centro de Santiago, donde está casi todo. Las demás siguen a un
+      // arrastre, y en la lista de al lado.
+      function mediana(xs) { xs = xs.slice().sort(function (a, b) { return a - b; }); return xs[Math.floor(xs.length / 2)]; }
+      var mx0 = mediana(pts.map(function (n) { return info[n.id].x; })), my0 = mediana(pts.map(function (n) { return info[n.id].y; }));
+      pts = pts.slice().sort(function (a, b) {
+        return Math.hypot(info[a.id].x - mx0, info[a.id].y - my0) - Math.hypot(info[b.id].x - mx0, info[b.id].y - my0);
+      }).slice(0, Math.max(1, Math.ceil(pts.length * 0.8)));
+      var c = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
+      pts.forEach(function (n) {
+        var v = info[n.id];
+        c.x0 = Math.min(c.x0, v.x); c.x1 = Math.max(c.x1, v.x); c.y0 = Math.min(c.y0, v.y); c.y1 = Math.max(c.y1, v.y);
+      });
+      var mx = Math.max(0.06, (c.x1 - c.x0) * 0.25), my = Math.max(0.06, (c.y1 - c.y0) * 0.25);
+      return { x0: c.x0 - mx, x1: c.x1 + mx, y0: c.y0 - my, y1: c.y1 + my };
+    }
+    function encuadrarNivel(inmediato) {
+      if (nivel === "pais") lz.animarA(lz.encuadre(cajaPais(), 40, rotPais()), 760, inmediato);
+      else lz.animarA(lz.encuadre(cajaRegion(regionSel), 60, 0), 760, inmediato);
+    }
+    function irPais(inmediato) {
+      nivel = "pais"; regionSel = null; comunaSel = null; sel = null;
+      encuadrarNivel(inmediato);
+      pintarTodo();
+      anunciar("Volviste al mapa de Chile.");
+    }
+    function entrarRegion(region, inmediato) {
+      if (!porRegion[region]) return;
+      if (region !== regionSel && sel && !enRegion(byId[sel], region)) sel = null;
+      nivel = "region"; regionSel = region; comunaSel = null;
+      encuadrarNivel(inmediato);
+      pintarTodo();
+      anunciar("Entraste a " + corto(region) + ".");
+    }
+    function seleccionar(id, volar) {
+      sel = id;
+      if (id && volar && nivel === "region") {
+        var v = info[id], n = byId[id];
+        var p = n.tipo === "institucion" ? v : n.tipo === "persona" && v.inst ? info[v.inst.id] : null;
+        if (n.tipo === "ensayo_clinico") {
+          adj[id].forEach(function (a) { var o = info[a.otro]; if (!p && o.region === regionSel && o.x !== null) p = o; });
+        }
+        if (p && p.x !== null) lz.animarA({ cx: p.x, cy: p.y, k: Math.max(lz.base().k, 2600), rot: 0 }, 700);
+      }
+      conFoco(barra, pintarFoco); conFoco(panel, pintarPanel); lz.dibujar();
+      if (id) anunciar("Elegiste " + etiqueta(byId[id]) + ". " + plural(adj[id].length, "conexión", "conexiones") + ".");
+    }
+
+    // ------------------------------------------------------------ piezas HTML
+    // Panel y barra se reconstruyen enteros en cada cambio. Si el foco estaba en uno de sus botones,
+    // el navegador lo manda al body y la próxima tecla Tab arranca de nuevo desde el encabezado de la
+    // página: se guarda qué tenía el foco y se le devuelve al equivalente del contenido nuevo.
+    function conFoco(contenedor, pintar) {
+      var act = document.activeElement;
+      var clave = act && contenedor.contains(act) ? act.getAttribute("data-foco") : null;
+      pintar();
+      if (clave === null) return;
+      var destino = contenedor.querySelector('[data-foco="' + clave + '"]') || contenedor.querySelector("button");
+      if (destino) destino.focus();
+    }
+    function anunciar(texto) { anuncio.textContent = texto; }
+    function pintarTodo() {
+      pintarMigas();
+      conFoco(barra, pintarFoco);
+      conFoco(panel, pintarPanel);
+      if (nivel !== "region") { bandeja.hidden = true; bandejaFirma = ""; }
+      lz.dibujar();
+    }
+
+    function pintarMigas() {
+      migas.innerHTML = "";
+      function miga(texto, actual, alTocar) {
+        var b = el("button", "geo-miga", texto); b.type = "button";
+        if (actual) b.setAttribute("aria-current", "location"); else b.addEventListener("click", alTocar);
+        migas.appendChild(b);
+      }
+      miga("Chile", nivel === "pais", function () { irPais(false); });
+      if (regionSel) {
+        migas.appendChild(el("span", "geo-miga-sep", "›"));
+        miga(corto(regionSel), !comunaSel, function () { comunaSel = null; encuadrarNivel(false); pintarMigas(); lz.dibujar(); });
+      }
+      if (comunaSel) {
+        migas.appendChild(el("span", "geo-miga-sep", "›"));
+        miga(comunaSel, true);
+      }
+    }
+
+    // La barra está siempre sobre el mapa, con la ayuda cuando no hay nada elegido: aparecer y
+    // desaparecer empujaba el mapa hacia abajo justo bajo el dedo que acababa de tocar.
+    function pintarFoco() {
+      barra.innerHTML = "";
+      barra.classList.toggle("vacia", !sel);
+      if (!sel) {
+        barra.textContent = nivel === "pais"
+          ? "Tocá una región o una ciudad para entrar. Rueda o + − para acercar, arrastrá para moverte."
+          : "Tocá una institución para ver su red; tocá una comuna para acercarte. Escape vuelve atrás.";
+        return;
+      }
+      var n = byId[sel], t = el("span");
+      t.appendChild(document.createTextNode("Red de ")); t.appendChild(el("strong", "", etiqueta(n)));
+      if (n.tipo === "institucion" && info[sel].ubic) {
+        var p = info[sel].ubic.principal;
+        t.appendChild(document.createTextNode(" · " + p.direccion + ", " + p.comuna));
+      }
+      barra.appendChild(t);
+      [1, 2].forEach(function (d) {
+        var b = el("button", "", d === 1 ? "Directas" : "A 2 saltos"); b.type = "button";
+        b.setAttribute("data-foco", "saltos-" + d);
+        b.setAttribute("aria-pressed", String(saltos === d));
+        b.addEventListener("click", function () { saltos = d; pintarFoco(); lz.dibujar(); });
+        barra.appendChild(b);
+      });
+      // La red de lo elegido puede seguir en otras regiones: se dice dónde, con salida directa.
+      var foco = vecindario(sel), fuera = {};
+      Object.keys(foco).forEach(function (id) {
+        info[id].regiones.forEach(function (r) { if (r !== regionSel) fuera[r] = (fuera[r] || 0) + 1; });
+      });
+      var otras = Object.keys(fuera).sort(function (a, b) { return fuera[b] - fuera[a]; }).slice(0, 3);
+      if (otras.length && nivel === "region") {
+        var nota = el("span", "geo-fuera", "También en: ");
+        otras.forEach(function (r, i) {
+          if (i) nota.appendChild(document.createTextNode(" · "));
+          var b = el("button", "geo-miga", corto(r) + " (" + fuera[r] + ")"); b.type = "button";
+          b.addEventListener("click", function () { entrarRegion(r); });
+          nota.appendChild(b);
+        });
+        barra.appendChild(nota);
+      }
+      barra.appendChild(el("span", "foco-sep"));
+      var ver = el("button", "", "Ver ficha completa"); ver.type = "button"; ver.setAttribute("data-foco", "ficha");
+      ver.addEventListener("click", function () { openDetail(sel); });
+      var cerrar = el("button", "", "Cerrar"); cerrar.type = "button"; cerrar.setAttribute("data-foco", "cerrar");
+      cerrar.addEventListener("click", function () { seleccionar(null); });
+      barra.appendChild(ver); barra.appendChild(cerrar);
+    }
+
+    // Lo que no tiene ubicación queda fuera del mapa, en una bandeja por región.
+    var bandejaFirma = "", bandejaAbierta = false;
+    function pintarBandeja() {
+      if (nivel !== "region") { bandeja.hidden = true; bandejaFirma = ""; return; }
+      var sinDir = entidades.filter(function (n) {
+        return n.tipo === "institucion" && visibles[n.id] && info[n.id].region === regionSel && info[n.id].x === null;
+      });
+      // Sueltos: lo que no tiene dónde apoyarse en este mapa. Una persona cuya institución no está
+      // ubicada, y un ensayo sin ninguna sede ubicada en esta región. No basta con mirar si la
+      // institución pasa los filtros: el ancla existe aunque la institución esté filtrada.
+      var sueltos = entidades.filter(function (n) {
+        if (n.tipo === "institucion" || !visibles[n.id] || !enRegion(n, regionSel)) return false;
+        if (n.tipo === "persona") {
+          var i = info[n.id].inst;
+          return !i || info[i.id].x === null || info[i.id].region !== regionSel;
+        }
+        return !adj[n.id].some(function (a) { return info[a.otro].x !== null && info[a.otro].region === regionSel; });
+      });
+      var firma = regionSel + "|" + sinDir.length + "|" + sueltos.length + "|" + sel;
+      if (firma === bandejaFirma) return;
+      bandejaFirma = firma;
+      bandeja.innerHTML = "";
+      if (!sinDir.length && !sueltos.length) { bandeja.hidden = true; return; }
+      bandeja.hidden = false;
+      // Empieza plegada (abierta tapaba media región en pantallas chicas), pero si el usuario la
+      // abrió se queda abierta: antes, tocar uno de sus chips la cerraba en la cara.
+      bandeja.open = bandejaAbierta;
+      var nP = sueltos.filter(function (n) { return n.tipo === "persona"; }).length, nE = sueltos.length - nP;
+      bandeja.appendChild(el("summary", "", "Fuera del mapa en " + corto(regionSel) + ": " +
+        [sinDir.length ? plural(sinDir.length, "institución sin ubicación", "instituciones sin ubicación") : "",
+         nP ? plural(nP, "persona", "personas") : "", nE ? plural(nE, "ensayo", "ensayos") : ""].filter(Boolean).join(" · ")));
+      var fila = el("div", "geo-bandeja-fila");
+      sinDir.sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
+        var b = el("button", "geo-chip"); b.type = "button";
+        b.setAttribute("aria-pressed", String(sel === n.id));
+        b.appendChild(el("span", "sug-forma institucion", "■"));
+        b.appendChild(document.createTextNode(n.nombre));
+        b.addEventListener("click", function () { seleccionar(sel === n.id ? null : n.id); });
+        fila.appendChild(b);
+      });
+      if (sueltos.length) fila.appendChild(el("span", "geo-nota", "Las personas y ensayos sin una institución ubicada siguen en Conexiones y Fichas."));
+      bandeja.appendChild(fila);
+    }
+
+    function pintarPanel() {
+      panel.innerHTML = "";
+      if (!preparado) return;
+      if (nivel === "pais") {
+        panel.appendChild(el("h3", "", "Chile"));
+        var cuenta = {};
+        entidades.forEach(function (n) {
+          if (visibles[n.id]) info[n.id].regiones.forEach(function (r) { cuenta[r] = (cuenta[r] || 0) + 1; });
+        });
+        panel.appendChild(el("p", "geo-resumen", plural(Object.keys(visibles).length, "ficha", "fichas") + " en " +
+          plural(lugares.length, "ciudad", "ciudades") + ". Elegí una región para ver sus instituciones en el mapa."));
+        var ul = el("ul", "geo-lista");
+        Object.keys(cuenta).sort(function (a, b) { return cuenta[b] - cuenta[a]; }).forEach(function (r) {
+          var li = el("li"), b = el("button", "geo-item"); b.type = "button";
+          b.setAttribute("data-foco", "region-" + r);
+          b.appendChild(el("span", "", corto(r))); b.appendChild(el("span", "num", String(cuenta[r])));
+          b.addEventListener("click", function () { entrarRegion(r); });
+          b.addEventListener("mouseenter", function () { hover = { tipo: "region", id: r }; lz.dibujar(); });
+          b.addEventListener("mouseleave", function () { hover = null; lz.dibujar(); });
+          li.appendChild(b); ul.appendChild(li);
+        });
+        panel.appendChild(ul);
+      } else {
+        panel.appendChild(el("h3", "", corto(regionSel)));
+        var todas = entidades.filter(function (n) { return n.tipo === "institucion" && info[n.id].region === regionSel; });
+        // Cuántas tienen ubicación NO depende de los filtros: con el filtro en "Personas" decía
+        // "0 de 38 instituciones con ubicación", que se leía como que el dato no existe.
+        var ubicadas = todas.filter(function (n) { return info[n.id].x !== null; });
+        var visiblesAqui = ubicadas.filter(function (n) { return visibles[n.id]; });
+        var nVis = entidades.filter(function (n) { return visibles[n.id] && enRegion(n, regionSel); }).length;
+        panel.appendChild(el("p", "geo-resumen", plural(nVis, "ficha", "fichas") + " con los filtros de ahora · " +
+          ubicadas.length + " de " + plural(todas.length, "institución", "instituciones") + " con ubicación."));
+        var accion = el("button", "geo-accion", "Ver conexiones y fichas de " + corto(regionSel)); accion.type = "button";
+        accion.setAttribute("data-foco", "ver-region");
+        accion.addEventListener("click", function () {
+          state.region = corto(regionSel); state.ciudad = null;
+          document.querySelectorAll("[data-region]").forEach(function (x) {
+            x.setAttribute("aria-pressed", String(x.getAttribute("data-region") === state.region));
+          });
+          verLugar();
+        });
+        panel.appendChild(accion);
+        var ul2 = el("ul", "geo-lista");
+        visiblesAqui.sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
+          var li = el("li"), b = el("button", "geo-item"); b.type = "button";
+          b.setAttribute("data-foco", "inst-" + n.id);
+          b.setAttribute("aria-pressed", String(sel === n.id));
+          var txt = el("span"); txt.appendChild(document.createTextNode(n.nombre));
+          txt.appendChild(el("span", "sub", info[n.id].ubic.principal.comuna));
+          b.appendChild(txt); b.appendChild(el("span", "num", String(adj[n.id].length)));
+          b.addEventListener("click", function () { seleccionar(sel === n.id ? null : n.id, true); });
+          b.addEventListener("mouseenter", function () { hover = { tipo: "ficha", id: n.id }; lz.dibujar(); });
+          b.addEventListener("mouseleave", function () { hover = null; lz.dibujar(); });
+          li.appendChild(b); ul2.appendChild(li);
+        });
+        panel.appendChild(ul2);
+        panel.insertBefore(leyenda(), ul2);
+      }
+      if (ubicFallo) {
+        panel.appendChild(el("p", "geo-resumen", "No se pudieron cargar las ubicaciones de las instituciones. " +
+          "El mapa muestra las regiones; las instituciones quedan en la bandeja hasta que se recupere el archivo."));
+      }
+      var r = ubicaciones ? ubicaciones.resumen : null;
+      panel.appendChild(el("p", "geo-fuentes", (r ? r.con_ubicacion + " de " + (r.con_ubicacion + r.sin_ubicar) +
+        " instituciones con ubicación, pendiente de revisión: registro de establecimientos del DEIS (Minsal, CC0), " +
+        "direcciones de sitios oficiales y OpenStreetMap. " : "") +
+        "Límites comunales: geoBoundaries, datos de la BCN (CC BY 3.0 IGO). Ubicaciones y calles © colaboradores de OpenStreetMap (ODbL)."));
+    }
+
+    // La leyenda vive en el panel y no sobre el mapa: encima tapaba justo la esquina de la bandeja.
+    function leyenda() {
+      var box = el("div", "geo-leyenda");
+      [["institucion", "■", "Institución en su ubicación"], ["institucion", "□", "Ubicada solo por su comuna"],
+       ["persona", "●", "Persona, junto a su institución"], ["ensayo", "▲", "N ensayos: tocá la institución para verlos"]].forEach(function (f) {
+        var s = el("span"), g = el("span", "", f[1]);
+        g.style.color = "var(--" + f[0] + ")";
+        s.appendChild(g); s.appendChild(document.createTextNode(" " + f[2]));
+        box.appendChild(s);
+      });
+      return box;
+    }
+
+    // ------------------------------------------------------------ API
+    // Los límites y las ubicaciones se piden por separado a propósito: sin ubicaciones el país y
+    // sus regiones igual se dibujan, y las instituciones quedan en la bandeja de su región en vez
+    // de dejar la vista de entrada en un cartel de error.
+    function mostrar() {
+      if (!presentado) barra.textContent = "Cargando el mapa…";
+      if (!promesa) {
+        promesa = fetch(GEO_LIMITES_URL, { cache: "no-cache" }).then(jsonOk)
+          .then(function (d) { limites = d; }, function (err) { promesa = null; throw err; });
+      }
+      promesa.then(function () {
+        if (!preparado) preparar();
+        recalcular();
+        if (!presentado) {
+          presentado = true;
+          lz.medir();
+          irPais(true);
+          if (canvas.animate && !reducirMovimiento()) {
+            canvas.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
+          }
+        } else {
+          if (sel && !visibles[sel]) sel = null;
+          pintarTodo();
+        }
+      }, function (err) {
+        pintarError("No se pudo cargar el mapa: " + err.message + ".");
+      });
+      cargarUbicaciones().then(function () {
+        ubicFallo = false;
+        if (!preparado) return;
+        ubicarEntidades(); recalcular(); pintarTodo();
+      }, function () {
+        ubicFallo = true;
+        if (preparado) pintarPanel();
+      });
+    }
+    // El error deja siempre una salida: reintentar vuelve a pedir los dos archivos.
+    function pintarError(texto) {
+      barra.innerHTML = "";
+      barra.classList.remove("vacia");
+      barra.appendChild(el("span", "", texto));
+      var b = el("button", "", "Reintentar"); b.type = "button";
+      b.addEventListener("click", function () { mostrar(); });
+      barra.appendChild(b);
+    }
+    function refrescar() {
+      if (!preparado) return;
+      recalcular();
+      if (sel && !visibles[sel]) sel = null;
+      pintarTodo();
+    }
+    // Desde el buscador: entra a la región de la ficha y la elige. Devuelve false si no hay dónde.
+    function irA(id) {
+      if (!preparado || !visibles[id] || !info[id].region) return false;
+      if (nivel === "pais" || regionSel !== info[id].region) entrarRegion(info[id].region);
+      seleccionar(id, true);
+      return true;
+    }
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key !== "Escape" || !geoView.classList.contains("active") || !preparado) return;
+      if (document.getElementById("detail-sheet").classList.contains("open")) return;
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName)) return;
+      if (sel) seleccionar(null);
+      else if (comunaSel) { comunaSel = null; encuadrarNivel(false); pintarMigas(); lz.dibujar(); }
+      else if (nivel === "region") irPais(false);
+    });
+    [["geo-in", 1.6], ["geo-out", 1 / 1.6]].forEach(function (b) {
+      document.getElementById(b[0]).addEventListener("click", function (ev) {
+        if (preparado) lz.zoomEn(b[1], lz.w / 2, lz.h / 2, 240, ev.detail === 0);
+      });
+    });
+    document.getElementById("geo-reset").addEventListener("click", function (ev) {
+      if (!preparado) return;
+      comunaSel = null; pintarMigas();
+      encuadrarNivel(ev.detail === 0);
+    });
+    if (window.matchMedia) window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { lz.dibujar(); });
+
+    return { mostrar: mostrar, refrescar: refrescar, irA: irA, redibujar: function () { lz.dibujar(); } };
+  })();
+
+  function bloqueUbicacion(n) {
+    var box = document.createElement("div"); box.className = "ubicacion-bloque";
+    var titulo = document.createElement("div"); titulo.className = "sheet-section-title"; titulo.textContent = "Ubicación";
+    box.appendChild(titulo);
+    function linea(clase, texto) {
+      var p = document.createElement("p"); p.className = clase;
+      if (texto) p.textContent = texto;
+      box.appendChild(p);
+      return p;
+    }
+    function enlace(p, url, texto) {
+      // Sin URL citable el dato no deja de mostrarse, pero se dice que no tiene enlace a la fuente:
+      // un texto suelto que parece una fuente y no lleva a ninguna parte es peor que el aviso.
+      if (!esUrlSegura(url)) { p.appendChild(document.createTextNode(texto + " (sin enlace a la fuente)")); return; }
+      var a = document.createElement("a"); a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = texto + " ↗";
+      p.appendChild(a);
+    }
+    if (!ubicaciones) {
+      linea("ubicacion-meta", "Cargando ubicación…");
+      cargarUbicaciones().then(function () {
+        if (box.parentNode) box.parentNode.replaceChild(bloqueUbicacion(n), box);
+      }, function () { box.lastChild.textContent = "No se pudo cargar la ubicación."; });
+      return box;
+    }
+    var u = ubicaciones.instituciones[n.id];
+    if (!u) {
+      var s = ubicaciones.sin_ubicar[n.id];
+      linea("ubicacion-dir", "Sin dirección verificada");
+      linea("ubicacion-meta", "No aparece en el mapa hasta tener una fuente citable" + (s && s.motivo ? ": " + s.motivo : "."));
+      return box;
+    }
+    var p = u.principal;
+    linea("ubicacion-dir", p.direccion + ", " + p.comuna + (p.region ? " · " + (REGION_CORTA[p.region] || p.region) : ""));
+    var fd = p.fuente_direccion, fc = p.fuente_coordenadas;
+    var l1 = linea("ubicacion-meta");
+    l1.appendChild(document.createTextNode("Dirección: "));
+    enlace(l1, fd.url, FUENTE_UBICACION[fd.tipo] || fd.tipo);
+    l1.appendChild(document.createTextNode(" · consultada " + fd.fecha));
+    var l2 = linea("ubicacion-meta");
+    l2.appendChild(document.createTextNode("Punto en el mapa: " + (PRECISION_TEXTO[p.precision] || p.precision) + ", según "));
+    enlace(l2, fc.url, FUENTE_UBICACION[fc.tipo] || fc.tipo);
+    if (u.otras_sedes.length) {
+      var l3 = linea("ubicacion-meta", "Otras sedes (no se dibujan): ");
+      u.otras_sedes.forEach(function (o, i) {
+        if (i) l3.appendChild(document.createTextNode(" · "));
+        enlace(l3, o.fuente_url, o.direccion + (o.comuna ? ", " + o.comuna : ""));
+      });
+    }
+    u.avisos.forEach(function (a) { linea("ubicacion-aviso", "Por revisar: " + a); });
+    linea("ubicacion-aviso", "Pendiente de revisión por una persona.");
+    return box;
   }
 
-  function aplicarGeoVB() {
-    document.getElementById("geomap").setAttribute("viewBox",
-      geoVB.x + " " + geoVB.y + " " + geoVB.w + " " + geoVB.h);
-  }
   function reducirMovimiento() {
     return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }
 
-  // Cámara de un mapa (grafo o Chile). Los botones + − ⟲ mueven el encuadre con una transición
+  // Cámara del grafo. Los botones + − ⟲ mueven el encuadre con una transición
   // corta en vez de saltar: con cientos de puntos, un salto de zoom hace perder de vista dónde
   // estabas. La rueda y el arrastre siguen 1:1 —ahí la mano ya es la animación— y cortan
   // cualquier transición en curso. Cada transición parte del encuadre ACTUAL, y un segundo
@@ -2400,49 +3633,6 @@
     function base() { return destino || leer(); }
     return { ir: ir, cancelar: cancelar, base: base };
   }
-
-  function encuadreGeo(vb, f) {
-    var nw = Math.max(GEO_VB.w / 14, Math.min(GEO_VB.w, vb.w * f));
-    var nh = nw * (vb.h / vb.w);
-    return { x: vb.x + (vb.w - nw) / 2, y: vb.y + (vb.h - nh) / 2, w: nw, h: nh };
-  }
-  var camaraGeo = crearCamara(function () { return geoVB; }, function (vb) { geoVB = vb; aplicarGeoVB(); });
-  function zoomGeo(f) {
-    if (!geoVB || !GEO_VB) return;
-    camaraGeo.cancelar();
-    geoVB = encuadreGeo(geoVB, f); aplicarGeoVB();
-  }
-  // `detail === 0` es un click que vino del teclado (Enter o espacio sobre el botón).
-  document.getElementById("geo-in").addEventListener("click", function (ev) {
-    if (geoVB && GEO_VB) camaraGeo.ir(encuadreGeo(camaraGeo.base(), 0.75), ev.detail === 0);
-  });
-  document.getElementById("geo-out").addEventListener("click", function (ev) {
-    if (geoVB && GEO_VB) camaraGeo.ir(encuadreGeo(camaraGeo.base(), 1.33), ev.detail === 0);
-  });
-  document.getElementById("geo-reset").addEventListener("click", function (ev) {
-    if (GEO_VB) camaraGeo.ir({ x: GEO_VB.x, y: GEO_VB.y, w: GEO_VB.w, h: GEO_VB.h }, ev.detail === 0);
-  });
-  (function () {
-    var svg = document.getElementById("geomap");
-    svg.addEventListener("wheel", function (ev) { ev.preventDefault(); zoomGeo(ev.deltaY > 0 ? 1.12 : 0.89); },
-      { passive: false });
-    var pan = false, p0 = null, v0 = null;
-    svg.addEventListener("pointerdown", function (ev) {
-      camaraGeo.cancelar();
-      if (ev.target.closest(".geo-ciudad")) return;
-      pan = true; p0 = { x: ev.clientX, y: ev.clientY }; v0 = { x: geoVB.x, y: geoVB.y };
-      svg.setPointerCapture(ev.pointerId);
-    });
-    svg.addEventListener("pointermove", function (ev) {
-      if (!pan || !geoVB) return;
-      var r = svg.getBoundingClientRect();
-      geoVB.x = v0.x - (ev.clientX - p0.x) * (geoVB.w / r.width);
-      geoVB.y = v0.y - (ev.clientY - p0.y) * (geoVB.h / r.height);
-      aplicarGeoVB();
-    });
-    svg.addEventListener("pointerup", function () { pan = false; });
-    svg.addEventListener("pointercancel", function () { pan = false; });
-  })();
 
   // ---------------- Foco: aislar la red de un nodo ----------------
   // Con 400 nodos dibujados, "¿con quién se conecta esta persona?" no se contesta mirando: la
@@ -3515,6 +4705,7 @@
       sub.appendChild(subFuente);
     }
     content.appendChild(tag); content.appendChild(name); content.appendChild(sub);
+    if (n.tipo === "institucion") content.appendChild(bloqueUbicacion(n));
 
     if (n.tipo === "ensayo_clinico") {
       var meta = document.createElement("div"); meta.className = "ensayo-meta";
@@ -3721,11 +4912,19 @@
 
     backdrop.classList.add("open");
     sheet.classList.add("open");
+    // La ficha es aria-modal: si el foco se queda afuera, el lector de pantalla no anuncia nada y
+    // con el teclado se sigue navegando la página que la ficha acaba de tapar.
+    focoPrevio = document.activeElement;
+    document.getElementById("sheet-close").focus();
   }
 
+  var focoPrevio = null;
   function closeDetail() {
+    if (!sheet.classList.contains("open")) return;
     backdrop.classList.remove("open");
     sheet.classList.remove("open");
+    if (focoPrevio && document.contains(focoPrevio)) focoPrevio.focus();
+    focoPrevio = null;
   }
   document.getElementById("sheet-close").addEventListener("click", closeDetail);
   backdrop.addEventListener("click", closeDetail);

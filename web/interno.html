@@ -274,7 +274,7 @@
           estático porque nunca muestra más de un puñado de vecinos.</li>
         <li>No hay filtro por especialidad (solo por tipo de entidad y texto libre) — filtrar por biomarcador es una idea de <code>ROADMAP.md</code> (no una promesa del spec original, README.md nunca menciona biomarcadores), y los datos actuales tampoco la sostienen de forma confiable todavía.</li>
         <li><s>La confianza se mostraba como nota fija de texto, no por hecho</s> — resuelto: cada hecho ahora muestra su propio <code>confianza</code> (index.html y esta página). Sigue faltando el botón de "corregir este dato" del modelo de datos, y el canal de contacto para pedirlo (README.md tiene el placeholder sin completar).</li>
-        <li>No hay mapa de Chile con centros geolocalizados — es una pregunta abierta en <code>ROADMAP.md</code> (todavía sin decidir), no un compromiso del roadmap de README.md, que no la menciona.</li>
+        <li><s>No hay mapa de Chile con centros geolocalizados</s> — resuelto en parte: la vista Chile ubica 56 de 61 instituciones en su dirección (registro DEIS del Minsal, sitios oficiales y OpenStreetMap, ver <code>data/geo/ubicaciones-instituciones.json</code>), todo pendiente de revisión humana. Las cinco restantes no tienen una fuente citable y quedan en la bandeja de su región.</li>
         <li>Sin backend real: los datos siguen viviendo en un archivo JSON estático, no en una base de datos. La Fase 4 (automatizar PubMed/ClinicalTrials.gov) va a necesitar eso y la bandeja de revisión humana descrita en el spec.</li>
       </ul>
     </div>
