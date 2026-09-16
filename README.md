@@ -102,7 +102,8 @@ debe servir para cualquier especialidad, no solo para una patología de ejemplo.
 | Hospitales / universidades | Activa (manual al inicio) | Afiliación institucional publicada |
 | SciELO / Revista Médica de Chile | Activa | Producción científica local, coautoría |
 | Instituto de Salud Pública (ISP) | **Futura, no en MVP** | No tiene registro público navegable de investigadores por patología; requiere revisión caso a caso por protocolo. Se evalúa más adelante. |
-| OpenStreetMap (Nominatim) | **Propuesta, en revisión** (2026-09-15) | Ubicación de instituciones (no de personas), con la URL del objeto como fuente. Licencia ODbL. Ver `data/pending/geolocalizacion-osm-2026-09-15/` |
+| OpenStreetMap (Nominatim) | Activa (ubicación de instituciones, pendiente de revisión) | Punto en el mapa de instituciones (no de personas) cuando el DEIS no lo tiene, con la URL del objeto como fuente. Licencia ODbL. Ver `scripts/geolocalizar_instituciones_osm.py` y `scripts/consolidar_ubicaciones.py` |
+| DEIS (Minsal) — Establecimientos de Salud | Activa (ubicación de instituciones, pendiente de revisión) | Dirección y coordenadas oficiales de hospitales y clínicas, asignadas a mano por código de establecimiento. datos.gob.cl, licencia CC0. Consolidado con las demás fuentes en `data/geo/ubicaciones-instituciones.json` |
 | geoBoundaries — límites de la BCN | Activa (solo geometría) | Límites de regiones y comunas para dibujar el mapa por ciudad. Datos de la Biblioteca del Congreso Nacional y OCHA ROLAC, licencia CC BY 3.0 IGO. Ver `data/geo/` y `scripts/preparar_limites_chile.py` |
 
 Cualquier fuente nueva se agrega a esta tabla antes de integrarse — no se consume

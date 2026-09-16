@@ -1,0 +1,1793 @@
+{
+ "generado": "2026-09-16",
+ "nota": "Propuesta pendiente de revisión humana. El mapa usa solo 'principal'; 'otras_sedes' se muestran en la ficha.",
+ "fuentes": {
+  "deis_minsal": {
+   "nombre": "Establecimientos de Salud (DEIS, Minsal)",
+   "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+   "recurso": "https://datos.gob.cl/dataset/3bf4cf7c-f638-4735-9a01-f65faae4beca/resource/2c44d782-3365-44e3-aefb-2c8b8363a1bc/download/establecimientos_20260915.csv",
+   "licencia": "CC0"
+  },
+  "openstreetmap": {
+   "nombre": "OpenStreetMap",
+   "url": "https://www.openstreetmap.org/copyright",
+   "licencia": "ODbL, © colaboradores de OpenStreetMap"
+  },
+  "geoboundaries": {
+   "nombre": "geoBoundaries gbOpen (CHL ADM1, ADM3) — datos de la Biblioteca del Congreso Nacional de Chile (BCN) y OCHA ROLAC",
+   "url": "https://www.geoboundaries.org/countryDownloads.html",
+   "licencia": "CC BY 3.0 IGO"
+  }
+ },
+ "resumen": {
+  "con_ubicacion": 56,
+  "sin_ubicar": 5,
+  "direccion": {
+   "sitio_oficial": 22,
+   "deis_minsal": 18,
+   "openstreetmap": 13,
+   "otro": 1,
+   "superintendencia_salud": 2
+  },
+  "coordenadas": {
+   "openstreetmap · direccion": 12,
+   "deis_minsal · establecimiento": 29,
+   "openstreetmap · establecimiento": 11,
+   "openstreetmap · calle": 4
+  }
+ },
+ "instituciones": {
+  "bradford-hill": {
+   "nombre": "Bradford Hill Clinical Research Center",
+   "principal": {
+    "direccion": "Palestina (ex Manzano) 343, 5.º piso",
+    "comuna": "Recoleta",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Bradford Hill",
+    "fuente_direccion": {
+     "url": "https://www.bradfordhill.org/",
+     "tipo": "sitio_oficial",
+     "cita": "Palestina (Ex Manzano) #343, 5ºpiso, Recoleta, Santiago de Chile.",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4293481,
+    "lon": -70.6453487,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/112605212",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Palestina 343, Recoleta»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "falp": {
+   "nombre": "Fundación Arturo López Pérez (FALP)",
+   "principal": {
+    "direccion": "Rancagua 878",
+    "comuna": "Providencia",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Instituto Clínico Oncológico Fundación Arturo López Pérez",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112254"
+    },
+    "lat": -33.43913,
+    "lon": -70.62242,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112254"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "torax": {
+   "nombre": "Instituto Nacional del Tórax",
+   "principal": {
+    "direccion": "José Manuel Infante 717",
+    "comuna": "Providencia",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Instituto Nacional de Enfermedades Respiratorias y Cirugía Torácica",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112103"
+    },
+    "lat": -33.437988,
+    "lon": -70.621882,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112103"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "james-lind": {
+   "nombre": "James Lind Centro de Investigación del Cáncer",
+   "principal": {
+    "direccion": "Hochstetter 298",
+    "comuna": "Temuco",
+    "ciudad": "Temuco",
+    "region": "Región de La Araucanía",
+    "nombre_oficial": "James Lind Centro de Investigación del Cáncer",
+    "fuente_direccion": {
+     "url": "https://jameslind.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Hochstetter 298, Temuco",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -38.7311857,
+    "lon": -72.6120921,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/node/8586902939",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Hochstetter 298, Temuco»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-concepcion": {
+   "nombre": "Hospital Clínico Regional de Concepción",
+   "principal": {
+    "direccion": "San Martín 1436",
+    "comuna": "Concepción",
+    "ciudad": "Concepción",
+    "region": "Región del Biobío",
+    "nombre_oficial": "Hospital Clínico Regional Dr. Guillermo Grant Benavente",
+    "fuente_direccion": {
+     "url": "https://ssconce.redsalud.gob.cl/hospitales/",
+     "tipo": "sitio_oficial",
+     "cita": "San Martín 1436, Concepción",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -36.82511,
+    "lon": -73.037951,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 118100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-puerto-montt": {
+   "nombre": "Hospital Puerto Montt",
+   "principal": {
+    "direccion": "Calle Los Aromos 65, sector Cayenel",
+    "comuna": "Puerto Montt",
+    "ciudad": "Puerto Montt",
+    "region": "Región de Los Lagos",
+    "nombre_oficial": "Hospital Puerto Montt Dr. Eduardo Schütz Schroeder",
+    "fuente_direccion": {
+     "url": "https://ssreloncavi.redsalud.gob.cl/red-asistencial/nuevo-hospital-de-puerto-montt/",
+     "tipo": "sitio_oficial",
+     "cita": "Dirección Oficial: Calle Los Aromos #65, sector Cayenel, Puerto Montt.",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -41.44855,
+    "lon": -72.957342,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 124105"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": [
+    "el número verificado (65) no es el del DEIS (63)"
+   ]
+  },
+  "puc": {
+   "nombre": "Pontificia Universidad Católica de Chile",
+   "principal": {
+    "direccion": "Avenida Libertador Bernardo O'Higgins 360",
+    "comuna": "Santiago",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Pontificia Universidad Católica de Chile",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/157653811",
+     "tipo": "openstreetmap",
+     "cita": null,
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "lat": -33.441775,
+    "lon": -70.640326,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/157653811",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "k2-oncology": {
+   "nombre": "K2 Oncology",
+   "principal": {
+    "direccion": "Avenida Los Leones 2209",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "K2 Oncology",
+    "fuente_direccion": {
+     "url": "https://www.k2oncology.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Av. Los Leones 2209, Providencia",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4391301,
+    "lon": -70.600585,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/618341463",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Avenida Los Leones 2209, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "centro-precision": {
+   "nombre": "Centro de Oncología de Precisión",
+   "principal": {
+    "direccion": "Badajoz 130, Edificio Menor",
+    "comuna": "Las Condes",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Centro de Oncología de Precisión de la Universidad Mayor",
+    "fuente_direccion": {
+     "url": "https://cop.umayor.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Badajoz 130, Edificio Menor, Las Condes, Santiago, Chile",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4072281,
+    "lon": -70.5732136,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/200027044",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Badajoz 130, Las Condes»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "clinica-alemana": {
+   "nombre": "Clínica Alemana Santiago",
+   "principal": {
+    "direccion": "Avenida Vitacura 5951",
+    "comuna": "Vitacura",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Clínica Alemana de Santiago",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/relation/13179277",
+     "tipo": "openstreetmap",
+     "cita": "Clínica Alemana; Avenida Vitacura 5951; Vitacura",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.391276,
+    "lon": -70.572983,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112200"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Avenida José Alcalde Délano 12205",
+     "comuna": "Lo Barnechea",
+     "fuente_url": "https://www.alemana.cl/Informacion_para_pecientes/REGLAMENTO_INTERNO_DE_FUNCIONAMIENTO.pdf"
+    }
+   ],
+   "avisos": []
+  },
+  "clinica-las-condes": {
+   "nombre": "Clínica Las Condes",
+   "principal": {
+    "direccion": "Lo Fontecilla 441",
+    "comuna": "Las Condes",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Clínica Las Condes",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112212"
+    },
+    "lat": -33.384094,
+    "lon": -70.530151,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112212"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "orlandi": {
+   "nombre": "Orlandi Oncología",
+   "principal": {
+    "direccion": "General Salvo 159",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Centro Médico e Investigación Orlandi Oncología",
+    "fuente_direccion": {
+     "url": "https://orlandioncologia.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "General Salvo 159, Providencia",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.434315,
+    "lon": -70.623886,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 200905"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "clinica-santa-maria": {
+   "nombre": "Clínica Santa María",
+   "principal": {
+    "direccion": "Avenida Santa María 0500",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Clínica Santa María",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/37356304",
+     "tipo": "openstreetmap",
+     "cita": "Clínica Santa María; Avenida Santa María 500; Providencia",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.43282,
+    "lon": -70.62822,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112249"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Avenida Apoquindo 7331",
+     "comuna": "Las Condes",
+     "fuente_url": "https://www.clinicasantamaria.cl/"
+    },
+    {
+     "direccion": "Avenida Vitacura 4705",
+     "comuna": "Vitacura",
+     "fuente_url": "https://www.clinicasantamaria.cl/"
+    },
+    {
+     "direccion": "Avenida La Dehesa 1445",
+     "comuna": "Lo Barnechea",
+     "fuente_url": "https://www.clinicasantamaria.cl/"
+    },
+    {
+     "direccion": "Avenida Ossa 345",
+     "comuna": "La Reina",
+     "fuente_url": "https://www.clinicasantamaria.cl/"
+    }
+   ],
+   "avisos": [
+    "el número verificado (0500) no es el del DEIS (410)"
+   ]
+  },
+  "uandes": {
+   "nombre": "Universidad de los Andes",
+   "principal": {
+    "direccion": "Avenida Monseñor Álvaro del Portillo 12455",
+    "comuna": "Las Condes",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Universidad de Los Andes",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/570065671",
+     "tipo": "openstreetmap",
+     "cita": null,
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "lat": -33.404245,
+    "lon": -70.506601,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/570065671",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "ser-chile": {
+   "nombre": "Sociedad Chilena de Enfermedades Respiratorias",
+   "principal": {
+    "direccion": "Santa Magdalena 75, oficina 701",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Sociedad Chilena de Enfermedades Respiratorias",
+    "fuente_direccion": {
+     "url": "https://revchilenfermrespir.cl/index.php/RChER/about/contact",
+     "tipo": "otro",
+     "cita": "Santa Magdalena 75. Of 701 - Providencia - Santiago - Chile.",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4204817,
+    "lon": -70.609709,
+    "precision": "calle",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/37912563",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Santa Magdalena 75, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "sochradi": {
+   "nombre": "Sociedad Chilena de Radiología",
+   "principal": {
+    "direccion": "Avenida General Holley 2363-A, oficina 404",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Sociedad Chilena de Radiología",
+    "fuente_direccion": {
+     "url": "https://sochradi.cl/contacto/",
+     "tipo": "sitio_oficial",
+     "cita": "Av. General Holley 2363-A, Of. 404 Providencia, Santiago, Chile",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4196009,
+    "lon": -70.6074224,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/108453405",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Avenida General Holley 2363, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "soc-cirujanos": {
+   "nombre": "Sociedad de Cirujanos de Chile",
+   "principal": {
+    "direccion": "Román Díaz 205, oficina 401",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Sociedad Chilena de Cirugía",
+    "fuente_direccion": {
+     "url": "https://www.socich.cl/contacto/",
+     "tipo": "sitio_oficial",
+     "cita": "Román Díaz N°205 Of. 401 (Próxima a la estación de metro Manuel Montt). Providencia, Santiago.",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4324387,
+    "lon": -70.6214409,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/108393520",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Román Díaz 205, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "uautonoma": {
+   "nombre": "Universidad Autónoma de Chile",
+   "principal": {
+    "direccion": "Avenida Canal de la Luz",
+    "comuna": "Talca",
+    "ciudad": null,
+    "region": "Región del Maule",
+    "nombre_oficial": "Universidad Autónoma de Chile (sede Talca)",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/156568071",
+     "tipo": "openstreetmap",
+     "cita": null,
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "lat": -35.419793,
+    "lon": -71.668713,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/156568071",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "uchile": {
+   "nombre": "Universidad de Chile",
+   "principal": {
+    "direccion": "Avenida Libertador Bernardo O'Higgins 1058, Casa Central",
+    "comuna": "Santiago",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Universidad de Chile",
+    "fuente_direccion": {
+     "url": "https://uchile.cl/presentacion/campus/casa-central",
+     "tipo": "sitio_oficial",
+     "cita": "Dirección: Avenida Libertador Bernardo O'Higgins 1058, Santiago",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4445568,
+    "lon": -70.6509537,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/25018684",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Avenida Libertador Bernardo O'Higgins 1058, Santiago»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "uss": {
+   "nombre": "Universidad San Sebastián",
+   "principal": {
+    "direccion": "General Cruz 1577",
+    "comuna": "Concepción",
+    "ciudad": "Concepción",
+    "region": "Región del Biobío",
+    "nombre_oficial": "Universidad San Sebastián",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/114254370",
+     "tipo": "openstreetmap",
+     "cita": "Universidad San Sebastián; Cruz 1577",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -36.813091,
+    "lon": -73.043402,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/114254370",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "udec": {
+   "nombre": "Universidad de Concepción",
+   "principal": {
+    "direccion": "Víctor Lamas 1290",
+    "comuna": "Concepción",
+    "ciudad": null,
+    "region": "Región del Biobío",
+    "nombre_oficial": "Universidad de Concepción",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/113312181",
+     "tipo": "openstreetmap",
+     "cita": null,
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "lat": -36.831014,
+    "lon": -73.034681,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/113312181",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "utarapaca": {
+   "nombre": "Universidad de Tarapacá",
+   "principal": {
+    "direccion": "18 de Septiembre 2222",
+    "comuna": "Arica",
+    "ciudad": null,
+    "region": "Región de Arica y Parinacota",
+    "nombre_oficial": "Universidad de Tarapacá",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/104367037",
+     "tipo": "openstreetmap",
+     "cita": null,
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "lat": -18.490157,
+    "lon": -70.296168,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/104367037",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "unab": {
+   "nombre": "Universidad Andrés Bello",
+   "principal": {
+    "direccion": "Sazié 2212",
+    "comuna": "Santiago",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Universidad Andrés Bello",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/625289635",
+     "tipo": "openstreetmap",
+     "cita": "Universidad Andrés Bello; Sazié 2212; Santiago",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.451485,
+    "lon": -70.666985,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/625289635",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "República 239",
+     "comuna": "Santiago",
+     "fuente_url": "https://infraestructura.unab.cl/campus-unab/campus-republica/"
+    },
+    {
+     "direccion": "Antonio Varas 807",
+     "comuna": "Providencia",
+     "fuente_url": "https://www.unab.cl/desarrolloestudiantil/servicios/experiencia-universitaria/biblioteca/"
+    }
+   ],
+   "avisos": []
+  },
+  "uach": {
+   "nombre": "Universidad Austral de Chile",
+   "principal": {
+    "direccion": "Campus Isla Teja, sin número",
+    "comuna": "Valdivia",
+    "ciudad": "Valdivia",
+    "region": "Región de Los Ríos",
+    "nombre_oficial": "Universidad Austral de Chile",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/136115984",
+     "tipo": "openstreetmap",
+     "cita": "Universidad Austral de Chile; Valdivia",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -39.804651,
+    "lon": -73.250812,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/136115984",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Las Encinas 220, Campus Isla Teja",
+     "comuna": "Valdivia",
+     "fuente_url": "https://www.uach.cl/sedes-y-campus/informacion-general/campus-isla-teja"
+    }
+   ],
+   "avisos": []
+  },
+  "hosp-uchile": {
+   "nombre": "Hospital Clínico Universidad de Chile",
+   "principal": {
+    "direccion": "Santos Dumont 999",
+    "comuna": "Independencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital Clínico de la Universidad de Chile Dr. José Joaquín Aguirre",
+    "fuente_direccion": {
+     "url": "https://www.superdesalud.gob.cl/registro/hospital-clinico-de-la-universidad-de-chile-dr-jose-joaquin-aguirre/",
+     "tipo": "superintendencia_salud",
+     "cita": "Dirección | Santos Dumont Nº 999, Independencia, Región Metropolitana",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.420057,
+    "lon": -70.653116,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 109200"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-carabineros": {
+   "nombre": "Hospital de Carabineros",
+   "principal": {
+    "direccion": "Antonio Varas 2500",
+    "comuna": "Ñuñoa",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital de Carabineros",
+    "fuente_direccion": {
+     "url": "https://hoscar.cl/v2.0/",
+     "tipo": "sitio_oficial",
+     "cita": "El Hospital de Carabineros está ubicado en Antonio Varas 2500, Ñuñoa, Santiago.",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.450658,
+    "lon": -70.608463,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112240"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": [
+    "la dirección verificada (Antonio Varas 2500) no es la del DEIS (Simón Bolívar 2200)"
+   ]
+  },
+  "isp": {
+   "nombre": "Instituto de Salud Pública de Chile",
+   "principal": {
+    "direccion": "Avenida Marathon 1000",
+    "comuna": "Ñuñoa",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Instituto de Salud Pública de Chile",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/152907976",
+     "tipo": "openstreetmap",
+     "cita": "Instituto de Salud Pública de Chile (ISP); Avenida Marathon 1000; Ñuñoa",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.463395,
+    "lon": -70.616398,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/152907976",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "oncocentro": {
+   "nombre": "Oncocentro APYS",
+   "principal": {
+    "direccion": "Avenida La Marina 1702",
+    "comuna": "Viña del Mar",
+    "ciudad": "Viña del Mar",
+    "region": "Región de Valparaíso",
+    "nombre_oficial": "Oncocentro",
+    "fuente_direccion": {
+     "url": "https://oncocentro.cl/sucursal-vina-del-mar-oncocentro/",
+     "tipo": "sitio_oficial",
+     "cita": "Avenida La Marina 1702, Viña del Mar",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.0204443,
+    "lon": -71.5618134,
+    "precision": "calle",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/586747670",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Avenida La Marina 1702, Viña del Mar»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Independencia 491, oficina 209, 2.º piso",
+     "comuna": "Valdivia",
+     "fuente_url": "https://oncocentro.cl/"
+    }
+   ],
+   "avisos": []
+  },
+  "cic-vina": {
+   "nombre": "Centro de Investigaciones Clínicas Viña del Mar",
+   "principal": {
+    "direccion": "Limache 1741",
+    "comuna": "Viña del Mar",
+    "ciudad": null,
+    "region": "Región de Valparaíso",
+    "nombre_oficial": "Hospital Clínico Viña del Mar",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/812714508",
+     "tipo": "openstreetmap",
+     "cita": null,
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "lat": -33.028924,
+    "lon": -71.538957,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/812714508",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "saga": {
+   "nombre": "Centro de Estudios Clínicos SAGA",
+   "principal": {
+    "direccion": "Avenida Antonio Varas 475",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Centro de Estudios Clínicos SAGA SpA",
+    "fuente_direccion": {
+     "url": "https://cecsaga.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Av. Antonio Varas 475, Providencia.",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4320479,
+    "lon": -70.6163844,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/448416954",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Avenida Antonio Varas 475, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Avenida Antonio Varas 497",
+     "comuna": "Providencia",
+     "fuente_url": "https://cecsaga.cl/"
+    },
+    {
+     "direccion": "Avenida Antonio Varas 517",
+     "comuna": "Providencia",
+     "fuente_url": "https://cecsaga.cl/"
+    }
+   ],
+   "avisos": []
+  },
+  "oncovida": {
+   "nombre": "Oncovida",
+   "principal": {
+    "direccion": "Manuel Montt 427",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Oncovida",
+    "fuente_direccion": {
+     "url": "https://oncovida.cl/conocenos/",
+     "tipo": "sitio_oficial",
+     "cita": "Centro Médico Manuel Montt. Manuel Montt 427, Providencia",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.43231889,
+    "lon": -70.61824169,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 201799"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Cardenio Avello 36, 3.er piso",
+     "comuna": "Concepción",
+     "fuente_url": "https://oncovida.cl/conocenos/"
+    }
+   ],
+   "avisos": []
+  },
+  "inc": {
+   "nombre": "Instituto Nacional del Cáncer",
+   "principal": {
+    "direccion": "Profesor Zañartu 1010",
+    "comuna": "Independencia",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Instituto Nacional del Cáncer Dr. Caupolicán Pardo Correa (Santiago, Recoleta)",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 109103"
+    },
+    "lat": -33.418128,
+    "lon": -70.652105,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 109103"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "ic-la-serena": {
+   "nombre": "IC La Serena Research",
+   "principal": {
+    "direccion": "Woodrow Wilson 1697",
+    "comuna": "La Serena",
+    "ciudad": "La Serena",
+    "region": "Región de Coquimbo",
+    "nombre_oficial": "IC La Serena Research",
+    "fuente_direccion": {
+     "url": "https://iclaserenaresearch.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Wodroow Wilson #1697, La Serena, Chile",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -29.91777454,
+    "lon": -71.24769363,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 202100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "icos": {
+   "nombre": "Instituto Clínico Oncológico del Sur (ICOS)",
+   "principal": {
+    "direccion": "Lago Puyehue 01745",
+    "comuna": "Temuco",
+    "ciudad": "Temuco",
+    "region": "Región de La Araucanía",
+    "nombre_oficial": "Clínica ICOS",
+    "fuente_direccion": {
+     "url": "https://oncosur.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "ONCOSUR ® - Oncología Médica en Clínica ICOS Lago Puyehue 01745 - Temuco",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -38.7373129,
+    "lon": -72.6272769,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/924535662",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Lago Puyehue 01745, Temuco»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "biocenter": {
+   "nombre": "Biocenter",
+   "principal": {
+    "direccion": "Lincoyán 334, piso 7",
+    "comuna": "Concepción",
+    "ciudad": "Concepción",
+    "region": "Región del Biobío",
+    "nombre_oficial": "BIOCENTER Centro Clínico de Investigación",
+    "fuente_direccion": {
+     "url": "https://biocenter.cl/index.html",
+     "tipo": "sitio_oficial",
+     "cita": "Lincoyán 334, piso 7. Concepción",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -36.829565,
+    "lon": -73.0523743,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/322992688",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Lincoyán 334, Concepción»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "redsalud": {
+   "nombre": "Clínica RedSalud",
+   "principal": {
+    "direccion": "Avenida Tabancura 1185",
+    "comuna": "Vitacura",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Clínica RedSalud Vitacura",
+    "fuente_direccion": {
+     "url": "https://www.openstreetmap.org/way/36977067",
+     "tipo": "openstreetmap",
+     "cita": null,
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "lat": -33.382012,
+    "lon": -70.535225,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/36977067",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-15",
+     "via": "scripts/geolocalizar_instituciones_osm.py"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "ucm": {
+   "nombre": "Clínica Universidad Católica del Maule",
+   "principal": {
+    "direccion": "2 Sur 1525",
+    "comuna": "Talca",
+    "ciudad": null,
+    "region": "Región del Maule",
+    "nombre_oficial": "Clínica Universidad Católica Del Maule",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 116276"
+    },
+    "lat": -35.428905,
+    "lon": -71.655236,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 116276"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "inmunocel": {
+   "nombre": "Inmunocel",
+   "principal": {
+    "direccion": "Avenida Presidente Kennedy 5488, Torre Norte, oficinas 702-703",
+    "comuna": "Vitacura",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Inmunocel Chile",
+    "fuente_direccion": {
+     "url": "https://inmunocel.com/",
+     "tipo": "sitio_oficial",
+     "cita": "Av. Presidente Kennedy 5488, Torre Norte, Of 702-703, Vitacura, Santiago - Chile",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.3895666,
+    "lon": -70.5479663,
+    "precision": "calle",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/453374205",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Avenida Presidente Kennedy 5488, Vitacura»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Del Inca 4446",
+     "comuna": "Las Condes",
+     "fuente_url": "https://clinicainmunocel.com/"
+    },
+    {
+     "direccion": "Carretera El Cobre Presidente Eduardo Frei Montalva 884",
+     "comuna": "Rancagua",
+     "fuente_url": "https://clinicainmunocel.com/"
+    }
+   ],
+   "avisos": []
+  },
+  "cecim": {
+   "nombre": "CeCim Biocinetic",
+   "principal": {
+    "direccion": "Paseo Bulnes 79, oficina 27",
+    "comuna": "Santiago",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Centro de Estudios Clínicos e Investigaciones Médicas CeCim",
+    "fuente_direccion": {
+     "url": "https://cecim.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Paseo Bulnes #79, Oficina 27, Santiago, Región Metropolitana, Chile",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4449873,
+    "lon": -70.6695012,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/108525240",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Paseo Bulnes 79, Santiago»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "clinica-puerto-montt": {
+   "nombre": "Clínica Puerto Montt",
+   "principal": {
+    "direccion": "Panamericana 400",
+    "comuna": "Puerto Montt",
+    "ciudad": null,
+    "region": "Región de Los Lagos",
+    "nombre_oficial": "Clínica Puerto Montt",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 124250"
+    },
+    "lat": -41.45861,
+    "lon": -72.954072,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 124250"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "iceg": {
+   "nombre": "Icegclinic",
+   "principal": {
+    "direccion": "Diego de Velásquez 2131",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "ICEG Clinic",
+    "fuente_direccion": {
+     "url": "https://icegclinic.com/contacto/",
+     "tipo": "sitio_oficial",
+     "cita": "Sede Providencia Diego de Velásquez 2131, Providencia",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4237284,
+    "lon": -70.6097612,
+    "precision": "calle",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/203290231",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Diego de Velásquez 2131, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Serafín Zamora 190",
+     "comuna": "La Florida",
+     "fuente_url": "https://icegclinic.com/contacto/"
+    }
+   ],
+   "avisos": []
+  },
+  "hosp-calvo-mackenna": {
+   "nombre": "Hospital Luis Calvo Mackenna",
+   "principal": {
+    "direccion": "Antonio Varas 360",
+    "comuna": "Providencia",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital de Niños Dr. Luis Calvo Mackenna",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112102"
+    },
+    "lat": -33.429848,
+    "lon": -70.6145273,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112102"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-van-buren": {
+   "nombre": "Hospital Carlos Van Buren",
+   "principal": {
+    "direccion": "San Ignacio 725",
+    "comuna": "Valparaíso",
+    "ciudad": null,
+    "region": "Región de Valparaíso",
+    "nombre_oficial": "Hospital Carlos Van Buren (Valparaíso)",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 106100"
+    },
+    "lat": -33.050258,
+    "lon": -71.611098,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 106100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-san-borja": {
+   "nombre": "Hospital Clínico San Borja Arriarán",
+   "principal": {
+    "direccion": "Santa Rosa 1234",
+    "comuna": "Santiago",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital Clínico San Borja Arriarán",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 111100"
+    },
+    "lat": -33.460498,
+    "lon": -70.64232,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 111100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-sotero": {
+   "nombre": "Hospital Sótero del Río",
+   "principal": {
+    "direccion": "Avenida Concha y Toro 3459",
+    "comuna": "Puente Alto",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital Dr. Sótero del Río",
+    "fuente_direccion": {
+     "url": "https://www.hospitalsoterodelrio.cl/web/",
+     "tipo": "sitio_oficial",
+     "cita": "Avenida Concha y Toro Nº 3459 Puente Alto, Santiago, Chile.",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.577251,
+    "lon": -70.581781,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 114101"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "iram": {
+   "nombre": "Instituto de Radiomedicina (IRAM)",
+   "principal": {
+    "direccion": "Avenida Américo Vespucio Norte 1314",
+    "comuna": "Vitacura",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Instituto de Radiomedicina IRAM",
+    "fuente_direccion": {
+     "url": "https://www.superdesalud.gob.cl/registro/instituto-de-radiomedicina-iram/",
+     "tipo": "superintendencia_salud",
+     "cita": "Dirección | Avenida Américo Vespucio N° 1314, Vitacura, Región Matropolitana",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -33.4013489,
+    "lon": -70.5877111,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/538383617",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-16",
+     "via": "Nominatim, búsqueda de «Avenida Américo Vespucio Norte 1314, Vitacura»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [
+    {
+     "direccion": "Los Coligües 1365",
+     "comuna": "Vitacura",
+     "fuente_url": "https://iram.cl/"
+    }
+   ],
+   "avisos": []
+  },
+  "hosp-militar": {
+   "nombre": "Hospital Militar de Santiago",
+   "principal": {
+    "direccion": "Larraín 9100",
+    "comuna": "La Reina",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital Militar de Santiago",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112530"
+    },
+    "lat": -33.4504927,
+    "lon": -70.538184,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112530"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-salvador": {
+   "nombre": "Hospital del Salvador",
+   "principal": {
+    "direccion": "Salvador 364",
+    "comuna": "Providencia",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital Del Salvador de Santiago",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112100"
+    },
+    "lat": -33.43664,
+    "lon": -70.624493,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 112100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-rancagua": {
+   "nombre": "Hospital Regional de Rancagua",
+   "principal": {
+    "direccion": "Alameda 611",
+    "comuna": "Rancagua",
+    "ciudad": null,
+    "region": "Región del Libertador Bernardo O'Higgins",
+    "nombre_oficial": "Hospital Dr. Franco Ravera Zunino",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 115100"
+    },
+    "lat": -34.15535824,
+    "lon": -70.76672344,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 115100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "clinica-davila": {
+   "nombre": "Clínica Dávila",
+   "principal": {
+    "direccion": "Recoleta 464",
+    "comuna": "Recoleta",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Clínica Dávila",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 109201"
+    },
+    "lat": -33.427257,
+    "lon": -70.648544,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 109201"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-barros-luco": {
+   "nombre": "Hospital Barros Luco Trudeau",
+   "principal": {
+    "direccion": "Gran Avenida José Miguel Carrera 3204",
+    "comuna": "San Miguel",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital Barros Luco Trudeau (Santiago, San Miguel)",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 113100"
+    },
+    "lat": -33.485147,
+    "lon": -70.644439,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 113100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-valdivia": {
+   "nombre": "Hospital Base de Valdivia",
+   "principal": {
+    "direccion": "Bueras 1003",
+    "comuna": "Valdivia",
+    "ciudad": "Valdivia",
+    "region": "Región de Los Ríos",
+    "nombre_oficial": "Hospital Base Valdivia",
+    "fuente_direccion": {
+     "url": "https://www.hbvaldivia.cl/portal/",
+     "tipo": "sitio_oficial",
+     "cita": "Bueras #1003 XIV Región de los Ríos, Valdivia, Chile",
+     "fecha": "2026-09-15",
+     "via": "colaborador IA, data/pending/tarea-chatgpt-2026-09-15/respuesta_lote1_A.json"
+    },
+    "lat": -39.831807,
+    "lon": -73.240138,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 122100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-temuco": {
+   "nombre": "Hospital Hernán Henríquez Aravena",
+   "principal": {
+    "direccion": "Montt 115",
+    "comuna": "Temuco",
+    "ciudad": null,
+    "region": "Región de La Araucanía",
+    "nombre_oficial": "Hospital Dr. Hernán Henríquez Aravena (Temuco)",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 121109"
+    },
+    "lat": -38.736532,
+    "lon": -72.599238,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 121109"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-fricke": {
+   "nombre": "Hospital Gustavo Fricke",
+   "principal": {
+    "direccion": "Álvarez 1532",
+    "comuna": "Viña del Mar",
+    "ciudad": null,
+    "region": "Región de Valparaíso",
+    "nombre_oficial": "Hospital Dr. Gustavo Fricke (Viña del Mar)",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 107100"
+    },
+    "lat": -33.0294,
+    "lon": -71.541725,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 107100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-talca": {
+   "nombre": "Hospital Regional de Talca",
+   "principal": {
+    "direccion": "1 Norte 1990",
+    "comuna": "Talca",
+    "ciudad": null,
+    "region": "Región del Maule",
+    "nombre_oficial": "Hospital Dr. César Garavagno Burotto (Talca)",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 116105"
+    },
+    "lat": -35.426896,
+    "lon": -71.646373,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 116105"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-sjd": {
+   "nombre": "Hospital San Juan de Dios",
+   "principal": {
+    "direccion": "Huérfanos 3255",
+    "comuna": "Santiago",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital San Juan de Dios (Santiago)",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 110100"
+    },
+    "lat": -33.442394,
+    "lon": -70.679188,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-16",
+     "via": "código de establecimiento 110100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  }
+ },
+ "sin_ubicar": {
+  "sochradioterapia": {
+   "nombre": "Sociedad Chilena de Radioterapia",
+   "ciudad_en_la_muestra": "Santiago",
+   "motivo": "La página oficial de contacto abrió correctamente, pero solo ofrece un formulario y no publica una dirección física.",
+   "fuente_revisada": "https://www.sochira.cl/contacto"
+  },
+  "sim": {
+   "nombre": "Sociedad de Investigaciones Médicas (SIM)",
+   "ciudad_en_la_muestra": "Temuco",
+   "motivo": "La página municipal confirma la entidad, pero no muestra su dirección. No se encontró una página oficial accesible que publicara la sede.",
+   "fuente_revisada": "https://transparencia.temuco.cl/g_resoluciones/pcomerciales/2024/septiembre/index.htm"
+  },
+  "ciec": {
+   "nombre": "Centro Internacional de Estudios Clínicos (CIEC)",
+   "ciudad_en_la_muestra": "Santiago",
+   "motivo": "No se pudo abrir una página oficial de CIEC ni localizar una dirección actual en las fuentes permitidas.",
+   "fuente_revisada": null
+  },
+  "crchile": {
+   "nombre": "Clinical Research Chile SpA",
+   "ciudad_en_la_muestra": "Valdivia",
+   "motivo": "La misma página oficial publica dos números incompatibles, 683 y 638. No se eligió uno sin una fuente adicional concluyente.",
+   "fuente_revisada": "https://clinicalresearchchile.com/contact-us/"
+  },
+  "itop": {
+   "nombre": "Instituto de Terapias Oncológicas Providencia",
+   "ciudad_en_la_muestra": "Providencia",
+   "motivo": "No se pudo abrir una página oficial ni encontrar una dirección actual en las fuentes permitidas.",
+   "fuente_revisada": null
+  }
+ }
+}

@@ -22,6 +22,7 @@ import collections, datetime, json, os, sys, urllib.request
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SALIDA = os.path.join(RAIZ, "data", "geo", "chile-regiones-comunas.json")
 API = "https://www.geoboundaries.org/api/current/gbOpen/CHL/%s/"
+FICHA = "https://www.geoboundaries.org/countryDownloads.html"
 USER_AGENT = "kol-radar/1.0 (+https://github.com/FranciscoKirhman/kol-radar)"
 TOL_REGION, TOL_COMUNA = 0.02, 0.004      # grados; 0.004 ≈ 400 m
 AREA_MINIMA = 0.0004                        # grados²; islas más chicas que ~2 × 2 km se descartan
@@ -107,12 +108,15 @@ def dentro(x, y, plano):
 
 
 def main():
+    # La fuente que se publica es SIEMPRE la página de geoBoundaries, nunca la ruta del archivo que
+    # se usó para correr el script: esa ruta no le sirve a nadie y, si viene de un directorio
+    # temporal, filtra el disco de quien lo corrió al JSON que se publica.
     if len(sys.argv) == 3:
         adm1, adm3 = json.load(open(sys.argv[1])), json.load(open(sys.argv[2]))
-        urls = ["(archivo local) " + sys.argv[1], "(archivo local) " + sys.argv[2]]
+        recursos = ["copia local de " + os.path.basename(sys.argv[1]), "copia local de " + os.path.basename(sys.argv[2])]
     else:
         (adm1, u1), (adm3, u3) = descargar("ADM1"), descargar("ADM3")
-        urls = [u1, u3]
+        recursos = [u1, u3]
     regiones = []
     for f in adm1["features"]:
         regiones.append({"nombre": reparar(f["properties"]["shapeName"]), "anillos": anillos_de(f["geometry"], TOL_REGION),
@@ -143,7 +147,8 @@ def main():
     salida = {
         "fuente": "geoBoundaries gbOpen (CHL ADM1, ADM3) — datos de la Biblioteca del Congreso Nacional de Chile (BCN) y OCHA ROLAC",
         "licencia": "CC BY 3.0 IGO",
-        "fuente_url": urls,
+        "fuente_url": FICHA,
+        "recursos": recursos,
         "fecha": datetime.date.today().isoformat(),
         "nota": "Geometría simplificada para dibujo (tolerancia %.3f° comunas, %.2f° regiones; coordenadas a 3 decimales). "
                 "Anillos planos [lon, lat, lon, lat, ...]. No sirve para medir superficies." % (TOL_COMUNA, TOL_REGION),
