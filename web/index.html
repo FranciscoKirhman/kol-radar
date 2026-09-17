@@ -2608,7 +2608,7 @@
     var limites = null, promesa = null, preparado = false, presentado = false, ubicFallo = false;
     var regiones = [], porRegion = {}, comunas = [], adj = {}, info = {}, porCortaRegion = {};
     var nivel = "pais", regionSel = null, comunaSel = null, sel = null, hover = null, saltos = 1;
-    var visibles = {}, lugares = [], flujos = [], marcas = [], C = null;
+    var visibles = {}, porRegionCuenta = {}, porComuna = {}, marcas = [], C = null;
 
     function colores() {
       var cs = getComputedStyle(document.documentElement);
@@ -2655,11 +2655,6 @@
       }
       return null;
     }
-    function lugarGeo(nombre) {
-      var cs = (datosGeo && datosGeo.ciudades) || {};
-      return cs[nombre] || cs[{ "Puerto Montt": "Port Montt" }[nombre]] || null;
-    }
-
     // ------------------------------------------------------------ modelo
     function preparar() {
       // Isla de Pascua y Juan Fernández quedan fuera: a esta escala alejan el encuadre 3.000 km.
@@ -2737,48 +2732,29 @@
       });
     }
 
-    // Ciudades del nivel país: los centroides que declara ClinicalTrials.gov. Un ensayo cuenta en
-    // la ciudad de cada institución donde se hace; si no tiene ninguna, en la suya.
+    // Cuánto hay en cada región y en cada comuna con los filtros de ahora. Un ensayo cuenta en cada
+    // región o comuna donde tiene una sede; una persona, donde está su institución.
     function recalcular() {
       visibles = {};
       entidades.forEach(function (n) { if (matches(n)) visibles[n.id] = true; });
-      var porNombre = {};
+      porRegionCuenta = {}; porComuna = {};
       entidades.forEach(function (n) {
         if (!visibles[n.id]) return;
-        var cs = [];
-        if (n.tipo === "ensayo_clinico") {
-          adj[n.id].forEach(function (a) {
-            var o = byId[a.otro];
-            if (o.tipo === "institucion") { var c = ciudadDe(o); if (lugarGeo(c) && cs.indexOf(c) === -1) cs.push(c); }
-          });
-        }
-        if (!cs.length && lugarGeo(ciudadDe(n))) cs.push(ciudadDe(n));
-        cs.forEach(function (c) {
-          var L = porNombre[c];
-          if (!L) {
-            var g = lugarGeo(c), co = comunaEn(g.lon, g.lat);
-            L = porNombre[c] = { nombre: c, x: g.lon * K, y: -g.lat, ids: [], cuenta: { persona: 0, institucion: 0, ensayo_clinico: 0 },
-                                 region: co ? co.region : null };
-          }
-          L.ids.push(n.id); L.cuenta[n.tipo]++;
-        });
+        info[n.id].regiones.forEach(function (r) { porRegionCuenta[r] = (porRegionCuenta[r] || 0) + 1; });
       });
-      lugares = Object.keys(porNombre).map(function (k) { return porNombre[k]; })
-        .sort(function (a, b) { return b.ids.length - a.ids.length; });
-      var pares = {};
+      // Por comuna: la institución cuenta en la suya, y sus personas y ensayos visibles con ella.
       entidades.forEach(function (n) {
-        if (n.tipo !== "ensayo_clinico" || !visibles[n.id]) return;
-        var cs = [];
+        if (n.tipo !== "institucion" || !info[n.id].comuna) return;
+        var c = info[n.id].comuna, cu = porComuna[c.nombre];
+        if (!cu) cu = porComuna[c.nombre] = { comuna: c, n: 0, inst: [] };
+        cu.inst.push(n);
+        if (visibles[n.id]) cu.n++;
         adj[n.id].forEach(function (a) {
           var o = byId[a.otro];
-          if (o.tipo === "institucion" && visibles[o.id]) { var c = ciudadDe(o); if (porNombre[c] && cs.indexOf(c) === -1) cs.push(c); }
+          if (!visibles[o.id]) return;
+          if (o.tipo === "ensayo_clinico" || (o.tipo === "persona" && info[o.id].inst === n)) cu.n++;
         });
-        for (var i = 0; i < cs.length; i++) for (var j = i + 1; j < cs.length; j++) {
-          var k = cs[i] < cs[j] ? cs[i] + "|" + cs[j] : cs[j] + "|" + cs[i];
-          (pares[k] = pares[k] || { a: porNombre[cs[i]], b: porNombre[cs[j]], n: 0 }).n++;
-        }
       });
-      flujos = Object.keys(pares).map(function (k) { return pares[k]; }).sort(function (a, b) { return b.n - a.n; });
     }
 
     function vecindario(id) {
@@ -2830,26 +2806,22 @@
       C = colores();
       marcas = [];
       var vista = vistaMundo(lz), foco = focoActual();
-      var fichasPorRegion = {}, maxF = 1;
-      entidades.forEach(function (n) {
-        if (!visibles[n.id]) return;
-        info[n.id].regiones.forEach(function (r) { fichasPorRegion[r] = (fichasPorRegion[r] || 0) + 1; });
-      });
-      Object.keys(fichasPorRegion).forEach(function (k) { maxF = Math.max(maxF, fichasPorRegion[k]); });
+      var maxF = 1;
+      Object.keys(porRegionCuenta).forEach(function (k) { maxF = Math.max(maxF, porRegionCuenta[k]); });
 
       regiones.forEach(function (r) {
         if (!cruza(r.caja, vista)) return;
         ctx.beginPath(); trazarPlanos(ctx, lz, r.anillos);
         if (nivel === "pais") {
           ctx.fillStyle = C.s2; ctx.globalAlpha = 1; ctx.fill();
-          ctx.fillStyle = C.acento; ctx.globalAlpha = 0.06 + Math.sqrt((fichasPorRegion[r.nombre] || 0) / maxF) * 0.34; ctx.fill();
+          ctx.fillStyle = C.acento; ctx.globalAlpha = 0.06 + Math.sqrt((porRegionCuenta[r.nombre] || 0) / maxF) * 0.34; ctx.fill();
         } else {
           ctx.fillStyle = r.nombre === regionSel ? C.s0 : C.s2; ctx.globalAlpha = r.nombre === regionSel ? 1 : 0.6; ctx.fill();
         }
         var hv = hover && hover.tipo === "region" && hover.id === r.nombre;
         ctx.globalAlpha = 1; ctx.strokeStyle = hv ? C.texto : C.borde; ctx.lineWidth = hv ? 2 : 1; ctx.stroke();
       });
-      if (nivel === "pais") { dibujarPais(ctx, lz, foco); return; }
+      if (nivel === "pais") { dibujarPais(ctx, lz); return; }
 
       var reg = porRegion[regionSel];
       reg.comunas.forEach(function (c) {
@@ -2863,49 +2835,74 @@
       dibujarRegion(ctx, lz, reg, foco, vista);
     }
 
-    function dibujarPais(ctx, lz, foco) {
-      flujos.slice(0, 40).forEach(function (f) {
-        var a = lz.aPantalla(f.a.x, f.a.y), b = lz.aPantalla(f.b.x, f.b.y);
-        var mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, dx = b[0] - a[0], dy = b[1] - a[1];
-        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.quadraticCurveTo(mx - dy * 0.16, my + dx * 0.16, b[0], b[1]);
-        ctx.strokeStyle = C.tenue; ctx.globalAlpha = 0.45; ctx.lineWidth = Math.min(8, 1 + Math.sqrt(f.n) * 0.9); ctx.stroke();
-      });
-      ctx.globalAlpha = 1;
+    // Nivel país: un número por región y nada más. Antes había un círculo por ciudad y los ensayos
+    // que dos ciudades comparten: en el centro del país los círculos de Santiago, Rancagua y Talca
+    // se pisaban y no se podía apretar ninguno. Ahora se aprieta la región entera.
+    function dibujarPais(ctx, lz) {
       var cands = [];
-      lugares.forEach(function (L) {
-        var s = lz.aPantalla(L.x, L.y), r = Math.max(4, Math.min(34, 3 + Math.sqrt(L.ids.length) * 2.2));
-        ctx.globalAlpha = foco && !L.ids.some(function (id) { return foco[id] !== undefined; }) ? 0.25 : 1;
-        ctx.beginPath(); ctx.arc(s[0], s[1], r, 0, Math.PI * 2); ctx.fillStyle = C.s0; ctx.fill();
-        // Anillo repartido por tipo: cuánto de cada cosa hay en la ciudad.
-        var ang = -Math.PI / 2;
-        TIPOS.forEach(function (t) {
-          if (!L.cuenta[t]) return;
-          var a1 = ang + (L.cuenta[t] / L.ids.length) * Math.PI * 2;
-          ctx.beginPath(); ctx.arc(s[0], s[1], r - 1.5, ang, a1); ctx.strokeStyle = C[t]; ctx.lineWidth = Math.max(2.5, r * 0.28); ctx.stroke();
-          ang = a1;
-        });
-        if (hover && hover.tipo === "lugar" && hover.id === L) {
-          ctx.beginPath(); ctx.arc(s[0], s[1], r + 4, 0, Math.PI * 2); ctx.strokeStyle = C.texto; ctx.lineWidth = 2; ctx.stroke();
-        }
-        marcas.push({ tipo: "lugar", L: L, sx: s[0], sy: s[1], r: r + 3 });
-        cands.push({ sx: s[0], sy: s[1], r: r, texto: L.nombre + " · " + L.ids.length });
+      regiones.forEach(function (r) {
+        var n = porRegionCuenta[r.nombre] || 0;
+        if (!n) return;
+        var s = lz.aPantalla((r.caja.x0 + r.caja.x1) / 2, (r.caja.y0 + r.caja.y1) / 2);
+        marcas.push({ tipo: "region", id: r.nombre, sx: s[0], sy: s[1], r: 26 });
+        cands.push({ sx: s[0], sy: s[1], r: 2, n: n, texto: corto(r.nombre) + " · " + n, fuerte: hover && hover.id === r.nombre });
       });
-      ctx.globalAlpha = 1;
-      pintarEtiquetas(ctx, lz, cands, 30);
+      // De mayor a menor: donde los números se pisan (el centro del país) tiene que quedar el
+      // grande. Ordenado por región, la Metropolitana —593 fichas— era la que se perdía.
+      cands.sort(function (a, b) { return (b.fuerte ? 1e9 : b.n) - (a.fuerte ? 1e9 : a.n); });
+      ctx.font = '600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      ctx.textBaseline = "middle"; ctx.lineJoin = "round";
+      ubicarEtiquetasLienzo(ctx, cands, lz.w, lz.h, 20).forEach(function (pu) {
+        ctx.lineWidth = 4; ctx.strokeStyle = C.s0; ctx.globalAlpha = 0.95; ctx.strokeText(pu.c.texto, pu.x - 4, pu.y);
+        ctx.globalAlpha = 1; ctx.fillStyle = pu.c.fuerte ? C.texto : C.texto2; ctx.fillText(pu.c.texto, pu.x - 4, pu.y);
+      });
     }
 
     // Institución: su ubicación. Persona: en órbita de su institución. Ensayo: en abanico alrededor
     // de su institución, solo si esa institución está "abierta".
+    var ANCHO_COMUNA_ABIERTA = 260;   // px de ancho en pantalla a partir de los cuales se abre
     function dibujarRegion(ctx, lz, reg, foco, vista) {
-      var k = lz.cam.k, pos = {};
+      var k = lz.cam.k, pos = {}, etiquetasCerradas = [];
       var escala = Math.max(0.8, Math.min(1.25, Math.log(k / 40 + 1)));
       // Las instituciones ubicadas son el ANCLA de la región, estén o no visibles: con el filtro en
       // "Personas" las instituciones desaparecen, pero las personas se siguen dibujando donde
       // trabajan en vez de dejar el mapa vacío.
-      var anclas = entidades.filter(function (n) {
+      var todas = entidades.filter(function (n) {
         return n.tipo === "institucion" && info[n.id].region === regionSel && info[n.id].x !== null;
       });
+      // Una comuna se abre cuando en pantalla es lo bastante grande como para que sus centros
+      // quepan separados, o cuando se la eligió. Mientras tanto se resume en un número: en la
+      // Región Metropolitana, 35 instituciones en cuatro comunas del centro eran un borrón.
+      var expandida = {};
+      reg.comunas.forEach(function (c) {
+        if (c.nombre === comunaSel || (c.caja.x1 - c.caja.x0) * k > ANCHO_COMUNA_ABIERTA) expandida[c.nombre] = true;
+      });
+      var anclas = todas.filter(function (n) { var c = info[n.id].comuna; return !c || expandida[c.nombre]; });
       var insts = anclas.filter(function (n) { return visibles[n.id]; });
+      // Las comunas que siguen cerradas: un punto y el número de fichas que hay adentro.
+      var cerradas = {};
+      todas.forEach(function (n) {
+        var c = info[n.id].comuna;
+        if (!c || expandida[c.nombre]) return;
+        var g = cerradas[c.nombre] || (cerradas[c.nombre] = { comuna: c, x: 0, y: 0, inst: 0, n: porComuna[c.nombre] ? porComuna[c.nombre].n : 0 });
+        g.x += info[n.id].x; g.y += info[n.id].y; g.inst++;
+      });
+      Object.keys(cerradas).forEach(function (nombre) {
+        var g = cerradas[nombre];
+        if (!g.n) return;
+        var s = lz.aPantalla(g.x / g.inst, g.y / g.inst);
+        var r = Math.max(7, Math.min(26, 4 + Math.sqrt(g.n) * 2.2));
+        var hv = hover && hover.tipo === "agregado" && hover.id === nombre;
+        ctx.beginPath(); ctx.arc(s[0], s[1], r, 0, Math.PI * 2);
+        ctx.fillStyle = C.s0; ctx.fill();
+        ctx.strokeStyle = hv ? C.texto : C.acento; ctx.lineWidth = hv ? 3 : 2.5; ctx.stroke();
+        ctx.font = '600 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.textAlign = "center"; ctx.textBaseline = "middle";
+        ctx.fillStyle = C.texto; ctx.fillText(String(g.n), s[0], s[1]);
+        ctx.textAlign = "start";
+        marcas.push({ tipo: "agregado", id: nombre, comuna: g.comuna, sx: s[0], sy: s[1], r: r + 3, n: g.n, inst: g.inst });
+        etiquetasCerradas.push({ sx: s[0], sy: s[1], r: r, texto: nombre + " · " + plural(g.inst, "centro", "centros") });
+      });
       anclas.forEach(function (n) {
         var v = info[n.id], ens = 0, pers = [];
         adj[n.id].forEach(function (a) {
@@ -3042,7 +3039,9 @@
       anclas.forEach(function (n) {
         var v = info[n.id];
         if (visibles[n.id] || (!v.pers.length && !v.nEns)) return;
-        ctx.beginPath(); trazarFormaLienzo(ctx, "institucion", v.s[0], v.s[1], Math.max(v.r * 0.6, 3)); ctx.stroke();
+        var r = Math.max(v.r * 0.6, 3);
+        ctx.beginPath(); trazarFormaLienzo(ctx, "institucion", v.s[0], v.s[1], r); ctx.stroke();
+        marcas.push({ tipo: "ancla", id: n.id, sx: v.s[0], sy: v.s[1], r: Math.max(r + 3, 8) });
       });
       ctx.setLineDash([]);
       // "▲ N": ensayos de cada institución cerrada; "+N" los que no entraron en el abanico. Un número
@@ -3100,7 +3099,8 @@
       if (k > 2200) Object.keys(pos).forEach(function (id) {
         if (byId[id].tipo === "persona" && !tenue(id)) cands.push({ sx: pos[id][0], sy: pos[id][1], r: 4, texto: byId[id].nombre });
       });
-      pintarEtiquetas(ctx, lz, cands, 60, cuadros.concat(numeros).map(function (c) { return [c[0] - 1, c[1] - 1, c[2] + 1, c[3] + 1]; }));
+      pintarEtiquetas(ctx, lz, etiquetasCerradas.concat(cands), 60,
+        cuadros.concat(numeros).map(function (c) { return [c[0] - 1, c[1] - 1, c[2] + 1, c[3] + 1]; }));
       // Nombres de comuna en gris, solo donde la comuna tiene ancho para su nombre.
       ctx.font = '600 9.5px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
       ctx.textAlign = "center"; ctx.fillStyle = C.tenue; ctx.globalAlpha = 0.55;
@@ -3157,7 +3157,7 @@
       if (!preparado) return;
       var q = queHay(sx, sy);
       var antes = hover;
-      hover = !q ? null : q.tipo === "lugar" ? { tipo: "lugar", id: q.L } : q;
+      hover = q || null;
       // Mover el mouse dispara esto decenas de veces por segundo: solo se redibuja si cambió lo
       // apuntado, porque un cuadro completo de la región cuesta milisegundos, no microsegundos.
       var cambio = (antes && antes.tipo) !== (hover && hover.tipo) || (antes && antes.id) !== (hover && hover.id);
@@ -3173,8 +3173,12 @@
         } else {
           mostrarTip(sx, sy, typeLabel[n.tipo], etiqueta(n), n.subtitulo || "");
         }
-      } else if (q.tipo === "lugar") {
-        mostrarTip(sx, sy, "Ciudad", q.L.nombre, plural(q.L.ids.length, "ficha", "fichas") + (q.L.region ? " · click para entrar a " + corto(q.L.region) : ""));
+      } else if (q.tipo === "agregado") {
+        mostrarTip(sx, sy, "Comuna", q.id, plural(q.n, "ficha", "fichas") + " en " + plural(q.inst, "centro", "centros") + " · click para abrirla");
+      } else if (q.tipo === "ancla") {
+        var na = byId[q.id], va = info[q.id];
+        mostrarTip(sx, sy, "Lugar", na.nombre, "No pasa los filtros de ahora · acá hay " +
+          plural(va.pers.length + va.nEns, "ficha", "fichas") + " · click para acercarte");
       } else if (q.tipo === "region") {
         var cuantas = entidades.filter(function (m) { return visibles[m.id] && enRegion(m, q.id); }).length;
         mostrarTip(sx, sy, "Región", corto(q.id), plural(cuantas, "ficha", "fichas") + (nivel === "pais" || q.id !== regionSel ? " · click para entrar" : ""));
@@ -3189,14 +3193,24 @@
       var q = queHay(sx, sy);
       if (!q) { if (sel) seleccionar(null); return; }
       if (q.tipo === "ficha") { seleccionar(q.id === sel ? null : q.id); return; }
-      if (q.tipo === "lugar") { if (q.L.region) entrarRegion(q.L.region); return; }
+      if (q.tipo === "agregado") {
+        comunaSel = q.id;
+        lz.animarA(lz.encuadre(cajaComuna(q.comuna), 40, 0), 520);
+        pintarMigas(); conFoco(panel, pintarPanel); lz.dibujar();
+        anunciar("Abriste la comuna " + q.id + ".");
+        return;
+      }
+      if (q.tipo === "ancla") {
+        lz.animarA({ cx: info[q.id].x, cy: info[q.id].y, k: Math.max(lz.base().k, 3000), rot: 0 }, 700);
+        return;
+      }
       if (q.tipo === "region") {
         if (nivel === "pais" || q.id !== regionSel) entrarRegion(q.id); else if (sel) seleccionar(null);
         return;
       }
       if (sel) { seleccionar(null); return; }
       comunaSel = comunaSel === q.id.nombre ? null : q.id.nombre;
-      if (comunaSel) lz.animarA(lz.encuadre(q.id.caja, 50, 0), 520); else encuadrarNivel(false);
+      if (comunaSel) lz.animarA(lz.encuadre(cajaComuna(q.id), 40, 0), 520); else encuadrarNivel(false);
       pintarMigas(); lz.dibujar();
     }
 
@@ -3204,15 +3218,19 @@
     function rotPais() { return lz.w / Math.max(1, lz.h) > 1.15 ? -Math.PI / 2 : 0; }
     function cajaPais() {
       var c = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
-      lugares.forEach(function (L) {
-        c.x0 = Math.min(c.x0, L.x); c.x1 = Math.max(c.x1, L.x); c.y0 = Math.min(c.y0, L.y); c.y1 = Math.max(c.y1, L.y);
-      });
-      if (isFinite(c.x0)) return { x0: c.x0 - 1.4, x1: c.x1 + 1.4, y0: c.y0 - 1.4, y1: c.y1 + 1.4 };
       regiones.forEach(function (r) {
-        c.x0 = Math.min(c.x0, r.caja.x0); c.x1 = Math.max(c.x1, r.caja.x1); c.y0 = Math.min(c.y0, r.caja.y0); c.y1 = Math.max(c.y1, r.caja.y1);
+        if (!porRegionCuenta[r.nombre]) return;
+        c.x0 = Math.min(c.x0, r.caja.x0); c.x1 = Math.max(c.x1, r.caja.x1);
+        c.y0 = Math.min(c.y0, r.caja.y0); c.y1 = Math.max(c.y1, r.caja.y1);
+      });
+      if (isFinite(c.x0)) return c;
+      regiones.forEach(function (r) {
+        c.x0 = Math.min(c.x0, r.caja.x0); c.x1 = Math.max(c.x1, r.caja.x1);
+        c.y0 = Math.min(c.y0, r.caja.y0); c.y1 = Math.max(c.y1, r.caja.y1);
       });
       return c;
     }
+
     function cajaRegion(region) {
       var pts = entidades.filter(function (n) { return n.tipo === "institucion" && info[n.id].region === region && info[n.id].x !== null; });
       if (!pts.length) return porRegion[region].caja;
@@ -3231,6 +3249,23 @@
       });
       var mx = Math.max(0.06, (c.x1 - c.x0) * 0.25), my = Math.max(0.06, (c.y1 - c.y0) * 0.25);
       return { x0: c.x0 - mx, x1: c.x1 + mx, y0: c.y0 - my, y1: c.y1 + my };
+    }
+    // Al abrir una comuna se encuadra por sus centros, no por el polígono: en Providencia los
+    // centros están todos en seis cuadras y encuadrar la comuna entera los dejaba del tamaño de una
+    // moneda en una pantalla vacía.
+    function cajaComuna(c) {
+      var pts = entidades.filter(function (n) {
+        return n.tipo === "institucion" && info[n.id].comuna === c && info[n.id].x !== null;
+      });
+      if (!pts.length) return c.caja;
+      var b = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
+      pts.forEach(function (n) {
+        var v = info[n.id];
+        b.x0 = Math.min(b.x0, v.x); b.x1 = Math.max(b.x1, v.x); b.y0 = Math.min(b.y0, v.y); b.y1 = Math.max(b.y1, v.y);
+      });
+      // Mínimo ~1,5 km de lado: con un solo centro el encuadre se iría al infinito.
+      var mx = Math.max(0.008, (b.x1 - b.x0) * 0.35), my = Math.max(0.008, (b.y1 - b.y0) * 0.35);
+      return { x0: b.x0 - mx, x1: b.x1 + mx, y0: b.y0 - my, y1: b.y1 + my };
     }
     function encuadrarNivel(inmediato) {
       if (nivel === "pais") lz.animarA(lz.encuadre(cajaPais(), 40, rotPais()), 760, inmediato);
@@ -3310,8 +3345,8 @@
       barra.classList.toggle("vacia", !sel);
       if (!sel) {
         barra.textContent = nivel === "pais"
-          ? "Tocá una región o una ciudad para entrar. Rueda o + − para acercar, arrastrá para moverte."
-          : "Tocá una institución para ver su red; tocá una comuna para acercarte. Escape vuelve atrás.";
+          ? "Cada número es una región. Tocá una para ver sus comunas. Rueda o + − para acercar, arrastrá para moverte."
+          : "Tocá una comuna para abrirla y ver sus centros; tocá un centro para ver su red. Escape vuelve atrás.";
         return;
       }
       var n = byId[sel], t = el("span");
@@ -3401,12 +3436,9 @@
       if (!preparado) return;
       if (nivel === "pais") {
         panel.appendChild(el("h3", "", "Chile"));
-        var cuenta = {};
-        entidades.forEach(function (n) {
-          if (visibles[n.id]) info[n.id].regiones.forEach(function (r) { cuenta[r] = (cuenta[r] || 0) + 1; });
-        });
+        var cuenta = porRegionCuenta;
         panel.appendChild(el("p", "geo-resumen", plural(Object.keys(visibles).length, "ficha", "fichas") + " en " +
-          plural(lugares.length, "ciudad", "ciudades") + ". Elegí una región para ver sus instituciones en el mapa."));
+          plural(Object.keys(cuenta).length, "región", "regiones") + ". Elegí una para ver sus comunas."));
         var ul = el("ul", "geo-lista");
         Object.keys(cuenta).sort(function (a, b) { return cuenta[b] - cuenta[a]; }).forEach(function (r) {
           var li = el("li"), b = el("button", "geo-item"); b.type = "button";
@@ -3437,9 +3469,35 @@
           verLugar();
         });
         panel.appendChild(accion);
-        // Se listan los LUGARES de la región, aunque la institución no pase los filtros: con el
-        // filtro en "Ensayos clínicos" la lista quedaba vacía y no había forma de llegar a nada.
+        // La lista sigue al mapa: las comunas de la región, y los centros de la comuna abierta. Se
+        // listan los LUGARES aunque la institución no pase los filtros: con el filtro en "Ensayos
+        // clínicos" la lista quedaba vacía y no había forma de llegar a nada.
         var ul2 = el("ul", "geo-lista");
+        if (!comunaSel) {
+          var comus = Object.keys(porComuna).map(function (nom) { return porComuna[nom]; })
+            .filter(function (cu) { return cu.comuna.region === regionSel && cu.n; })
+            .sort(function (a, b) { return b.n - a.n; });
+          comus.forEach(function (cu) {
+            var li = el("li"), b = el("button", "geo-item"); b.type = "button";
+            b.setAttribute("data-foco", "comuna-" + cu.comuna.nombre);
+            var txt = el("span"); txt.appendChild(document.createTextNode(cu.comuna.nombre));
+            txt.appendChild(el("span", "sub", plural(cu.inst.length, "centro", "centros")));
+            b.appendChild(txt); b.appendChild(el("span", "num", String(cu.n)));
+            b.addEventListener("click", function () {
+              comunaSel = cu.comuna.nombre;
+              lz.animarA(lz.encuadre(cajaComuna(cu.comuna), 40, 0), 520);
+              pintarMigas(); conFoco(panel, pintarPanel); lz.dibujar();
+              anunciar("Abriste la comuna " + cu.comuna.nombre + ".");
+            });
+            b.addEventListener("mouseenter", function () { hover = { tipo: "agregado", id: cu.comuna.nombre }; lz.dibujar(); });
+            b.addEventListener("mouseleave", function () { hover = null; lz.dibujar(); });
+            li.appendChild(b); ul2.appendChild(li);
+          });
+          panel.appendChild(ul2);
+          panel.insertBefore(leyenda(), ul2);
+          panel.appendChild(el("p", "geo-fuentes", fuentesTexto()));
+          return;
+        }
         function fichasEn(n) {
           var c = visibles[n.id] ? 1 : 0;
           adj[n.id].forEach(function (a) {
@@ -3449,7 +3507,8 @@
           });
           return c;
         }
-        ubicadas.map(function (n) { return { n: n, cuantas: fichasEn(n) }; })
+        ubicadas.filter(function (n) { return info[n.id].comuna && info[n.id].comuna.nombre === comunaSel; })
+          .map(function (n) { return { n: n, cuantas: fichasEn(n) }; })
           .filter(function (x) { return x.cuantas > 0; })
           .sort(function (a, b) { return b.cuantas - a.cuantas; }).forEach(function (x) {
           var n = x.n;
@@ -3476,11 +3535,14 @@
         panel.appendChild(el("p", "geo-resumen", "No se pudieron cargar las ubicaciones de las instituciones. " +
           "El mapa muestra las regiones; las instituciones quedan en la bandeja hasta que se recupere el archivo."));
       }
+      panel.appendChild(el("p", "geo-fuentes", fuentesTexto()));
+    }
+    function fuentesTexto() {
       var r = ubicaciones ? ubicaciones.resumen : null;
-      panel.appendChild(el("p", "geo-fuentes", (r ? r.con_ubicacion + " de " + (r.con_ubicacion + r.sin_ubicar) +
+      return ((r ? r.con_ubicacion + " de " + (r.con_ubicacion + r.sin_ubicar) +
         " instituciones con ubicación, pendiente de revisión: registro de establecimientos del DEIS (Minsal, CC0), " +
         "direcciones de sitios oficiales y OpenStreetMap. " : "") +
-        "Límites comunales: geoBoundaries, datos de la BCN (CC BY 3.0 IGO). Ubicaciones y calles © colaboradores de OpenStreetMap (ODbL)."));
+        "Límites comunales: geoBoundaries, datos de la BCN (CC BY 3.0 IGO). Ubicaciones y calles © colaboradores de OpenStreetMap (ODbL).");
     }
 
     // La leyenda vive en el panel y no sobre el mapa: encima tapaba justo la esquina de la bandeja.
