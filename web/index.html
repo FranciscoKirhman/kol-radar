@@ -2947,11 +2947,13 @@
         ctx.beginPath(); ctx.arc(v.real[0], v.real[1], 1.8, 0, Math.PI * 2); ctx.fill();
       });
       ctx.globalAlpha = 1;
-      // Abierta: la elegida, la sede de un ensayo elegido, o las que de tan cerca tienen espacio.
+      // Abierta: la elegida, la sede de un ensayo elegido, o la que de tan cerca tiene espacio. Se
+      // decide sobre las ANCLAS y no sobre las instituciones visibles: con el filtro en "Ensayos
+      // clínicos" ninguna institución pasa, y el mapa se quedaba sin un solo triángulo.
       var selN = sel ? byId[sel] : null, abiertas = {};
-      insts.forEach(function (n) {
+      anclas.forEach(function (n) {
         var v = info[n.id];
-        var holgura = insts.every(function (m) { return m === n || Math.hypot(info[m.id].s[0] - v.s[0], info[m.id].s[1] - v.s[1]) > 170; });
+        var holgura = anclas.every(function (m) { return m === n || Math.hypot(info[m.id].s[0] - v.s[0], info[m.id].s[1] - v.s[1]) > 170; });
         var sedeDeSel = selN && selN.tipo === "ensayo_clinico" && adj[sel].some(function (a) { return a.otro === n.id; });
         if (sel === n.id || sedeDeSel || (holgura && v.nEns <= 60 && k > 900)) abiertas[n.id] = true;
       });
@@ -3034,6 +3036,15 @@
         }
         marcas.push({ tipo: "ficha", id: id, sx: pos[id][0], sy: pos[id][1], r: Math.max(r + 2, 6) });
       });
+      // Un ancla que no pasa los filtros pero sostiene personas o ensayos visibles se dibuja hueca y
+      // en gris: es el lugar, no una ficha. Sin ella los puntos orbitaban la nada.
+      ctx.setLineDash([2, 2]); ctx.strokeStyle = C.tenue; ctx.lineWidth = 1;
+      anclas.forEach(function (n) {
+        var v = info[n.id];
+        if (visibles[n.id] || (!v.pers.length && !v.nEns)) return;
+        ctx.beginPath(); trazarFormaLienzo(ctx, "institucion", v.s[0], v.s[1], Math.max(v.r * 0.6, 3)); ctx.stroke();
+      });
+      ctx.setLineDash([]);
       // "▲ N": ensayos de cada institución cerrada; "+N" los que no entraron en el abanico. Un número
       // que pisaría otro cuadrado u otro número no se dibuja: se lee en el tooltip.
       var cuadros = anclas.map(function (n) {
@@ -3046,7 +3057,7 @@
       ctx.font = '600 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
       ctx.textBaseline = "middle";
       var numeros = [];
-      insts.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
+      anclas.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
         var v = info[n.id];
         if (tenue(n.id)) return;
         var txt = abiertas[n.id] ? (v.resto ? "+" + v.resto : "") : v.nEns ? "▲ " + v.nEns : "";
@@ -3078,8 +3089,13 @@
         if (!pos[id] || id === sel || (byId[id].tipo === "ensayo_clinico" && k < 6000)) return;
         cands.push({ sx: pos[id][0], sy: pos[id][1], r: radioEtiqueta(id), texto: etiqueta(byId[id]), fuerte: true });
       });
-      insts.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
-        if (!tenue(n.id)) cands.push({ sx: info[n.id].s[0], sy: info[n.id].s[1], r: info[n.id].r, texto: etiqueta(n) });
+      anclas.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
+        var v = info[n.id];
+        // Un ancla filtrada se nombra igual si sostiene algo visible: el número de ensayos no dice
+        // nada si no se ve de quién es.
+        if (!tenue(n.id) && (visibles[n.id] || v.pers.length || v.nEns)) {
+          cands.push({ sx: v.s[0], sy: v.s[1], r: v.r, texto: etiqueta(n) });
+        }
       });
       if (k > 2200) Object.keys(pos).forEach(function (id) {
         if (byId[id].tipo === "persona" && !tenue(id)) cands.push({ sx: pos[id][0], sy: pos[id][1], r: 4, texto: byId[id].nombre });
@@ -3408,7 +3424,6 @@
         // Cuántas tienen ubicación NO depende de los filtros: con el filtro en "Personas" decía
         // "0 de 38 instituciones con ubicación", que se leía como que el dato no existe.
         var ubicadas = todas.filter(function (n) { return info[n.id].x !== null; });
-        var visiblesAqui = ubicadas.filter(function (n) { return visibles[n.id]; });
         var nVis = entidades.filter(function (n) { return visibles[n.id] && enRegion(n, regionSel); }).length;
         panel.appendChild(el("p", "geo-resumen", plural(nVis, "ficha", "fichas") + " con los filtros de ahora · " +
           ubicadas.length + " de " + plural(todas.length, "institución", "instituciones") + " con ubicación."));
@@ -3422,15 +3437,34 @@
           verLugar();
         });
         panel.appendChild(accion);
+        // Se listan los LUGARES de la región, aunque la institución no pase los filtros: con el
+        // filtro en "Ensayos clínicos" la lista quedaba vacía y no había forma de llegar a nada.
         var ul2 = el("ul", "geo-lista");
-        visiblesAqui.sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
+        function fichasEn(n) {
+          var c = visibles[n.id] ? 1 : 0;
+          adj[n.id].forEach(function (a) {
+            var o = byId[a.otro];
+            if (!visibles[o.id]) return;
+            if (o.tipo === "ensayo_clinico" || (o.tipo === "persona" && info[o.id].inst === n)) c++;
+          });
+          return c;
+        }
+        ubicadas.map(function (n) { return { n: n, cuantas: fichasEn(n) }; })
+          .filter(function (x) { return x.cuantas > 0; })
+          .sort(function (a, b) { return b.cuantas - a.cuantas; }).forEach(function (x) {
+          var n = x.n;
           var li = el("li"), b = el("button", "geo-item"); b.type = "button";
           b.setAttribute("data-foco", "inst-" + n.id);
           b.setAttribute("aria-pressed", String(sel === n.id));
           var txt = el("span"); txt.appendChild(document.createTextNode(n.nombre));
-          txt.appendChild(el("span", "sub", info[n.id].ubic.principal.comuna));
-          b.appendChild(txt); b.appendChild(el("span", "num", String(adj[n.id].length)));
-          b.addEventListener("click", function () { seleccionar(sel === n.id ? null : n.id, true); });
+          txt.appendChild(el("span", "sub", info[n.id].ubic.principal.comuna +
+            (visibles[n.id] ? "" : " · no pasa los filtros; acá hay " + plural(x.cuantas, "ficha", "fichas"))));
+          b.appendChild(txt); b.appendChild(el("span", "num", String(x.cuantas)));
+          b.addEventListener("click", function () {
+            // Una institución filtrada no se puede elegir (su red no se está dibujando): se vuela a ella.
+            if (!visibles[n.id]) { lz.animarA({ cx: info[n.id].x, cy: info[n.id].y, k: Math.max(lz.base().k, 2600), rot: 0 }, 700); return; }
+            seleccionar(sel === n.id ? null : n.id, true);
+          });
           b.addEventListener("mouseenter", function () { hover = { tipo: "ficha", id: n.id }; lz.dibujar(); });
           b.addEventListener("mouseleave", function () { hover = null; lz.dibujar(); });
           li.appendChild(b); ul2.appendChild(li);
