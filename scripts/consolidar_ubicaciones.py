@@ -42,8 +42,9 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 GEO = os.path.join(RAIZ, "data", "geo", "chile-regiones-comunas.json")
 OSM = os.path.join(RAIZ, "data", "pending", "geolocalizacion-osm-2026-09-15", "instituciones_ubicadas.json")
-RESPUESTAS = os.path.join(RAIZ, "data", "pending", "tarea-chatgpt-*", "respuesta_*_A.json")
-ORDEN_RONDAS = ["tarea-chatgpt-2026-09-15", "tarea-chatgpt-2026-09-15-ronda2"]
+RESPUESTAS = [os.path.join(RAIZ, "data", "pending", "tarea-chatgpt-*", "respuesta_*_A.json"),
+              os.path.join(RAIZ, "data", "pending", "direcciones-*", "respuesta_*_A.json")]
+ORDEN_RONDAS = ["tarea-chatgpt-2026-09-15", "tarea-chatgpt-2026-09-15-ronda2", "direcciones-2026-09-28"]
 SALIDA = os.path.join(RAIZ, "data", "geo", "ubicaciones-instituciones.json")
 HOY = datetime.date.today().isoformat()
 
@@ -112,6 +113,9 @@ DEIS_CODIGOS = {
     "hosp-molina": "116102",                 # "Hospital de Molina" en el DEIS
     "cesfam-el-roble": "114319",             # La Pintana
     "clinica-alemana-temuco": "121202",
+    "hosp-clinico-uc": "111200",             # Hospital Clínico Red de Salud UC CHRISTUS, Marcoleta 367
+    "conac": "201202",                       # Corporación Nacional del Cáncer, Providencia
+    "dermacross": "200092",
 }
 # Diferencia entre dos fuentes de coordenadas que amerita revisión.
 AVISO_METROS = 400
@@ -239,7 +243,7 @@ def main():
     # ".../tarea-.../respuesta" porque "-" < "/", y "lote10" antes que "lote2"—, y además es una
     # decisión editorial: qué ronda manda lo decide quien revisa, no el sistema de archivos.
     respuestas = {}
-    for ruta in sorted(glob.glob(RESPUESTAS), key=clave_respuesta):
+    for ruta in sorted([r for patron in RESPUESTAS for r in glob.glob(patron)], key=clave_respuesta):
         for it in json.load(open(ruta, encoding="utf-8")).get("A") or []:
             it["_archivo"] = os.path.relpath(ruta, RAIZ)
             previo = respuestas.get(it["id"])
@@ -374,6 +378,30 @@ def main():
         k = principal["fuente_coordenadas"]["tipo"] + " · " + coords["precision"]
         resumen["coordenadas"][k] = resumen["coordenadas"].get(k, 0) + 1
         print("%-22s %-13s %-40s %s" % (iid, coords["precision"], principal["direccion"][:40], " | ".join(avisos)))
+
+    # Nominatim no devuelve siempre los mismos tramos de una avenida larga, y a veces no contesta:
+    # una corrida podía degradar un punto bueno al centro de la comuna sin que nada hubiera cambiado.
+    # Si la dirección es la misma y la corrida anterior tenía más precisión, se conserva la anterior.
+    rango = {"establecimiento": 4, "direccion": 3, "calle": 2, "comuna": 1}
+    try:
+        previo = json.load(open(SALIDA, encoding="utf-8")).get("instituciones", {})
+    except (OSError, ValueError):
+        previo = {}
+    for iid, nuevo in salida.items():
+        viejo = previo.get(iid)
+        if not viejo or viejo["principal"].get("direccion") != nuevo["principal"].get("direccion"):
+            continue
+        pv, pn = viejo["principal"], nuevo["principal"]
+        if rango.get(pv.get("precision"), 0) > rango.get(pn.get("precision"), 0):
+            peor = pn["precision"]
+            for k in ("lat", "lon", "precision", "fuente_coordenadas"):
+                pn[k] = pv[k]
+            nuevo["avisos"] = [a for a in nuevo["avisos"] if "fuera de la comuna" not in a]
+            print("%-22s se conserva el punto anterior (%s) en vez de %s" % (iid, pv["precision"], peor))
+    resumen["coordenadas"] = {}
+    for u in salida.values():
+        k = u["principal"]["fuente_coordenadas"]["tipo"] + " · " + u["principal"]["precision"]
+        resumen["coordenadas"][k] = resumen["coordenadas"].get(k, 0) + 1
 
     doc = {
         "generado": HOY,

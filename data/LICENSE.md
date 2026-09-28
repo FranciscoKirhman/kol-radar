@@ -39,6 +39,7 @@ Cada hecho de la base lleva la URL exacta de donde salió. Las fuentes, con sus 
 | PubMed (NLM) | Autoría, afiliación, revista, fecha | Metadatos bibliográficos (hechos); los resúmenes no se reproducen |
 | SciELO Chile | Autoría y afiliación en revistas chilenas | CC BY en la mayoría de las revistas |
 | Buscador de estudios clínicos de la CIF (estudiosclinicos.cl) | Qué centros tienen abierto cada ensayo que hoy recluta | Solo se toma el hecho (ensayo ↔ centro) con su URL; no se reproducen textos ni contactos |
+| NCI Thesaurus™ (Enterprise Vocabulary Services, National Cancer Institute, EE. UU.) | Tipo de cada fármaco (inmunoterapia, terapia dirigida, quimioterapia…) | CC BY 4.0 — <https://evs.nci.nih.gov/license>. El nombre "NCI Thesaurus" es marca del NCI |
 | DEIS, Minsal — Establecimientos de Salud (datos.gob.cl) | Dirección y coordenadas oficiales de hospitales y clínicas | CC0 |
 | OpenStreetMap (Nominatim) | Coordenadas cuando el DEIS no tiene el establecimiento | ODbL — © colaboradores de OpenStreetMap |
 | geoBoundaries (BCN Chile, OCHA ROLAC) | Límites de regiones y comunas (`data/geo/chile-regiones-comunas.json`) | CC BY 3.0 IGO |

@@ -20,20 +20,20 @@
   }
  },
  "resumen": {
-  "con_ubicacion": 82,
-  "sin_ubicar": 28,
+  "con_ubicacion": 90,
+  "sin_ubicar": 20,
   "direccion": {
-   "sitio_oficial": 22,
-   "deis_minsal": 44,
+   "sitio_oficial": 24,
+   "deis_minsal": 47,
    "openstreetmap": 13,
-   "otro": 1,
+   "otro": 4,
    "superintendencia_salud": 2
   },
   "coordenadas": {
-   "openstreetmap · direccion": 13,
-   "deis_minsal · establecimiento": 55,
+   "openstreetmap · direccion": 17,
+   "deis_minsal · establecimiento": 57,
    "openstreetmap · establecimiento": 11,
-   "openstreetmap · calle": 3
+   "openstreetmap · calle": 5
   }
  },
  "instituciones": {
@@ -1223,6 +1223,35 @@
    ],
    "avisos": []
   },
+  "sim": {
+   "nombre": "Sociedad de Investigaciones Médicas (SIM)",
+   "principal": {
+    "direccion": "Lago Puyehue 1745",
+    "comuna": "Temuco",
+    "ciudad": "Temuco",
+    "region": "Región de La Araucanía",
+    "nombre_oficial": "Sociedad de Investigaciones Médicas Limitada",
+    "fuente_direccion": {
+     "url": "https://www.unensayoparami.org/en/sites/sociedad-de-investigaciones-medicas-limitadas-temuco",
+     "tipo": "otro",
+     "cita": "Lago Puyehue 1745, Temuco",
+     "fecha": "2026-09-28",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-28/respuesta_lote1_A.json"
+    },
+    "lat": -38.7376557,
+    "lon": -72.6273507,
+    "precision": "calle",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/60193655",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-28",
+     "via": "Nominatim, búsqueda de «Lago Puyehue 1745, Temuco»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
   "cecim": {
    "nombre": "CeCim Biocinetic",
    "principal": {
@@ -1246,6 +1275,35 @@
      "tipo": "openstreetmap",
      "fecha": "2026-09-28",
      "via": "Nominatim, búsqueda de «Paseo Bulnes 79, Santiago»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "ciec": {
+   "nombre": "Centro Internacional de Estudios Clínicos (CIEC)",
+   "principal": {
+    "direccion": "Manzano 343, oficina 410-411",
+    "comuna": "Recoleta",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Centro Internacional de Estudios Clínicos - CIEC",
+    "fuente_direccion": {
+     "url": "https://www.unensayoparami.org/en/sites/centro-internacional-de-estudios-clinicos-ciec",
+     "tipo": "otro",
+     "cita": "Calle Manzano 343, Oficina 410-411, Comuna de Recoleta, Región Metropolitana, 8420383",
+     "fecha": "2026-09-28",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-28/respuesta_lote1_A.json"
+    },
+    "lat": -33.4293481,
+    "lon": -70.6453487,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/112605212",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-28",
+     "via": "Nominatim, búsqueda de «Manzano 343, Recoleta»"
     },
     "confianza": "pendiente"
    },
@@ -1548,6 +1606,35 @@
      "tipo": "deis_minsal",
      "fecha": "2026-09-28",
      "via": "código de establecimiento 115100"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "itop": {
+   "nombre": "Instituto de Terapias Oncológicas Providencia",
+   "principal": {
+    "direccion": "Dr. Torres Boonen 520",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Instituto de Terapias Oncológicas Providencia",
+    "fuente_direccion": {
+     "url": "https://repositorio.uchile.cl/handle/2250/129761",
+     "tipo": "otro",
+     "cita": "ubicado en Dr. Torres Boonen 520, comuna de Providencia, Santiago de Chile",
+     "fecha": "2026-09-28",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-28/respuesta_lote1_A.json"
+    },
+    "lat": -33.4403693,
+    "lon": -70.6257094,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/node/1243866466",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-28",
+     "via": "Nominatim, búsqueda de «Dr. Torres Boonen 520, Providencia»"
     },
     "confianza": "pendiente"
    },
@@ -1867,6 +1954,35 @@
      "tipo": "deis_minsal",
      "fecha": "2026-09-28",
      "via": "código de establecimiento 200699"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "hosp-clinico-uc": {
+   "nombre": "Hospital Clínico UC CHRISTUS",
+   "principal": {
+    "direccion": "Marcoleta 367",
+    "comuna": "Santiago",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Hospital Clínico Red de Salud UC CHRISTUS",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-28",
+     "via": "código de establecimiento 111200"
+    },
+    "lat": -33.442233,
+    "lon": -70.640349,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-28",
+     "via": "código de establecimiento 111200"
     },
     "confianza": "pendiente"
    },
@@ -2482,6 +2598,93 @@
    "otras_sedes": [],
    "avisos": []
   },
+  "cec-suecia": {
+   "nombre": "Centro de Estudios Clínicos Suecia",
+   "principal": {
+    "direccion": "Suecia 42, piso 3, oficina 308",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Centro de Estudios Clínicos Suecia",
+    "fuente_direccion": {
+     "url": "https://suecia-cec.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Suecia 42, piso 3, Of. 308, Providencia, RM",
+     "fecha": "2026-09-28",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-28/respuesta_lote1_A.json"
+    },
+    "lat": -33.4210908,
+    "lon": -70.607591,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/447727823",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-28",
+     "via": "Nominatim, búsqueda de «Suecia 42, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "conac": {
+   "nombre": "Corporación Nacional del Cáncer (CONAC)",
+   "principal": {
+    "direccion": "Seminario 86",
+    "comuna": "Providencia",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Corporación Nacional del Cáncer",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-28",
+     "via": "código de establecimiento 201202"
+    },
+    "lat": -33.440183,
+    "lon": -70.629898,
+    "precision": "establecimiento",
+    "fuente_coordenadas": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "fecha": "2026-09-28",
+     "via": "código de establecimiento 201202"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "dermacross": {
+   "nombre": "Clínica Dermacross",
+   "principal": {
+    "direccion": "Manquehue Norte 2051",
+    "comuna": "Vitacura",
+    "ciudad": null,
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Clínica Dermacross",
+    "fuente_direccion": {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "deis_minsal",
+     "cita": null,
+     "fecha": "2026-09-28",
+     "via": "código de establecimiento 200092"
+    },
+    "lat": -33.392164,
+    "lon": -70.572279,
+    "precision": "calle",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/453518291",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-28",
+     "via": "Nominatim, búsqueda de «Manquehue Norte 2051, Vitacura»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
   "clinica-alemana-temuco": {
    "nombre": "Clínica Alemana de Temuco",
    "principal": {
@@ -2510,6 +2713,35 @@
    },
    "otras_sedes": [],
    "avisos": []
+  },
+  "uromed": {
+   "nombre": "Instituto de Especialidades Urológicas (UROMED)",
+   "principal": {
+    "direccion": "Avenida Salvador 351",
+    "comuna": "Providencia",
+    "ciudad": "Santiago",
+    "region": "Región Metropolitana de Santiago",
+    "nombre_oficial": "Uromed",
+    "fuente_direccion": {
+     "url": "https://uromed.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Av. Salvador 351, Providencia, Santiago",
+     "fecha": "2026-09-28",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-28/respuesta_lote1_A.json"
+    },
+    "lat": -33.437068,
+    "lon": -70.6256959,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/296684564",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-28",
+     "via": "Nominatim, búsqueda de «Avenida Salvador 351, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
   }
  },
  "sin_ubicar": {
@@ -2519,39 +2751,15 @@
    "motivo": "La página oficial de contacto abrió correctamente, pero solo ofrece un formulario y no publica una dirección física.",
    "fuente_revisada": "https://www.sochira.cl/contacto"
   },
-  "sim": {
-   "nombre": "Sociedad de Investigaciones Médicas (SIM)",
-   "ciudad_en_la_muestra": "Temuco",
-   "motivo": "La página municipal confirma la entidad, pero no muestra su dirección. No se encontró una página oficial accesible que publicara la sede.",
-   "fuente_revisada": "https://transparencia.temuco.cl/g_resoluciones/pcomerciales/2024/septiembre/index.htm"
-  },
-  "ciec": {
-   "nombre": "Centro Internacional de Estudios Clínicos (CIEC)",
-   "ciudad_en_la_muestra": "Santiago",
-   "motivo": "No se pudo abrir una página oficial de CIEC ni localizar una dirección actual en las fuentes permitidas.",
-   "fuente_revisada": null
-  },
   "crchile": {
    "nombre": "Clinical Research Chile SpA",
    "ciudad_en_la_muestra": "Valdivia",
    "motivo": "La misma página oficial publica dos números incompatibles, 683 y 638. No se eligió uno sin una fuente adicional concluyente.",
    "fuente_revisada": "https://clinicalresearchchile.com/contact-us/"
   },
-  "itop": {
-   "nombre": "Instituto de Terapias Oncológicas Providencia",
-   "ciudad_en_la_muestra": "Providencia",
-   "motivo": "No se pudo abrir una página oficial ni encontrar una dirección actual en las fuentes permitidas.",
-   "fuente_revisada": null
-  },
   "cics-temuco": {
    "nombre": "Centro de Investigación Clínica del Sur",
    "ciudad_en_la_muestra": "Temuco",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
-  "hosp-clinico-uc": {
-   "nombre": "Hospital Clínico UC CHRISTUS",
-   "ciudad_en_la_muestra": "Santiago",
    "motivo": "sin dirección en ninguna fuente revisada",
    "fuente_revisada": null
   },
@@ -2591,12 +2799,6 @@
    "motivo": "sin dirección en ninguna fuente revisada",
    "fuente_revisada": null
   },
-  "cec-suecia": {
-   "nombre": "Centro de Estudios Clínicos Suecia",
-   "ciudad_en_la_muestra": "Santiago",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
   "ufro": {
    "nombre": "Universidad de La Frontera",
    "ciudad_en_la_muestra": "Temuco",
@@ -2612,12 +2814,6 @@
   "ucmaule": {
    "nombre": "Universidad Católica del Maule",
    "ciudad_en_la_muestra": "Talca",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
-  "conac": {
-   "nombre": "Corporación Nacional del Cáncer (CONAC)",
-   "ciudad_en_la_muestra": "Santiago",
    "motivo": "sin dirección en ninguna fuente revisada",
    "fuente_revisada": null
   },
@@ -2657,12 +2853,6 @@
    "motivo": "sin dirección en ninguna fuente revisada",
    "fuente_revisada": null
   },
-  "dermacross": {
-   "nombre": "Clínica Dermacross",
-   "ciudad_en_la_muestra": "Santiago",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
   "dermovein": {
    "nombre": "Clínica Dermovein",
    "ciudad_en_la_muestra": "Santiago",
@@ -2672,12 +2862,6 @@
   "ced-vina": {
    "nombre": "Centro de Especialidades Dermatológicas",
    "ciudad_en_la_muestra": "Viña del Mar",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
-  "uromed": {
-   "nombre": "Instituto de Especialidades Urológicas (UROMED)",
-   "ciudad_en_la_muestra": "Santiago",
    "motivo": "sin dirección en ninguna fuente revisada",
    "fuente_revisada": null
   }

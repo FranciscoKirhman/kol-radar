@@ -581,6 +581,16 @@
    ]
   },
   {
+   "clave": "dextrose",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "dextrose"
+   ],
+   "ensayos": [
+    "NCT04895358"
+   ]
+  },
+  {
    "clave": "farletuzumab-matched placebo",
    "motivo": "placebo o vehículo",
    "texto_en_la_fuente": [
@@ -658,6 +668,16 @@
    ],
    "ensayos": [
     "NCT03066778"
+   ]
+  },
+  {
+   "clave": "palcebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Palcebo"
+   ],
+   "ensayos": [
+    "NCT00626548"
    ]
   },
   {
@@ -903,6 +923,16 @@
    ]
   },
   {
+   "clave": "water",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Water (Placebo)"
+   ],
+   "ensayos": [
+    "NCT01653171"
+   ]
+  },
+  {
    "clave": "acetaminophen",
    "motivo": "premedicación o soporte habitual",
    "texto_en_la_fuente": [
@@ -1045,6 +1075,16 @@
    ]
   },
   {
+   "clave": "predinsone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Predinsone/Prednisolone"
+   ],
+   "ensayos": [
+    "NCT06764485"
+   ]
+  },
+  {
    "clave": "prednisolone",
    "motivo": "premedicación o soporte habitual",
    "texto_en_la_fuente": [
@@ -1118,6 +1158,16 @@
     "NCT06911502",
     "NCT06925737",
     "NCT06952803"
+   ]
+  },
+  {
+   "clave": "prenisolone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Prednisone/Prenisolone"
+   ],
+   "ensayos": [
+    "NCT06097364"
    ]
   },
   {

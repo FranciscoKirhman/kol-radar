@@ -57,7 +57,8 @@ VINCULO = "intervención"
 
 # Motivo → patrón. Se evalúan sobre el nombre ya normalizado (minúsculas, sin tildes).
 EXCLUIR = [
-    ("placebo o vehículo", r"\bplacebo\b|\bvehicle\b|\bsaline\b|\bsham\b|\bmatching\b"),
+    # "palcebo" es una errata de la propia fuente, no un fármaco.
+    ("placebo o vehículo", r"\bplacebo\b|\bpalcebo\b|\bvehicle\b|\bsaline\b|\bsham\b|\bmatching\b|^dextrose$|^water$"),
     ("cuidado de soporte o rescate", r"\bsupportive\b|\brescue\b|\bbest supportive\b|\busual care\b"
                                      r"|\bstandard of care\b|^soc$|\bpremedication"),
     ("clase o esquema genérico, no un principio activo",
@@ -66,7 +67,7 @@ EXCLUIR = [
      r"|\bhormonal\b|\bendocrine\b|\bcorticosteroids?\b|\bsteroids?\b|\bantiemetics?\b"
      r"|\bmouthwash\b|\bor equivalent\b|\bdrug:|\bstandard\b"),
     ("premedicación o soporte habitual",
-     r"^(dexamethasone|methylprednisolone|prednisone|prednisolone|hydrocortisone|fludrocortisone"
+     r"^(dexamethasone|methylprednisolone|prednisone|prednisolone|predinsone|prenisolone|hydrocortisone|fludrocortisone"
      r"|folic acid|vitamin b12|b12|cyanocobalamin|acetaminophen|paracetamol|diphenhydramine"
      r"|ondansetron|granisetron|palonosetron|aprepitant|fosaprepitant|ranitidine|famotidine"
      r"|cetirizine|loratadine|chlorphenamine|clemastine|ibuprofen|allopurinol|mesna"
