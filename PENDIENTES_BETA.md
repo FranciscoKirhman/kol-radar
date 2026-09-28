@@ -14,7 +14,14 @@ Fecha de corte: 2026-09-10.
 > - **Ensayos sin institución**: de 262 a 212. Los que siguen tienen la sede oculta en
 >   ClinicalTrials.gov ("Research Site", "Local Institution") y no están en el buscador de la CIF,
 >   que solo lista los que reclutan hoy.
-> - **Fichas sin ninguna conexión**: de 262 a 12, gracias a los 385 fármacos.
+> - **Fichas sin ninguna conexión**: de 262 a 12, gracias a los 380 fármacos.
+> - **Instituciones sin ubicación**: de 28 a 20. Las que quedan no publican dirección en ninguna
+>   fuente encontrada, o la publican contradictoria (Clinical Research Chile).
+> - **Próxima fuente para profesionales**: el ISP publica la planilla "Centros de investigación
+>   clínica inspeccionados 2016–2025" con centro, investigador principal, código de protocolo y
+>   patrocinador. El código de protocolo se puede cruzar con el `orgStudyId` de ClinicalTrials.gov
+>   para nombrar investigadores que el registro internacional no nombra. Cada persona nueva
+>   requiere revisión de identidad antes de entrar.
 > - **Canal de corrección**: correo provisorio definido (franckirhman@gmail.com). Falta el proceso de
 >   respuesta y el registro de exclusiones, con plazo: la Ley 21.719 rige desde el 1 de diciembre de
 >   2026 (ver `PUBLICAR.md`).

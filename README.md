@@ -105,6 +105,7 @@ debe servir para cualquier especialidad, no solo para una patología de ejemplo.
 |---|---|---|
 | PubMed (E-utilities API) | Activa | Publicaciones, coautores, afiliación, fecha |
 | ClinicalTrials.gov (API v2) | Activa | Ensayos con sitio en Chile, investigador cuando esté publicado, y la **lista estructurada de intervenciones**, de la que salen las fichas de fármaco (`scripts/integrar_farmacos_ctgov.py`) |
+| NCI Thesaurus (API EVS del National Cancer Institute) | Activa (desde 2026-09-28) | Tipo de cada fármaco —inmunoterapia, terapia dirigida, quimioterapia, conjugado anticuerpo-fármaco…— desde la jerarquía del tesauro, con la URL del concepto. CC BY 4.0. Ver `scripts/clasificar_farmacos_ncit.py` |
 | Buscador de estudios clínicos de la CIF (estudiosclinicos.cl) | Activa (desde 2026-09-28) | Para los ensayos que hoy reclutan, qué centros tienen abiertos en Chile — incluso cuando ClinicalTrials.gov oculta la sede como "Research Site". Solo el hecho ensayo ↔ centro con su URL; no se guardan contactos. `robots.txt` sin restricciones. Ver `scripts/recolectar_estudiosclinicos_cl.py` |
 | Sitios de sociedades médicas | Activa (manual al inicio) | Directorios, directivas, programas de congresos |
 | Hospitales / universidades | Activa (manual al inicio) | Afiliación institucional publicada |
@@ -200,7 +201,8 @@ agrégale `/web/index.html` al final.
     centros se estudia, quién patrocina, con qué se combina; para un centro, qué se investiga,
     quién trabaja ahí y con quién comparte estudios. Cada perfil tiene un enlace propio
     (`#ficha=<id>`) para compartir.
-  - **Mapa**: Chile por región, comuna y centro.
+  - **Mapa**: Chile por región y, dentro de cada región, un círculo por centro con cuántos estudios
+    tiene. Al elegir un centro: con quién comparte estudios (arcos) y quién trabaja ahí (panel).
   - **Fichas**: la lista filtrable, con la evidencia de cada hecho.
 - `web/interno.html` — cómo se construyó (costos, arquitectura de agentes, pipeline).
   Enlazada desde "Detalles técnicos" en el header de `web/index.html` (no del
@@ -233,14 +235,15 @@ el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no
 
 | | 2026-09-10 | 2026-09-28 |
 |---|---|---|
-| Fichas | 717 | 1.151 (+385 fármacos, +49 instituciones) |
-| Vínculos | 1.198 | 3.135 |
+| Fichas | 717 | 1.146 (+380 fármacos, +49 instituciones) |
+| Vínculos | 1.198 | 3.130 |
 | Ensayos sin ninguna institución | 262 | 212 — el resto tiene la sede oculta en las dos fuentes |
 | Fichas sin ninguna conexión | 262 | 12 |
-| Instituciones ubicadas en el mapa | 56 | 82 |
+| Instituciones ubicadas en el mapa | 56 | 90 |
 
 De dónde salió lo nuevo, sin inventar nada: los fármacos, de las intervenciones estructuradas de
-ClinicalTrials.gov (uniendo nombres solo cuando la fuente declara la equivalencia); las sedes, de
+ClinicalTrials.gov (uniendo nombres solo cuando la fuente declara la equivalencia), con su tipo
+—inmunoterapia, terapia dirigida, quimioterapia…— según el NCI Thesaurus; las sedes, de
 una tabla de alias revisada a mano contra el DEIS y sitios oficiales (`scripts/resolver_sedes_web.py`)
 y del buscador de la CIF, que nombra los centros que ClinicalTrials.gov enmascara. Todo entra
 `pendiente`. El detalle de cada decisión queda en `data/pending/`.

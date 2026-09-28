@@ -401,6 +401,19 @@
   }
   .geo-accion:hover { background: var(--text-primary); color: var(--surface-0); }
   .geo-fuentes { font-size: 11px; color: var(--text-muted); margin: 6px 6px 0; line-height: 1.45; }
+  /* Ficha de un centro en el panel del mapa */
+  .geo-volver-lista { font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: none; color: var(--text-secondary); padding: 2px 6px; margin: 0 0 6px; }
+  .geo-volver-lista:hover { color: var(--text-primary); text-decoration: underline; }
+  .geo-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 0 6px 10px; }
+  .geo-kpi { background: var(--surface-1); border-radius: 6px; padding: 7px 8px; display: flex; flex-direction: column; }
+  .geo-kpi b { font-size: 19px; font-variant-numeric: tabular-nums; color: var(--text-primary); line-height: 1.1; }
+  .geo-kpi span { font-size: 11px; color: var(--text-muted); }
+  .geo-acciones { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
+  .geo-acciones .geo-accion { margin: 0 0 0 6px; }
+  .geo-accion.secundaria { border-color: var(--border); color: var(--text-secondary); font-weight: 500; }
+  .geo-accion.secundaria:hover { border-color: var(--text-primary); background: none; color: var(--text-primary); }
+  .geo-sec { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); margin: 14px 6px 4px; }
+  .geo-nota-sec { font-size: 11.5px; color: var(--text-muted); margin: 0 6px 6px; line-height: 1.4; }
   .ubicacion-bloque { margin: 0 0 14px; }
   .ubicacion-dir { font-size: 14px; margin: 0 0 6px; }
   .ubicacion-meta { font-size: 12px; color: var(--text-secondary); margin: 0 0 4px; line-height: 1.45; }
@@ -634,6 +647,17 @@
   .hecho-fecha { display: block; font-size: 11px; color: var(--text-muted); margin-top: 6px; }
   .hecho-fecha a { color: var(--accent); text-decoration: none; margin-left: 4px; }
   .hecho-fecha a:hover { text-decoration: underline; }
+  .clases-fila { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 4px 0 14px; }
+  .clases-titulo { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-right: 4px; }
+  .clases-nota { font-size: 11.5px; color: var(--text-muted); margin-left: 4px; }
+  .entrada-clases { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 8px; }
+  .entrada-clase { font: inherit; font-size: 11px; cursor: pointer; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary); border-radius: 999px; padding: 2px 8px; }
+  .entrada-clase:hover { border-color: var(--tipo-color); color: var(--text-primary); }
+  .conexion-grupo { font-size: 12px; font-weight: 700; color: var(--text-primary); margin: 12px 0 2px; }
+  .conexion-extra { display: block; font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
+  .ficha-resumen { background: var(--surface-1); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 10px 12px 10px 4px; margin: 0 0 14px; }
+  .ficha-resumen ul { margin: 0; padding-left: 20px; font-family: var(--serif); font-size: 14px; line-height: 1.5; }
+  .ficha-resumen li { margin-bottom: 4px; }
   .confianza-note { font-size: 11.5px; color: var(--text-muted); background: var(--surface-1); border-radius: 6px; padding: 8px 10px; margin-top: 14px; }
 
   footer.page-footer { max-width: 1080px; margin: 20px auto 0; padding: 16px; text-align: center; font-size: 12px; color: var(--text-muted); }
@@ -650,6 +674,9 @@
   /* En el inicio los filtros del listado no significan nada todavía: se esconden hasta que el
      usuario elige qué mirar. Siguen a un click, en Fichas y Mapa. */
   body.en-inicio .filters-row, body.en-inicio .advanced-filters { display: none; }
+  /* En el perfil tampoco: los chips de tipo filtran la LISTA de fichas, y apretarlos ahí no cambiaba
+     nada en pantalla (se leía como botones rotos). */
+  body.en-explorar .filters-row, body.en-explorar .advanced-filters { display: none; }
 
   .hero { padding: 34px 0 8px; max-width: 760px; }
   .hero-kicker { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
@@ -1140,7 +1167,7 @@
   // adelantado un ranking de "a quién contactar primero" -- eso es una decisión del
   // usuario, que puede activarla explícitamente con el chip de abajo.
   var datosGeo = null;
-  var state = { filter: "todos", query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", areas: [], ciudad: null, soloShortlist: false, reclutando: false };
+  var state = { filter: "todos", claseFarmaco: null, query: "", sort: "reciente", tags: [], tagMode: "or", periodo: "todo", tier: "todas", region: "todas", areas: [], ciudad: null, soloShortlist: false, reclutando: false };
 
   // Capas del grafo: qué tipos de nodo y qué tipos de conexión se dibujan. Es distinto del
   // filtro de la lista (state.filter) a propósito — acá se compone un mapa, no se filtra
@@ -1643,6 +1670,7 @@
 
   function matches(n) {
     if (state.filter !== "todos" && n.tipo !== state.filter) return false;
+    if (state.claseFarmaco && n.tipo === "farmaco" && (n.clase || "Sin clasificar") !== state.claseFarmaco) return false;
     if (state.query) {
       var q = sinTildes(state.query);
       if (!idsRelevantes(q)[n.id]) return false;
@@ -1890,7 +1918,8 @@
       [plural(rf.estudios, "estudio", "estudios"),
        rf.reclutando ? rf.reclutando + " reclutando en Chile" : null,
        rf.centros ? plural(rf.centros, "centro", "centros") : null,
-       n.alias_en_la_fuente && n.alias_en_la_fuente.length ? "también: " + n.alias_en_la_fuente.slice(0, 3).join(", ") : null
+       n.alias_en_la_fuente && n.alias_en_la_fuente.length ? "también: " + n.alias_en_la_fuente.slice(0, 3).join(", ") : null,
+       n.clase && n.clase !== "Sin clasificar" ? n.clase : null
       ].forEach(function (t, i) {
         if (!t) return;
         var cf = document.createElement("span");
@@ -1988,9 +2017,40 @@
 
   // Agrupada por tipo a propósito: mezclar personas, instituciones y ensayos en una sola
   // grilla hace parecer comparables cosas que no lo son (un médico no compite con un hospital).
+  // Tipos de fármaco, del NCI Thesaurus (scripts/clasificar_farmacos_ncit.py), en el orden en que
+  // un MSL los piensa, no alfabético.
+  var ORDEN_CLASES = ["Inmunoterapia (checkpoint)", "Terapia dirigida", "Conjugado anticuerpo-fármaco",
+    "Anticuerpo biespecífico", "Terapia hormonal", "Quimioterapia", "Terapia celular, génica o vacuna", "Radiofármaco",
+    "Otra inmunoterapia", "Soporte y otros", "Sin clasificar"];
+  function contarClases(lista) {
+    var c = {};
+    lista.forEach(function (n) { if (n.tipo === "farmaco") { var k = n.clase || "Sin clasificar"; c[k] = (c[k] || 0) + 1; } });
+    return ORDEN_CLASES.filter(function (k) { return c[k]; }).map(function (k) { return [k, c[k]]; });
+  }
+  function chipsClases() {
+    var previa = state.claseFarmaco;
+    state.claseFarmaco = null;
+    var base = entidades.filter(matches);
+    state.claseFarmaco = previa;
+    var fila = document.createElement("div"); fila.className = "clases-fila";
+    var et = document.createElement("span"); et.className = "clases-titulo"; et.textContent = "Tipo de fármaco";
+    fila.appendChild(et);
+    [["", base.length]].concat(contarClases(base)).forEach(function (c) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "chip small";
+      b.textContent = (c[0] || "Todos") + " · " + c[1];
+      b.setAttribute("aria-pressed", String((state.claseFarmaco || "") === c[0]));
+      b.addEventListener("click", function () { state.claseFarmaco = c[0] || null; renderCards(); });
+      fila.appendChild(b);
+    });
+    var nota = document.createElement("span"); nota.className = "clases-nota";
+    nota.textContent = "Según el NCI Thesaurus; cada ficha enlaza al concepto.";
+    fila.appendChild(nota);
+    return fila;
+  }
   function renderCards() {
     var list = entidades.filter(matches);
     cardsEl.innerHTML = "";
+    if (state.filter === "farmaco") cardsEl.appendChild(chipsClases());
     metaEl.textContent = list.length + (list.length === 1 ? " resultado" : " resultados");
     emptyEl.hidden = list.length !== 0 || entidades.length === 0;
 
@@ -2212,6 +2272,7 @@
       document.querySelectorAll(".chip[data-filter]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
       btn.setAttribute("aria-pressed", "true");
       state.filter = btn.getAttribute("data-filter");
+      if (state.filter !== "farmaco") state.claseFarmaco = null;
       renderCards();
       invalidateNetwork();
     });
@@ -2944,22 +3005,29 @@
       var c = candidatos[i];
       if (c.sx < -50 || c.sy < -20 || c.sx > w + 50 || c.sy > h + 20) continue;
       var tw = ctx.measureText(c.texto).width;
-      var x0 = c.sx + c.r + 4, y0 = c.sy - 7, x1 = x0 + tw, y1 = c.sy + 7, libre = true;
-      var gx0 = Math.floor(x0 / CELDA), gx1 = Math.floor(x1 / CELDA), gy0 = Math.floor(y0 / CELDA), gy1 = Math.floor(y1 / CELDA);
-      for (var gx = gx0; gx <= gx1 && libre; gx++) {
-        for (var gy = gy0; gy <= gy1 && libre; gy++) {
-          var lista = grilla[gx + ":" + gy] || [];
-          for (var j = 0; j < lista.length; j++) {
-            var o = lista[j];
-            if (c.fuerte && o.obstaculo) continue;
-            if (x0 < o[2] && x1 > o[0] && y0 < o[3] && y1 > o[1]) { libre = false; break; }
+      // A la derecha primero; si choca, a la izquierda, abajo y arriba. Con una sola posición, en un
+      // racimo de centros casi ninguno quedaba con nombre.
+      var posiciones = [[c.sx + c.r + 4, c.sy], [c.sx - c.r - 4 - tw, c.sy], [c.sx - tw / 2, c.sy + c.r + 9], [c.sx - tw / 2, c.sy - c.r - 9]];
+      var x0, y0, x1, y1, libre = false, gx0, gx1, gy0, gy1, gx, gy, py;
+      for (var q = 0; q < posiciones.length && !libre; q++) {
+        x0 = posiciones[q][0]; py = posiciones[q][1]; y0 = py - 7; x1 = x0 + tw; y1 = py + 7; libre = true;
+        gx0 = Math.floor(x0 / CELDA); gx1 = Math.floor(x1 / CELDA); gy0 = Math.floor(y0 / CELDA); gy1 = Math.floor(y1 / CELDA);
+        for (gx = gx0; gx <= gx1 && libre; gx++) {
+          for (gy = gy0; gy <= gy1 && libre; gy++) {
+            var lista = grilla[gx + ":" + gy] || [];
+            for (var j = 0; j < lista.length; j++) {
+              var o = lista[j];
+              if (c.fuerte && o.obstaculo) continue;
+              if (x0 < o[2] && x1 > o[0] && y0 < o[3] && y1 > o[1]) { libre = false; break; }
+            }
           }
         }
+        if (x0 < 2 || x1 > w - 2) libre = false;
       }
       if (!libre) continue;
       var rect = [x0 - 2, y0 - 1, x1 + 2, y1 + 1];
       for (gx = gx0; gx <= gx1; gx++) for (gy = gy0; gy <= gy1; gy++) (grilla[gx + ":" + gy] = grilla[gx + ":" + gy] || []).push(rect);
-      puestas.push({ c: c, x: x0, y: c.sy });
+      puestas.push({ c: c, x: x0, y: py });
     }
     return puestas;
   }
@@ -3114,6 +3182,7 @@
     // Cuánto hay en cada región y en cada comuna con los filtros de ahora. Un ensayo cuenta en cada
     // región o comuna donde tiene una sede; una persona, donde está su institución.
     function recalcular() {
+      cacheCentro = {};
       visibles = {};
       // Los fármacos no tienen lugar: están en todos los centros donde corren sus estudios, y eso ya
       // lo muestra la institución. Contarlos inflaba "fichas en el mapa" con 385 que no se dibujan.
@@ -3293,75 +3362,61 @@
       });
     }
 
-    // Institución: su ubicación. Persona: en órbita de su institución. Ensayo: en abanico alrededor
-    // de su institución, solo si esa institución está "abierta".
-    var ANCHO_COMUNA_ABIERTA = 260;   // px de ancho en pantalla a partir de los cuales se abre
+    // Nivel región: un círculo por centro, del tamaño de sus estudios y con el número adentro. La
+    // versión anterior mezclaba burbujas por comuna, personas en órbita y abanicos de ensayos: se
+    // veía todo y no se entendía nada. Ahora el mapa responde una sola pregunta —dónde están los
+    // centros y cuánto hacen— y al elegir uno, otra: con quién comparte estudios (arcos con el
+    // número). Quién trabaja en cada centro va en el panel, como lista: en un mapa, las personas de
+    // un mismo edificio no tienen dónde ir.
+    var cacheCentro = {};
+    function resumenCentro(id) {
+      if (cacheCentro[id]) return cacheCentro[id];
+      var r = { ens: [], recl: 0, pers: [], comparte: {}, farm: {}, areas: {} };
+      adj[id].forEach(function (a) {
+        var o = byId[a.otro];
+        if (o.tipo === "persona") { r.pers.push({ p: o, rel: a.tipo }); return; }
+        if (o.tipo !== "ensayo_clinico" || !visibles[o.id]) return;
+        r.ens.push(o);
+        if (o.sitios_chile_reclutando > 0) r.recl++;
+        if (o.area) r.areas[o.area] = (r.areas[o.area] || 0) + 1;
+        adj[o.id].forEach(function (b) {
+          var x = byId[b.otro];
+          if (x.tipo === "institucion" && x.id !== id) r.comparte[x.id] = (r.comparte[x.id] || 0) + 1;
+          else if (x.tipo === "farmaco") r.farm[x.id] = (r.farm[x.id] || 0) + 1;
+        });
+      });
+      return (cacheCentro[id] = r);
+    }
+    function ordenadoPor(obj) {
+      return Object.keys(obj).sort(function (a, b) { return obj[b] - obj[a] || String(a).localeCompare(String(b), "es"); });
+    }
+    function centroElegido() {
+      return sel && byId[sel].tipo === "institucion" ? sel : null;
+    }
+
     function dibujarRegion(ctx, lz, reg, foco, vista) {
-      var k = lz.cam.k, pos = {}, etiquetasCerradas = [];
-      var escala = Math.max(0.8, Math.min(1.25, Math.log(k / 40 + 1)));
-      // Las instituciones ubicadas son el ANCLA de la región, estén o no visibles: con el filtro en
-      // "Personas" las instituciones desaparecen, pero las personas se siguen dibujando donde
-      // trabajan en vez de dejar el mapa vacío.
-      var todas = entidades.filter(function (n) {
+      var ubicadas = entidades.filter(function (n) {
         return n.tipo === "institucion" && info[n.id].region === regionSel && info[n.id].x !== null;
       });
-      // Una comuna se abre cuando en pantalla es lo bastante grande como para que sus centros
-      // quepan separados, o cuando se la eligió. Mientras tanto se resume en un número: en la
-      // Región Metropolitana, 35 instituciones en cuatro comunas del centro eran un borrón.
-      var expandida = {};
-      reg.comunas.forEach(function (c) {
-        if (c.nombre === comunaSel || (c.caja.x1 - c.caja.x0) * k > ANCHO_COMUNA_ABIERTA) expandida[c.nombre] = true;
+      ubicadas.forEach(function (n) {
+        var v = info[n.id], rc = resumenCentro(n.id);
+        v.real = lz.aPantalla(v.x, v.y);
+        v.nEns = rc.ens.length;
+        // Raíz cuadrada: FALP tiene 172 estudios y un hospital regional 1; lineal, el hospital sería un punto.
+        v.r = 4.5 + Math.min(12.5, Math.sqrt(v.nEns) * 1.05);
       });
-      var anclas = todas.filter(function (n) { var c = info[n.id].comuna; return !c || expandida[c.nombre]; });
-      var insts = anclas.filter(function (n) { return visibles[n.id]; });
-      // Las comunas que siguen cerradas: un punto y el número de fichas que hay adentro.
-      var cerradas = {};
-      todas.forEach(function (n) {
-        var c = info[n.id].comuna;
-        if (!c || expandida[c.nombre]) return;
-        var g = cerradas[c.nombre] || (cerradas[c.nombre] = { comuna: c, x: 0, y: 0, inst: 0, n: porComuna[c.nombre] ? porComuna[c.nombre].n : 0 });
-        g.x += info[n.id].x; g.y += info[n.id].y; g.inst++;
-      });
-      Object.keys(cerradas).forEach(function (nombre) {
-        var g = cerradas[nombre];
-        if (!g.n) return;
-        var s = lz.aPantalla(g.x / g.inst, g.y / g.inst);
-        var r = Math.max(7, Math.min(26, 4 + Math.sqrt(g.n) * 2.2));
-        var hv = hover && hover.tipo === "agregado" && hover.id === nombre;
-        ctx.beginPath(); ctx.arc(s[0], s[1], r, 0, Math.PI * 2);
-        ctx.fillStyle = C.s0; ctx.fill();
-        ctx.strokeStyle = hv ? C.texto : C.acento; ctx.lineWidth = hv ? 3 : 2.5; ctx.stroke();
-        ctx.font = '600 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-        ctx.textAlign = "center"; ctx.textBaseline = "middle";
-        ctx.fillStyle = C.texto; ctx.fillText(String(g.n), s[0], s[1]);
-        ctx.textAlign = "start";
-        marcas.push({ tipo: "agregado", id: nombre, comuna: g.comuna, sx: s[0], sy: s[1], r: r + 3, n: g.n, inst: g.inst });
-        etiquetasCerradas.push({ sx: s[0], sy: s[1], r: r, texto: nombre + " · " + plural(g.inst, "centro", "centros") });
-      });
-      anclas.forEach(function (n) {
-        var v = info[n.id], ens = 0, pers = [];
-        adj[n.id].forEach(function (a) {
-          var o = byId[a.otro];
-          if (!visibles[o.id]) return;
-          if (o.tipo === "ensayo_clinico") ens++;
-          if (o.tipo === "persona" && info[o.id].inst === n) pers.push(o);
-        });
-        v.real = lz.aPantalla(v.x, v.y); v.r = (3.5 + Math.min(7, Math.sqrt(adj[n.id].length) * 0.6)) * escala;
-        v.nEns = ens; v.pers = pers;
-      });
-      // En Providencia hay seis instituciones en diez cuadras: a zoom de región sus cuadrados se
-      // tapaban enteros. Se separan lo justo para no tocarse (hasta SEPARACION_MAX px) y una línea
-      // fina lleva de vuelta al punto real, así que ningún punto se mueve sin decirlo.
-      var SEPARACION_MAX = 60;
-      anclas.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n, orden, lista) {
+      // En Providencia hay una decena de centros en diez cuadras: se separan lo justo para no tocarse
+      // (hasta SEPARACION_MAX px) y una línea fina lleva de vuelta al punto real, así que ningún
+      // punto se mueve sin decirlo.
+      var SEPARACION_MAX = 120;
+      ubicadas.slice().sort(function (a, b) { return info[b.id].r - info[a.id].r; }).forEach(function (n, orden, lista) {
         var v = info[n.id], d = [v.real[0], v.real[1]];
-        for (var pasada = 0; pasada < 6; pasada++) {
+        for (var pasada = 0; pasada < 12; pasada++) {
           var movio = false;
           for (var j = 0; j < orden; j++) {
-            var o = info[lista[j].id], dx = d[0] - o.s[0], dy = d[1] - o.s[1], dist = Math.hypot(dx, dy), min = v.r + o.r + 3;
+            var o = info[lista[j].id], dx = d[0] - o.s[0], dy = d[1] - o.s[1], dist = Math.hypot(dx, dy), min = v.r + o.r + 4;
             if (dist >= min) continue;
-            // Mismo punto exacto: se abre en ángulo áureo según el orden, siempre igual.
-            if (dist < 0.01) { dx = Math.cos(orden * 2.39996); dy = Math.sin(orden * 2.39996); dist = 1; min = v.r + o.r + 3; }
+            if (dist < 0.01) { dx = Math.cos(orden * 2.39996); dy = Math.sin(orden * 2.39996); dist = 1; }
             d[0] += dx / dist * (min - dist); d[1] += dy / dist * (min - dist); movio = true;
           }
           if (!movio) break;
@@ -3369,176 +3424,93 @@
         var desv = Math.hypot(d[0] - v.real[0], d[1] - v.real[1]);
         if (desv > SEPARACION_MAX) { d[0] = v.real[0] + (d[0] - v.real[0]) / desv * SEPARACION_MAX; d[1] = v.real[1] + (d[1] - v.real[1]) / desv * SEPARACION_MAX; }
         v.s = d;
-        pos[n.id] = d;
       });
-      ctx.strokeStyle = C.tenue; ctx.fillStyle = C.tenue; ctx.lineWidth = 1; ctx.globalAlpha = 0.7;
-      insts.forEach(function (n) {
+      ctx.strokeStyle = C.tenue; ctx.fillStyle = C.tenue; ctx.lineWidth = 1; ctx.globalAlpha = 0.6;
+      ubicadas.forEach(function (n) {
         var v = info[n.id];
         if (Math.hypot(v.s[0] - v.real[0], v.s[1] - v.real[1]) < 4) return;
         ctx.beginPath(); ctx.moveTo(v.real[0], v.real[1]); ctx.lineTo(v.s[0], v.s[1]); ctx.stroke();
         ctx.beginPath(); ctx.arc(v.real[0], v.real[1], 1.8, 0, Math.PI * 2); ctx.fill();
       });
       ctx.globalAlpha = 1;
-      // Abierta: la elegida, la sede de un ensayo elegido, o la que de tan cerca tiene espacio. Se
-      // decide sobre las ANCLAS y no sobre las instituciones visibles: con el filtro en "Ensayos
-      // clínicos" ninguna institución pasa, y el mapa se quedaba sin un solo triángulo.
-      var selN = sel ? byId[sel] : null, abiertas = {};
-      anclas.forEach(function (n) {
-        var v = info[n.id];
-        var holgura = anclas.every(function (m) { return m === n || Math.hypot(info[m.id].s[0] - v.s[0], info[m.id].s[1] - v.s[1]) > 170; });
-        var sedeDeSel = selN && selN.tipo === "ensayo_clinico" && adj[sel].some(function (a) { return a.otro === n.id; });
-        if (sel === n.id || sedeDeSel || (holgura && v.nEns <= 60 && k > 900)) abiertas[n.id] = true;
-      });
-      anclas.forEach(function (n) {
-        var v = info[n.id];
-        v.pers.forEach(function (p, i) {
-          var porAnillo = 10, anillo = Math.floor(i / porAnillo), enAnillo = Math.min(porAnillo, v.pers.length - anillo * porAnillo);
-          var ang = -Math.PI / 2 + ((i % porAnillo) / enAnillo) * Math.PI * 2, rad = v.r + 10 + anillo * 8;
-          pos[p.id] = [v.s[0] + Math.cos(ang) * rad, v.s[1] + Math.sin(ang) * rad];
-        });
-        v.resto = 0;
-        if (!abiertas[n.id]) return;
-        var ens = adj[n.id].map(function (a) { return byId[a.otro]; })
-          .filter(function (o) { return o.tipo === "ensayo_clinico" && visibles[o.id]; })
-          .sort(function (a, b) {
-            var ka = sortableDate(mostRecentHecho(a).fecha), kb = sortableDate(mostRecentHecho(b).fecha);
-            return ka < kb ? 1 : ka > kb ? -1 : 0;   // más reciente primero, y estable cuando empatan
-          });
-        var lim = Math.min(ens.length, 48), radE = v.r + 34 + Math.ceil(v.pers.length / 10) * 8;
-        ens.slice(0, lim).forEach(function (e, i) {
-          if (pos[e.id]) return;
-          var ang = -Math.PI / 2 + (i / lim) * Math.PI * 2, rr = radE + (i % 2) * 12;
-          pos[e.id] = [v.s[0] + Math.cos(ang) * rr, v.s[1] + Math.sin(ang) * rr];
-        });
-        v.resto = ens.length - lim;
-      });
 
-      // Conexiones de lo elegido o apuntado. Un ensayo cerrado se dibuja como su institución.
-      var centro = hover && hover.tipo === "ficha" ? hover.id : sel;
-      if (centro && pos[centro]) {
-        var pc = pos[centro], hacia = {};
-        adj[centro].forEach(function (a) {
-          var o = byId[a.otro];
-          if (!visibles[o.id]) return;
-          if (pos[o.id]) { hacia[o.id] = (hacia[o.id] || 0) + 1; return; }
-          if (o.tipo === "ensayo_clinico") {
-            adj[o.id].forEach(function (b) {
-              var ins = byId[b.otro];
-              if (ins.tipo === "institucion" && ins.id !== centro && pos[ins.id]) hacia[ins.id] = (hacia[ins.id] || 0) + 1;
-            });
-          }
-        });
-        Object.keys(hacia).forEach(function (id) {
-          var p = pos[id], dx = p[0] - pc[0], dy = p[1] - pc[1];
+      // Qué se destaca: el centro apuntado o elegido y los que comparten estudios con él; o las sedes
+      // de un estudio elegido.
+      var apuntado = hover && hover.tipo === "ficha" ? hover.id : null;
+      var foc = sel || apuntado, destacados = {}, hayFoco = false;
+      if (foc && byId[foc].tipo === "institucion" && info[foc].s) {
+        hayFoco = true;
+        var comp = resumenCentro(foc).comparte;
+        Object.keys(comp).forEach(function (id) { if (info[id] && info[id].s && info[id].region === regionSel) destacados[id] = comp[id]; });
+        var pc = info[foc].s;
+        var maxC = 1;
+        Object.keys(destacados).forEach(function (id) { maxC = Math.max(maxC, destacados[id]); });
+        ordenadoPor(destacados).reverse().forEach(function (id) {
+          var p = info[id].s, dx = p[0] - pc[0], dy = p[1] - pc[1];
           ctx.beginPath(); ctx.moveTo(pc[0], pc[1]);
-          ctx.quadraticCurveTo((pc[0] + p[0]) / 2 - dy * 0.12, (pc[1] + p[1]) / 2 + dx * 0.12, p[0], p[1]);
-          ctx.strokeStyle = C[byId[centro].tipo]; ctx.globalAlpha = 0.75;
-          ctx.lineWidth = Math.min(6, 1.2 + Math.log(hacia[id]) / Math.LN2 * 1.1); ctx.stroke();
+          ctx.quadraticCurveTo((pc[0] + p[0]) / 2 - dy * 0.18, (pc[1] + p[1]) / 2 + dx * 0.18, p[0], p[1]);
+          ctx.strokeStyle = C.acento; ctx.globalAlpha = 0.25 + 0.6 * destacados[id] / maxC;
+          ctx.lineWidth = 1 + 5 * Math.sqrt(destacados[id] / maxC); ctx.stroke();
         });
         ctx.globalAlpha = 1;
+      } else if (foc && byId[foc].tipo === "ensayo_clinico") {
+        hayFoco = true;
+        adj[foc].forEach(function (a) { if (info[a.otro] && info[a.otro].s && info[a.otro].region === regionSel) destacados[a.otro] = 1; });
       }
+      function atenuado(id) { return hayFoco && id !== foc && destacados[id] === undefined; }
 
-      function tenue(id) { return !!(foco && foco[id] === undefined); }
-      TIPOS.forEach(function (t) {
-        [true, false].forEach(function (dim) {
-          var hay = false;
-          ctx.beginPath();
-          Object.keys(pos).forEach(function (id) {
-            var n = byId[id];
-            if (n.tipo !== t || tenue(id) !== dim || !visibles[id]) return;
-            // Una institución ubicada solo por su comuna se dibuja hueca, más abajo.
-            if (t === "institucion" && info[id].ubic.principal.precision === "comuna") return;
-            var p = pos[id], r = t === "institucion" ? info[id].r : t === "persona" ? 3.4 * escala : 3 * escala;
-            trazarFormaLienzo(ctx, t, p[0], p[1], r); hay = true;
-          });
-          if (!hay) return;
-          ctx.fillStyle = C[t]; ctx.globalAlpha = dim ? 0.18 : 1; ctx.fill();
-          if (t === "institucion") { ctx.strokeStyle = C.s0; ctx.lineWidth = 1.5; ctx.stroke(); }
-        });
-      });
-      ctx.globalAlpha = 1;
-      Object.keys(pos).forEach(function (id) {
-        var n = byId[id], r = n.tipo === "institucion" ? info[id].r : 3.4 * escala;
-        if (!visibles[id]) return;
-        if (n.tipo === "institucion" && info[id].ubic.principal.precision === "comuna") {
-          ctx.beginPath(); trazarFormaLienzo(ctx, "institucion", pos[id][0], pos[id][1], r);
-          ctx.fillStyle = C.s0; ctx.globalAlpha = tenue(id) ? 0.3 : 1; ctx.fill();
-          ctx.setLineDash([3, 2]); ctx.strokeStyle = C.institucion; ctx.lineWidth = 2; ctx.stroke(); ctx.setLineDash([]);
-          ctx.globalAlpha = 1;
+      // Círculos: primero los atenuados, encima los que importan.
+      ubicadas.slice().sort(function (a, b) { return (atenuado(b.id) ? 1 : 0) - (atenuado(a.id) ? 1 : 0) || info[b.id].r - info[a.id].r; }).forEach(function (n) {
+        var v = info[n.id], aprox = v.ubic.principal.precision === "comuna", pasa = visibles[n.id] || v.nEns > 0;
+        ctx.globalAlpha = atenuado(n.id) ? 0.22 : 1;
+        ctx.beginPath(); ctx.arc(v.s[0], v.s[1], v.r, 0, Math.PI * 2);
+        ctx.fillStyle = pasa && !aprox ? C.institucion : C.s0; ctx.fill();
+        if (aprox) ctx.setLineDash([3, 2]);
+        ctx.strokeStyle = pasa ? (aprox ? C.institucion : C.s0) : C.tenue; ctx.lineWidth = aprox ? 2 : 1.5; ctx.stroke();
+        ctx.setLineDash([]);
+        if (v.r >= 10 && v.nEns) {
+          ctx.font = '700 ' + (v.r >= 15 ? 12 : 10.5) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+          ctx.textAlign = "center"; ctx.textBaseline = "middle";
+          ctx.fillStyle = aprox ? C.institucion : "#fff"; ctx.fillText(String(v.nEns), v.s[0], v.s[1] + 0.5);
+          ctx.textAlign = "start";
         }
-        marcas.push({ tipo: "ficha", id: id, sx: pos[id][0], sy: pos[id][1], r: Math.max(r + 2, 6) });
+        ctx.globalAlpha = 1;
+        marcas.push({ tipo: "ficha", id: n.id, sx: v.s[0], sy: v.s[1], r: Math.max(v.r + 2, 8) });
       });
-      // Un ancla que no pasa los filtros pero sostiene personas o ensayos visibles se dibuja hueca y
-      // en gris: es el lugar, no una ficha. Sin ella los puntos orbitaban la nada.
-      ctx.setLineDash([2, 2]); ctx.strokeStyle = C.tenue; ctx.lineWidth = 1;
-      anclas.forEach(function (n) {
-        var v = info[n.id];
-        if (visibles[n.id] || (!v.pers.length && !v.nEns)) return;
-        var r = Math.max(v.r * 0.6, 3);
-        ctx.beginPath(); trazarFormaLienzo(ctx, "institucion", v.s[0], v.s[1], r); ctx.stroke();
-        marcas.push({ tipo: "ancla", id: n.id, sx: v.s[0], sy: v.s[1], r: Math.max(r + 3, 8) });
-      });
-      ctx.setLineDash([]);
-      // "▲ N": ensayos de cada institución cerrada; "+N" los que no entraron en el abanico. Un número
-      // que pisaría otro cuadrado u otro número no se dibuja: se lee en el tooltip.
-      var cuadros = anclas.map(function (n) {
-        var v = info[n.id];
-        return [v.s[0] - v.r, v.s[1] - v.r, v.s[0] + v.r, v.s[1] + v.r, n.id];
-      });
-      function choca(a, lista, ignorar) {
-        return lista.some(function (b) { return b[4] !== ignorar && a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1]; });
-      }
-      ctx.font = '600 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-      ctx.textBaseline = "middle";
-      var numeros = [];
-      anclas.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
-        var v = info[n.id];
-        if (tenue(n.id)) return;
-        var txt = abiertas[n.id] ? (v.resto ? "+" + v.resto : "") : v.nEns ? "▲ " + v.nEns : "";
-        if (!txt) return;
-        // Centrado debajo del cuadrado: a la derecha queda el nombre.
-        var tw = ctx.measureText(txt).width, x = v.s[0] - tw / 2, y = v.s[1] + Math.max(v.r, 6) + 9;
-        var caja = [x - 3, y - 7, x + tw + 3, y + 7, n.id];
-        if (choca(caja, cuadros, n.id) || choca(caja, numeros)) return;
-        numeros.push(caja);
-        ctx.fillStyle = C.s0; ctx.globalAlpha = 0.9; ctx.beginPath(); ctx.rect(x - 3, y - 7, tw + 6, 14); ctx.fill();
-        ctx.globalAlpha = 1; ctx.fillStyle = C.ensayo_clinico; ctx.fillText(txt, x, y);
-      });
-      shortlist.forEach(function (id) {
-        if (!pos[id]) return;
-        ctx.beginPath(); ctx.arc(pos[id][0], pos[id][1], (byId[id].tipo === "institucion" ? info[id].r : 3.4 * escala) + 4, 0, Math.PI * 2);
-        ctx.strokeStyle = C.acento; ctx.lineWidth = 2; ctx.stroke();
-      });
-      if (sel && pos[sel]) {
-        ctx.beginPath(); trazarFormaLienzo(ctx, byId[sel].tipo, pos[sel][0], pos[sel][1], (byId[sel].tipo === "institucion" ? info[sel].r : 4 * escala) + 3);
+      if (foc && info[foc] && info[foc].s) {
+        ctx.beginPath(); ctx.arc(info[foc].s[0], info[foc].s[1], info[foc].r + 4, 0, Math.PI * 2);
         ctx.strokeStyle = C.texto; ctx.lineWidth = 2.5; ctx.stroke();
       }
+      Object.keys(destacados).forEach(function (id) {
+        if (!info[id].s || byId[foc].tipo !== "ensayo_clinico") return;
+        ctx.beginPath(); ctx.arc(info[id].s[0], info[id].s[1], info[id].r + 4, 0, Math.PI * 2);
+        ctx.strokeStyle = C.ensayo_clinico; ctx.lineWidth = 2.5; ctx.stroke();
+      });
+      shortlist.forEach(function (id) {
+        var n = byId[id];
+        if (!n || n.tipo !== "persona" || !info[id].inst || !info[info[id].inst.id].s) return;
+        var v = info[info[id].inst.id];
+        ctx.beginPath(); ctx.arc(v.s[0] + v.r * 0.75, v.s[1] - v.r * 0.75, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = C.acento; ctx.fill();
+      });
 
-      // Etiquetas: lo elegido, su red, las instituciones y, de muy cerca, las personas. Los ensayos
-      // del abanico se nombran recién de muy cerca: de a 40 tapaban la institución recién elegida.
-      var cands = [];
-      function radioEtiqueta(id) { return byId[id].tipo === "institucion" ? info[id].r : 6; }
-      if (sel && pos[sel]) cands.push({ sx: pos[sel][0], sy: pos[sel][1], r: radioEtiqueta(sel), texto: etiqueta(byId[sel]), fuerte: true });
-      if (foco) Object.keys(foco).forEach(function (id) {
-        if (!pos[id] || id === sel || (byId[id].tipo === "ensayo_clinico" && k < 6000)) return;
-        cands.push({ sx: pos[id][0], sy: pos[id][1], r: radioEtiqueta(id), texto: etiqueta(byId[id]), fuerte: true });
+      // Etiquetas: el foco y los que comparten con él (con cuántos), después el resto por tamaño.
+      var cands = [], obst = ubicadas.map(function (n) { var v = info[n.id]; return [v.s[0] - v.r, v.s[1] - v.r, v.s[0] + v.r, v.s[1] + v.r]; });
+      if (foc && info[foc] && info[foc].s) cands.push({ sx: info[foc].s[0], sy: info[foc].s[1], r: info[foc].r, texto: etiqueta(byId[foc]), fuerte: true });
+      ordenadoPor(destacados).forEach(function (id) {
+        cands.push({ sx: info[id].s[0], sy: info[id].s[1], r: info[id].r, fuerte: true,
+                     texto: etiquetaGrafo(byId[id]) + (byId[foc].tipo === "institucion" ? " · comparte " + destacados[id] : "") });
       });
-      anclas.slice().sort(function (a, b) { return adj[b.id].length - adj[a.id].length; }).forEach(function (n) {
-        var v = info[n.id];
-        // Un ancla filtrada se nombra igual si sostiene algo visible: el número de ensayos no dice
-        // nada si no se ve de quién es.
-        if (!tenue(n.id) && (visibles[n.id] || v.pers.length || v.nEns)) {
-          cands.push({ sx: v.s[0], sy: v.s[1], r: v.r, texto: etiqueta(n) });
-        }
+      ubicadas.slice().sort(function (a, b) { return info[b.id].nEns - info[a.id].nEns; }).forEach(function (n) {
+        if (n.id === foc || destacados[n.id] !== undefined || atenuado(n.id)) return;
+        cands.push({ sx: info[n.id].s[0], sy: info[n.id].s[1], r: info[n.id].r, texto: etiquetaGrafo(n) });
       });
-      if (k > 2200) Object.keys(pos).forEach(function (id) {
-        if (byId[id].tipo === "persona" && !tenue(id)) cands.push({ sx: pos[id][0], sy: pos[id][1], r: 4, texto: byId[id].nombre });
-      });
-      pintarEtiquetas(ctx, lz, etiquetasCerradas.concat(cands), 60,
-        cuadros.concat(numeros).map(function (c) { return [c[0] - 1, c[1] - 1, c[2] + 1, c[3] + 1]; }));
+      pintarEtiquetas(ctx, lz, cands, 40, obst);
+
       // Nombres de comuna en gris, solo donde la comuna tiene ancho para su nombre.
+      var k = lz.cam.k;
       ctx.font = '600 9.5px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-      ctx.textAlign = "center"; ctx.fillStyle = C.tenue; ctx.globalAlpha = 0.55;
+      ctx.textAlign = "center"; ctx.fillStyle = C.tenue; ctx.globalAlpha = 0.5;
       reg.comunas.forEach(function (c) {
         if (!cruza(c.caja, vista) || ((c.caja.x1 - c.caja.x0) * k < 70 && c.nombre !== comunaSel)) return;
         var s = lz.aPantalla(c.centro[0], c.centro[1]);
@@ -3600,21 +3572,16 @@
       canvas.style.cursor = q ? "pointer" : "";
       if (!q) { tip.classList.remove("show"); if (cambio) lz.dibujar(); return; }
       if (q.tipo === "ficha") {
-        var n = byId[q.id], v = info[q.id];
-        if (n.tipo === "institucion") {
-          var p = v.ubic.principal;
-          mostrarTip(sx, sy, typeLabel[n.tipo], n.nombre,
-            p.direccion + ", " + p.comuna + " · " + plural(v.pers.length, "persona", "personas") + " · " +
-            plural(v.nEns, "ensayo", "ensayos") + (p.precision === "comuna" ? " · punto aproximado: centro de la comuna" : ""));
-        } else {
-          mostrarTip(sx, sy, typeLabel[n.tipo], etiqueta(n), n.subtitulo || "");
+        var n = byId[q.id], v = info[q.id], rc = resumenCentro(q.id), pr = v.ubic.principal;
+        var meta = pr.direccion + ", " + pr.comuna + " · " + plural(rc.ens.length, "estudio", "estudios") +
+          (rc.recl ? " (" + rc.recl + " reclutando)" : "") + " · " + plural(rc.pers.length, "profesional", "profesionales");
+        var ce = centroElegido();
+        if (ce && ce !== q.id) {
+          var enComun = resumenCentro(ce).comparte[q.id] || 0;
+          meta += " · " + (enComun ? "comparte " + plural(enComun, "estudio", "estudios") : "no comparte estudios") + " con " + etiquetaGrafo(byId[ce]);
         }
-      } else if (q.tipo === "agregado") {
-        mostrarTip(sx, sy, "Comuna", q.id, plural(q.n, "ficha", "fichas") + " en " + plural(q.inst, "centro", "centros") + " · click para abrirla");
-      } else if (q.tipo === "ancla") {
-        var na = byId[q.id], va = info[q.id];
-        mostrarTip(sx, sy, "Lugar", na.nombre, "No pasa los filtros de ahora · acá hay " +
-          plural(va.pers.length + va.nEns, "ficha", "fichas") + " · click para acercarte");
+        if (pr.precision === "comuna") meta += " · punto aproximado: centro de la comuna";
+        mostrarTip(sx, sy, "Centro", n.nombre, meta + (q.id === sel ? "" : " · click para ver su red"));
       } else if (q.tipo === "region") {
         var cuantas = entidades.filter(function (m) { return visibles[m.id] && enRegion(m, q.id); }).length;
         mostrarTip(sx, sy, "Región", corto(q.id), plural(cuantas, "ficha", "fichas") + (nivel === "pais" || q.id !== regionSel ? " · click para entrar" : ""));
@@ -3629,17 +3596,6 @@
       var q = queHay(sx, sy);
       if (!q) { if (sel) seleccionar(null); return; }
       if (q.tipo === "ficha") { seleccionar(q.id === sel ? null : q.id); return; }
-      if (q.tipo === "agregado") {
-        comunaSel = q.id;
-        lz.animarA(lz.encuadre(cajaComuna(q.comuna), 40, 0), 520);
-        pintarMigas(); conFoco(panel, pintarPanel); lz.dibujar();
-        anunciar("Abriste la comuna " + q.id + ".");
-        return;
-      }
-      if (q.tipo === "ancla") {
-        lz.animarA({ cx: info[q.id].x, cy: info[q.id].y, k: Math.max(lz.base().k, 3000), rot: 0 }, 700);
-        return;
-      }
       if (q.tipo === "region") {
         if (nivel === "pais" || q.id !== regionSel) entrarRegion(q.id); else if (sel) seleccionar(null);
         return;
@@ -3671,14 +3627,14 @@
     function cajaRegion(region) {
       var pts = entidades.filter(function (n) { return n.tipo === "institucion" && info[n.id].region === region && info[n.id].x !== null; });
       if (!pts.length) return porRegion[region].caja;
-      // Se encuadra el 80% de instituciones más cercanas a la mediana: el Sótero del Río, en Puente
+      // Se encuadra el 65% de instituciones más cercanas a la mediana: el Sótero del Río, en Puente
       // Alto, achicaba a la mitad el centro de Santiago, donde está casi todo. Las demás siguen a un
       // arrastre, y en la lista de al lado.
       function mediana(xs) { xs = xs.slice().sort(function (a, b) { return a - b; }); return xs[Math.floor(xs.length / 2)]; }
       var mx0 = mediana(pts.map(function (n) { return info[n.id].x; })), my0 = mediana(pts.map(function (n) { return info[n.id].y; }));
       pts = pts.slice().sort(function (a, b) {
         return Math.hypot(info[a.id].x - mx0, info[a.id].y - my0) - Math.hypot(info[b.id].x - mx0, info[b.id].y - my0);
-      }).slice(0, Math.max(1, Math.ceil(pts.length * 0.8)));
+      }).slice(0, Math.max(1, Math.ceil(pts.length * 0.65)));
       var c = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
       pts.forEach(function (n) {
         var v = info[n.id];
@@ -3731,17 +3687,18 @@
       anunciar("Entraste a " + corto(region) + ".");
     }
     function seleccionar(id, volar) {
+      // Una persona se elige por su centro: en el mapa, la gente está donde trabaja.
+      if (id && byId[id].tipo === "persona") id = info[id].inst ? info[id].inst.id : null;
       sel = id;
       if (id && volar && nivel === "region") {
-        var v = info[id], n = byId[id];
-        var p = n.tipo === "institucion" ? v : n.tipo === "persona" && v.inst ? info[v.inst.id] : null;
+        var v = info[id], n = byId[id], p = n.tipo === "institucion" ? v : null;
         if (n.tipo === "ensayo_clinico") {
           adj[id].forEach(function (a) { var o = info[a.otro]; if (!p && o.region === regionSel && o.x !== null) p = o; });
         }
-        if (p && p.x !== null) lz.animarA({ cx: p.x, cy: p.y, k: Math.max(lz.base().k, 2600), rot: 0 }, 700);
+        if (p && p.x !== null) lz.animarA({ cx: p.x, cy: p.y, k: Math.max(lz.base().k, 1800), rot: 0 }, 700);
       }
       conFoco(barra, pintarFoco); conFoco(panel, pintarPanel); lz.dibujar();
-      if (id) anunciar("Elegiste " + etiqueta(byId[id]) + ". " + plural(adj[id].length, "conexión", "conexiones") + ".");
+      if (id) anunciar("Elegiste " + etiqueta(byId[id]) + ".");
     }
 
     // ------------------------------------------------------------ piezas HTML
@@ -3790,43 +3747,24 @@
       barra.classList.toggle("vacia", !sel);
       if (!sel) {
         barra.textContent = nivel === "pais"
-          ? "Cada fila es una región, de norte a sur, con cuántas fichas tiene. Tocá una —la fila o la región— para ver sus comunas. Rueda o + − para acercar."
-          : "Tocá una comuna para abrirla y ver sus centros; tocá un centro para ver su red. Escape vuelve atrás.";
+          ? "Cada fila es una región, de norte a sur, con cuántas fichas tiene. Tocá una —la fila o la región— para ver sus centros. Rueda o + − para acercar."
+          : "Cada círculo es un centro; el número, cuántos estudios tiene. Tocá uno para ver con quién comparte estudios y quién trabaja ahí. Rueda o + − para acercar.";
         return;
       }
       var n = byId[sel], t = el("span");
-      t.appendChild(document.createTextNode("Red de ")); t.appendChild(el("strong", "", etiqueta(n)));
-      if (n.tipo === "institucion" && info[sel].ubic) {
-        var p = info[sel].ubic.principal;
-        t.appendChild(document.createTextNode(" · " + p.direccion + ", " + p.comuna));
+      t.appendChild(el("strong", "", etiqueta(n)));
+      if (n.tipo === "institucion") {
+        var rc = resumenCentro(sel), fuera = 0;
+        Object.keys(rc.comparte).forEach(function (id) { if (info[id].region !== regionSel) fuera++; });
+        t.appendChild(document.createTextNode(" · comparte estudios con " + plural(Object.keys(rc.comparte).length, "centro", "centros") +
+          (fuera ? " (" + fuera + " en otras regiones)" : "")));
+      } else if (n.tipo === "ensayo_clinico") {
+        t.appendChild(document.createTextNode(" · sus sedes en esta región, en verde"));
       }
       barra.appendChild(t);
-      [1, 2].forEach(function (d) {
-        var b = el("button", "", d === 1 ? "Directas" : "A 2 saltos"); b.type = "button";
-        b.setAttribute("data-foco", "saltos-" + d);
-        b.setAttribute("aria-pressed", String(saltos === d));
-        b.addEventListener("click", function () { saltos = d; pintarFoco(); lz.dibujar(); });
-        barra.appendChild(b);
-      });
-      // La red de lo elegido puede seguir en otras regiones: se dice dónde, con salida directa.
-      var foco = vecindario(sel), fuera = {};
-      Object.keys(foco).forEach(function (id) {
-        info[id].regiones.forEach(function (r) { if (r !== regionSel) fuera[r] = (fuera[r] || 0) + 1; });
-      });
-      var otras = Object.keys(fuera).sort(function (a, b) { return fuera[b] - fuera[a]; }).slice(0, 3);
-      if (otras.length && nivel === "region") {
-        var nota = el("span", "geo-fuera", "También en: ");
-        otras.forEach(function (r, i) {
-          if (i) nota.appendChild(document.createTextNode(" · "));
-          var b = el("button", "geo-miga", corto(r) + " (" + fuera[r] + ")"); b.type = "button";
-          b.addEventListener("click", function () { entrarRegion(r); });
-          nota.appendChild(b);
-        });
-        barra.appendChild(nota);
-      }
       barra.appendChild(el("span", "foco-sep"));
-      var ver = el("button", "", "Ver ficha completa"); ver.type = "button"; ver.setAttribute("data-foco", "ficha");
-      ver.addEventListener("click", function () { openDetail(sel); });
+      var ver = el("button", "", "Ver perfil"); ver.type = "button"; ver.setAttribute("data-foco", "ficha");
+      ver.addEventListener("click", function () { explorador.abrir(sel); });
       var cerrar = el("button", "", "Cerrar"); cerrar.type = "button"; cerrar.setAttribute("data-foco", "cerrar");
       cerrar.addEventListener("click", function () { seleccionar(null); });
       barra.appendChild(ver); barra.appendChild(cerrar);
@@ -3896,15 +3834,34 @@
         });
         panel.appendChild(ul);
       } else {
+        if (sel && byId[sel].tipo === "institucion") { pintarCentro(sel); return; }
+        if (sel && byId[sel].tipo === "ensayo_clinico") { pintarEstudioMapa(sel); return; }
         panel.appendChild(el("h3", "", corto(regionSel)));
         var todas = entidades.filter(function (n) { return n.tipo === "institucion" && info[n.id].region === regionSel; });
-        // Cuántas tienen ubicación NO depende de los filtros: con el filtro en "Personas" decía
-        // "0 de 38 instituciones con ubicación", que se leía como que el dato no existe.
-        var ubicadas = todas.filter(function (n) { return info[n.id].x !== null; });
-        var nVis = entidades.filter(function (n) { return visibles[n.id] && enRegion(n, regionSel); }).length;
-        panel.appendChild(el("p", "geo-resumen", plural(nVis, "ficha", "fichas") + " con los filtros de ahora · " +
-          ubicadas.length + " de " + plural(todas.length, "institución", "instituciones") + " con ubicación."));
-        var accion = el("button", "geo-accion", "Ver conexiones y fichas de " + corto(regionSel)); accion.type = "button";
+        var conAlgo = todas.filter(function (n) { var rc = resumenCentro(n.id); return rc.ens.length || rc.pers.length; })
+          .sort(function (a, b) { return resumenCentro(b.id).ens.length - resumenCentro(a.id).ens.length || a.nombre.localeCompare(b.nombre, "es"); });
+        var ubicadas = todas.filter(function (n) { return info[n.id].x !== null; }).length;
+        panel.appendChild(el("p", "geo-resumen", plural(conAlgo.length, "centro", "centros") + " con estudios o profesionales · " +
+          ubicadas + " de " + todas.length + " ubicados en el mapa. Tocá uno para ver su red."));
+        var ul2 = el("ul", "geo-lista");
+        conAlgo.forEach(function (n) {
+          var rc = resumenCentro(n.id), v = info[n.id];
+          var li = el("li"), b = el("button", "geo-item"); b.type = "button";
+          b.setAttribute("data-foco", "inst-" + n.id);
+          var txt = el("span"); txt.appendChild(document.createTextNode(n.nombre));
+          txt.appendChild(el("span", "sub", [v.x === null ? "sin ubicación exacta" : v.ubic.principal.comuna,
+            rc.recl ? rc.recl + " reclutando" : null,
+            rc.pers.length ? plural(rc.pers.length, "profesional", "profesionales") : null].filter(Boolean).join(" · ")));
+          b.appendChild(txt); b.appendChild(el("span", "num", String(rc.ens.length)));
+          b.title = plural(rc.ens.length, "estudio", "estudios");
+          b.addEventListener("click", function () { seleccionar(n.id, true); });
+          b.addEventListener("mouseenter", function () { if (v.x !== null) { hover = { tipo: "ficha", id: n.id }; lz.dibujar(); } });
+          b.addEventListener("mouseleave", function () { hover = null; lz.dibujar(); });
+          li.appendChild(b); ul2.appendChild(li);
+        });
+        panel.appendChild(leyenda());
+        panel.appendChild(ul2);
+        var accion = el("button", "geo-accion secundaria", "Ver todas las fichas de " + corto(regionSel)); accion.type = "button";
         accion.setAttribute("data-foco", "ver-region");
         accion.addEventListener("click", function () {
           state.region = corto(regionSel); state.ciudad = null;
@@ -3914,67 +3871,6 @@
           verLugar();
         });
         panel.appendChild(accion);
-        // La lista sigue al mapa: las comunas de la región, y los centros de la comuna abierta. Se
-        // listan los LUGARES aunque la institución no pase los filtros: con el filtro en "Ensayos
-        // clínicos" la lista quedaba vacía y no había forma de llegar a nada.
-        var ul2 = el("ul", "geo-lista");
-        if (!comunaSel) {
-          var comus = Object.keys(porComuna).map(function (nom) { return porComuna[nom]; })
-            .filter(function (cu) { return cu.comuna.region === regionSel && cu.n; })
-            .sort(function (a, b) { return b.n - a.n; });
-          comus.forEach(function (cu) {
-            var li = el("li"), b = el("button", "geo-item"); b.type = "button";
-            b.setAttribute("data-foco", "comuna-" + cu.comuna.nombre);
-            var txt = el("span"); txt.appendChild(document.createTextNode(cu.comuna.nombre));
-            txt.appendChild(el("span", "sub", plural(cu.inst.length, "centro", "centros")));
-            b.appendChild(txt); b.appendChild(el("span", "num", String(cu.n)));
-            b.addEventListener("click", function () {
-              comunaSel = cu.comuna.nombre;
-              lz.animarA(lz.encuadre(cajaComuna(cu.comuna), 40, 0), 520);
-              pintarMigas(); conFoco(panel, pintarPanel); lz.dibujar();
-              anunciar("Abriste la comuna " + cu.comuna.nombre + ".");
-            });
-            b.addEventListener("mouseenter", function () { hover = { tipo: "agregado", id: cu.comuna.nombre }; lz.dibujar(); });
-            b.addEventListener("mouseleave", function () { hover = null; lz.dibujar(); });
-            li.appendChild(b); ul2.appendChild(li);
-          });
-          panel.appendChild(ul2);
-          panel.insertBefore(leyenda(), ul2);
-          panel.appendChild(el("p", "geo-fuentes", fuentesTexto()));
-          return;
-        }
-        function fichasEn(n) {
-          var c = visibles[n.id] ? 1 : 0;
-          adj[n.id].forEach(function (a) {
-            var o = byId[a.otro];
-            if (!visibles[o.id]) return;
-            if (o.tipo === "ensayo_clinico" || (o.tipo === "persona" && info[o.id].inst === n)) c++;
-          });
-          return c;
-        }
-        ubicadas.filter(function (n) { return info[n.id].comuna && info[n.id].comuna.nombre === comunaSel; })
-          .map(function (n) { return { n: n, cuantas: fichasEn(n) }; })
-          .filter(function (x) { return x.cuantas > 0; })
-          .sort(function (a, b) { return b.cuantas - a.cuantas; }).forEach(function (x) {
-          var n = x.n;
-          var li = el("li"), b = el("button", "geo-item"); b.type = "button";
-          b.setAttribute("data-foco", "inst-" + n.id);
-          b.setAttribute("aria-pressed", String(sel === n.id));
-          var txt = el("span"); txt.appendChild(document.createTextNode(n.nombre));
-          txt.appendChild(el("span", "sub", info[n.id].ubic.principal.comuna +
-            (visibles[n.id] ? "" : " · no pasa los filtros; acá hay " + plural(x.cuantas, "ficha", "fichas"))));
-          b.appendChild(txt); b.appendChild(el("span", "num", String(x.cuantas)));
-          b.addEventListener("click", function () {
-            // Una institución filtrada no se puede elegir (su red no se está dibujando): se vuela a ella.
-            if (!visibles[n.id]) { lz.animarA({ cx: info[n.id].x, cy: info[n.id].y, k: Math.max(lz.base().k, 2600), rot: 0 }, 700); return; }
-            seleccionar(sel === n.id ? null : n.id, true);
-          });
-          b.addEventListener("mouseenter", function () { hover = { tipo: "ficha", id: n.id }; lz.dibujar(); });
-          b.addEventListener("mouseleave", function () { hover = null; lz.dibujar(); });
-          li.appendChild(b); ul2.appendChild(li);
-        });
-        panel.appendChild(ul2);
-        panel.insertBefore(leyenda(), ul2);
       }
       if (ubicFallo) {
         panel.appendChild(el("p", "geo-resumen", "No se pudieron cargar las ubicaciones de las instituciones. " +
@@ -3982,6 +3878,100 @@
       }
       panel.appendChild(el("p", "geo-fuentes", fuentesTexto()));
     }
+    // Ficha de un centro en el panel: dónde está, cuánto hace, quién trabaja ahí y con quién comparte
+    // estudios. Cada fila lleva a algo: una persona a su perfil, otro centro a su lugar en el mapa.
+    function seccionPanel(titulo, nota, filas, vacio) {
+      panel.appendChild(el("h4", "geo-sec", titulo));
+      if (nota) panel.appendChild(el("p", "geo-nota-sec", nota));
+      if (!filas.length) { panel.appendChild(el("p", "geo-nota-sec", vacio)); return; }
+      var ul = el("ul", "geo-lista");
+      filas.forEach(function (f) {
+        var li = el("li"), b = el(f.alTocar ? "button" : "div", "geo-item"); if (f.alTocar) b.type = "button";
+        var txt = el("span"); txt.appendChild(document.createTextNode(f.texto));
+        if (f.sub) txt.appendChild(el("span", "sub", f.sub));
+        b.appendChild(txt);
+        if (f.num !== undefined) b.appendChild(el("span", "num", String(f.num)));
+        if (f.titulo) b.title = f.titulo;
+        if (f.alTocar) b.addEventListener("click", f.alTocar);
+        li.appendChild(b); ul.appendChild(li);
+      });
+      panel.appendChild(ul);
+    }
+    function irACentro(id) {
+      var v = info[id];
+      if (v && v.region && v.region !== regionSel && porRegion[v.region]) entrarRegion(v.region, true);
+      if (v && v.region === regionSel) seleccionar(id, true); else explorador.abrir(id);
+    }
+    function volverALista() {
+      var b = el("button", "geo-volver-lista", "← Todos los centros de " + corto(regionSel)); b.type = "button";
+      b.setAttribute("data-foco", "volver");
+      b.addEventListener("click", function () { seleccionar(null); });
+      panel.appendChild(b);
+    }
+    function pintarCentro(id) {
+      var n = byId[id], v = info[id], rc = resumenCentro(id);
+      volverALista();
+      panel.appendChild(el("h3", "", n.nombre));
+      if (v.ubic) {
+        var p = v.ubic.principal;
+        panel.appendChild(el("p", "geo-resumen", p.direccion + ", " + p.comuna +
+          (p.precision === "comuna" ? " · punto aproximado (centro de la comuna)" : p.precision === "calle" ? " · punto sobre la calle, sin el número" : "")));
+      } else {
+        panel.appendChild(el("p", "geo-resumen", "Sin ubicación exacta: ninguna fuente revisada publica su dirección."));
+      }
+      var kp = el("div", "geo-kpis");
+      [[rc.ens.length, "estudios"], [rc.recl, "reclutando"], [rc.pers.length, "profesionales"]].forEach(function (c) {
+        var d = el("div", "geo-kpi"); d.appendChild(el("b", "", String(c[0]))); d.appendChild(el("span", "", c[1])); kp.appendChild(d);
+      });
+      panel.appendChild(kp);
+      var acciones = el("div", "geo-acciones");
+      var bp = el("button", "geo-accion", "Ver perfil completo"); bp.type = "button"; bp.setAttribute("data-foco", "perfil");
+      bp.addEventListener("click", function () { explorador.abrir(id); });
+      var be = el("button", "geo-accion secundaria", "Evidencia y fuentes"); be.type = "button";
+      be.addEventListener("click", function () { openDetail(id); });
+      acciones.appendChild(bp); acciones.appendChild(be);
+      panel.appendChild(acciones);
+
+      seccionPanel("Quién trabaja acá", "Profesionales de la muestra con afiliación o investigación de sitio en este centro.",
+        rc.pers.slice().sort(function (a, b) { return vecinosDe(b.p.id, "ensayo_clinico").length - vecinosDe(a.p.id, "ensayo_clinico").length || a.p.nombre.localeCompare(b.p.nombre, "es"); })
+          .map(function (x) {
+            var ne = vecinosDe(x.p.id, "ensayo_clinico").length;
+            return { texto: x.p.nombre, sub: x.rel + (ne ? " · " + plural(ne, "estudio", "estudios") + " con su nombre" : ""),
+                     titulo: "Ver el perfil de " + x.p.nombre, alTocar: function () { explorador.abrir(x.p.id); } };
+          }),
+        "Ningún profesional de la muestra vinculado todavía: ClinicalTrials.gov casi nunca nombra al investigador de sitio.");
+      var comp = ordenadoPor(rc.comparte);
+      seccionPanel("Comparte estudios con", "Otros centros en los mismos estudios. En el mapa, los arcos.",
+        comp.slice(0, 10).map(function (x) {
+          var o = byId[x], vx = info[x];
+          return { texto: o.nombre, num: rc.comparte[x],
+                   sub: vx.region === regionSel ? (vx.ubic ? vx.ubic.principal.comuna : "sin ubicación exacta") : (vx.region ? corto(vx.region) : "sin región"),
+                   titulo: plural(rc.comparte[x], "estudio en común", "estudios en común"), alTocar: function () { irACentro(x); } };
+        }), "No comparte estudios con otros centros de la muestra.");
+      seccionPanel("Qué se estudia acá", null, ordenadoPor(rc.areas).slice(0, 5).map(function (a) { return { texto: a, num: rc.areas[a] }; }), "—");
+      seccionPanel("Fármacos más estudiados", null, ordenadoPor(rc.farm).slice(0, 6).map(function (f) {
+        return { texto: byId[f].nombre, sub: byId[f].clase && byId[f].clase !== "Sin clasificar" ? byId[f].clase : null, num: rc.farm[f],
+                 alTocar: function () { explorador.abrir(f); } };
+      }), "Sin fármacos en sus estudios.");
+      panel.appendChild(el("p", "geo-fuentes", fuentesTexto()));
+    }
+    function pintarEstudioMapa(id) {
+      var n = byId[id];
+      volverALista();
+      panel.appendChild(el("h3", "", etiqueta(n)));
+      panel.appendChild(el("p", "geo-resumen", [faseDe(n), n.estado_reclutamiento, n.patrocinador].filter(Boolean).join(" · ")));
+      var acciones = el("div", "geo-acciones");
+      var bp = el("button", "geo-accion", "Ver perfil completo"); bp.type = "button";
+      bp.addEventListener("click", function () { explorador.abrir(id); });
+      acciones.appendChild(bp); panel.appendChild(acciones);
+      var sedes = adj[id].filter(function (a) { return byId[a.otro].tipo === "institucion"; }).map(function (a) { return a.otro; })
+        .sort(function (a, b) { return (info[b].region === regionSel) - (info[a].region === regionSel); });
+      seccionPanel("Sedes", "Las de esta región, marcadas en verde en el mapa.", sedes.map(function (x) {
+        var vx = info[x];
+        return { texto: byId[x].nombre, sub: vx.region ? corto(vx.region) : "sin región", alTocar: function () { irACentro(x); } };
+      }), "Ninguna sede identificada.");
+    }
+
     function fuentesTexto() {
       var r = ubicaciones ? ubicaciones.resumen : null;
       return ((r ? r.con_ubicacion + " de " + (r.con_ubicacion + r.sin_ubicar) +
@@ -3993,8 +3983,8 @@
     // La leyenda vive en el panel y no sobre el mapa: encima tapaba justo la esquina de la bandeja.
     function leyenda() {
       var box = el("div", "geo-leyenda");
-      [["institucion", "■", "Institución en su ubicación"], ["institucion", "□", "Ubicada solo por su comuna"],
-       ["persona", "●", "Persona, junto a su institución"], ["ensayo", "▲", "N ensayos: tocá la institución para verlos"]].forEach(function (f) {
+      [["institucion", "●", "Centro en su dirección; el número, cuántos estudios"], ["institucion", "◌", "Punto aproximado: centro de la comuna"],
+       ["accent", "⌒", "Al elegir un centro: con quién comparte estudios (más grueso, más estudios)"]].forEach(function (f) {
         var s = el("span"), g = el("span", "", f[1]);
         g.style.color = "var(--" + f[0] + ")";
         s.appendChild(g); s.appendChild(document.createTextNode(" " + f[2]));
@@ -5348,11 +5338,28 @@
       });
       return Object.keys(m).map(function (k) { return m[k]; }).sort(function (a, b) { return b.n - a.n || a.etiqueta.localeCompare(b.etiqueta, "es"); });
     }
+    function clasesDeEstudios(ensayos) {
+      var m = {};
+      ensayos.forEach(function (t) {
+        var vistos = {};
+        vecinosDe(t.id, "farmaco").forEach(function (a) {
+          var k = byId[a.otro].clase;
+          if (!k || k === "Sin clasificar" || k === "Soporte y otros" || vistos[k]) return;
+          vistos[k] = true;
+          var r = m[k] || (m[k] = { etiqueta: k, n: 0, recl: 0 });
+          r.n++;
+          if (t.sitios_chile_reclutando > 0) r.recl++;
+        });
+      });
+      return Object.keys(m).map(function (k) { return m[k]; }).sort(function (a, b) { return b.n - a.n; })
+        .map(function (r) { return { etiqueta: r.etiqueta, valor: r.n, extra: r.recl ? r.recl + " reclutando" : null, unidad: ["estudio", "estudios"] }; });
+    }
     function reclutan(ensayos) { return ensayos.filter(function (t) { return t.sitios_chile_reclutando > 0; }).length; }
     function filasDe(conteo, unidad) {
       return conteo.map(function (r) {
         var n = r.id ? byId[r.id] : null;
-        return { id: r.id, etiqueta: n ? nombreCorto(n) : r.etiqueta, sub: n && n.tipo === "institucion" ? n.ciudad : null,
+        var sub = n && n.tipo === "institucion" ? n.ciudad : n && n.tipo === "farmaco" && n.clase !== "Sin clasificar" ? n.clase : null;
+        return { id: r.id, etiqueta: n ? nombreCorto(n) : r.etiqueta, sub: sub,
                  valor: r.n, extra: r.recl ? r.recl + " reclutando" : null, unidad: unidad };
       });
     }
@@ -5539,6 +5546,8 @@
           seccion("areas", "Qué se investiga acá", "Estudios por área.", filasDe(areas, ["estudio", "estudios"]), "—"),
           seccion("gente", "Profesionales", "Vinculados a este centro, con cuántos estudios aparecen con nombre.", gente, "Ningún profesional vinculado todavía."),
           seccion("farm", "Fármacos más estudiados", null, filasDe(farm, ["estudio", "estudios"]), "Sin fármacos: sus estudios evalúan otras intervenciones."),
+          seccion("clases", "Tipos de fármaco", "Estudios que evalúan al menos un fármaco de cada tipo (NCI Thesaurus). Un estudio puede sumar en dos.",
+            clasesDeEstudios(T), "Sin fármacos clasificados."),
           seccion("patro", "Patrocinadores", null, filasDe(patro, ["estudio", "estudios"]), "—"),
           seccion("cositios", "Comparte estudios con", "Otros centros que participan en los mismos estudios: con quién trabaja en red.", filasDe(cositios, ["estudio", "estudios"]), "No comparte estudios con otros centros de la muestra.", { ancha: false }),
           tablaEstudios("tabla", "Estudios", "Primero los que reclutan hoy en Chile, después por fase.", T)
@@ -5724,6 +5733,12 @@
         n.tipo === "farmaco" && n.alias_en_la_fuente && n.alias_en_la_fuente.length ?
           "También en la fuente como " + n.alias_en_la_fuente.slice(0, 5).join(", ") :
           subtituloLinea(n);
+      if (n.tipo === "farmaco" && n.clase) {
+        var tipoF = el("p", "exp-sub");
+        tipoF.appendChild(el("strong", "", n.clase));
+        if (n.clase_ncit && n.clase_ncit.length) tipoF.appendChild(document.createTextNode(" · " + n.clase_ncit.join(", ") + " (NCI Thesaurus)"));
+        izq.appendChild(tipoF);
+      }
       if (subTxt) izq.appendChild(el("p", "exp-sub", subTxt));
       if (n.nota_identidad) izq.appendChild(el("p", "exp-sub", "Nota de la recolección: " + n.nota_identidad));
       cab.appendChild(izq);
@@ -5817,7 +5832,15 @@
       raiz.appendChild(pie);
     }
 
-    return { abrir: abrir, pintar: pintar, foco: function () { return foco; } };
+    function frases(id) {
+      var n = byId[id];
+      if (!n) return [];
+      var p = n.tipo === "farmaco" ? perfilFarmaco(n) : n.tipo === "institucion" ? perfilInstitucion(n) :
+              n.tipo === "persona" ? perfilPersona(n) : perfilEnsayo(n);
+      return p.frases;
+    }
+
+    return { abrir: abrir, pintar: pintar, frases: frases, foco: function () { return foco; } };
   })();
 
   // Enlace compartido: #ficha=<id> abre las conexiones de esa ficha.
@@ -5904,6 +5927,23 @@
           li.appendChild(b); ol.appendChild(li);
         });
         art.appendChild(ol);
+        if (E.tipo === "farmaco") {
+          // Por tipo: el filtro que un MSL usa primero. Cada chip abre la lista ya filtrada.
+          var cl = el("div", "entrada-clases");
+          contarClases(todos).filter(function (c) { return c[0] !== "Sin clasificar"; }).slice(0, 6).forEach(function (c) {
+            var bc = el("button", "entrada-clase", c[0] + " · " + c[1]); bc.type = "button";
+            bc.title = "Ver los fármacos de tipo " + c[0];
+            bc.addEventListener("click", function () {
+              var chip = document.querySelector('.chip[data-filter="farmaco"]');
+              if (chip) chip.click();
+              state.claseFarmaco = c[0];
+              renderCards();
+              mostrarVista("fichas");
+            });
+            cl.appendChild(bc);
+          });
+          if (cl.childNodes.length) art.appendChild(cl);
+        }
         var t = el("button", "entrada-todos", "Ver los " + todos.length.toLocaleString("es-CL") + " →"); t.type = "button";
         t.addEventListener("click", function () {
           var chip = document.querySelector('.chip[data-filter="' + E.tipo + '"]');
@@ -5976,6 +6016,16 @@
       verRed.textContent = "Ver su perfil →";
       verRed.addEventListener("click", function () { closeDetail(); explorador.abrir(n.id); });
       content.appendChild(verRed);
+    }
+    // Las mismas conclusiones del perfil, arriba de la evidencia: la ficha dice qué significan sus
+    // conexiones antes de listarlas.
+    var frasesFicha = explorador.frases(n.id);
+    if (frasesFicha.length) {
+      var resFicha = document.createElement("div"); resFicha.className = "ficha-resumen";
+      var ulF = document.createElement("ul");
+      frasesFicha.forEach(function (f) { var li = document.createElement("li"); li.textContent = f; ulF.appendChild(li); });
+      resFicha.appendChild(ulF);
+      content.appendChild(resFicha);
     }
     if (n.tipo === "institucion") content.appendChild(bloqueUbicacion(n));
     if (n.tipo === "institucion" && n.nota_identidad) {
@@ -6155,27 +6205,53 @@
     // Conexiones reales de esta entidad — cada vínculo del JSON, no solo un número mudo.
     var relacionados = vinculos.filter(function (v) { return v.origen === n.id || v.destino === n.id; });
     if (relacionados.length) {
+      // Agrupadas por tipo, con el vínculo de cada una: una lista plana de 110 filas mezclaba el
+      // fármaco con sus centros y no se leía. Cada grupo muestra las primeras y lleva al perfil.
       var conTitle = document.createElement("div"); conTitle.className = "sheet-section-title";
       conTitle.textContent = "Conectado con (" + relacionados.length + ")";
       content.appendChild(conTitle);
-      var conList = document.createElement("ul"); conList.className = "hecho-list";
+      var grupos = {};
       relacionados.forEach(function (v) {
         var otherId = v.origen === n.id ? v.destino : v.origen;
-        var other = byId[otherId];
-        if (!other) return;
-        var li = document.createElement("li"); li.className = "hecho-item conexion-item";
-        li.tabIndex = 0; li.setAttribute("role", "button");
-        var vTag = document.createElement("span"); vTag.className = "hecho-tag"; vTag.textContent = v.tipo;
-        li.appendChild(vTag);
-        li.appendChild(document.createTextNode(other.nombre + " · " + typeLabel[other.tipo]));
-        var goTo = function () { openDetail(otherId); };
-        li.addEventListener("click", goTo);
-        li.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); goTo(); } });
-        conList.appendChild(li);
+        if (!byId[otherId]) return;
+        (grupos[byId[otherId].tipo] = grupos[byId[otherId].tipo] || []).push({ id: otherId, v: v });
       });
-      content.appendChild(conList);
+      ["farmaco", "ensayo_clinico", "institucion", "persona"].forEach(function (tipo) {
+        var g = grupos[tipo];
+        if (!g) return;
+        g.sort(function (a, b) {
+          return (byId[b.id].sitios_chile_reclutando > 0) - (byId[a.id].sitios_chile_reclutando > 0) ||
+            connectionCount(b.id) - connectionCount(a.id);
+        });
+        var sub = document.createElement("div"); sub.className = "conexion-grupo";
+        sub.textContent = TIPO_GRUPO_LABEL[tipo] + " · " + g.length;
+        content.appendChild(sub);
+        var conList = document.createElement("ul"); conList.className = "hecho-list";
+        g.slice(0, 6).forEach(function (x) {
+          var other = byId[x.id];
+          var li = document.createElement("li"); li.className = "hecho-item conexion-item";
+          li.tabIndex = 0; li.setAttribute("role", "button");
+          var vTag = document.createElement("span"); vTag.className = "hecho-tag"; vTag.textContent = x.v.tipo;
+          li.appendChild(vTag);
+          li.appendChild(document.createTextNode(nombreCorto(other)));
+          var extra = other.tipo === "ensayo_clinico" ? [faseDe(other), other.sitios_chile_reclutando > 0 ? "reclutando en Chile" : other.estado_reclutamiento].filter(Boolean).join(" · ") :
+            other.tipo === "farmaco" ? other.clase : other.tipo === "institucion" ? other.ciudad : other.subtitulo;
+          if (extra && extra !== "Sin clasificar") { var ex = document.createElement("span"); ex.className = "conexion-extra"; ex.textContent = extra; li.appendChild(ex); }
+          var goTo = function () { openDetail(x.id); };
+          li.addEventListener("click", goTo);
+          li.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); goTo(); } });
+          conList.appendChild(li);
+        });
+        content.appendChild(conList);
+        if (g.length > 6) {
+          var mas = document.createElement("button"); mas.type = "button"; mas.className = "exp-mas";
+          mas.textContent = "Ver los " + g.length + " en su perfil →";
+          mas.addEventListener("click", function () { closeDetail(); explorador.abrir(n.id); });
+          content.appendChild(mas);
+        }
+      });
       // Con más de 14 vecinos el círculo del mini-grafo se vuelve un anillo de etiquetas encimadas:
-      // para esas fichas la red se lee en "Ver sus conexiones".
+      // para esas fichas la red se lee en el perfil.
       if (relacionados.length <= 14) content.appendChild(buildEgoGraph(n, relacionados));
     }
 

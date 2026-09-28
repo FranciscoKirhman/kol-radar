@@ -10,7 +10,7 @@ pasos concretos, en orden, con quién decide cada uno.
 | Sitio | Funciona como sitio estático (sin servidor ni base de datos). Ya está en GitHub Pages: <https://franciscokirhman.github.io/kol-radar/> |
 | Licencia del código | **MIT** — [`LICENSE`](LICENSE) |
 | Licencia de los datos | **ODbL 1.0** — [`data/LICENSE.md`](data/LICENSE.md). Obligatoria mientras haya coordenadas de OpenStreetMap |
-| Revisión humana de los datos | **No hecha.** 1 hecho confirmado de 2.627 |
+| Revisión humana de los datos | **No hecha.** 1 hecho confirmado de 2.986 |
 | Canal para que un profesional corrija o retire su ficha | **Correo provisorio** (franckirhman@gmail.com), ya visible en el pie del sitio. Falta el proceso: plazo, registro de exclusiones |
 | Aviso de privacidad | Borrador en [`PRIVACIDAD.md`](PRIVACIDAD.md); falta identificar al responsable |
 | Validación con MSL reales (Etapa 6 del charter) | **No hecha** |
@@ -91,6 +91,7 @@ para revisión:
 |---|---|
 | `integrar_beta.py` | Ensayos con sede en Chile desde ClinicalTrials.gov |
 | `integrar_farmacos_ctgov.py` | Fármacos desde las intervenciones estructuradas de cada ensayo |
+| `clasificar_farmacos_ncit.py` | Tipo de cada fármaco según el NCI Thesaurus. Se corre **después** del anterior, que recrea los fármacos |
 | `resolver_sedes_web.py` | Liga textos de sede a instituciones, con evidencia buscada a mano |
 | `recolectar_estudiosclinicos_cl.py` + `integrar_estudiosclinicos_cl.py` | Centros que la CIF nombra para ensayos que reclutan |
 | `consolidar_ubicaciones.py` | Dirección y punto de cada institución (DEIS, sitios oficiales, OpenStreetMap) |
