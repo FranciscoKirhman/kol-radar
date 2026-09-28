@@ -1,0 +1,1101 @@
+{
+ "alias_a_existentes": [
+  {
+   "texto": "Instituto Nacional de Cancer",
+   "institucion": "inc",
+   "motivo": "misma institución sin tilde ni artículo"
+  },
+  {
+   "texto": "Cilnica Santa Maria",
+   "institucion": "clinica-santa-maria",
+   "motivo": "errata de «Clínica»; la fuente la ubica en Providencia, donde está Clínica Santa María"
+  },
+  {
+   "texto": "Fundación Arturo Pérez López",
+   "institucion": "falp",
+   "motivo": "apellidos del fundador en orden invertido"
+  },
+  {
+   "texto": "Hospital Salvador",
+   "institucion": "hosp-salvador",
+   "motivo": "mismo nombre sin el artículo; Santiago"
+  },
+  {
+   "texto": "IRAM",
+   "institucion": "iram",
+   "motivo": "sigla del Instituto de Radiomedicina"
+  },
+  {
+   "texto": "IRAM - Chile",
+   "institucion": "iram",
+   "motivo": "sigla del Instituto de Radiomedicina"
+  },
+  {
+   "texto": "IRAM - Instituto de Radio Medicina",
+   "institucion": "iram",
+   "motivo": "mismo nombre, separado en dos palabras"
+  },
+  {
+   "texto": "Instituto de Radiomedicine",
+   "institucion": "iram",
+   "motivo": "nombre a medio traducir"
+  },
+  {
+   "texto": "Clinica IRAM",
+   "institucion": "iram",
+   "motivo": "sigla del Instituto de Radiomedicina; la fuente lo ubica en Vitacura"
+  },
+  {
+   "texto": "Iram Cancer Research ( Site 0198)",
+   "institucion": "iram",
+   "motivo": "sigla del Instituto de Radiomedicina + código de sitio"
+  },
+  {
+   "texto": "Iram Cancer Research ( Site 0909)",
+   "institucion": "iram",
+   "motivo": "sigla del Instituto de Radiomedicina + código de sitio"
+  },
+  {
+   "texto": "Iram Cancer Research ( Site 2809)",
+   "institucion": "iram",
+   "motivo": "sigla del Instituto de Radiomedicina + código de sitio"
+  },
+  {
+   "texto": "INTOP",
+   "institucion": "itop",
+   "motivo": "sigla del Instituto de Terapias Oncológicas Providencia"
+  },
+  {
+   "texto": "Instituto de Tereplas Oncologicas Providencia INTOP",
+   "institucion": "itop",
+   "motivo": "errata de «Terapias», con la sigla"
+  },
+  {
+   "texto": "Instituto de Terapias Oncologicas",
+   "institucion": "itop",
+   "motivo": "mismo nombre sin la comuna"
+  },
+  {
+   "texto": "Hosp Regional de Concepcion",
+   "institucion": "hosp-concepcion",
+   "motivo": "abreviatura de Hospital Clínico Regional de Concepción"
+  },
+  {
+   "texto": "Hospital Base de Puerto Montt",
+   "institucion": "hosp-puerto-montt",
+   "motivo": "único hospital base de Puerto Montt"
+  },
+  {
+   "texto": "Hospital de Puerto Montt",
+   "institucion": "hosp-puerto-montt",
+   "motivo": "mismo hospital, sin «Base»"
+  },
+  {
+   "texto": "Universidad de Concepción",
+   "institucion": "udec",
+   "motivo": "mismo nombre"
+  },
+  {
+   "texto": "Faculty of Medicine, University of Chile",
+   "institucion": "uchile",
+   "motivo": "Facultad de Medicina de la Universidad de Chile"
+  },
+  {
+   "texto": "Department of Surgery, Clinical Hospital, University of Chile",
+   "institucion": "hosp-uchile",
+   "motivo": "Departamento de Cirugía del Hospital Clínico de la Universidad de Chile"
+  },
+  {
+   "texto": "Servicio de Oncologia-Hospital Clinico Unversidad de Chile",
+   "institucion": "hosp-uchile",
+   "motivo": "errata de «Universidad»; la fuente lo ubica en Independencia, donde está el hospital"
+  },
+  {
+   "texto": "Pontifica Universidad Catolica De Chile",
+   "institucion": "puc",
+   "motivo": "errata de «Pontificia»"
+  },
+  {
+   "texto": "Facultad de medicina UC",
+   "institucion": "puc",
+   "motivo": "Facultad de Medicina de la Pontificia Universidad Católica"
+  },
+  {
+   "texto": "Centro de Investigaciones Clinicas de la Universidad Catolica",
+   "institucion": "puc",
+   "motivo": "unidad de la Universidad Católica"
+  },
+  {
+   "texto": "Instituto de Salud Publica",
+   "institucion": "isp",
+   "motivo": "mismo nombre sin «de Chile»"
+  },
+  {
+   "texto": "Centro de Investigaciones Clinicas",
+   "institucion": "cic-vina",
+   "motivo": "la fuente lo ubica en Viña del Mar: es el nombre del centro sin la ciudad"
+  },
+  {
+   "texto": "Medical Research Limited Society",
+   "institucion": "sim",
+   "motivo": "traducción literal de «Sociedad de Investigaciones Médicas Limitada»; misma ciudad, Temuco"
+  },
+  {
+   "texto": "Instituto Clinico Oncologico",
+   "institucion": "icos",
+   "motivo": "nombre de ICOS sin «del Sur»; misma ciudad, Temuco"
+  },
+  {
+   "texto": "ACEREY Centro de Investigación Clínica Oncológica",
+   "institucion": "oncocentro",
+   "motivo": "la propia fuente escribe «ONCOCENTRO APYS-ACEREY» en otro ensayo; misma ciudad, Viña del Mar"
+  }
+ ],
+ "nuevas": [
+  {
+   "id": "cido",
+   "nombre": "CIDO — Centro de Investigación y Desarrollo Oncológico",
+   "ciudad": "Temuco",
+   "deis": "200602",
+   "textos": [
+    "CIDO SpA-Oncology ( Site 0302)",
+    "CIDO SpA ( Site 0212)",
+    "CIDO SpA ( Site 1509)",
+    "CIDO SpA-Oncology ( Site 0508)",
+    "CIDO SpA-Oncology ( Site 0608)",
+    "CIDO SpA-Oncology ( Site 0707)",
+    "CIDO SpA-Oncology ( Site 0708)",
+    "CIDO SpA-Oncology ( Site 2106)",
+    "CIDO SpA-Oncology ( Site 2256)",
+    "CIDO SpA-Oncology ( Site 4106)",
+    "Centro de Investigacion y Desarrollo Oncologico",
+    "Centro de Investigacion y desarrollo Oncologico SpA - CIDO SpA ( Site 0380)",
+    "Centro de Investigacion y desarrollo Oncologico SpA - CIDO SpA ( Site 2808)",
+    "Centro de investigacion y desarrollo oncolgico Spa",
+    "Clinica CIDO"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Clínica Oncológica CIDO SpA», comuna de Temuco, código 200602."
+    },
+    {
+     "url": "https://estudiosclinicos.cl/category/establecimiento/centro-de-investigacion-y-desarollo-oncologico-cido/",
+     "tipo": "otro",
+     "hecho": "El buscador de estudios clínicos de la Cámara de la Innovación Farmacéutica lista a «Centro de Investigación y Desarollo Oncologico (CIDO)» como establecimiento."
+    }
+   ]
+  },
+  {
+   "id": "instituto-oncologico-vina",
+   "nombre": "Instituto Oncológico — Clínica Bupa Reñaca",
+   "ciudad": "Viña del Mar",
+   "deis": "107206",
+   "textos": [
+    "Instituto Oncologico",
+    "Instituto Oncologico Ltda.",
+    "Instituto Oncologico Clinica Renaca",
+    "Instituto Oncologico, Clinica Renaca",
+    "Clinica Renaca",
+    "Clinica Renaca - Gocchi"
+   ],
+   "evidencia": [
+    {
+     "url": "https://www.clinicabuparenaca.cl/unidades-clinicas-y-servicios/centro-de-oncologia",
+     "tipo": "otro",
+     "hecho": "Clínica Bupa Reñaca: «La radioterapia se realiza gracias al convenio vigente con el Instituto Oncológico que funciona en dependencias del 2º piso de Clínica Bupa Reñaca»."
+    },
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Clínica Reñaca», comuna de Viña del Mar, código 107206."
+    }
+   ],
+   "avisos": [
+    "Los textos «Instituto Oncologico» y «Clinica Renaca» se ligan al mismo centro porque la clínica declara que el Instituto funciona en su edificio y la fuente los ubica en Reñaca / Viña del Mar. No se verificó que cada ensayo corra en el Instituto y no en otra unidad de la clínica."
+   ]
+  },
+  {
+   "id": "centro-oncologico-norte",
+   "nombre": "Centro Oncológico del Norte",
+   "ciudad": "Antofagasta",
+   "deis": "200508",
+   "textos": [
+    "Centro Oncologico del Norte",
+    "Centro Oncológico del Norte",
+    "Centro de Investigación Oncológica del Norte ( Site 0504)",
+    "Centro Oncologico Antofagasta",
+    "Centro Oncologico Antofagasta ( Site 0206)",
+    "Centro Oncologico Antofagasta ( Site 0386)",
+    "Centro Oncologico Antofagasta ( Site 0914)",
+    "Centro Oncologico Antofagasta ( Site 2804)",
+    "Centro Oncológico Antofagasta"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Centro Oncológico del Norte (CON)», comuna de Antofagasta, código 200508."
+    },
+    {
+     "url": "https://centrooncologicodelnorte.cl/",
+     "tipo": "otro",
+     "hecho": "El sitio oficial se titula «Centro Oncologico del Norte – Centro Oncologico de Antofagasta»: los dos nombres son del mismo centro."
+    }
+   ]
+  },
+  {
+   "id": "cics-temuco",
+   "nombre": "Centro de Investigación Clínica del Sur",
+   "ciudad": "Temuco",
+   "textos": [
+    "Centro de Investigacion Clinica del Sur",
+    "Centro Investigacion Clinica Del Sur",
+    "Centro Investigacion Clinica del Sur",
+    "Centro de Investigación Clínica del Sur"
+   ],
+   "evidencia": [
+    {
+     "url": "https://www.portalchile.org/empresa/centro-de-investigacion-clinica-del-sur-limitada-76602780",
+     "tipo": "otro",
+     "hecho": "Registro comercial: Centro de Investigación Clínica del Sur Limitada, Temuco."
+    }
+   ],
+   "avisos": [
+    "Dos directorios dan direcciones distintas en Temuco; no se ubicó en el mapa."
+   ]
+  },
+  {
+   "id": "centro-cancer-uc",
+   "nombre": "Centro de Cáncer Nuestra Señora de la Esperanza (UC CHRISTUS)",
+   "ciudad": "Santiago",
+   "deis": "200699",
+   "textos": [
+    "Centro de Cancer Nuestra Senora de la Esperanza ( Site 1063)",
+    "Centro de Cancer Nuestra Senora de la Esperanza ( Site 0065)",
+    "Centro de Cancer Pontificie Universidad Catolica de Chile"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Centro de Cáncer Red de Salud UC CHRISTUS», comuna de Santiago, código 200699."
+    },
+    {
+     "url": "https://www.ucchristus.cl/blog-salud-uc/articulos/2023/centro-de-c%C3%A1ncer-nuestra-se%C3%B1ora-de-la-esperanza-cumple-25-a%C3%B1os",
+     "tipo": "otro",
+     "hecho": "UC CHRISTUS: el Centro de Cáncer Nuestra Señora de la Esperanza cumple 25 años."
+    }
+   ]
+  },
+  {
+   "id": "hosp-clinico-uc",
+   "nombre": "Hospital Clínico UC CHRISTUS",
+   "ciudad": "Santiago",
+   "textos": [
+    "Hospital Clinico Universidad Catolica de Chile",
+    "Hospital Clínico de la Pontificia Univ. Católica de Chile"
+   ],
+   "evidencia": [],
+   "avisos": [
+    "El DEIS no tiene un registro con este nombre; no se ubicó en el mapa."
+   ]
+  },
+  {
+   "id": "clinica-uc-san-carlos",
+   "nombre": "Clínica UC CHRISTUS San Carlos de Apoquindo",
+   "ciudad": "Las Condes",
+   "deis": "112261",
+   "textos": [
+    "Clinica UC San Carlos de Apoquindo",
+    "Clínica UC San Carlos de Apoquindo",
+    "Clínica UC San Carlos de Apoquindo ( Site 0043)",
+    "Clínica UC San Carlos de Apoquindo ( Site 0211)",
+    "Clínica UC San Carlos de Apoquindo ( Site 0305)",
+    "Clínica UC San Carlos de Apoquindo-Hemato-Oncology ( Site 2402)"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Clínica San Carlos de Apoquindo Red de Salud UC CHRISTUS», comuna de Las Condes, código 112261."
+    }
+   ]
+  },
+  {
+   "id": "uc-san-joaquin",
+   "nombre": "Centro Médico San Joaquín UC CHRISTUS",
+   "ciudad": "Macul",
+   "deis": "112512",
+   "textos": [
+    "San Joaquín Medical Center, UCChristus Health Network"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Centro Médico San Joaquín Red de Salud UC CHRISTUS», comuna de Macul, código 112512."
+    }
+   ]
+  },
+  {
+   "id": "clinica-davila-vespucio",
+   "nombre": "Clínica Dávila Vespucio (ex Clínica Vespucio)",
+   "ciudad": "La Florida",
+   "deis": "114223",
+   "textos": [
+    "Clinica Vespucio",
+    "Clínica Vespucio ( Site 0205)",
+    "Clínica Vespucio-Hemato - Ocology ( Site 0607)"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Clínica Dávila Vespucio», comuna de La Florida, código 114223."
+    },
+    {
+     "url": "https://www.davila.cl/conoce-la-nueva-davila-vespucio/",
+     "tipo": "otro",
+     "hecho": "Clínica Dávila presenta la «nueva Dávila Vespucio», el antiguo edificio de Clínica Vespucio."
+    }
+   ]
+  },
+  {
+   "id": "meds-la-dehesa",
+   "nombre": "Clínica MEDS La Dehesa",
+   "ciudad": "Lo Barnechea",
+   "deis": "200234",
+   "textos": [
+    "Clínica MEDS La Dehesa ( Site 0509)"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Clínica MEDS La Dehesa», comuna de Lo Barnechea, código 200234."
+    }
+   ]
+  },
+  {
+   "id": "hosp-roberto-del-rio",
+   "nombre": "Hospital Clínico de Niños Dr. Roberto del Río",
+   "ciudad": "Santiago",
+   "deis": "109101",
+   "textos": [
+    "Hospital Roberto Del Rio",
+    "Hospital Roberto del Rio",
+    "Hospital Roberto del Rio-Universidad de Chile",
+    "Department of Pediatrics Hematology and Oncology, Hospital Roberto del Rio"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Clínico de Niños Dr. Roberto del Río (Santiago, Independencia)», comuna de Independencia, código 109101."
+    }
+   ]
+  },
+  {
+   "id": "hosp-tisne",
+   "nombre": "Hospital Santiago Oriente Dr. Luis Tisné Brousse",
+   "ciudad": "Santiago",
+   "deis": "112101",
+   "textos": [
+    "Hospital Luis Tisne Brousse",
+    "Hospital Santiago Oriente Dr. Luis Tisne Brousse"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Dr. Luis Tisné B. (Santiago, Peñalolén)», comuna de Peñalolén, código 112101."
+    }
+   ]
+  },
+  {
+   "id": "hosp-dipreca",
+   "nombre": "Hospital DIPRECA",
+   "ciudad": "Santiago",
+   "deis": "112248",
+   "textos": [
+    "Hospital DIPRECA",
+    "Hospital Dirección de Previsión de Carabineros"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Dipreca Teniente Hernán Merino», comuna de Las Condes, código 112248."
+    }
+   ],
+   "avisos": [
+    "No es el Hospital de Carabineros (otra ficha): el de la Dirección de Previsión es DIPRECA."
+   ]
+  },
+  {
+   "id": "hosp-fach",
+   "nombre": "Hospital FACh",
+   "ciudad": "Santiago",
+   "deis": "112238",
+   "textos": [
+    "Hospital FACH"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital FACH», comuna de Las Condes, código 112238."
+    }
+   ]
+  },
+  {
+   "id": "hosp-naval-vina",
+   "nombre": "Hospital Naval Almirante Nef",
+   "ciudad": "Viña del Mar",
+   "deis": "107217",
+   "textos": [
+    "Hospital Naval Almirante Nef"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Naval Almirante Neff», comuna de Viña del Mar, código 107217."
+    }
+   ]
+  },
+  {
+   "id": "hosp-san-jose",
+   "nombre": "Complejo Hospitalario San José",
+   "ciudad": "Santiago",
+   "deis": "109100",
+   "textos": [
+    "Hospital San Jose"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Complejo Hospitalario San José (Santiago, Independencia)», comuna de Independencia, código 109100."
+    }
+   ],
+   "avisos": [
+    "Hay varios Hospital San José en Chile; se eligió el de Santiago porque es la ciudad que declara la fuente."
+   ]
+  },
+  {
+   "id": "hosp-san-pablo-coquimbo",
+   "nombre": "Hospital San Pablo de Coquimbo",
+   "ciudad": "Coquimbo",
+   "deis": "105101",
+   "textos": [
+    "Hospital San Pablo"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital San Pablo (Coquimbo)», comuna de Coquimbo, código 105101."
+    }
+   ]
+  },
+  {
+   "id": "hosp-la-serena",
+   "nombre": "Hospital San Juan de Dios de La Serena",
+   "ciudad": "La Serena",
+   "deis": "105100",
+   "textos": [
+    "Hospital Regional de La Serena ( Site 0907)"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital San Juan de Dios (La Serena)», comuna de La Serena, código 105100."
+    }
+   ],
+   "avisos": [
+    "La fuente lo llama «Hospital Regional de La Serena»; el DEIS registra un solo hospital en la comuna, el San Juan de Dios."
+   ]
+  },
+  {
+   "id": "hosp-coyhaique",
+   "nombre": "Hospital Regional de Coyhaique",
+   "ciudad": "Coyhaique",
+   "deis": "125100",
+   "textos": [
+    "Hospital regional de Coyhaique"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Regional de Coyhaique», comuna de Coyhaique, código 125100."
+    }
+   ]
+  },
+  {
+   "id": "hosp-hanga-roa",
+   "nombre": "Hospital Hanga Roa",
+   "ciudad": "Isla de Pascua",
+   "deis": "112107",
+   "textos": [
+    "Hospital Hanga Roa"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Hanga Roa (Isla De Pascua)», comuna de Isla de Pascua, código 112107."
+    }
+   ]
+  },
+  {
+   "id": "hosp-arica",
+   "nombre": "Hospital Regional Dr. Juan Noé Crevani",
+   "ciudad": "Arica",
+   "deis": "101100",
+   "textos": [
+    "Hospital Base de Arica"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Regional Dr. Juan Noé Crevani (Arica)», comuna de Arica, código 101100."
+    }
+   ],
+   "avisos": [
+    "La fuente lo llama «Hospital Base de Arica»; es el único hospital público de la ciudad en el DEIS."
+   ]
+  },
+  {
+   "id": "hosp-villarrica",
+   "nombre": "Hospital de Villarrica",
+   "ciudad": "Villarrica",
+   "deis": "121121",
+   "textos": [
+    "Hospital de Villarrica"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital de Villarrica», comuna de Villarrica, código 121121."
+    }
+   ]
+  },
+  {
+   "id": "hosp-victoria",
+   "nombre": "Hospital San José de Victoria",
+   "ciudad": "Victoria",
+   "deis": "129106",
+   "textos": [
+    "Hospital de Victoria"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital San José de Victoria», comuna de Victoria, código 129106."
+    }
+   ]
+  },
+  {
+   "id": "hosp-nueva-imperial",
+   "nombre": "Hospital Intercultural de Nueva Imperial",
+   "ciudad": "Nueva Imperial",
+   "deis": "121114",
+   "textos": [
+    "Hospital Intercultural"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Intercultural de Nueva Imperial», comuna de Nueva Imperial, código 121114."
+    }
+   ]
+  },
+  {
+   "id": "hosp-curanilahue",
+   "nombre": "Hospital Provincial Dr. Rafael Avaria (Curanilahue)",
+   "ciudad": "Curanilahue",
+   "deis": "128109",
+   "textos": [
+    "Hospital de Curanilahue"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital Provincial Dr. Rafael Avaría (Curanilahue)», comuna de Curanilahue, código 128109."
+    }
+   ]
+  },
+  {
+   "id": "hosp-molina",
+   "nombre": "Hospital Santa Rosa de Molina",
+   "ciudad": "Molina",
+   "deis": "116102",
+   "textos": [
+    "Hospital Santa Rosa de Molina"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Hospital de Molina», comuna de Molina, código 116102."
+    }
+   ],
+   "avisos": [
+    "El DEIS lo registra como «Hospital de Molina», el único hospital de la comuna."
+   ]
+  },
+  {
+   "id": "cesfam-el-roble",
+   "nombre": "CESFAM El Roble",
+   "ciudad": "La Pintana",
+   "deis": "114319",
+   "textos": [
+    "CESFAM El Roble"
+   ],
+   "evidencia": [
+    {
+     "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
+     "tipo": "otro",
+     "hecho": "Registro de establecimientos de salud del DEIS (Minsal): «Centro de Salud Familiar El Roble», comuna de La Pintana, código 114319."
+    }
+   ]
+  },
+  {
+   "id": "cesfam-juan-pablo-ii",
+   "nombre": "CESFAM Juan Pablo II",
+   "ciudad": "Santiago",
+   "textos": [
+    "CESFAM Juan Pablo II"
+   ],
+   "evidencia": [],
+   "avisos": [
+    "El DEIS tiene dos CESFAM con este nombre en la Región Metropolitana (La Pintana y San Bernardo); no se eligió ninguno."
+   ]
+  },
+  {
+   "id": "health-care-chile",
+   "nombre": "Health & Care SpA",
+   "ciudad": "Santiago",
+   "textos": [
+    "Health & Care SPA",
+    "Health & Care Spa",
+    "Health and Care Chile ( Site 0202)",
+    "Health and Care Chile ( Site 0901)"
+   ],
+   "evidencia": [],
+   "avisos": [
+    "No se encontró una página pública del centro: existe solo por su nombre en la fuente."
+   ]
+  },
+  {
+   "id": "rey-oreilly",
+   "nombre": "Rey y O'Reilly Limitada",
+   "ciudad": "Temuco",
+   "textos": [
+    "Rey y Oreilly Limitada ( Site 1048)"
+   ],
+   "evidencia": [],
+   "avisos": [
+    "Razón social sin página pública encontrada: existe solo por su nombre en la fuente."
+   ]
+  },
+  {
+   "id": "aren-bachero",
+   "nombre": "Sociedad Médica Arén y Bachero Limitada",
+   "ciudad": "Santiago",
+   "textos": [
+    "Sociedad Medica Aren y Bachero Limitada ( Site 0207)",
+    "Sociedad Medica Aren y Bachero Limitada ( Site 0426)"
+   ],
+   "evidencia": [],
+   "avisos": [
+    "Razón social sin página pública encontrada: existe solo por su nombre en la fuente."
+   ]
+  },
+  {
+   "id": "ceos",
+   "nombre": "Centro de Estudios Oncológicos de Santiago (CEOS)",
+   "ciudad": "Santiago",
+   "textos": [
+    "Centro de Estudios Oncologicos Santiago",
+    "Centro de Estudios Oncologicos de Santiago (CEOS) Oncologia"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "urumed",
+   "nombre": "Servicios Médicos Urumed",
+   "ciudad": "Rancagua",
+   "textos": [
+    "Servicios Medicos Urumed ( Site 0405)"
+   ],
+   "evidencia": [
+    {
+     "url": "https://www.unensayoparami.org/es/sitios/servicios-medicos-urumed",
+     "tipo": "otro",
+     "hecho": "Un Ensayo para Mí lista «Servicios Médicos Urumed» como sitio de ensayos en Rancagua, O'Higgins."
+    }
+   ]
+  },
+  {
+   "id": "cec-suecia",
+   "nombre": "Centro de Estudios Clínicos Suecia",
+   "ciudad": "Santiago",
+   "textos": [
+    "Centro De Estudios Clínicos Suecia SpA"
+   ],
+   "evidencia": [
+    {
+     "url": "https://suecia-cec.cl/",
+     "tipo": "otro",
+     "hecho": "Sitio oficial del Centro de Estudios Clínicos Suecia."
+    }
+   ]
+  },
+  {
+   "id": "ufro",
+   "nombre": "Universidad de La Frontera",
+   "ciudad": "Temuco",
+   "textos": [
+    "Universidad de La Frontera",
+    "Department of Rehabilitation Sciences, Faculty of Medicine, Universidad de La Frontera. Temuco, Chile"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "ucn",
+   "nombre": "Universidad Católica del Norte",
+   "ciudad": "Coquimbo",
+   "textos": [
+    "Universidad Católica del Norte"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "ucmaule",
+   "nombre": "Universidad Católica del Maule",
+   "ciudad": "Talca",
+   "textos": [
+    "Catholic University of Maule"
+   ],
+   "evidencia": [],
+   "avisos": [
+    "Es la universidad, no la Clínica Universidad Católica del Maule (otra ficha)."
+   ]
+  },
+  {
+   "id": "conac",
+   "nombre": "Corporación Nacional del Cáncer (CONAC)",
+   "ciudad": "Santiago",
+   "textos": [
+    "Corporacion Nacional del Cancer"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "cormun-puente-alto",
+   "nombre": "Corporación de Salud Municipal de Puente Alto",
+   "ciudad": "Puente Alto",
+   "textos": [
+    "Corporación de Salud Municipal de Puente Alto"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "icer-lab",
+   "nombre": "ICER-Lab",
+   "ciudad": "Talcahuano",
+   "textos": [
+    "ICER-Lab"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "clinica-las-nieves",
+   "nombre": "Clínica Las Nieves",
+   "ciudad": "Santiago",
+   "textos": [
+    "Clinica Las Nieves"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "benef-osorno",
+   "nombre": "Corporación de Beneficencia Osorno",
+   "ciudad": "Osorno",
+   "textos": [
+    "Corporacion de Beneficencia Osorno"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "enroll",
+   "nombre": "Enroll SpA",
+   "ciudad": "Providencia",
+   "textos": [
+    "Enroll SpA"
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "meditek",
+   "nombre": "Meditek Ltda.",
+   "ciudad": "Santiago",
+   "textos": [
+    "Meditek Ltda."
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "dermacross",
+   "nombre": "Clínica Dermacross",
+   "ciudad": "Santiago",
+   "textos": [
+    "Clinica Dermacross S.A."
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "dermovein",
+   "nombre": "Clínica Dermovein",
+   "ciudad": "Santiago",
+   "textos": [
+    "Clinica Dermovein S.A."
+   ],
+   "evidencia": []
+  },
+  {
+   "id": "ced-vina",
+   "nombre": "Centro de Especialidades Dermatológicas",
+   "ciudad": "Viña del Mar",
+   "textos": [
+    "Centro de Especialidades Dermatologicas"
+   ],
+   "evidencia": []
+  }
+ ],
+ "siguen_en_cola": [
+  {
+   "texto": "Site 122",
+   "ensayos": 2
+  },
+  {
+   "texto": "Site 123",
+   "ensayos": 2
+  },
+  {
+   "texto": "Chile",
+   "ensayos": 1
+  },
+  {
+   "texto": "Departmento de Hemato-Oncologia",
+   "ensayos": 1
+  },
+  {
+   "texto": "Las Condes",
+   "ensayos": 1
+  },
+  {
+   "texto": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon-Fri from 9 AM to 5 PM Eastern Time (UTC/ GMT - 5 hours, EST), or speak with your personal physician",
+   "ensayos": 1
+  },
+  {
+   "texto": "Research Center",
+   "ensayos": 1
+  },
+  {
+   "texto": "Hospital Santa Maria",
+   "ensayos": 1
+  },
+  {
+   "texto": "Private Office",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site Reference ID/Investigator# 36964",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site Reference ID/Investigator# 36967",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site 121",
+   "ensayos": 1
+  },
+  {
+   "texto": "Administrative office",
+   "ensayos": 1
+  },
+  {
+   "texto": "Fresenius Kabi Chile Therapia iv",
+   "ensayos": 1
+  },
+  {
+   "texto": "Hospital Amaral Carvalho",
+   "ensayos": 1
+  },
+  {
+   "texto": "Fresenius Kabi Chile, Therapia i.v.",
+   "ensayos": 1
+  },
+  {
+   "texto": "Hospital de Referencia de Salud Cordillera Unidad de Patología Mamaria",
+   "ensayos": 1
+  },
+  {
+   "texto": "SITE",
+   "ensayos": 1
+  },
+  {
+   "texto": "Clincial Study Site",
+   "ensayos": 1
+  },
+  {
+   "texto": "Clinical Study Site",
+   "ensayos": 1
+  },
+  {
+   "texto": "Daniel Munoz",
+   "ensayos": 1
+  },
+  {
+   "texto": "Tanvex Investigational Site 4001",
+   "ensayos": 1
+  },
+  {
+   "texto": "Tanvex Investigational Site 4002",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #100",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #85",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #91",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical #263",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #113",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #119",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #139",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #142",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #148",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #247",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #90",
+   "ensayos": 1
+  },
+  {
+   "texto": "UROMED",
+   "ensayos": 1
+  },
+  {
+   "texto": "Karol Ramírez",
+   "ensayos": 1
+  },
+  {
+   "texto": "Alejandra Martínez",
+   "ensayos": 1
+  },
+  {
+   "texto": "Centro de Estudios Clinicos In",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #106",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #107",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #108",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #109",
+   "ensayos": 1
+  },
+  {
+   "texto": "Exelixis Clinical Site #53",
+   "ensayos": 1
+  },
+  {
+   "texto": "Barbara Burgos Mansilla",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site 25",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site 26",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site 29",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site 32",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site 34",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site 38",
+   "ensayos": 1
+  },
+  {
+   "texto": "Site 40",
+   "ensayos": 1
+  },
+  {
+   "texto": "Sandoz Investigational Site 1",
+   "ensayos": 1
+  },
+  {
+   "texto": "Centro de Investigaciones ( Site 0511)",
+   "ensayos": 1
+  }
+ ]
+}

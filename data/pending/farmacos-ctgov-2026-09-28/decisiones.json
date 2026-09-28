@@ -1,0 +1,1169 @@
+{
+ "uniones": [
+  {
+   "une": "zw25",
+   "en": "zanidatamab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "xl092",
+   "en": "zanzalintinib",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "vp16",
+   "en": "etoposide",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "t-dm1",
+   "en": "trastuzumab emtansine",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "skb264",
+   "en": "sacituzumab tirumotecan",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "sar439859",
+   "en": "amcenestrant",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "nktr214",
+   "en": "bempegaldesleukin",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "mdx-010 monoclonal antibody",
+   "en": "ipilimumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "mb02",
+   "en": "bevacizumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "her3-dxd",
+   "en": "patritumab deruxtecan",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "gdc0941",
+   "en": "pictilisib",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "ds8201a",
+   "en": "trastuzumab deruxtecan",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "cc99282",
+   "en": "golcadomide",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "bms986507",
+   "en": "iza-bren",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "bms986504",
+   "en": "navlimetostat",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "bms986213",
+   "en": "nivolumab-relatlimab fdc",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "bms936558",
+   "en": "nivolumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "azd9833",
+   "en": "camizestrant",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "6-mercaptopurine",
+   "en": "mercaptopurine",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "tx05",
+   "en": "trastuzumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "sar408701",
+   "en": "tusamitamab ravtansine",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "mk1084",
+   "en": "calderasib",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "medi4736",
+   "en": "durvalumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "sac-tmt",
+   "en": "sacituzumab tirumotecan",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "r-dxd",
+   "en": "raludotatug deruxtecan",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "peg-asparaginase",
+   "en": "pegaspargase",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "fda-licensed nivolumab",
+   "en": "opdivo",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "eu-authorized nivolumab",
+   "en": "opdivo",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "eu-approved avastin",
+   "en": "bevacizumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "bacillus calmette-guerin",
+   "en": "bcg",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "i-dxd",
+   "en": "ifinatamab deruxtecan",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "velcade",
+   "en": "bortezomib",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "taxotere",
+   "en": "docetaxel",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "sutent",
+   "en": "sunitinib",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "oraxol",
+   "en": "paclitaxel",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "oncovin",
+   "en": "vincristine",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "mabthera",
+   "en": "rituximab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "keytruda",
+   "en": "pembrolizumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "alimta",
+   "en": "pemetrexed",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "yervoy",
+   "en": "ipilimumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "tarceva",
+   "en": "erlotinib",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "nexavar",
+   "en": "sorafenib",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "avastin",
+   "en": "bevacizumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  },
+  {
+   "une": "herceptin",
+   "en": "trastuzumab",
+   "evidencia": "otherNames de ClinicalTrials.gov"
+  }
+ ],
+ "excluidas": [
+  {
+   "clave": "5-hydroxytryptamine subtype 3 receptor antagonist",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "5-hydroxytryptamine subtype 3 receptor antagonist"
+   ],
+   "ensayos": [
+    "NCT06780085"
+   ]
+  },
+  {
+   "clave": "androgen deprivation therapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Androgen Deprivation Therapy (ADT)"
+   ],
+   "ensayos": [
+    "NCT04191096",
+    "NCT06952803"
+   ]
+  },
+  {
+   "clave": "capecitabine polychemotherapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "epirubicin + cisplatin + capecitabine polychemotherapy"
+   ],
+   "ensayos": [
+    "NCT01633203"
+   ]
+  },
+  {
+   "clave": "chemotherapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Chemotherapy"
+   ],
+   "ensayos": [
+    "NCT00864331",
+    "NCT03939481",
+    "NCT04581824",
+    "NCT05111626",
+    "NCT06731478",
+    "NCT07022483"
+   ]
+  },
+  {
+   "clave": "corticosteroid",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Corticosteroid"
+   ],
+   "ensayos": [
+    "NCT06780085"
+   ]
+  },
+  {
+   "clave": "endocrine therapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Endocrine Therapy"
+   ],
+   "ensayos": [
+    "NCT04109066"
+   ]
+  },
+  {
+   "clave": "h1 receptor antagonist",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "H1 receptor antagonist"
+   ],
+   "ensayos": [
+    "NCT06788912",
+    "NCT06824467"
+   ]
+  },
+  {
+   "clave": "h2 receptor antagonist",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "H2 receptor antagonist"
+   ],
+   "ensayos": [
+    "NCT06788912",
+    "NCT06824467"
+   ]
+  },
+  {
+   "clave": "investigator's choice",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Investigator's choice"
+   ],
+   "ensayos": [
+    "NCT00117598"
+   ]
+  },
+  {
+   "clave": "investigator's choice of chemotherapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Investigator's Choice of Chemotherapy"
+   ],
+   "ensayos": [
+    "NCT05415215"
+   ]
+  },
+  {
+   "clave": "investigator's choice treatment",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Investigator's Choice Treatment (Darcabazine, Pazopanib, Gemcitabine + Docetaxel, Doxorubicin, Ifosfamide)"
+   ],
+   "ensayos": [
+    "NCT02049905"
+   ]
+  },
+  {
+   "clave": "lhrh agonist",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "LHRH Agonist"
+   ],
+   "ensayos": [
+    "NCT04961996",
+    "NCT06065748"
+   ]
+  },
+  {
+   "clave": "low-intensity chemotherapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Low-intensity chemotherapy regimen"
+   ],
+   "ensayos": [
+    "NCT04994717"
+   ]
+  },
+  {
+   "clave": "luteinizing hormone-releasing hormone agonist",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Luteinizing hormone-releasing hormone (LHRH) agonist"
+   ],
+   "ensayos": [
+    "NCT04711252"
+   ]
+  },
+  {
+   "clave": "neurokinin-1 receptor antagonist",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Neurokinin-1 receptor antagonist"
+   ],
+   "ensayos": [
+    "NCT06780085"
+   ]
+  },
+  {
+   "clave": "physician's choice of endocrine therapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Physician's Choice of Endocrine Therapy"
+   ],
+   "ensayos": [
+    "NCT04961996"
+   ]
+  },
+  {
+   "clave": "platinum chemotherapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Platinum Chemotherapy"
+   ],
+   "ensayos": [
+    "NCT06899126"
+   ]
+  },
+  {
+   "clave": "soc chemotherapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "SOC chemotherapy regimen"
+   ],
+   "ensayos": [
+    "NCT04994717"
+   ]
+  },
+  {
+   "clave": "standard chemotherapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Standard chemotherapy"
+   ],
+   "ensayos": [
+    "NCT00643565"
+   ]
+  },
+  {
+   "clave": "steroid mouthwash",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Steroid mouthwash (dexamethasone or equivalent)"
+   ],
+   "ensayos": [
+    "NCT06788912",
+    "NCT06824467"
+   ]
+  },
+  {
+   "clave": "treatment",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "treatment"
+   ],
+   "ensayos": [
+    "NCT01154140"
+   ]
+  },
+  {
+   "clave": "triple therapy",
+   "motivo": "clase o esquema genérico, no un principio activo",
+   "texto_en_la_fuente": [
+    "Intrathecal Triple Therapy (Intrathecal Cytarabine, Hydrocortisone, and Methotrexate)"
+   ],
+   "ensayos": [
+    "NCT02303821"
+   ]
+  },
+  {
+   "clave": "rescue medication",
+   "motivo": "cuidado de soporte o rescate",
+   "texto_en_la_fuente": [
+    "Rescue Medication",
+    "Rescue medication"
+   ],
+   "ensayos": [
+    "NCT06312137",
+    "NCT06428409",
+    "NCT06717347",
+    "NCT06780098",
+    "NCT06841354",
+    "NCT06863272",
+    "NCT06925737",
+    "NCT06966700",
+    "NCT07232602",
+    "NCT07252739"
+   ]
+  },
+  {
+   "clave": "rescue medications",
+   "motivo": "cuidado de soporte o rescate",
+   "texto_en_la_fuente": [
+    "Rescue Medications",
+    "Rescue medications"
+   ],
+   "ensayos": [
+    "NCT06132958",
+    "NCT06780098",
+    "NCT07216703",
+    "NCT07227597",
+    "NCT07286149",
+    "NCT07318558"
+   ]
+  },
+  {
+   "clave": "standard of care",
+   "motivo": "cuidado de soporte o rescate",
+   "texto_en_la_fuente": [
+    "Standard of Care"
+   ],
+   "ensayos": [
+    "NCT02369874"
+   ]
+  },
+  {
+   "clave": "supportive care measures",
+   "motivo": "cuidado de soporte o rescate",
+   "texto_en_la_fuente": [
+    "Supportive care measures"
+   ],
+   "ensayos": [
+    "NCT06170788",
+    "NCT06428409"
+   ]
+  },
+  {
+   "clave": "abiraterone acetate placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Abiraterone acetate Placebo"
+   ],
+   "ensayos": [
+    "NCT01715285"
+   ]
+  },
+  {
+   "clave": "amcenestrant-matching placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Amcenestrant-matching placebo"
+   ],
+   "ensayos": [
+    "NCT04478266",
+    "NCT05128773"
+   ]
+  },
+  {
+   "clave": "amg 386 placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "AMG 386 Placebo"
+   ],
+   "ensayos": [
+    "NCT01204749"
+   ]
+  },
+  {
+   "clave": "anastrozole placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Anastrozole placebo"
+   ],
+   "ensayos": [
+    "NCT04711252"
+   ]
+  },
+  {
+   "clave": "azd9833 placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "AZD9833 placebo"
+   ],
+   "ensayos": [
+    "NCT04711252"
+   ]
+  },
+  {
+   "clave": "cabozantinib-matched placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Cabozantinib-matched placebo"
+   ],
+   "ensayos": [
+    "NCT03937219"
+   ]
+  },
+  {
+   "clave": "canakinumab-matching placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "canakinumab-matching placebo"
+   ],
+   "ensayos": [
+    "NCT03631199"
+   ]
+  },
+  {
+   "clave": "farletuzumab-matched placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Farletuzumab-matched placebo"
+   ],
+   "ensayos": [
+    "NCT00849667"
+   ]
+  },
+  {
+   "clave": "gdc-0941 matching placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "GDC-0941 Matching Placebo"
+   ],
+   "ensayos": [
+    "NCT01437566"
+   ]
+  },
+  {
+   "clave": "gdc-0980 matching placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "GDC-0980 Matching Placebo"
+   ],
+   "ensayos": [
+    "NCT01437566"
+   ]
+  },
+  {
+   "clave": "ipilimumab placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "ipilimumab placebo"
+   ],
+   "ensayos": [
+    "NCT03138512"
+   ]
+  },
+  {
+   "clave": "letrozole-matching placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Letrozole-matching placebo"
+   ],
+   "ensayos": [
+    "NCT04478266"
+   ]
+  },
+  {
+   "clave": "nivolumab placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "nivolumab placebo"
+   ],
+   "ensayos": [
+    "NCT03138512"
+   ]
+  },
+  {
+   "clave": "normal saline",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "normal saline"
+   ],
+   "ensayos": [
+    "NCT04895358"
+   ]
+  },
+  {
+   "clave": "normal saline solution",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Normal saline solution"
+   ],
+   "ensayos": [
+    "NCT03066778"
+   ]
+  },
+  {
+   "clave": "placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "IV Placebo",
+    "Oral Placebo",
+    "Placebo",
+    "Placebo (for aflibercept)",
+    "Placebo with enzalutamide",
+    "doxorubicin in combination with placebo",
+    "pembrolizumab + placebo",
+    "placebo"
+   ],
+   "ensayos": [
+    "NCT00056407",
+    "NCT00073307",
+    "NCT00073528",
+    "NCT00078832",
+    "NCT00105443",
+    "NCT00305188",
+    "NCT00324155",
+    "NCT00334282",
+    "NCT00457392",
+    "NCT00457691",
+    "NCT00519285",
+    "NCT00532155",
+    "NCT00556712",
+    "NCT00561470",
+    "NCT00574275",
+    "NCT00680901",
+    "NCT00692770",
+    "NCT00806819",
+    "NCT00858364",
+    "NCT00861614",
+    "NCT00863746",
+    "NCT00901901",
+    "NCT00917384",
+    "NCT00974311",
+    "NCT01057810",
+    "NCT01077154",
+    "NCT01168791",
+    "NCT01170663",
+    "NCT01193244",
+    "NCT01234311",
+    "NCT01235962",
+    "NCT01244191",
+    "NCT01263886",
+    "NCT01285609",
+    "NCT01358877",
+    "NCT01456325",
+    "NCT01493843",
+    "NCT01512199",
+    "NCT01663727",
+    "NCT01933932",
+    "NCT02003924",
+    "NCT02119663",
+    "NCT02312258",
+    "NCT02367040",
+    "NCT02425891",
+    "NCT02437318",
+    "NCT02545504",
+    "NCT02626455",
+    "NCT02677896",
+    "NCT02752074",
+    "NCT02763579",
+    "NCT02853604",
+    "NCT03142334",
+    "NCT03221426",
+    "NCT03337724",
+    "NCT03371017",
+    "NCT03395197",
+    "NCT03447769",
+    "NCT03504397",
+    "NCT03615326",
+    "NCT03778229",
+    "NCT03834493",
+    "NCT03834506",
+    "NCT03937154",
+    "NCT04246177",
+    "NCT04266301",
+    "NCT04351555",
+    "NCT04475939",
+    "NCT04498117",
+    "NCT04736199",
+    "NCT04915755",
+    "NCT05052801",
+    "NCT05132582",
+    "NCT05239728",
+    "NCT05352672",
+    "NCT05608291",
+    "NCT06120491",
+    "NCT06161441",
+    "NCT06307431",
+    "NCT06356129",
+    "NCT06629779",
+    "NCT06875310",
+    "NCT06890598",
+    "NCT06901531",
+    "NCT06952803",
+    "NCT07076121",
+    "NCT07087054",
+    "NCT07431827",
+    "NCT07489495"
+   ]
+  },
+  {
+   "clave": "placebo for lenvatinib",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo for lenvatinib"
+   ],
+   "ensayos": [
+    "NCT03820986"
+   ]
+  },
+  {
+   "clave": "placebo for olaparib",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo for olaparib"
+   ],
+   "ensayos": [
+    "NCT03740165",
+    "NCT04380636"
+   ]
+  },
+  {
+   "clave": "placebo for pembrolizumab",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo for Pembrolizumab",
+    "Placebo for pembrolizumab"
+   ],
+   "ensayos": [
+    "NCT03675737",
+    "NCT03740165",
+    "NCT04221945",
+    "NCT04634877"
+   ]
+  },
+  {
+   "clave": "placebo matching bms-936558",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo matching BMS-936558 (Nivolumab)"
+   ],
+   "ensayos": [
+    "NCT01721772"
+   ]
+  },
+  {
+   "clave": "placebo matching dacarbazine",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo matching Dacarbazine"
+   ],
+   "ensayos": [
+    "NCT01721772"
+   ]
+  },
+  {
+   "clave": "placebo matching ipilimumab",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo matching Ipilimumab"
+   ],
+   "ensayos": [
+    "NCT01450761"
+   ]
+  },
+  {
+   "clave": "placebo matching lenvatinib",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo matching lenvatinib"
+   ],
+   "ensayos": [
+    "NCT03829319"
+   ]
+  },
+  {
+   "clave": "placebo oral",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo Oral Tablet"
+   ],
+   "ensayos": [
+    "NCT03400709"
+   ]
+  },
+  {
+   "clave": "placebo to pembrolizumab",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Placebo to Pembrolizumab",
+    "Placebo to pembrolizumab"
+   ],
+   "ensayos": [
+    "NCT03635567",
+    "NCT04241185"
+   ]
+  },
+  {
+   "clave": "prednisone placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Prednisone Placebo"
+   ],
+   "ensayos": [
+    "NCT01715285"
+   ]
+  },
+  {
+   "clave": "saline placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "saline placebo"
+   ],
+   "ensayos": [
+    "NCT03713593"
+   ]
+  },
+  {
+   "clave": "tamoxifen-matching placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Tamoxifen-matching placebo"
+   ],
+   "ensayos": [
+    "NCT05128773"
+   ]
+  },
+  {
+   "clave": "veliparib placebo",
+   "motivo": "placebo o vehículo",
+   "texto_en_la_fuente": [
+    "Veliparib Placebo"
+   ],
+   "ensayos": [
+    "NCT02163694"
+   ]
+  },
+  {
+   "clave": "acetaminophen",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Acetaminophen (or equivalent)",
+    "Paracetamol / Acetaminophen"
+   ],
+   "ensayos": [
+    "NCT05405166",
+    "NCT06788912",
+    "NCT06824467"
+   ]
+  },
+  {
+   "clave": "b12",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "B12"
+   ],
+   "ensayos": [
+    "NCT00806819"
+   ]
+  },
+  {
+   "clave": "dexamethasone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Dexamethasone",
+    "Dexamethasone (or equivalent)",
+    "Dexamethasone (pre- and post-medication for docetaxel)",
+    "dexamethasone",
+    "dexamethasone (or corticosteroid equivalent)"
+   ],
+   "ensayos": [
+    "NCT00113607",
+    "NCT00411541",
+    "NCT00532155",
+    "NCT00806819",
+    "NCT02303821",
+    "NCT03007147",
+    "NCT03834506",
+    "NCT05405166",
+    "NCT05519085",
+    "NCT05669989",
+    "NCT05730036",
+    "NCT06136624",
+    "NCT06136650",
+    "NCT06152575",
+    "NCT06230224",
+    "NCT06232707",
+    "NCT06353386",
+    "NCT06788912",
+    "NCT06824467"
+   ]
+  },
+  {
+   "clave": "diphenhydramine",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Diphenhydramine"
+   ],
+   "ensayos": [
+    "NCT05405166"
+   ]
+  },
+  {
+   "clave": "fludrocortisone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Fludrocortisone acetate"
+   ],
+   "ensayos": [
+    "NCT06136624",
+    "NCT06136650",
+    "NCT06353386"
+   ]
+  },
+  {
+   "clave": "folic acid",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Folic Acid"
+   ],
+   "ensayos": [
+    "NCT00806819"
+   ]
+  },
+  {
+   "clave": "hydrocortisone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Hydrocortisone"
+   ],
+   "ensayos": [
+    "NCT06136624",
+    "NCT06136650"
+   ]
+  },
+  {
+   "clave": "mesna",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "mesna"
+   ],
+   "ensayos": [
+    "NCT00002565"
+   ]
+  },
+  {
+   "clave": "methylprednisolone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Methylprednisolone",
+    "methylprednisolone"
+   ],
+   "ensayos": [
+    "NCT00002565",
+    "NCT03007147",
+    "NCT05405166",
+    "NCT06717347"
+   ]
+  },
+  {
+   "clave": "packed rbc transfusion",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "epoetin alfa + packed RBC transfusion"
+   ],
+   "ensayos": [
+    "NCT00338286"
+   ]
+  },
+  {
+   "clave": "paracetamol",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Paracetamol / Acetaminophen"
+   ],
+   "ensayos": [
+    "NCT05405166"
+   ]
+  },
+  {
+   "clave": "prednisolone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Abiraterone + Prednisolone/Prednisone",
+    "Cyclophosphamide, Hydroxydaunorubicin, Oncovin, Prednisone/Prednisolone (CHOP)",
+    "Cyclophosphamide, Vincristine, Prednisone/Prednisolone (CVP)",
+    "Predinsone/Prednisolone",
+    "Prednisolone",
+    "Prednisone or Prednisolone",
+    "Prednisone/Prednisolone",
+    "Prednisone/prednisolone"
+   ],
+   "ensayos": [
+    "NCT00519285",
+    "NCT01724021",
+    "NCT03007147",
+    "NCT03834519",
+    "NCT06091254",
+    "NCT06091865",
+    "NCT06717347",
+    "NCT06764485",
+    "NCT06911502",
+    "NCT06952803"
+   ]
+  },
+  {
+   "clave": "prednisone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Abiraterone + Prednisolone/Prednisone",
+    "Cyclophosphamide, Hydroxydaunorubicin, Oncovin, Prednisone/Prednisolone (CHOP)",
+    "Cyclophosphamide, Vincristine, Prednisone/Prednisolone (CVP)",
+    "Prednisone",
+    "Prednisone (or Prednisolone)",
+    "Prednisone 100 mg/m^2",
+    "Prednisone acetate",
+    "Prednisone or Prednisolone",
+    "Prednisone/Prednisolone",
+    "Prednisone/Prenisolone",
+    "Prednisone/prednisolone",
+    "prednisone"
+   ],
+   "ensayos": [
+    "NCT00002565",
+    "NCT00124566",
+    "NCT00417079",
+    "NCT00519285",
+    "NCT00722137",
+    "NCT01193244",
+    "NCT01308580",
+    "NCT01715285",
+    "NCT01724021",
+    "NCT02626455",
+    "NCT02960022",
+    "NCT03338790",
+    "NCT03678025",
+    "NCT03834506",
+    "NCT03834519",
+    "NCT04100018",
+    "NCT04446117",
+    "NCT05008224",
+    "NCT06091254",
+    "NCT06091865",
+    "NCT06097364",
+    "NCT06136624",
+    "NCT06136650",
+    "NCT06353386",
+    "NCT06356129",
+    "NCT06425302",
+    "NCT06717347",
+    "NCT06911502",
+    "NCT06925737",
+    "NCT06952803"
+   ]
+  },
+  {
+   "clave": "simethicone",
+   "motivo": "premedicación o soporte habitual",
+   "texto_en_la_fuente": [
+    "Simethicone"
+   ],
+   "ensayos": [
+    "NCT01653171"
+   ]
+  },
+  {
+   "clave": "ev",
+   "motivo": "texto demasiado corto para identificar un principio activo",
+   "texto_en_la_fuente": [
+    "EV"
+   ],
+   "ensayos": [
+    "NCT07232602"
+   ]
+  },
+  {
+   "clave": "m2",
+   "motivo": "texto demasiado corto para identificar un principio activo",
+   "texto_en_la_fuente": [
+    "Cyclophosphamide 750 mg/m^2",
+    "Doxorubicin 50 mg/m^2",
+    "Prednisone 100 mg/m^2",
+    "Rituximab 375 mg/m^2",
+    "VELCADE 1.3 mg/m^2",
+    "Vincristine 1.4 mg/m^2"
+   ],
+   "ensayos": [
+    "NCT00722137"
+   ]
+  },
+  {
+   "clave": "s1",
+   "motivo": "texto demasiado corto para identificar un principio activo",
+   "texto_en_la_fuente": [
+    "S-1"
+   ],
+   "ensayos": [
+    "NCT03615326"
+   ]
+  }
+ ]
+}

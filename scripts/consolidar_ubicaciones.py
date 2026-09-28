@@ -83,6 +83,35 @@ DEIS_CODIGOS = {
     "hosp-fricke": "107100",
     "hosp-talca": "116105",           # Hospital Dr. César Garavagno Burotto = Hospital Regional de Talca
     "hosp-sjd": "110100",
+    # Ronda 2026-09-28 (scripts/resolver_sedes_web.py e integrar_estudiosclinicos_cl.py): cada código
+    # se eligió contra nombre, tipo y comuna del registro; los casos dudosos quedan como aviso en la
+    # ficha de la institución.
+    "cido": "200602",                        # Clínica Oncológica CIDO SpA, Temuco
+    "instituto-oncologico-vina": "107206",   # Clínica Reñaca: el Instituto funciona en su 2º piso
+    "centro-oncologico-norte": "200508",     # Centro Oncológico del Norte (CON), Antofagasta
+    "centro-cancer-uc": "200699",            # Centro de Cáncer Red de Salud UC CHRISTUS
+    "clinica-uc-san-carlos": "112261",
+    "uc-san-joaquin": "112512",
+    "clinica-davila-vespucio": "114223",
+    "meds-la-dehesa": "200234",
+    "hosp-roberto-del-rio": "109101",
+    "hosp-tisne": "112101",
+    "hosp-dipreca": "112248",
+    "hosp-fach": "112238",
+    "hosp-naval-vina": "107217",
+    "hosp-san-jose": "109100",               # Independencia, no los de regiones
+    "hosp-san-pablo-coquimbo": "105101",
+    "hosp-la-serena": "105100",              # San Juan de Dios, el único hospital de la comuna
+    "hosp-coyhaique": "125100",
+    "hosp-hanga-roa": "112107",
+    "hosp-arica": "101100",                  # Dr. Juan Noé Crevani
+    "hosp-villarrica": "121121",
+    "hosp-victoria": "129106",
+    "hosp-nueva-imperial": "121114",
+    "hosp-curanilahue": "128109",
+    "hosp-molina": "116102",                 # "Hospital de Molina" en el DEIS
+    "cesfam-el-roble": "114319",             # La Pintana
+    "clinica-alemana-temuco": "121202",
 }
 # Diferencia entre dos fuentes de coordenadas que amerita revisión.
 AVISO_METROS = 400

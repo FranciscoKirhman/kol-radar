@@ -1,0 +1,5216 @@
+{
+ "fuente": "https://estudiosclinicos.cl/",
+ "editor": "Cámara de la Innovación Farmacéutica (CIF)",
+ "fecha_consulta": "2026-09-28",
+ "nota": "No se guardan los contactos de inscripción de cada ficha.",
+ "fichas": [
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon/",
+   "nct": "NCT04928846",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 3, abierto, aleatorizado, controlado, global de Telisotuzumab Vedotin (ABBV-399) versus Docetaxel, en sujetos con cáncer de pulmón de células no pequeñas con sobreexpresión de c-Met, EGFR en estado natural, localmente avanzado/metastásico, no escamoso, previamente tratado.",
+   "laboratorio": "AbbVie",
+   "fase": "III",
+   "codigo": "M18-868",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-4/",
+   "nct": "NCT03994601",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio de inmunoterapia en investigación de BMS-986288 solo y en combinación con nivolumab en tumores sólidos avanzados.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I/II",
+   "codigo": "CA043-001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-7/",
+   "nct": "NCT04738487",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase III, multicéntrico, aleatorizado, doble ciego de MK 7684 con Pembrolizumab como coformulación (MK 7684A) frente a monoterapia con Pembrolizumab como tratamiento de primera línea en participantes con cáncer de pulmón de células no pequeñas metastásico positivo para PD L1.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK7684A-003",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Clinica Universidad Catolia del Maule"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-11/",
+   "nct": "NCT04524689",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase II, aleatorizado, abierto de SAR408701 combinado con Pembrolizumab y Pembrolizumab solo en pacientes con cáncer de pulmón de células no pequeñas no escamosas avanzado/metastásico, positivo para CEACAM5 y PD-L1 (NSCLC NSQ).",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16146",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-pulmonar-obstructiva-cronica/",
+   "nct": "NCT04053634",
+   "area_en_la_fuente": "Enfermedad Pulmonar Obstructiva Crónica",
+   "estado": "Reclutando",
+   "titulo": "Estudio Fase III multicéntrico, aleatorizado, doble ciego, de dosis crónicas, de grupos paralelos, controlado con placebo para evaluar la eficacia y seguridad de Benralizumab 100 mg en pacientes con enfermedad pulmonar obstructiva crónica (EPOC) moderada a muy severa con historia de exacerbaciones de EPOC frecuentes y eosinófilos elevados en sangre periférica (resolute).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D3251C00014",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Curicó",
+     "centro": "Centro Investigación Curicó"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/asma/",
+   "nct": "NCT04609878",
+   "area_en_la_fuente": "Asma",
+   "estado": "Reclutando",
+   "titulo": "Un estudio aleatorizado, doble ciego, de doble simulación, de grupos paralelos, multicéntrico, de 24 a 52 semanas de longitud variable, para evaluar la eficacia y seguridad del inhalador de dosis medidas (MDI) de Budesonida, Glicopirronio y Fumarato de Formoterol en comparación con el MDI de Budesonida y Fumarato de Formoterol y el MDI presurizado de Symbiocort® en participantes adultos y adolescentes con asma controlada de manera inadecuada (kalos).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D5982C00007",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Sótero del Río"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Curicó",
+     "centro": "Centro Investigación Curicó"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-ovario/",
+   "nct": "NCT04884360",
+   "area_en_la_fuente": "Cáncer de Ovario",
+   "estado": "Reclutando",
+   "titulo": "Un estudio de Fase III, aleatorio, doble ciego, controlado con placebo, de la monoterapia de mantenimiento con Olaparib en participantes con cáncer de ovario seroso o endometroide de alto grado avanzado (estadio iii-iv de la figo) tras la respuesta a la quimioterapia estándar de primera línea basada en platino (mono-ola1).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D9319C00001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-higado/",
+   "nct": "NCT04567615",
+   "area_en_la_fuente": "Cáncer de Hígado",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Relatlimab en combinación con Nivolumab en participantes con cáncer de hígado avanzado que nunca han sido tratados con terapia inmunooncológica después de un tratamiento previo con inhibidores de la tirosina cinasa.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "II",
+   "codigo": "CA224-073",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-avanzados-con-mutacion-krasg12c/",
+   "nct": "NCT05067283",
+   "area_en_la_fuente": "Tumores Sólidos Avanzados con Mutación KRASG12C",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase I, de etiqueta abierta, multicéntrico para evaluar la seguridad, tolerabilidad, farmacocinética y eficacia de MK-1084 como monoterapia y en combinación con Pembrolizumab en sujetos con tumores sólidos avanzados con mutación KRASG12C.",
+   "laboratorio": "MSD",
+   "fase": "I",
+   "codigo": "MK1084-001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/prevencion-virus-sincicial-respiratorio-en-recien-nacidos-sanos-y-de-pretermino/",
+   "nct": "NCT04767373",
+   "area_en_la_fuente": "Prevención Virus Sincicial Respiratorio en Recién Nacidos Sanos y de Pretérmino",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase IIb/III, doble ciego, aleatorizado, controlado con placebo para evaluar la eficacia y la seguridad de MK 1654 en lactantes sanos nacidos a término y prematuros.",
+   "laboratorio": "MSD",
+   "fase": "IIb/III",
+   "codigo": "MK1654-004",
+   "area_terapeutica": "Pediatría",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Facultad Medicina Universidad de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Roberto del Río"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital La Florida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Padre Hurtado"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-piel/",
+   "nct": "NCT03833167",
+   "area_en_la_fuente": "Cáncer de Piel",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase III, aleatorizado, doble ciego, controlado con placebo para evaluarar Pembrolizumab en comparación con placebo como tratamiento adyuvante tras la cirugía y la radiación en participantes con carcinoma cutáneode células escamosas localmente avanzado de alto riesgo (cSCCLA) (KEYNOTE-630).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-630",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Antofagasta",
+     "centro": "Centro de Investigación Oncológica del Norte"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esteatohepatitis-no-alcoholica-precirrotica/",
+   "nct": "NCT04583423",
+   "area_en_la_fuente": "Esteatohepatitis No Alcohólica Precirrótica",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase IIb aleatorizado, doble ciego, controlado con placebo para evaluar la eficacia y la seguridad de MK 3655 en individuos con Esteatohepatitis no alcohólica Precirrótica.",
+   "laboratorio": "MSD",
+   "fase": "IIb",
+   "codigo": "MK3655-001",
+   "area_terapeutica": "Gastroenterología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "Hospital San Juan de Dios de La Serena"
+    },
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Centro de Investigaciones Clinicas Viña del Mar"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Hospital Regional de Concepción"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos/",
+   "nct": "NCT05007106",
+   "area_en_la_fuente": "Tumores Sólidos",
+   "estado": "Reclutando",
+   "titulo": "Estudio basket de Fase II, multicéntrico, de etiqueta abierta de MK-7684A, una coformulación de Vibostolimab (MK-7684) con Pembrolizumab (MK-3475), con o sin otros tratamientos oncológicos en participantes con tumores sólidos seleccionados.",
+   "laboratorio": "MSD",
+   "fase": "II",
+   "codigo": "MK7684A-005",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-esofago-2/",
+   "nct": "NCT04949256",
+   "area_en_la_fuente": "Cáncer de Esófago",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, de Fase III para evaluar la eficacia y seguridad de Pembrolizumab (MK-3475) + Lenvatinib (E7080/MK-7902) + quimioterapia, en comparación con el tratamiento de referencia como intervención de primera línea en participantes con carcinoma esofágico metastásico.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK7902-014",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica San Carlos de Apoquindo Red Salud UC Christus"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-estomago/",
+   "nct": "NCT04662710",
+   "area_en_la_fuente": "Cáncer de Estómago",
+   "estado": "Reclutando",
+   "titulo": "Este es un protocolo Fase III, para estudiar la eficacia y seguridad de Pembrolizumab más Lenvatinib más quimioterapia de inducción en pacientes con cáncer gástrico/de la unión gastroesofágica no tratado metastásico HER 2 (-).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK7902-015",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica San Carlos de Apoquindo Red Salud UC Christus"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Clinica Universidad Catolia del Maule"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/retinopatia-diabetica-proliferativa/",
+   "nct": "NCT04278417",
+   "area_en_la_fuente": "Retinopatía Diabética Proliferativa",
+   "estado": "Reclutando",
+   "titulo": "Estudio de 96 semanas, de dos ramas, aleatorizado, simple ciego, multicéntrico, de Fase III que evalúa la eficacia y seguridad de Brolucizumab 6 mg en comparación con láser de fotocoagulación panretiniana en pacientes con retinopatía diabética proliferativa (CONDOR).",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CRTH258D2301",
+   "area_terapeutica": "Oftalmología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Kydoft"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-higado-2/",
+   "nct": "NCT04770896",
+   "area_en_la_fuente": "Cáncer de Hígado",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase III, abierto y aleatorizado de Atezolizumab con Lenvatinib o Sorafenib comparado con Lenvatinib o Sorafenib solos en carcinoma hepatocelular previamente tratado con Atezolizumab y Bevacizumab.",
+   "laboratorio": "ROCHE",
+   "fase": "III",
+   "codigo": "MO42541",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/lupus-eritematoso-cutaneo/",
+   "nct": "NCT04781816",
+   "area_en_la_fuente": "Lupus Eritematoso Cutáneo",
+   "estado": "Reclutando",
+   "titulo": "Estudio de prueba de concepto aleatorizado, doble ciego, comparado con placebo para evaluar la eficacia y la seguridad del inhibidor RIPK1 SAR443122 en pacientes con lupus eritematoso cutáneo subagudo o discoide/crónico moderado a severo.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16404",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad de Servicios Médicos Walsen Ltda."
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Clínico Universidad Católica"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Clinico San Borja Arriarán"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Hospital Base de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/lupus-eritematoso-sistemico/",
+   "nct": "NCT05039840",
+   "area_en_la_fuente": "Lupus Eritematoso Sistémico",
+   "estado": "Reclutando",
+   "titulo": "Eficacia y seguridad de SAR441344 en el tratamiento del lupus eritematoso sistémico: estudio de prueba de concepto de Fase II, aleatorizado, doble ciego, controlado con placebo.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT17010",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "PROSALUD"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Corporación de Beneficiencia Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/rinosinusitis-cronica/",
+   "nct": "NCT04678856",
+   "area_en_la_fuente": "Rinosinusitis Crónica",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, de 2 partes para evaluar la eficacia y la seguridad de Dupilumab en pacientes con rinosinusitis crónica sin poliposis nasal (RCsPN) no controlada.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II/III",
+   "codigo": "EFC16723",
+   "area_terapeutica": "Otorrinolarigología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Sótero del Río"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/sindrome-sjogren-2/",
+   "nct": "NCT04572841",
+   "area_en_la_fuente": "Sindrome Sjogren",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, con grupos paralelos sobre la seguridad, la tolerabilidad, la farmacocinética y la eficacia terapéutica de SAR441344 en pacientes adultos con síndrome de Sjögren primario (SSP).",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16618",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Estudios Clínicos V Región"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Corporación de Beneficiencia Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/lupus-eritematoso-sistemico-2/",
+   "nct": "NCT04961567",
+   "area_en_la_fuente": "Lupus Eritematoso Sistémico",
+   "estado": "Reclutando",
+   "titulo": "A multicenter, randomized, double-blind, placebo-controlled, phase 3 study to evaluate the efficacy and safety of BIIB059 in adult participants with active systemic lupus erythematosus receiving background nonbiologic lupus standard of care.",
+   "laboratorio": "Biogen",
+   "fase": "III",
+   "codigo": "230LE303",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "PROSALUD"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Interin"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Clínica Alemana de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/artritis-psoriasica-activa/",
+   "nct": "NCT04908202",
+   "area_en_la_fuente": "Artritis Psoriásica Activa",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase III, aleatorizado, doble ciego, controlado con placebo, para evaluar la eficacia y la seguridad de Deucravacitinib en participantes con artritis psoriásica activa que no fueron tratados antes con medicamentos antirreumáticos modificadores de la enfermedad de tipo biológico.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "IM011-054",
+   "area_terapeutica": "Inmunología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Reumatológicos"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-de-celulas-no-pequenas/",
+   "nct": "NCT05298423",
+   "area_en_la_fuente": "Cáncer de Pulmón de Células no Pequeñas",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 3, de etiqueta abierta de MK-7684A (coformulación de vibostolimab con pembrolizumab) en combinación con quimiorradioterapia concurrente seguida de MK-7684A frente a quimiorradioterapia concurrente seguida de durvalumab en participantes con NSCLC en estadio III, irresecable, localmente avanzado.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK7684A-006",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Oncología de Precisión"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Biocenter"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-de-crohn/",
+   "nct": "NCT04524611",
+   "area_en_la_fuente": "Enfermedad de Crohn",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Un estudio de fase 3, multicéntrico, aleatorizado, cegado para el evaluador de eficacia de Risankizumab, en comparación con Ustekinumab para el tratamiento de sujetos adultos con enfermedad de Crohn de moderada a severa, quienes han fallado a la terapia anti-TNF.",
+   "laboratorio": "AbbVie",
+   "fase": "III",
+   "codigo": "M20-259",
+   "area_terapeutica": "Gastroenterología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad de Servicios Médicos Walsen Ltda."
+    },
+    {
+     "ciudad": "Talcahuano",
+     "centro": "Hospital de Talcahuano"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Hospital Dr. Guillermo Grantt Benavente"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-5/",
+   "nct": "NCT04026412",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Nivolumab e Ipilimumab en pacientes sin tratamiento con Cáncer de Pulmón a células no pequeñas (NSCLC) en estadio 3 que no se puede o no se prevé remover quirúrgicamente.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA209-73L",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-prostata-2/",
+   "nct": "NCT04100018",
+   "area_en_la_fuente": "Cáncer de Próstata",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Nivolumab o placebo en combinación con Docetaxel en varones con cáncer de próstata avanzado resistente a la castración.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA209-7DX",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "IRAM Cancer Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-urotelial-vejiga-o-uretra-ureter-o-pelvis-renal/",
+   "nct": "NCT03036098",
+   "area_en_la_fuente": "Cáncer Urotelial (vejiga o uretra, uréter o pelvis renal)",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Nivolumab en combinación con Ipilimumab o quimioterapia de referencia frente a la quimioterapia de referencia sola en el tratamiento de pacientes con cáncer urotelial inoperable o metastásico no tratado.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA209-901",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "IRAM Cancer Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/linfoma-de-hodking/",
+   "nct": "NCT05008224",
+   "area_en_la_fuente": "Linfoma de Hodking",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase II de Pembrolizumab y quimioterapia en pacientes con linfoma de Hodgkin clásico recientemente diagnosticado (KEYNOTE-C11).",
+   "laboratorio": "MSD",
+   "fase": "II",
+   "codigo": "3475-C11",
+   "area_terapeutica": "Hemato Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Cáncer"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/insuficiencia-cardiaca-cronica/",
+   "nct": "NCT05093933",
+   "area_en_la_fuente": "Insuficiencia Cardíaca Crónica",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio clínico fundamental, de Fase III, aleatorizado, controlado con placebo para evaluar la eficacia y la seguridad del estimulador de la sGC, Vericiguat/MK-1242, en adultos con insuficiencia cardíaca crónica con fracción de eyección reducida.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK1242-035",
+   "area_terapeutica": "Cardiología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Cardio Sur"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Ensenada"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital y CRS El Pino"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Espacio Eme"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro De Estudios Cardiológicos y de Medicina Interna"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Clínica Alemana de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-colorectal-4/",
+   "nct": "NCT04456699",
+   "area_en_la_fuente": "Cáncer Colorectal",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de etiqueta abierta, aleatorizado de Fase III para evaluar la eficacia y seguridad de Olaparib solo o en combinación con Bevacizumab en comparación con Bevacizumab con una Fluoropirimidina en participantes con cáncer colorrectal irresecable o metastásico que no han experimentado progresión después de la inducción de primera línea (LYNK 003).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK7339-003",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica San Carlos de Apoquindo Red Salud UC Christus"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/vih-sida/",
+   "nct": "NCT04233216",
+   "area_en_la_fuente": "VIH(+)/SIDA",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio clínico de Fase III, aleatorizado, en participantes infectados conVIH-1 multitratados, para evaluar la actividad antirretroviral de Islatravir (ISL) enmascarado, Doravirina (DOR) y Doravirina/Islatravir (DOR/ISL), cada uno comparado con placebo, y la actividad antirretroviral, seguridad y tolerabilidad de DOR/ISL en etiqueta abierta.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK8591A-019",
+   "area_terapeutica": "Enfermedades Infecciosas",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Cardio Sur"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/melanoma-3/",
+   "nct": "NCT04152863",
+   "area_en_la_fuente": "Melanoma",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio clínico aleatorizado, de Fase II de la administración intravenosa o intratumoral de V937 en combinación con Pembrolizumab (MK-3475) frente a Pembrolizumab solo en participantes con melanoma avanzado/metastásico.",
+   "laboratorio": "MSD",
+   "fase": "II",
+   "codigo": "V937-011",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-colorrectal-cancer-gastroesofagico-y-carcinoma-de-celulas-renales-metastasicos/",
+   "nct": "NCT03798626",
+   "area_en_la_fuente": "Cáncer Colorrectal, Cáncer Gastroesofágico y Carcinoma de Células Renales Metastásicos",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase Ib de Gevokizumab en combinación con terapias antineoplásicas estándares de atención, en pacientes con cáncer colorrectal, cáncer gastroesofágico y carcinoma de células renales metastásicos.",
+   "laboratorio": "Novartis",
+   "fase": "Ib",
+   "codigo": "CVPM087A2101",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esclerosis-multiple-2/",
+   "nct": "NCT04410991",
+   "area_en_la_fuente": "Esclerosis Múltiple",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, doble ciego para evaluar la eficacia y seguridad del tratamiento con SAR442168 comparado con teriflunomida (Aubagio®) en pacientes con esclerosis múltiple recurrente (GEMINI 2).",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC16034",
+   "area_terapeutica": "Neurología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CINSAN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Hospital Regional de Concepción"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-2/",
+   "nct": "NCT04418661",
+   "area_en_la_fuente": "Tumores Sólidos",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase I/II, abierto, multicéntrico, de escalada y expansión de dosis de SAR442720 combinado con Pembrolizumab en pacientes con tumores malignos avanzados.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "I",
+   "codigo": "TCD16210",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-no-resecable/",
+   "nct": "NCT05211895",
+   "area_en_la_fuente": "Cáncer de Pulmón no Resecable",
+   "estado": "Reclutando",
+   "titulo": "Estudio internacional, multicéntrico, aleatorizado, de fase III, controlado con placebo de Durvalumab más Domvanalimab (AB154) en participantes con cáncer de pulmón no resecable, localmente avanzado (estadio III), cuya enfermedad no ha progresado después de la quimiorradiación concurrente definitiva basada en terapia con platino (PACIFIC-8).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D9075C00001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Oncología de Precisión"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "IRAM Cancer Research"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    },
+    {
+     "ciudad": "Puerto Montt",
+     "centro": "Clínica Puerto Montt"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-mama-2/",
+   "nct": "NCT05128773",
+   "area_en_la_fuente": "Cáncer de Mama",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, multicéntrico, doble ciego, de Amcenestrant (SAR439859) con respecto a Tamoxifeno para el tratamiento de pacientes con cáncer de mama en etapa IIB-III positivo o negativo para el receptor 2 del factor de crecimiento epidérmico humano que suspendieron el tratamiento adyuvante de inhibición de la Aromatasa debido a una toxicidad relacionada con el tratamiento.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "EFC16133",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Sótero del Río"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-colorectal-5/",
+   "nct": "NCT05104567",
+   "area_en_la_fuente": "Cáncer Colorectal",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de fase II no aleatorizado, abierto, multicéntrico y de múltiples cohortes que evalúa el beneficio clínico de SAR444245 (THOR-707) en combinación con Pembrolizumab o Cetuximab para el tratamiento de participantes con cáncer colorrectal avanzado y metastásico.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16902",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-renal-4/",
+   "nct": "NCT04586231",
+   "area_en_la_fuente": "Cáncer Renal",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase III, aleatorizado, de etiqueta abierta de MK-6482 en combinación con lenvatinib (MK-7902) frente a cabozantinib para el tratamiento en participantes con carcinoma de células renales avanzado que han tenido progresión después de tratamientos anteriores con un anti-PD-1/L1.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "6482-011",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-renal-5/",
+   "nct": "NCT04976634",
+   "area_en_la_fuente": "Cáncer Renal",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase II, de etiqueta abierta, multicéntrico para evaluar la eficacia y seguridad de pembrolizumab más lenvatinib en combinación con belzutifán en múltiples tumores sólidos.",
+   "laboratorio": "MSD",
+   "fase": "II",
+   "codigo": "MK6482-016",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Puerto Montt",
+     "centro": "Clínica Puerto Montt"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/asma-3/",
+   "nct": "NCT05421598",
+   "area_en_la_fuente": "Asma",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, de grupos paralelos, de determinación del intervalo de dosis para evaluar la eficacia, la seguridad y la tolerabilidad de amlitelimab subcutáneo en participantes adultos con asma moderada a grave.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "DRI17509",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Curicó",
+     "centro": "Centro Investigación Curicó"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-esofago-y-estomago/",
+   "nct": "NCT04592913",
+   "area_en_la_fuente": "Cáncer de Esófago y Estómago",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, Fase III de quimioterapia neoadyuvante-adyuvante con Durvalumab y Flot seguido de Durvalumab como terapia adyuvante en pacientes con cáncer gástrico resecable y cáncer de la unión gastroesofágica resecable (gc/gejc). (matterhorn)",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D910GC00001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Clinica Universidad Catolia del Maule"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/linfoma-no-hodgkin/",
+   "nct": "NCT05144841",
+   "area_en_la_fuente": "Linfoma No-Hodgkin",
+   "estado": "Reclutando",
+   "titulo": "Estudio clínico de etiqueta abierta de fase II para evaluar la eficacia y seguridad de zilovertamab vedotin (MK-2140) en participantes con linfoma difuso de células B grandes recidivante o resistente al tratamiento (waveLINE-004).",
+   "laboratorio": "MSD",
+   "fase": "II",
+   "codigo": "MK2140-004",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-endometrio/",
+   "nct": "NCT04634877",
+   "area_en_la_fuente": "Cáncer de Endometrio",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, doble ciego de Pembrolizumab frente a placebo en combinación con quimioterapia adyuvante con o sin radioterapia para el tratamiento del cáncer de endometrio de alto riesgo recién diagnosticado después de una cirugía con intención curativa (KEYNOTE-B21/ENGOT-en11/GOG-3053).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-B21",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Cancer Nuestra Senora de la Esperanza"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-colorectal-3/",
+   "nct": "NCT05064059",
+   "area_en_la_fuente": "Cáncer Colorectal",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase IIIde MK-4280A (coformulación de Favezelimab [MK-4280] más Pembrolizumab [MK-3475]) frente al tratamiento de referencia en cáncer colorrectal metastásico positivo para PD-L1 tratado previamente.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK4280A-007",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Vespucio"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Puerto Montt",
+     "centro": "Clínica Puerto Montt"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-pulmonar-obstructiva-cronica-5/",
+   "nct": "NCT05158387",
+   "area_en_la_fuente": "Enfermedad Pulmonar Obstructiva Crónica",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase III, multicéntrico, aleatorizado, doble ciego, de dosificación crónica, de grupos paralelos, controlado con placebo para evaluar la eficacia y la seguridad de dos regímenes de dosis de MEDI3506 en participantes con enfermedad pulmonar obstructiva crónica (EPOC) sintomática con antecedentes de Exacerbaciones de la EPOC (TITANIA).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D9180C00004",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Sótero del Río"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    },
+    {
+     "ciudad": "Curicó",
+     "centro": "Centro Investigación Curicó"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/asma-severa/",
+   "nct": "NCT05398263",
+   "area_en_la_fuente": "Asma Severa",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 3 multicéntrico, aleatorizado, doble ciego, controlado con placebo para evaluar la eficacia y la seguridad de tezepelumab en la reducción del uso de corticosteroides orales en adultos con asma dependiente de corticosteroides orales (SUNRISE).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D5180C00024",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Tórax"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-2/",
+   "nct": "NCT04351555",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase III, aleatorizado, controlado, multicéntrico, con 3 grupos, de Osimertinib como tratamiento antineoplásico prequirúrgico (neoadyuvante) administrado en monoterapia o en combinación con quimioterapia comparado con la quimioterapia estándar como único tratamiento para pacientes con cáncer de pulmón no microcítico, resecable, positivo para la mutación del receptor del factor de crecimiento epidérmico (Neoadaura).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D516AC00001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biocenter"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncología Precisión U. Mayor"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-vejiga/",
+   "nct": "NCT03661320",
+   "area_en_la_fuente": "Cáncer de Vejiga",
+   "estado": "Finalizado",
+   "titulo": "Estudio de quimioterapia solamente vs. quimioterapia más nivolumab con o sin BMS-986205, seguido de terapia posterior a la cirugía con nivolumab o nivolumab y BMS-986205 en pacientes con Cáncer de Véjiga músculo invasivo.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA017-078",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/melanoma/",
+   "nct": "NCT03369223",
+   "area_en_la_fuente": "Melanoma",
+   "estado": "Finalizado",
+   "titulo": "Estudio de inmunoterapia en investigación de BMS-986249 solo y en combinación con nivolumab en tumores sólidos avanzados o que se han diseminado.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I/II",
+   "codigo": "CA030-001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-renal/",
+   "nct": null,
+   "area_en_la_fuente": "Cáncer Renal",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Nivolumab subcutáneo versus Nivolumab intravenoso en participantes con carcinoma renal de células claras tratado previamente que está avanzado o se ha extendido.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA209-67T",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/melanoma-2/",
+   "nct": "NCT05002569",
+   "area_en_la_fuente": "Melanoma",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, doble ciego de inmunoterapi+C16a adyuvante con la combinación en dosis fijas de Relatlimab y Nivolumab versus monoterapia de Nivolumab después de la resección completa del melanoma de Estadio III-IV.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA224-098",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-origen-primario-desconocido/",
+   "nct": "NCT03498521",
+   "area_en_la_fuente": "Cáncer de Origen Primario Desconocido",
+   "estado": "Finalizado",
+   "titulo": "Estudio Fase II, aleatorizado, controlado con producto activo, multicéntrico que compara la seguridad y eficacia de la inmunoterapia antineoplásica dirigida en pacientes con cáncer de origen primario desconocido guiada por el perfil genómico que han recibido tres ciclos de quimioterapia combinada con platino.",
+   "laboratorio": "ROCHE",
+   "fase": "II",
+   "codigo": "MX39795",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/influenza/",
+   "nct": "NCT03969212",
+   "area_en_la_fuente": "Influenza",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase IIIb, multicéntrico, aleatorizado, doble ciego, controlado con placebo, para evaluar la eficacia clínica de Baloxavir Marboxil en la reducción de la transmisión directa de la influenza de pacientes sanos con influenza a otras personas en el hogar.",
+   "laboratorio": "ROCHE",
+   "fase": "IIIb",
+   "codigo": "MV40618",
+   "area_terapeutica": "Infectología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-9/",
+   "nct": "NCT04513925",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase II, de un solo grupo del Atezolizumab en pacientes con cáncer de pulmón de células no pequeñas localmente avanzado, no extirpable, en etapa III, que no han progresado después de la quimiorradiación concurrente a base de platino.",
+   "laboratorio": "ROCHE",
+   "fase": "II",
+   "codigo": "MO43156",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Cáncer"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "IRAM Cancer Research"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/sle-cle/",
+   "nct": "NCT05162586",
+   "area_en_la_fuente": "SLE / CLE",
+   "estado": "Reclutando",
+   "titulo": "A Phase II, Randomized, Double-Blind, Placebo-Controlled Dose-Ranging, Parallel and Adaptive Study to Evaluate the Efficacy and Safety of Enpatoran in Systemic Lupus Erythematosus and in Cutaneous Lupus Erythematosus (Subacute Cutaneous Lupus Erythematosus and/or Discoid Lupus Erythematosus) Participants Receiving Standard of Care.",
+   "laboratorio": "Merck",
+   "fase": "II",
+   "codigo": "MS200569_0003",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "PROSALUD"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CECIM"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Clínica Alemana de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-avanzados-2/",
+   "nct": "NCT03918278",
+   "area_en_la_fuente": "Tumores Sólidos Avanzados",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase Ib, de etiqueta abierta y de aumento escalonado de la dosis para evaluar la seguridad, la tolerabilidad, la farmacocinética y la farmacodinámica de MK-0482 como monoterapia y en combinación con pembrolizumab en participantes con tumores sólidos avanzados/metastásicos.",
+   "laboratorio": "MSD",
+   "fase": "Ib",
+   "codigo": "MK0482-001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/linfoma-no-hodgkin-leucemia-linfocitica-cronica/",
+   "nct": "NCT05458297",
+   "area_en_la_fuente": "Linfoma no Hodgkin + Leucemia Linfocítica Crónica",
+   "estado": "Reclutando",
+   "titulo": "Estudio basket multicéntrico, de etiqueta abierta y de fase II para evaluar la seguridad y eficacia de MK-2140 como monoterapia y en combinación en participantes con neoplasias de células B agresivas y de bajo grado (waveLINE-006).",
+   "laboratorio": "MSD",
+   "fase": "II",
+   "codigo": "MK2140-006",
+   "area_terapeutica": "Hemato Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/arteriopatia-coronaria-no-obstructiva/",
+   "nct": "NCT05360446",
+   "area_en_la_fuente": "Arteriopatía Coronaria no Obstructiva",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase IIIb, multicéntrico, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos, en el que se evalúa el efecto de inclisirán sobre la progresión de la placa ateroesclerótica evaluada por angiografía coronaria por tomografía computada (CCTA) en participantes con diagnóstico de arteriopatía coronaria no obstructiva sin eventos cardiovasculares previos (VICTORION-PLAQUE).",
+   "laboratorio": "Novartis",
+   "fase": "IIIb",
+   "codigo": "CKJX839D12303",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Ensenada"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Clínica del Sur"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-3/",
+   "nct": "NCT02913313",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Finalizado",
+   "titulo": "Estudio de inmunoterapia en investigación para evaluar la seguridad y eficacia del medicamento experimental BMS-986207 solo y en combinación con nivolumab en tumores sólidos avanzados o que se han diseminado.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I/II",
+   "codigo": "CA020-002",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-colorectal/",
+   "nct": "NCT04008030",
+   "area_en_la_fuente": "Cáncer Colorectal",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Nivolumab, Nivolumab más Ipilimumab, o quimioterapia de elección del investigador para el tratamiento de pacientes con cáncer colorrectal metastásico con deficiencia de reparación de desajuste (deficient mismatch repair, dMMR) o inestabilidad microsatelital elevada (MSI-H).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA209-8HW",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-renal-3/",
+   "nct": "NCT04246177",
+   "area_en_la_fuente": "Cáncer Renal",
+   "estado": "Finalizado",
+   "titulo": "Seguridad y eficacia de lenvatinib (E7080/MK-7902) con pembrolizumab (MK-3475) en combinación con quimioembolización transarterial (TACE) en participantes con carcinoma hepatocelular incurable/no metastásico.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "NCT04246177",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Cancer Nuestra Senora de la Esperanza"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/infeccioso-pacientes-con-hiv-pneumococcal-pneumoniae/",
+   "nct": null,
+   "area_en_la_fuente": "Infeccioso (Pacientes con HIV) / Pneumococcal Pneumoniae",
+   "estado": "Finalizado",
+   "titulo": "Estudio de fase III, multicéntrico, aleatorizado, doble ciego, controlado con comparador activo para evaluar la seguridad, tolerabilidad e inmunogenicidad de V116 en adultos con VIH.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "V116-007",
+   "area_terapeutica": "Infeccioso",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Universidad San Sebastián"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/pneumococcal-infection/",
+   "nct": "NCT05425732",
+   "area_en_la_fuente": "Pneumococcal Infection",
+   "estado": "Finalizado",
+   "titulo": "Estudio clínico de fase III, aleatorizado, doble ciego, controlado con comparador activo para evaluar la seguridad, la tolerabilidad y la inmunogenicidad de V116 en adultos que no recibieron la vacuna neumocócica.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "V116-003",
+   "area_terapeutica": "Infeccioso",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Universidad San Sebastián"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Espacio Eme"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/dermatitis-atopica/",
+   "nct": "NCT05018806",
+   "area_en_la_fuente": "Dermatitis Atópica",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de fase II, aleatorizado, doble ciego, controlado con placebo, multicéntrico, de prueba de concepto, para evaluar la eficacia y la seguridad de rilzabrutinib en pacientes adultos con dermatitis atópica de moderada a severa que tienen una respuesta inadecuada o son intolerantes a los corticoides.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT17207",
+   "area_terapeutica": "Dermatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/lupus-eritematoso-cutaneo-2/",
+   "nct": null,
+   "area_en_la_fuente": "Lupus Eritematoso Cutáneo",
+   "estado": "No Reclutando Aún",
+   "titulo": "A 2-Part Seamless Part A (Phase 2)/Part B (Phase 3) Randomized, Double Blind, Placebo-Controlled, Multicenter Study to Evaluate the Efficacy and Safety of BIIB059 in Participants with Active Subacute Cutaneous Lupus Erythematosus and/or Chronic Cutaneous Lupus Erythematosus with or without Systemic Manifestations and Refractory and/or Intolerant to Antimalarial Therapy (AMETHYST)",
+   "laboratorio": "Biogen",
+   "fase": "II/III",
+   "codigo": "230LE301",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CECIM"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/hiv-1/",
+   "nct": "NCT04776252",
+   "area_en_la_fuente": "HIV-1",
+   "estado": "Reclutando",
+   "titulo": "Estudio clínico de fase 3, de etiqueta abierta, de continuación de doravirina/islatravir (DOR/ISL) una vez al día para el tratamiento contra la infección por VIH-1 en participantes que recibieron previamente DOR/ISL en un estudio clínico de fase 2 o fase 3 de DOR/ISL.",
+   "laboratorio": "MSD",
+   "fase": "II",
+   "codigo": "MK8691A-0331",
+   "area_terapeutica": "Enfermedades Infecciosas",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Clínico Universidad Católica"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Facultad Medicina Universidad de Chile"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/ame/",
+   "nct": "NCT04089566",
+   "area_en_la_fuente": "AME",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Extencion del estudio randomizado, controlado, de escalonamiento de dosis de Nusinersen (BIIB058) en participantes con Atrofia Muscular Espinal.",
+   "laboratorio": "Biogen",
+   "fase": "II/III",
+   "codigo": "232SM302",
+   "area_terapeutica": "Neurología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Luis Calvo Mackenna"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDS"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esquizofrenia/",
+   "nct": "NCT04846881",
+   "area_en_la_fuente": "Esquizofrenia",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de extensión abierto, de una sola rama, para examinar la seguridad a largo plazo de BI 425809, administrado una vez al día, en pacientes con esquizofrenia que han completado estudios de Fase III anteriores con BI 425809. (CONNEX-X)",
+   "laboratorio": "Boehringer Ingelheim Limitada",
+   "fase": "III",
+   "codigo": "1346-0014",
+   "area_terapeutica": "Psiquiatría",
+   "sitios": [
+    {
+     "ciudad": "Antofagasta",
+     "centro": "Psicomed Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-colorectal-2/",
+   "nct": null,
+   "area_en_la_fuente": "Cáncer Colorectal",
+   "estado": "Finalizado",
+   "titulo": "Estudio de inmunoterapia en investigación de Nivolumab en combinación con Trametinib con o sin Ipilimumab en pacientes con cáncer de colon o recto previamente tratado que se ha diseminado.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I/II",
+   "codigo": "CA209-9N9",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esclerosis-multiple/",
+   "nct": "NCT04544449",
+   "area_en_la_fuente": "Esclerosis Múltiple",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase III, multicéntrico, aleatorizado, doble ciego, con doble simulación, de grupos paralelos, para evaluar la eficacia y la seguridad de Fenebrutinib comparado con Ocrelizumab en pacientes adultos con esclerosis múltiple primaria progresiva.",
+   "laboratorio": "ROCHE",
+   "fase": "III",
+   "codigo": "GN41791",
+   "area_terapeutica": "Neurología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esteatohepatitis-no-alcoholica-2/",
+   "nct": null,
+   "area_en_la_fuente": "Esteatohepatitis no Alcohólica",
+   "estado": "No Reclutando Aún",
+   "titulo": "A Randomised, Double-blind, Placebo-controlled, Multi-centre Phase 2b Study to Evaluate the Efficacy, Safety and Tolerability of AZD2693 in Participants with Non-cirrhotic Non-alcoholic Steatohepatitis (NASH) with Fibrosis Who Are Carriers of the PNPLA3 rs738409 148M Risk Allele (NASH-FORTUNA).",
+   "laboratorio": "AstraZeneca",
+   "fase": "II",
+   "codigo": "D7830C00004",
+   "area_terapeutica": "GI",
+   "sitios": []
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-de-crohn-2/",
+   "nct": "NCT03440372",
+   "area_en_la_fuente": "Enfermedad de Crohn",
+   "estado": "Reclutando",
+   "titulo": "A Phase III, multicenter, randomized, double-blind, placebo-controlled study of oral ozanimod as induction therapy for moderately to severely active Crohn’s Disease.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "RPC01-3201",
+   "area_terapeutica": "Gastroenterología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "CECIM"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-de-crohn-4/",
+   "nct": "NCT03467958",
+   "area_en_la_fuente": "Enfermedad de Crohn",
+   "estado": "Reclutando",
+   "titulo": "A Phase III, multicenter, open-label extension study of oral ozanimod for moderately to severely active Crohn’s Disease.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "RPC01-3204",
+   "area_terapeutica": "Gastroenterología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "CECIM"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-4/",
+   "nct": "NCT04943900",
+   "area_en_la_fuente": "Tumores Sólidos",
+   "estado": "Reclutando",
+   "titulo": "A Phase 1 study of BMS-986416 alone and in combination with Nivolumab in select Solid Tumors.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I/II",
+   "codigo": "CA102-003",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/colitis-ulcerosa/",
+   "nct": "NCT05731128",
+   "area_en_la_fuente": "Colitis Ulcerosa",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase II, multicéntrico, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos para evaluar la eficacia y seguridad del tratamiento con dupilumab en pacientes con colitis ulcerosa activa de moderada a severa con fenotipo eosinofílico.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT17746",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CICUC"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Hospital Dr. Guillermo Grantt Benavente"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/colitis-ulcerosa-2/",
+   "nct": "NCT05588843",
+   "area_en_la_fuente": "Colitis Ulcerosa",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, de determinación de dosis para evaluar la eficacia y seguridad de SAR443122 en pacientes adultos con colitis ulcerosa de moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "DRI16804",
+   "area_terapeutica": "Inmunología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Universidad de Los Andes"
+    },
+    {
+     "ciudad": "Talcahuano",
+     "centro": "Hospital de Higueras"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-mama-3/",
+   "nct": "NCT04478266",
+   "area_en_la_fuente": "Cáncer de Mama",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Un estudio de fase 3, aleatorizado, multicéntrico, doble ciego de SAR439859 más palbociclib en comparación con letrozol más palbociclib para el tratamiento de pacientes con cáncer de mama RE(+), HER2(–) que no han recibido tratamiento antineoplásico sistémico previo para la enfermedad avanzada.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC15935",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Cáncer UC"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad de Investigaciones Médicas"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clinical Research Chile SpA"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Clinica Universidad Catolia del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-15/",
+   "nct": "NCT05005273",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Finalizado",
+   "titulo": "A Phase 2 Randomized Double-blind Study of BMS-986207 in Combination with Nivolumab and Ipilimumab as First-line Treatment for Participants with Stage IV Non-Small Cell Lung Cancer.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "II",
+   "codigo": "CA020-016",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Reñaca",
+     "centro": "Clínica Bupa Reñaca"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Cáncer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-renal-6/",
+   "nct": "NCT04626518",
+   "area_en_la_fuente": "Cáncer Renal",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 1b/2 de terapias combinadas inmunitarias y dirigidas en participantes con RCC (KEYMAKER-U03): subestudio 03B.",
+   "laboratorio": "MSD",
+   "fase": "Ib/II",
+   "codigo": "3475-03B",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-vejiga-2/",
+   "nct": "NCT04241185",
+   "area_en_la_fuente": "Cáncer de Vejiga",
+   "estado": "Reclutando",
+   "titulo": "Estudio clínico de fase III, aleatorizado, doble ciego, controlado con placebo para estudiar la eficacia y seguridad de pembrolizumab (MK-3475) en combinación con quimiorradioterapia (CRT) frente a CRT sola en participantes con cáncer de vejiga con invasión muscular (MIBC) (KEYNOTE-992).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "3475-992",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Antofagasta",
+     "centro": "Centro de Investigación Oncológica del Norte"
+    },
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Oncocentro Valdivia"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/melanoma-5/",
+   "nct": null,
+   "area_en_la_fuente": "Melanoma",
+   "estado": "Reclutando",
+   "titulo": "Estudio clínico de fase 3, aleatorizado, doble ciego, controlado con comparador activo de MK-7684A adyuvante (vibostolimab con pembrolizumab) frente a pembrolizumab adyuvante en participantes con melanoma de alto riesgo en estadio II-IV.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "7684A-010",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Antofagasta",
+     "centro": "Centro de Investigación Oncológica del Norte"
+    },
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica San Carlos de Apoquindo Red Salud UC Christus"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-vejiga-3/",
+   "nct": "NCT04626479",
+   "area_en_la_fuente": "Cáncer de Vejiga",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 1b/2 de tratamientos combinados inmunitarios y dirigidos en participantes con RCC (KEYMAKER-U03): subestudio 03A.",
+   "laboratorio": "MSD",
+   "fase": "Ib/II",
+   "codigo": "MK3475-03A",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/sindrome-sjogren-4/",
+   "nct": "NCT05349214",
+   "area_en_la_fuente": "Síndrome Sjogren",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, de 3 ramas, multicéntrico, de fase III para evaluar la eficacia y la seguridad de ianalumab en pacientes con síndrome de Sjögren activo (NEPTUNUS-2).",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CVAY736A2302",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Bioreuma"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esclerosis-multiple-5/",
+   "nct": "NCT05147220",
+   "area_en_la_fuente": "Esclerosis Múltiple",
+   "estado": "Reclutando",
+   "titulo": "Un estudio aleatorizado, doble ciego, de doble simulación, de grupos paralelos que compara la eficacia y la seguridad de remibrutinib en comparación con teriflunomida en participantes con esclerosis múltiple recurrente, seguido de un tratamiento prolongado con remibrutinib de forma abierta.",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CLOU064C12301",
+   "area_terapeutica": "Neurología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/nefropatia-por-iga/",
+   "nct": "NCT04578834",
+   "area_en_la_fuente": "Nefropatía por IgA",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase III multicéntrico, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos para evaluar la eficacia y la seguridad de LNP023 en participantes con nefropatía por IgA primaria.",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CLNP023A2301",
+   "area_terapeutica": "Nefrología",
+   "sitios": [
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-16/",
+   "nct": "NCT03178552",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio Fase II/III multicéntrico para evaluar la eficacia y seguridad de múltiples terapias dirigidas, como tratamiento para pacientes con cáncer de pulmón de células no pequeñas (CPCNP) avanzado o metastásico portadores de mutaciones somáticas tratables detectadas en sangre.",
+   "laboratorio": "ROCHE",
+   "fase": "II/III",
+   "codigo": "BO29554",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Concepción",
+     "centro": "Biocenter"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-mama-her2-2/",
+   "nct": "NCT05415215",
+   "area_en_la_fuente": "Cáncer de Mama HER2+",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase IIIb, multinacional, multicéntrico, aleatorizado, de etiqueta abierta para evaluar la preferencia de los pacientes por la administración domiciliaria de una combinación en dosis fijas de Pertuzumab y Trastuzumab para la administración subcutánea en participantes con Cáncer de Mama HER2+ en estado temprano o localmente avanzado/inflamatorio.",
+   "laboratorio": "ROCHE",
+   "fase": "IIIb",
+   "codigo": "MO43110",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-17/",
+   "nct": "NCT05170204",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio multicéntrico de fase III para evaluar la eficacia y seguridad de múltiples terapias en cohortes de pacientes selecionados según el estado de biomarcadores, con cáncer de pulmón de células no pequeñas, no extirpable, localmente avanzado, en estado III.",
+   "laboratorio": "ROCHE",
+   "fase": "III",
+   "codigo": "BO42777",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/lupus-eritematoso-sistemico-3/",
+   "nct": "NCT04895696",
+   "area_en_la_fuente": "Lupus Eritematoso Sistémico",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase 2, multicéntrico, aleatorizado, doble ciego, controlado con placebo, para evaluar la eficacia y la seguridad de BMS-986256 en participantes con lupus eritematoso sistémico activo.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "II",
+   "codigo": "IM026-024",
+   "area_terapeutica": "Inmunología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Reumatológicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Interin"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Surmedica"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Clínica Alemana de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-colorectal-6/",
+   "nct": "NCT05328908",
+   "area_en_la_fuente": "Cáncer Colorectal",
+   "estado": "Finalizado",
+   "titulo": "A Phase III, Randomized, Open-label (Sponsor Blinded) Study of Relatlimab-nivolumab Fixed-dose Combination Versus Regorafenib or Trifluridine + Tipiracil (TAS-102) for Participants with Later-lines of Metastatic Colorectal Cancer.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA224-123",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Oncología de Precisión"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-avanzados/",
+   "nct": "NCT03396445",
+   "area_en_la_fuente": "Tumores Sólidos Avanzados",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase I del MK-5890 como monoterapia y en combinación con Pembrolizumab en participantes con tumores sólidos avanzados.",
+   "laboratorio": "MSD",
+   "fase": "I",
+   "codigo": "MK5890-001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-renal-2/",
+   "nct": "NCT04736706",
+   "area_en_la_fuente": "Cáncer Renal",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, de etiqueta abierta para evaluar la eficacia y seguridad de Pembrolizumab (MK-3475) en combinación con Belzutifán (MK-6482) y Lenvatinib (MK-7902), o MK-1308A en combinación con Lenvatinib, frente a Pembrolizumab y Lenvatinib, como tratamiento de primera línea en participantes con carcinoma avanzado de células renales claras (ccRCC).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK6482-012",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Rancagua",
+     "centro": "Servicios Medicos Urumed"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-de-celulas-no-pequenas-2/",
+   "nct": "NCT05226598",
+   "area_en_la_fuente": "Cáncer de Pulmón de Células no Pequeñas",
+   "estado": "Finalizado",
+   "titulo": "Estudio aleatorizado, doble ciego, de Fase 3 de una coformulación de Pembrolizumab/Vibostolimab (MK-7684A) en combinación con quimioterapia frente a Pembrolizumab más quimioterapia en participantes con cáncer de pulmón de células no pequeñas metastásico (MK-7684A-007/KEYVIBE-007).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK7684A-007",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Antofagasta",
+     "centro": "Centro de Investigación Oncológica del Norte"
+    },
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Oncología de Precisión"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Biocenter"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/nefritis-lupica-activa/",
+   "nct": "NCT04181762",
+   "area_en_la_fuente": "Nefritis Lupica Activa",
+   "estado": "Finalizado",
+   "titulo": "Estudio de dos años, de Fase III, aleatorizado, doble ciego, de grupos paralelos, controlado con placebo para evaluar la seguridad, la eficacia y la tolerabilidad de 300 mg s.c. Secukinumab frente a placebo, en combinación con el tratamiento habitual (estándar), en pacientes con nefritis lúpica activa.",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CAIN457Q12301",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Bioreuma"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Hospital Regional de Valdivia"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/sindrome-sjogren/",
+   "nct": "NCT03905525",
+   "area_en_la_fuente": "Sindrome Sjogren",
+   "estado": "Finalizado",
+   "titulo": "Estudio de extensión de TWINSS para evaluar la seguridad y tolerabilidad de CFZ533 (Iscalimab) en dos niveles de dosis administradas por vía subcutánea a pacientes con Síndrome de Sjögren.",
+   "laboratorio": "Novartis",
+   "fase": "IIb",
+   "codigo": "CCFZ533B2201E1",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/policitemia/",
+   "nct": "NCT02386800",
+   "area_en_la_fuente": "Policitemia",
+   "estado": "Finalizado",
+   "titulo": "Protocolo de continuación abierto, multicéntrico de Fase IV, para pacientes que han completado un estudio previo global con Ruxolitinib (INC424) o bien un estudio con la combinación Ruxolitinib y Panobinostat (LBH589) patrocinado por Novartis o Incyte y que a criterio del investigador se benefician al continuar la terapia.",
+   "laboratorio": "Novartis",
+   "fase": "IIIb",
+   "codigo": "CINC424A2X01B",
+   "area_terapeutica": "Hematología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Centro de Investigaciones Clinicas Viña del Mar"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CICUC"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esteatohepatitis-no-alcoholica/",
+   "nct": "NCT04065841",
+   "area_en_la_fuente": "Esteatohepatitis no Alcohólica",
+   "estado": "Finalizado",
+   "titulo": "Estudio aleatorizado, doble ciego, de grupos paralelos, multicéntrico para evaluar la eficacia, la seguridad y la tolerabilidad de la terapia de combinación oral de Tropifexor (LJN452) y Licogliflozina (LIK066) y de cada una de esas monoterapias en comparación con placebo para el tratamiento de participantes adultos con esteatohepatitis no alcohólica (NASH) y fibrosis hepática (ELIVATE).",
+   "laboratorio": "Novartis",
+   "fase": "IIb",
+   "codigo": "CLJN452D12201C",
+   "area_terapeutica": "Gastroenterología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Centro de Investigaciones Clinicas Viña del Mar"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-cardiovascular-ateroesclerotica/",
+   "nct": "NCT05030428",
+   "area_en_la_fuente": "Enfermedad Cardiovascular Ateroesclerótica",
+   "estado": "Finalizado",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, multicéntrico para evaluar el impacto de inclisirán en los eventos adversos cardiovasculares mayores en participantes con enfermedad cardiovascular confirmada (VICTORION-2 PREVENT).",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CKJX839B12302",
+   "area_terapeutica": "Cardiología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "CINVEC"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Ensenada"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CECIM"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Clínica del Sur"
+    },
+    {
+     "ciudad": "Victoria",
+     "centro": "Hospital de Victoria"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Corporación de Beneficiencia Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-de-celulas-no-pequenas-3/",
+   "nct": "NCT05171777",
+   "area_en_la_fuente": "Cáncer de Pulmón de Células no Pequeñas",
+   "estado": "Finalizado",
+   "titulo": "Estudio aleatorizado, multicéntrico, de etiqueta abierta y cruzado para evaluar la preferencia informada de los participantes y los profesionales de la salud con respecto a la administración subcutánea de Atezolizumab en comparación con la formulación intravenosa, en participantes que padecen cáncer de pulmón de células no pequeñas (imscin002).",
+   "laboratorio": "ROCHE",
+   "fase": "II",
+   "codigo": "MO43576",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-8/",
+   "nct": "NCT03178552",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio Fase II/III multicéntrico para evaluar la eficacia y seguridad de múltiples terapias dirigidas, como tratamiento para pacientes con cáncer de pulmón de células no pequeñas (cpcnp) avanzado o metastásico portadores de mutaciones somáticas tratables detectadas en sangre (b-fast: blood first assay screening trial) [estudio de selección con valoración inicial en sangre].",
+   "laboratorio": "ROCHE",
+   "fase": "II/III",
+   "codigo": "BO29554",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Concepción",
+     "centro": "Biocenter"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-mama-her2/",
+   "nct": "NCT05415215",
+   "area_en_la_fuente": "Cáncer de Mama HER2+",
+   "estado": "Reclutando",
+   "titulo": "Estudio de Fase IIIB multinacional, multicéntrico, aleatorizado, de etiqueta abierta para evaluar la preferencia de los pacientes por la administración domiciliaria de una combinación en dosis fijas de Pertuzumab y Trastuzumab para la administración subcutánea en participantes con cáncer de mama HER2+ en estado temprano o localmente avanzado/inflamatorio.",
+   "laboratorio": "ROCHE",
+   "fase": "IIIb",
+   "codigo": "MO43110",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-13/",
+   "nct": "NCT05170204",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio multicéntrico de fase III para evaluar la eficacia y seguridad de múltiples terapias en cohortes de pacientes selecionados según el estado de biomarcadores, con cáncer de pulmón de células no pequeñas, no extirpable, localmente avanzado, en estadio III.",
+   "laboratorio": "ROCHE",
+   "fase": "III",
+   "codigo": "BO42777",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esclerosis-sistemica-cutanea-difusa-de-progresion-temprana/",
+   "nct": "NCT05559580",
+   "laboratorio": "Boehringer Ingelheim Limitada",
+   "fase": "II",
+   "codigo": "1366-0031",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/lupus/",
+   "nct": "NCT05620407",
+   "area_en_la_fuente": "Lupus",
+   "estado": "No Reclutando Aún",
+   "titulo": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of Deucravacitinib in Participants with Active Systemic Lupus Erythematosus (POETYK-SLE-2).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "IM011-247",
+   "area_terapeutica": "Inmunología",
+   "sitios": []
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-18/",
+   "nct": "NCT05577715",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "A Phase 2, Open-label, Randomized Study of MORAb-202 (Farletuzumab Ecteribulin), a Folate Receptor Alpha-targeting Antibody-Drug Conjugate, in Participants with Metastatic Non-Small Cell Lung Cancer (NSCLC) Adenocarcinoma (AC) After Progression on Prior Therapies.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA116-003",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/multitumor/",
+   "nct": "NCT05298592",
+   "area_en_la_fuente": "Multitumor",
+   "estado": "No Reclutando Aún",
+   "titulo": "A Phase 1 First-in-human Study of BMS-986406 as Monotherapy and Combination Therapies in Participants With Advanced Malignant Tumors.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I",
+   "codigo": "CA111-001",
+   "area_terapeutica": null,
+   "sitios": []
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/linfoma-no-hodgkin-2/",
+   "nct": "NCT03930953",
+   "area_en_la_fuente": "Linfoma No Hodgkin",
+   "estado": "No Reclutando Aún",
+   "titulo": "A Phase 1/2, Multi-center, Open-label Study to Assess the Safety, Pharmacokinetics, and Preliminary Efficacy of an Orally Available Small Molecule, CC-99282, Alone and in Combination With Anti-Lymphoma Agents in Subjects With Relapsed or Refractory Non-Hodgkin Lymphomas (R/R NHL).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I/II",
+   "codigo": "CC99282",
+   "area_terapeutica": "Hemato Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Clínico Universidad Católica"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Inmunocel"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Oncología de Precisión"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/multitumor-2/",
+   "nct": "NCT03400332",
+   "area_en_la_fuente": "Multitumor",
+   "estado": "No Reclutando Aún",
+   "titulo": "A Phase 1/2 Study of BMS-986253 in combination with Nivolumab or Nivolumab plus Ipilimumab in advanced Cancers.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I/II",
+   "codigo": "CA027-002",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-avanzados-3/",
+   "nct": "NCT02628067",
+   "area_en_la_fuente": "Tumores Sólidos Avanzados",
+   "estado": "Reclutando",
+   "titulo": "Estudio clínico de pembrolizumab (MK 3475) para evaluar los biomarcadores predictivos en participantes con tumores sólidos avanzados.",
+   "laboratorio": "MSD",
+   "fase": null,
+   "codigo": "MK3475-158",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-20/",
+   "nct": "NCT05609968",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Reclutando",
+   "titulo": "Estudio clínico aleatorizado, de fase 3, de etiqueta abierta, multicéntrico y controlado con comparador activo de pembrolizumab (MK-3475) en combinación con sacituzumab govitecán frente a monoterapia de MK-3475 como tratamiento de primera línea en participantes con cáncer de pulmón de células no pequeñas metastásico con un TPS de PD-L1 mayor o igual al 50%.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-D46",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/leucemia-linfocitica-cronica-linfoma-de-linfocitos-pequenos/",
+   "nct": "NCT05624554",
+   "area_en_la_fuente": "Leucemia Linfocítica Crónica/ Linfoma de Linfocitos Pequeños",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado de fase 3 para comparar la eficacia y seguridad de nemtabrutinib frente a quimioinmunoterapia para leucemia linfocítica crónica/linfoma linfocítico pequeño no tratados previamente, sin alteraciones de TP53.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK1026-008",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Biocenter"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esclerosis-multiple-6/",
+   "nct": "NCT05630547",
+   "area_en_la_fuente": "Esclerosis Múltiple",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase II, doble ciego, aleatorizado, controlado con placebo para evaluar el efecto de SAR443820 sobre los niveles de neurofilamentos séricos en participantes con esclerosis múltiple, seguido de un período de extensión abierto a largo plazo.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16753",
+   "area_terapeutica": "Neurología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CINSAN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dávila"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/dermatitis-atopica-2/",
+   "nct": "NCT05769777",
+   "area_en_la_fuente": "Dermatitis Atópica",
+   "estado": "Reclutando",
+   "titulo": "Estudio abierto, multinacional, multicéntrico para evaluar seguridad, tolerabilidad y eficacia a largo plazo de amlitelimab administrado por vía subcutánea en participantes adultos con dermatitis atópica de moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "LTS1|7789",
+   "area_terapeutica": "Dermatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de investigación INCARDIO"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CICUC"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Centro Médico Dermisur"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/hidradenitis-supurativa/",
+   "nct": "NCT05849922",
+   "area_en_la_fuente": "Hidradenitis Supurativa",
+   "estado": "Reclutando",
+   "titulo": "Estudio de prueba de concepto aleatorizado, doble ciego y controlado con placebo para evaluar la eficacia y la seguridad de una molécula anti-TNF-OX40L NANOBODY®, SAR442970, en participantes con hidradenitis supurativa de moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16852",
+   "area_terapeutica": "Inmunología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-cuello-uterino/",
+   "nct": "NCT04221945",
+   "area_en_la_fuente": "Cáncer de Cuello Uterino",
+   "estado": "Finalizado",
+   "titulo": "Estudio de FASE III, aleatorizado, doble ciego, sobre la administración de quimiorradioterapia con o sin Pembrolizumab para el tratamiento de cáncer de cuello uterino localmente avanzado, de alto riesgo (KEYNOTE A18/ENGOT cx11/GOG-3047).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-A18",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "IRAM Cancer Research"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-esofago-3/",
+   "nct": null,
+   "area_en_la_fuente": "Cáncer de Esófago",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 1/2, con diseño de plataforma y paraguas, de etiqueta abierta, de fármacos en investigación con pembrolizumab (MK-3475) en participantes con cáncer esofágico avanzado que no recibieron tratamiento previo con PD-1/PD-L1.",
+   "laboratorio": "MSD",
+   "fase": "I/II",
+   "codigo": "3475-U06A",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Las Condes"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-esofago-4/",
+   "nct": "NCT05319730",
+   "area_en_la_fuente": "Cáncer de Esófago",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 1/2, con diseño de plataforma y paraguas, de etiqueta abierta, de fármacos en investigación con pembrolizumab (MK-3475) en participantes con cáncer esofágico avanzado que fueron previamente expuestos a tratamiento con PD-1/PD-L1 (KEYMAKER-U06): subestudio 06B.",
+   "laboratorio": "MSD",
+   "fase": "I/II",
+   "codigo": "3475-U06B",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Las Condes"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/hiv/",
+   "nct": "NCT05630755",
+   "area_en_la_fuente": "HIV",
+   "estado": "Reclutando",
+   "titulo": "Estudio clínico de fase III, aleatorizado, con control activo, doble ciego para evaluar el cambio a doravirina/islatravir (DOR/ISL 100 mg/0,25 mg) una vez al día en participantes con VIH-1 e inhibición viral que reciben bictegravir/emtricitabina/tenofovir alafenamida (BIC/FTC/TAF).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "8591A-052",
+   "area_terapeutica": "Infeccioso",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Universidad de Los Andes"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Clinica Universidad Catolia del Maule"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/hiv-2/",
+   "nct": "NCT05766501",
+   "area_en_la_fuente": "HIV",
+   "estado": "Reclutando",
+   "titulo": "Estudio clínico de etiqueta abierta de fase 3 de doravirina/islatravir (DOR/ISL [100 mg/0,25 mg]) una vez al día para el tratamiento de la infección por VIH-1 en participantes que recibieron previamente DOR/ISL (100 mg/0,75 mg) QD en un estudio clínico de fase III.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "8591A-054",
+   "area_terapeutica": "Infeccioso",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Cardio Sur"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Sótero del Río"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Clinica Universidad Catolia del Maule"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/melanoma-6/",
+   "nct": "NCT06101134",
+   "area_en_la_fuente": "Melanoma",
+   "estado": "No Reclutando Aún",
+   "titulo": "A Phase 2 Open-label, Two-cohort Study to Evaluate Patient Preference for nivolumab + relatlimab Fixed-dose Combination Subcutaneous versus nivolumab + relatlimab Fixed-dose Combination Intravenous and nivolumab Subcutaneous versus nivolumab Intravenous in Participants with Melanoma.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "II",
+   "codigo": "CA224-1044",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Las Condes"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Biocenter"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-5/",
+   "nct": "NCT05625412",
+   "area_en_la_fuente": "Tumores Sólidos",
+   "estado": "No Reclutando Aún",
+   "titulo": "A Phase 1, Open-label, Multicenter study of BMS-986360/CC-90001 alone and in combination with chemotherapy or Nivolumab in advanced solid tumors.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "I",
+   "codigo": "IM043-004",
+   "area_terapeutica": "Oncología",
+   "sitios": []
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/nefropatia/",
+   "nct": "NCT04578834",
+   "area_en_la_fuente": "Nefropatía",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase III multicéntrico, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos para evaluar la eficacia y la seguridad de LNP023 en participantes con nefropatía por IgA primaria.",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CLNP023A2301",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-mama-avanzado/",
+   "nct": "NCT04711252",
+   "area_en_la_fuente": "Cáncer de Mama Avanzado",
+   "estado": "Finalizado",
+   "titulo": "Estudio aleatorizado, multicéntrico, doble ciego, fase III de AZD9833 (un SERD oral) más Palbociclib comparado con Anastrozol más Palbociclib para el tratamiento de pacientes con cáncer de mama avanzado receptor estrógenos positivo, HER2-negativo que no han recibido ningún tratamiento sistémico para enfermedad avanzada (SERENA-4).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D8532C00001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "IRAM Cancer Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Biocenter"
+    },
+    {
+     "ciudad": "Puerto Montt",
+     "centro": "Clínica Puerto Montt"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/polipos-nasales/",
+   "nct": "NCT04157335",
+   "area_en_la_fuente": "Pólipos Nasales",
+   "estado": "Finalizado",
+   "titulo": "Estudio de fase 3, multicéntrico, aleatorizado, doble ciego, de grupos paralelos y controlado con placebo, sobre la eficacia y seguridad de benralizumab en pacientes con rinosinusitis crónica eosinofílica con pólipos nasales (ORCHID).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D3252C00002",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Sótero del Río"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-prostata/",
+   "nct": "NCT04493853",
+   "area_en_la_fuente": "Cáncer de Próstata",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase III, doble ciego, aleatorizado y controldo con placebo para evaluar la eficacia y seguridad de Capivasertib + Abiraterona en comparación con placebo + Abiraterona como tratamiento para pacientes con cáncer de próstata metastásico sensible a hormonas (MHSPC) de Novo, caracterizado por una deficiencia de PTEN (Capitello-281).",
+   "laboratorio": "AstraZeneca",
+   "fase": "III",
+   "codigo": "D361BC00001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Centro de Investigaciones Clinicas Viña del Mar"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto de Especialidades Urologicas (UROMED)"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación Clinical del Sur"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-14/",
+   "nct": "NCT04623775",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Finalizado",
+   "titulo": "A Phase 2 Randomized Study of Relatlimab plus Nivolumab in Combination with Chemotherapy vs. Nivolumab in Combination with Chemotherapy as First Line Treatment for Participants with Stage IV or Recurrent Non-small Cell Lung Cancer (NSCLC).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "II",
+   "codigo": "CA224-104",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-ovario-3/",
+   "nct": "NCT05613088",
+   "area_en_la_fuente": "Cáncer de Ovario",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "A Phase 2 Open-label Randomized Study of Farletuzumab Ecteribulin (MORAb-202), a Folate Receptor Alpha-targeting Antibody-drug Conjugate, versus Investigator’s Choice Chemotherapy in Women with Platinum-resistant High-grade Serous (HGS) Ovarian, Primary Peritoneal, or Fallopian Tube Cancer.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "II",
+   "codigo": "CA116-001",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Centro de Investigaciones Clinicas Viña del Mar"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Clínica Alemana de Temuco"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-de-crohn-3/",
+   "nct": "NCT03464097",
+   "area_en_la_fuente": "Enfermedad de Crohn",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "A Phase III, multicenter, randomized, double-blind, placebo-controlled study of oral ozanimod as maintenance therapy for moderately to severely active Crohn’s Disease.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "RPC01-3203",
+   "area_terapeutica": "Gastroenterología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "CECIM"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/mieloma-multiple/",
+   "nct": "NCT04717414",
+   "area_en_la_fuente": "Mieloma Múltiple",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "A Phase 3, Two-stage, randomized, multicenter, open-label study comparing Iberdomide, Daratumumab and Dexamethasone (IberDd) versus Daratumumab, Bortezomid, and Dexamethasone (DVd) in subjects with relapse or refractory multiple myeloma (RRMM).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "ACE-536-MF-002",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital del Salvador"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Oncología de Precisión"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/artritis-reumatoidea/",
+   "nct": "NCT05814627",
+   "area_en_la_fuente": "Artritis Reumatoidea",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 3b/4, aleatorizado, doble ciego, doble simulación, controlado con comparador activo, comparando la eficacia y seguridad de upadacitinib frente a adalimumab en sujetos con artritis reumatoide de moderada a severa en tratamiento estable con MTX y con respuesta inadecuada o intolerancia a un único inhibidor del TNF.",
+   "laboratorio": "AbbVie",
+   "fase": "IIIB/IV",
+   "codigo": "M23-700",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Sótero del Río"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Corporación de Beneficiencia Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-de-celulas-no-pequenas-4/",
+   "nct": "NCT06151574",
+   "laboratorio": "Boehringer Ingelheim Limitada",
+   "fase": "III",
+   "codigo": "1479-0008",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/areteritis-de-celulas-gigantes/",
+   "nct": "NCT04930094",
+   "area_en_la_fuente": "Areteritis de Celulas Gigantes",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase III, multicéntrico, aleatorizado, de grupos paralelos, doble ciego, controlado con placebo, para investigar la eficacia y la seguridad de secukinumab 300 mg y 150 mg administrado por vía subcutánea en comparación con placebo, en combinación con un régimen de disminución gradual de glucocorticoides en pacientes con arteritis de células gigantes (ACG).",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CAIN457R12301",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Bioreuma"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/asma-4/",
+   "nct": "NCT06102005",
+   "area_en_la_fuente": "Asma",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, de grupos paralelos y de determinación de dosis para evaluar la eficacia, la seguridad y la tolerabilidad de SAR443765 por vía subcutánea en participantes adultos con asma moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "DRI16762",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CDIEM"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Inmunocel"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/asma-5/",
+   "nct": "NCT06033833",
+   "area_en_la_fuente": "Asma",
+   "estado": "Reclutando",
+   "titulo": "Estudio de extensión a largo plazo para evaluar la seguridad, la tolerabilidad y la eficacia a largo plazo de amlitelimab subcutáneo en participantes adultos con asma de moderada a severa que completaron el periodo de tratamiento del estudio clínico previo de amlitelimab en asma.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "LTS17510",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CLINESMED"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de investigación INCARDIO"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/artritis-reumatoidea-2/",
+   "nct": "NCT06073093",
+   "area_en_la_fuente": "Artritis Reumatoidea",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 2, aleatorizado, doble ciego, controlado con placebo, de determinación de dosis, para evaluar la eficacia y la seguridad de SAR441566 más metotrexato en adultos con artritis reumatoide de moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "DRI17821",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CICUC"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Hospital Dr. Guillermo Grantt Benavente"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Corporación de Beneficiencia Osorno"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/dermatitis-atopica-3/",
+   "nct": "NCT06130566",
+   "area_en_la_fuente": "Dermatitis Atópica",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 3, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos, de 3 grupos, multinacional, multicéntrico para evaluar la eficacia y la seguridad de la monoterapia con amlitelimab mediante inyección subcutánea en participantes de 18 años o más con dermatitis atópica de moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC17559",
+   "area_terapeutica": "Dermatología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Medical SkinCenter"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de investigación INCARDIO"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CICUC"
+    },
+    {
+     "ciudad": "Talcahuano",
+     "centro": "Hospital de Higueras"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Hospital Base de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/dermatitis-atopica-4/",
+   "nct": "NCT06130566",
+   "area_en_la_fuente": "Dermatitis Atópica",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 3, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos, de 3 grupos, multinacional, multicéntrico para evaluar la eficacia y la seguridad de la monoterapia con amlitelimab mediante inyección subcutánea en participantes de 18 años o más con dermatitis atópica de moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC17559",
+   "area_terapeutica": "Dermatología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Medical SkinCenter"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de investigación INCARDIO"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CICUC"
+    },
+    {
+     "ciudad": "Talcahuano",
+     "centro": "Hospital de Higueras"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Hospital Base de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/dermatitis-atopica-5/",
+   "nct": "NCT06224348",
+   "area_en_la_fuente": "Dermatitis Atópica",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 3, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos, de 3 grupos, multinacional, multicéntrico para evaluar la eficacia y la seguridad de amlitelimab mediante inyección subcutánea en participantes de 18 años o más con dermatitis atópica de moderada a severa en tratamiento de base con corticoesteroides tópicos.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC17561",
+   "area_terapeutica": "Dermatología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Medical SkinCenter"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de investigación INCARDIO"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CICUC"
+    },
+    {
+     "ciudad": "Talcahuano",
+     "centro": "Hospital de Higueras"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Hospital Base de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esclerosis-multiple-7/",
+   "nct": null,
+   "area_en_la_fuente": "Esclerosis Múltiple",
+   "estado": "Reclutando",
+   "titulo": "Estudio intervencionista de extensión, de fase 3, para investigar la seguridad y tolerabilidad a largo plazo de tolebrutinib en participantes con esclerosis múltiple recurrente, esclerosis múltiple primaria progresiva o esclerosis múltiple secundaria progresiva no recurrente.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "LTS17043",
+   "area_terapeutica": "Neurología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Facultad Medicina Universidad de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CINSAN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dávila"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Hospital Dr. Guillermo Grantt Benavente"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/hidradenitis-supurativa-2/",
+   "nct": "NCT06118099",
+   "area_en_la_fuente": "Hidradenitis Supurativa",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 2, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos, de prueba de concepto para evaluar la eficacia y la seguridad de amlitelimab en participantes adultos con hidradenitis supurativa de moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "ACT17967",
+   "area_terapeutica": "Inmunología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de investigación INCARDIO"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/dermatitis-atopica-6/",
+   "nct": "NCT06241118",
+   "area_en_la_fuente": "Dermatitis Atópica",
+   "estado": "Reclutando",
+   "titulo": "Estudio de fase 3, aleatorizado, doble ciego, controlado con placebo, de grupos paralelos, de 3 grupos, multinacional, multicéntrico para evaluar la eficacia y la seguridad de amlitelimab mediante inyección subcutánea en participantes de 18 años o más con dermatitis atópica (AD) de moderada a severa que reciben corticoesteroides tópicos de base y que han tenido una respuesta inadecuada al tratamiento previo con agentes biológicos o con inhibidores de la cinasa Jano (JAK) orales.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC17599",
+   "area_terapeutica": "Dermatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Médico Skin Med"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CICUC"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-pulmonar-obstructiva-cronica-6/",
+   "nct": "NCT06208306",
+   "area_en_la_fuente": "Enfermedad Pulmonar Obstructiva Crónica",
+   "estado": "Reclutando",
+   "titulo": "Estudio de extensión doble ciego para evaluar la seguridad y la tolerabilidad a largo plazo de itepekimab en pacientes con enfermedad pulmonar obstructiva crónica que participaron en los estudios clínicos EFC16750 o EFC16819.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "LTS18133",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad de Servicios Médicos Walsen Ltda."
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/urticaria-cronica-espontanea-2/",
+   "nct": "NCT05677451",
+   "area_en_la_fuente": "Urticaria Crónica Espontánea",
+   "estado": "Reclutando",
+   "titulo": "Estudio doble ciego, aleatorizado, controlado con placebo para evaluar la eficacia, la farmacocinética y la seguridad de remibrutinib (LOU064) en adolescentes de 12 a menos de 18 años con urticaria crónica espontánea inadecuadamente controlada con antihistamínicos H1 durante 24 semanas, seguido de una extensión opcional abierta por hasta otros 3 años y un período de seguimiento de seguridad sin tratamiento a largo plazo opcional por hasta 3 años adicionales.",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CLOU064F12301",
+   "area_terapeutica": "Dermatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/lupus-eritematoso-sistemico-4/",
+   "nct": "NCT05624749",
+   "area_en_la_fuente": "Lupus Eritematoso Sistemico",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, multicéntrico, de fase 3 para evaluar la eficacia, la seguridad y la tolerabilidad de ianalumab además del tratamiento de referencia en pacientes con lupus eritematoso sistémico (SIRIUS-SLE 2).",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CVAY736F12302",
+   "area_terapeutica": "Inmunología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Bioreuma"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/mielofibrosis/",
+   "nct": "NCT04454658",
+   "area_en_la_fuente": "Mielofibrosis",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Un estudio de fase 1b de ABBV-744 solo o en combinación con ruxolitinib o navitoclax en sujetos con mielofibrosis.",
+   "laboratorio": "AbbVie",
+   "fase": "Ib",
+   "codigo": "M20-247",
+   "area_terapeutica": "Hematología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Sociedad de Investigaciones Médicas"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/polimialgia-reumatica/",
+   "nct": "NCT05767034",
+   "area_en_la_fuente": "Polimialgia Reumática",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio doble ciego, multicéntrico, aleatorizado, de grupos paralelos, controlado con placebo de fase III para evaluar la eficacia y la seguridad de secukinumab administrado por vía subcutánea frente a placebo, en combinación con un régimen de disminución gradual de glucocorticoides, en pacientes con polimialgia reumática (PMR).",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CAIN457C22301",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/fibrosis-pulmonar/",
+   "nct": "NCT06238622",
+   "laboratorio": "Boehringer Ingelheim Limitada",
+   "fase": "III",
+   "codigo": "1305-0031",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Tórax"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/hidradenitis-supurativa-3/",
+   "nct": "NCT06241573",
+   "laboratorio": "Boehringer Ingelheim Limitada",
+   "fase": "II/III",
+   "codigo": "1368-0130",
+   "area_terapeutica": "Inmunología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/psicosis-asociada-a-alzheimer/",
+   "nct": "NCT05980949",
+   "area_en_la_fuente": "Psicosis Asociada a Alzheimer",
+   "estado": "Reclutando",
+   "titulo": "A study to sssess efficacy and safety of KarXT for the treatment of psychosis associated with alzheimer’s disease (ADEPT-2).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CN012-0027",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Psicomed Estudios Clínicos"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/melanoma-4/",
+   "nct": "NCT05625399",
+   "area_en_la_fuente": "Melanoma",
+   "estado": "Reclutando",
+   "titulo": "A Phase 3, Randomized, Open-label, Study of Subcutaneous Nivolumab + Relatlimab Fixed-dose Combination versus Intravenous Nivolumab + Relatlimab Fixed-dose Combination in Participants with Previously Untreated Metastatic or Unresectable Melanoma.",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA224-127",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Vespucio"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica San Carlos de Apoquindo Red Salud UC Christus"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/sindrome-sjogren-5/",
+   "nct": "NCT05946941",
+   "area_en_la_fuente": "Síndrome Sjogren",
+   "estado": "Reclutando",
+   "titulo": "A Phase 3, Randomized, Double-blind, Placebo-controlled Study to Evaluate the Efficacy and Safety of Deucravacitinib in Adults With Active Sjögren’s Syndrome (POETYK SjS-1).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "IM011-1069",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Hospital Dr. Gustavo Fricke"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Sótero del Río"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Surmedica"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Reumatológicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Clínica Alemana de Osorno"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/mieloma-multiple-2/",
+   "nct": "NCT05371080",
+   "area_en_la_fuente": "Mieloma Múltiple",
+   "estado": "Reclutando",
+   "titulo": "A Phase 3, Randomized, Multi-center, Controlled, Open-label Study Comparing Iberdomide Maintenance to Lenalidomide Maintenance Treatment after Autologous Stem Cell Transplantation (ASCT) in Participants with Newly Diagnosed Multiple Myeloma (NDMM).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "IM048-022",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Inmunocel"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Instituto Clinico Oncologico del Sur"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/relapsed-or-refractory-multiple-myeloma/",
+   "nct": null,
+   "area_en_la_fuente": "Relapsed or Refractory Multiple Myeloma",
+   "estado": "Finalizado",
+   "titulo": "A Phase 3, randomized, multicenter, open-label study to evaluate the efficacy and safety of Alnuctamab compared to standard of care regimens in participants with relapsed or refractory Multiple Myeloma (RRMM).",
+   "laboratorio": "Bristol Myers Squibb",
+   "fase": "III",
+   "codigo": "CA058-1019",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Sanatorio Alemán"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/prevencion-virus-sincicial-respiratorio-en-lactantes-y-ninos-con-riesgo-de-enfermedad-grave-por-vrs/",
+   "nct": "NCT04938830",
+   "area_en_la_fuente": "Prevención Virus Sincicial Respiratorio en Lactantes y Niños con Riesgo de Enfermedad Grave por VRS",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III, multicéntrico, aleatorizado, parcialmente ciego, controlado con Palivizumab para evaluar la seguridad, la eficacia y la farmacocinética de MK-1654 en lactantes y niños con mayor riesgo de enfermedad grave por RSV.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK1654-007",
+   "area_terapeutica": "Pediatría",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Padre Hurtado"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital Roberto del Río"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-cabeza-y-cuello/",
+   "nct": "NCT03765918",
+   "area_en_la_fuente": "Cáncer de Cabeza y Cuello",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, de etiqueta abierta para evaluar Pembrolizumab como terapia neoadyuvante y, en combinación con el tratamiento estándar, como terapia adyuvante para carcinoma de células escamosas de cabeza y cuello en estadio III-IVA locorregionalmente avanzado resecable (LA HNSCC).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-689",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-esofago/",
+   "nct": "NCT04210115",
+   "area_en_la_fuente": "Cáncer de Esófago",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado conplacebo de Pembrolizumab (MK-3475) frente a placebo en participantes con carcinoma esofágico que reciben quimiorradioterapia definitiva concurrente (KEYNOTE 975).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-975",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Cancer Nuestra Senora de la Esperanza"
+    },
+    {
+     "ciudad": "Concepción",
+     "centro": "Hospital Regional de Concepción"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-mama/",
+   "nct": "NCT04895358",
+   "area_en_la_fuente": "Cáncer de Mama",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, doble ciego, controlado con placebo de Pembrolizumab más quimioterapia frente a placebo más quimioterapia para el tratamiento de cáncer de mama candidato a quimioterapia, positivo para receptor de hormonas, negativo para receptor del factor de crecimiento epidérmico humano 2 (HR+/HER2-), localmente recurrente, inoperable o metastásico (KEYNOTE-B49).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-B49",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Cáncer"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-ovario-2/",
+   "nct": "NCT05116189",
+   "area_en_la_fuente": "Cáncer de Ovario",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, doble ciego de Pembrolizumab frente a placebo en combinación con Paclitaxel con o sin Bevacizumab para el tratamiento del cáncer de ovario recurrente resistente al platino (KEYNOTE-B96/ENGOT-ov65).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-B96",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Vespucio"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto de Radiomedicina"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro de Investigación y Desarollo Oncologico (CIDO)"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Puerto Montt",
+     "centro": "Clínica Puerto Montt"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-19/",
+   "nct": "NCT05722015",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio clínico de fase III, aleatorizado, de etiqueta abierta para evaluar la farmacocinética y seguiridad de pembrolizumab subcutáneo coformulado con hialuronidasa (MK3475A) frente a pembrolizumab intravenoso, administrado con quimioterapia, en el tratamiento de primera línea de participantes con cáncer de pulmón de células no pequeñas metastásico.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-D77",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "La Serena",
+     "centro": "IC La Serena Research"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Cáncer"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Oncocentro Valdivia"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-endometrio-2/",
+   "nct": "NCT05173987",
+   "area_en_la_fuente": "Cáncer de Endometrio",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio clínico de fase 3, aleatorizado, de etiqueta abierta, controlado con comparador activo de pembrolizumab frente a quimioterapia de doblete de platino en participantes con carcinoma endometrial recurrente o avanzado con alteración de la vía reparadora (dMMR) en tratamiento de primera línea.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK3475-C93",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-renal-adyuvante/",
+   "nct": "NCT05239728",
+   "area_en_la_fuente": "Cáncer Renal Adyuvante",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de fase 3 multicéntrico, doble ciego y aleatorizado para comparar la eficacia y la seguridad de belzutifán (MK-6482) más pembrolizumab (MK-3475) frente a placebo más pembrolizumab, en el tratamiento adyuvante del carcinoma renal de células claras (ccRCC) posterior a la nefrectomía (MK-6482-022).",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK6482-022",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Antofagasta",
+     "centro": "Centro de Investigación Oncológica del Norte"
+    },
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    },
+    {
+     "ciudad": "Puerto Montt",
+     "centro": "Clínica Puerto Montt"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-6/",
+   "nct": "NCT04380636",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III de Pembrolizumab (MK-3475) en combinación con quimiorradioterapia concurrente seguido de Pembrolizumab con o sin Olaparib frente a quimiorradioterapia concurrente seguida de Durvalumab en participantes con cáncer de pulmón de células no pequeñas (NSCLC) en estadio III, irresecable, localmente avanzado.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "MK7339-012",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Antofagasta",
+     "centro": "Centro Oncológico Antofagasta"
+    },
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/neoplasias-hematologicas/",
+   "nct": "NCT05005442",
+   "area_en_la_fuente": "Neoplasias Hematológicas",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III, de etiqueta abierta para evaluar la seguridad y la eficacia de MK-7684A (coformulación de MK-7684 [Vibostolimab] con MK-3475 [Pembrolizumab]) en participantes con neoplasias hematológicas recidivantes o resistentes al tratamiento.",
+   "laboratorio": "MSD",
+   "fase": "II",
+   "codigo": "MK7684A-004",
+   "area_terapeutica": "Hemato Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Cáncer"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/pneumococo-adulto/",
+   "nct": "NCT05696080",
+   "area_en_la_fuente": "Pneumococo Adulto",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio clínico de fase 3, aleatorizado, doble ciego, con comparador activo para evaluar la seguridad, tolerabilidad e inmunogenicidad de V116 en adultos de 18 a 64 años que nunca han recibido una vacuna neumocócica y tienen alto riesgo de padecer una enfermedad neumocócica.",
+   "laboratorio": "MSD",
+   "fase": "III",
+   "codigo": "V116-008",
+   "area_terapeutica": "Infeccioso",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Universidad San Sebastián"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Pontificia Universidad Católica de Chile"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CESFAM Esmeralda"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esclerosis-multiple-4/",
+   "nct": "NCT04181762",
+   "area_en_la_fuente": "Esclerosis Múltiple",
+   "estado": "Reclutando",
+   "titulo": "Estudio de 2 años, doble ciego, aleatorizado, de 3 ramas, de no inferioridad en el que se evalúa la eficacia y la seguridad de Ofatumumab y Siponimod en comparación con Fingolimod en pacientes pediátricos con esclerosis múltiple, seguido de una extensión con etiqueta abierta.",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CBAF312D2301",
+   "area_terapeutica": "Neurología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDS"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/nefritis-lupica-activa-2/",
+   "nct": "NCT05126277",
+   "area_en_la_fuente": "Nefritis Lúpica Activa",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, de grupos paralelos, controlado con placebo, multicéntrico, de fase III para evaluar la eficacia, la seguridad y la tolerabilidad de ianalumab, además del tratamiento estándar, en participantes con nefritis lúpica activa (SIRIUS-NL).",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CVAY736K12301",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital del Salvador"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Hospital Dr. Hernán Henríquez Aravena"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/sindrome-sjogren-3/",
+   "nct": "NCT05350072",
+   "area_en_la_fuente": "Sindrome Sjogren",
+   "estado": "Reclutando",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, de 2 ramas, multicéntrico, de fase III para evaluar la eficacia y la seguridad de ianalumab en pacientes con síndrome de Sjögren activo (NEPTUNUS-1).",
+   "laboratorio": "Novartis",
+   "fase": "III",
+   "codigo": "CVAY736A2301",
+   "area_terapeutica": "Reumatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Biomedica Research Group"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-3/",
+   "nct": "NCT04976634",
+   "area_en_la_fuente": "Tumores Sólidos",
+   "estado": "Finalizado",
+   "titulo": "Estudio de fase II, abierto, de cohortes múltiples, para evaluar la eficacia y la seguridad de SAR408701 en pacientes con tumores sólidos avanzados positivos para CEACAM5.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16432",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Sociedad de Investigaciones Médicas"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-piel-2/",
+   "nct": "NCT04913220",
+   "area_en_la_fuente": "Cáncer de Piel",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase I/II no aleatorizado, abierto, multicéntrico y de múltiples cohortes que evalúa el beneficio clínico de SAR444245 (THOR-707) en combinación con Cemiplimab para el tratamiento de participantes con cáncer avanzado de piel no resecable o metastásico.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "I/II",
+   "codigo": "ACT16845",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica San Carlos de Apoquindo Red Salud UC Christus"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-12/",
+   "nct": "NCT04914897",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Finalizado",
+   "titulo": "Estudio de Fase II no aleatorizado, abierto, de múltiples cohortes, multicéntrico para evaluar el beneficio clínico de SAR444245 (THOR-707) combinado con otras terapias antineoplásicas para el tratamiento de participantes con cáncer de pulmón o mesotelioma pleural.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16849",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Clínica Alemana de Temuco"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-cabeza-y-cuello-2/",
+   "nct": "NCT05061420",
+   "area_en_la_fuente": "Cáncer de Cabeza y Cuello",
+   "estado": "Finalizado",
+   "titulo": "Estudio de fase 2, no aleatorizado, abierto, de cohortes múltiples, multicéntrico, para evaluar el beneficio clínico de SAR444245 (THOR-707) combinado con otros tratamientos antineoplásicos para participantes con carcinoma de células escamosas de cabeza y cuello (HNSCC) (Pegathor Head and Neck 204).",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16903",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/linfoma/",
+   "nct": "NCT05179603",
+   "area_en_la_fuente": "Linfoma",
+   "estado": "Finalizado",
+   "titulo": "Estudio (Pegasus Lymphoma 205) de Fase II no aleatorizado, abierto, multicéntrico y de múltiples cohortes que evalúa el beneficio clínico de SAR444245 (THOR-707) con o sin otros tratamientos antineoplásicos para el tratamiento de adultos y adolescentes con linfoma de células B grandes recurrente o refractario.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT16941",
+   "area_terapeutica": "Hemato Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Centro de Investigaciones Clinicas Viña del Mar"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/asma-2/",
+   "nct": "NCT05104892",
+   "area_en_la_fuente": "Asma",
+   "estado": "Finalizado",
+   "titulo": "Estudio aleatorizado, doble ciego, controlado con placebo, con grupos paralelos, de prueba de concepto de 12 semanas, para evaluar la eficacia, seguridad y tolerabilidad de Rilzabrutinib en participantes con asma moderada a grave que no están bien controlados con corticoesteroides inhalados (CEI) más terapia con agonistas adrenérgicos β2 de acción prolongada (LABA).",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "I/II",
+   "codigo": "ACT17208",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MIRES Investigación Clínica"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "ICEGCLINIC"
+    },
+    {
+     "ciudad": "Curicó",
+     "centro": "Centro Investigación Curicó"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/urticaria-cronica-espontanea/",
+   "nct": "NCT05107115",
+   "area_en_la_fuente": "Urticaria Crónica Espontánea",
+   "estado": "Finalizado",
+   "titulo": "Estudio de fase II, aleatorizado, doble ciego, controlado con placebo, multicéntrico y de determinación del rango de dosis de rilzabrutinib seguido de una fase de extensión abierta en pacientes con urticaria crónica espontánea (UCE) de moderada a grave que siguen sintomáticos a pesar del uso del tratamiento antihistamínico H1.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "DRI17224",
+   "area_terapeutica": "Dermatología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Medical SkinCenter"
+    },
+    {
+     "ciudad": "Osorno",
+     "centro": "Medical SkinCenter"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-pulmonar-obstructiva-cronica-2/",
+   "nct": "NCT04456673",
+   "area_en_la_fuente": "Enfermedad Pulmonar Obstructiva Crónica",
+   "estado": "Finalizado",
+   "titulo": "Estudio pivotal, randomizado, doble ciego, controlado con placebo, en grupos paralelos, de 52 semanas para evaluar la eficacia, seguridad y tolerabilidad de Dupilumab en pacientes con enfermedad pulmonar obstructiva crónica (EPOC) moderada a severa con inflamación Tipo 2.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC15805",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Curicó",
+     "centro": "Centro Investigación Curicó"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro De Estudios Cardiológicos y de Medicina Interna"
+    },
+    {
+     "ciudad": "Valdivia",
+     "centro": "Clinical Research Chile SpA"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/cancer-de-pulmon-10/",
+   "nct": "NCT04154956",
+   "area_en_la_fuente": "Cáncer de Pulmón",
+   "estado": "Finalizado",
+   "titulo": "Estudio Fase III, randomizado, de etiqueta abierta, de SAR408701 versus Docetaxel en pacientes previamente tratados con cáncer pulmonar metastásico, no-escamoso, de células no-pequeñas, con tumor CEACAM5 positivo.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC15858",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Oncocentro APYS"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Orlandi Oncologia"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Oncovida"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Bradford Hill"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Sociedad de Investigaciones Médicas"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/mieloma-multiple-recurrente-y-o-refractario/",
+   "nct": "NCT05405166",
+   "area_en_la_fuente": "Mieloma Múltiple Recurrente y/o Refractario",
+   "estado": "Finalizado",
+   "titulo": "Estudio de fase III, aleatorizado y abierto que evalúa la administración subcutánea frente a la intravenosa de isatuximab en combinación con Pomalidomida y Dexametasona en pacientes adultos con mieloma múltiple recurrente y/o refractario.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC15951",
+   "area_terapeutica": "Oncología",
+   "sitios": [
+    {
+     "ciudad": "Viña del Mar",
+     "centro": "Centro de Investigaciones Clinicas Viña del Mar"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "FALP"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Instituto Nacional del Cáncer"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "James Lind Centro de Investigación del Cancer"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/esclerosis-multiple-3/",
+   "nct": "NCT04458051",
+   "area_en_la_fuente": "Esclerosis Múltiple",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, doble ciego para evaluar la eficacia y la seguridad del tratamiento con SAR442168 en comparación con placebo en participantes con esclerosis múltiple primaria progresiva (PERSEUS).",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC16035",
+   "area_terapeutica": "Neurología",
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Alemana de Santiago"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Hospital U. de Chile"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-pulmonar-obstructiva-cronica-3/",
+   "nct": "NCT04701983",
+   "area_en_la_fuente": "Enfermedad Pulmonar Obstructiva Crónica",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de Fase III, aleatorizado, controlado con placebo, con doble ciego y de grupos paralelos para evaluar la eficacia, la seguridad y la tolerabilidad de SAR440340/REGN3500/itepekimab (AcMo anti-IL-33) en pacientes con enfermedad pulmonar obstructiva crónica (EPOC) de moderada a grave.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC16750",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Universidad de Los Andes"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MIRES Investigación Clínica"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CTR Estudios SpA"
+    },
+    {
+     "ciudad": "Curicó",
+     "centro": "Centro Investigación Curicó"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    },
+    {
+     "ciudad": "Temuco",
+     "centro": "Centro De Estudios Cardiológicos y de Medicina Interna"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/enfermedad-pulmonar-obstructiva-cronica-4/",
+   "nct": "NCT04751487",
+   "area_en_la_fuente": "Enfermedad Pulmonar Obstructiva Crónica",
+   "estado": "Activo, reclutamiento finalizado",
+   "titulo": "Estudio de fase III, aleatorizado, controlado con placebo, con doble ciego y de grupos paralelos para evaluar la eficacia, la seguridad y la tolerabilidad de SAR440340/REGN3500/itepekimab (AcMo anti-IL-33) en pacientes con enfermedad pulmonar obstructiva crónica (EPOC) de moderada a grave.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "III",
+   "codigo": "EFC16819",
+   "area_terapeutica": "Enfermedades Respiratorias",
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Sociedad Medica SyG"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro de Estudios Clinicos SAGA"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "MEDWAL"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "CIM"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/psoriasis/",
+   "nct": "NCT06073119",
+   "area_en_la_fuente": "Psoriasis",
+   "estado": "Finalizado",
+   "titulo": "Estudio de fase 2, internacional, multicéntrico, aleatorizado, doble ciego, controlado con placebo, de determinación de dosis, para evaluar eficacia y seguridad de SAR441566 en adultos con psoriasis en placas de moderada a severa.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "DRI17849",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Santiago",
+     "centro": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Clínica Dermacross"
+    }
+   ]
+  },
+  {
+   "url": "https://estudiosclinicos.cl/ensayos/bronquiectasias/",
+   "nct": "NCT06280391",
+   "area_en_la_fuente": "Bronquiectasias",
+   "estado": "Reclutando",
+   "titulo": "Estudio de prueba de concepto (PoC), aleatorizado, doble ciego, controlado con placebo y de grupos paralelos para evaluar la eficacia, seguridad y tolerabilidad de itepekimab en participantes con bronquiectasias no debidas a fibrosis quística.",
+   "laboratorio": "Sanofi Aventis Chile",
+   "fase": "II",
+   "codigo": "ACT18018",
+   "area_terapeutica": null,
+   "sitios": [
+    {
+     "ciudad": "Quillota",
+     "centro": "CENRESIN"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "CIMER"
+    },
+    {
+     "ciudad": "Santiago",
+     "centro": "Enroll SpA"
+    },
+    {
+     "ciudad": "Talca",
+     "centro": "Centro de Investigación del Maule"
+    }
+   ]
+  }
+ ]
+}
