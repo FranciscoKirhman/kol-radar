@@ -5,7 +5,7 @@
   "especialidad_muestra": "oncología (19 áreas)",
   "contacto": {
     "_como_completar": "Poné en 'canal' UNA de dos cosas y listo — el pie de página del sitio cambia solo, no hay que tocar HTML: (a) una dirección de correo, ej. contacto@tudominio.cl; o (b) la URL https:// de un formulario. Mientras siga en null, el sitio dice honestamente que el canal todavía no existe.",
-    "canal": null,
+    "canal": "franckirhman@gmail.com",
     "responsable": null
   },
   "entidades": [

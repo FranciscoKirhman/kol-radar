@@ -23,6 +23,9 @@ Fase 3 con datos reales de muestra — ver "Estado actual" al final de este arch
 | [COSTS.md](COSTS.md) | Modelo de costos del pipeline de automatización |
 | [COLABORACION_IA.md](COLABORACION_IA.md) | **Traspaso para colaboradores IA** (ChatGPT, Gemini): reglas duras, modelo de datos, y en qué conviene que aporten |
 | [PENDIENTES_BETA.md](PENDIENTES_BETA.md) | **Lo que la beta dejó sin resolver a propósito**, con la razón de cada caso |
+| [PUBLICAR.md](PUBLICAR.md) | **Cómo publicarlo y cederlo**: qué bloquea la publicación, la Ley 21.719, pasos en orden |
+| [PRIVACIDAD.md](PRIVACIDAD.md) | Borrador del aviso de privacidad, para completar y revisar con abogado |
+| [LICENSE](LICENSE) · [data/LICENSE.md](data/LICENSE.md) | Licencias: código MIT, datos ODbL 1.0, y lo que la licencia no autoriza sobre datos personales |
 
 ## Objetivo
 
@@ -63,16 +66,20 @@ debe servir para cualquier especialidad, no solo para una patología de ejemplo.
 
 ## Marco legal y ético
 
+- **Desde el 1 de diciembre de 2026 rige la Ley 21.719**, que reforma la 19.628: elimina la
+  excepción amplia de "fuentes de acceso público" y exige una base de licitud (acá, interés
+  legítimo) y un canal que responda los derechos de las personas listadas. Ver
+  [PUBLICAR.md](PUBLICAR.md).
 - Aplica Ley 19.628 sobre protección de la vida privada (Chile). Un profesional de
   salud identificado por nombre es un dato personal, aunque la fuente sea pública.
   La base para tratar ese dato es que es información profesional de interés público
   (autoría científica, afiliación institucional publicada, participación en estudios
   o congresos) — nunca datos de salud propios del profesional ni de pacientes.
-- Toda persona listada puede pedir corrección o exclusión de su ficha — **pero este
-  canal todavía no existe**. El contacto de abajo sigue sin completarse, así que
-  hoy esa promesa no es cumplible en la práctica. No compartir este proyecto más
-  allá de una demo interna hasta llenar esto.
-- **Contacto**: pendiente. El canal ya no se escribe en este archivo ni en el HTML: vive en el
+- Toda persona listada puede pedir corrección o exclusión de su ficha. **Desde el 2026-09-28 hay
+  un correo provisorio** (franckirhman@gmail.com) y el pie del sitio lo muestra. Falta el resto
+  del proceso —plazo de respuesta, registro de exclusiones, responsable identificado—: ver
+  [PUBLICAR.md](PUBLICAR.md) antes de difundir el sitio.
+- **Contacto**: el canal no se escribe en este archivo ni en el HTML: vive en el
   campo `contacto.canal` de [`data/sample/perfiles-muestra.json`](data/sample/perfiles-muestra.json).
   Poné ahí una dirección de correo **o** la URL `https://` de un formulario y el pie de página del
   sitio se completa solo. Mientras siga en `null`, el sitio dice que el canal todavía no existe —
@@ -97,7 +104,8 @@ debe servir para cualquier especialidad, no solo para una patología de ejemplo.
 | Fuente | Estado | Qué se extrae |
 |---|---|---|
 | PubMed (E-utilities API) | Activa | Publicaciones, coautores, afiliación, fecha |
-| ClinicalTrials.gov (API v2) | Activa | Ensayos con sitio en Chile, investigador cuando esté publicado |
+| ClinicalTrials.gov (API v2) | Activa | Ensayos con sitio en Chile, investigador cuando esté publicado, y la **lista estructurada de intervenciones**, de la que salen las fichas de fármaco (`scripts/integrar_farmacos_ctgov.py`) |
+| Buscador de estudios clínicos de la CIF (estudiosclinicos.cl) | Activa (desde 2026-09-28) | Para los ensayos que hoy reclutan, qué centros tienen abiertos en Chile — incluso cuando ClinicalTrials.gov oculta la sede como "Research Site". Solo el hecho ensayo ↔ centro con su URL; no se guardan contactos. `robots.txt` sin restricciones. Ver `scripts/recolectar_estudiosclinicos_cl.py` |
 | Sitios de sociedades médicas | Activa (manual al inicio) | Directorios, directivas, programas de congresos |
 | Hospitales / universidades | Activa (manual al inicio) | Afiliación institucional publicada |
 | SciELO / Revista Médica de Chile | Activa | Producción científica local, coautoría |
@@ -131,6 +139,7 @@ Tipos de arista, deliberadamente pocos y literales al inicio:
 - Médico → afiliación pública → Centro / universidad
 - Médico → ponente o moderador → Congreso
 - Médico → produce evidencia sobre → Tema clínico
+- Ensayo clínico → intervención → Fármaco *(desde 2026-09-28)*
 
 Se llaman "conexiones científicas observables", no "influencia" — es más honesto y
 evita sobre-interpretar una coautoría como una relación de poder.
@@ -185,8 +194,14 @@ agrégale `/web/index.html` al final.
 (ej. `python3 -m http.server 8001`) y ajusta la URL igual.
 
 **Qué vas a ver:**
-- `web/index.html` — la vista de producto (búsqueda, lista con señales, red de
-  conexiones, detalle con evidencia). Esto es lo que probaría un MSL.
+- `web/index.html` — la vista de producto. Cuatro pestañas:
+  - **Inicio**: buscador y cuatro entradas (fármacos, estudios, instituciones, profesionales).
+  - **Perfil**: lo que se sabe de una ficha, en conclusiones y rankings — para un fármaco, en qué
+    centros se estudia, quién patrocina, con qué se combina; para un centro, qué se investiga,
+    quién trabaja ahí y con quién comparte estudios. Cada perfil tiene un enlace propio
+    (`#ficha=<id>`) para compartir.
+  - **Mapa**: Chile por región, comuna y centro.
+  - **Fichas**: la lista filtrable, con la evidencia de cada hecho.
 - `web/interno.html` — cómo se construyó (costos, arquitectura de agentes, pipeline).
   Enlazada desde "Detalles técnicos" en el header de `web/index.html` (no del
   `index.html` raíz, que solo redirige), no pensada para el usuario final —
@@ -213,6 +228,25 @@ el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no
 
 ## Estado actual
 
+**Actualización 2026-09-28** — el prototipo pasó a buscar por las cuatro cosas que busca un MSL
+(fármaco, estudio, profesional, institución) y a mostrar un perfil de cada una:
+
+| | 2026-09-10 | 2026-09-28 |
+|---|---|---|
+| Fichas | 717 | 1.151 (+385 fármacos, +49 instituciones) |
+| Vínculos | 1.198 | 3.135 |
+| Ensayos sin ninguna institución | 262 | 212 — el resto tiene la sede oculta en las dos fuentes |
+| Fichas sin ninguna conexión | 262 | 12 |
+| Instituciones ubicadas en el mapa | 56 | 82 |
+
+De dónde salió lo nuevo, sin inventar nada: los fármacos, de las intervenciones estructuradas de
+ClinicalTrials.gov (uniendo nombres solo cuando la fuente declara la equivalencia); las sedes, de
+una tabla de alias revisada a mano contra el DEIS y sitios oficiales (`scripts/resolver_sedes_web.py`)
+y del buscador de la CIF, que nombra los centros que ClinicalTrials.gov enmascara. Todo entra
+`pendiente`. El detalle de cada decisión queda en `data/pending/`.
+
+Antes de esa actualización:
+
 Prototipo de Fase 3 funcionando con datos reales de muestra (una especialidad,
 cáncer de pulmón): [COMPETITORS.md](COMPETITORS.md) (panorama competitivo),
 [DATA_SAMPLE.md](DATA_SAMPLE.md) + [data/sample/perfiles-muestra.json](data/sample/perfiles-muestra.json)
@@ -236,3 +270,14 @@ que un mismo hecho puede sumar puntos en dos entidades relacionadas,
 10), y el disclaimer de privacidad quedó visible siempre en la app, no solo al
 abrir una ficha. Pendiente real, no resuelto todavía: el canal de contacto para
 pedir corrección/exclusión de una ficha (ver "Marco legal y ético" arriba).
+
+## Licencia
+
+- **Código** (`web/`, `scripts/`, `prototipos/`): [MIT](LICENSE). Se puede usar, modificar y
+  redistribuir, también con fines comerciales, conservando el aviso de copyright.
+- **Datos** (`data/`): [Open Database License 1.0](data/LICENSE.md). Se pueden reutilizar citando la
+  fuente; una base derivada que se publique tiene que usar la misma licencia. Es la licencia que exige
+  OpenStreetMap, del que salen parte de las ubicaciones.
+- La licencia **no** autoriza a tratar datos personales de los profesionales listados fuera de la ley
+  chilena: ver la sección final de [data/LICENSE.md](data/LICENSE.md).
+- Para citar el proyecto: [CITATION.cff](CITATION.cff).

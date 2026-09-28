@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Si usás KOL Radar o sus datos, citalo así."
+title: "KOL Radar — Chile: mapa verificable de especialistas, centros y evidencia pública en oncología"
+type: software
+authors:
+  - family-names: Kirhman
+    given-names: Francisco
+repository-code: "https://github.com/FranciscoKirhman/kol-radar"
+url: "https://franciscokirhman.github.io/kol-radar/"
+license: MIT
+abstract: >-
+  Herramienta de apoyo para Medical Science Liaisons: fármacos, estudios clínicos, instituciones y
+  profesionales de la oncología en Chile, unidos por vínculos que enlazan cada uno a su fuente
+  pública (ClinicalTrials.gov, PubMed, SciELO, DEIS, CIF). El código es MIT; los datos, ODbL 1.0
+  (ver data/LICENSE.md).
+keywords:
+  - medical affairs
+  - MSL
+  - oncología
+  - ensayos clínicos
+  - Chile
+  - open data

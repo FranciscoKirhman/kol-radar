@@ -60,8 +60,9 @@ Estas ya se discutieron y se decidieron. No las re-litigues salvo que tengas un 
   Chile son de consulta manual.
 - **Ley 19.628 (privacidad, Chile).** Un médico identificado por nombre es un dato personal
   aunque la fuente sea pública. La base legal acá es que es información profesional de interés
-  público. Toda persona listada tiene derecho a pedir corrección o exclusión — y ese canal
-  **todavía no existe**, por eso el sitio no debe compartirse más allá de una demo interna.
+  público. Toda persona listada tiene derecho a pedir corrección o exclusión. Desde el
+  2026-09-28 hay un correo provisorio en `contacto.canal`, pero el proceso de respuesta todavía
+  no está definido (ver `PUBLICAR.md`): el sitio no debe difundirse más allá de una demo.
 - **No inventes ni publiques un correo de contacto.** Ese dato lo pone Francisco, nadie más.
 - **La capa privada tipo CRM no va en el repo público.**
 
@@ -116,7 +117,7 @@ puntuales que necesites.
   "vinculos": [
     { "origen": "carlos-rojas", "destino": "bradford-hill", "tipo": "afiliación" }
   ],
-  "contacto": { "canal": null }      // el canal de corrección de la Ley 19.628
+  "contacto": { "canal": "..." }     // el canal de corrección de la Ley 19.628; lo define Francisco
 }
 ```
 

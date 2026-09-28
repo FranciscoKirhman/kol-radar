@@ -6,6 +6,20 @@ diferirlos. Está acá para que la próxima iteración no empiece a buscarlos de
 
 Fecha de corte: 2026-09-10.
 
+> **Actualización 2026-09-28.** Parte de lo de abajo avanzó:
+> - **Sedes**: de 181 textos distintos en cola quedan 52, casi todos marcadores del patrocinador
+>   ("Site 122", "Exelixis Clinical Site #100") o nombres de personas escritos como sede. Se crearon
+>   49 instituciones y 30 alias nuevos, cada uno con su motivo en
+>   `data/pending/sedes-web-2026-09-28/decisiones.json`.
+> - **Ensayos sin institución**: de 262 a 212. Los que siguen tienen la sede oculta en
+>   ClinicalTrials.gov ("Research Site", "Local Institution") y no están en el buscador de la CIF,
+>   que solo lista los que reclutan hoy.
+> - **Fichas sin ninguna conexión**: de 262 a 12, gracias a los 385 fármacos.
+> - **Canal de corrección**: correo provisorio definido (franckirhman@gmail.com). Falta el proceso de
+>   respuesta y el registro de exclusiones, con plazo: la Ley 21.719 rige desde el 1 de diciembre de
+>   2026 (ver `PUBLICAR.md`).
+> - Siguen igual: las fusiones de identidad y la revisión humana.
+
 ## Datos
 
 - **253 sedes sin resolver.** Son textos de sede que ClinicalTrials.gov declara en Chile y que

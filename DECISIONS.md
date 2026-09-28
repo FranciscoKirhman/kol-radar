@@ -13,6 +13,10 @@ Ninguna de estas está a medio hacer en el código — están todas sin empezar,
 
 **Prioridad: la más alta de las cuatro.** Es la única que involucra un riesgo real hoy, no a futuro.
 
+> **Actualización 2026-09-28**: Francisco definió un correo provisorio, `franckirhman@gmail.com`,
+> ya cargado en `contacto.canal`. Con eso el pie del sitio ofrece dónde escribir. Lo que sigue
+> abierto —plazo, registro de exclusiones, responsable, aviso de privacidad— está en `PUBLICAR.md`.
+
 ### El problema concreto
 
 El sitio es público y lista **médicos chilenos reales con nombre y apellido**, con un puntaje al
