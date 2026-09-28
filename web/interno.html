@@ -125,8 +125,8 @@
     </nav>
 
     <section class="panel active" id="panel-red">
-      <h2 class="section-title">Red de conexiones — muestra de cáncer de pulmón en Chile</h2>
-      <p class="section-sub">717 entidades reales, 1198 vínculos. Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.</p>
+      <h2 class="section-title">Red de conexiones — muestra oncológica en Chile</h2>
+      <p class="section-sub">Cargando la muestra… Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.</p>
       <div class="graph-layout">
         <div class="graph-box">
           <svg id="graph" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -302,11 +302,17 @@
   fetch(DATA_URL)
     .then(function (res) { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
     .then(function (data) {
-      entidades = data.entidades || [];
-      vinculos = data.vinculos || [];
+      // Los fármacos (385) se dejan fuera de esta vista cruda: es una demostración de trazabilidad,
+      // y en la vista de producto ya se leen en "Conexiones". Se dice cuántos quedaron fuera.
+      var todas = data.entidades || [];
+      entidades = todas.filter(function (n) { return n.tipo !== "farmaco"; });
       entidades.forEach(function (n) { byId[n.id] = n; });
+      vinculos = (data.vinculos || []).filter(function (v) { return byId[v.origen] && byId[v.destino]; });
+      var fuera = todas.length - entidades.length;
       document.getElementById("panel-red").querySelector(".section-sub").textContent =
-        entidades.length + " entidades reales, " + vinculos.length + " vínculos. Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.";
+        entidades.length + " entidades reales, " + vinculos.length + " vínculos" +
+        (fuera ? " (sin los " + fuera + " fármacos, que se ven en la vista de producto)" : "") +
+        ". Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.";
       layoutYRenderRed();
     })
     .catch(function (err) {

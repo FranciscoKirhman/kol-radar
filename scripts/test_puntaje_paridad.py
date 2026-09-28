@@ -67,7 +67,7 @@ def extraer_const(html, nombre):
     return m.group(0)
 
 
-FUNCIONES = ["sortableDate", "hechosUnicosPorFuente", "connectionCount", "ensayoPeso",
+FUNCIONES = ["sortableDate", "hechosUnicosPorFuente", "construirAdyacencia", "connectionCount", "ensayoPeso",
              "esGuiaOConsenso", "recencyBucket", "recencyMultiplier", "computePriority"]
 
 
@@ -85,8 +85,18 @@ var __AHORA = %d;
 Date.now = function () { return __AHORA; };
 var entrada = JSON.parse(require('fs').readFileSync(process.argv[2], 'utf8'));
 var vinculos = entrada.vinculos;
+// connectionCount lee el índice de adyacencia que la página arma al cargar. Acá se arma igual,
+// con una entidad mínima por cada id que aparece, para que ningún vínculo quede fuera del conteo.
+var ady = {};
+var entidades = (function () {
+  var ids = {};
+  entrada.personas.forEach(function (p) { ids[p.id] = true; });
+  vinculos.forEach(function (v) { ids[v.origen] = true; ids[v.destino] = true; });
+  return Object.keys(ids).map(function (id) { return { id: id }; });
+})();
 %s
 %s
+construirAdyacencia();
 var salida = entrada.personas.map(function (p) { return computePriority(p); });
 process.stdout.write(JSON.stringify(salida));
 """ % (AHORA_MS, consts, cuerpo)

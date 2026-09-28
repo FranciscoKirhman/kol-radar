@@ -23,6 +23,9 @@
     --institucion: #c25510;
     --ensayo: #0a7d5e;
     --tema: #6640b8;
+    /* Fármaco: magenta. Se separa del óxido del acento y del púrpura de los temas por matiz, y
+       además lleva forma propia (hexágono), así que no depende solo del color. */
+    --farmaco: #a3256a;
     /* El tier alto se imprime en tinta sólida, no en un pastel: es la señal más fuerte
        de la ficha y en esta dirección el contraste es el recurso principal. */
     --tier-alta-bg: #0d0c0a; --tier-alta-fg: #fdfcfa;
@@ -52,6 +55,7 @@
       --institucion: #cf6a22;
       --ensayo: #22a077;
       --tema: #9268d6;
+      --farmaco: #de6aa8;
       --tier-alta-bg: #f7f4ee; --tier-alta-fg: #0f0e0c;
       --tier-media-bg: #1d2a3a; --tier-media-fg: #a9c4e2;
     }
@@ -80,6 +84,7 @@
   .dev-link { margin-left: auto; font-size: 11px; color: var(--text-muted); white-space: nowrap; text-decoration: none; }
   .dev-link:hover { text-decoration: underline; }
   .brand { font-weight: 700; font-size: 17px; white-space: nowrap; font-family: var(--serif); letter-spacing: -.01em; }
+  .brand-btn { border: none; background: none; padding: 0; color: inherit; cursor: pointer; }
   .specialty-badge {
     font-size: 11px; font-weight: 500; color: var(--text-secondary);
     background: var(--surface-2); border-radius: 999px; padding: 3px 10px;
@@ -634,6 +639,210 @@
   footer.page-footer { max-width: 1080px; margin: 20px auto 0; padding: 16px; text-align: center; font-size: 12px; color: var(--text-muted); }
   footer.page-footer a { color: var(--text-secondary); }
 
+  /* ---------- Fármaco: el cuarto tipo ---------- */
+  .sug-forma.farmaco, .forma-farmaco { color: var(--farmaco); }
+  .type-dot.farmaco { background: var(--farmaco); border-radius: 2px; transform: rotate(45deg) scale(.85); }
+  .sug-alias { color: var(--text-muted); }
+
+  /* ---------- Vistas: Inicio y Perfil de una ficha ---------- */
+  #inicio-view, #explorar-view { display: none; }
+  #inicio-view.active, #explorar-view.active { display: block; }
+  /* En el inicio los filtros del listado no significan nada todavía: se esconden hasta que el
+     usuario elige qué mirar. Siguen a un click, en Fichas y Mapa. */
+  body.en-inicio .filters-row, body.en-inicio .advanced-filters { display: none; }
+
+  .hero { padding: 34px 0 8px; max-width: 760px; }
+  .hero-kicker { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 700; letter-spacing: -.025em; line-height: 1.08;
+    font-size: clamp(28px, 4.4vw, 44px); margin: 0 0 12px; text-wrap: balance;
+  }
+  .hero-lead { font-size: 15.5px; line-height: 1.55; color: var(--text-secondary); margin: 0 0 20px; max-width: 640px; text-wrap: pretty; }
+  .hero-buscar { position: relative; max-width: 640px; }
+  .hero-buscar input {
+    width: 100%; font: inherit; font-size: 17px; padding: 15px 18px 15px 46px; border-radius: 14px;
+    border: 1.5px solid var(--text-primary); background: var(--surface-0); color: var(--text-primary);
+    box-shadow: 0 1px 0 var(--border), 0 10px 30px -18px rgba(0,0,0,.35);
+  }
+  .hero-buscar input:focus { outline: 3px solid color-mix(in srgb, var(--accent) 40%, transparent); outline-offset: 1px; }
+  .hero-buscar .icon { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); font-size: 18px; color: var(--text-muted); pointer-events: none; }
+  .hero-ejemplos { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 12px 0 0; font-size: 12.5px; color: var(--text-muted); }
+  .hero-ejemplo {
+    font: inherit; font-size: 12.5px; cursor: pointer; border-radius: 999px; padding: 4px 11px;
+    border: 1px solid var(--border); background: var(--surface-0); color: var(--text-secondary);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .hero-ejemplo:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+  .entradas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 30px 0 14px; }
+  @media (max-width: 980px) { .entradas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .entradas { grid-template-columns: minmax(0, 1fr); } }
+  .entrada {
+    background: var(--surface-0); border: 1px solid var(--border); border-top: 3px solid var(--tipo-color, var(--text-primary));
+    border-radius: 4px; padding: 14px 14px 10px; display: flex; flex-direction: column; min-width: 0;
+  }
+  .entrada-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .entrada h2 { font-family: var(--serif); font-size: 19px; letter-spacing: -.01em; margin: 0; }
+  .entrada-num { margin-left: auto; font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--tipo-color, var(--text-primary)); }
+  .entrada-desc { font-size: 12.5px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4; }
+  .entrada ol { list-style: none; margin: 0 0 8px; padding: 0; display: flex; flex-direction: column; }
+  .entrada-item {
+    font: inherit; width: 100%; text-align: left; cursor: pointer; border: none; background: none;
+    display: flex; align-items: baseline; gap: 8px; padding: 6px 4px; border-radius: 6px; color: var(--text-primary);
+    border-top: 1px solid var(--surface-2);
+  }
+  .entrada li:first-child .entrada-item { border-top: none; }
+  .entrada-item:hover, .entrada-item:focus-visible { background: var(--surface-1); outline: none; }
+  .entrada-item .nom { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1; }
+  .entrada-item .cnt { font-size: 11.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .entrada-todos {
+    margin-top: auto; align-self: flex-start; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+    border: none; background: none; color: var(--tipo-color, var(--accent)); padding: 4px 4px;
+  }
+  .entrada-todos:hover { text-decoration: underline; }
+  .inicio-pie { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 12px; margin-bottom: 8px; }
+  @media (max-width: 760px) { .inicio-pie { grid-template-columns: minmax(0, 1fr); } }
+  .inicio-caja { background: var(--surface-0); border: 1px solid var(--border); border-radius: 4px; padding: 14px; font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
+  .inicio-caja h3 { font-family: var(--serif); font-size: 16px; margin: 0 0 8px; color: var(--text-primary); }
+  .inicio-caja p { margin: 0 0 8px; }
+  .regiones-barras { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 3px; }
+  .region-barra {
+    font: inherit; width: 100%; cursor: pointer; border: none; background: none; padding: 3px 4px; border-radius: 5px;
+    display: grid; grid-template-columns: 150px minmax(0, 1fr) 44px; gap: 10px; align-items: center; color: var(--text-primary); text-align: left;
+  }
+  .region-barra:hover { background: var(--surface-1); }
+  .region-barra .rb-nom { font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .region-barra .rb-bar { height: 7px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+  .region-barra .rb-bar span { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+  .region-barra .rb-num { font-size: 12px; color: var(--text-muted); text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Explorador de conexiones: cuatro columnas en orden fijo ---------- */
+  /* Fármaco → estudio → institución → profesional es la cadena real de los datos: un fármaco se
+     evalúa en estudios, los estudios corren en centros, en los centros trabajan personas. Con el
+     orden fijo nada se superpone y el ojo aprende dónde buscar cada cosa. */
+  .exp-vacio { padding: 36px 0; max-width: 640px; }
+  .exp-vacio h2 { font-family: var(--serif); font-size: 24px; margin: 0 0 8px; }
+  .exp-vacio p { color: var(--text-secondary); font-size: 14px; line-height: 1.55; }
+  .exp-migas { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 12px; color: var(--text-muted); margin: 14px 0 8px; min-height: 22px; }
+  .exp-miga { font: inherit; border: none; background: none; cursor: pointer; color: var(--text-secondary); padding: 2px 6px; border-radius: 999px; max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .exp-miga:hover { background: var(--surface-2); color: var(--text-primary); }
+  .exp-miga[aria-current="page"] { color: var(--text-primary); font-weight: 600; cursor: default; background: none; }
+  .exp-cabeza {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start;
+    background: var(--surface-0); border: 1px solid var(--border); border-left: 4px solid var(--tipo-color, var(--text-primary));
+    border-radius: 4px; padding: 16px 18px; margin-bottom: 12px;
+  }
+  @media (max-width: 720px) { .exp-cabeza { grid-template-columns: minmax(0, 1fr); } }
+  .exp-tipo { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--tipo-color, var(--text-muted)); }
+  .exp-nombre { font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); letter-spacing: -.02em; line-height: 1.15; margin: 2px 0 4px; }
+  .exp-sub { font-size: 13px; color: var(--text-secondary); margin: 0 0 8px; line-height: 1.45; }
+  .exp-cifras { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--text-secondary); }
+  .exp-cifras b { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .exp-acciones { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  @media (max-width: 720px) { .exp-acciones { justify-content: flex-start; } }
+  .exp-btn {
+    font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap;
+    padding: 7px 13px; border-radius: 999px; border: 1px solid var(--text-primary);
+    background: var(--surface-0); color: var(--text-primary);
+    transition: transform 160ms var(--ease-out), background-color 150ms ease, color 150ms ease;
+  }
+  .exp-btn:hover { background: var(--text-primary); color: var(--surface-0); }
+  .exp-btn:active { transform: scale(0.97); }
+  .exp-btn.primario { background: var(--text-primary); color: var(--surface-0); }
+  .exp-btn.primario:hover { filter: brightness(1.15); }
+  .exp-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .exp-controles { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; font-size: 12.5px; color: var(--text-muted); }
+
+  /* ---------- Perfil: conclusiones, cifras, rankings, tabla ---------- */
+  .pf-resumen {
+    display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 18px; align-items: start;
+    background: var(--surface-0); border: 1px solid var(--border); border-radius: 4px; padding: 16px 18px; margin-bottom: 12px;
+  }
+  @media (max-width: 760px) { .pf-resumen { grid-template-columns: minmax(0, 1fr); } }
+  .pf-resumen h3 { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 8px; }
+  .pf-frases { margin: 0; padding: 0 0 0 18px; font-family: var(--serif); font-size: 15.5px; line-height: 1.5; color: var(--text-primary); }
+  .pf-frases li { margin: 0 0 6px; text-wrap: pretty; }
+  .pf-frases li::marker { color: var(--accent); }
+  .pf-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .pf-kpi { background: var(--surface-1); border-radius: 4px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+  .pf-kpi .num { font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; color: var(--text-primary); }
+  .pf-kpi .lab { font-size: 12px; color: var(--text-muted); }
+  .pf-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 760px) { .pf-grid { grid-template-columns: minmax(0, 1fr); } }
+  .pf-sec { background: var(--surface-0); border: 1px solid var(--border); border-radius: 4px; padding: 14px 14px 8px; min-width: 0; }
+  .pf-sec.ancha { grid-column: 1 / -1; }
+  .pf-sec h3 { font-family: var(--serif); font-size: 17px; letter-spacing: -.01em; margin: 0 0 2px; display: flex; align-items: baseline; gap: 8px; }
+  .pf-cuenta { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .pf-nota { font-size: 12px; color: var(--text-muted); margin: 0 0 8px; line-height: 1.45; }
+  .pf-vacio { font-size: 12.5px; color: var(--text-muted); margin: 6px 0 10px; line-height: 1.45; }
+  .pf-lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .pf-fila {
+    font: inherit; width: 100%; text-align: left; color: var(--text-primary); background: none; border: none;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(60px, 28%) auto; gap: 10px; align-items: center;
+    padding: 6px 6px; border-radius: 5px; border-top: 1px solid var(--surface-2);
+  }
+  .pf-lista li:first-child .pf-fila { border-top: none; }
+  button.pf-fila { cursor: pointer; transition: background-color 150ms ease, transform 160ms var(--ease-out); }
+  button.pf-fila:hover, button.pf-fila:focus-visible { background: var(--surface-1); outline: none; }
+  button.pf-fila:active { transform: scale(0.99); }
+  .pf-lab { display: flex; flex-direction: column; min-width: 0; }
+  .pf-nom { font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pf-forma { font-size: 9px; color: var(--tipo-color); margin-right: 6px; vertical-align: 1px; }
+  .pf-sub { font-size: 11.5px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pf-fila.indirecto .pf-nom { font-weight: 500; color: var(--text-secondary); }
+  .pf-fila.indirecto { border-left: 2px dashed var(--border); }
+  .pf-barra { height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+  .pf-barra span { display: block; height: 100%; border-radius: 4px; background: var(--tipo-color, var(--accent)); opacity: .85; }
+  .pf-fila:not([style]) .pf-barra span { background: var(--accent); }
+  .pf-val { font-size: 12px; color: var(--text-muted); white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+  .pf-val b { color: var(--text-primary); font-size: 13px; }
+  .pf-extra { display: block; color: var(--ensayo); font-size: 11px; font-weight: 600; }
+  @media (max-width: 560px) {
+    .pf-fila { grid-template-columns: minmax(0, 1fr) auto; }
+    .pf-barra { display: none; }
+  }
+  .pf-tabla-envoltura { overflow-x: auto; margin: 0 -4px; }
+  .pf-tabla { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .pf-tabla th { text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .pf-tabla td { padding: 7px 8px; border-bottom: 1px solid var(--surface-2); vertical-align: top; color: var(--text-secondary); }
+  .pf-tabla td:first-child { min-width: 220px; }
+  .pf-tabla td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pf-tabla td.reclutando { color: var(--ensayo); font-weight: 600; white-space: nowrap; }
+  .pf-tabla tbody tr:hover { background: var(--surface-1); }
+  .pf-tabla .pf-sub { display: block; }
+  .pf-link { font: inherit; font-weight: 600; color: var(--text-primary); background: none; border: none; padding: 0; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
+  .pf-link:hover { text-decoration-color: currentColor; }
+  .pf-pubs { list-style: none; margin: 0; padding: 0; }
+  .pf-pubs li { padding: 9px 0; border-top: 1px solid var(--surface-2); font-size: 13px; line-height: 1.5; color: var(--text-secondary); display: flex; flex-direction: column; gap: 2px; }
+  .pf-pubs li:first-child { border-top: none; }
+  .pf-pub-meta { font-size: 11.5px; font-weight: 600; color: var(--text-muted); }
+  .pf-fuente { font-size: 12px; color: var(--accent); text-decoration: none; }
+  .pf-fuente:hover { text-decoration: underline; }
+  .pf-pie { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin: 14px 0 0; max-width: 820px; }
+  .exp-mas { font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: none; color: var(--text-secondary); padding: 6px 4px; }
+  .exp-mas:hover { color: var(--text-primary); text-decoration: underline; }
+  .exp-grafo-link { font: inherit; font-size: 12.5px; cursor: pointer; background: none; border: none; color: var(--text-secondary); text-decoration: underline; padding: 0; }
+
+  /* ---------- Aviso beta compacto ---------- */
+  details.beta-bar { display: block; padding: 0; }
+  details.beta-bar > summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 9px 14px; font-size: 12.5px;
+  }
+  details.beta-bar > summary::-webkit-details-marker { display: none; }
+  details.beta-bar > summary .beta-mas { margin-left: auto; color: var(--text-muted); text-decoration: underline; white-space: nowrap; }
+  details.beta-bar[open] > summary .beta-mas { visibility: hidden; }
+  details.beta-bar .beta-cuerpo { padding: 0 14px 12px; display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+  /* En pantalla chica la cabecera fija se comía un cuarto del alto: ahí se desplaza con la página,
+     y en el perfil los filtros del listado se esconden (no aplican ahí). */
+  @media (max-width: 720px) {
+    header.topbar { position: static; }
+    body.en-explorar .filters-row { display: none; }
+    .beta-largo { display: none; }
+  }
+  .beta-sello { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--accent); border-radius: 3px; padding: 2px 7px; }
+  .view-btn { padding: 7px 14px; }
+
   /* Movimiento reducido: menos, no cero. Se quedan los fundidos de opacidad y color, que ayudan
      a entender qué cambió, y se va todo lo que se desplaza. La escala de 3% al apretar se
      conserva: no desplaza nada y es la única confirmación de que el toque llegó. */
@@ -649,31 +858,33 @@
   }
 </style>
 </head>
-<body>
+<body class="en-inicio">
 
 <header class="topbar">
   <div class="topbar-row">
-    <span class="brand">KOL Radar</span>
+    <button type="button" class="brand brand-btn" id="brand-inicio" title="Volver al inicio">KOL Radar</button>
     <span class="specialty-badge" id="specialty-badge">beta</span>
     <div class="search-wrap">
       <span class="icon">⌕</span>
-      <input id="search" type="search" placeholder="Buscar persona, institución o ensayo…" autocomplete="off"
+      <input id="search" type="search" placeholder="Buscar fármaco, estudio, profesional o institución…" autocomplete="off"
              role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias"
-             aria-label="Buscar persona, institución o ensayo" />
+             aria-label="Buscar fármaco, estudio, profesional o institución" />
       <ul class="sugerencias" id="sugerencias" role="listbox" hidden></ul>
     </div>
     <div class="view-switch" role="group" aria-label="Cambiar de vista">
-      <button type="button" class="view-btn" id="view-geo" aria-pressed="true">Chile</button>
-      <button type="button" class="view-btn" id="view-mapa" aria-pressed="false">Conexiones</button>
+      <button type="button" class="view-btn" id="view-inicio" aria-pressed="true">Inicio</button>
+      <button type="button" class="view-btn" id="view-mapa" aria-pressed="false">Perfil</button>
+      <button type="button" class="view-btn" id="view-geo" aria-pressed="false">Mapa</button>
       <button type="button" class="view-btn" id="view-lista" aria-pressed="false">Fichas</button>
     </div>
     <a class="dev-link" href="interno.html" title="Cómo se construyó esto y de dónde salen los datos">Detalles técnicos ↗</a>
   </div>
   <div class="filters-row">
     <button class="chip" data-filter="todos" aria-pressed="true">Todos</button>
-    <button class="chip" data-filter="persona" aria-pressed="false">Personas</button>
+    <button class="chip" data-filter="farmaco" aria-pressed="false">Fármacos</button>
+    <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Estudios</button>
     <button class="chip" data-filter="institucion" aria-pressed="false">Instituciones</button>
-    <button class="chip" data-filter="ensayo_clinico" aria-pressed="false">Ensayos clínicos</button>
+    <button class="chip" data-filter="persona" aria-pressed="false">Profesionales</button>
     <button class="chip sort-toggle" id="sort-toggle" data-sort="reciente">Ordenar: más reciente</button>
     <span class="chip-sep" aria-hidden="true"></span>
     <details class="area-menu" id="area-menu">
@@ -726,20 +937,66 @@
   </div>
 </header>
 
-<div class="beta-bar" role="note">
-  <div class="beta-txt">
-    <strong>Esto es una beta.</strong> Todo lo que ves sale de fuentes públicas —ClinicalTrials.gov,
-    PubMed, SciELO y sitios institucionales— y cada dato enlaza a la fuente exacta de donde salió.
-    <strong>La expansión todavía no fue revisada por una persona: 817 hechos están pendientes y
-    1 fue confirmado previamente.</strong> Pueden faltar personas, sobrar duplicados y haber
-    identidades sin confirmar. No es una evaluación de desempeño profesional ni un listado
-    comercial. Si algo está mal, lo mejor que podés hacer es avisarnos.
+<!-- El aviso de beta nunca desaparece (el charter lo pide), pero ocupa una línea: antes se
+     comía medio primer pantallazo. El detalle está a un click. Las cifras las calcula el JS
+     desde los datos: escritas a mano quedaban desactualizadas en la siguiente integración. -->
+<details class="beta-bar" role="note">
+  <summary>
+    <span class="beta-sello">Beta</span>
+    <span><span class="beta-largo">Datos públicos con fuente enlazada, </span><strong class="js-cifra-revision">sin revisión humana todavía</strong><span class="beta-largo">. No es una evaluación profesional ni un listado comercial.</span></span>
+    <span class="beta-mas">Qué significa</span>
+  </summary>
+  <div class="beta-cuerpo">
+    <div class="beta-txt">
+      Todo lo que ves sale de fuentes públicas —ClinicalTrials.gov, PubMed, SciELO, el buscador
+      de estudios clínicos de la Cámara de la Innovación Farmacéutica, el registro de
+      establecimientos del Minsal y sitios institucionales— y cada dato enlaza a la fuente exacta
+      de donde salió. <strong><span class="js-cifra-pendientes">Casi todos los hechos</span> están
+      pendientes de revisión humana.</strong> Pueden faltar personas, sobrar duplicados y haber
+      identidades sin confirmar. Si algo está mal, lo mejor que podés hacer es avisarnos.
+    </div>
+    <a class="beta-cta" id="beta-feedback"
+       href="https://github.com/FranciscoKirhman/kol-radar/issues/new"
+       target="_blank" rel="noopener noreferrer">Reportar un error (reporte público)</a>
   </div>
-  <a class="beta-cta" id="beta-feedback"
-     href="https://github.com/FranciscoKirhman/kol-radar/issues/new"
-     target="_blank" rel="noopener noreferrer">Reportar un error (reporte público)</a>
-</div>
+</details>
 <main>
+  <section id="inicio-view" class="active" aria-labelledby="hero-titulo">
+    <div class="hero">
+      <p class="hero-kicker">Oncología · Chile · fuentes públicas</p>
+      <h1 id="hero-titulo">¿Quién investiga qué, y con quién se conecta?</h1>
+      <p class="hero-lead">Buscá un fármaco, un estudio, un profesional o una institución y mirá su red:
+        en qué estudios se evalúa, en qué centros corren y quién trabaja ahí. Cada conexión enlaza a su fuente.</p>
+      <div class="hero-buscar search-wrap">
+        <span class="icon">⌕</span>
+        <input id="hero-search" type="search" placeholder="Ej.: pembrolizumab, KEYNOTE, FALP, Temuco…" autocomplete="off"
+               role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="hero-sugerencias"
+               aria-label="Buscar fármaco, estudio, profesional o institución" />
+        <ul class="sugerencias" id="hero-sugerencias" role="listbox" hidden></ul>
+      </div>
+      <div class="hero-ejemplos" id="hero-ejemplos"></div>
+    </div>
+    <div class="entradas" id="entradas"></div>
+    <div class="inicio-pie">
+      <div class="inicio-caja">
+        <h3>Dónde hay actividad</h3>
+        <ul class="regiones-barras" id="regiones-barras"></ul>
+      </div>
+      <div class="inicio-caja">
+        <h3>Cómo leer esto</h3>
+        <p>Una conexión es un hecho con fuente: un fármaco evaluado en un estudio (ClinicalTrials.gov), un
+          estudio con sede en un centro, una persona afiliada a un centro o coautora de otra.</p>
+        <p>No es un ranking de a quién visitar ni una medida de influencia. Es un mapa verificable para
+          preparar una conversación científica: el criterio sigue siendo tuyo.</p>
+        <p class="js-cifras-datos"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="explorar-view" aria-label="Perfil de una ficha">
+    <div id="explorar"></div>
+  </section>
+
   <section id="list-view">
     <p class="results-meta" id="results-meta"></p>
     <div class="cards" id="cards"></div>
@@ -748,7 +1005,7 @@
     <div class="empty-state" id="empty-state" hidden>Sin resultados para esa búsqueda.</div>
   </section>
 
-  <section id="geo-view" class="active">
+  <section id="geo-view">
     <div class="foco-bar geo-foco vacia" id="geo-foco"></div>
     <p class="sr-solo" id="geo-anuncio" role="status" aria-live="polite"></p>
     <div class="geo-layout">
@@ -768,9 +1025,10 @@
   </section>
 
   <section id="network-view">
-    <p class="network-hint" id="network-hint">Mapa de conexiones. Rueda del mouse o los botones + y −
+    <p class="network-hint" id="network-hint">Grafo del ecosistema completo. Rueda del mouse o los botones + y −
       para acercar, arrastrá para moverte. Pasá el mouse sobre un nodo para resaltar su red, y hacé
-      click para abrir su ficha con las fuentes.</p>
+      click para abrir su ficha con las fuentes. Para leer la red de una sola ficha, sin superposiciones,
+      <button type="button" class="exp-grafo-link" id="grafo-a-explorar">abrí el perfil de una ficha</button>.</p>
     <div class="foco-bar" id="foco-bar" hidden>
       <span id="foco-texto"></span>
       <span class="foco-sep"></span>
@@ -807,6 +1065,7 @@
           <button class="legend-toggle" data-capa="persona" aria-pressed="true"><span class="swatch" style="background:var(--persona)"></span>Personas</button>
           <button class="legend-toggle" data-capa="institucion" aria-pressed="true"><span class="swatch" style="background:var(--institucion)"></span>Instituciones</button>
           <button class="legend-toggle" data-capa="ensayo_clinico" aria-pressed="true"><span class="swatch" style="background:var(--ensayo)"></span>Ensayos clínicos</button>
+          <button class="legend-toggle" data-capa="farmaco" aria-pressed="false"><span class="swatch" style="background:var(--farmaco)"></span>Fármacos</button>
           <button class="legend-toggle" data-capa="tema" aria-pressed="false"><span class="swatch" style="background:var(--tema)"></span>Temas</button>
         </div>
       </div>
@@ -816,6 +1075,7 @@
           <button class="legend-toggle" data-arista="persona|institucion" aria-pressed="true">Persona ↔ Institución</button>
           <button class="legend-toggle" data-arista="persona|ensayo_clinico" aria-pressed="true">Persona ↔ Ensayo</button>
           <button class="legend-toggle" data-arista="institucion|ensayo_clinico" aria-pressed="true">Institución ↔ Ensayo</button>
+          <button class="legend-toggle" data-arista="ensayo_clinico|farmaco" aria-pressed="true">Ensayo ↔ Fármaco</button>
           <button class="legend-toggle" data-arista="persona|persona" aria-pressed="true">Persona ↔ Persona</button>
           <button class="legend-toggle" data-arista="institucion|institucion" aria-pressed="true">Institución ↔ Institución</button>
           <button class="legend-toggle" data-arista="persona|tema" aria-pressed="true">Persona ↔ Tema</button>
@@ -825,7 +1085,7 @@
       </div>
       <div class="layer-block">
         <label class="layer-checkbox"><input type="checkbox" id="ocultar-aislados" /> Ocultar nodos que quedan sin conexiones</label>
-        <span class="forma-leyenda">Formas: ● persona · ■ institución · ▲ ensayo · ◆ tema</span>
+        <span class="forma-leyenda">Formas: ● persona · ■ institución · ▲ ensayo · ⬢ fármaco · ◆ tema</span>
       </div>
     </div>
   </section>
@@ -833,8 +1093,8 @@
 
 <footer class="page-footer" id="page-footer">
   Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, sitios institucionales) —
-  no es una evaluación de desempeño profesional ni un listado comercial. La expansión todavía no fue
-  revisada por una persona: 817 hechos están pendientes y 1 fue confirmado previamente. ¿Eres un
+  no es una evaluación de desempeño profesional ni un listado comercial. Todavía no fue revisada por
+  una persona: <span class="js-cifra-pendientes">casi todos los hechos</span> están pendientes. ¿Eres un
   profesional listado acá y quieres corregir o eliminar tu información? El canal privado para eso
   todavía no está definido — "Reportar un error (reporte público)" abre un repositorio público, así
   que no es el lugar para pedir que se retire tu ficha. Esta es una beta, no un producto en producción.
@@ -871,7 +1131,7 @@
     congreso: "Congresos",
     otro: "Otros hechos"
   };
-  var typeLabel = { persona: "Persona", institucion: "Institución", ensayo_clinico: "Ensayo clínico", tema: "Tema" };
+  var typeLabel = { persona: "Profesional", institucion: "Institución", ensayo_clinico: "Estudio clínico", farmaco: "Fármaco", tema: "Tema" };
 
   var entidades = [];
   var vinculos = [];
@@ -886,10 +1146,12 @@
   // filtro de la lista (state.filter) a propósito — acá se compone un mapa, no se filtra
   // un listado: se puede querer ver solo personas-con-personas sin salir del mapa completo.
   var capas = {
-    nodos: { persona: true, institucion: true, ensayo_clinico: true, tema: false },
+    // Los fármacos entran apagados: son 385 nodos y en el grafo global se comerían el tope de 400.
+    // Donde sí se leen es en el perfil de cada ficha.
+    nodos: { persona: true, institucion: true, ensayo_clinico: true, farmaco: false, tema: false },
     aristas: {
       "persona|institucion": true, "persona|ensayo_clinico": true,
-      "institucion|ensayo_clinico": true, "persona|persona": true,
+      "institucion|ensayo_clinico": true, "persona|persona": true, "ensayo_clinico|farmaco": true,
       "institucion|institucion": true, "persona|tema": true,
       "ensayo_clinico|tema": true, "institucion|tema": true
     },
@@ -929,6 +1191,8 @@
     return m[1] + "-" + (m[3] || "01") + "-" + (m[5] || "01");
   }
   function mostRecentHecho(n) {
+    // Una ficha sin hechos no debería existir, pero si llega una, la lista no puede morir por eso.
+    if (!n.hechos.length) return { fecha: "sin fecha en la fuente" };
     var best = n.hechos[0], bestKey = sortableDate(best.fecha);
     n.hechos.forEach(function (h) {
       var k = sortableDate(h.fecha);
@@ -982,8 +1246,28 @@
     });
     return resultado;
   }
+  // Índice de adyacencia, una vez al cargar. Antes cada conteo recorría los ~3.000 vínculos por
+  // ficha, y la lista, los filtros y el explorador lo piden cientos de veces por render.
+  var ady = {};
+  function construirAdyacencia() {
+    ady = {};
+    entidades.forEach(function (n) { ady[n.id] = []; });
+    vinculos.forEach(function (v) {
+      if (!ady[v.origen] || !ady[v.destino]) return;
+      ady[v.origen].push({ otro: v.destino, v: v });
+      ady[v.destino].push({ otro: v.origen, v: v });
+    });
+  }
+  function vecinosDe(id, tipo) {
+    return (ady[id] || []).filter(function (a) { return !tipo || (byId[a.otro] && byId[a.otro].tipo === tipo); });
+  }
   function connectionCount(id) {
-    return vinculos.filter(function (v) { return v.origen === id || v.destino === id; }).length;
+    return (ady[id] || []).length;
+  }
+  // Un fármaco no tiene un área: tiene las de sus estudios. El resto de las fichas, la suya.
+  function areasDe(n) {
+    if (n.areas && n.areas.length) return n.areas;
+    return [n.area || "cáncer de pulmón"];
   }
   // Un ensayo fase III/IV pesa el doble que uno fase I/II: es el único peso que no inventamos,
   // porque ClinicalTrials.gov ya entrega la fase como dato estructurado real.
@@ -1168,6 +1452,8 @@
       datosGeo = data.geo || null;
       vinculos = data.vinculos || [];
       entidades.forEach(function (n) { byId[n.id] = n; });
+      construirAdyacencia();
+      pintarCifrasRevision();
       // Una shortlist guardada puede apuntar a ids que ya no existen (el dataset cambia entre
       // versiones) — se limpian en silencio en vez de romper el resumen más adelante.
       shortlist = shortlist.filter(function (id) { return !!byId[id]; });
@@ -1195,6 +1481,9 @@
         setTimeout(function () { buildNetwork(); networkBuilt = true; }, 0);
       }
       if (geoView.classList.contains("active")) mapaChile.mostrar();
+      inicio.pintar();
+      // Un enlace compartido (#ficha=pembrolizumab) abre directo las conexiones de esa ficha.
+      leerHash();
       // La ficha de una institución muestra su dirección: se pide ya, pesa poco.
       cargarUbicaciones().catch(function () {});
     })
@@ -1343,8 +1632,10 @@
     vinculos.forEach(function (v) {
       var o = byId[v.origen], d = byId[v.destino];
       if (!o || !d) return;
-      if (directos[v.origen] && o.tipo === "ensayo_clinico" && d.tipo !== "ensayo_clinico") set[v.destino] = true;
-      if (directos[v.destino] && d.tipo === "ensayo_clinico" && o.tipo !== "ensayo_clinico") set[v.origen] = true;
+      // Los fármacos no se arrastran: buscar "pembrolizumab" no debe traer el carboplatino que lo
+      // acompaña en el mismo estudio. El fármaco buscado ya entra por su nombre.
+      if (directos[v.origen] && o.tipo === "ensayo_clinico" && d.tipo !== "ensayo_clinico" && d.tipo !== "farmaco") set[v.destino] = true;
+      if (directos[v.destino] && d.tipo === "ensayo_clinico" && o.tipo !== "ensayo_clinico" && o.tipo !== "farmaco") set[v.origen] = true;
     });
     _cacheConsulta = { q: q, set: set };
     return set;
@@ -1369,7 +1660,7 @@
     if (state.tier !== "todas") {
       if (n.tipo !== "persona" || computePriority(n).tier !== state.tier) return false;
     }
-    if (state.areas.length && state.areas.indexOf(n.area || "cáncer de pulmón") === -1) return false;
+    if (state.areas.length && !areasDe(n).some(function (a) { return state.areas.indexOf(a) !== -1; })) return false;
     if (state.region !== "todas" && regionOf(n) !== state.region) return false;
     if (state.ciudad && ciudadDe(n) !== state.ciudad) return false;
     // Filtro de reclutamiento: aplica al ensayo, y también a personas/instituciones ligadas a
@@ -1378,10 +1669,8 @@
       if (n.tipo === "ensayo_clinico") {
         if (!n.sitios_chile_reclutando) return false;
       } else {
-        var ligadoAReclutante = vinculos.some(function (v) {
-          var otro = v.origen === n.id ? v.destino : (v.destino === n.id ? v.origen : null);
-          if (!otro) return false;
-          var e = byId[otro];
+        var ligadoAReclutante = (ady[n.id] || []).some(function (a) {
+          var e = byId[a.otro];
           return e && e.tipo === "ensayo_clinico" && e.sitios_chile_reclutando > 0;
         });
         if (!ligadoAReclutante) return false;
@@ -1391,8 +1680,8 @@
     return true;
   }
 
-  var TIPO_ORDEN = ["persona", "institucion", "ensayo_clinico"];
-  var TIPO_GRUPO_LABEL = { persona: "Personas", institucion: "Instituciones", ensayo_clinico: "Ensayos clínicos" };
+  var TIPO_ORDEN = ["persona", "institucion", "ensayo_clinico", "farmaco"];
+  var TIPO_GRUPO_LABEL = { persona: "Profesionales", institucion: "Instituciones", ensayo_clinico: "Estudios clínicos", farmaco: "Fármacos" };
 
   function totalParaOrdenar(n) {
     return n.tipo === "persona" ? computePriority(n).total : computeSenales(n).total;
@@ -1561,7 +1850,8 @@
     // El nombre es además el enlace a la fuente: se abre en otra pestaña para no sacar al
     // usuario de la búsqueda, y detiene la propagación para que tocar el nombre no abra
     // también la ficha. El resto de la tarjeta sigue abriendo la ficha.
-    var fuente = fuentePrincipal(n);
+    // Un fármaco no tiene UNA fuente: tiene una por estudio. Enlazar la primera sería arbitrario.
+    var fuente = n.tipo === "farmaco" ? null : fuentePrincipal(n);
     if (fuente) {
       var enlaceNombre = document.createElement("a");
       enlaceNombre.className = "card-name-link";
@@ -1585,6 +1875,8 @@
       scoreBadge = document.createElement("span");
       scoreBadge.className = "tier-badge " + priority.tier;
       scoreBadge.textContent = TIER_LABEL[priority.tier];
+    } else if (n.tipo === "farmaco") {
+      scoreBadge = document.createElement("span");
     } else {
       scoreBadge = document.createElement("span"); scoreBadge.className = "score-badge"; scoreBadge.textContent = senales.total + " pts";
     }
@@ -1592,6 +1884,21 @@
     top.appendChild(dot); top.appendChild(nameRow);
 
     var signalRow = document.createElement("div"); signalRow.className = "signal-row";
+    if (n.tipo === "farmaco") senales = { publicaciones: 0, ensayos: 0, conexiones: 0, docencia: 0 };
+    if (n.tipo === "farmaco") {
+      var rf = resumenFarmaco(n);
+      [plural(rf.estudios, "estudio", "estudios"),
+       rf.reclutando ? rf.reclutando + " reclutando en Chile" : null,
+       rf.centros ? plural(rf.centros, "centro", "centros") : null,
+       n.alias_en_la_fuente && n.alias_en_la_fuente.length ? "también: " + n.alias_en_la_fuente.slice(0, 3).join(", ") : null
+      ].forEach(function (t, i) {
+        if (!t) return;
+        var cf = document.createElement("span");
+        cf.className = "signal-chip" + (i === 1 ? " reclutando" : "");
+        cf.textContent = t;
+        signalRow.appendChild(cf);
+      });
+    }
     if (senales.publicaciones) { var c1 = document.createElement("span"); c1.className = "signal-chip"; c1.textContent = senales.publicaciones + " public."; signalRow.appendChild(c1); }
     if (senales.ensayos) {
       var c2 = document.createElement("span"); c2.className = "signal-chip";
@@ -1664,6 +1971,21 @@
     return card;
   }
 
+  function plural(n, uno, varios) { return n + " " + (n === 1 ? uno : varios); }
+
+  // Cuántos estudios, cuántos reclutan hoy en Chile y en cuántos centros distintos corren.
+  function resumenFarmaco(n) {
+    if (n._resumen) return n._resumen;
+    var ens = vecinosDe(n.id, "ensayo_clinico"), centros = {}, recl = 0;
+    ens.forEach(function (a) {
+      var e = byId[a.otro];
+      if (e.sitios_chile_reclutando > 0) recl++;
+      vecinosDe(e.id, "institucion").forEach(function (b) { centros[b.otro] = true; });
+    });
+    n._resumen = { estudios: ens.length, reclutando: recl, centros: Object.keys(centros).length };
+    return n._resumen;
+  }
+
   // Agrupada por tipo a propósito: mezclar personas, instituciones y ensayos en una sola
   // grilla hace parecer comparables cosas que no lo son (un médico no compite con un hospital).
   function renderCards() {
@@ -1675,6 +1997,9 @@
     var showHeaders = state.filter === "todos";
     TIPO_ORDEN.forEach(function (tipo) {
       var grupo = sortList(list.filter(function (n) { return n.tipo === tipo; }));
+      // Todos los fármacos se crearon el mismo día: ordenarlos "por reciente" es no ordenarlos.
+      // Van por cuántos estudios los evalúan, que es lo que un MSL pregunta primero.
+      if (tipo === "farmaco") grupo.sort(function (a, b) { return connectionCount(b.id) - connectionCount(a.id) || a.nombre.localeCompare(b.nombre, "es"); });
       if (!grupo.length) return;
       if (showHeaders) {
         var section = document.createElement("div"); section.className = "type-section-title";
@@ -1704,30 +2029,48 @@
   // «Buscar primero» (prototipos/conexiones/). El filtro por texto sigue existiendo —es lo que
   // encuentra personas por fármaco— pero se aplica a propósito, desde la última fila o con Enter
   // cuando nada calza por nombre.
-  var buscador = document.getElementById("search");
-  var listaSug = document.getElementById("sugerencias");
+  // Dos campos, un solo motor: el de la cabecera y el grande del inicio. Cada uno con su lista;
+  // el que tiene el foco es el que manda.
+  var PARES_BUSCADOR = [[document.getElementById("search"), document.getElementById("sugerencias")],
+                        [document.getElementById("hero-search"), document.getElementById("hero-sugerencias")]];
+  var buscador = PARES_BUSCADOR[0][0];
+  var listaSug = PARES_BUSCADOR[0][1];
   var sugerencias = [], sugActiva = -1;
-  var FORMA_TIPO = { persona: "●", institucion: "■", ensayo_clinico: "▲" };
+  var FORMA_TIPO = { persona: "●", institucion: "■", ensayo_clinico: "▲", farmaco: "⬢" };
+  function usarBuscador(par) {
+    if (buscador === par[0]) return;
+    cerrarSugerencias();
+    buscador = par[0]; listaSug = par[1];
+  }
 
   function sugerirFichas(texto, max) {
     var q = sinTildes(texto).trim();
     if (q.length < 2) return [];
-    var orden = { persona: 0, institucion: 1, ensayo_clinico: 2 };
+    var orden = { farmaco: 0, persona: 1, institucion: 2, ensayo_clinico: 3 };
     var res = [];
     entidades.forEach(function (n) {
       var nombre = n._nombreBuscable || (n._nombreBuscable = sinTildes(n.nombre));
-      var p;
+      var p, alias = null;
       if (nombre.indexOf(q) === 0) p = 0;
       else if (nombre.indexOf(" " + q) !== -1 || nombre.indexOf("(" + q) !== -1) p = 1;
       else if (nombre.indexOf(q) !== -1) p = 2;
-      else if (sinTildes([n.subtitulo, n.ciudad, n.acronimo].filter(Boolean).join(" ")).indexOf(q) !== -1) p = 3;
-      else return;
-      res.push({ n: n, p: p });
+      else {
+        // Marcas y códigos de un fármaco ("Keytruda", "MK-3475") y los nombres con que la fuente
+        // escribe una sede: se sugiere la ficha canónica y se dice por qué calzó.
+        var al = (n.alias_en_la_fuente || []).filter(function (a) { return sinTildes(a).indexOf(q) !== -1; })[0];
+        if (al) { p = 2; alias = al; }
+        else if (sinTildes([n.subtitulo, n.ciudad, n.acronimo].filter(Boolean).join(" ")).indexOf(q) !== -1) p = 3;
+        else return;
+      }
+      res.push({ n: n, p: p, alias: alias });
     });
+    // Entre dos que calzan igual, primero la que tiene más conexiones: al escribir "clínica" se
+    // espera la que tiene cuarenta estudios, no la que tiene uno.
     res.sort(function (a, b) {
-      return a.p - b.p || orden[a.n.tipo] - orden[b.n.tipo] || a.n.nombre.localeCompare(b.n.nombre, "es");
+      return a.p - b.p || orden[a.n.tipo] - orden[b.n.tipo] ||
+        connectionCount(b.n.id) - connectionCount(a.n.id) || a.n.nombre.localeCompare(b.n.nombre, "es");
     });
-    return res.slice(0, max).map(function (r) { return r.n; });
+    return res.slice(0, max).map(function (r) { r.n._aliasCalzado = r.alias; return r.n; });
   }
 
   function cerrarSugerencias() {
@@ -1777,7 +2120,9 @@
         } else {
           nombre.textContent = s.n.nombre;
         }
-        sub.textContent = (typeLabel[s.n.tipo] || s.n.tipo) + (s.n.subtitulo ? " · " + s.n.subtitulo : "");
+        sub.textContent = (typeLabel[s.n.tipo] || s.n.tipo) +
+          (s.n._aliasCalzado ? " · la fuente también lo escribe «" + s.n._aliasCalzado + "»" :
+           s.n.subtitulo ? " · " + s.n.subtitulo : "");
       } else {
         forma.className = "sug-forma"; forma.textContent = "⌕";
         nombre.textContent = "Filtrar todo por «" + s.texto + "»";
@@ -1808,6 +2153,11 @@
 
   function aplicarFiltroTexto(texto) {
     state.query = texto;
+    // Desde el inicio o las conexiones de una ficha, filtrar por texto solo tiene sentido en la
+    // lista: se lleva al usuario ahí en vez de filtrar algo que no está viendo.
+    if (texto && (inicioView.classList.contains("active") || explorarView.classList.contains("active"))) {
+      mostrarVista("fichas");
+    }
     renderCards();
     invalidateNetwork();
   }
@@ -1823,21 +2173,27 @@
     buscador.value = "";
     if (state.query) aplicarFiltroTexto("");
     buscador.blur();
-    // Si los filtros la dejan fuera del mapa, igual se abre su ficha: la búsqueda no debe fallar
-    // en silencio, y aislar una red que no se dibuja mostraría una barra de foco mentirosa.
-    // En el mapa de Chile se entra a la región de la ficha en vez de saltar a Conexiones.
+    // En el mapa se entra a la región de la ficha; en el grafo se aísla su red, como antes. En
+    // cualquier otra vista —el inicio, las conexiones, las fichas— se abren sus conexiones: es la
+    // pregunta con la que llega un MSL ("¿con quién se conecta esto?").
     if (geoView.classList.contains("active") && mapaChile.irA(n.id)) {
-      // ya quedó elegida sobre el mapa
-    } else if (!listView.classList.contains("active") || networkView.classList.contains("active") || geoView.classList.contains("active")) {
+      openDetail(n.id);
+    } else if (networkView.classList.contains("active")) {
       if (n.tipo !== "tema" && matches(n)) aplicarFoco(n.id);
+      openDetail(n.id);
+    } else {
+      explorador.abrir(n.id);
     }
-    openDetail(n.id);
   }
 
-  buscador.addEventListener("input", pintarSugerencias);
-  buscador.addEventListener("focus", function () { if (sinTildes(buscador.value).trim().length >= 2) pintarSugerencias(); });
-  buscador.addEventListener("blur", function () { setTimeout(cerrarSugerencias, 0); });
-  buscador.addEventListener("keydown", function (ev) {
+  PARES_BUSCADOR.forEach(function (par) {
+    var campo = par[0];
+    campo.addEventListener("input", function () { usarBuscador(par); pintarSugerencias(); });
+    campo.addEventListener("focus", function () { usarBuscador(par); if (sinTildes(campo.value).trim().length >= 2) pintarSugerencias(); });
+    campo.addEventListener("blur", function () { setTimeout(function () { if (buscador === campo) cerrarSugerencias(); }, 0); });
+    campo.addEventListener("keydown", function (ev) { usarBuscador(par); teclaBuscador(ev); });
+  });
+  function teclaBuscador(ev) {
     if (ev.key === "ArrowDown") {
       ev.preventDefault();
       if (listaSug.hidden) pintarSugerencias(); else marcarSugerencia(Math.min(sugerencias.length - 1, sugActiva + 1));
@@ -1849,7 +2205,7 @@
     } else if (ev.key === "Escape") {
       if (!listaSug.hidden) { ev.stopPropagation(); cerrarSugerencias(); }
     }
-  });
+  }
 
   document.querySelectorAll(".chip[data-filter]").forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -1967,9 +2323,10 @@
     var pie = document.getElementById("page-footer");
     pie.textContent = "Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, " +
       "sitios institucionales) — no es una evaluación de desempeño profesional ni un listado " +
-      "comercial. La expansión todavía no fue revisada por una persona: 817 hechos están " +
-      "pendientes y 1 fue confirmado previamente. ¿Eres un profesional listado aquí y quieres " +
-      "corregir o eliminar tu información? ";
+      "comercial. Todavía no fue revisada por una persona: " +
+      (cifrasRevision.hechos - cifrasRevision.confirmados).toLocaleString("es-CL") + " de " +
+      cifrasRevision.hechos.toLocaleString("es-CL") + " hechos están pendientes. ¿Eres un profesional " +
+      "listado aquí y quieres corregir o eliminar tu información? ";
     var a = document.createElement("a");
     a.href = href;
     a.textContent = esUrlSegura(canal) ? "Escríbenos por este formulario" : "Escríbenos a " + canal;
@@ -2271,18 +2628,37 @@
 
   var geoView = document.getElementById("geo-view");
   var btnGeo = document.getElementById("view-geo");
+  var inicioView = document.getElementById("inicio-view");
+  var explorarView = document.getElementById("explorar-view");
+  var btnInicio = document.getElementById("view-inicio");
 
+  // Cinco vistas, cuatro botones: "Perfil" es el perfil de una ficha (explorar) y, detrás de un
+  // enlace, el grafo del ecosistema completo (conexiones). Las dos marcan el mismo botón.
+  var vistaActual = "inicio";
   function mostrarVista(cual) {
     if (cual === true) cual = "conexiones";
     if (cual === false) cual = "fichas";
+    // Cambiar de vista con la página desplazada dejaba la vista nueva a media altura: el mapa se
+    // abría con su mitad superior fuera de pantalla.
+    if (cual !== vistaActual) window.scrollTo(0, 0);
+    vistaActual = cual;
+    inicioView.classList.toggle("active", cual === "inicio");
+    explorarView.classList.toggle("active", cual === "explorar");
     networkView.classList.toggle("active", cual === "conexiones");
     geoView.classList.toggle("active", cual === "chile");
     listView.classList.toggle("active", cual === "fichas");
-    btnMapa.setAttribute("aria-pressed", String(cual === "conexiones"));
+    document.body.classList.toggle("en-inicio", cual === "inicio");
+    document.body.classList.toggle("en-explorar", cual === "explorar");
+    btnInicio.setAttribute("aria-pressed", String(cual === "inicio"));
+    btnMapa.setAttribute("aria-pressed", String(cual === "conexiones" || cual === "explorar"));
     btnGeo.setAttribute("aria-pressed", String(cual === "chile"));
     btnLista.setAttribute("aria-pressed", String(cual === "fichas"));
     if (cual === "conexiones" && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
     if (cual === "chile" && entidades.length) mapaChile.mostrar();
+    if (cual === "explorar") explorador.pintar();
+    if (cual !== "explorar" && location.hash.indexOf("#ficha=") === 0) {
+      try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* file:// */ }
+    }
     renderBarraGeo();
   }
 
@@ -2325,9 +2701,12 @@
     mostrarVista("chile");
   }
   document.getElementById("geo-volver").addEventListener("click", limpiarFiltroGeo);
-  btnMapa.addEventListener("click", function () { mostrarVista("conexiones"); });
+  btnMapa.addEventListener("click", function () { mostrarVista("explorar"); });
   btnGeo.addEventListener("click", function () { mostrarVista("chile"); });
   btnLista.addEventListener("click", function () { mostrarVista("fichas"); });
+  btnInicio.addEventListener("click", function () { mostrarVista("inicio"); });
+  document.getElementById("brand-inicio").addEventListener("click", function () { mostrarVista("inicio"); });
+  document.getElementById("grafo-a-explorar").addEventListener("click", function () { mostrarVista("explorar"); });
 
   // ---------------- Mapa de Chile ----------------
   // Dos niveles, llevados del prototipo «Chile → ciudad» (prototipos/conexiones/v5-chile-ciudad.js):
@@ -2736,7 +3115,9 @@
     // región o comuna donde tiene una sede; una persona, donde está su institución.
     function recalcular() {
       visibles = {};
-      entidades.forEach(function (n) { if (matches(n)) visibles[n.id] = true; });
+      // Los fármacos no tienen lugar: están en todos los centros donde corren sus estudios, y eso ya
+      // lo muestra la institución. Contarlos inflaba "fichas en el mapa" con 385 que no se dibujan.
+      entidades.forEach(function (n) { if (n.tipo !== "farmaco" && matches(n)) visibles[n.id] = true; });
       porRegionCuenta = {}; porComuna = {};
       entidades.forEach(function (n) {
         if (!visibles[n.id]) return;
@@ -2835,26 +3216,80 @@
       dibujarRegion(ctx, lz, reg, foco, vista);
     }
 
-    // Nivel país: un número por región y nada más. Antes había un círculo por ciudad y los ensayos
-    // que dos ciudades comparten: en el centro del país los círculos de Santiago, Rancagua y Talca
-    // se pisaban y no se podía apretar ninguno. Ahora se aprieta la región entera.
+    // Nivel país: una columna de etiquetas al costado, ordenada de norte a sur, con una línea guía
+    // hasta cada región. Antes cada número iba sobre su región y en el centro del país —Santiago,
+    // O'Higgins, Maule, Biobío, Araucanía— se pisaban: Chile mide 4.300 km de largo y 180 de ancho, y
+    // la actividad se concentra en 600 km. En una columna nada se pisa, el orden geográfico se
+    // conserva, y la barra deja comparar magnitudes de un vistazo. La fila entera se puede apretar.
+    var FILA_PAIS = 30;
     function dibujarPais(ctx, lz) {
-      var cands = [];
+      var filas = [], maxN = 1, bordeDer = -Infinity;
       regiones.forEach(function (r) {
         var n = porRegionCuenta[r.nombre] || 0;
+        var c = lz.aPantalla(r.caja.x1, (r.caja.y0 + r.caja.y1) / 2);
+        bordeDer = Math.max(bordeDer, lz.aPantalla(r.caja.x1, r.caja.y0)[0], c[0]);
         if (!n) return;
-        var s = lz.aPantalla((r.caja.x0 + r.caja.x1) / 2, (r.caja.y0 + r.caja.y1) / 2);
-        marcas.push({ tipo: "region", id: r.nombre, sx: s[0], sy: s[1], r: 26 });
-        cands.push({ sx: s[0], sy: s[1], r: 2, n: n, texto: corto(r.nombre) + " · " + n, fuerte: hover && hover.id === r.nombre });
+        // El ancla es un punto DENTRO de la región: el centro de su caja cae en el mar en las
+        // regiones curvas del sur. Se busca sobre la horizontal del centro el punto más al este que
+        // esté dentro del polígono, y se retrocede un poco.
+        var cy = (r.caja.y0 + r.caja.y1) / 2, ax = null;
+        for (var t = 0; t <= 20; t++) {
+          var x = r.caja.x1 - (r.caja.x1 - r.caja.x0) * t / 20;
+          if (r.crudos.some(function (pl) { return dentro(x / K, -cy, pl); })) { ax = x - (r.caja.x1 - r.caja.x0) * 0.15; break; }
+        }
+        if (ax === null) ax = (r.caja.x0 + r.caja.x1) / 2;
+        var sa = lz.aPantalla(ax, cy);
+        filas.push({ r: r, n: n, ax: sa[0], ay: sa[1], y: sa[1] });
+        maxN = Math.max(maxN, n);
       });
-      // De mayor a menor: donde los números se pisan (el centro del país) tiene que quedar el
-      // grande. Ordenado por región, la Metropolitana —593 fichas— era la que se perdía.
-      cands.sort(function (a, b) { return (b.fuerte ? 1e9 : b.n) - (a.fuerte ? 1e9 : a.n); });
-      ctx.font = '600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-      ctx.textBaseline = "middle"; ctx.lineJoin = "round";
-      ubicarEtiquetasLienzo(ctx, cands, lz.w, lz.h, 20).forEach(function (pu) {
-        ctx.lineWidth = 4; ctx.strokeStyle = C.s0; ctx.globalAlpha = 0.95; ctx.strokeText(pu.c.texto, pu.x - 4, pu.y);
-        ctx.globalAlpha = 1; ctx.fillStyle = pu.c.fuerte ? C.texto : C.texto2; ctx.fillText(pu.c.texto, pu.x - 4, pu.y);
+      if (!filas.length) return;
+      filas.sort(function (a, b) { return a.ay - b.ay; });
+      // Relajación: separación mínima de FILA_PAIS, primero hacia abajo y, si se sale del lienzo,
+      // de vuelta hacia arriba. Conserva el orden norte-sur.
+      var margen = 22;
+      filas.forEach(function (f, i) { if (i) f.y = Math.max(f.y, filas[i - 1].y + FILA_PAIS); });
+      var exceso = filas[filas.length - 1].y - (lz.h - margen);
+      if (exceso > 0) {
+        filas[filas.length - 1].y -= exceso;
+        for (var i = filas.length - 2; i >= 0; i--) filas[i].y = Math.min(filas[i].y, filas[i + 1].y - FILA_PAIS);
+      }
+      if (filas[0].y < margen) {
+        var d0 = margen - filas[0].y;
+        filas.forEach(function (f) { f.y += d0; });
+      }
+      var colX = Math.min(Math.max(bordeDer + 44, lz.w * 0.36), lz.w - 230);
+      var anchoBarra = Math.min(120, lz.w - colX - 110);
+      var FUENTE_N = '600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      var FUENTE_C = '12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      ctx.textBaseline = "middle";
+      filas.forEach(function (f) {
+        var hv = hover && hover.tipo === "region" && hover.id === f.r.nombre;
+        // Línea guía: horizontal desde la región, quiebre, y horizontal hasta la etiqueta.
+        ctx.beginPath();
+        ctx.moveTo(f.ax, f.ay);
+        var codo = colX - 18;
+        ctx.lineTo(Math.min(codo - 10, Math.max(f.ax + 8, codo - 10)), f.ay);
+        ctx.lineTo(codo, f.y);
+        ctx.lineTo(colX - 6, f.y);
+        ctx.strokeStyle = hv ? C.texto : C.tenue; ctx.globalAlpha = hv ? 1 : 0.55; ctx.lineWidth = hv ? 1.4 : 1;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+        ctx.beginPath(); ctx.arc(f.ax, f.ay, hv ? 3.5 : 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = hv ? C.texto : C.acento; ctx.fill();
+        // Nombre, número y barra (raíz cuadrada: la Metropolitana no aplasta al resto).
+        ctx.font = FUENTE_N; ctx.fillStyle = hv ? C.texto : C.texto2;
+        var nom = corto(f.r.nombre);
+        ctx.fillText(nom, colX, f.y - 5);
+        var wNom = ctx.measureText(nom).width;
+        ctx.font = FUENTE_C; ctx.fillStyle = C.tenue;
+        ctx.fillText(f.n.toLocaleString("es-CL"), colX + wNom + 7, f.y - 5);
+        var largo = Math.max(3, Math.sqrt(f.n / maxN) * anchoBarra);
+        ctx.fillStyle = C.s2; ctx.fillRect(colX, f.y + 6, anchoBarra, 4);
+        ctx.fillStyle = C.acento; ctx.globalAlpha = hv ? 1 : 0.8; ctx.fillRect(colX, f.y + 6, largo, 4);
+        ctx.globalAlpha = 1;
+        var ancho = Math.max(wNom + 60, anchoBarra) + 12;
+        marcas.push({ tipo: "region", id: f.r.nombre, caja: [colX - 22, f.y - FILA_PAIS / 2, colX + ancho, f.y + FILA_PAIS / 2] });
+        marcas.push({ tipo: "region", id: f.r.nombre, sx: f.ax, sy: f.ay, r: 8 });
       });
     }
 
@@ -3126,6 +3561,7 @@
     function queHay(sx, sy) {
       for (var i = marcas.length - 1; i >= 0; i--) {
         var m = marcas[i];
+        if (m.caja) { if (sx >= m.caja[0] && sx <= m.caja[2] && sy >= m.caja[1] && sy <= m.caja[3]) return m; continue; }
         if (Math.hypot(m.sx - sx, m.sy - sy) <= m.r) return m;
       }
       var w = lz.aMundo(sx, sy), lat = -w[1], lon = w[0] / K;
@@ -3215,7 +3651,8 @@
     }
 
     // ------------------------------------------------------------ navegación
-    function rotPais() { return lz.w / Math.max(1, lz.h) > 1.15 ? -Math.PI / 2 : 0; }
+    // El país va siempre con el norte arriba: acostado, las etiquetas de región no tenían dónde ir.
+    function rotPais() { return 0; }
     function cajaPais() {
       var c = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
       regiones.forEach(function (r) {
@@ -3268,7 +3705,15 @@
       return { x0: b.x0 - mx, x1: b.x1 + mx, y0: b.y0 - my, y1: b.y1 + my };
     }
     function encuadrarNivel(inmediato) {
-      if (nivel === "pais") lz.animarA(lz.encuadre(cajaPais(), 40, rotPais()), 760, inmediato);
+      if (nivel === "pais") {
+        // Se ensancha la caja hacia el este para que el país quede a la izquierda y la columna de
+        // etiquetas tenga lugar a la derecha, dentro del mismo encuadre.
+        var cp = cajaPais(), alto = cp.y1 - cp.y0;
+        var anchoMundo = Math.max(cp.x1 - cp.x0, alto * (lz.w / Math.max(1, lz.h)) * 0.92);
+        var extra = Math.max(0, anchoMundo - (cp.x1 - cp.x0));
+        var caja = { x0: cp.x0 - extra * 0.12, x1: cp.x1 + extra * 0.88, y0: cp.y0, y1: cp.y1 };
+        lz.animarA(lz.encuadre(caja, 30, rotPais()), 760, inmediato);
+      }
       else lz.animarA(lz.encuadre(cajaRegion(regionSel), 60, 0), 760, inmediato);
     }
     function irPais(inmediato) {
@@ -3345,7 +3790,7 @@
       barra.classList.toggle("vacia", !sel);
       if (!sel) {
         barra.textContent = nivel === "pais"
-          ? "Cada número es una región. Tocá una para ver sus comunas. Rueda o + − para acercar, arrastrá para moverte."
+          ? "Cada fila es una región, de norte a sur, con cuántas fichas tiene. Tocá una —la fila o la región— para ver sus comunas. Rueda o + − para acercar."
           : "Tocá una comuna para abrirla y ver sus centros; tocá un centro para ver su red. Escape vuelve atrás.";
         return;
       }
@@ -3427,7 +3872,7 @@
         b.addEventListener("click", function () { seleccionar(sel === n.id ? null : n.id); });
         fila.appendChild(b);
       });
-      if (sueltos.length) fila.appendChild(el("span", "geo-nota", "Las personas y ensayos sin una institución ubicada siguen en Conexiones y Fichas."));
+      if (sueltos.length) fila.appendChild(el("span", "geo-nota", "Las personas y ensayos sin una institución ubicada siguen en su perfil y en Fichas."));
       bandeja.appendChild(fila);
     }
 
@@ -3582,6 +4027,7 @@
           if (sel && !visibles[sel]) sel = null;
           pintarTodo();
         }
+        if (pendiente) { var f = pendiente; pendiente = null; f(); }
       }, function (err) {
         pintarError("No se pudo cargar el mapa: " + err.message + ".");
       });
@@ -3636,7 +4082,26 @@
     });
     if (window.matchMedia) window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { lz.dibujar(); });
 
-    return { mostrar: mostrar, refrescar: refrescar, irA: irA, redibujar: function () { lz.dibujar(); } };
+    // Desde el inicio o desde las conexiones de una ficha se llega al mapa antes de que esté
+    // cargado: la acción queda en espera y corre apenas el mapa está listo.
+    var pendiente = null;
+    function cuandoListo(f) {
+      if (preparado && presentado) f(); else pendiente = f;
+      mostrar();
+    }
+    function irRegion(corta) {
+      // Sin animación: se llega desde otra vista y no hay un encuadre anterior del cual partir.
+      cuandoListo(function () { var r = porCortaRegion[corta]; if (r) entrarRegion(r, true); });
+    }
+    function irALuego(id) {
+      cuandoListo(function () {
+        if (preparado && visibles[id] && info[id].region) entrarRegion(info[id].region, true);
+        if (!irA(id)) anunciar("Esa ficha no tiene ubicación en el mapa con los filtros de ahora.");
+      });
+    }
+
+    return { mostrar: mostrar, refrescar: refrescar, irA: irA, irALuego: irALuego, irRegion: irRegion,
+             redibujar: function () { lz.dibujar(); } };
   })();
 
   function bloqueUbicacion(n) {
@@ -3911,6 +4376,15 @@
       var h = r * 1.15;
       tri.setAttribute("points", [x + "," + (y - h), (x + h) + "," + (y + h * 0.72), (x - h) + "," + (y + h * 0.72)].join(" "));
       return tri;
+    }
+    if (tipo === "farmaco") {
+      var hx = document.createElementNS(NS, "polygon"), pts = [];
+      for (var i = 0; i < 6; i++) {
+        var ang = Math.PI / 6 + i * Math.PI / 3;
+        pts.push((x + Math.cos(ang) * r * 1.1) + "," + (y + Math.sin(ang) * r * 1.1));
+      }
+      hx.setAttribute("points", pts.join(" "));
+      return hx;
     }
     if (tipo === "tema") {
       var d = document.createElementNS(NS, "polygon");
@@ -4777,6 +5251,699 @@
     return wrap;
   }
 
+  // ---------------- Cifras de revisión (aviso beta y pie) ----------------
+  // Se cuentan de los datos cada vez que cargan: el texto escrito a mano ("817 hechos") quedaba
+  // desactualizado en la integración siguiente, y un aviso de honestidad con un número viejo deja
+  // de ser honesto.
+  var cifrasRevision = { hechos: 0, confirmados: 0 };
+  function pintarCifrasRevision() {
+    var h = 0, c = 0;
+    entidades.forEach(function (n) { n.hechos.forEach(function (x) { h++; if (x.confianza === "confirmado") c++; }); });
+    cifrasRevision = { hechos: h, confirmados: c };
+    var miles = function (x) { return x.toLocaleString("es-CL"); };
+    document.querySelectorAll(".js-cifra-pendientes").forEach(function (el) {
+      el.textContent = miles(h - c) + " de " + miles(h) + " hechos";
+    });
+    document.querySelectorAll(".js-cifra-revision").forEach(function (el) {
+      el.textContent = c === 1 ? "solo 1 de " + miles(h) + " hechos revisado por una persona" :
+        miles(c) + " de " + miles(h) + " hechos revisados por una persona";
+    });
+    var cuenta = {};
+    entidades.forEach(function (n) { cuenta[n.tipo] = (cuenta[n.tipo] || 0) + 1; });
+    document.querySelectorAll(".js-cifras-datos").forEach(function (el) {
+      el.textContent = "En esta versión: " + miles(cuenta.farmaco || 0) + " fármacos, " + miles(cuenta.ensayo_clinico || 0) +
+        " estudios, " + miles(cuenta.institucion || 0) + " instituciones y " + miles(cuenta.persona || 0) +
+        " profesionales, unidos por " + miles(vinculos.length) + " vínculos con fuente.";
+    });
+  }
+
+  // ---------------- Perfil de una ficha ----------------
+  // Primera versión: cuatro columnas unidas por líneas. Mostraba QUE algo estaba conectado, pero no
+  // QUÉ significaba: había que leer caja por caja y sacar la conclusión uno mismo. Lo que ninguna
+  // fuente da por separado es la agregación —en cuántos estudios, en qué centros, quién patrocina,
+  // con qué se combina—, así que el perfil abre con esas conclusiones en frases, sigue con rankings
+  // en barras y termina en la tabla de estudios. Cada fila lleva al perfil de lo que nombra, y cada
+  // número sale de contar vínculos con fuente: nada se estima.
+  function colorTipo(tipo) { return "var(--" + colorVar(tipo) + ")"; }
+  // Un estudio sin acrónimo se muestra por su título (recortado en los datos), no por el NCT: un
+  // código no dice de qué se trata. El NCT va aparte.
+  function nombreCorto(n) {
+    if (n.tipo === "ensayo_clinico") return n.acronimo || n.nombre.replace(/\s*\(NCT\d+\)\s*$/, "") || n.id.toUpperCase();
+    return n.nombre;
+  }
+  function faseDe(n) {
+    for (var i = 0; i < n.hechos.length; i++) if (n.hechos[i].fase) return n.hechos[i].fase;
+    return null;
+  }
+  var RANGO_FASE = { "Fase IV": 4, "Fase III": 3, "Fase II": 2, "Fase I": 1 };
+
+  var explorador = (function () {
+    var raiz = document.getElementById("explorar");
+    var foco = null, historia = [], soloReclutando = false, abiertos = {};
+
+    function el(tag, clase, texto) {
+      var e = document.createElement(tag);
+      if (clase) e.className = clase;
+      if (texto !== undefined && texto !== null) e.textContent = texto;
+      return e;
+    }
+    function lista(xs) {
+      if (xs.length <= 1) return xs.join("");
+      return xs.slice(0, -1).join(", ") + " y " + xs[xs.length - 1];
+    }
+    function pasaFiltro(t) {
+      if (soloReclutando && !(t.sitios_chile_reclutando > 0)) return false;
+      if (state.areas.length && areasDe(t).every(function (a) { return state.areas.indexOf(a) === -1; })) return false;
+      return true;
+    }
+    function ensayosDe(n) {
+      var ids = n.tipo === "ensayo_clinico" ? [n.id] : vecinosDe(n.id, "ensayo_clinico").map(function (a) { return a.otro; });
+      return ids.map(function (id) { return byId[id]; }).filter(pasaFiltro);
+    }
+    // Cuenta, entre unos estudios, cuántos tocan a cada vecino de un tipo (y cuántos de esos reclutan).
+    function porVecino(ensayos, tipo, excluir) {
+      var m = {};
+      ensayos.forEach(function (t) {
+        var vistos = {};
+        vecinosDe(t.id, tipo).forEach(function (a) {
+          if (a.otro === excluir || vistos[a.otro]) return;
+          vistos[a.otro] = true;
+          var r = m[a.otro] || (m[a.otro] = { id: a.otro, n: 0, recl: 0 });
+          r.n++;
+          if (t.sitios_chile_reclutando > 0) r.recl++;
+        });
+      });
+      return Object.keys(m).map(function (k) { return m[k]; }).sort(function (a, b) {
+        return b.n - a.n || b.recl - a.recl || nombreCorto(byId[a.id]).localeCompare(nombreCorto(byId[b.id]), "es");
+      });
+    }
+    function porCampo(ensayos, fn) {
+      var m = {};
+      ensayos.forEach(function (t) {
+        var k = fn(t);
+        if (!k) return;
+        var r = m[k] || (m[k] = { etiqueta: k, n: 0, recl: 0 });
+        r.n++;
+        if (t.sitios_chile_reclutando > 0) r.recl++;
+      });
+      return Object.keys(m).map(function (k) { return m[k]; }).sort(function (a, b) { return b.n - a.n || a.etiqueta.localeCompare(b.etiqueta, "es"); });
+    }
+    function reclutan(ensayos) { return ensayos.filter(function (t) { return t.sitios_chile_reclutando > 0; }).length; }
+    function filasDe(conteo, unidad) {
+      return conteo.map(function (r) {
+        var n = r.id ? byId[r.id] : null;
+        return { id: r.id, etiqueta: n ? nombreCorto(n) : r.etiqueta, sub: n && n.tipo === "institucion" ? n.ciudad : null,
+                 valor: r.n, extra: r.recl ? r.recl + " reclutando" : null, unidad: unidad };
+      });
+    }
+
+    // ------------------------------------------------------------ piezas
+    function seccion(clave, titulo, nota, filas, vacio, opciones) {
+      opciones = opciones || {};
+      var sec = el("section", "pf-sec" + (opciones.ancha ? " ancha" : ""));
+      var h = el("h3", "", titulo);
+      if (filas.length) h.appendChild(el("span", "pf-cuenta", String(filas.length)));
+      sec.appendChild(h);
+      if (nota) sec.appendChild(el("p", "pf-nota", nota));
+      if (!filas.length) { sec.appendChild(el("p", "pf-vacio", vacio)); return sec; }
+      var max = 1;
+      filas.forEach(function (f) { if (typeof f.valor === "number") max = Math.max(max, f.valor); });
+      var tope = opciones.tope || 8;
+      var ol = el("ol", "pf-lista");
+      (abiertos[clave] ? filas : filas.slice(0, tope)).forEach(function (f) {
+        var li = el("li", "");
+        var fila = el(f.id ? "button" : "div", "pf-fila" + (f.indirecto ? " indirecto" : ""));
+        if (f.id) {
+          fila.type = "button";
+          fila.title = "Ver el perfil de " + byId[f.id].nombre;
+          fila.style.setProperty("--tipo-color", colorTipo(byId[f.id].tipo));
+          fila.addEventListener("click", function () { abrir(f.id); });
+        }
+        var lab = el("span", "pf-lab");
+        var nom = el("span", "pf-nom");
+        if (f.id) nom.appendChild(el("span", "pf-forma", FORMA_TIPO[byId[f.id].tipo]));
+        nom.appendChild(document.createTextNode(f.etiqueta));
+        lab.appendChild(nom);
+        if (f.sub) lab.appendChild(el("span", "pf-sub", f.sub));
+        fila.appendChild(lab);
+        if (typeof f.valor === "number" && f.valor > 0) {
+          var barra = el("span", "pf-barra"), relleno = el("span", "");
+          relleno.style.width = Math.max(2, f.valor / max * 100) + "%";
+          barra.appendChild(relleno);
+          fila.appendChild(barra);
+        } else {
+          fila.appendChild(el("span", ""));
+        }
+        var val = el("span", "pf-val");
+        if (typeof f.valor === "number") {
+          val.appendChild(el("b", "", String(f.valor)));
+          if (f.unidad) val.appendChild(document.createTextNode(" " + (f.valor === 1 ? f.unidad[0] : f.unidad[1])));
+        }
+        if (f.extra) val.appendChild(el("span", "pf-extra", f.extra));
+        fila.appendChild(val);
+        li.appendChild(fila);
+        ol.appendChild(li);
+      });
+      sec.appendChild(ol);
+      if (filas.length > tope) {
+        var mas = el("button", "exp-mas", abiertos[clave] ? "Mostrar menos" : "Mostrar los " + filas.length);
+        mas.type = "button";
+        mas.addEventListener("click", function () { abiertos[clave] = !abiertos[clave]; pintar(); });
+        sec.appendChild(mas);
+      }
+      return sec;
+    }
+
+    function tablaEstudios(clave, titulo, nota, ensayos) {
+      var sec = el("section", "pf-sec ancha");
+      var h = el("h3", "", titulo);
+      if (ensayos.length) h.appendChild(el("span", "pf-cuenta", String(ensayos.length)));
+      sec.appendChild(h);
+      if (nota) sec.appendChild(el("p", "pf-nota", nota));
+      if (!ensayos.length) {
+        sec.appendChild(el("p", "pf-vacio", soloReclutando ? "Ninguno recluta hoy en Chile." : "Sin estudios con vínculo documentado."));
+        return sec;
+      }
+      var orden = ensayos.slice().sort(function (a, b) {
+        return (b.sitios_chile_reclutando > 0) - (a.sitios_chile_reclutando > 0) ||
+          (RANGO_FASE[faseDe(b)] || 0) - (RANGO_FASE[faseDe(a)] || 0) ||
+          vecinosDe(b.id, "institucion").length - vecinosDe(a.id, "institucion").length;
+      });
+      var envoltura = el("div", "pf-tabla-envoltura");
+      var tabla = el("table", "pf-tabla");
+      var thead = el("thead", ""), trh = el("tr", "");
+      ["Estudio", "Fase", "Estado en Chile", "Patrocinador", "Centros"].forEach(function (t) { trh.appendChild(el("th", "", t)); });
+      thead.appendChild(trh); tabla.appendChild(thead);
+      var tbody = el("tbody", "");
+      (abiertos[clave] ? orden : orden.slice(0, 12)).forEach(function (t) {
+        var tr = el("tr", "");
+        var td0 = el("td", "");
+        var b = el("button", "pf-link", nombreCorto(t)); b.type = "button";
+        b.title = t.titulo_fuente || t.nombre;
+        b.addEventListener("click", function () { abrir(t.id); });
+        td0.appendChild(b);
+        td0.appendChild(el("span", "pf-sub", t.id.toUpperCase() + (t.area ? " · " + t.area : "")));
+        tr.appendChild(td0);
+        tr.appendChild(el("td", "", faseDe(t) || "—"));
+        tr.appendChild(el("td", t.sitios_chile_reclutando > 0 ? "reclutando" : "",
+          t.sitios_chile_reclutando > 0 ? "Reclutando (" + t.sitios_chile_reclutando + ")" : (t.estado_reclutamiento || "—")));
+        tr.appendChild(el("td", "", t.patrocinador || "—"));
+        var nc = vecinosDe(t.id, "institucion").length;
+        tr.appendChild(el("td", "num", nc ? String(nc) : "sin identificar"));
+        tbody.appendChild(tr);
+      });
+      tabla.appendChild(tbody);
+      envoltura.appendChild(tabla);
+      sec.appendChild(envoltura);
+      if (orden.length > 12) {
+        var mas = el("button", "exp-mas", abiertos[clave] ? "Mostrar menos" : "Mostrar los " + orden.length);
+        mas.type = "button";
+        mas.addEventListener("click", function () { abiertos[clave] = !abiertos[clave]; pintar(); });
+        sec.appendChild(mas);
+      }
+      return sec;
+    }
+
+    // ------------------------------------------------------------ contenido por tipo
+    // Cada tipo contesta sus propias preguntas. Devuelve frases, cifras y secciones.
+    function perfilFarmaco(n) {
+      var T = ensayosDe(n), R = reclutan(T);
+      var centros = porVecino(T, "institucion"), inv = porVecino(T, "persona");
+      var areas = porCampo(T, function (t) { return t.area; });
+      var patro = porCampo(T, function (t) { return t.patrocinador; });
+      var combos = porVecino(T, "farmaco", n.id);
+      var frases = [];
+      frases.push("Se evalúa en " + plural(T.length, "estudio", "estudios") + " con sede en Chile" +
+        (R ? "; " + (R === 1 ? "1 recluta" : R + " reclutan") + " hoy." : "."));
+      if (centros.length) {
+        var top = centros.slice(0, 3).map(function (c) { return nombreCorto(byId[c.id]) + " (" + c.n + ")"; });
+        frases.push("Corren en " + plural(centros.length, "centro identificado", "centros identificados") + ". Los que más participan: " + lista(top) + ".");
+      } else if (T.length) {
+        frases.push("Ninguna sede identificada: el patrocinador la oculta en ClinicalTrials.gov.");
+      }
+      if (patro.length && patro[0].n > 1) frases.push("El principal patrocinador es " + patro[0].etiqueta + ", con " + patro[0].n + " de " + T.length + ".");
+      if (areas.length > 1) frases.push("Por área: " + lista(areas.slice(0, 3).map(function (a) { return a.etiqueta + " (" + a.n + ")"; })) + ".");
+      if (combos.length && combos[0].n > 1) frases.push("Se evalúa más a menudo junto a " + lista(combos.slice(0, 2).map(function (c) { return nombreCorto(byId[c.id]) + " (" + c.n + ")"; })) + ".");
+      // Gente, en dos listas que no se mezclan: quien aparece con nombre en estos estudios, y quien
+      // trabaja en un centro donde corren. Una barra común ponía a alguien de FALP (79 estudios de
+      // su centro) por encima de un investigador con nombre en uno: una lectura falsa.
+      var gente = inv.map(function (r) { return { id: r.id, etiqueta: byId[r.id].nombre, sub: byId[r.id].subtitulo, valor: r.n, unidad: ["estudio", "estudios"] }; });
+      var ya = {}, enCentros = [];
+      inv.forEach(function (r) { ya[r.id] = true; });
+      centros.slice(0, 10).forEach(function (c) {
+        vecinosDe(c.id, "persona").forEach(function (a) {
+          if (ya[a.otro]) return;
+          ya[a.otro] = true;
+          enCentros.push({ id: a.otro, etiqueta: byId[a.otro].nombre, indirecto: true,
+                           sub: nombreCorto(byId[c.id]) + " · sede de " + plural(c.n, "estudio", "estudios") + " con este fármaco" });
+        });
+      });
+      frases.push(inv.length ? plural(inv.length, "profesional aparece", "profesionales aparecen") + " con nombre en estos estudios." :
+        "ClinicalTrials.gov no nombra investigadores en estos estudios; abajo, profesionales de los centros donde corren.");
+      return {
+        frases: frases,
+        cifras: [[T.length, "estudios en Chile"], [R, "reclutando hoy"], [centros.length, "centros"], [patro.length, "patrocinadores"]],
+        secciones: [
+          seccion("centros", "Dónde se estudia", "Centros con al menos un estudio de este fármaco, por cuántos estudios.", filasDe(centros, ["estudio", "estudios"]), "Ninguna sede identificada."),
+          seccion("gente", "Con nombre en estos estudios", "Profesionales que la fuente nombra como investigadores en al menos uno.", gente, "ClinicalTrials.gov no nombra investigadores en estos estudios."),
+          seccion("enCentros", "En los centros donde se estudia", "Profesionales de la muestra que trabajan en esos centros. Es contexto: la fuente no los vincula al fármaco.", enCentros, "Sin profesionales de la muestra en esos centros."),
+          seccion("areas", "En qué indicaciones", "Área de cada estudio, según la condición que declara la fuente.", filasDe(areas, ["estudio", "estudios"]), "—"),
+          seccion("patro", "Quién patrocina", null, filasDe(patro, ["estudio", "estudios"]), "—"),
+          seccion("combos", "Con qué se combina", "Otros fármacos evaluados en los mismos estudios.", filasDe(combos, ["estudio", "estudios"]), "Se evalúa solo."),
+          tablaEstudios("tabla", "Estudios", "Primero los que reclutan hoy en Chile, después por fase.", T)
+        ]
+      };
+    }
+
+    function perfilInstitucion(n) {
+      var T = ensayosDe(n), R = reclutan(T);
+      var farm = porVecino(T, "farmaco"), areas = porCampo(T, function (t) { return t.area; });
+      var patro = porCampo(T, function (t) { return t.patrocinador; });
+      var cositios = porVecino(T, "institucion", n.id);
+      var gente = vecinosDe(n.id, "persona").map(function (a) {
+        var p = byId[a.otro];
+        return { id: p.id, etiqueta: p.nombre, sub: a.v.tipo, valor: vecinosDe(p.id, "ensayo_clinico").length, unidad: ["estudio con su nombre", "estudios con su nombre"] };
+      }).sort(function (a, b) { return b.valor - a.valor || a.etiqueta.localeCompare(b.etiqueta, "es"); });
+      var frases = [];
+      frases.push(T.length ? plural(T.length, "estudio", "estudios") + " con sede acá" + (R ? ", " + R + " reclutando hoy" : "") +
+        (areas.length ? ". El área con más actividad es " + areas[0].etiqueta + " (" + areas[0].n + ")." : ".") :
+        "Sin estudios con sede documentada acá.");
+      if (farm.length) frases.push("Los fármacos más estudiados: " + lista(farm.slice(0, 3).map(function (f) { return nombreCorto(byId[f.id]) + " (" + f.n + ")"; })) + ".");
+      if (patro.length && patro[0].n > 1) frases.push("Patrocinador más frecuente: " + patro[0].etiqueta + " (" + patro[0].n + ").");
+      if (cositios.length) frases.push("Comparte estudios sobre todo con " + lista(cositios.slice(0, 2).map(function (c) { return nombreCorto(byId[c.id]) + " (" + c.n + ")"; })) + ".");
+      frases.push(gente.length ? plural(gente.length, "profesional vinculado", "profesionales vinculados") + " en la muestra." : "Ningún profesional vinculado todavía en la muestra.");
+      return {
+        frases: frases,
+        cifras: [[T.length, "estudios"], [R, "reclutando hoy"], [gente.length, "profesionales"], [farm.length, "fármacos"]],
+        secciones: [
+          seccion("areas", "Qué se investiga acá", "Estudios por área.", filasDe(areas, ["estudio", "estudios"]), "—"),
+          seccion("gente", "Profesionales", "Vinculados a este centro, con cuántos estudios aparecen con nombre.", gente, "Ningún profesional vinculado todavía."),
+          seccion("farm", "Fármacos más estudiados", null, filasDe(farm, ["estudio", "estudios"]), "Sin fármacos: sus estudios evalúan otras intervenciones."),
+          seccion("patro", "Patrocinadores", null, filasDe(patro, ["estudio", "estudios"]), "—"),
+          seccion("cositios", "Comparte estudios con", "Otros centros que participan en los mismos estudios: con quién trabaja en red.", filasDe(cositios, ["estudio", "estudios"]), "No comparte estudios con otros centros de la muestra.", { ancha: false }),
+          tablaEstudios("tabla", "Estudios", "Primero los que reclutan hoy en Chile, después por fase.", T)
+        ]
+      };
+    }
+
+    function perfilPersona(n) {
+      var T = ensayosDe(n), R = reclutan(T);
+      var inst = vecinosDe(n.id, "institucion").map(function (a) {
+        var i = byId[a.otro];
+        return { id: i.id, etiqueta: i.nombre, sub: a.v.tipo + (i.ciudad ? " · " + i.ciudad : ""), rel: a.v.tipo,
+                 valor: vecinosDe(i.id, "ensayo_clinico").length, unidad: ["estudio del centro", "estudios del centro"] };
+      });
+      var misFuentes = {};
+      n.hechos.forEach(function (h) { if (h.fuente_url) misFuentes[h.fuente_url] = true; });
+      var coaut = vecinosDe(n.id, "persona").map(function (a) {
+        var p = byId[a.otro], comunes = 0;
+        p.hechos.forEach(function (h) { if (h.tipo === "publicacion" && misFuentes[h.fuente_url]) comunes++; });
+        return { id: p.id, etiqueta: p.nombre, sub: p.subtitulo, valor: comunes || 1, unidad: ["publicación en común", "publicaciones en común"] };
+      }).sort(function (a, b) { return b.valor - a.valor; });
+      var pubs = hechosUnicosPorFuente(n.hechos.filter(function (h) { return h.tipo === "publicacion"; }))
+        .sort(function (a, b) { return sortableDate(b.fecha).localeCompare(sortableDate(a.fecha)); });
+      var farm = porVecino(T, "farmaco");
+      var principal = inst[0] ? byId[inst[0].id] : null;
+      var Tc = principal ? ensayosDe(principal) : [];
+      var farmCentro = porVecino(Tc, "farmaco");
+      var frases = [];
+      if (inst.length) frases.push("Vinculado a " + lista(inst.map(function (i) { return i.etiqueta + " (" + i.rel + ")"; })) + ".");
+      frases.push(T.length ? "Aparece con nombre en " + plural(T.length, "estudio", "estudios") + (R ? ", " + R + " reclutando hoy" : "") + "." :
+        "No aparece con nombre en ningún estudio de la muestra: ClinicalTrials.gov casi nunca nombra al investigador de sitio.");
+      if (pubs.length) frases.push(plural(pubs.length, "publicación registrada", "publicaciones registradas") + "; la más reciente, de " + (pubs[0].fecha || "").slice(0, 4) + ".");
+      if (coaut.length) frases.push(plural(coaut.length, "coautor", "coautores") + " en la muestra" + (coaut[0].valor > 1 ? ", sobre todo " + coaut[0].etiqueta : "") + ".");
+      if (principal && Tc.length) frases.push("Su centro, " + nombreCorto(principal) + ", tiene " + plural(Tc.length, "estudio", "estudios") +
+        (farmCentro.length ? "; los fármacos más frecuentes ahí: " + lista(farmCentro.slice(0, 3).map(function (f) { return nombreCorto(byId[f.id]); })) : "") + ".");
+      var secPubs = el("section", "pf-sec ancha");
+      var hp = el("h3", "", "Publicaciones");
+      if (pubs.length) hp.appendChild(el("span", "pf-cuenta", String(pubs.length)));
+      secPubs.appendChild(hp);
+      if (!pubs.length) secPubs.appendChild(el("p", "pf-vacio", "Sin publicaciones registradas en la muestra."));
+      else {
+        var ul = el("ol", "pf-pubs");
+        pubs.slice(0, abiertos.pubs ? pubs.length : 6).forEach(function (h) {
+          var li = el("li", "");
+          li.appendChild(el("span", "pf-pub-meta", [(h.fecha || "").slice(0, 4), h.revista].filter(Boolean).join(" · ")));
+          li.appendChild(el("span", "", h.hecho));
+          if (esUrlSegura(h.fuente_url)) {
+            var a = el("a", "pf-fuente", "Ver fuente →"); a.href = h.fuente_url; a.target = "_blank"; a.rel = "noopener noreferrer";
+            li.appendChild(a);
+          }
+          ul.appendChild(li);
+        });
+        secPubs.appendChild(ul);
+        if (pubs.length > 6) {
+          var mp = el("button", "exp-mas", abiertos.pubs ? "Mostrar menos" : "Mostrar las " + pubs.length); mp.type = "button";
+          mp.addEventListener("click", function () { abiertos.pubs = !abiertos.pubs; pintar(); });
+          secPubs.appendChild(mp);
+        }
+      }
+      return {
+        frases: frases,
+        cifras: [[T.length, "estudios con su nombre"], [pubs.length, "publicaciones"], [coaut.length, "coautores"], [inst.length, "instituciones"]],
+        secciones: [
+          seccion("inst", "Dónde trabaja", "Afiliaciones e investigación de sitio documentadas.", inst, "Sin institución documentada."),
+          seccion("coaut", "Con quién publica", "Coautores dentro de la muestra, por publicaciones en común.", coaut, "Sin coautores en la muestra."),
+          seccion("farm", "Fármacos en sus estudios", null, filasDe(farm, ["estudio", "estudios"]), "Sin estudios con su nombre."),
+          seccion("farmCentro", "Qué se estudia en su centro", principal ? "Fármacos en estudios de " + nombreCorto(principal) + ". Es contexto del centro, no actividad suya." : null,
+            filasDe(farmCentro, ["estudio", "estudios"]).map(function (f) { f.indirecto = true; return f; }), "Sin estudios en su centro."),
+          tablaEstudios("tabla", "Estudios con su nombre", null, T),
+          secPubs
+        ]
+      };
+    }
+
+    function perfilEnsayo(n) {
+      var farm = vecinosDe(n.id, "farmaco").map(function (a) {
+        var f = byId[a.otro];
+        return { id: f.id, etiqueta: f.nombre, sub: a.v.texto_en_la_fuente && a.v.texto_en_la_fuente !== f.nombre ? "en la fuente: " + a.v.texto_en_la_fuente : null,
+                 valor: vecinosDe(f.id, "ensayo_clinico").length, unidad: ["estudio en Chile", "estudios en Chile"] };
+      });
+      var centros = vecinosDe(n.id, "institucion").map(function (a) {
+        var i = byId[a.otro], cif = a.v.fuente_url && a.v.fuente_url.indexOf("estudiosclinicos.cl") !== -1;
+        return { id: i.id, etiqueta: i.nombre, sub: [i.ciudad, cif ? "centro abierto según la CIF" : "sede según ClinicalTrials.gov"].filter(Boolean).join(" · "),
+                 valor: vecinosDe(i.id, "ensayo_clinico").length, unidad: ["estudio en total", "estudios en total"] };
+      });
+      var inv = vecinosDe(n.id, "persona").map(function (a) {
+        var p = byId[a.otro];
+        return { id: p.id, etiqueta: p.nombre, sub: a.v.tipo + (p.subtitulo ? " · " + p.subtitulo : ""), valor: vecinosDe(p.id, "ensayo_clinico").length, unidad: ["estudio", "estudios"] };
+      });
+      // Estudios parecidos: los que comparten algún fármaco con este, en Chile. Es el paisaje
+      // competitivo inmediato de un estudio.
+      var comparte = {};
+      vecinosDe(n.id, "farmaco").forEach(function (a) {
+        vecinosDe(a.otro, "ensayo_clinico").forEach(function (b) {
+          if (b.otro === n.id || !pasaFiltro(byId[b.otro])) return;
+          (comparte[b.otro] = comparte[b.otro] || []).push(byId[a.otro].nombre);
+        });
+      });
+      var parecidos = Object.keys(comparte).map(function (id) {
+        var t = byId[id];
+        return { id: id, etiqueta: nombreCorto(t), sub: "comparte " + comparte[id].join(", ") + (faseDe(t) ? " · " + faseDe(t) : "") + (t.patrocinador ? " · " + t.patrocinador : ""),
+                 valor: comparte[id].length, unidad: ["fármaco", "fármacos"], extra: t.sitios_chile_reclutando > 0 ? "reclutando" : null };
+      }).sort(function (a, b) { return b.valor - a.valor || (b.extra ? 1 : 0) - (a.extra ? 1 : 0); });
+      var frases = [];
+      frases.push([faseDe(n), n.estado_reclutamiento, n.patrocinador ? "patrocina " + n.patrocinador : null].filter(Boolean).join(" · ") + ".");
+      if (farm.length) frases.push("Evalúa " + lista(farm.map(function (f) { return f.etiqueta; })) + ".");
+      if (n.sitios_chile) frases.push("ClinicalTrials.gov declara " + plural(n.sitios_chile, "sitio", "sitios") + " en Chile" +
+        (n.sitios_chile_reclutando ? ", " + n.sitios_chile_reclutando + " reclutando" : "") + "; " +
+        (centros.length ? plural(centros.length, "centro identificado", "centros identificados") + " por nombre." : "ninguno identificado por nombre."));
+      if (parecidos.length) frases.push("Hay " + plural(parecidos.length, "otro estudio", "otros estudios") + " en Chile con alguno de sus fármacos.");
+      var pend = n.sedes_pendientes_resolucion || [];
+      return {
+        frases: frases,
+        cifras: [[faseDe(n) || "—", "fase"], [n.sitios_chile || 0, "sitios en Chile"], [n.sitios_chile_reclutando || 0, "sitios reclutando"], [centros.length, "centros identificados"]],
+        secciones: [
+          seccion("farm", "Qué evalúa", "Cada fármaco, con cuántos estudios tiene en Chile en total.", farm, "Sin fármacos: evalúa otra intervención (" + ((n.intervenciones || []).join(", ") || "no declarada") + ")."),
+          seccion("centros", "Dónde corre en Chile", pend.length ? "Sedes que la fuente nombra y todavía no se ligan a una institución: " + pend.join(" · ") + "." : null, centros, "Ninguna sede identificada: el patrocinador la oculta."),
+          seccion("inv", "Investigadores", null, inv, "La fuente no nombra investigadores en Chile."),
+          seccion("parecidos", "Estudios con los mismos fármacos", "En Chile, por cuántos fármacos comparten con este.", parecidos, "Ninguno en la muestra.")
+        ]
+      };
+    }
+
+    // ------------------------------------------------------------ navegación
+    function abrir(id, desdeMiga) {
+      if (!byId[id]) return;
+      if (!desdeMiga) {
+        var i = historia.indexOf(id);
+        if (i !== -1) historia = historia.slice(0, i);
+        historia.push(id);
+        if (historia.length > 8) historia = historia.slice(-8);
+      }
+      foco = id; abiertos = {};
+      try { history.replaceState(null, "", "#ficha=" + encodeURIComponent(id)); } catch (e) { /* file:// */ }
+      if (!explorarView.classList.contains("active")) mostrarVista("explorar"); else pintar();
+      window.scrollTo({ top: 0, behavior: reducirMovimiento() ? "auto" : "smooth" });
+    }
+
+    function pintarVacio() {
+      raiz.innerHTML = "";
+      var box = el("div", "exp-vacio");
+      box.appendChild(el("h2", "", "Elegí algo para ver su perfil"));
+      box.appendChild(el("p", "", "Buscá arriba un fármaco, un estudio, una institución o un profesional. El perfil resume en qué " +
+        "estudios aparece, en qué centros, quién patrocina y quién trabaja ahí, con cada cifra contada desde vínculos con fuente."));
+      var ej = el("div", "hero-ejemplos");
+      inicio.destacados().forEach(function (d) { ej.appendChild(inicio.botonEjemplo(d)); });
+      box.appendChild(ej);
+      var p = el("p", "");
+      var b = el("button", "exp-grafo-link", "Ver el grafo del ecosistema completo");
+      b.type = "button";
+      b.addEventListener("click", function () { mostrarVista("conexiones"); });
+      p.appendChild(b);
+      box.appendChild(p);
+      raiz.appendChild(box);
+    }
+
+    function pintar() {
+      if (!entidades.length) return;
+      if (!foco || !byId[foco]) { pintarVacio(); return; }
+      var n = byId[foco];
+      raiz.innerHTML = "";
+
+      var migas = el("nav", "exp-migas");
+      migas.setAttribute("aria-label", "Recorrido");
+      var bi = el("button", "exp-miga", "Inicio"); bi.type = "button";
+      bi.addEventListener("click", function () { mostrarVista("inicio"); });
+      migas.appendChild(bi);
+      historia.forEach(function (hid) {
+        migas.appendChild(el("span", "", "›"));
+        var m = el("button", "exp-miga", nombreCorto(byId[hid])); m.type = "button";
+        if (hid === foco) m.setAttribute("aria-current", "page");
+        else m.addEventListener("click", function () { foco = hid; abiertos = {}; pintar(); });
+        migas.appendChild(m);
+      });
+      raiz.appendChild(migas);
+
+      var cab = el("div", "exp-cabeza");
+      cab.style.setProperty("--tipo-color", colorTipo(n.tipo));
+      var izq = el("div", "");
+      izq.appendChild(el("div", "exp-tipo", typeLabel[n.tipo]));
+      izq.appendChild(el("h2", "exp-nombre", n.tipo === "ensayo_clinico" ? nombreCorto(n) : n.nombre));
+      var subTxt = n.tipo === "ensayo_clinico" ? (n.titulo_oficial || n.titulo_fuente || n.subtitulo || "") + " · " + n.id.toUpperCase() :
+        n.tipo === "farmaco" && n.alias_en_la_fuente && n.alias_en_la_fuente.length ?
+          "También en la fuente como " + n.alias_en_la_fuente.slice(0, 5).join(", ") :
+          subtituloLinea(n);
+      if (subTxt) izq.appendChild(el("p", "exp-sub", subTxt));
+      if (n.nota_identidad) izq.appendChild(el("p", "exp-sub", "Nota de la recolección: " + n.nota_identidad));
+      cab.appendChild(izq);
+
+      var acc = el("div", "exp-acciones");
+      var bf = el("button", "exp-btn primario", "Evidencia y fuentes"); bf.type = "button";
+      bf.addEventListener("click", function () { openDetail(n.id); });
+      acc.appendChild(bf);
+      if (n.tipo === "ensayo_clinico") {
+        var url = fuentePrincipal(n);
+        if (url) {
+          var a = el("a", "exp-btn", "ClinicalTrials.gov ↗");
+          a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer";
+          acc.appendChild(a);
+        }
+        if (n.ficha_cif && esUrlSegura(n.ficha_cif)) {
+          var ac = el("a", "exp-btn", "Ficha en español (CIF) ↗");
+          ac.href = n.ficha_cif; ac.target = "_blank"; ac.rel = "noopener noreferrer";
+          ac.title = "Criterios de inclusión y centros abiertos, según el buscador de la Cámara de la Innovación Farmacéutica";
+          acc.appendChild(ac);
+        }
+      }
+      if (n.tipo !== "farmaco") {
+        var bm = el("button", "exp-btn", "Ver en el mapa"); bm.type = "button";
+        bm.addEventListener("click", function () { mostrarVista("chile"); mapaChile.irALuego(n.id); });
+        acc.appendChild(bm);
+      }
+      if (n.tipo === "persona") {
+        var bs = el("button", "exp-btn", enShortlist(n.id) ? "✓ En shortlist" : "+ Shortlist"); bs.type = "button";
+        bs.setAttribute("aria-pressed", String(enShortlist(n.id)));
+        bs.addEventListener("click", function () {
+          toggleShortlist(n.id); refreshShortlistUI();
+          bs.textContent = enShortlist(n.id) ? "✓ En shortlist" : "+ Shortlist";
+          bs.setAttribute("aria-pressed", String(enShortlist(n.id)));
+        });
+        acc.appendChild(bs);
+      }
+      var bc = el("button", "exp-btn", "Copiar enlace"); bc.type = "button";
+      bc.addEventListener("click", function () {
+        var enlace = location.href.split("#")[0] + "#ficha=" + encodeURIComponent(n.id);
+        var ok = function () { bc.textContent = "✓ Copiado"; setTimeout(function () { bc.textContent = "Copiar enlace"; }, 1600); };
+        try { navigator.clipboard.writeText(enlace).then(ok, function () { prompt("Copiá el enlace:", enlace); }); }
+        catch (e) { prompt("Copiá el enlace:", enlace); }
+      });
+      acc.appendChild(bc);
+      cab.appendChild(acc);
+      raiz.appendChild(cab);
+
+      var p = n.tipo === "farmaco" ? perfilFarmaco(n) : n.tipo === "institucion" ? perfilInstitucion(n) :
+              n.tipo === "persona" ? perfilPersona(n) : perfilEnsayo(n);
+
+      var ctr = el("div", "exp-controles");
+      if (n.tipo !== "ensayo_clinico") {
+        var br = el("button", "exp-btn", "Solo estudios reclutando en Chile"); br.type = "button";
+        br.setAttribute("aria-pressed", String(soloReclutando));
+        br.addEventListener("click", function () { soloReclutando = !soloReclutando; pintar(); });
+        ctr.appendChild(br);
+      }
+      if (state.areas.length) {
+        ctr.appendChild(el("span", "", "Contando solo estudios de " + (state.areas.length === 1 ? "el área " : "las áreas ") + state.areas.join(", ") + "."));
+      }
+      if (ctr.childNodes.length) raiz.appendChild(ctr);
+
+      var resumen = el("div", "pf-resumen");
+      var col1 = el("div", "");
+      col1.appendChild(el("h3", "", "En pocas palabras"));
+      var ul = el("ul", "pf-frases");
+      p.frases.forEach(function (f) { ul.appendChild(el("li", "", f)); });
+      col1.appendChild(ul);
+      resumen.appendChild(col1);
+      var kp = el("div", "pf-kpis");
+      p.cifras.forEach(function (c) {
+        var k = el("div", "pf-kpi");
+        k.appendChild(el("span", "num", typeof c[0] === "number" ? c[0].toLocaleString("es-CL") : c[0]));
+        k.appendChild(el("span", "lab", c[1]));
+        kp.appendChild(k);
+      });
+      resumen.appendChild(kp);
+      raiz.appendChild(resumen);
+
+      var grid = el("div", "pf-grid");
+      p.secciones.forEach(function (s) { grid.appendChild(s); });
+      raiz.appendChild(grid);
+
+      var pie = el("p", "pf-pie");
+      pie.appendChild(document.createTextNode("Cada cifra cuenta vínculos de esta versión de los datos, cada uno con su fuente (botón «Evidencia y fuentes»). " +
+        "Es lo que las fuentes públicas documentan, no todo lo que existe: faltan sedes que el patrocinador oculta y profesionales que la fuente no nombra. "));
+      var bg = el("button", "exp-grafo-link", "Ver el grafo del ecosistema completo"); bg.type = "button";
+      bg.addEventListener("click", function () { mostrarVista("conexiones"); });
+      pie.appendChild(bg);
+      raiz.appendChild(pie);
+    }
+
+    return { abrir: abrir, pintar: pintar, foco: function () { return foco; } };
+  })();
+
+  // Enlace compartido: #ficha=<id> abre las conexiones de esa ficha.
+  function leerHash() {
+    var m = location.hash.match(/^#ficha=(.+)$/);
+    if (!m) return;
+    var id = decodeURIComponent(m[1]);
+    if (byId[id]) explorador.abrir(id);
+  }
+  window.addEventListener("hashchange", leerHash);
+
+  // ---------------- Inicio ----------------
+  var inicio = (function () {
+    function el(tag, clase, texto) {
+      var e = document.createElement(tag);
+      if (clase) e.className = clase;
+      if (texto !== undefined && texto !== null) e.textContent = texto;
+      return e;
+    }
+    function porGrado(tipo, filtro) {
+      return entidades.filter(function (n) { return n.tipo === tipo && (!filtro || filtro(n)); })
+        .sort(function (a, b) { return connectionCount(b.id) - connectionCount(a.id) || a.nombre.localeCompare(b.nombre, "es"); });
+    }
+    function destacados() {
+      var d = [];
+      [porGrado("farmaco")[0], porGrado("institucion")[0],
+       porGrado("ensayo_clinico", function (n) { return n.sitios_chile_reclutando > 0 && n.acronimo; })[0],
+       porGrado("persona")[0]].forEach(function (n) { if (n) d.push(n); });
+      return d;
+    }
+    function botonEjemplo(n) {
+      var b = el("button", "hero-ejemplo"); b.type = "button";
+      var f = el("span", "", FORMA_TIPO[n.tipo]); f.style.color = colorTipo(n.tipo);
+      b.appendChild(f);
+      b.appendChild(document.createTextNode(nombreCorto(n)));
+      b.addEventListener("click", function () { explorador.abrir(n.id); });
+      return b;
+    }
+    var ENTRADAS = [
+      { tipo: "farmaco", titulo: "Fármacos", desc: "Qué se evalúa en Chile, en cuántos estudios y en qué centros.",
+        cnt: function (n) { return plural(resumenFarmaco(n).estudios, "estudio", "estudios"); } },
+      { tipo: "ensayo_clinico", titulo: "Estudios", desc: "Ensayos con sede en Chile. Primero los que hoy reclutan.",
+        orden: function () {
+          return porGrado("ensayo_clinico").sort(function (a, b) {
+            return (b.sitios_chile_reclutando > 0) - (a.sitios_chile_reclutando > 0) ||
+              vecinosDe(b.id, "institucion").length - vecinosDe(a.id, "institucion").length;
+          });
+        },
+        cnt: function (n) { var c = vecinosDe(n.id, "institucion").length; return (n.sitios_chile_reclutando ? "reclutando · " : "") + plural(c, "centro", "centros"); } },
+      { tipo: "institucion", titulo: "Instituciones", desc: "Centros con más estudios documentados.",
+        orden: function () { return porGrado("institucion").sort(function (a, b) { return vecinosDe(b.id, "ensayo_clinico").length - vecinosDe(a.id, "ensayo_clinico").length; }); },
+        cnt: function (n) { return plural(vecinosDe(n.id, "ensayo_clinico").length, "estudio", "estudios"); } },
+      { tipo: "persona", titulo: "Profesionales", desc: "Con más vínculos documentados: afiliación, estudios, coautoría.",
+        cnt: function (n) { return plural(connectionCount(n.id), "vínculo", "vínculos"); } }
+    ];
+    function pintar() {
+      var ej = document.getElementById("hero-ejemplos");
+      ej.innerHTML = "";
+      ej.appendChild(el("span", "", "Probá con"));
+      destacados().forEach(function (n) { ej.appendChild(botonEjemplo(n)); });
+
+      var cont = document.getElementById("entradas");
+      cont.innerHTML = "";
+      ENTRADAS.forEach(function (E) {
+        var todos = E.orden ? E.orden() : porGrado(E.tipo);
+        var art = el("article", "entrada");
+        art.style.setProperty("--tipo-color", colorTipo(E.tipo));
+        var head = el("div", "entrada-head");
+        var h = el("h2", "");
+        var f = el("span", "", FORMA_TIPO[E.tipo] + " "); f.style.color = colorTipo(E.tipo); f.style.fontSize = "14px";
+        h.appendChild(f); h.appendChild(document.createTextNode(E.titulo));
+        head.appendChild(h);
+        head.appendChild(el("span", "entrada-num", todos.length.toLocaleString("es-CL")));
+        art.appendChild(head);
+        art.appendChild(el("p", "entrada-desc", E.desc));
+        var ol = el("ol", "");
+        todos.slice(0, 6).forEach(function (n) {
+          var li = el("li", "");
+          var b = el("button", "entrada-item"); b.type = "button";
+          b.appendChild(el("span", "nom", nombreCorto(n)));
+          b.appendChild(el("span", "cnt", E.cnt(n)));
+          b.title = n.nombre;
+          b.addEventListener("click", function () { explorador.abrir(n.id); });
+          li.appendChild(b); ol.appendChild(li);
+        });
+        art.appendChild(ol);
+        var t = el("button", "entrada-todos", "Ver los " + todos.length.toLocaleString("es-CL") + " →"); t.type = "button";
+        t.addEventListener("click", function () {
+          var chip = document.querySelector('.chip[data-filter="' + E.tipo + '"]');
+          if (chip) chip.click();
+          mostrarVista("fichas");
+        });
+        art.appendChild(t);
+        cont.appendChild(art);
+      });
+
+      // Regiones: cuántas fichas declaran una ciudad de cada región. Los fármacos no tienen lugar.
+      var cuenta = {};
+      entidades.forEach(function (n) {
+        if (n.tipo === "farmaco") return;
+        var r = regionOf(n);
+        if (r === "Sin región identificada" || r === "Multi-sitio / nacional") return;
+        cuenta[r] = (cuenta[r] || 0) + 1;
+      });
+      var regs = Object.keys(cuenta).sort(function (a, b) { return cuenta[b] - cuenta[a]; });
+      var max = regs.length ? cuenta[regs[0]] : 1;
+      var ul = document.getElementById("regiones-barras");
+      ul.innerHTML = "";
+      regs.slice(0, 9).forEach(function (r) {
+        var li = el("li", "");
+        var b = el("button", "region-barra"); b.type = "button";
+        b.appendChild(el("span", "rb-nom", r));
+        var barra = el("span", "rb-bar"), relleno = el("span", "");
+        // Raíz cuadrada: con la Metropolitana diez veces más grande que el resto, una escala lineal
+        // dejaba a todas las demás regiones como una raya indistinguible.
+        relleno.style.width = Math.max(3, Math.sqrt(cuenta[r] / max) * 100) + "%";
+        barra.appendChild(relleno); b.appendChild(barra);
+        b.appendChild(el("span", "rb-num", String(cuenta[r])));
+        b.title = "Ver " + r + " en el mapa";
+        b.addEventListener("click", function () { mostrarVista("chile"); mapaChile.irRegion(r); });
+        li.appendChild(b); ul.appendChild(li);
+      });
+    }
+    return { pintar: pintar, destacados: destacados, botonEjemplo: botonEjemplo };
+  })();
+
   // ---------------- Detail sheet ----------------
   var backdrop = document.getElementById("backdrop");
   var sheet = document.getElementById("detail-sheet");
@@ -4801,7 +5968,44 @@
       sub.appendChild(subFuente);
     }
     content.appendChild(tag); content.appendChild(name); content.appendChild(sub);
+    // Desde la ficha se llega a su red en columnas. Si ya se está mirando esa red, el botón sobra.
+    if (!(explorarView.classList.contains("active") && explorador.foco() === n.id)) {
+      var verRed = document.createElement("button");
+      verRed.type = "button"; verRed.className = "exp-btn primario";
+      verRed.style.margin = "0 0 14px";
+      verRed.textContent = "Ver su perfil →";
+      verRed.addEventListener("click", function () { closeDetail(); explorador.abrir(n.id); });
+      content.appendChild(verRed);
+    }
     if (n.tipo === "institucion") content.appendChild(bloqueUbicacion(n));
+    if (n.tipo === "institucion" && n.nota_identidad) {
+      var avisoInst = document.createElement("div"); avisoInst.className = "confidence-row identity-warn-row";
+      avisoInst.textContent = "Nota de la recolección: " + n.nota_identidad;
+      content.appendChild(avisoInst);
+    }
+    if (n.tipo === "farmaco") {
+      var rf = resumenFarmaco(n);
+      var metaF = document.createElement("div"); metaF.className = "ensayo-meta";
+      var dlF = document.createElement("dl");
+      var filaF = function (etq, val) {
+        if (!val) return;
+        var dt = document.createElement("dt"); dt.textContent = etq;
+        var dd = document.createElement("dd"); dd.textContent = val;
+        dlF.appendChild(dt); dlF.appendChild(dd);
+      };
+      filaF("Estudios en Chile", rf.estudios + (rf.reclutando ? " (" + rf.reclutando + " reclutando hoy)" : ""));
+      filaF("Centros", rf.centros ? String(rf.centros) : "ninguno identificado");
+      filaF("También escrito como", (n.alias_en_la_fuente || []).join(", "));
+      filaF("Patrocinadores", (n.patrocinadores || []).slice(0, 6).join(", ") + ((n.patrocinadores || []).length > 6 ? "…" : ""));
+      filaF("Áreas", (n.areas || []).join(", "));
+      metaF.appendChild(dlF);
+      var notaF = document.createElement("div"); notaF.className = "confidence-row";
+      notaF.textContent = "Ficha armada desde la lista estructurada de intervenciones de ClinicalTrials.gov. " +
+        "Los nombres se unieron solo cuando la propia fuente los declara equivalentes (marca, código o DCI). " +
+        "Placebos, premedicaciones y cuidados de soporte no crean vínculo.";
+      metaF.appendChild(notaF);
+      content.appendChild(metaF);
+    }
 
     if (n.tipo === "ensayo_clinico") {
       var meta = document.createElement("div"); meta.className = "ensayo-meta";
@@ -4822,6 +6026,8 @@
       fila("Fase", (n.hechos[0] || {}).fase);
       fila("Estado", n.estado_reclutamiento);
       fila("Intervenciones", (n.intervenciones || []).join(", "));
+      var farmacosEns = vecinosDe(n.id, "farmaco").map(function (a) { return byId[a.otro].nombre; });
+      fila("Fármacos (ficha)", farmacosEns.join(", "));
       fila("Condición declarada", (n.condiciones || []).join(", "));
       if (n.sitios_chile) {
         fila("Sitios en Chile", n.sitios_chile +
@@ -4840,6 +6046,14 @@
         var wrapVer = document.createElement("div");
         wrapVer.style.marginTop = "10px";
         wrapVer.appendChild(ver);
+        if (n.ficha_cif && esUrlSegura(n.ficha_cif)) {
+          var cif = document.createElement("a");
+          cif.className = "sheet-sub-fuente";
+          cif.href = n.ficha_cif; cif.target = "_blank"; cif.rel = "noopener noreferrer";
+          cif.textContent = "Ficha en español y centros abiertos (CIF) ↗";
+          wrapVer.appendChild(document.createTextNode(" · "));
+          wrapVer.appendChild(cif);
+        }
         meta.appendChild(wrapVer);
       }
       content.appendChild(meta);
@@ -4863,6 +6077,7 @@
     // Personas usan el modelo de prioridad v2 (PRODUCT_CHARTER.md / SCORING.md); instituciones y
     // ensayos no son candidatos a priorizar, así que siguen con el conteo de señales v1.
     var scorePanel = document.createElement("div"); scorePanel.className = "score-panel";
+    if (n.tipo === "farmaco") scorePanel.hidden = true;
     var scoreTitle = document.createElement("div"); scoreTitle.className = "score-panel-title";
     var breakdown = document.createElement("div"); breakdown.className = "score-breakdown";
     var scoreNote = document.createElement("div"); scoreNote.className = "score-note";
@@ -4959,7 +6174,9 @@
         conList.appendChild(li);
       });
       content.appendChild(conList);
-      content.appendChild(buildEgoGraph(n, relacionados));
+      // Con más de 14 vecinos el círculo del mini-grafo se vuelve un anillo de etiquetas encimadas:
+      // para esas fichas la red se lee en "Ver sus conexiones".
+      if (relacionados.length <= 14) content.appendChild(buildEgoGraph(n, relacionados));
     }
 
     // Evidencia agrupada por tipo — así se ve el listado de publicaciones separado de ensayos/afiliación.
