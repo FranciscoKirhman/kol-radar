@@ -105,6 +105,27 @@
   .notes ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
 
   h2.section-title { font-size: 16px; margin: 4px 0 4px; }
+
+  /* --- Fuentes --- */
+  h3.sub-title { font-size: 14px; margin: 22px 0 8px; }
+  .tabla-envoltura { overflow-x: auto; margin: 0 0 12px; }
+  table.fuentes-tabla { border-collapse: collapse; width: 100%; font-size: 13px; }
+  table.fuentes-tabla th, table.fuentes-tabla td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--border); line-height: 1.45; }
+  table.fuentes-tabla th { color: var(--text-secondary); font-weight: 600; white-space: nowrap; }
+  table.fuentes-tabla td.num, table.fuentes-tabla th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  table.fuentes-tabla td:first-child { min-width: 170px; font-weight: 600; }
+  table.fuentes-tabla a { color: var(--series-persona); }
+  table.fuentes-tabla code { font-size: 11.5px; }
+  .quien { display: block; font-size: 11.5px; font-weight: 400; color: var(--text-muted); }
+  .fuentes-buscar { width: 100%; max-width: 520px; font: inherit; font-size: 14px; padding: 8px 12px; border: 1px solid var(--border);
+                    border-radius: 8px; background: var(--surface-1); color: var(--text-primary); margin: 0 0 10px; }
+  .fuentes-grupo { border: 1px solid var(--border); border-radius: 8px; margin: 0 0 6px; background: var(--surface-1); }
+  .fuentes-grupo summary { cursor: pointer; padding: 8px 12px; font-size: 13px; font-weight: 600; }
+  .fuentes-urls { margin: 0; padding: 0 14px 10px 30px; font-size: 12.5px; line-height: 1.5; }
+  .fuentes-urls li { margin: 0 0 4px; word-break: break-word; }
+  .fuentes-urls a { color: var(--series-persona); }
+  .fuentes-urls .meta { color: var(--text-muted); }
+  .placeholder { color: var(--text-muted); }
   p.section-sub { font-size: 13px; color: var(--text-secondary); margin: 0 0 12px; }
 </style>
 </head>
@@ -115,13 +136,14 @@
     <header>
       <h1>KOL Radar — cómo se construyó esto</h1>
       <p>Vista interna (no es lo que ve un MSL): red de conexiones cruda, costo del pipeline de automatización, y cómo se arma un perfil. La vista de producto está en <a href="index.html">index.html</a>.</p>
-      <p class="refs">Datos y fuentes: <a href="../data/sample/perfiles-muestra.json">data/sample/perfiles-muestra.json</a> · <a href="../DATA_SAMPLE.md">DATA_SAMPLE.md</a> · <a href="../COSTS.md">COSTS.md</a> · <a href="../README.md">README.md</a></p>
+      <p class="refs">Datos y fuentes: <a href="#fuentes">todas las fuentes, una por una</a> · <a href="../data/sample/perfiles-muestra.json">data/sample/perfiles-muestra.json</a> · <a href="../DATA_SAMPLE.md">DATA_SAMPLE.md</a> · <a href="../COSTS.md">COSTS.md</a> · <a href="../README.md">README.md</a></p>
     </header>
 
     <nav class="tabs" role="tablist">
       <button role="tab" aria-selected="true" data-panel="red">Red de conexiones</button>
       <button role="tab" aria-selected="false" data-panel="costos">Costos</button>
       <button role="tab" aria-selected="false" data-panel="pipeline">Cómo funciona</button>
+      <button role="tab" aria-selected="false" data-panel="fuentes">Fuentes</button>
     </nav>
 
     <section class="panel active" id="panel-red">
@@ -241,6 +263,118 @@
       </div>
     </section>
 
+    <section class="panel" id="panel-fuentes">
+      <h2 class="section-title" id="fuentes">De dónde sale cada dato</h2>
+      <p class="section-sub">Todo lo que muestra KOL Radar sale de fuentes públicas, y cada hecho, vínculo y ubicación
+        guarda la URL exacta de donde se tomó. Primero, cada fuente explicada; después, cuánto aporta cada una y el
+        listado completo de las URL citadas, calculado en vivo desde los datos publicados. Nada de lo que está acá
+        pasó todavía por revisión humana, salvo un hecho.</p>
+
+      <h3 class="sub-title">1. Las fuentes, una por una</h3>
+      <div class="tabla-envoltura">
+        <table class="fuentes-tabla">
+          <thead><tr><th>Fuente</th><th>Qué aporta</th><th>Cómo se obtuvo</th><th>Términos</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a href="https://clinicaltrials.gov/" target="_blank" rel="noopener">ClinicalTrials.gov</a><span class="quien">National Library of Medicine, EE. UU. · API v2</span></td>
+              <td>Los 579 ensayos con al menos una sede declarada en Chile: título, fase, estado, patrocinador, condición, sedes, investigadores cuando los nombra, y la lista estructurada de intervenciones de la que salen los fármacos.</td>
+              <td>Consulta <code>AREA[LocationCountry]Chile AND AREA[ConditionSearch]"…"</code> por cada una de 19 áreas oncológicas (2026-09-09): <code>scripts/preintegracion_clinicaltrials.py</code> e <code>integrar_beta.py</code>. Intervenciones releídas el 2026-09-28: <code>integrar_farmacos_ctgov.py</code>.</td>
+              <td>Dominio público en EE. UU.; se pide citar la fuente. <a href="https://clinicaltrials.gov/about-site/terms-conditions" target="_blank" rel="noopener">Términos</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a><span class="quien">National Library of Medicine, EE. UU.</span></td>
+              <td>Autoría, afiliación declarada, revista y fecha de publicaciones de autores con afiliación chilena. Dos personas son coautoras solo si citan la misma publicación.</td>
+              <td>Búsquedas por autor y afiliación (agosto de 2026); cada autor afirmado se comprobó contra la lista de autores del artículo.</td>
+              <td>Metadatos bibliográficos; no se reproducen resúmenes. <a href="https://www.ncbi.nlm.nih.gov/home/about/policies/" target="_blank" rel="noopener">Políticas NCBI</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.scielo.cl/" target="_blank" rel="noopener">SciELO Chile</a></td>
+              <td>Autoría y afiliación en revistas chilenas (Revista Médica de Chile y otras).</td>
+              <td>Búsqueda manual (agosto de 2026).</td>
+              <td>CC BY en la mayoría de las revistas.</td>
+            </tr>
+            <tr>
+              <td><a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a></td>
+              <td>Identidad: el único hecho confirmado por una persona (la fusión de los dos registros de Claudio Silva).</td>
+              <td>Consulta manual del registro público.</td>
+              <td>Datos públicos del registro, CC0.</td>
+            </tr>
+            <tr>
+              <td><a href="https://openalex.org/" target="_blank" rel="noopener">OpenAlex</a></td>
+              <td>Propuestas de afiliación. <strong>No entran directo</strong>: quedan como propuesta en <code>data/pending/</code> hasta que una persona las revisa.</td>
+              <td><code>scripts/enriquecer_openalex.py</code>, por un flujo de GitHub que abre un pull request.</td>
+              <td>CC0.</td>
+            </tr>
+            <tr>
+              <td><a href="https://estudiosclinicos.cl/" target="_blank" rel="noopener">Buscador de estudios clínicos de la CIF</a><span class="quien">Cámara de la Innovación Farmacéutica</span></td>
+              <td>Para los ensayos que hoy reclutan, qué centros tienen abiertos en Chile — incluso cuando ClinicalTrials.gov oculta la sede como "Research Site". Dio 132 vínculos centro–ensayo.</td>
+              <td>184 fichas del sitemap, una cada 1,5 s (2026-09-28): <code>scripts/recolectar_estudiosclinicos_cl.py</code> e <code>integrar_estudiosclinicos_cl.py</code>. No se guardan los contactos de inscripción.</td>
+              <td>Solo el hecho ensayo ↔ centro, con su URL. <code>robots.txt</code> sin restricciones.</td>
+            </tr>
+            <tr>
+              <td><a href="https://evsexplore.semantics.cancer.gov/" target="_blank" rel="noopener">NCI Thesaurus</a><span class="quien">National Cancer Institute, EE. UU. · API EVS</span></td>
+              <td>El tipo de cada fármaco: inhibidor de checkpoint, terapia dirigida, quimioterapia, conjugado anticuerpo-fármaco, terapia hormonal…</td>
+              <td>Búsqueda del concepto y de toda su jerarquía, con reglas explícitas y en orden (2026-09-28): <code>scripts/clasificar_farmacos_ncit.py</code>.</td>
+              <td>CC BY 4.0. <a href="https://evs.nci.nih.gov/license" target="_blank" rel="noopener">Licencia</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank" rel="noopener">DEIS — Establecimientos de Salud</a><span class="quien">Ministerio de Salud de Chile · datos.gob.cl</span></td>
+              <td>Dirección y coordenadas oficiales de hospitales y clínicas; también es la evidencia de que existen varios centros que ClinicalTrials.gov nombra con otro nombre.</td>
+              <td>Cada institución se ligó a mano a su código de establecimiento, revisado contra nombre, tipo y comuna: <code>scripts/consolidar_ubicaciones.py</code> y <code>resolver_sedes_web.py</code>.</td>
+              <td>CC0.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a><span class="quien">vía Nominatim</span></td>
+              <td>Coordenadas de los centros que el DEIS no tiene, buscando la dirección citada dentro de su comuna.</td>
+              <td><code>scripts/geolocalizar_instituciones_osm.py</code> y <code>consolidar_ubicaciones.py</code>.</td>
+              <td>ODbL — © colaboradores de OpenStreetMap. <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">Derechos</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.geoboundaries.org/" target="_blank" rel="noopener">geoBoundaries</a><span class="quien">datos de la Biblioteca del Congreso Nacional y OCHA ROLAC</span></td>
+              <td>Límites de regiones y comunas que dibuja el mapa.</td>
+              <td><code>scripts/preparar_limites_chile.py</code>, simplificados para dibujo.</td>
+              <td>CC BY 3.0 IGO.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a></td>
+              <td>Contorno simplificado de Chile que usaba la primera versión del mapa (campo <code>geo</code> del JSON).</td>
+              <td>world.geo.json, simplificado a 114 puntos.</td>
+              <td>Dominio público.</td>
+            </tr>
+            <tr>
+              <td>Sitios oficiales de centros, universidades y sociedades</td>
+              <td>Afiliación publicada, dirección de un centro, o la evidencia de que dos nombres son la misma institución.</td>
+              <td>Búsqueda en la web, con la cita literal de la página: colaboradores IA (ChatGPT en septiembre de 2026, Claude el 2026-09-28) y revisión de Francisco. Cada una aparece abajo con su URL.</td>
+              <td>Solo el hecho, con su URL.</td>
+            </tr>
+            <tr>
+              <td>Directorios y registros de terceros</td>
+              <td><a href="https://www.unensayoparami.org/" target="_blank" rel="noopener">Un Ensayo para Mí</a> (sitios de investigación), <a href="https://www.superdesalud.gob.cl/" target="_blank" rel="noopener">Superintendencia de Salud</a>, registros comerciales y memorias universitarias: la dirección o la existencia de un centro cuando no hay página oficial.</td>
+              <td>Búsqueda en la web (2026-09-28).</td>
+              <td>Solo el hecho, con su URL.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-sub">Consultadas y descartadas: SER Chile (sus páginas devolvían error al recolectar), WCLC/IASLC y ASCO
+        (prohíben la recolección en sus términos), LinkedIn (prohibido por sus términos). Evaluada para después: la planilla
+        del ISP de centros de investigación clínica inspeccionados, que nombra investigadores principales.</p>
+
+      <h3 class="sub-title">2. Cuánto aporta cada fuente</h3>
+      <p class="section-sub" id="fuentes-resumen">Calculando desde los datos…</p>
+      <div class="tabla-envoltura"><table class="fuentes-tabla" id="fuentes-conteo"></table></div>
+
+      <h3 class="sub-title">3. Todas las URL citadas</h3>
+      <p class="section-sub">Cada URL con cuántas veces se cita y en qué fichas: hechos, vínculos, dirección y coordenadas de
+        cada centro, y las páginas revisadas sin resultado. Buscá por dominio, por parte de la URL o por el nombre de una ficha.</p>
+      <input type="search" id="fuentes-buscar" class="fuentes-buscar" placeholder="Filtrar: pubmed, NCT04949256, FALP, datos.gob.cl…" aria-label="Filtrar las URL citadas" />
+      <div id="fuentes-lista"><p class="placeholder">Cargando…</p></div>
+      <p class="section-sub">Los datos completos, con cada hecho y su fuente, se pueden descargar:
+        <a href="../data/sample/perfiles-muestra.json">perfiles-muestra.json</a> ·
+        <a href="../data/geo/ubicaciones-instituciones.json">ubicaciones-instituciones.json</a> ·
+        licencia de los datos: <a href="https://github.com/FranciscoKirhman/kol-radar/blob/main/data/LICENSE.md" target="_blank" rel="noopener">ODbL 1.0</a>.</p>
+    </section>
+
     <div class="notes">
       <h2>Qué mejorar después (esto es un prototipo de prueba, no la página final)</h2>
       <ul>
@@ -274,7 +408,7 @@
           estático porque nunca muestra más de un puñado de vecinos.</li>
         <li>No hay filtro por especialidad (solo por tipo de entidad y texto libre) — filtrar por biomarcador es una idea de <code>ROADMAP.md</code> (no una promesa del spec original, README.md nunca menciona biomarcadores), y los datos actuales tampoco la sostienen de forma confiable todavía.</li>
         <li><s>La confianza se mostraba como nota fija de texto, no por hecho</s> — resuelto: cada hecho ahora muestra su propio <code>confianza</code> (index.html y esta página). Sigue faltando el botón de "corregir este dato" del modelo de datos, y el canal de contacto para pedirlo (README.md tiene el placeholder sin completar).</li>
-        <li><s>No hay mapa de Chile con centros geolocalizados</s> — resuelto en parte: la vista Chile ubica 56 de 61 instituciones en su dirección (registro DEIS del Minsal, sitios oficiales y OpenStreetMap, ver <code>data/geo/ubicaciones-instituciones.json</code>), todo pendiente de revisión humana. Las cinco restantes no tienen una fuente citable y quedan en la bandeja de su región.</li>
+        <li><s>No hay mapa de Chile con centros geolocalizados</s> — resuelto en parte: el mapa ubica cada institución en su dirección cuando hay una fuente citable (registro DEIS del Minsal, sitios oficiales y OpenStreetMap, ver <code>data/geo/ubicaciones-instituciones.json</code> y la pestaña Fuentes), todo pendiente de revisión humana. Las que no tienen fuente quedan en la bandeja de su región.</li>
         <li>Sin backend real: los datos siguen viviendo en un archivo JSON estático, no en una base de datos. La Fase 4 (automatizar PubMed/ClinicalTrials.gov) va a necesitar eso y la bandeja de revisión humana descrita en el spec.</li>
       </ul>
     </div>
@@ -314,6 +448,10 @@
         (fuera ? " (sin los " + fuera + " fármacos, que se ven en la vista de producto)" : "") +
         ". Click en un nodo para ver la evidencia (hecho + fuente + fecha) detrás de cada conexión — así se ve la trazabilidad de la que habla el spec, no solo se describe.";
       layoutYRenderRed();
+      // Las ubicaciones citan su propia fuente (DEIS, sitio oficial, OpenStreetMap): también cuentan.
+      fetch("../data/geo/ubicaciones-instituciones.json").then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; })
+        .then(function (ubic) { construirFuentes(data, ubic); });
     })
     .catch(function (err) {
       var panel = document.getElementById("detail-panel");
@@ -323,6 +461,155 @@
       p.textContent = "No se pudo cargar " + DATA_URL + " (" + err.message + "). Sirve este archivo por HTTP (no file://) — ver \"Cómo correr el prototipo\" en README.md.";
       panel.appendChild(p);
     });
+
+  // ---- Fuentes: cada URL citada, calculada desde los datos publicados ----
+  // No se escribe a mano ninguna cifra: se cuentan las URL de los hechos, de los vínculos y de las
+  // ubicaciones cada vez que se abre la página, así que no pueden quedar desactualizadas.
+  var NOMBRE_DOMINIO = {
+    "clinicaltrials.gov": "ClinicalTrials.gov", "pubmed.ncbi.nlm.nih.gov": "PubMed", "scielo.cl": "SciELO Chile",
+    "scielo.conicyt.cl": "SciELO Chile (conicyt)", "estudiosclinicos.cl": "Buscador de estudios clínicos de la CIF",
+    "evsexplore.semantics.cancer.gov": "NCI Thesaurus", "datos.gob.cl": "DEIS — Establecimientos de Salud (datos.gob.cl)",
+    "openstreetmap.org": "OpenStreetMap", "orcid.org": "ORCID", "unensayoparami.org": "Un Ensayo para Mí",
+    "superdesalud.gob.cl": "Superintendencia de Salud", "geoboundaries.org": "geoBoundaries"
+  };
+  var QUE_LABEL = { hecho: "hecho", subtitulo: "afiliación mostrada", vinculo: "vínculo", direccion: "dirección",
+                    coordenadas: "punto en el mapa", otra_sede: "otra sede", revisada: "revisada sin resultado", conjunto: "conjunto de datos" };
+  function dominioDe(url) {
+    var m = /^https?:\/\/([^\/?#]+)/i.exec(url || "");
+    return m ? m[1].toLowerCase().replace(/^www\./, "") : "(sin dominio)";
+  }
+  function el(tag, clase, texto) {
+    var e = document.createElement(tag);
+    if (clase) e.className = clase;
+    if (texto !== undefined && texto !== null) e.textContent = texto;
+    return e;
+  }
+  function enlace(url, texto) {
+    if (!esUrlSegura(url)) return el("span", "", texto || url);
+    var a = el("a", "", texto || url);
+    a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer";
+    return a;
+  }
+
+  function construirFuentes(datos, ubic) {
+    var porUrl = {}, byIdTodas = {};
+    (datos.entidades || []).forEach(function (n) { byIdTodas[n.id] = n; });
+    // Una cita cuenta una vez aunque toque dos fichas (un vínculo une dos).
+    function citar(url, que, ids) {
+      if (!url) return;
+      var r = porUrl[url] || (porUrl[url] = { url: url, n: 0, que: {}, fichas: {} });
+      r.n++;
+      r.que[que] = (r.que[que] || 0) + 1;
+      [].concat(ids || []).forEach(function (id) { if (id) r.fichas[id] = true; });
+    }
+    (datos.entidades || []).forEach(function (n) {
+      (n.hechos || []).forEach(function (h) { citar(h.fuente_url, "hecho", n.id); });
+      citar(n.subtitulo_fuente, "subtitulo", n.id);
+    });
+    (datos.vinculos || []).forEach(function (v) {
+      if (v.fuente_url) citar(v.fuente_url, "vinculo", [v.origen, v.destino]);
+    });
+    if (ubic) {
+      Object.keys(ubic.instituciones || {}).forEach(function (id) {
+        var u = ubic.instituciones[id], p = u.principal || {};
+        citar((p.fuente_direccion || {}).url, "direccion", id);
+        citar((p.fuente_coordenadas || {}).url, "coordenadas", id);
+        (u.otras_sedes || []).forEach(function (o) { citar(o.fuente_url, "otra_sede", id); });
+      });
+      Object.keys(ubic.sin_ubicar || {}).forEach(function (id) { citar(ubic.sin_ubicar[id].fuente_revisada, "revisada", id); });
+      Object.keys(ubic.fuentes || {}).forEach(function (k) {
+        citar(ubic.fuentes[k].url, "conjunto", null);
+        if (esUrlSegura(ubic.fuentes[k].recurso)) citar(ubic.fuentes[k].recurso, "conjunto", null);
+      });
+    }
+
+    var porDominio = {};
+    Object.keys(porUrl).forEach(function (u) {
+      var d = dominioDe(u), g = porDominio[d] || (porDominio[d] = { dominio: d, urls: [], citas: 0, fichas: {} });
+      g.urls.push(porUrl[u]); g.citas += porUrl[u].n;
+      Object.keys(porUrl[u].fichas).forEach(function (f) { g.fichas[f] = true; });
+    });
+    var dominios = Object.keys(porDominio).map(function (k) { return porDominio[k]; })
+      .sort(function (a, b) { return b.citas - a.citas || a.dominio.localeCompare(b.dominio); });
+    var totalCitas = dominios.reduce(function (s, g) { return s + g.citas; }, 0);
+
+    document.getElementById("fuentes-resumen").textContent =
+      totalCitas.toLocaleString("es-CL") + " citas a " + Object.keys(porUrl).length.toLocaleString("es-CL") +
+      " URL distintas de " + dominios.length + " sitios, sobre " + (datos.entidades || []).length.toLocaleString("es-CL") +
+      " fichas y " + (datos.vinculos || []).length.toLocaleString("es-CL") + " vínculos.";
+
+    var tabla = document.getElementById("fuentes-conteo");
+    tabla.innerHTML = "";
+    var th = el("thead"), trh = el("tr");
+    ["Sitio", "Citas", "URL distintas", "Fichas que lo citan", "Para qué"].forEach(function (t, i) { trh.appendChild(el("th", i && i < 4 ? "num" : "", t)); });
+    th.appendChild(trh); tabla.appendChild(th);
+    var tb = el("tbody");
+    dominios.forEach(function (g) {
+      var tr = el("tr"), td0 = el("td");
+      td0.appendChild(el("span", "", NOMBRE_DOMINIO[g.dominio] || g.dominio));
+      if (NOMBRE_DOMINIO[g.dominio]) td0.appendChild(el("span", "quien", g.dominio));
+      tr.appendChild(td0);
+      tr.appendChild(el("td", "num", g.citas.toLocaleString("es-CL")));
+      tr.appendChild(el("td", "num", g.urls.length.toLocaleString("es-CL")));
+      tr.appendChild(el("td", "num", Object.keys(g.fichas).length.toLocaleString("es-CL")));
+      var usos = {};
+      g.urls.forEach(function (r) { Object.keys(r.que).forEach(function (q) { usos[q] = (usos[q] || 0) + r.que[q]; }); });
+      tr.appendChild(el("td", "", Object.keys(usos).sort(function (a, b) { return usos[b] - usos[a]; })
+        .map(function (q) { return QUE_LABEL[q] + " (" + usos[q] + ")"; }).join(", ")));
+      tb.appendChild(tr);
+    });
+    tabla.appendChild(tb);
+
+    var lista = document.getElementById("fuentes-lista");
+    function pintarLista(filtro) {
+      var f = (filtro || "").toLowerCase().trim();
+      lista.innerHTML = "";
+      var mostradas = 0;
+      dominios.forEach(function (g) {
+        var urls = g.urls.filter(function (r) {
+          if (!f) return true;
+          if (r.url.toLowerCase().indexOf(f) !== -1 || g.dominio.indexOf(f) !== -1) return true;
+          return Object.keys(r.fichas).some(function (id) { return byIdTodas[id] && byIdTodas[id].nombre.toLowerCase().indexOf(f) !== -1; });
+        }).sort(function (a, b) { return b.n - a.n || a.url.localeCompare(b.url); });
+        if (!urls.length) return;
+        mostradas += urls.length;
+        var det = el("details", "fuentes-grupo");
+        if (f || dominios.length <= 3) det.open = true;
+        var sum = el("summary", "", (NOMBRE_DOMINIO[g.dominio] || g.dominio) + " — " + urls.length.toLocaleString("es-CL") +
+          (urls.length === 1 ? " URL" : " URL"));
+        det.appendChild(sum);
+        // Se dibuja al abrir: ClinicalTrials.gov sola tiene cientos de URL.
+        function llenar() {
+          if (det.getAttribute("data-lleno")) return;
+          det.setAttribute("data-lleno", "1");
+          var ul = el("ul", "fuentes-urls");
+          urls.forEach(function (r) {
+            var li = el("li");
+            li.appendChild(enlace(r.url));
+            var ids = Object.keys(r.fichas);
+            var meta = el("span", "meta", " · " + r.n + (r.n === 1 ? " cita" : " citas") + " (" +
+              Object.keys(r.que).map(function (q) { return QUE_LABEL[q]; }).join(", ") + ")" +
+              (ids.length ? " · " + ids.slice(0, 3).map(function (id) { return byIdTodas[id] ? byIdTodas[id].nombre : id; }).join("; ") +
+                (ids.length > 3 ? " y " + (ids.length - 3) + " más" : "") : ""));
+            li.appendChild(meta);
+            ul.appendChild(li);
+          });
+          det.appendChild(ul);
+        }
+        det.addEventListener("toggle", function () { if (det.open) llenar(); });
+        if (det.open) llenar();
+        lista.appendChild(det);
+      });
+      if (!mostradas) lista.appendChild(el("p", "placeholder", "Ninguna URL calza con «" + filtro + "»."));
+    }
+    pintarLista("");
+    var t = null;
+    document.getElementById("fuentes-buscar").addEventListener("input", function (ev) {
+      clearTimeout(t);
+      var v = ev.target.value;
+      t = setTimeout(function () { pintarLista(v); }, 150);
+    });
+  }
 
   // ---- Layout: simulación de fuerzas mínima, corrida una vez al cargar ----
   function layoutYRenderRed() {
@@ -451,11 +738,15 @@
   });
   // Si alguien llega con un ancla (ej. interno.html#puntaje desde el link de index.html),
   // activar la pestaña que contiene ese elemento en vez de dejarlo escondido en un panel inactivo.
-  if (location.hash) {
-    var target = document.querySelector(location.hash);
+  function irAlAncla() {
+    if (!location.hash) return;
+    var target = null;
+    try { target = document.querySelector(location.hash); } catch (e) { return; }
     var containingPanel = target && target.closest("section.panel");
-    if (containingPanel) activateTab(containingPanel.id.replace("panel-", ""));
+    if (containingPanel) { activateTab(containingPanel.id.replace("panel-", "")); target.scrollIntoView(); }
   }
+  irAlAncla();
+  window.addEventListener("hashchange", irAlAncla);
 })();
 </script>
 </body>
