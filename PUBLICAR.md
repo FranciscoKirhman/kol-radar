@@ -42,12 +42,12 @@ Esto no es asesoría legal; el paso 2 lo debería mirar un abogado.
   30 días corridos para responder (prorrogables una vez), 2 días hábiles para bloquear, qué comando
   corre cada caso y plantillas de respuesta. Falta que el responsable fije cómo se verifica que
   quien escribe es la persona de la ficha.
-- ~~Registro de exclusiones~~: hecho, `scripts/exclusiones.py` + `data/exclusiones.json`. Todos los
-  scripts que escriben la muestra lo aplican antes de guardar, y CI falla si alguien excluido
-  reaparece. El registro guarda huellas con clave, no nombres. **Decide Francisco**: dejarlo así o
-  llevarlo fuera del repo (las dos opciones, comparadas, en `PROCESO_SOLICITUDES.md`), y crear el
-  secret `KOL_CLAVE_EXCLUSIONES` cuando llegue la primera solicitud.
-- **Decide Francisco, caso a caso**: si se purga el historial de git cuando alguien pide salir.
+- ~~Registro de exclusiones~~: hecho, `scripts/exclusiones.py`. Vive **fuera del repo**
+  (`~/.config/kol-radar/`, decisión 2026-09-29), guarda huellas con clave y no nombres, y todos los
+  scripts que escriben la muestra lo aplican antes de guardar. Correr
+  `python3 scripts/exclusiones.py verificar` antes de cada push a `main`.
+- ~~Historial de git~~: **se purga** en supresión y oposición (decisión 2026-09-29). `retirar`
+  prepara el archivo para `git filter-repo`; los pasos están en `PROCESO_SOLICITUDES.md`.
 
 ### 2. Responsable y aviso de privacidad (decide: Francisco, con abogado) — bloqueante
 - Completar en [`PRIVACIDAD.md`](PRIVACIDAD.md) quién es el responsable del tratamiento.

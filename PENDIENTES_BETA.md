@@ -28,10 +28,9 @@ Fecha de corte: 2026-09-10.
 > - Siguen igual: las fusiones de identidad y la revisión humana.
 
 > **Actualización 2026-09-28, segunda ronda** (rama `pendientes-beta-2026-09-28`):
-> - **Registro de exclusiones**: hecho (`scripts/exclusiones.py`, `data/exclusiones.json`,
->   `PROCESO_SOLICITUDES.md`). Guarda huellas con clave, no nombres; todos los scripts que escriben
->   la muestra lo aplican y CI falla si alguien excluido reaparece. Decide Francisco: dejarlo en el
->   repo así o fuera, y si se purga el historial de git caso a caso.
+> - **Registro de exclusiones**: hecho (`scripts/exclusiones.py`, `PROCESO_SOLICITUDES.md`). Vive
+>   fuera del repo y guarda huellas con clave, no nombres; todos los scripts que escriben la muestra
+>   lo aplican. En supresión y oposición se purga el historial de git (decisiones del 2026-09-29).
 > - **ISP**: `scripts/integrar_isp_inspecciones.py` cruza la planilla por código de protocolo. 8
 >   vínculos de sede, 4 ensayos ganan institución (212 → 208). Los 17 investigadores que nombra
 >   quedan en `data/pending/isp-inspecciones-2026-09-28/investigadores_candidatos.json`, sin ficha.

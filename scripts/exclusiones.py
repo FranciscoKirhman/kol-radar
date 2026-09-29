@@ -7,44 +7,60 @@ recolección de ClinicalTrials.gov o PubMed la vuelve a traer. Este registro es 
 los scripts respetan: ninguno escribe la muestra sin pasar por `guardar_muestra`, que quita a las
 personas excluidas antes de guardar.
 
-Por qué el registro no guarda nombres
--------------------------------------
-El repositorio es público. Una lista en texto plano de "médicos que pidieron salir" publicaría
-justamente lo que esas personas pidieron no publicar. Por eso `data/exclusiones.json` guarda solo
-HUELLAS: un hash BLAKE2b con clave de cada id, ORCID y forma del nombre. Sin la clave no se puede
-saber a quién corresponde una huella, ni probar nombres de a uno hasta dar con ella (eso es lo que
-permitiría un hash sin clave, porque la lista de oncólogos chilenos es corta).
+Dónde vive (decisión de Francisco, 2026-09-29)
+----------------------------------------------
+FUERA del repositorio, que es público: una lista de "médicos que pidieron salir" en el repo
+publicaría justamente lo que esas personas pidieron no publicar.
 
-La clave vive fuera del repositorio:
-  - variable de entorno KOL_CLAVE_EXCLUSIONES, o
-  - archivo ~/.config/kol-radar/clave-exclusiones (se crea solo con la primera exclusión).
-En GitHub Actions va como secret del repositorio con ese mismo nombre.
+  registro  ~/.config/kol-radar/exclusiones.json  (o la ruta en KOL_EXCLUSIONES)
+  clave     ~/.config/kol-radar/clave-exclusiones  (o el valor en KOL_CLAVE_EXCLUSIONES)
 
-Falla cerrado: si el registro tiene entradas y no hay clave, o la clave no es la que generó el
-registro, los scripts se detienen en vez de seguir como si no hubiera nadie excluido.
+Los dos se crean con `python3 scripts/exclusiones.py iniciar`. Hay que guardar copia de ambos en
+un lugar seguro (un gestor de contraseñas), y si el proyecto se cede, entregarlos con él.
+
+Aun fuera del repo, el registro no guarda nombres sino HUELLAS: un hash BLAKE2b con clave de cada
+id, ORCID y forma del nombre. Si el archivo se filtra (una copia de respaldo, un envío por error),
+sin la clave no se puede saber a quién corresponde cada huella ni probar nombres hasta dar con ella.
+
+Falla cerrado: si el registro no existe, si tiene solicitudes y falta la clave, o si la clave no es
+la que lo armó, los scripts se detienen en vez de seguir como si no hubiera nadie excluido. Un clon
+nuevo del repositorio no puede integrar datos hasta que alguien corra `iniciar` (o copie el registro
+y la clave de quien lo tiene): es a propósito.
 
 Qué cuenta como coincidencia
 ----------------------------
   exacta   mismo id de ficha, mismo ORCID, o el mismo nombre completo (sin tildes, mayúsculas,
            puntuación ni orden). La persona se quita sin preguntar.
-  posible  comparte nombre y un apellido con una persona excluida ("Christian Caglevic" contra
-           una exclusión de "Christian Caglevic Medina"). No se crea ni se liga automáticamente:
+  posible  comparte nombre y un apellido con una persona excluida ("Ana Pérez" contra una
+           exclusión de "Ana Pérez Soto"). No se crea ni se liga automáticamente:
            queda para revisión humana. Puede ser un homónimo; el costo de equivocarse en esta
            dirección es solo que una ficha espera, y es el que se prefiere.
 
 Uso
 ---
+  python3 scripts/exclusiones.py iniciar
+      Crea el registro vacío y la clave, si no existen. Una vez por máquina.
   python3 scripts/exclusiones.py retirar ID --tipo supresion --fecha-solicitud 2026-10-02
-      Quita la ficha y sus vínculos de la muestra, registra la exclusión y lista los archivos del
-      repositorio que todavía la nombran (bandejas de revisión, documentos) para limpiarlos a mano.
-      --tipo bloqueo guarda una copia de la ficha FUERA del repositorio para poder restaurarla.
+      Quita la ficha y sus vínculos de la muestra, registra la exclusión, lista los archivos del
+      repositorio que todavía la nombran y prepara la purga del historial de git (ver abajo).
+      --tipo bloqueo guarda una copia de la ficha FUERA del repositorio para poder restaurarla, y
+      no prepara purga: un bloqueo es temporal.
   python3 scripts/exclusiones.py registrar --nombre "Nombre Apellido" [--orcid ...] --tipo oposicion ...
       Para quien pide no ser incorporado y todavía no tiene ficha.
   python3 scripts/exclusiones.py verificar
       Revisa que ninguna persona excluida aparezca en la muestra: ni como ficha, ni por ORCID, ni
-      nombrada en el texto de otra ficha. Sale con error si encuentra algo. Lo corre CI.
+      nombrada en el texto de otra ficha. Sale con error si encuentra algo. Correrlo antes de cada
+      push a main.
   python3 scripts/exclusiones.py estado
       Cuántas solicitudes hay, de qué tipo y cuántos días quedan de plazo para cada una.
+
+Purga del historial (decisión de Francisco, 2026-09-29: se purga)
+-----------------------------------------------------------------
+Borrar la ficha de la muestra no la borra de GitHub: sigue en cada commit anterior. Para supresión
+y oposición, `retirar` y `registrar` escriben fuera del repo el archivo de reemplazos para
+`git filter-repo --replace-text` (cada forma del nombre, su id y su ORCID → "[retirado]") y
+muestran los comandos. No los ejecutan: reescribir la historia de un repo público y forzar el push
+lo hace una persona, mirando lo que hace.
 
 El proceso completo —plazos, qué responder, quién decide— está en PROCESO_SOLICITUDES.md.
 """
@@ -59,13 +75,13 @@ import sys
 import unicodedata
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# KOL_EXCLUSIONES permite tener el registro fuera del repositorio si se prefiere (ver
-# PROCESO_SOLICITUDES.md, "Dónde vive el registro"). Por defecto va en el repo, sin nombres.
-REGISTRO = os.environ.get("KOL_EXCLUSIONES") or os.path.join(RAIZ, "data", "exclusiones.json")
+PRIVADO = os.path.join(os.path.expanduser("~"), ".config", "kol-radar")
+REGISTRO = os.environ.get("KOL_EXCLUSIONES") or os.path.join(PRIVADO, "exclusiones.json")
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 CLAVE_ENV = "KOL_CLAVE_EXCLUSIONES"
-CLAVE_ARCHIVO = os.path.join(os.path.expanduser("~"), ".config", "kol-radar", "clave-exclusiones")
-RETIRADOS = os.path.join(os.path.expanduser("~"), ".config", "kol-radar", "retirados")
+CLAVE_ARCHIVO = os.path.join(PRIVADO, "clave-exclusiones")
+RETIRADOS = os.path.join(PRIVADO, "retirados")
+PURGAS = os.path.join(PRIVADO, "purgas")
 TIPOS = ("supresion", "oposicion", "bloqueo")
 # Art. 11 de la Ley 19.628 reformada por la Ley 21.719: 30 días corridos, prorrogables una vez.
 # Ver PROCESO_SOLICITUDES.md; no es asesoría legal.
@@ -76,7 +92,7 @@ ORCID = re.compile(r"\d{4}-\d{4}-\d{4}-\d{3}[\dX]")
 
 
 def tokens(nombre):
-    """"Dr. Héctor  Galindo-Aranibar" → ["hector", "galindo", "aranibar"]."""
+    """"Dra. Ana  Pérez-Soto" → ["ana", "perez", "soto"]."""
     s = unicodedata.normalize("NFD", nombre or "")
     s = "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
     return [t for t in re.split(r"[^a-z0-9]+", s) if t and t not in TRATAMIENTOS]
@@ -85,8 +101,8 @@ def tokens(nombre):
 def formas_nombre(nombre):
     """Las dos formas que se registran de un nombre: la completa y los pares nombre–apellido.
 
-    La completa es la lista de palabras ordenada, así "Caglevic, Christian" y "Christian
-    Caglevic" dan lo mismo. Los pares son todas las combinaciones de dos palabras de más de una
+    La completa es la lista de palabras ordenada, así "Pérez, Ana" y "Ana Pérez" dan
+    lo mismo. Los pares son todas las combinaciones de dos palabras de más de una
     letra, también ordenadas: las iniciales ("P.") no alcanzan para decir nada de nadie.
     """
     t = tokens(nombre)
@@ -111,10 +127,9 @@ def leer_clave(crear=False):
             f.write(clave + "\n")
         os.chmod(CLAVE_ARCHIVO, 0o600)
         print("Se creó una clave nueva en %s.\n"
-              "  Guardala también como secret del repositorio (Settings → Secrets → Actions →\n"
-              "  New repository secret, nombre %s) y en un lugar seguro: sin ella nadie puede\n"
+              "  Guardá una copia en un lugar seguro (un gestor de contraseñas): sin ella nadie puede\n"
               "  volver a leer el registro, y si el proyecto se cede, la clave va con él."
-              % (CLAVE_ARCHIVO, CLAVE_ENV), file=sys.stderr)
+              % CLAVE_ARCHIVO, file=sys.stderr)
     return clave or None
 
 
@@ -126,10 +141,38 @@ def _huella(clave, texto):
     return hashlib.blake2b(texto.encode("utf-8"), key=k, digest_size=16).hexdigest()
 
 
+QUE_ES = ("Registro de personas que pidieron no aparecer en KOL Radar (supresión, oposición o bloqueo). "
+          "Vive fuera del repositorio. No guarda nombres: solo huellas BLAKE2b con la clave de "
+          "clave-exclusiones. Se modifica únicamente con scripts/exclusiones.py; todos los scripts que "
+          "escriben la muestra lo aplican antes de guardar. Proceso en PROCESO_SOLICITUDES.md.")
+
+
+def iniciar(ruta=REGISTRO):
+    """Crea el registro vacío y la clave si no existen. No toca un registro que ya existe."""
+    clave = leer_clave(crear=True)
+    if os.path.exists(ruta):
+        return False
+    os.makedirs(os.path.dirname(ruta), exist_ok=True)
+    datos = {"_que_es": QUE_ES, "huella_clave": _huella(clave, "kol-radar/huella-de-la-clave"), "solicitudes": []}
+    with open(ruta, "w", encoding="utf-8") as f:
+        json.dump(datos, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+    os.chmod(ruta, 0o600)
+    return True
+
+
 class Registro(object):
     def __init__(self, ruta=REGISTRO, clave=None, crear_clave=False):
         self.ruta = ruta
-        self.datos = json.load(open(ruta, encoding="utf-8")) if os.path.exists(ruta) else {"solicitudes": []}
+        if not os.path.exists(ruta):
+            # Sin registro no hay forma de saber si alguien pidió salir: se detiene, no se asume
+            # que la lista está vacía.
+            raise SinClave(
+                "No encuentro el registro de exclusiones en %s.\n"
+                "Si esta máquina ya lo tenía, copiá el registro y la clave desde su respaldo (o definí\n"
+                "KOL_EXCLUSIONES y %s). Si es una instalación nueva del proyecto, crealo con:\n"
+                "  python3 scripts/exclusiones.py iniciar" % (ruta, CLAVE_ENV))
+        self.datos = json.load(open(ruta, encoding="utf-8"))
         self.datos.setdefault("solicitudes", [])
         self.clave = clave or leer_clave(crear=crear_clave)
         huella = self.datos.get("huella_clave")
@@ -219,6 +262,7 @@ class Registro(object):
         with open(self.ruta, "w", encoding="utf-8") as f:
             json.dump(self.datos, f, ensure_ascii=False, indent=1)
             f.write("\n")
+        os.chmod(self.ruta, 0o600)
 
 
 # ---------------------------------------------------------------------- lo que usan los scripts
@@ -319,6 +363,71 @@ def _menciones(nombres, ignorar):
     return hallados
 
 
+# Variantes con que una fuente puede escribir cada letra. La purga busca en bytes (UTF-8), así que
+# cada variante va como alternativa completa y no dentro de una clase de caracteres.
+VARIANTES = {"a": "aáàäâ", "e": "eéèëê", "i": "iíìïî", "o": "oóòöô", "u": "uúùüû", "n": "nñ", "c": "cç"}
+
+
+def _patron_nombre(nombre):
+    """"Ana Pérez" → regex que calza con Ana Perez, ANA PÉREZ, ana-perez (su id)."""
+    partes = []
+    for t in tokens(nombre):
+        letras = []
+        for ch in t:
+            vs = VARIANTES.get(ch, ch)
+            alts = sorted(set(vs + vs.upper()))
+            letras.append(re.escape(alts[0]) if len(alts) == 1 else "(?:" + "|".join(re.escape(x) for x in alts) + ")")
+        partes.append("".join(letras))
+    return r"[\s._,-]+".join(partes)
+
+
+def preparar_purga(n, nombres, orcids):
+    """Escribe FUERA del repositorio el archivo para `git filter-repo --replace-text` y devuelve su ruta.
+
+    Solo nombres completos (dos palabras o más), su id y su ORCID. Las iniciales ("Pérez A") no:
+    calzarían también con otras personas y borrarían datos de quien no pidió nada.
+    """
+    lineas, vistos = [], set()
+    for nombre in nombres:
+        if len(tokens(nombre)) < 2:
+            continue
+        for orden in (tokens(nombre), tokens(nombre)[1:] + tokens(nombre)[:1]):
+            pat = _patron_nombre(" ".join(orden))
+            if pat not in vistos:
+                vistos.add(pat)
+                # Sin \\b: en bytes, una letra con tilde no es "letra", y "Ángela" no tendría borde.
+                lineas.append("regex:(?i)(?<![A-Za-z0-9])" + pat + "(?![A-Za-z0-9])==>[retirado]")
+    for o in orcids:
+        for x in ORCID.findall(o or ""):
+            if x not in vistos:
+                vistos.add(x)
+                lineas.append("literal:" + x + "==>[retirado]")
+    os.makedirs(PURGAS, exist_ok=True)
+    ruta = os.path.join(PURGAS, "%s-solicitud-%d.txt" % (datetime.date.today().isoformat(), n))
+    with open(ruta, "w", encoding="utf-8") as f:
+        f.write("\n".join(lineas) + "\n")
+    os.chmod(ruta, 0o600)
+    return ruta
+
+
+def _instrucciones_purga(ruta):
+    return (
+        "\nPurga del historial (decisión 2026-09-29). Lo corre una persona, mirando lo que hace; ver\n"
+        "PROCESO_SOLICITUDES.md y la guía de GitHub, que manda sobre esto:\n"
+        "  https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository\n"
+        "  1. Publicar primero el retiro (commit + push de la muestra sin la ficha).\n"
+        "  2. En un directorio fuera del proyecto:\n"
+        "       git clone --bare https://github.com/FranciscoKirhman/kol-radar.git kol-radar-purga && cd kol-radar-purga\n"
+        "       git filter-repo --sensitive-data-removal --replace-text %s\n"
+        "  3. Comprobar que no quedó nada: git log --all -p | grep -ciE '<apellido>'   (tiene que dar 0)\n"
+        "  4. git push --force --mirror origin\n"
+        "  5. Pedir a GitHub Support que borre las vistas en caché y las referencias de PR, con los\n"
+        "     commits que filter-repo informa como primeros cambiados.\n"
+        "  6. Volver a clonar el proyecto en cada máquina y borrar ramas y worktrees viejos: tienen la\n"
+        "     historia anterior y un push desde ahí la devuelve.\n"
+        "  7. Borrar %s.\n" % (ruta, ruta))
+
+
 def _fecha(s):
     datetime.date.fromisoformat(s)
     return s
@@ -338,9 +447,16 @@ def main(argv=None):
     g.add_argument("--tipo", choices=TIPOS, required=True)
     g.add_argument("--fecha-solicitud", type=_fecha, required=True)
     g.add_argument("--nota", default="")
+    sub.add_parser("iniciar", help="crea el registro vacío y la clave, fuera del repositorio")
     sub.add_parser("verificar", help="falla si alguien excluido aparece en la muestra")
     sub.add_parser("estado", help="solicitudes registradas y plazos")
     a = ap.parse_args(argv)
+
+    if a.orden == "iniciar":
+        creado = iniciar()
+        print(("Registro creado en %s." if creado else "El registro ya existía en %s; no se tocó.") % REGISTRO)
+        print("Clave en %s (o en %s). Guardá copia de los dos en un lugar seguro." % (CLAVE_ARCHIVO, CLAVE_ENV))
+        return 0
 
     if a.orden == "estado":
         reg = json.load(open(REGISTRO, encoding="utf-8")) if os.path.exists(REGISTRO) else {}
@@ -370,13 +486,16 @@ def main(argv=None):
         print("Ninguna de las %d persona(s) excluida(s) aparece en la muestra." % len(reg.datos["solicitudes"]))
         return 0
 
-    reg = Registro(crear_clave=True)
+    reg = Registro()
     if a.orden == "registrar":
         n = reg.agregar(a.tipo, a.fecha_solicitud, reg.huellas_de(a.nombre, orcids=a.orcid), a.nota)
         reg.guardar()
         print("Registrada la solicitud #%d. Ninguna recolección futura va a crear esa ficha." % n)
-        for ruta, k in _menciones(a.nombre, set()):
+        menciones = _menciones(a.nombre, set())
+        for ruta, k in menciones:
             print("  todavía la nombra: %s (%d vez/veces)" % (ruta, k))
+        if menciones and a.tipo != "bloqueo":
+            print(_instrucciones_purga(preparar_purga(n, a.nombre, a.orcid)))
         return 0
 
     base = json.load(open(MUESTRA, encoding="utf-8"))
@@ -412,6 +531,8 @@ def main(argv=None):
               "repositorio es público; ver PROCESO_SOLICITUDES.md):")
         for ruta, k in menciones:
             print("  %s (%d)" % (ruta, k))
+    if a.tipo != "bloqueo":
+        print(_instrucciones_purga(preparar_purga(n, nombres + [a.id], orcids)))
     return 0
 
 

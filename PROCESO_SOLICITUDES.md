@@ -40,8 +40,8 @@ duda, bloquear (paso 3) no le hace daño a nadie y da tiempo.
 ```bash
 python3 scripts/exclusiones.py retirar <id> --tipo bloqueo --fecha-solicitud AAAA-MM-DD
 ```
-Quita la ficha y sus vínculos de `data/sample/perfiles-muestra.json`, la registra en
-`data/exclusiones.json` y guarda una copia **fuera del repositorio**
+Quita la ficha y sus vínculos de `data/sample/perfiles-muestra.json`, la registra en el registro de
+exclusiones (fuera del repositorio, ver abajo) y guarda una copia **fuera del repositorio**
 (`~/.config/kol-radar/retirados/`) para poder devolverla si la solicitud se resuelve a favor de
 mantenerla. Después: commit y push a `main`; GitHub Pages publica en unos minutos.
 
@@ -55,16 +55,45 @@ mantenerla. Después: commit y push a `main`; GitHub Pages publica en unos minut
 | **Portabilidad** | Lo mismo, en JSON (el bloque de su entidad y sus vínculos). |
 
 ### 5. Limpiar lo que queda
-`retirar` termina con dos listas:
+`retirar` termina con tres cosas:
 - **Textos de otras fichas que todavía la nombran** (una coautoría, una nota de identidad). Hay que
-  editarlos a mano; `python3 scripts/exclusiones.py verificar` falla hasta que no quede ninguno, y
-  corre en cada push (`.github/workflows/verificar-exclusiones.yml`).
+  editarlos a mano; `python3 scripts/exclusiones.py verificar` falla hasta que no quede ninguno.
+  **Correrlo antes de cada push a `main`.**
 - **Archivos del repositorio que la nombran** fuera del sitio: bandejas de revisión en
-  `data/pending/`, documentos. No se publican en la página, pero el repositorio es público.
-  Editarlos o dejarlos es decisión del responsable.
-- **El historial de git conserva todo lo borrado.** Purgarlo (`git filter-repo`) reescribe la
-  historia de todo el repositorio y obliga a volver a clonar: se decide **caso a caso** y lo decide
-  el responsable, no un script.
+  `data/pending/`, documentos. La purga del paso siguiente los limpia en toda la historia, incluida
+  la versión actual.
+- **El archivo de reemplazos para purgar el historial**, en `~/.config/kol-radar/purgas/`, con los
+  comandos a correr.
+
+### 5b. Purgar el historial de git — decisión 2026-09-29: se purga
+Borrar la ficha de la muestra no la borra de GitHub: sigue en cada commit anterior, a un clic. Para
+**supresión** y **oposición** se purga; para un **bloqueo** no (es temporal y puede revertirse).
+
+Lo corre una persona, en este orden, siguiendo la
+[guía de GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository),
+que manda si algo cambió:
+
+1. Publicar primero el retiro (commit y push de la muestra sin la ficha).
+2. Instalar `git-filter-repo` (`brew install git-filter-repo`).
+3. En un directorio **fuera** del proyecto:
+   ```bash
+   git clone --bare https://github.com/FranciscoKirhman/kol-radar.git kol-radar-purga
+   ```
+   ```bash
+   cd kol-radar-purga && git filter-repo --sensitive-data-removal --replace-text ~/.config/kol-radar/purgas/<archivo>.txt
+   ```
+4. Comprobar que no quedó nada: `git log --all -p | grep -ciE '<apellido>'` tiene que dar 0.
+5. `git push --force --mirror origin`.
+6. Pedir a GitHub Support que borre las vistas en caché y las referencias de Pull Requests, con los
+   commits que `filter-repo` informa como primeros cambiados.
+7. **Volver a clonar** el proyecto en cada máquina y borrar ramas y worktrees viejos: tienen la
+   historia anterior, y un push desde ahí la devuelve.
+8. Borrar el archivo de reemplazos.
+
+Qué reemplaza: cada forma completa del nombre (con o sin tildes, en cualquier caja, en orden normal
+o "Apellido, Nombre", y como id: `ana-perez`) y el ORCID, por `[retirado]`. Las iniciales solas
+("Pérez A") no, porque calzarían con otras personas. Qué no alcanza: los **forks** del repositorio
+y las copias que alguien ya haya bajado; eso no se puede borrar desde acá.
 
 ### 6. Responder y cerrar
 Plantilla B o C. `python3 scripts/exclusiones.py estado` muestra cada solicitud con su fecha límite.
@@ -79,22 +108,26 @@ una coincidencia exacta no se crea ni se lista en la bandeja de revisión, y una
 nombre y apellido, otra forma del nombre) no se crea sola y queda marcada para que la revise una
 persona.
 
-## Dónde vive el registro — decide Francisco
+## Dónde vive el registro — decisión 2026-09-29: fuera del repo
 
-El registro no puede ser una lista de nombres en el repositorio público: publicaría justo lo que
-esas personas pidieron no publicar. Hay dos formas de evitarlo y el código admite las dos:
+| | |
+|---|---|
+| Registro | `~/.config/kol-radar/exclusiones.json` (o la ruta en `KOL_EXCLUSIONES`) |
+| Clave | `~/.config/kol-radar/clave-exclusiones` (o el valor en `KOL_CLAVE_EXCLUSIONES`) |
+| Se crean con | `python3 scripts/exclusiones.py iniciar`, una vez por máquina |
+| Respaldo | los dos, en un gestor de contraseñas. Si el proyecto se cede, se entregan con él |
 
-| | A. En el repo, sin nombres (lo que hay hoy) | B. Fuera del repo |
-|---|---|---|
-| Cómo | `data/exclusiones.json` guarda solo huellas BLAKE2b con clave; la clave está en `~/.config/kol-radar/clave-exclusiones` y como secret `KOL_CLAVE_EXCLUSIONES` | `KOL_EXCLUSIONES=/ruta/privada/exclusiones.json` en cada corrida |
-| Qué se ve públicamente | cuántas solicitudes hay, su tipo y fechas; no quién | nada |
-| CI puede verificar | sí, con el secret | no |
-| Si el proyecto se cede | el registro va con el repo; hay que entregar la clave | hay que entregar el archivo y acordarse de hacerlo |
-| Riesgo principal | perder la clave: los scripts se detienen (fallan cerrado) hasta recuperarla | una corrida sin la variable no ve el registro y puede volver a traer a alguien |
+Aun fuera del repo, el registro guarda **huellas** (BLAKE2b con la clave), no nombres: si el
+archivo se filtra, sin la clave no se puede saber a quién corresponde cada una.
 
-Con A, sin la clave no se puede saber a quién corresponde una huella ni probar nombres hasta dar con
-ella. Los scripts se detienen si hay solicitudes y falta la clave, o si la clave no es la que armó
-el registro.
+Falla cerrado: sin registro, sin clave o con otra clave, los scripts de integración se detienen.
+Un clon nuevo del proyecto no puede integrar datos hasta tener el registro: es a propósito, porque
+la alternativa es una corrida que no ve a nadie excluido y lo vuelve a publicar.
+
+Como el registro no está en el repositorio, GitHub Actions no puede verificarlo: la verificación
+es `python3 scripts/exclusiones.py verificar` antes de cada push a `main`. El único workflow que
+corre en GitHub (OpenAlex) solo propone datos de personas que ya están en la muestra, así que no
+puede traer de vuelta a nadie.
 
 ## Plantillas
 

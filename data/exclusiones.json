@@ -1,4 +1,0 @@
-{
- "_que_es": "Registro de personas que pidieron no aparecer en KOL Radar (supresión, oposición o bloqueo). No guarda nombres: solo huellas BLAKE2b con una clave que vive fuera del repositorio, para que la lista no exponga a quien pidió salir. Se modifica únicamente con scripts/exclusiones.py; todos los scripts que escriben la muestra lo aplican antes de guardar. Proceso completo en PROCESO_SOLICITUDES.md.",
- "solicitudes": []
-}
