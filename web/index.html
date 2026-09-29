@@ -1112,6 +1112,7 @@
       </div>
       <div class="layer-block">
         <label class="layer-checkbox"><input type="checkbox" id="ocultar-aislados" /> Ocultar nodos que quedan sin conexiones</label>
+        <label class="layer-checkbox"><input type="checkbox" id="agrupar-centros" checked /> Agrupar por centro cuando hay más de 250 fichas</label>
         <span class="forma-leyenda">Formas: ● persona · ■ institución · ▲ ensayo · ⬢ fármaco · ◆ tema</span>
       </div>
     </div>
@@ -1173,8 +1174,8 @@
   // filtro de la lista (state.filter) a propósito — acá se compone un mapa, no se filtra
   // un listado: se puede querer ver solo personas-con-personas sin salir del mapa completo.
   var capas = {
-    // Los fármacos entran apagados: son 385 nodos y en el grafo global se comerían el tope de 400.
-    // Donde sí se leen es en el perfil de cada ficha.
+    // Los fármacos entran apagados: son 380 nodos que en el mapa global solo cuelgan de sus
+    // ensayos. Donde sí se leen es en el perfil de cada ficha.
     nodos: { persona: true, institucion: true, ensayo_clinico: true, farmaco: false, tema: false },
     aristas: {
       "persona|institucion": true, "persona|ensayo_clinico": true,
@@ -1182,7 +1183,10 @@
       "institucion|institucion": true, "persona|tema": true,
       "ensayo_clinico|tema": true, "institucion|tema": true
     },
-    ocultarAislados: false
+    ocultarAislados: false,
+    // Con más de UMBRAL_AGRUPAR fichas en pantalla, el mapa agrupa por centro (ver
+    // agruparPorInstitucion). Se puede desmarcar para ver todas las fichas una por una.
+    agrupar: true
   };
   function claveArista(a, b) { return [a, b].sort().join("|"); }
 
@@ -4422,13 +4426,13 @@
     return { nodes: nodes, edges: edges };
   }
 
-  // Tope duro de nodos que se dibujan de una vez. El costo del layout crece con el cuadrado de
-  // los nodos: medido en el navegador, 717 nodos bloqueaban el hilo principal 7,6 segundos con
-  // la página entera congelada. Acotar el dibujo mantiene el mapa usable por más que crezca la
-  // base, y lo que se recorta es lo que menos aporta a una vista de RED: los nodos con menos
-  // conexiones. Un ensayo sin institución resuelta tiene grado 0 y sería un punto suelto; sigue
-  // estando completo en la lista y en su ficha, que es donde se lo consulta.
-  var TOPE_NODOS_GRAFO = 400;
+  // Tope duro de nodos que se dibujan de una vez. Con la grilla de repulsión, 717 nodos
+  // bloqueaban el hilo principal 7,6 segundos y el tope era 400. Con el quadtree (crearQuadtree)
+  // la base entera —1.146 fichas con los fármacos encendidos— se dibuja completa; el tope queda
+  // como resguardo para cuando la base crezca varias veces. Si se alcanza, se recorta lo que menos
+  // aporta a una vista de RED: los nodos con menos conexiones, que siguen completos en la lista y
+  // en su ficha.
+  var TOPE_NODOS_GRAFO = 2500;
 
   // El grafo se reconstruye entero —con layout nuevo— en cada cambio, así que no hay posiciones
   // que interpolar entre un estado y otro. Lo que sí se puede es que el cambio no sea un corte
@@ -4466,12 +4470,241 @@
     return (h >>> 0) / 4294967296 - 0.5;
   }
 
+  // ---- Quadtree para la repulsión (Barnes-Hut) ----
+  // La repulsión entre nodos es la parte cara del layout. Con la grilla anterior, cada nodo se
+  // comparaba con todos los de su celda y las vecinas; pero el layout apila a los nodos alrededor
+  // de las anclas de institución, así que un barrio de 150 ensayos caía en pocas celdas y ahí el
+  // costo volvía a ser cuadrático. Por eso el mapa tenía un tope de 400 nodos y 22 iteraciones.
+  //
+  // El quadtree parte el plano en cuadrantes hasta que cada hoja tiene pocos nodos. Un grupo de
+  // nodos lejano (su cuadrante es chico comparado con la distancia) empuja como un solo nodo con
+  // la suma de sus cargas, ubicado en su centro; uno cercano se abre y se recorre por dentro. El
+  // costo por nodo pasa de "cuántos hay cerca" a "cuántos niveles tiene el árbol".
+  //
+  // Se conserva el mismo modelo de fuerzas que antes: repulsión 1/d² que se corta a una distancia
+  // (una celda que queda entera más lejos que el corte no se visita), y más suave entre nodos del
+  // mismo barrio. Esa suavidad depende del PAR, así que no cabe en una sola carga por nodo: se
+  // calcula la repulsión completa con carga 1.500 y después, con un árbol por barrio, se descuenta
+  // la diferencia (1.500 − 420) entre los nodos que comparten ancla. El resultado es el mismo que
+  // comparar par por par, salvo la aproximación de los grupos lejanos.
+  //
+  // Todo vive en arreglos tipados que se reutilizan entre iteraciones: crear objetos por nodo en
+  // cada una de las 300 vueltas le costaba más al recolector de basura que el cálculo mismo.
+  function crearQuadtree(N) {
+    // SUAVE2: la repulsión es carga/(d² + 5²), no carga/d². Sin ese término, dos nodos que el
+    // layout inicial deja a una unidad de distancia se empujan con fuerza 1.500 y salen
+    // disparados; medido, la velocidad media de los nodos crecía de 360 a decenas de miles en
+    // vez de bajar. A más de 15 unidades la diferencia con 1/d² es menor al 10%.
+    var HOJA = 8, PROF_MAX = 20, SUAVE2 = 25;
+    var cap = 0, X0, Y0, TAM, MASA, CX, CY, HIJO, INI, FIN, HOJA_ES, usados = 0;
+    var perm = new Int32Array(Math.max(1, N)), pila = new Int32Array(64 * 4 + 16);
+    var PX, PY;
+    function crecer() {
+      var nuevo = Math.max(64, cap * 2);
+      function copia(Tipo, viejo, por) { var a = new Tipo(nuevo * por); if (viejo) a.set(viejo); return a; }
+      X0 = copia(Float64Array, X0, 1); Y0 = copia(Float64Array, Y0, 1); TAM = copia(Float64Array, TAM, 1);
+      MASA = copia(Float64Array, MASA, 1); CX = copia(Float64Array, CX, 1); CY = copia(Float64Array, CY, 1);
+      INI = copia(Int32Array, INI, 1); FIN = copia(Int32Array, FIN, 1); HOJA_ES = copia(Uint8Array, HOJA_ES, 1);
+      HIJO = copia(Int32Array, HIJO, 4);
+      cap = nuevo;
+    }
+    // Deja en perm[ini, corte) los que tienen coordenada < medio y en [corte, fin) el resto.
+    function particion(ini, fin, P, medio) {
+      var i = ini, j = fin - 1;
+      while (i <= j) {
+        if (P[perm[i]] < medio) i++;
+        else { var t = perm[i]; perm[i] = perm[j]; perm[j] = t; j--; }
+      }
+      return i;
+    }
+    function construir(ini, fin, x0, y0, tam, prof) {
+      if (usados >= cap) crecer();
+      var id = usados++;
+      X0[id] = x0; Y0[id] = y0; TAM[id] = tam; INI[id] = ini; FIN[id] = fin;
+      var sx = 0, sy = 0;
+      for (var k = ini; k < fin; k++) { sx += PX[perm[k]]; sy += PY[perm[k]]; }
+      MASA[id] = fin - ini; CX[id] = sx / (fin - ini); CY[id] = sy / (fin - ini);
+      HIJO[4 * id] = HIJO[4 * id + 1] = HIJO[4 * id + 2] = HIJO[4 * id + 3] = -1;
+      // Con pocos nodos, o si están todos en el mismo punto, se comparan uno a uno.
+      if (fin - ini <= HOJA || prof >= PROF_MAX) { HOJA_ES[id] = 1; return id; }
+      HOJA_ES[id] = 0;
+      var m = tam / 2, mx = x0 + m, my = y0 + m;
+      var a = particion(ini, fin, PX, mx);
+      var b1 = particion(ini, a, PY, my), b2 = particion(a, fin, PY, my);
+      // Sin arreglos intermedios: esto corre miles de veces por construcción del mapa.
+      hijo(id, 0, ini, b1, x0, y0, m, prof);
+      hijo(id, 1, b1, a, x0, my, m, prof);
+      hijo(id, 2, a, b2, mx, y0, m, prof);
+      hijo(id, 3, b2, fin, mx, my, m, prof);
+      return id;
+    }
+    function hijo(padre, q, ini, fin, x0, y0, tam, prof) {
+      if (fin <= ini) return;
+      // El hijo se construye ANTES de escribir su índice: construir puede agrandar HIJO, y
+      // `HIJO[..] = construir(..)` escribiría en el arreglo viejo.
+      var h = construir(ini, fin, x0, y0, tam, prof + 1);
+      HIJO[4 * padre + q] = h;
+    }
+    // Suma a FX/FY la repulsión que ejercen entre sí los nodos de `lista`, con `carga` por par.
+    function acumular(lista, px, py, FX, FY, carga, corte, theta) {
+      var n = lista.length;
+      if (n < 2) return;
+      PX = px; PY = py;
+      var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      for (var k = 0; k < n; k++) {
+        var j0 = lista[k]; perm[k] = j0;
+        if (px[j0] < minX) minX = px[j0]; if (px[j0] > maxX) maxX = px[j0];
+        if (py[j0] < minY) minY = py[j0]; if (py[j0] > maxY) maxY = py[j0];
+      }
+      usados = 0;
+      var raiz = construir(0, n, minX, minY, Math.max(maxX - minX, maxY - minY) + 1, 0);
+      var corte2 = corte * corte, theta2 = theta * theta;
+      for (var s = 0; s < n; s++) {
+        var i = lista[s], xi = px[i], yi = py[i], fx = 0, fy = 0, tope = 0;
+        pila[tope++] = raiz;
+        while (tope) {
+          var id = pila[--tope];
+          var bx0 = X0[id], by0 = Y0[id], t = TAM[id];
+          // Distancia del nodo al cuadrante: si todo el cuadrante queda más allá del corte, nada
+          // de lo que tiene adentro empuja.
+          var ex = xi < bx0 ? bx0 - xi : (xi > bx0 + t ? xi - bx0 - t : 0);
+          var ey = yi < by0 ? by0 - yi : (yi > by0 + t ? yi - by0 - t : 0);
+          if (ex * ex + ey * ey > corte2) continue;
+          var dx, dy, d2, d, f;
+          if (HOJA_ES[id]) {
+            for (var k2 = INI[id]; k2 < FIN[id]; k2++) {
+              var j = perm[k2];
+              if (j === i) continue;
+              dx = xi - px[j]; dy = yi - py[j];
+              d2 = dx * dx + dy * dy;
+              if (d2 > corte2) continue;
+              d = Math.sqrt(d2) || 0.01; f = carga / (d2 + SUAVE2);
+              fx += dx / d * f; fy += dy / d * f;
+            }
+            continue;
+          }
+          dx = xi - CX[id]; dy = yi - CY[id];
+          d2 = dx * dx + dy * dy;
+          // Un cuadrante lejano (chico comparado con la distancia a su centro) empuja como un solo
+          // nodo con toda su carga. Si el nodo está adentro del cuadrante, siempre se abre.
+          var adentro = ex === 0 && ey === 0;
+          if (!adentro && t * t < theta2 * d2) {
+            if (d2 <= corte2) { d = Math.sqrt(d2); f = carga * MASA[id] / (d2 + SUAVE2); fx += dx / d * f; fy += dy / d * f; }
+            continue;
+          }
+          for (var q2 = 0; q2 < 4; q2++) {
+            var h = HIJO[4 * id + q2];
+            if (h === -1) continue;
+            if (tope >= pila.length) { var p2 = new Int32Array(pila.length * 2); p2.set(pila); pila = p2; }
+            pila[tope++] = h;
+          }
+        }
+        FX[i] += fx; FY[i] += fy;
+      }
+    }
+    return { acumular: acumular };
+  }
+
+  // ---- Vista agrupada por institución ----
+  // Con cientos de fichas, el ecosistema completo se veía como una bola: 579 ensayos ligados a
+  // varios centros cada uno tejen una malla donde no se distingue nada. Agrupado, cada centro es
+  // un solo nodo con todo lo que tiene ligado, y las líneas dicen cuánto comparte con otros:
+  // ensayos en los que ambos son sede, personas afiliadas a los dos, coautorías entre su gente.
+  // Es la idea del prototipo «Barrios» (prototipos/conexiones/v3-barrios.js) llevada al mapa.
+  //
+  // Aun así, 110 centros tienen 714 pares que comparten algo (FALP sola, con 61). Dibujar todos
+  // devolvía la bola. Se dibujan, para cada centro, sus 3 conexiones más fuertes: el esqueleto de
+  // la red, con el grosor según cuánto comparten. El resto aparece al tocar un centro, que abre
+  // su red real, ficha por ficha.
+  var UMBRAL_AGRUPAR = 250, SOCIOS_POR_CENTRO = 3;
+  function agruparPorInstitucion(nodes, edges) {
+    var insts = nodes.filter(function (n) { return n.tipo === "institucion"; });
+    var esInst = {};
+    insts.forEach(function (n) { esInst[n.id] = true; n._agr = { personas: 0, ensayos: 0, otras: 0, socios: 0 }; });
+    // De qué centros es cada ficha: los que tiene ligados directamente.
+    var centrosDe = {};
+    edges.forEach(function (e) {
+      if (esInst[e.origen] && !esInst[e.destino]) (centrosDe[e.destino] = centrosDe[e.destino] || []).push(e.origen);
+      else if (esInst[e.destino] && !esInst[e.origen]) (centrosDe[e.origen] = centrosDe[e.origen] || []).push(e.destino);
+    });
+    var pares = {};
+    function sumar(a, b, clase) {
+      if (a === b) return;
+      var k = a < b ? a + "\u0000" + b : b + "\u0000" + a;
+      var p = pares[k] || (pares[k] = { a: a < b ? a : b, b: a < b ? b : a, peso: 0, ensayos: 0, personas: 0, coautorias: 0, directos: 0 });
+      p[clase]++; p.peso++;
+    }
+    var sinCentro = 0;
+    nodes.forEach(function (n) {
+      if (esInst[n.id]) return;
+      var cs = centrosDe[n.id];
+      if (!cs) { sinCentro++; return; }
+      cs.forEach(function (c) {
+        var agr = byId[c]._agr;
+        if (n.tipo === "persona") agr.personas++; else if (n.tipo === "ensayo_clinico") agr.ensayos++; else agr.otras++;
+      });
+      for (var i = 0; i < cs.length; i++) for (var j = i + 1; j < cs.length; j++)
+        sumar(cs[i], cs[j], n.tipo === "persona" ? "personas" : "ensayos");
+    });
+    edges.forEach(function (e) {
+      if (esInst[e.origen] && esInst[e.destino]) sumar(e.origen, e.destino, "directos");
+      else if (byId[e.origen] && byId[e.origen].tipo === "persona" && byId[e.destino] && byId[e.destino].tipo === "persona") {
+        // Una coautoría entre gente de dos centros distintos acerca a esos centros.
+        (centrosDe[e.origen] || []).forEach(function (a) {
+          (centrosDe[e.destino] || []).forEach(function (b) { sumar(a, b, "coautorias"); });
+        });
+      }
+    });
+    var todos = Object.keys(pares).map(function (k) { return pares[k]; });
+    var porCentro = {};
+    todos.forEach(function (p) {
+      (porCentro[p.a] = porCentro[p.a] || []).push(p);
+      (porCentro[p.b] = porCentro[p.b] || []).push(p);
+    });
+    var elegidos = {};
+    Object.keys(porCentro).forEach(function (c) {
+      byId[c]._agr.socios = porCentro[c].length;
+      porCentro[c].sort(function (x, y) {
+        return (y.peso - x.peso) || (x.a + x.b < y.a + y.b ? -1 : 1);
+      }).slice(0, SOCIOS_POR_CENTRO).forEach(function (p) { elegidos[p.a + "\u0000" + p.b] = p; });
+    });
+    function describir(p) {
+      var partes = [];
+      if (p.ensayos) partes.push(p.ensayos + (p.ensayos === 1 ? " ensayo en ambos" : " ensayos en ambos"));
+      if (p.personas) partes.push(p.personas + (p.personas === 1 ? " persona en ambos" : " personas en ambos"));
+      if (p.coautorias) partes.push(p.coautorias + (p.coautorias === 1 ? " coautoría" : " coautorías"));
+      if (p.directos) partes.push("vínculo directo");
+      return partes.join(" · ");
+    }
+    var aristas = Object.keys(elegidos).map(function (k) {
+      var p = elegidos[k];
+      return { origen: p.a, destino: p.b, tipo: describir(p), peso: p.peso };
+    });
+    return { nodes: insts, edges: aristas, pares: todos.length, sinCentro: sinCentro, fichas: nodes.length };
+  }
+
+  function resumenCentro(n) {
+    var a = n._agr, partes = [];
+    if (a.personas) partes.push(a.personas + (a.personas === 1 ? " persona" : " personas"));
+    if (a.ensayos) partes.push(a.ensayos + (a.ensayos === 1 ? " ensayo" : " ensayos"));
+    if (a.otras) partes.push(a.otras + " otras fichas");
+    partes.push(a.socios ? "comparte con " + a.socios + (a.socios === 1 ? " centro" : " centros") : "no comparte con otros centros");
+    return partes.join(" · ");
+  }
+
   function buildNetwork() {
     clearTimeout(soltarResaltadoTimer);
     var subset = currentNetworkSubset();
     var nodes = subset.nodes, edges = subset.edges;
     var hint = document.getElementById("network-hint");
     var recortados = 0;
+    nodes.forEach(function (n) { n._agr = null; });
+    var agrupado = null;
+    if (capas.agrupar && !foco && nodes.length > UMBRAL_AGRUPAR &&
+        nodes.some(function (n) { return n.tipo === "institucion"; })) {
+      agrupado = agruparPorInstitucion(nodes, edges);
+      nodes = agrupado.nodes; edges = agrupado.edges;
+    }
     if (nodes.length > TOPE_NODOS_GRAFO) {
       var grado = {};
       nodes.forEach(function (n) { grado[n.id] = 0; });
@@ -4496,7 +4729,12 @@
       ? " Se dibujan los " + TOPE_NODOS_GRAFO + " nodos con más conexiones; " + recortados +
         " quedaron fuera del mapa por tener pocas o ninguna, y siguen en la lista y en su ficha."
       : "";
-    hint.textContent = (nodes.length === entidades.length && !capasApagadas)
+    if (agrupado) hint.textContent = agrupado.fichas + " fichas agrupadas en " + nodes.length + " centros. Cada cuadrado " +
+      "es un centro, más grande cuanto más tiene ligado, unido a los " + SOCIOS_POR_CENTRO + " con que más comparte " +
+      "(ensayos, personas, coautorías; hay " + agrupado.pares + " pares que comparten algo). Toca un centro para " +
+      "ver su red ficha por ficha, o desmarca «Agrupar por centro» abajo." +
+      (agrupado.sinCentro ? " " + agrupado.sinCentro + " fichas sin ningún centro ligado no aparecen acá; siguen en la lista." : "");
+    else hint.textContent = (nodes.length === entidades.length && !capasApagadas)
       ? "Mapa completo — para ver con qué se conecta una persona o institución específica, ciérralo y abre su ficha en la lista: ahí aparece su red directa. Pasa el mouse sobre un nodo para resaltar sus conexiones."
       : "Mostrando " + nodes.length + " de " + entidades.length + " entidades" +
         (capasApagadas ? " (hay capas apagadas abajo)" : " según el filtro/búsqueda activos") +
@@ -4553,6 +4791,8 @@
     // mantiene parecida a la que ya estaba ajustada. El usuario tiene zoom y arrastre para
     // recorrerlo, y el tope de 2,2 evita que los nodos queden diminutos.
     var escala = Math.min(2.2, Math.max(1, Math.sqrt(nodes.length / 180)));
+    // Agrupados, los nodos son pocos pero grandes: el lienzo se dimensiona como si fueran más.
+    if (agrupado) escala = Math.min(2.2, Math.max(1, Math.sqrt(nodes.length / 50)));
     var W = Math.round(720 * escala);
     svg.style.setProperty("--escala-etiqueta", Math.sqrt(escala).toFixed(3));
     // Se acota la PROPORCIÓN, no solo el alto: si el SVG se mide con ancho ~0 (panel oculto,
@@ -4571,14 +4811,17 @@
     // legibles por institución en vez de una nube uniforme.
     var anclas = {};
     var instsPresentes = nodes.filter(function (n) { return n.tipo === "institucion"; });
-    // Instituciones grandes al centro, chicas al borde: reduce el cruce de aristas.
+    // Instituciones grandes al centro, chicas al borde: reduce el cruce de aristas. El grado se
+    // cuenta una vez; contarlo dentro del comparador recorría todas las aristas en cada
+    // comparación (con 3.000 aristas, millones de lecturas por construcción).
+    var gradoInst = {};
+    edges.forEach(function (e) {
+      gradoInst[e.origen] = (gradoInst[e.origen] || 0) + 1;
+      gradoInst[e.destino] = (gradoInst[e.destino] || 0) + 1;
+    });
     instsPresentes.sort(function (a, b) {
-      var ga = 0, gb = 0;
-      edges.forEach(function (e) {
-        if (e.origen === a.id || e.destino === a.id) ga++;
-        if (e.origen === b.id || e.destino === b.id) gb++;
-      });
-      return gb - ga;
+      var d = (gradoInst[b.id] || 0) - (gradoInst[a.id] || 0);
+      return d || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
     });
     instsPresentes.forEach(function (inst, i) {
       var total = instsPresentes.length;
@@ -4590,17 +4833,18 @@
       anclas[inst.id] = { x: W / 2 + Math.cos(ang) * radio, y: H / 2 + Math.sin(ang) * radio };
     });
 
-    // A qué ancla pertenece cada nodo (su primera institución conectada).
+    // A qué ancla pertenece cada nodo (su primera institución conectada). Una sola pasada por las
+    // aristas en orden da la misma "primera" que buscarla nodo por nodo, sin recorrer todas las
+    // aristas una vez por cada nodo.
     var anclaDe = {};
-    nodes.forEach(function (n) {
-      if (n.tipo === "institucion") { anclaDe[n.id] = n.id; return; }
-      var inst = null;
-      for (var k = 0; k < edges.length; k++) {
-        var e = edges[k];
-        var otro = e.origen === n.id ? e.destino : (e.destino === n.id ? e.origen : null);
-        if (otro && byId[otro] && byId[otro].tipo === "institucion" && anclas[otro]) { inst = otro; break; }
-      }
-      if (inst) anclaDe[n.id] = inst;
+    nodes.forEach(function (n) { if (n.tipo === "institucion") anclaDe[n.id] = n.id; });
+    edges.forEach(function (e) {
+      [[e.origen, e.destino], [e.destino, e.origen]].forEach(function (par) {
+        var n = byId[par[0]];
+        if (!n || n.tipo === "institucion" || anclaDe[par[0]] !== undefined) return;
+        var otro = byId[par[1]];
+        if (otro && otro.tipo === "institucion" && anclas[par[1]]) anclaDe[par[0]] = par[1];
+      });
     });
 
     nodes.forEach(function (n, i) {
@@ -4617,99 +4861,93 @@
       n._vx = 0; n._vy = 0;
     });
 
-    // La repulsión comparaba todos contra todos: O(n²). Con 173 nodos no se notaba; con 717
-    // son ~77 millones de cálculos por construcción y el hilo principal queda bloqueado 7,6
-    // segundos — medido, con la página congelada mientras tanto.
-    //
-    // La fuerza es 1500/d². A 110 unidades ya vale 0,12, mientras que la atracción al ancla a
-    // esa misma distancia vale 3,3: los pares lejanos cuestan tiempo y no mueven nada. Se usa
-    // una grilla uniforme del tamaño del corte y cada nodo se compara solo con su celda y las
-    // ocho vecinas.
-    //
-    // Dos detalles que costaron caro al medir: con un corte de 200 la grilla tenía 12 celdas
-    // para 717 nodos —cada celda era medio grafo y no podaba nada, quedó más lento que el
-    // O(n²) original— y usar un objeto con claves dinámicas por iteración era más caro que la
-    // comparación que ahorraba. Por eso el corte es 110 y las celdas son un arreglo plano que
-    // se reutiliza vaciándolo, sin volver a asignar memoria.
-    var CORTE = 110;
-    var COLS = Math.max(1, Math.ceil(W / CORTE)), FILAS = Math.max(1, Math.ceil(H / CORTE));
-    var CELDAS = new Array(COLS * FILAS);
-    for (var c0 = 0; c0 < CELDAS.length; c0++) CELDAS[c0] = [];
-    // El ancla se guarda en el propio nodo. Antes el bucle interno hacía `anclaDe[a.id]` y
-    // `anclaDe[b.id]` en CADA par: son dos búsquedas por hash sobre un objeto de cientos de
-    // claves, unos 4 millones de lecturas por construcción. Medido, la simulación se llevaba
-    // 2.600 ms de los 2.878 totales; la creación del DOM eran 30.
-    nodes.forEach(function (n, idx) { n._i = idx; n._ancla = anclaDe[n.id]; });
-    // Con muchos nodos las anclas por institución ya ubican los barrios, así que la simulación
-    // converge antes; 300 iteraciones estaban ajustadas para 173 nodos.
-    // Las 300 iteraciones estaban ajustadas para ~170 nodos. Con más, el costo sube mucho más
-    // rápido de lo que sugiere el conteo: el propio layout agrupa los nodos alrededor de las
-    // anclas de institución, así que se apilan en pocas celdas y la grilla deja de podar. La
-    // solución correcta sería un quadtree (Barnes-Hut); acá se acota el trabajo, que es lineal
-    // en las iteraciones y se puede comprobar mirando el resultado. Las anclas ya hacen el
-    // trabajo estructural, así que la simulación converge antes de lo que parece.
-    var ITERACIONES = nodes.length > 300 ? 22 : 300;
+    // Repulsión con quadtree: ver crearQuadtree. El corte a 160 unidades reemplaza a la grilla de
+    // celdas de 110, que en la práctica alcanzaba entre 110 y 310 según dónde cayera cada nodo.
+    // Más allá la fuerza vale menos de 0,06 contra 3,3 de la atracción al ancla: no mueve nada.
+    // THETA 0,9: medido contra 0,6 con 766 nodos, 30% menos tiempo y el nodo promedio queda a
+    // 32 unidades (en un lienzo de 1.485) de donde lo dejaba el cálculo más fino.
+    var CORTE = 160, THETA = 0.9, CARGA = 1500;
+    // Agrupados, cada nodo es un centro de hasta 48 unidades de lado: con la repulsión de un nodo
+    // chico, los grandes quedaban encimados en el núcleo y sin lugar para su nombre.
+    if (agrupado) { CORTE = 320; CARGA = 9000; }
+    var N = nodes.length;
+    var PX = new Float64Array(N), PY = new Float64Array(N), FX = new Float64Array(N), FY = new Float64Array(N);
+    var todos = new Int32Array(N), porAncla = {};
+    nodes.forEach(function (n, idx) {
+      n._i = idx; n._ancla = anclaDe[n.id]; todos[idx] = idx;
+      if (n._ancla !== undefined) (porAncla[n._ancla] = porAncla[n._ancla] || []).push(idx);
+    });
+    var barrios = Object.keys(porAncla).map(function (k) { return new Int32Array(porAncla[k]); })
+      .filter(function (l) { return l.length > 1; });
+    var arbol = crearQuadtree(N);
+    // Los extremos de cada arista y el ancla de cada nodo se resuelven una vez, no en cada una de
+    // las 300 iteraciones (serían ~2 millones de búsquedas por id con el mapa completo).
+    var resortes = [];
+    edges.forEach(function (e) {
+      var a = byId[e.origen], b = byId[e.destino];
+      if (a && b && a._i !== undefined && b._i !== undefined && nodes[a._i] === a && nodes[b._i] === b) resortes.push(a, b);
+    });
+    nodes.forEach(function (n) { n._anclaPos = anclas[anclaDe[n.id]] || null; });
+    // Con el quadtree se vuelve a tener hasta 300 iteraciones, las del ajuste original. La grilla
+    // había obligado a bajarlas a 22 con más de 300 nodos. Y al medir apareció algo peor: la
+    // simulación no convergía con ninguna de las dos cifras. Con 766 nodos, la velocidad media de
+    // un nodo empezaba en 360 y crecía hasta decenas de miles; con 22 iteraciones, el mapa
+    // publicado era la posición inicial más unos cuantos empujones al azar. Tres cambios la
+    // estabilizan: la repulsión suavizada a muy corta distancia (ver crearQuadtree), un tope de
+    // velocidad (VMAX) y que el borde frene al nodo en vez de devolverlo. Con eso la velocidad
+    // media baja de forma sostenida de 40 a menos de 2, y la simulación se corta sola cuando el
+    // mapa deja de moverse (~200 iteraciones).
+    var ITERACIONES = 300;
 
+    // Largo de reposo de cada línea. Agrupados, los centros son cuadrados de hasta 60 unidades:
+    // a 70 quedarían tocándose.
+    var REPOSO = agrupado ? 110 : 70;
+    var VMAX = 60, VMAX2 = VMAX * VMAX, mov = 0;
     for (var iter = 0; iter < ITERACIONES; iter++) {
-      for (var v0 = 0; v0 < CELDAS.length; v0++) CELDAS[v0].length = 0;
-      for (var g = 0; g < nodes.length; g++) {
-        var ng = nodes[g];
-        var gx = ng._x / CORTE | 0, gy = ng._y / CORTE | 0;
-        if (gx < 0) gx = 0; else if (gx >= COLS) gx = COLS - 1;
-        if (gy < 0) gy = 0; else if (gy >= FILAS) gy = FILAS - 1;
-        CELDAS[gx * FILAS + gy].push(ng);
+      // Cuando el nodo promedio ya se mueve menos de 0,3 unidades por paso, el mapa está quieto:
+      // medido, seguir hasta 300 lo mueve 0,6 unidades en promedio, nada que se vea, y cuesta un
+      // tercio más de tiempo.
+      if (iter > 40 && mov / N * 0.15 < 0.3) break;
+      mov = 0;
+      for (var p0 = 0; p0 < N; p0++) { PX[p0] = nodes[p0]._x; PY[p0] = nodes[p0]._y; FX[p0] = 0; FY[p0] = 0; }
+      arbol.acumular(todos, PX, PY, FX, FY, CARGA, CORTE, THETA);
+      // Entre nodos del mismo barrio la repulsión es 420, no 1.500: deben quedar juntos.
+      for (var b0 = 0; b0 < barrios.length; b0++) arbol.acumular(barrios[b0], PX, PY, FX, FY, 420 - 1500, CORTE, THETA);
+      for (var p1 = 0; p1 < N; p1++) { nodes[p1]._vx += FX[p1]; nodes[p1]._vy += FY[p1]; }
+      for (var r0 = 0; r0 < resortes.length; r0 += 2) {
+        var ra = resortes[r0], rb = resortes[r0 + 1];
+        var rdx = rb._x - ra._x, rdy = rb._y - ra._y;
+        var dist = Math.sqrt(rdx * rdx + rdy * rdy) || 0.01;
+        var force = (dist - REPOSO) * 0.02;
+        var rfx = (rdx / dist) * force, rfy = (rdy / dist) * force;
+        ra._vx += rfx; ra._vy += rfy; rb._vx -= rfx; rb._vy -= rfy;
       }
-      for (var i = 0; i < nodes.length; i++) {
-        var a = nodes[i];
-        var acx = a._x / CORTE | 0, acy = a._y / CORTE | 0;
-        if (acx < 0) acx = 0; else if (acx >= COLS) acx = COLS - 1;
-        if (acy < 0) acy = 0; else if (acy >= FILAS) acy = FILAS - 1;
-        var x0 = acx > 0 ? acx - 1 : 0, x1 = acx < COLS - 1 ? acx + 1 : COLS - 1;
-        var y0 = acy > 0 ? acy - 1 : 0, y1 = acy < FILAS - 1 ? acy + 1 : FILAS - 1;
-        for (var cx = x0; cx <= x1; cx++) {
-          for (var cy = y0; cy <= y1; cy++) {
-            var vecinos = CELDAS[cx * FILAS + cy];
-            for (var m = 0; m < vecinos.length; m++) {
-              var b = vecinos[m];
-              // Cada par una sola vez, en un orden que no depende de la grilla.
-              if (b._i <= a._i) continue;
-              var dx = a._x - b._x, dy = a._y - b._y;
-              var distSq = dx * dx + dy * dy || 0.01;
-              var dist = Math.sqrt(distSq);
-              // Repulsión más suave entre nodos del mismo barrio: deben quedar juntos.
-              var mismoGrupo = a._ancla !== undefined && a._ancla === b._ancla;
-              var force = (mismoGrupo ? 420 : 1500) / distSq;
-              var fx = (dx / dist) * force, fy = (dy / dist) * force;
-              a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
-            }
-          }
-        }
-      }
-      edges.forEach(function (e) {
-        var a = byId[e.origen], b = byId[e.destino];
-        if (!a || !b || a._x === undefined || b._x === undefined) return;
-        var dx = b._x - a._x, dy = b._y - a._y;
-        var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-        var force = (dist - 70) * 0.02;
-        var fx = (dx / dist) * force, fy = (dy / dist) * force;
-        a._vx += fx; a._vy += fy; b._vx -= fx; b._vy -= fy;
-      });
       nodes.forEach(function (n) {
-        var a = anclas[anclaDe[n.id]];
+        var a = n._anclaPos;
         if (a) {
           // La atracción al ancla es lo que crea el barrio. La institución misma se clava
           // más fuerte para que sea el centro visual de su grupo.
-          var k = n.tipo === "institucion" ? 0.08 : 0.03;
+          // Agrupado, todos los nodos son centros y cada uno es su propia ancla: con la misma
+          // fuerza el mapa sería la espiral de anclas y los centros que comparten mucho no se
+          // acercarían. Más suelta, la posición la deciden las líneas.
+          var k = agrupado ? 0.012 : n.tipo === "institucion" ? 0.08 : 0.03;
           n._vx += (a.x - n._x) * k;
           n._vy += (a.y - n._y) * k;
         } else {
           n._vx += (W / 2 - n._x) * 0.0015;
           n._vy += (H / 2 - n._y) * 0.0015;
         }
+        // Tope de velocidad: ningún nodo avanza más de 9 unidades por paso. Es lo que evita que
+        // un empujón grande lo mande de un lado al otro del lienzo y de vuelta.
+        var v2 = n._vx * n._vx + n._vy * n._vy;
+        if (v2 > VMAX2) { var esc = VMAX / Math.sqrt(v2); n._vx *= esc; n._vy *= esc; }
         n._x += n._vx * 0.15; n._y += n._vy * 0.15;
         n._vx *= 0.82; n._vy *= 0.82;
-        n._x = Math.max(30, Math.min(W - 30, n._x));
-        n._y = Math.max(20, Math.min(H - 20, n._y));
+        // Contra el borde, la velocidad hacia afuera se anula: si no, el nodo sigue empujando
+        // la pared en cada vuelta y el mapa nunca termina de quedarse quieto.
+        if (n._x < 30) { n._x = 30; n._vx = 0; } else if (n._x > W - 30) { n._x = W - 30; n._vx = 0; }
+        if (n._y < 20) { n._y = 20; n._vy = 0; } else if (n._y > H - 20) { n._y = H - 20; n._vy = 0; }
+        mov += Math.abs(n._vx) + Math.abs(n._vy);
       });
     }
 
@@ -4739,6 +4977,9 @@
       if (!a || !b) return;
       var line = document.createElementNS(NS, "line");
       line.setAttribute("class", "edge-line global-edge");
+      // Agrupado, el grosor dice cuánto comparten dos centros: de 1 a ~5 unidades, en escala
+      // logarítmica porque los pesos van de 1 a más de 100.
+      if (e.peso) line.style.strokeWidth = (1 + Math.log(e.peso) / Math.LN2 * 0.6).toFixed(2);
       line.setAttribute("x1", a._x); line.setAttribute("y1", a._y);
       line.setAttribute("x2", b._x); line.setAttribute("y2", b._y);
       line.setAttribute("data-origen", e.origen);
@@ -4777,7 +5018,8 @@
       var typeEl = document.createElement("div"); typeEl.className = "tt-type"; typeEl.textContent = typeLabel[n.tipo] || n.tipo;
       var nameEl = document.createElement("div"); nameEl.className = "tt-name"; nameEl.textContent = n.nombre;
       var metaEl2 = document.createElement("div"); metaEl2.className = "tt-meta";
-      metaEl2.textContent = n.tipo === "tema"
+      metaEl2.textContent = n._agr ? resumenCentro(n)
+        : n.tipo === "tema"
         ? n.subtitulo + " · " + deg + " persona" + (deg === 1 ? "" : "s") + " trabajan en esto"
         : (n.subtitulo ? n.subtitulo + " · " : "") + deg + " conexion" + (deg === 1 ? "" : "es");
       tooltipEl.appendChild(typeEl); tooltipEl.appendChild(nameEl); tooltipEl.appendChild(metaEl2);
@@ -4865,6 +5107,8 @@
       var deg = gradoEnVista[n.id];
       var baseR = n.tipo === "persona" ? 6 : n.tipo === "institucion" ? 8 : n.tipo === "tema" ? 7 : 7;
       var r = baseR + Math.min(deg, 8) * 0.9;
+      // Agrupado, el tamaño es cuántas fichas tiene ligadas el centro (área proporcional).
+      if (n._agr) r = Math.min(24, 5 + Math.sqrt(n._agr.personas + n._agr.ensayos + n._agr.otras) * 1.5);
       var typeClass = (n.tipo === "ensayo_clinico" ? "ensayo" : n.tipo) + "-type";
       // Forma además de color: la identidad de categoría nunca debe depender solo del color
       // (daltonismo, impresión, forced-colors). Círculo=persona, cuadrado=institución,
@@ -4881,7 +5125,8 @@
       }
       circle.setAttribute("tabindex", "0");
       circle.setAttribute("role", "button");
-      circle.setAttribute("aria-label", n.tipo === "tema"
+      circle.setAttribute("aria-label", n._agr ? n.nombre + " — centro: " + resumenCentro(n)
+        : n.tipo === "tema"
         ? "Tema " + n.nombre + " — " + deg + (deg === 1 ? " conexión" : " conexiones") +
           (n._personas ? " (" + n._personas + " persona" + (n._personas === 1 ? "" : "s") + ")" : "")
         : n.nombre + " — " + (typeLabel[n.tipo] || n.tipo) + ", " + deg + " conexion" + (deg === 1 ? "" : "es"));
@@ -4911,7 +5156,9 @@
       label.setAttribute("dominant-baseline", "middle");
       label.textContent = etiquetaGrafo(n);
       svg.appendChild(label);
-      etiquetasPendientes.push({ el: label, x: n._x, y: n._y, r: r, deg: deg, nodo: n });
+      // Agrupado, la etiqueta que primero merece lugar es la del centro con más fichas.
+      etiquetasPendientes.push({ el: label, x: n._x, y: n._y, r: r, nodo: n,
+                                 deg: n._agr ? n._agr.personas + n._agr.ensayos + n._agr.otras : deg });
     });
 
     colocarEtiquetas(etiquetasPendientes, MARCO);
@@ -5033,6 +5280,10 @@
     capas.aristas[k] = !capas.aristas[k];
     b.setAttribute("aria-pressed", String(capas.aristas[k]));
     limpiarPresetActivo();
+    rebuildNetworkIfVisible();
+  });
+  document.getElementById("agrupar-centros").addEventListener("change", function () {
+    capas.agrupar = this.checked;
     rebuildNetworkIfVisible();
   });
   document.getElementById("ocultar-aislados").addEventListener("change", function () {
