@@ -42,26 +42,21 @@ jobs:
           fi
 
           FECHA=$(date +%Y-%m-%d)
-          RAMA="openalex/propuesta-$FECHA"
+          # Una rama por corrida: con una rama por día y push --force, correrlo dos veces el mismo
+          # día borraba los commits de revisión que alguien hubiera hecho sobre la propuesta.
+          RAMA="openalex/propuesta-$FECHA-${{ github.run_id }}"
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$RAMA"
           git add data/pending
           git commit -m "Propuesta de enriquecimiento OpenAlex ($FECHA)"
-          git push -u origin "$RAMA" --force
+          git push -u origin "$RAMA"
 
           # El cuerpo del PR se arma con un script Python en vez de un heredoc de shell:
           # el terminador de un heredoc va en columna 0, y eso cortaría este bloque "run: |"
           # de YAML (GitHub deja de parsear el workflow y desaparece workflow_dispatch).
           python3 scripts/cuerpo_pr.py "data/pending/openalex-$FECHA.json" > /tmp/pr-body.md
 
-          # Si ya hay un PR abierto para esta rama, se actualiza su cuerpo en vez de fallar:
-          # re-correr el workflow el mismo día es el caso normal, no un error.
-          if gh pr view "$RAMA" --json number >/dev/null 2>&1; then
-            gh pr edit "$RAMA" --body-file /tmp/pr-body.md
-            echo "PR ya existente actualizado: $(gh pr view "$RAMA" --json url --jq .url)"
-          else
-            gh pr create \
-              --title "Propuesta OpenAlex — $FECHA" \
-              --body-file /tmp/pr-body.md
-          fi
+          gh pr create \
+            --title "Propuesta OpenAlex — $FECHA (corrida ${{ github.run_id }})" \
+            --body-file /tmp/pr-body.md

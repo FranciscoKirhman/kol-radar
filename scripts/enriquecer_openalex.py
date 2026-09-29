@@ -17,7 +17,9 @@ import json, os, sys, time, urllib.parse, urllib.request, unicodedata, datetime
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 SALIDA_DIR = os.path.join(RAIZ, "data", "pending")
-MAILTO = "kol-radar@example.org"   # pool "polite" de OpenAlex; se reemplaza por el contacto real
+# Sin correo: el "polite pool" de OpenAlex (parámetro mailto) se retiró el 2026-02-13 y el correo
+# se ignora. Lo que da acceso es la API key (OPENALEX_API_KEY, secret del repositorio).
+AGENTE = "kol-radar/1.0 (+https://franciscokirhman.github.io/kol-radar/)"
 API = "https://api.openalex.org/authors"
 
 
@@ -27,13 +29,13 @@ def norm(s):
 
 
 def get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "kol-radar/1.0 (+%s)" % MAILTO})
+    req = urllib.request.Request(url, headers={"User-Agent": AGENTE})
     with urllib.request.urlopen(req, timeout=25) as r:
         return json.load(r)
 
 
 def buscar_autor(nombre, api_key):
-    params = {"search": nombre, "per-page": "10", "mailto": MAILTO}
+    params = {"search": nombre, "per-page": "10"}
     if api_key:
         params["api_key"] = api_key
     return get(API + "?" + urllib.parse.urlencode(params)).get("results", [])
