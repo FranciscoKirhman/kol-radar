@@ -158,9 +158,23 @@ def clave_respuesta(ruta):
     return (ORDEN_RONDAS.index(carpeta), int(lote.group(1)) if lote else 0, archivo)
 
 
+URL_DEIS_LOCAL = [None]
+
+
 def leer_deis(ruta):
     if ruta:
-        texto, recurso = open(ruta, encoding="utf-8").read(), "archivo local " + os.path.basename(ruta)
+        # Con un CSV ya descargado, la fuente citada sigue siendo la URL de datos.gob.cl de donde se
+        # bajó (--deis-url), no el nombre del archivo local: "archivo local deis.csv" no se puede
+        # verificar. Sin --deis-url se conserva la URL que registró la corrida anterior.
+        texto = open(ruta, encoding="utf-8").read()
+        recurso = URL_DEIS_LOCAL[0]
+        if not recurso:
+            try:
+                recurso = json.load(open(SALIDA, encoding="utf-8"))["fuentes"]["deis_minsal"]["recurso"]
+            except (OSError, ValueError, KeyError):
+                recurso = None
+        if not recurso or not recurso.startswith("https://"):
+            raise SystemExit("Con --deis hay que indicar --deis-url con la URL de datos.gob.cl de donde se bajó el CSV.")
     else:
         paquete = json.load(urllib.request.urlopen(DEIS_PAQUETE, timeout=60))["result"]
         csvs = [r for r in paquete["resources"] if (r.get("format") or r["url"]).lower().endswith("csv") or r["url"].endswith(".csv")]
@@ -227,7 +241,9 @@ def direccion_osm_corta(u):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--deis", help="CSV de establecimientos ya descargado")
+    ap.add_argument("--deis-url", help="URL de datos.gob.cl de donde se bajó ese CSV (se cita como fuente)")
     args = ap.parse_args()
+    URL_DEIS_LOCAL[0] = args.deis_url
 
     muestra = json.load(open(MUESTRA, encoding="utf-8"))
     insts = [e for e in muestra["entidades"] if e["tipo"] == "institucion"]

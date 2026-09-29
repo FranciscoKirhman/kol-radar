@@ -5,7 +5,7 @@
   "deis_minsal": {
    "nombre": "Establecimientos de Salud (DEIS, Minsal)",
    "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
-   "recurso": "archivo local deis.csv",
+   "recurso": "https://datos.gob.cl/dataset/3bf4cf7c-f638-4735-9a01-f65faae4beca/resource/2c44d782-3365-44e3-aefb-2c8b8363a1bc/download/establecimientos_20260915.csv",
    "licencia": "CC0"
   },
   "openstreetmap": {

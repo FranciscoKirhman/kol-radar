@@ -981,6 +981,7 @@
       de donde salió. <strong><span class="js-cifra-pendientes">Casi todos los hechos</span> están
       pendientes de revisión humana.</strong> Pueden faltar personas, sobrar duplicados y haber
       identidades sin confirmar. Si algo está mal, lo mejor que podés hacer es avisarnos.
+      <a href="interno.html#fuentes">Ver todas las fuentes, una por una ↗</a>
     </div>
     <a class="beta-cta" id="beta-feedback"
        href="https://github.com/FranciscoKirhman/kol-radar/issues/new"
@@ -6082,6 +6083,9 @@
       var bg = el("button", "exp-grafo-link", "Ver el grafo del ecosistema completo"); bg.type = "button";
       bg.addEventListener("click", function () { mostrarVista("conexiones"); });
       pie.appendChild(bg);
+      pie.appendChild(document.createTextNode(" · "));
+      var lf = el("a", "", "Todas las fuentes"); lf.href = "interno.html#fuentes";
+      pie.appendChild(lf);
       raiz.appendChild(pie);
     }
 
