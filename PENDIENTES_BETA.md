@@ -27,6 +27,21 @@ Fecha de corte: 2026-09-10.
 >   2026 (ver `PUBLICAR.md`).
 > - Siguen igual: las fusiones de identidad y la revisión humana.
 
+> **Actualización 2026-09-28, segunda ronda** (rama `pendientes-beta-2026-09-28`):
+> - **Registro de exclusiones**: hecho (`scripts/exclusiones.py`, `data/exclusiones.json`,
+>   `PROCESO_SOLICITUDES.md`). Guarda huellas con clave, no nombres; todos los scripts que escriben
+>   la muestra lo aplican y CI falla si alguien excluido reaparece. Decide Francisco: dejarlo en el
+>   repo así o fuera, y si se purga el historial de git caso a caso.
+> - **ISP**: `scripts/integrar_isp_inspecciones.py` cruza la planilla por código de protocolo. 8
+>   vínculos de sede, 4 ensayos ganan institución (212 → 208). Los 17 investigadores que nombra
+>   quedan en `data/pending/isp-inspecciones-2026-09-28/investigadores_candidatos.json`, sin ficha.
+> - **Sedes en cola**: 52 → 51.
+> - **Mapa**: quadtree (Barnes-Hut); el tope sube de 400 a 2.500 nodos y la simulación ahora
+>   converge (antes no convergía con ninguna cantidad de iteraciones). "Ecosistema completo" se
+>   agrupa por centro cuando hay más de 250 fichas.
+> - Siguen igual, por ser decisión humana: fusiones de identidad, revisión humana, validación con
+>   MSL, modelo de puntaje, nombres tal como los escribe la fuente.
+
 ## Datos
 
 - **253 sedes sin resolver.** Son textos de sede que ClinicalTrials.gov declara en Chile y que
