@@ -1,9 +1,9 @@
 {
  "fecha": "2026-09-28",
  "instituciones_nuevas": 0,
- "alias_a_instituciones_existentes": 30,
- "vinculos_nuevos_sitio_del_ensayo": 0,
- "ensayos_que_ganaron_institucion": 0,
- "ensayos_sin_institucion_despues": 243,
- "textos_que_siguen_en_cola": 53
+ "alias_a_instituciones_existentes": 31,
+ "vinculos_nuevos_sitio_del_ensayo": 1,
+ "ensayos_que_ganaron_institucion": 1,
+ "ensayos_sin_institucion_despues": 208,
+ "textos_que_siguen_en_cola": 51
 }

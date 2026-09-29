@@ -72,6 +72,9 @@ ALIAS_EXISTENTES = {
     "Instituto de Salud Publica": ("isp", "mismo nombre sin «de Chile»"),
     "Centro de Investigaciones Clinicas": ("cic-vina", "la fuente lo ubica en Viña del Mar: es el nombre del "
                                                        "centro sin la ciudad"),
+    "Centro de Investigaciones ( Site 0511)": (
+        "cic-vina", "la fuente lo ubica en Viña del Mar con el código postal 2540488, el mismo que declara para "
+                    "«Centro de Investigaciones Clinicas» (NCT02003924), que ya estaba ligado a este centro"),
     "Medical Research Limited Society": ("sim", "traducción literal de «Sociedad de Investigaciones Médicas "
                                                 "Limitada»; misma ciudad, Temuco"),
     "Instituto Clinico Oncologico": ("icos", "nombre de ICOS sin «del Sur»; misma ciudad, Temuco"),

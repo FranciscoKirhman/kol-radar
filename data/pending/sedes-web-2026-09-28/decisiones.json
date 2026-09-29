@@ -136,6 +136,11 @@
    "motivo": "la fuente lo ubica en Viña del Mar: es el nombre del centro sin la ciudad"
   },
   {
+   "texto": "Centro de Investigaciones ( Site 0511)",
+   "institucion": "cic-vina",
+   "motivo": "la fuente lo ubica en Viña del Mar con el código postal 2540488, el mismo que declara para «Centro de Investigaciones Clinicas» (NCT02003924), que ya estaba ligado a este centro"
+  },
+  {
    "texto": "Medical Research Limited Society",
    "institucion": "sim",
    "motivo": "traducción literal de «Sociedad de Investigaciones Médicas Limitada»; misma ciudad, Temuco"
@@ -1022,10 +1027,6 @@
    "ensayos": 1
   },
   {
-   "texto": "UROMED",
-   "ensayos": 1
-  },
-  {
    "texto": "Karol Ramírez",
    "ensayos": 1
   },
@@ -1091,10 +1092,6 @@
   },
   {
    "texto": "Sandoz Investigational Site 1",
-   "ensayos": 1
-  },
-  {
-   "texto": "Centro de Investigaciones ( Site 0511)",
    "ensayos": 1
   }
  ]

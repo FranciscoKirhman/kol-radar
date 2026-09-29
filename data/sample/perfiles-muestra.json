@@ -21306,9 +21306,6 @@
           "confianza": "pendiente"
         }
       ],
-      "sedes_pendientes_resolucion": [
-        "Centro de Investigaciones ( Site 0511)"
-      ],
       "titulo_fuente": "A Study to Evaluate Zilovertamab Vedotin (MK-2140) Combination With Rituximab Plus Cyclophosphamide, Doxorubicin, and Prednisone (R-CHP) Versus Rituximab Plus Cyclophosphamide, Doxorubicin, Vincristine, and Prednisone (R-CHOP) in Participants With Previously Untreated DLBCL (MK-2140-010)",
       "titulo_oficial": "A Randomized, Open-Label, Multicenter, Phase 3 Study of Zilovertamab Vedotin (MK-2140) in Combination With R-CHP Versus R-CHOP in Participants With Previously Untreated Diffuse Large B-Cell Lymphoma (DLBCL) (waveLINE-010)",
       "patrocinador": "Merck Sharp & Dohme LLC",
@@ -22790,7 +22787,8 @@
         "Hospital Clinico Vina del Mar /ID# 148502",
         "Centro de Investigaciones Clinicas",
         "Hospital Clínico Viña del Mar",
-        "Centro de Investigaciones Clínicas Viña del Mar (CICVM)"
+        "Centro de Investigaciones Clínicas Viña del Mar (CICVM)",
+        "Centro de Investigaciones ( Site 0511)"
       ],
       "hechos": [
         {
@@ -69261,6 +69259,12 @@
       "tipo": "sitio del ensayo",
       "alias_fuente": "James Lind Centro de Investigación del Cáncer",
       "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "cic-vina",
+      "destino": "nct06717347",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Centro de Investigaciones ( Site 0511)"
     }
   ],
   "campos_confiables": [
