@@ -35,6 +35,8 @@ import urllib.parse
 import urllib.request
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 FECHA = datetime.date.today().isoformat()
 SALIDA = os.path.join(RAIZ, "data", "pending", "clases-ncit-" + FECHA)
@@ -114,6 +116,9 @@ def clasificar(caminos):
 
 
 def main():
+    # Antes de cualquier consulta: si hay exclusiones y falta la clave, se detiene acá y no al
+    # final de la corrida. Ver scripts/exclusiones.py.
+    registro = exclusiones.Registro()
     cache = sys.argv[1] if len(sys.argv) > 1 else None
     if cache:
         os.makedirs(cache, exist_ok=True)
@@ -163,7 +168,7 @@ def main():
         fila.update({"ncit": concepto["code"], "nombre_ncit": concepto["name"], "padres": padres, "clase": clase,
                      "por_ancestro": por})
         decisiones.append(fila)
-    json.dump(base, open(MUESTRA, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    exclusiones.guardar_muestra(base, MUESTRA, registro)
     os.makedirs(SALIDA, exist_ok=True)
     json.dump(decisiones, open(os.path.join(SALIDA, "decisiones.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     cuenta = {}

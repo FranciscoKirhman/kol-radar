@@ -25,6 +25,8 @@ import os
 import sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 DEIS = "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes"
 
@@ -88,6 +90,9 @@ PENDIENTES_CTGOV = {"UROMED": "uromed"}
 
 
 def main():
+    # Antes de cualquier consulta: si hay exclusiones y falta la clave, se detiene acá y no al
+    # final de la corrida. Ver scripts/exclusiones.py.
+    registro = exclusiones.Registro()
     ruta = sys.argv[1] if len(sys.argv) > 1 else None
     if not ruta:
         sys.exit(__doc__)
@@ -179,7 +184,7 @@ def main():
         else:
             del e["sedes_pendientes_resolucion"]
 
-    json.dump(base, open(MUESTRA, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    exclusiones.guardar_muestra(base, MUESTRA, registro)
     print(json.dumps({"vinculos_nuevos": nuevos, "ensayos_con_sede_nueva": len(ensayos_tocados),
                       "centros_sin_tabla": sin_tabla}, ensure_ascii=False, indent=1))
 

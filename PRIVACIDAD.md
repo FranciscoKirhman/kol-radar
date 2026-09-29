@@ -45,7 +45,8 @@ Podés pedir, sin costo:
 - **Portabilidad y bloqueo**, en los términos de la ley.
 
 Escribí a franckirhman@gmail.com indicando tu nombre y qué pedís. Respondemos en un plazo de [N] días
-hábiles. Si retiramos tu ficha, registramos la exclusión para que una actualización futura de los
+corridos [el máximo legal es 30 corridos, prorrogable una vez; ver PROCESO_SOLICITUDES.md]. Si pedís
+bloquear tus datos mientras se resuelve, tu ficha deja de mostrarse en [2 días hábiles]. Si retiramos tu ficha, registramos la exclusión para que una actualización futura de los
 datos no la vuelva a incorporar.
 
 ## Cuánto tiempo se guardan

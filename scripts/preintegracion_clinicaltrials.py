@@ -36,6 +36,7 @@ if not NORM or not CRUDO:
     sys.exit("Definí KOL_NORMALIZADOR y KOL_CRUDO (ver el informe de esta sesión).")
 sys.path.insert(0, os.path.dirname(NORM))
 import normalizar  # noqa: E402
+import exclusiones  # noqa: E402
 
 # ------------------------------------------------------------------ clasificación de contactos
 NO_PERSONA = re.compile(
@@ -67,6 +68,7 @@ def clave_nombre(n):
 
 
 def main():
+    registro = exclusiones.Registro()
     crudo = json.load(open(CRUDO, encoding="utf-8"))
     base = json.load(open(os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json"),
                           encoding="utf-8"))
@@ -148,6 +150,10 @@ def main():
     candidatos, vistos = [], {}
     for c in contactos:
         limpio = limpiar_nombre(c["bruto"])
+        # Quien pidió no aparecer tampoco aparece en la bandeja de revisión, que es pública.
+        excluida = registro.estado_persona(nombre=limpio) if limpio else None
+        if excluida == "exacta":
+            continue
         if not limpio or NO_PERSONA.match(limpio) or len(clave_nombre(limpio)) < 2:
             clase, coincide = "no_persona_utilizable", []
         else:
@@ -184,7 +190,8 @@ def main():
             "rol_declarado_fuente": c["rol_fuente"],
             "nct": c["nct"], "fuente_url": "https://clinicaltrials.gov/study/%s" % c["nct"],
             "sede_texto_original": c["sede_texto"], "institucion_canonica": c["institucion"],
-            "clasificacion": clase,
+            "clasificacion": "posible_coincidencia" if excluida == "posible" else clase,
+            "posible_persona_excluida": excluida == "posible",
             "fichas_existentes_compatibles": [{"id": i, "nombre": n} for i, n in coincide],
             "fecha_recuperacion": FECHA_CONSULTA,
             "confianza": "pendiente",

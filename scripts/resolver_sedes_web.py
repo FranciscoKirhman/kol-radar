@@ -28,9 +28,12 @@ import collections
 import datetime
 import json
 import os
+import sys
 import urllib.parse
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 FECHA = "2026-09-28"
 SALIDA = os.path.join(RAIZ, "data", "pending", "sedes-web-" + FECHA)
@@ -269,6 +272,9 @@ def url_busqueda(texto):
 
 
 def main():
+    # Antes de cualquier consulta: si hay exclusiones y falta la clave, se detiene acá y no al
+    # final de la corrida. Ver scripts/exclusiones.py.
+    registro = exclusiones.Registro()
     base = json.load(open(MUESTRA, encoding="utf-8"))
     ent, vin = base["entidades"], base["vinculos"]
     por_id = {e["id"]: e for e in ent}
@@ -335,7 +341,7 @@ def main():
                 alias.append(texto)
 
     base["actualizado"] = datetime.date.today().isoformat()
-    json.dump(base, open(MUESTRA, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    exclusiones.guardar_muestra(base, MUESTRA, registro)
 
     os.makedirs(SALIDA, exist_ok=True)
     en_cola = collections.Counter(t for e in ent for t in e.get("sedes_pendientes_resolucion") or [])

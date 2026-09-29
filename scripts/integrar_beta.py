@@ -28,6 +28,8 @@ import re
 import sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 PRE = os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-2026-09-09")
 FECHA = "2026-09-09"
@@ -86,6 +88,9 @@ def _ciudad_de(ent, nombre_inst, inst_c):
 
 
 def main():
+    # Antes de cualquier consulta: si hay exclusiones y falta la clave, se detiene acá y no al
+    # final de la corrida. Ver scripts/exclusiones.py.
+    registro = exclusiones.Registro()
     base = json.load(open(MUESTRA, encoding="utf-8"))
     crudo = json.load(open(CRUDO, encoding="utf-8"))
     inst_c = json.load(open(os.path.join(PRE, "instituciones_candidatas.json"), encoding="utf-8"))
@@ -244,6 +249,13 @@ def main():
     for p in pers_c:
         if p["rol_declarado_fuente"] not in ("PRINCIPAL_INVESTIGATOR", "SUB_INVESTIGATOR"):
             continue
+        excluida = registro.estado_persona(nombre=p["nombre_normalizado"])
+        if excluida == "exacta":
+            stats["personas_excluidas_por_solicitud"] += 1
+            continue          # pidió no aparecer: ver scripts/exclusiones.py
+        if excluida == "posible":
+            stats["personas_en_cola_por_posible_exclusion"] += 1
+            continue          # puede ser un homónimo; lo decide una persona, no el script
         if p["fichas_existentes_compatibles"]:
             stats["personas_en_cola_por_posible_fusion"] += 1
             continue          # fusionar es decisión humana: no se toca la ficha existente
@@ -300,7 +312,7 @@ def main():
         "ubicación declarada en Chile. Ningún hecho pasó revisión humana: todos entran como "
         "'pendiente'. Las sedes que no se pudieron ligar a una institución conocida quedan "
         "listadas en el propio ensayo como pendientes de resolución, no descartadas.")
-    json.dump(base, open(MUESTRA, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    exclusiones.guardar_muestra(base, MUESTRA, registro)
 
     c = collections.Counter(e["tipo"] for e in ent)
     print(json.dumps({

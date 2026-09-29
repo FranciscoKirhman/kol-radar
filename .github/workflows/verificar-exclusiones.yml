@@ -1,0 +1,30 @@
+# Comprueba que nadie que pidió salir de KOL Radar vuelva a aparecer en la muestra publicada.
+#
+# Corre en cada push y en cada Pull Request (incluidos los que abre el workflow de OpenAlex).
+# Con el registro vacío pasa sin clave. Con solicitudes registradas necesita el secret
+# KOL_CLAVE_EXCLUSIONES: si falta, FALLA — seguir sin poder leer el registro sería publicar a
+# ciegas. Ver scripts/exclusiones.py y PROCESO_SOLICITUDES.md.
+name: Verificar exclusiones
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Ninguna persona excluida en la muestra
+        env:
+          KOL_CLAVE_EXCLUSIONES: ${{ secrets.KOL_CLAVE_EXCLUSIONES }}
+        run: python3 scripts/exclusiones.py verificar

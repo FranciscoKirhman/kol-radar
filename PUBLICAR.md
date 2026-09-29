@@ -11,7 +11,7 @@ pasos concretos, en orden, con quién decide cada uno.
 | Licencia del código | **MIT** — [`LICENSE`](LICENSE) |
 | Licencia de los datos | **ODbL 1.0** — [`data/LICENSE.md`](data/LICENSE.md). Obligatoria mientras haya coordenadas de OpenStreetMap |
 | Revisión humana de los datos | **No hecha.** 1 hecho confirmado de 2.986 |
-| Canal para que un profesional corrija o retire su ficha | **Correo provisorio** (franckirhman@gmail.com), ya visible en el pie del sitio. Falta el proceso: plazo, registro de exclusiones |
+| Canal para que un profesional corrija o retire su ficha | **Correo provisorio** (franckirhman@gmail.com), ya visible en el pie del sitio. Proceso y registro de exclusiones en [`PROCESO_SOLICITUDES.md`](PROCESO_SOLICITUDES.md) |
 | Aviso de privacidad | Borrador en [`PRIVACIDAD.md`](PRIVACIDAD.md); falta identificar al responsable |
 | Validación con MSL reales (Etapa 6 del charter) | **No hecha** |
 
@@ -38,10 +38,16 @@ Esto no es asesoría legal; el paso 2 lo debería mirar un abogado.
 - ~~Crear un correo o formulario privado~~: hecho el 2026-09-28, `franckirhman@gmail.com` en
   `contacto.canal`. Más adelante conviene un correo dedicado del proyecto: uno personal publicado
   en un sitio recibe spam, y si el proyecto se cede, el correo tiene que poder pasar con él.
-- Definir cómo se responde: plazo (la ley fija plazos), quién revisa, qué se hace con la ficha.
-- **Registro de exclusiones**: hoy no existe. Si alguien pide que se retire su ficha y se borra a
-  mano, la próxima recolección la vuelve a traer. Hace falta una lista de exclusiones que todos
-  los scripts de integración respeten.
+- ~~Definir cómo se responde~~: escrito en [`PROCESO_SOLICITUDES.md`](PROCESO_SOLICITUDES.md) —
+  30 días corridos para responder (prorrogables una vez), 2 días hábiles para bloquear, qué comando
+  corre cada caso y plantillas de respuesta. Falta que el responsable fije cómo se verifica que
+  quien escribe es la persona de la ficha.
+- ~~Registro de exclusiones~~: hecho, `scripts/exclusiones.py` + `data/exclusiones.json`. Todos los
+  scripts que escriben la muestra lo aplican antes de guardar, y CI falla si alguien excluido
+  reaparece. El registro guarda huellas con clave, no nombres. **Decide Francisco**: dejarlo así o
+  llevarlo fuera del repo (las dos opciones, comparadas, en `PROCESO_SOLICITUDES.md`), y crear el
+  secret `KOL_CLAVE_EXCLUSIONES` cuando llegue la primera solicitud.
+- **Decide Francisco, caso a caso**: si se purga el historial de git cuando alguien pide salir.
 
 ### 2. Responsable y aviso de privacidad (decide: Francisco, con abogado) — bloqueante
 - Completar en [`PRIVACIDAD.md`](PRIVACIDAD.md) quién es el responsable del tratamiento.

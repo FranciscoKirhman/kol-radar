@@ -46,6 +46,8 @@ import unicodedata
 import urllib.request
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 FECHA = datetime.date.today().isoformat()
 SALIDA = os.path.join(RAIZ, "data", "pending", "farmacos-ctgov-" + FECHA)
@@ -191,6 +193,9 @@ def slug(t):
 
 
 def main():
+    # Antes de cualquier consulta: si hay exclusiones y falta la clave, se detiene acá y no al
+    # final de la corrida. Ver scripts/exclusiones.py.
+    registro = exclusiones.Registro()
     base = json.load(open(MUESTRA, encoding="utf-8"))
     ent, vin = base["entidades"], base["vinculos"]
 
@@ -361,7 +366,7 @@ def main():
     ent.extend(nuevos)
     vin.extend(nuevos_v)
     base["actualizado"] = FECHA
-    json.dump(base, open(MUESTRA, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    exclusiones.guardar_muestra(base, MUESTRA, registro)
 
     # ------------------------------------------------ 4. artefacto de revisión
     os.makedirs(SALIDA, exist_ok=True)
