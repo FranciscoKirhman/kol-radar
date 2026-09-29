@@ -56,7 +56,7 @@ Esto no es asesoría legal; el paso 2 lo debería mirar un abogado.
 
 ### 3. Revisión humana mínima (decide: Francisco) — muy recomendable
 - La Etapa 3 del charter (revisar fichas a mano) sigue pendiente. Para publicar, al menos las
-  **77 fichas de personas**: identidad (homónimos), afiliación, y que cada hecho diga lo que la
+  **85 fichas de personas** (8 entraron desde el ISP sin revisión de identidad; empezar por ellas y por las 6 que se ligaron por nombre): identidad (homónimos), afiliación, y que cada hecho diga lo que la
   fuente dice. Los ensayos, fármacos e instituciones salen de registros estructurados y tienen
   menos riesgo.
 - Resolver las dos fusiones abiertas (`DECISIONS.md` §5) y los 7 candidatos de

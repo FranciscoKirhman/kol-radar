@@ -1,7 +1,7 @@
 {
   "descripcion": "Muestra de 174 entidades reales (personas, instituciones, ensayos clínicos) sobre cáncer de pulmón en Chile, recolectada de PubMed, ClinicalTrials.gov, SciELO Chile y sitios institucionales (Instituto Nacional del Tórax; SER Chile se intentó pero sus páginas devolvieron HTTP 404 al recolectar, no aportó datos a esta muestra). Cada hecho sigue el modelo hecho/fuente/fecha/confianza definido en README.md, con un campo 'tipo' adicional (publicacion/ensayo_clinico/afiliacion/congreso). Los hechos de tipo publicacion pueden traer 'revista' (nombre de la revista, cuando la fuente lo declara explícitamente -- null si no); los de tipo ensayo_clinico traen 'fase' (dato estructurado real de ClinicalTrials.gov, usado para pesar el puntaje: fase III/IV vale el doble que fase I/II). No se inventa ningún valor de impacto o revista que la fuente no haya declarado. Los vínculos (vinculos[]) conectan entidades entre sí -- son la base de la red de conexiones de la página. Confianza = \"pendiente\" en toda la muestra porque no ha pasado por revisión humana todavía -- esta recolección fue una muestra de prueba, no la validación manual de 30 fichas que el Roadmap de README.md define como Fase 2 (esa etapa sigue sin hacerse formalmente). Este archivo es consumido en vivo por web/index.html y web/interno.html.",
   "generado": "2026-08-09",
-  "actualizado": "2026-09-28",
+  "actualizado": "2026-09-29",
   "especialidad_muestra": "oncología (19 áreas)",
   "contacto": {
     "_como_completar": "Poné en 'canal' UNA de dos cosas y listo — el pie de página del sitio cambia solo, no hay que tocar HTML: (a) una dirección de correo, ej. contacto@tudominio.cl; o (b) la URL https:// de un formulario. Mientras siga en null, el sitio dice honestamente que el canal todavía no existe.",
@@ -74,9 +74,26 @@
           "fuente_url": "https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0717-73482017000300219",
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Mauricio Burotto», como investigador principal del estudio con código de protocolo «MO40628» (NCT03674112) en Bradford Hill Clinical Research Center, en una inspección de 2019.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2019",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Mauricio Burotto Pichun», como investigador principal del estudio con código de protocolo «R3767-ONC-2011» (NCT05352672) en Bradford Hill Clinical Research Center, en una inspección de 2023.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2023",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "nota_identidad": "Los hechos de la planilla de inspecciones del ISP se ligaron a esta ficha por coincidencia de nombre el 2026-09-29, antes de la revisión de identidad; cada uno dice cómo escribe el nombre la planilla."
     },
     {
       "id": "roberto-gonzalez",
@@ -224,9 +241,34 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06765109",
           "fecha": "2026-08",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Pamela Salman», como investigador principal del estudio con código de protocolo «CA209800» (NCT03029780) en Fundación Arturo López Pérez (FALP), en una inspección de 2018.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Pamela Salman», como investigador principal del estudio con código de protocolo «CA224-060» (NCT03662659) en Fundación Arturo López Pérez (FALP), en una inspección de 2019.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2019",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Pamela Salman», como investigador principal del estudio con código de protocolo «CA116-001» (NCT05613088) en Oncovida, en una inspección de 2024.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "nota_identidad": "Los hechos de la planilla de inspecciones del ISP se ligaron a esta ficha por coincidencia de nombre el 2026-09-29, antes de la revisión de identidad; cada uno dice cómo escribe el nombre la planilla."
     },
     {
       "id": "pablo-rodriguez",
@@ -2566,9 +2608,18 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06765109",
           "fecha": "2026-08",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Christian Caglevic», como investigador principal del estudio con código de protocolo «ADXS001-02» (NCT02853604) en Fundación Arturo López Pérez (FALP), en una inspección de 2018.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "nota_identidad": "Los hechos de la planilla de inspecciones del ISP se ligaron a esta ficha por coincidencia de nombre el 2026-09-29, antes de la revisión de identidad; cada uno dice cómo escribe el nombre la planilla."
     },
     {
       "id": "hector-galindo",
@@ -2801,9 +2852,18 @@
           "fecha": "2021-12",
           "confianza": "pendiente",
           "revista": "Journal of Thoracic Oncology"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Osvaldo Arén», como investigador principal del estudio con código de protocolo «CA209-817» (NCT02869789) en Centro Internacional de Estudios Clínicos (CIEC), en una inspección de 2018.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "nota_identidad": "Los hechos de la planilla de inspecciones del ISP se ligaron a esta ficha por coincidencia de nombre el 2026-09-29, antes de la revisión de identidad; cada uno dice cómo escribe el nombre la planilla."
     },
     {
       "id": "francisco-orlandi",
@@ -2836,9 +2896,18 @@
           "fecha": "2023-08-01",
           "confianza": "pendiente",
           "revista": "International Journal of Cancer"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Francisco Orlandi», como investigador principal del estudio con código de protocolo «MK3475-604» (NCT03066778) en Orlandi Oncología, en una inspección de 2018.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "nota_identidad": "Los hechos de la planilla de inspecciones del ISP se ligaron a esta ficha por coincidencia de nombre el 2026-09-29, antes de la revisión de identidad; cada uno dice cómo escribe el nombre la planilla."
     },
     {
       "id": "pablo-munoz-schuffenegger",
@@ -23634,7 +23703,7 @@
       "ciudad": "Temuco",
       "subtitulo_fuente": "https://clinicaltrials.gov/study/NCT05254743",
       "area": "leucemia",
-      "nota_identidad": "Ficha creada a partir de un contacto de sitio de ClinicalTrials.gov: la fuente la nombra y le declara el rol de investigador principal. No hay ORCID ni segunda fuente que confirme la identidad, y no se comprobó su condición de médico, su afiliación vigente ni ningún rol clínico más allá de lo que declara ese registro.",
+      "nota_identidad": "Ficha creada a partir de un contacto de sitio de ClinicalTrials.gov: la fuente la nombra y le declara el rol de investigador principal. No hay ORCID ni segunda fuente que confirme la identidad, y no se comprobó su condición de médico, su afiliación vigente ni ningún rol clínico más allá de lo que declara ese registro. Los hechos de la planilla de inspecciones del ISP se ligaron a esta ficha por coincidencia de nombre el 2026-09-29, antes de la revisión de identidad; cada uno dice cómo escribe el nombre la planilla.",
       "hechos": [
         {
           "tipo": "ensayo_clinico",
@@ -23642,6 +23711,22 @@
           "fase": null,
           "fuente_url": "https://clinicaltrials.gov/study/NCT05254743",
           "fecha": "2026-09-09",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Eduardo Yáñez», como investigador principal del estudio con código de protocolo «MK-7902-005» (NCT03797326) en Sociedad de Investigaciones Médicas (SIM), en una inspección de 2020.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2020",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Eduardo Yáñez Ruiz», como investigador principal del estudio con código de protocolo «QPT-ORE-005» (NCT04498117) en James Lind Centro de Investigación del Cáncer, en una inspección de 2024.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
           "confianza": "pendiente"
         }
       ]
@@ -50646,6 +50731,166 @@
         "Bone Resorption Inhibitor",
         "Malignancy-Associated Hypercalcemia Inhibitor"
       ]
+    },
+    {
+      "id": "fernando-valenzuela",
+      "nombre": "Fernando Valenzuela",
+      "tipo": "persona",
+      "subtitulo": "Centro Internacional de Estudios Clínicos (CIEC)",
+      "subtitulo_fuente": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "ciudad": "Santiago",
+      "area": "melanoma",
+      "nota_identidad": "Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Fernando Valenzuela», como investigador principal del estudio con código de protocolo «CPDR001F2301» (NCT02967692) en Centro Internacional de Estudios Clínicos (CIEC), en una inspección de 2018.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "alejandro-acevedo",
+      "nombre": "Alejandro Acevedo",
+      "tipo": "persona",
+      "subtitulo": "Centro de Investigaciones Clínicas Viña del Mar",
+      "subtitulo_fuente": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "ciudad": "Viña del Mar",
+      "area": "cáncer renal",
+      "nota_identidad": "Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Alejandro Acevedo», como investigador principal del estudio con código de protocolo «WO39210» (NCT03024996) en Centro de Investigaciones Clínicas Viña del Mar, en una inspección de 2018.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "bruno-nervi-nattero",
+      "nombre": "Bruno Nervi Nattero",
+      "tipo": "persona",
+      "subtitulo": "Centro de Cáncer Nuestra Señora de la Esperanza (UC CHRISTUS)",
+      "subtitulo_fuente": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "ciudad": "Santiago",
+      "area": "cáncer de páncreas",
+      "nota_identidad": "Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Bruno Nervi Nattero», como investigador principal del estudio con código de protocolo «AB1537-002» (NCT03985072) en Centro de Cáncer Nuestra Señora de la Esperanza (UC CHRISTUS), en una inspección de 2020.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2020",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "angela-estay",
+      "nombre": "Ángela Estay",
+      "tipo": "persona",
+      "subtitulo": "Centro Oncológico del Norte",
+      "subtitulo_fuente": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "ciudad": "Antofagasta",
+      "area": "cáncer cervicouterino",
+      "nota_identidad": "Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Ángela Estay», como investigador principal del estudio con código de protocolo «C-700-01» (NCT03104699) en Centro Oncológico del Norte, en una inspección de 2020.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2020",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "christine-rojas",
+      "nombre": "Christine Rojas",
+      "tipo": "persona",
+      "subtitulo": "Centro de Investigaciones Clínicas Viña del Mar",
+      "subtitulo_fuente": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "ciudad": "Viña del Mar",
+      "area": "linfoma",
+      "nota_identidad": "Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Christine Rojas», como investigador principal del estudio con código de protocolo «ACT16941» (NCT05179603) en Centro de Investigaciones Clínicas Viña del Mar, en una inspección de 2022.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2022",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "cesar-sanchez",
+      "nombre": "César Sánchez",
+      "tipo": "persona",
+      "subtitulo": "Clínica UC CHRISTUS San Carlos de Apoquindo",
+      "subtitulo_fuente": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "ciudad": "Las Condes",
+      "area": "cáncer de hígado",
+      "nota_identidad": "Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «César Sánchez», como investigador principal del estudio con código de protocolo «CA102-003» (NCT04943900) en Clínica UC CHRISTUS San Carlos de Apoquindo, en una inspección de 2023.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2023",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "patricio-yanez-weber",
+      "nombre": "Patricio Yáñez Weber",
+      "tipo": "persona",
+      "subtitulo": "James Lind Centro de Investigación del Cáncer",
+      "subtitulo_fuente": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "ciudad": "Temuco",
+      "area": "cáncer de ovario",
+      "nota_identidad": "Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Patricio Yáñez Weber», como investigador principal del estudio con código de protocolo «QPT-ORE-005» (NCT04498117) en James Lind Centro de Investigación del Cáncer, en una inspección de 2024.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
+          "confianza": "pendiente"
+        }
+      ]
+    },
+    {
+      "id": "carolina-ibanez",
+      "nombre": "Carolina Ibáñez",
+      "tipo": "persona",
+      "subtitulo": "Centro de Cáncer Nuestra Señora de la Esperanza (UC CHRISTUS)",
+      "subtitulo_fuente": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "ciudad": "Santiago",
+      "area": "cáncer renal",
+      "nota_identidad": "Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.",
+      "hechos": [
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, escrita «Carolina Ibáñez», como investigador principal del estudio con código de protocolo «V940-004» (NCT06307431) en Centro de Cáncer Nuestra Señora de la Esperanza (UC CHRISTUS), en una inspección de 2024.",
+          "fase": null,
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
+          "confianza": "pendiente"
+        }
+      ]
     }
   ],
   "vinculos": [
@@ -69265,6 +69510,226 @@
       "destino": "nct06717347",
       "tipo": "sitio del ensayo",
       "alias_fuente": "Centro de Investigaciones ( Site 0511)"
+    },
+    {
+      "origen": "osvaldo-aren-frontera",
+      "destino": "nct02869789",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "osvaldo-aren-frontera",
+      "destino": "ciec",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Centro Internacional de Estudios Clínicos"
+    },
+    {
+      "origen": "pamela-salman",
+      "destino": "nct03029780",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "pamela-salman",
+      "destino": "falp",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Fundación Arturo López Pérez (FALP)"
+    },
+    {
+      "origen": "christian-caglevic",
+      "destino": "nct02853604",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "christian-caglevic",
+      "destino": "falp",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Fundación Arturo López Pérez"
+    },
+    {
+      "origen": "fernando-valenzuela",
+      "destino": "nct02967692",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "fernando-valenzuela",
+      "destino": "ciec",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Centro Internacional de Estudios Clínicos (CIEC)"
+    },
+    {
+      "origen": "alejandro-acevedo",
+      "destino": "nct03024996",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "alejandro-acevedo",
+      "destino": "cic-vina",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Hospital Clínico Viña del Mar"
+    },
+    {
+      "origen": "francisco-orlandi",
+      "destino": "nct03066778",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "francisco-orlandi",
+      "destino": "orlandi",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Orlandi Oncología (Sociedad Prosalud Montes y Orlandi Ltda.)"
+    },
+    {
+      "origen": "pamela-salman",
+      "destino": "nct03662659",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "mauricio-burotto",
+      "destino": "nct03674112",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "mauricio-burotto",
+      "destino": "bradford-hill",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Bradford Hill Centro de Investigaciones Clínicas"
+    },
+    {
+      "origen": "bruno-nervi-nattero",
+      "destino": "nct03985072",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "bruno-nervi-nattero",
+      "destino": "centro-cancer-uc",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Centro de Cáncer Nuestra Señora de la Esperanza UC"
+    },
+    {
+      "origen": "angela-estay",
+      "destino": "nct03104699",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "angela-estay",
+      "destino": "centro-oncologico-norte",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Centro Oncológico del Norte"
+    },
+    {
+      "origen": "eduardo-ya-ez",
+      "destino": "nct03797326",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "eduardo-ya-ez",
+      "destino": "sim",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Sociedad de Investigaciones Médicas Limitada (SIM), Temuco"
+    },
+    {
+      "origen": "christine-rojas",
+      "destino": "nct05179603",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "christine-rojas",
+      "destino": "cic-vina",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Centro de Investigaciones Clínicas Viña del Mar (CICVM)"
+    },
+    {
+      "origen": "mauricio-burotto",
+      "destino": "nct05352672",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "cesar-sanchez",
+      "destino": "nct04943900",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "cesar-sanchez",
+      "destino": "clinica-uc-san-carlos",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Clínica San Carlos de Apoquindo"
+    },
+    {
+      "origen": "pamela-salman",
+      "destino": "nct05613088",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "pamela-salman",
+      "destino": "oncovida",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Oncovida S.A."
+    },
+    {
+      "origen": "patricio-yanez-weber",
+      "destino": "nct04498117",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "patricio-yanez-weber",
+      "destino": "james-lind",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "James Lind Centro de Investigación del Cáncer"
+    },
+    {
+      "origen": "eduardo-ya-ez",
+      "destino": "nct04498117",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "eduardo-ya-ez",
+      "destino": "james-lind",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "James Lind Centro de Investigación del Cáncer"
+    },
+    {
+      "origen": "carolina-ibanez",
+      "destino": "nct06307431",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "carolina-ibanez",
+      "destino": "centro-cancer-uc",
+      "tipo": "investigador de sitio",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+      "alias_fuente": "Centro Nuestra Señora de la Esperanza-PUC"
     }
   ],
   "campos_confiables": [

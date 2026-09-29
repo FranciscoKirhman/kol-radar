@@ -21,9 +21,12 @@ Reglas:
      inspección que el renglón de arriba (la planilla deja las celdas vacías en vez de repetirlas).
      Heredan el centro, marcado como heredado, pero NO el investigador: el renglón de arriba puede
      nombrar a más de una persona y no se sabe cuál corresponde a cada protocolo.
-  5. Los investigadores NO crean fichas ni se ligan a fichas existentes: van a
-     `investigadores_candidatos.json` con `decision_humana` vacío. Nombrar a una persona exige
-     revisar su identidad antes (PENDIENTES_BETA.md).
+  5. Los investigadores entran a la muestra por decisión explícita de Francisco (2026-09-29: que
+     entren todos, antes de revisar su identidad), y cada ficha lo dice. Se ligan a una ficha
+     existente solo por la tabla MISMA_PERSONA, escrita a mano, con su motivo; el resto crea una
+     ficha nueva. El vínculo es "investigador de sitio" con el ensayo y con el centro, no
+     "afiliación": la planilla dice dónde fue investigador principal un año, no dónde trabaja hoy.
+     `investigadores_candidatos.json` registra qué se hizo con cada uno.
   6. No se copian la fecha, el tipo de visita, el resultado ni el motivo de la inspección. Son una
      evaluación regulatoria del centro y del investigador, no evidencia de actividad clínica, y
      KOL Radar no publica evaluaciones de desempeño (PRIVACIDAD.md).
@@ -101,6 +104,35 @@ MISMA_RED = {
     "hosp-clinico-uc": {"puc"},
 }
 
+# Nombre en la planilla → ficha existente que es la misma persona, con el motivo. Solo nombre y
+# apellido iguales, o el mismo nombre con un apellido más, y un centro que no lo contradice. Es una
+# decisión de identidad tomada sin revisión (ver regla 5): cada ficha ligada lo declara.
+MISMA_PERSONA = {
+    "Pamela Salman": ("pamela-salman", "mismo nombre y apellido"),
+    "Christian Caglevic": ("christian-caglevic", "mismo nombre y apellido; la ficha ya es de FALP, el mismo centro"),
+    "Francisco Orlandi": ("francisco-orlandi", "mismo nombre y apellido; el centro inspeccionado lleva su apellido"),
+    "Mauricio Burotto": ("mauricio-burotto", "mismo nombre y apellido; la ficha ya es de Bradford Hill, el mismo centro"),
+    "Mauricio Burotto Pichun": ("mauricio-burotto", "mismo nombre y apellido más el materno; mismo centro, Bradford Hill"),
+    "Osvaldo Arén": ("osvaldo-aren-frontera", "mismo nombre y primer apellido, poco frecuente; la ficha tiene además el materno"),
+    "Eduardo Yáñez": ("eduardo-ya-ez", "mismo nombre y apellido; la ficha ya es de SIM Temuco, el mismo centro"),
+    "Eduardo Yáñez Ruiz": ("eduardo-ya-ez", "mismo nombre y apellido más el materno; James Lind está en Temuco, "
+                                            "la misma ciudad que SIM, su centro en la ficha"),
+}
+
+# Celdas que nombran a más de una persona. La planilla las escribe en líneas separadas dentro de la
+# misma celda; al colapsar espacios quedan pegadas.
+DIVIDIR = {
+    "Patricio Yáñez Weber Eduardo Yáñez Ruiz": ["Patricio Yáñez Weber", "Eduardo Yáñez Ruiz"],
+}
+
+NOTA_NUEVA = ("Ficha creada a partir de la planilla «Centros de investigación clínica inspeccionados "
+              "2016–2025» del ISP, que nombra a esta persona como investigador principal de un estudio en "
+              "ese centro. Se incorporó el 2026-09-29, antes de la revisión de identidad: no hay ORCID ni "
+              "segunda fuente que la confirme, y no se comprobó su especialidad ni su afiliación actual.")
+NOTA_LIGADA = ("Los hechos de la planilla de inspecciones del ISP se ligaron a esta ficha por coincidencia de "
+               "nombre el 2026-09-29, antes de la revisión de identidad; cada uno dice cómo escribe el nombre la "
+               "planilla.")
+
 MOTIVO_HERENCIA = ("renglón sin centro ni investigador en la planilla, debajo de la inspección del renglón %d: "
                    "se hereda el centro, no el investigador")
 
@@ -120,6 +152,10 @@ def clave_nombre(n):
     s = unicodedata.normalize("NFD", n or "")
     s = "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
     return re.sub(r"[^a-z ]", " ", s).split()
+
+
+def slug(n):
+    return "-".join(clave_nombre(n))
 
 
 def pedir(url, intentos=3):
@@ -200,6 +236,66 @@ def codigos_ctgov(ncts):
                                 "secondary_ids": [x.get("id") for x in im.get("secondaryIdInfos") or []]}
         time.sleep(0.5)
     return out
+
+
+def investigador(nombre, f, iid, nct, ensayo, ent, vin, por_id, registro, stats):
+    """Agrega (o liga) a una persona que la planilla nombra como investigador principal."""
+    cand = {"nombre_en_la_fuente": nombre, "celda_en_la_fuente": f["pi"],
+            "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
+            "centro_en_la_fuente": f["centro"], "institucion": iid, "ensayo": nct,
+            "numero_protocolo": f["protocolo"], "anio": f["anio"], "fuente_url": PLANILLA_ISP,
+            "confianza": "pendiente"}
+    excluida = registro.estado_persona(nombre=nombre)
+    if excluida:
+        # Exacta: pidió no aparecer, y tampoco va a la bandeja, que es pública. Posible: puede ser un
+        # homónimo; no se agrega hasta que una persona lo mire.
+        stats["investigadores_excluidos"] += 1
+        return dict(cand, nombre_en_la_fuente="[omitido]", celda_en_la_fuente="[omitido]",
+                    decision_humana="no se agrega: coincide con una solicitud de exclusión" +
+                    (" (posible homónimo, revisar)" if excluida == "posible" else ""))
+    pid, motivo = MISMA_PERSONA.get(nombre, (None, None))
+    if pid and por_id.get(pid, {}).get("tipo") != "persona":
+        sys.exit("MISMA_PERSONA apunta a una ficha que no existe: " + pid)
+    nueva = not pid
+    if nueva:
+        pid = slug(nombre)
+        previa = por_id.get(pid)
+        if previa and previa.get("nota_identidad") != NOTA_NUEVA:
+            sys.exit("Ya hay una ficha %s que no salió del ISP: decidir en MISMA_PERSONA si es la misma." % pid)
+    hecho = ("La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP nombra a esta persona, "
+             "escrita «%s», como investigador principal del estudio con código de protocolo «%s» (%s) en %s, en "
+             "una inspección de %s." % (nombre, f["protocolo"], nct, por_id[iid]["nombre"] if iid else f["centro"],
+                                         f["anio"]))
+    p = por_id.get(pid)
+    if not p:
+        inst = por_id.get(iid) if iid else None
+        p = {"id": pid, "nombre": nombre, "tipo": "persona",
+             "subtitulo": inst["nombre"] if inst else f["centro"], "subtitulo_fuente": PLANILLA_ISP,
+             "ciudad": (inst or {}).get("ciudad"), "area": ensayo.get("area"),
+             "nota_identidad": NOTA_NUEVA, "hechos": []}
+        ent.append(p)
+        por_id[pid] = p
+    if nueva:
+        cand["decision_humana"] = "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad"
+    else:
+        if NOTA_LIGADA not in (p.get("nota_identidad") or ""):
+            p["nota_identidad"] = ((p.get("nota_identidad") or "") + " " + NOTA_LIGADA).strip()
+        cand["decision_humana"] = ("ligado a la ficha existente %s el 2026-09-29, antes de revisar la identidad: %s"
+                                   % (pid, motivo))
+    cand["ficha"] = pid
+    cand["revisor"] = "Francisco (decisión general: que entren todos)"
+    cand["fecha_decision"] = "2026-09-29"
+    if not any(h.get("fuente_url") == PLANILLA_ISP and h.get("hecho") == hecho for h in p["hechos"]):
+        p["hechos"].append({"tipo": "ensayo_clinico", "hecho": hecho, "fase": None, "fuente_url": PLANILLA_ISP,
+                            "fecha": f["anio"], "confianza": "pendiente"})
+    ya = {(v["origen"], v["destino"], v["tipo"]) for v in vin}
+    for destino, alias in ((nct.lower(), None), (iid, f["centro"])):
+        if destino and (pid, destino, "investigador de sitio") not in ya:
+            v = {"origen": pid, "destino": destino, "tipo": "investigador de sitio", "fuente_url": PLANILLA_ISP}
+            if alias:
+                v["alias_fuente"] = alias
+            vin.append(v)
+    return cand
 
 
 def main():
@@ -298,23 +394,8 @@ def main():
                                 "fase": next((h.get("fase") for h in e["hechos"] if h.get("fase")), None),
                                 "fuente_url": PLANILLA_ISP, "fecha": f["anio"], "confianza": "pendiente"})
 
-        if f["pi"]:
-            excluida = registro.estado_persona(nombre=f["pi"])
-            if excluida == "exacta":
-                continue       # pidió no aparecer: tampoco en la bandeja de revisión, que es pública
-            t = clave_nombre(f["pi"])
-            compatibles = [{"id": p["id"], "nombre": p["nombre"]} for p in ent if p["tipo"] == "persona"
-                           and clave_nombre(p["nombre"])[:1] == t[:1]
-                           and set(clave_nombre(p["nombre"])[1:]) & set(t[1:])]
-            candidatos.append({
-                "nombre_en_la_fuente": f["pi"],
-                "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-                "puede_ser_mas_de_una_persona": len(t) > 4,
-                "centro_en_la_fuente": f["centro"], "institucion": iid, "ensayo": hits[0],
-                "numero_protocolo": f["protocolo"], "anio": f["anio"], "fuente_url": PLANILLA_ISP,
-                "fichas_existentes_compatibles": compatibles,
-                "posible_persona_excluida": excluida == "posible",
-                "confianza": "pendiente", "decision_humana": "", "revisor": "", "fecha_decision": ""})
+        for nombre in DIVIDIR.get(f["pi"], [f["pi"]] if f["pi"] else []):
+            candidatos.append(investigador(nombre, f, iid, hits[0], e, ent, vin, por_id, registro, stats))
 
     base["actualizado"] = FECHA
     exclusiones.guardar_muestra(base, MUESTRA, registro)
@@ -335,8 +416,12 @@ def main():
         "hechos_del_isp": sum(1 for e in ensayos for h in e["hechos"] if h.get("fuente_url") == PLANILLA_ISP),
         "ensayos_cuya_unica_institucion_viene_del_isp": solo_isp,
         "ensayos_sin_institucion": sum(1 for e in ensayos if e["id"] not in con_inst),
-        "investigadores_candidatos": len(candidatos),
-        "de_ellos_con_ficha_compatible": sum(1 for c in candidatos if c["fichas_existentes_compatibles"]),
+        "investigadores_nombrados": len(candidatos),
+        "fichas_creadas_desde_el_isp": sorted(e["id"] for e in ent if e["tipo"] == "persona"
+                                              and e.get("nota_identidad") == NOTA_NUEVA),
+        "fichas_existentes_ligadas": sorted({c["ficha"] for c in candidatos if c.get("ficha")} -
+                                            {e["id"] for e in ent if e.get("nota_identidad") == NOTA_NUEVA}),
+        "omitidos_por_exclusion": stats["investigadores_excluidos"],
         "columnas_no_copiadas": ["Fecha de Inspección", "Tipo de Visita", "Resultado de Inspección", "Motivo"],
     }
     os.makedirs(SALIDA, exist_ok=True)

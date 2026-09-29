@@ -32,8 +32,9 @@ Fecha de corte: 2026-09-10.
 >   fuera del repo y guarda huellas con clave, no nombres; todos los scripts que escriben la muestra
 >   lo aplican. En supresión y oposición se purga el historial de git (decisiones del 2026-09-29).
 > - **ISP**: `scripts/integrar_isp_inspecciones.py` cruza la planilla por código de protocolo. 8
->   vínculos de sede, 4 ensayos ganan institución (212 → 208). Los 17 investigadores que nombra
->   quedan en `data/pending/isp-inspecciones-2026-09-28/investigadores_candidatos.json`, sin ficha.
+>   vínculos de sede, 4 ensayos ganan institución (212 → 208). Los 18 investigadores que nombra
+>   entraron el 2026-09-29 **antes de la revisión de identidad**, por decisión de Francisco: 8 fichas
+>   nuevas y 6 existentes ligadas por nombre (`data/pending/isp-inspecciones-2026-09-29/`).
 > - **Sedes en cola**: 52 → 51.
 > - **Mapa**: quadtree (Barnes-Hut); el tope sube de 400 a 2.500 nodos y la simulación ahora
 >   converge (antes no convergía con ninguna cantidad de iteraciones). "Ecosistema completo" se

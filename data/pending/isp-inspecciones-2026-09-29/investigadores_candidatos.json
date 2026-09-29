@@ -1,336 +1,290 @@
 [
  {
   "nombre_en_la_fuente": "Osvaldo Arén",
+  "celda_en_la_fuente": "Osvaldo Arén",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Centro Internacional de Estudios Clínicos",
   "institucion": "ciec",
   "ensayo": "NCT02869789",
   "numero_protocolo": "CA209-817",
   "anio": "2018",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "osvaldo-aren-frontera",
-    "nombre": "Osvaldo Arén Frontera"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente osvaldo-aren-frontera el 2026-09-29, antes de revisar la identidad: mismo nombre y primer apellido, poco frecuente; la ficha tiene además el materno",
+  "ficha": "osvaldo-aren-frontera",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Pamela Salman",
+  "celda_en_la_fuente": "Pamela Salman",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Fundación Arturo López Pérez (FALP)",
   "institucion": "falp",
   "ensayo": "NCT03029780",
   "numero_protocolo": "CA209800",
   "anio": "2018",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "pamela-salman",
-    "nombre": "Pamela Salman"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente pamela-salman el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido",
+  "ficha": "pamela-salman",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Christian Caglevic",
+  "celda_en_la_fuente": "Christian Caglevic",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Fundación Arturo López Pérez",
   "institucion": "falp",
   "ensayo": "NCT02853604",
   "numero_protocolo": "ADXS001-02",
   "anio": "2018",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "christian-caglevic",
-    "nombre": "Christian Caglevic"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente christian-caglevic el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido; la ficha ya es de FALP, el mismo centro",
+  "ficha": "christian-caglevic",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Fernando Valenzuela",
+  "celda_en_la_fuente": "Fernando Valenzuela",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Centro Internacional de Estudios Clínicos (CIEC)",
   "institucion": "ciec",
   "ensayo": "NCT02967692",
   "numero_protocolo": "CPDR001F2301",
   "anio": "2018",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad",
+  "ficha": "fernando-valenzuela",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Alejandro Acevedo",
+  "celda_en_la_fuente": "Alejandro Acevedo",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Hospital Clínico Viña del Mar",
   "institucion": "cic-vina",
   "ensayo": "NCT03024996",
   "numero_protocolo": "WO39210",
   "anio": "2018",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad",
+  "ficha": "alejandro-acevedo",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Francisco Orlandi",
+  "celda_en_la_fuente": "Francisco Orlandi",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Orlandi Oncología (Sociedad Prosalud Montes y Orlandi Ltda.)",
   "institucion": "orlandi",
   "ensayo": "NCT03066778",
   "numero_protocolo": "MK3475-604",
   "anio": "2018",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "francisco-orlandi",
-    "nombre": "Francisco Orlandi"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente francisco-orlandi el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido; el centro inspeccionado lleva su apellido",
+  "ficha": "francisco-orlandi",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Pamela Salman",
+  "celda_en_la_fuente": "Pamela Salman",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Fundación Arturo López Pérez (FALP)",
   "institucion": "falp",
   "ensayo": "NCT03662659",
   "numero_protocolo": "CA224-060",
   "anio": "2019",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "pamela-salman",
-    "nombre": "Pamela Salman"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente pamela-salman el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido",
+  "ficha": "pamela-salman",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Mauricio Burotto",
+  "celda_en_la_fuente": "Mauricio Burotto",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Bradford Hill Centro de Investigaciones Clínicas",
   "institucion": "bradford-hill",
   "ensayo": "NCT03674112",
   "numero_protocolo": "MO40628",
   "anio": "2019",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "mauricio-burotto",
-    "nombre": "Mauricio Burotto"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente mauricio-burotto el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido; la ficha ya es de Bradford Hill, el mismo centro",
+  "ficha": "mauricio-burotto",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Bruno Nervi Nattero",
+  "celda_en_la_fuente": "Bruno Nervi Nattero",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Centro de Cáncer Nuestra Señora de la Esperanza UC",
   "institucion": "centro-cancer-uc",
   "ensayo": "NCT03985072",
   "numero_protocolo": "AB1537-002",
   "anio": "2020",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad",
+  "ficha": "bruno-nervi-nattero",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Ángela Estay",
+  "celda_en_la_fuente": "Ángela Estay",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Centro Oncológico del Norte",
   "institucion": "centro-oncologico-norte",
   "ensayo": "NCT03104699",
   "numero_protocolo": "C-700-01",
   "anio": "2020",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad",
+  "ficha": "angela-estay",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Eduardo Yáñez",
+  "celda_en_la_fuente": "Eduardo Yáñez",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Sociedad de Investigaciones Médicas Limitada (SIM), Temuco",
   "institucion": "sim",
   "ensayo": "NCT03797326",
   "numero_protocolo": "MK-7902-005",
   "anio": "2020",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "eduardo-ya-ez",
-    "nombre": "Eduardo Yañez"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente eduardo-ya-ez el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido; la ficha ya es de SIM Temuco, el mismo centro",
+  "ficha": "eduardo-ya-ez",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Christine Rojas",
+  "celda_en_la_fuente": "Christine Rojas",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Centro de Investigaciones Clínicas Viña del Mar (CICVM)",
   "institucion": "cic-vina",
   "ensayo": "NCT05179603",
   "numero_protocolo": "ACT16941",
   "anio": "2022",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad",
+  "ficha": "christine-rojas",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Mauricio Burotto Pichun",
+  "celda_en_la_fuente": "Mauricio Burotto Pichun",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Centro de investigación clínica Bradford Hill",
   "institucion": "bradford-hill",
   "ensayo": "NCT05352672",
   "numero_protocolo": "R3767-ONC-2011",
   "anio": "2023",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "mauricio-burotto",
-    "nombre": "Mauricio Burotto"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente mauricio-burotto el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido más el materno; mismo centro, Bradford Hill",
+  "ficha": "mauricio-burotto",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "César Sánchez",
+  "celda_en_la_fuente": "César Sánchez",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Clínica San Carlos de Apoquindo",
   "institucion": "clinica-uc-san-carlos",
   "ensayo": "NCT04943900",
   "numero_protocolo": "CA102-003",
   "anio": "2023",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad",
+  "ficha": "cesar-sanchez",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Pamela Salman",
+  "celda_en_la_fuente": "Pamela Salman",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Oncovida S.A.",
   "institucion": "oncovida",
   "ensayo": "NCT05613088",
   "numero_protocolo": "CA116-001",
   "anio": "2024",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [
-   {
-    "id": "pamela-salman",
-    "nombre": "Pamela Salman"
-   }
-  ],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ligado a la ficha existente pamela-salman el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido",
+  "ficha": "pamela-salman",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
-  "nombre_en_la_fuente": "Patricio Yáñez Weber Eduardo Yáñez Ruiz",
+  "nombre_en_la_fuente": "Patricio Yáñez Weber",
+  "celda_en_la_fuente": "Patricio Yáñez Weber Eduardo Yáñez Ruiz",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": true,
   "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
   "institucion": "james-lind",
   "ensayo": "NCT04498117",
   "numero_protocolo": "QPT-ORE-005",
   "anio": "2024",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad",
+  "ficha": "patricio-yanez-weber",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
+ },
+ {
+  "nombre_en_la_fuente": "Eduardo Yáñez Ruiz",
+  "celda_en_la_fuente": "Patricio Yáñez Weber Eduardo Yáñez Ruiz",
+  "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "institucion": "james-lind",
+  "ensayo": "NCT04498117",
+  "numero_protocolo": "QPT-ORE-005",
+  "anio": "2024",
+  "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+  "confianza": "pendiente",
+  "decision_humana": "ligado a la ficha existente eduardo-ya-ez el 2026-09-29, antes de revisar la identidad: mismo nombre y apellido más el materno; James Lind está en Temuco, la misma ciudad que SIM, su centro en la ficha",
+  "ficha": "eduardo-ya-ez",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_en_la_fuente": "Carolina Ibáñez",
+  "celda_en_la_fuente": "Carolina Ibáñez",
   "rol_declarado_fuente": "investigador principal del estudio en el centro inspeccionado",
-  "puede_ser_mas_de_una_persona": false,
   "centro_en_la_fuente": "Centro Nuestra Señora de la Esperanza-PUC",
   "institucion": "centro-cancer-uc",
   "ensayo": "NCT06307431",
   "numero_protocolo": "V940-004",
   "anio": "2024",
   "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
-  "fichas_existentes_compatibles": [],
-  "posible_persona_excluida": false,
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "ficha nueva, agregada el 2026-09-29 antes de revisar la identidad",
+  "ficha": "carolina-ibanez",
+  "revisor": "Francisco (decisión general: que entren todos)",
+  "fecha_decision": "2026-09-29"
  }
 ]
