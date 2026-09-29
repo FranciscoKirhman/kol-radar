@@ -100,6 +100,7 @@ para revisión:
 | `clasificar_farmacos_ncit.py` | Tipo de cada fármaco según el NCI Thesaurus. Se corre **después** del anterior, que recrea los fármacos |
 | `resolver_sedes_web.py` | Liga textos de sede a instituciones, con evidencia buscada a mano |
 | `recolectar_estudiosclinicos_cl.py` + `integrar_estudiosclinicos_cl.py` | Centros que la CIF nombra para ensayos que reclutan |
+| `integrar_isp_inspecciones.py` | Centros que el ISP inspeccionó, por código de protocolo (requiere `pip install xlrd`) |
 | `consolidar_ubicaciones.py` | Dirección y punto de cada institución (DEIS, sitios oficiales, OpenStreetMap) |
 | `enriquecer_openalex.py` | Propuestas de afiliación desde OpenAlex (vía PR, nunca directo) |
 

@@ -1,0 +1,30 @@
+{
+ "fecha": "2026-09-28",
+ "fuente": {
+  "pagina": "https://www.ispch.gob.cl/anamed/establecimientos-farmaceuticos-y-cosmeticos/centros-de-investigacion-clinica/",
+  "planilla": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+  "sha256": "aaf58b90e5313a39c49fb69f694f213d648dbcbf658ecd388832c89070873807",
+  "renglones_con_protocolo": 138
+ },
+ "renglones_que_calzan_con_un_ensayo": 24,
+ "vinculos_del_isp": 8,
+ "corroboran_un_vinculo_de_otra_fuente": 16,
+ "centros_sin_tabla": 0,
+ "codigos_ambiguos": 0,
+ "hechos_del_isp": 24,
+ "ensayos_cuya_unica_institucion_viene_del_isp": [
+  "NCT02853604",
+  "NCT02869789",
+  "NCT02967692",
+  "NCT03662659"
+ ],
+ "ensayos_sin_institucion": 208,
+ "investigadores_candidatos": 17,
+ "de_ellos_con_ficha_compatible": 9,
+ "columnas_no_copiadas": [
+  "Fecha de Inspección",
+  "Tipo de Visita",
+  "Resultado de Inspección",
+  "Motivo"
+ ]
+}

@@ -1,0 +1,386 @@
+[
+ {
+  "fila_planilla": 44,
+  "anio": "2018",
+  "centro_en_la_fuente": "Centro Internacional de Estudios Clínicos",
+  "centro_heredado": null,
+  "numero_protocolo": "CA209-817",
+  "solicitante": "Bristol - Myers Squibb de Chile",
+  "nombre_estudio_en_la_fuente": "Estudio de fase IIIB/IV de seguridad de una misma dosis de nivolumab en combinación con ipilimumab en participantes con neoplasias malignas avanzadas.",
+  "ensayos": [
+   "NCT02869789"
+  ],
+  "patrocinador_ctgov": "Bristol-Myers Squibb",
+  "institucion": "ciec",
+  "motivo_alias": "mismo nombre",
+  "decision": "vínculo del ISP: sitio del ensayo"
+ },
+ {
+  "fila_planilla": 46,
+  "anio": "2018",
+  "centro_en_la_fuente": "Fundación Arturo López Pérez (FALP)",
+  "centro_heredado": null,
+  "numero_protocolo": "CA209800",
+  "solicitante": "Bristol-Myers Squibb de Chile",
+  "nombre_estudio_en_la_fuente": "Estudio de fase II, randomizado, de múltiples regímenes de administración para nivolumab más ipilimumab en pacientes con carcinoma de células renales.",
+  "ensayos": [
+   "NCT03029780"
+  ],
+  "patrocinador_ctgov": "Bristol-Myers Squibb",
+  "institucion": "falp",
+  "motivo_alias": "mismo nombre, con la sigla",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 50,
+  "anio": "2018",
+  "centro_en_la_fuente": "Fundación Arturo López Pérez",
+  "centro_heredado": null,
+  "numero_protocolo": "ADXS001-02",
+  "solicitante": "Inventiv Health Clinical Chile S.A.",
+  "nombre_estudio_en_la_fuente": "Estudio de fase 3 de ADXS11-001 administrado después de la quimiorradiación como tratamiento adyuvante para el cáncer de cuello uterino localmente avanzado de alto riesgo: AIM2CERV (Advaxis IMmunotheraphy 2 para la recidiva Cervical).",
+  "ensayos": [
+   "NCT02853604"
+  ],
+  "patrocinador_ctgov": "Advaxis, Inc.",
+  "institucion": "falp",
+  "motivo_alias": "mismo nombre",
+  "decision": "vínculo del ISP: sitio del ensayo"
+ },
+ {
+  "fila_planilla": 55,
+  "anio": "2018",
+  "centro_en_la_fuente": "Centro Internacional de Estudios Clínicos (CIEC)",
+  "centro_heredado": null,
+  "numero_protocolo": "CPDR001F2301",
+  "solicitante": "Parexel International Holding BV y Cía. Ltda.",
+  "nombre_estudio_en_la_fuente": "Estudio aleatorizado, doble ciego, controlado con placebo, fase III, que compara la combinación de PDR001, dabrafenib y trametinib frente a la combinación de placebo, dabrafenib y trametinib en pacientes con melanoma no resecable o metastásico con mutación BRAF V600 que no recibieron tratamiento previo.",
+  "ensayos": [
+   "NCT02967692"
+  ],
+  "patrocinador_ctgov": "Novartis Pharmaceuticals",
+  "institucion": "ciec",
+  "motivo_alias": "mismo nombre, con la sigla",
+  "decision": "vínculo del ISP: sitio del ensayo"
+ },
+ {
+  "fila_planilla": 56,
+  "anio": "2018",
+  "centro_en_la_fuente": "Hospital Clínico Viña del Mar",
+  "centro_heredado": null,
+  "numero_protocolo": "WO39210",
+  "solicitante": "Roche Chile Ltda.",
+  "nombre_estudio_en_la_fuente": "Estudio fase III, multicéntrico, aleatorizado controlado con placebo, doble ciego de Atezolizumab (anticuerpo Anti-PD-L1) como terapia adyuvante en pacientes con carcinoma de células renales con alto riesgo de desarrollar metástasis después de la nefrectomía.",
+  "ensayos": [
+   "NCT03024996"
+  ],
+  "patrocinador_ctgov": "Hoffmann-La Roche",
+  "institucion": "cic-vina",
+  "motivo_alias": "ClinicalTrials.gov ya escribe «Hospital Clinico Vina del Mar» para este centro, y ese texto ya estaba ligado a esta ficha",
+  "decision": "vínculo del ISP: sitio del ensayo"
+ },
+ {
+  "fila_planilla": 57,
+  "anio": "2018",
+  "centro_en_la_fuente": "Orlandi Oncología (Sociedad Prosalud Montes y Orlandi Ltda.)",
+  "centro_heredado": null,
+  "numero_protocolo": "MK3475-604",
+  "solicitante": "Merck Sharp & Dhome (I.A.) LLC",
+  "nombre_estudio_en_la_fuente": "Estudio de fase III, randomizado, a doble ciego, controlado con placebo, de pembrolizumab (MK-3475/SCH900475) en combinación con etopósido/platino (cisplatino o carboplatino) para el tratamiento de primera línea de pacientes con cáncer de pulmón microcítico en estadio extendido (KEYNOTE-604).",
+  "ensayos": [
+   "NCT03066778"
+  ],
+  "patrocinador_ctgov": "Merck Sharp & Dohme LLC",
+  "institucion": "orlandi",
+  "motivo_alias": "nombre comercial seguido de su razón social",
+  "decision": "vínculo del ISP: sitio del ensayo"
+ },
+ {
+  "fila_planilla": 79,
+  "anio": "2019",
+  "centro_en_la_fuente": "Fundación Arturo López Pérez (FALP)",
+  "centro_heredado": null,
+  "numero_protocolo": "CA224-060",
+  "solicitante": "Bristol - Myers Squibb De Chile",
+  "nombre_estudio_en_la_fuente": "Estudio clínico aleatorizado, de diseño abierto, de fase II de relatlimab (ANTI-LAG-3) más nivolumab en combinación con quimioterapia versus nivolumab en combinación con quimioterapia como tratamiento de primera línea en pacientes con adenocarcinoma gástrico o de la unión gastroesofágica.",
+  "ensayos": [
+   "NCT03662659"
+  ],
+  "patrocinador_ctgov": "Bristol-Myers Squibb",
+  "institucion": "falp",
+  "motivo_alias": "mismo nombre, con la sigla",
+  "decision": "vínculo del ISP: sitio del ensayo"
+ },
+ {
+  "fila_planilla": 80,
+  "anio": "2019",
+  "centro_en_la_fuente": "Bradford Hill Centro de Investigaciones Clínicas",
+  "centro_heredado": null,
+  "numero_protocolo": "MO40628",
+  "solicitante": "Merck Sharp & Dohme (I.A.) LLC",
+  "nombre_estudio_en_la_fuente": "Estudio aleatorizado, multicéntrico, abierto, cruzado, para evaluar la preferencia y la satisfacción del paciente con respecto a la administración subcutánea de la combinación de dosis fija de pertuzumab y trastuzumab en pacientes con cáncer de mama her2 positivo temprano.",
+  "ensayos": [
+   "NCT03674112"
+  ],
+  "patrocinador_ctgov": "Hoffmann-La Roche",
+  "institucion": "bradford-hill",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 81,
+  "anio": "2020",
+  "centro_en_la_fuente": "Centro de Cáncer Nuestra Señora de la Esperanza UC",
+  "centro_heredado": null,
+  "numero_protocolo": "AB1537-002",
+  "solicitante": "ANDES BIOTECHNOLOGIES S.p.A.",
+  "nombre_estudio_en_la_fuente": "Ensayo clínico de fase 1b que evalúa la seguridad y tolerabilidad de andes-1537 administrado por vía subcutánea en cohortes simultáneas de pacientes con distintos tipos de tumor, refractarios o resistentes a terapia estándar o para los cuales no haya terapia estándar disponible.",
+  "ensayos": [
+   "NCT03985072"
+  ],
+  "patrocinador_ctgov": "Andes Biotechnologies",
+  "institucion": "centro-cancer-uc",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya está ligado a puc, de la misma red; otro vínculo contaría dos veces la misma sede"
+ },
+ {
+  "fila_planilla": 84,
+  "anio": "2020",
+  "centro_en_la_fuente": "Centro Oncológico del Norte",
+  "centro_heredado": null,
+  "numero_protocolo": "C-700-01",
+  "solicitante": "COVANCE CHILE SERVICIOS CLÍNICOS LTDA.",
+  "nombre_estudio_en_la_fuente": "Estudio en fase 1/2, sin enmascaramiento, de dosis múltiples crecientes para investigar la seguridad, tolerabilidad, farmacocinética y actividad biológica y clínica de AGEN2034 en sujetos con metástasis o tumores sólidos avanzados y localizados, con expansión a una segunda línea de cáncer cervical.",
+  "ensayos": [
+   "NCT03104699"
+  ],
+  "patrocinador_ctgov": "Agenus Inc.",
+  "institucion": "centro-oncologico-norte",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 85,
+  "anio": "2020",
+  "centro_en_la_fuente": "Sociedad de Investigaciones Médicas Limitada (SIM), Temuco",
+  "centro_heredado": null,
+  "numero_protocolo": "MK-7902-005",
+  "solicitante": "Merck Sharp & Dhome (I.A.) LLC Agencia en Chile",
+  "nombre_estudio_en_la_fuente": "Estudio de fase 2, de etiqueta abierta, multicéntrico de lenvatinib (E7080/MK-7902) más pembrolizumab (MK-3475) en sujetos con tumores sólidos seleccionados previamente tratados (LEAP 005).",
+  "ensayos": [
+   "NCT03797326"
+  ],
+  "patrocinador_ctgov": "Merck Sharp & Dohme LLC",
+  "institucion": "sim",
+  "motivo_alias": "mismo nombre y ciudad",
+  "decision": "vínculo del ISP: sitio del ensayo"
+ },
+ {
+  "fila_planilla": 98,
+  "anio": "2022",
+  "centro_en_la_fuente": "Centro de Investigaciones Clínicas Viña del Mar (CICVM)",
+  "centro_heredado": null,
+  "numero_protocolo": "ACT16941",
+  "solicitante": "Sanofi-Aventis de Chile S.A.",
+  "nombre_estudio_en_la_fuente": "Estudio (Pegasus Lymphoma 205) de fase 2 no aleatorizado, abierto, multicéntrico y de múltiples cohortes que evalúa el beneficio clínico de SAR444245 (THOR-707) con o sin otros tratamientos antineoplásicos para el tratamiento de adultos y adolescentes con linfoma de células B grandes recurrente o refractario",
+  "ensayos": [
+   "NCT05179603"
+  ],
+  "patrocinador_ctgov": "Sanofi",
+  "institucion": "cic-vina",
+  "motivo_alias": "mismo nombre, con la sigla",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 107,
+  "anio": "2023",
+  "centro_en_la_fuente": "Centro de investigación clínica Bradford Hill",
+  "centro_heredado": null,
+  "numero_protocolo": "R3767-ONC-2011",
+  "solicitante": "ICON CHILE LTDA",
+  "nombre_estudio_en_la_fuente": "Estudio de fase 3 de Fianlimab (REGN3767. ANTI-LAG-3) + Cemiplimab en comparación con pembrolizumab en pacientes con melanoma avanzado local o metastásico no tratado e irresecable.",
+  "ensayos": [
+   "NCT05352672"
+  ],
+  "patrocinador_ctgov": "Regeneron Pharmaceuticals",
+  "institucion": "bradford-hill",
+  "motivo_alias": "mismo nombre, en otro orden",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 109,
+  "anio": "2023",
+  "centro_en_la_fuente": "Clínica San Carlos de Apoquindo",
+  "centro_heredado": null,
+  "numero_protocolo": "CA102-003",
+  "solicitante": "BRISTOL - MYERS SQUIBB DE CHILE",
+  "nombre_estudio_en_la_fuente": "ESTUDIO DE FASE 1 DE BMS 986416 SOLO Y EN COMBINACIÓN CON NIVOLUMAB EN TUMORES SÓLIDOS SELECCIONADOS",
+  "ensayos": [
+   "NCT04943900"
+  ],
+  "patrocinador_ctgov": "Bristol-Myers Squibb",
+  "institucion": "clinica-uc-san-carlos",
+  "motivo_alias": "mismo nombre sin «UC CHRISTUS»",
+  "decision": "corrobora: el ensayo ya está ligado a puc, de la misma red; otro vínculo contaría dos veces la misma sede"
+ },
+ {
+  "fila_planilla": 118,
+  "anio": "2024",
+  "centro_en_la_fuente": "Oncovida S.A.",
+  "centro_heredado": null,
+  "numero_protocolo": "CA116-001",
+  "solicitante": "BRISTOL - MYERS SQUIBB DE CHILE",
+  "nombre_estudio_en_la_fuente": "ESTUDIO DE FASE 2, ABIERTO, ALEATORIZADO, DE FARLETUZUMAB ECTERIBULINA (MORAB-202), UN CONJUGADO ANTICUERPO-FÁRMACO DIRIGIDO AL RECEPTOR DE FOLATO ALFA, FRENTE A LA QUIMIOTERAPIA DE ELECCIÓN DEL INVESTIGADOR, EN MUJERES CON CÁNCER SEROSO DE ALTO GRADO (SAG) DE OVARIO, PRIMARIO DE PERITONEO O DE TROMPAS DE FALOPIO, RESISTENTE AL PLATINO",
+  "ensayos": [
+   "NCT05613088"
+  ],
+  "patrocinador_ctgov": "Bristol-Myers Squibb",
+  "institucion": "oncovida",
+  "motivo_alias": "mismo nombre, con la sociedad",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 122,
+  "anio": "2024",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "centro_heredado": null,
+  "numero_protocolo": "QPT-ORE-005",
+  "solicitante": "IQVIA RDS CHILE",
+  "nombre_estudio_en_la_fuente": "ESTUDIO CLINICO DE FASE 3, DOBLE CIEGO, CONTROLADO CON PLACEBO, MULTICENTRICO EN EL QUE SE COMPARA LA QUIMIOINMUNOTERAPIA (PACLITAXEL-CARBOPLATINO-OREGOVOMAB) Y LA QUIMIOTERAPIA (PACLITAXEL-CARBOPLATINO-PLACEBO) EN PACIENTES CON CARCINOMA EPITELIAL OVARICO, DE TROMPAS DE FALOPIO O PERITONEAL AVANZADO",
+  "ensayos": [
+   "NCT04498117"
+  ],
+  "patrocinador_ctgov": "CanariaBio Inc.",
+  "institucion": "james-lind",
+  "motivo_alias": "mismo nombre",
+  "decision": "vínculo del ISP: sitio del ensayo"
+ },
+ {
+  "fila_planilla": 124,
+  "anio": "2024",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "centro_heredado": "renglón sin centro ni investigador en la planilla, debajo de la inspección del renglón 122: se hereda el centro, no el investigador",
+  "numero_protocolo": "MK7684A-005",
+  "solicitante": "MERCK SHARP & DOHME (I.A.) LLC",
+  "nombre_estudio_en_la_fuente": "ESTUDIO BASKET DE FASE 2, MULTICÉNTRICO, DE ETIQUETA ABIERTA DE MK-7684A, UNA COFORMULACIÓN DE VIBOSTOLIMAB (MK-7684) CON PEMBROLIZUMAB (MK-3475), CON O SIN OTROS TRATAMIENTOS ONCOLÓGICOS EN PARTICIPANTES CON TUMORES SÓLIDOS SELECCIONADOS.",
+  "ensayos": [
+   "NCT05007106"
+  ],
+  "patrocinador_ctgov": "Merck Sharp & Dohme LLC",
+  "institucion": "james-lind",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 125,
+  "anio": "2024",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "centro_heredado": "renglón sin centro ni investigador en la planilla, debajo de la inspección del renglón 122: se hereda el centro, no el investigador",
+  "numero_protocolo": "MK-7339-001",
+  "solicitante": "MERCK SHARP & DOHME (I.A.) LLC",
+  "nombre_estudio_en_la_fuente": "ESTUDIO ALEATORIZADO, DE FASE 3, DOBLE CIEGO DE QUIMIOTERAPIA CON O SIN PEMBROLIZUMAB SEGUIDO DE MANTENIMIENTO CON OLAPARIB O PLACEBO PARA EL TRATAMIENTO DE PRIMERA LÍNEA DEL CÁNCER EPITELIAL DE OVARIO (EOC) AVANZADO SIN MUTACIÓN DEL BRCA.",
+  "ensayos": [
+   "NCT03740165"
+  ],
+  "patrocinador_ctgov": "Merck Sharp & Dohme LLC",
+  "institucion": "james-lind",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 126,
+  "anio": "2024",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "centro_heredado": "renglón sin centro ni investigador en la planilla, debajo de la inspección del renglón 122: se hereda el centro, no el investigador",
+  "numero_protocolo": "MK-3475A-F11",
+  "solicitante": "MERCK SHARP & DOHME (I.A.) LLC",
+  "nombre_estudio_en_la_fuente": "ESTUDIO DE FASE 2 PARA EVALUAR LA PREFERENCIA INFORMADA POR EL PACIENTE CON RESPECTO A PEMBROLIZUMAB COFORMULADO CON HIALURONIDASA (MK-3475A) SUBCUTÁNEO SOBRE LA FORMULACIÓN INTRAVENOSA DE PEMBROLIZUMAB EN PARTICIPANTES CON DIFERENTES TIPOS DE TUMORES (MK-3475A-F11).",
+  "ensayos": [
+   "NCT06099782"
+  ],
+  "patrocinador_ctgov": "Merck Sharp & Dohme LLC",
+  "institucion": "james-lind",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 127,
+  "anio": "2024",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "centro_heredado": "renglón sin centro ni investigador en la planilla, debajo de la inspección del renglón 122: se hereda el centro, no el investigador",
+  "numero_protocolo": "20210096",
+  "solicitante": "IQVIA RDS CHILE",
+  "nombre_estudio_en_la_fuente": "UN ESTUDIO DE FASE 3 ALEATORIZADO, MULTICÉNTRICO, DOBLE CIEGO, CONTROLADO CON PLACEBO DE BEMARITUZUMAB MÁS QUIMIOTERAPIA VERSUS PLACEBO MÁS QUIMIOTERAPIA EN SUJETOS CON CÁNCER GÁSTRICO O DE LA UNIÓN GASTROESOFÁGICA AVANZADO SIN TRATAMIENTO PREVIO CON SOBREEXPRESIÓN DE FGFR2B (FORTITUDE-101).",
+  "ensayos": [
+   "NCT05052801"
+  ],
+  "patrocinador_ctgov": "Amgen",
+  "institucion": "james-lind",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 128,
+  "anio": "2024",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "centro_heredado": "renglón sin centro ni investigador en la planilla, debajo de la inspección del renglón 122: se hereda el centro, no el investigador",
+  "numero_protocolo": "GS-US-592-6173 (ASCENT-04)",
+  "solicitante": "PRA HEALTH SCIENCES CHILE S.p.A.",
+  "nombre_estudio_en_la_fuente": "Estudio aleatorizado, abierto, fase 3, de sacituzumab govitecan más pembrolizumab en comparación al tratamiento de elección del médico más pembrolizumab, en pacientes con cáncer de mama triple negativo no tratado previamente, avanzado localmente, inoperable o metastásico, cuyos tumores expresan PDL1.",
+  "ensayos": [
+   "NCT05382286"
+  ],
+  "patrocinador_ctgov": "Gilead Sciences",
+  "institucion": "james-lind",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 129,
+  "anio": "2024",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "centro_heredado": "renglón sin centro ni investigador en la planilla, debajo de la inspección del renglón 122: se hereda el centro, no el investigador",
+  "numero_protocolo": "GS-US-592-6238 (ASCENT-03)",
+  "solicitante": "PRA HEALTH SCIENCES CHILE S.p.A.",
+  "nombre_estudio_en_la_fuente": "ESTUDIO ALEATORIZADO,ABIERTO, FASE 3, DE SACITUZUMAB GOVITECAN EN COMPARACION AL TRATAMIENTO DE ELECCION DEL MEDICO EN PACIENTES CON CANCER DE MAMA TRIPLE NEGATIVO NO TRATADO PREVIAMENTE, AVANZADO LOCALMENTE, INOPERABLE O METASTASICO, CUYOS TUMORES NO EXPRESAN PD-L1, O EN PACIENTES TRATADOS PREVIAMENTE CON AGENTES ANTI-PD-(L)1 EN ETAPA TEMPRANA CUYOS TUMORES EXPRESAN PD-L1.",
+  "ensayos": [
+   "NCT05382299"
+  ],
+  "patrocinador_ctgov": "Gilead Sciences",
+  "institucion": "james-lind",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 130,
+  "anio": "2024",
+  "centro_en_la_fuente": "James Lind Centro de Investigación del Cáncer",
+  "centro_heredado": "renglón sin centro ni investigador en la planilla, debajo de la inspección del renglón 122: se hereda el centro, no el investigador",
+  "numero_protocolo": "MK4280A-007",
+  "solicitante": "MERCK SHARP & DOHME (I.A.) LLC",
+  "nombre_estudio_en_la_fuente": "ESTUDIO DE FASE 3 DE MK-4280A (COFORMULACIÓN DE FAVEZELIMAB [MK-4280] MÁS PEMBROLIZUMAB [MK-3475]) FRENTE AL TRATAMIENTO DE REFERENCIA EN CÁNCER COLORRECTAL METASTÁSICO POSITIVO PARA PD-L1 TRATADO PREVIAMENTE.",
+  "ensayos": [
+   "NCT05064059"
+  ],
+  "patrocinador_ctgov": "Merck Sharp & Dohme LLC",
+  "institucion": "james-lind",
+  "motivo_alias": "mismo nombre",
+  "decision": "corrobora: el ensayo ya estaba ligado a este centro por otra fuente"
+ },
+ {
+  "fila_planilla": 132,
+  "anio": "2024",
+  "centro_en_la_fuente": "Centro Nuestra Señora de la Esperanza-PUC",
+  "centro_heredado": null,
+  "numero_protocolo": "V940-004",
+  "solicitante": "MERCK SHARP & DOHME (I.A.) LLC",
+  "nombre_estudio_en_la_fuente": "Estudio clínico de fase 2, aleatorizado, doble ciego de V940 (MRNA-4157) más pembrolizumab (MK-3475) frente a placebo más pembrolizumab en el tratamiento adyuvante de participantes con carcinoma de células renales",
+  "ensayos": [
+   "NCT06307431"
+  ],
+  "patrocinador_ctgov": "Merck Sharp & Dohme LLC",
+  "institucion": "centro-cancer-uc",
+  "motivo_alias": "mismo nombre abreviado",
+  "decision": "corrobora: el ensayo ya está ligado a puc, de la misma red; otro vínculo contaría dos veces la misma sede"
+ }
+]

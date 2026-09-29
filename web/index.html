@@ -5629,8 +5629,10 @@
                  valor: vecinosDe(f.id, "ensayo_clinico").length, unidad: ["estudio en Chile", "estudios en Chile"] };
       });
       var centros = vecinosDe(n.id, "institucion").map(function (a) {
-        var i = byId[a.otro], cif = a.v.fuente_url && a.v.fuente_url.indexOf("estudiosclinicos.cl") !== -1;
-        return { id: i.id, etiqueta: i.nombre, sub: [i.ciudad, cif ? "centro abierto según la CIF" : "sede según ClinicalTrials.gov"].filter(Boolean).join(" · "),
+        var i = byId[a.otro], u = a.v.fuente_url || "";
+        var segun = u.indexOf("estudiosclinicos.cl") !== -1 ? "centro abierto según la CIF"
+          : u.indexOf("ispch.gob.cl") !== -1 ? "sede según las inspecciones del ISP" : "sede según ClinicalTrials.gov";
+        return { id: i.id, etiqueta: i.nombre, sub: [i.ciudad, segun].filter(Boolean).join(" · "),
                  valor: vecinosDe(i.id, "ensayo_clinico").length, unidad: ["estudio en total", "estudios en total"] };
       });
       var inv = vecinosDe(n.id, "persona").map(function (a) {

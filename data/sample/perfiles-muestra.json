@@ -272,7 +272,9 @@
       ],
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
-        "Bradford Hill"
+        "Bradford Hill",
+        "Bradford Hill Centro de Investigaciones Clínicas",
+        "Centro de investigación clínica Bradford Hill"
       ]
     },
     {
@@ -334,7 +336,9 @@
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
         "Fundación Arturo Pérez López",
-        "FALP"
+        "FALP",
+        "Fundación Arturo López Pérez (FALP)",
+        "Fundación Arturo López Pérez"
       ]
     },
     {
@@ -423,7 +427,8 @@
       ],
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
-        "James Lind Centro de Investigación del Cancer"
+        "James Lind Centro de Investigación del Cancer",
+        "James Lind Centro de Investigación del Cáncer"
       ]
     },
     {
@@ -1850,6 +1855,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT06099782",
           "fecha": "2026-04-08",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «MK-3475A-F11», en James Lind Centro de Investigación del Cáncer (escrito «James Lind Centro de Investigación del Cáncer»), en una inspección de 2024.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
           "confianza": "pendiente"
         }
       ],
@@ -3951,7 +3964,8 @@
       ],
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
-        "Orlandi Oncologia"
+        "Orlandi Oncologia",
+        "Orlandi Oncología (Sociedad Prosalud Montes y Orlandi Ltda.)"
       ]
     },
     {
@@ -4467,6 +4481,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT05382299",
           "fecha": "2026-04-06",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «GS-US-592-6238 (ASCENT-03)», en James Lind Centro de Investigación del Cáncer (escrito «James Lind Centro de Investigación del Cáncer»), en una inspección de 2024.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
+          "confianza": "pendiente"
         }
       ],
       "acronimo": "ASCENT-03",
@@ -4630,6 +4652,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT05382286",
           "fecha": "2025-09-18",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «GS-US-592-6173 (ASCENT-04)», en James Lind Centro de Investigación del Cáncer (escrito «James Lind Centro de Investigación del Cáncer»), en una inspección de 2024.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
           "confianza": "pendiente"
         }
       ],
@@ -12177,6 +12207,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT02853604",
           "fecha": "2023-03-14",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «ADXS001-02», en Fundación Arturo López Pérez (FALP) (escrito «Fundación Arturo López Pérez»), en una inspección de 2018.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
         }
       ],
       "sedes_pendientes_resolucion": [
@@ -12211,6 +12249,14 @@
           "fase": "Fase IV",
           "fuente_url": "https://clinicaltrials.gov/study/NCT02869789",
           "fecha": "2023-06-15",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «CA209-817», en Centro Internacional de Estudios Clínicos (CIEC) (escrito «Centro Internacional de Estudios Clínicos»), en una inspección de 2018.",
+          "fase": "Fase IV",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
           "confianza": "pendiente"
         }
       ],
@@ -12447,6 +12493,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT02967692",
           "fecha": "2025-09-18",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «CPDR001F2301», en Centro Internacional de Estudios Clínicos (CIEC) (escrito «Centro Internacional de Estudios Clínicos (CIEC)»), en una inspección de 2018.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of the Anti-PD1 Antibody PDR001, in Combination With Dabrafenib and Trametinib in Advanced Melanoma",
@@ -12516,6 +12570,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03024996",
           "fecha": "2023-08-03",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «WO39210», en Centro de Investigaciones Clínicas Viña del Mar (escrito «Hospital Clínico Viña del Mar»), en una inspección de 2018.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of Atezolizumab as Adjuvant Therapy in Participants With Renal Cell Carcinoma (RCC) at High Risk of Developing Metastasis Following Nephrectomy",
@@ -12547,6 +12609,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03029780",
           "fecha": "2022-06-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «CA209800», en Fundación Arturo López Pérez (FALP) (escrito «Fundación Arturo López Pérez (FALP)»), en una inspección de 2018.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
           "confianza": "pendiente"
         }
       ],
@@ -12615,6 +12685,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03066778",
           "fecha": "2022-10-03",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «MK3475-604», en Orlandi Oncología (escrito «Orlandi Oncología (Sociedad Prosalud Montes y Orlandi Ltda.)»), en una inspección de 2018.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2018",
           "confianza": "pendiente"
         }
       ],
@@ -12687,6 +12765,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03104699",
           "fecha": "2025-07-30",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «C-700-01», en Centro Oncológico del Norte (escrito «Centro Oncológico del Norte»), en una inspección de 2020.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2020",
           "confianza": "pendiente"
         }
       ],
@@ -13944,6 +14030,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03662659",
           "fecha": "2025-02-05",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «CA224-060», en Fundación Arturo López Pérez (FALP) (escrito «Fundación Arturo López Pérez (FALP)»), en una inspección de 2019.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2019",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "An Investigational Study of Immunotherapy Combinations With Chemotherapy in Patients With Gastric or Gastroesophageal Junction (GEJ) Cancers",
@@ -13978,6 +14072,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03674112",
           "fecha": "2024-01-02",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «MO40628», en Bradford Hill Clinical Research Center (escrito «Bradford Hill Centro de Investigaciones Clínicas»), en una inspección de 2019.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2019",
           "confianza": "pendiente"
         }
       ],
@@ -14345,6 +14447,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03740165",
           "fecha": "2026-08-19",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «MK-7339-001», en James Lind Centro de Investigación del Cáncer (escrito «James Lind Centro de Investigación del Cáncer»), en una inspección de 2024.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study of Chemotherapy With Pembrolizumab (MK-3475) Followed by Maintenance With Olaparib (MK-7339) for the First-Line Treatment of Women With BRCA Non-mutated Advanced Epithelial Ovarian Cancer (EOC) (MK-7339-001/KEYLYNK-001/ENGOT-ov43/GOG-3036)",
@@ -14445,6 +14555,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03797326",
           "fecha": "2026-05-04",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «MK-7902-005», en Sociedad de Investigaciones Médicas (SIM) (escrito «Sociedad de Investigaciones Médicas Limitada (SIM), Temuco»), en una inspección de 2020.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2020",
           "confianza": "pendiente"
         }
       ],
@@ -15114,6 +15232,14 @@
           "fase": "Fase I",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03985072",
           "fecha": "2022-02-24",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «AB1537-002», en Centro de Cáncer Nuestra Señora de la Esperanza (UC CHRISTUS) (escrito «Centro de Cáncer Nuestra Señora de la Esperanza UC»), en una inspección de 2020.",
+          "fase": "Fase I",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2020",
           "confianza": "pendiente"
         }
       ],
@@ -16364,6 +16490,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT04498117",
           "fecha": "2026-04-01",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «QPT-ORE-005», en James Lind Centro de Investigación del Cáncer (escrito «James Lind Centro de Investigación del Cáncer»), en una inspección de 2024.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Oregovomab Plus Chemo in Newly Diagnosed Patients With Advanced Epithelial Ovarian Cancer Following Optimal Debulking Surgery",
@@ -17435,6 +17569,14 @@
           "fuente_url": "https://estudiosclinicos.cl/ensayos/tumores-solidos-4/",
           "fecha": "2026-09-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «CA102-003», en Clínica UC CHRISTUS San Carlos de Apoquindo (escrito «Clínica San Carlos de Apoquindo»), en una inspección de 2023.",
+          "fase": "Fase I",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2023",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of BMS-986416 With and Without Nivolumab in Select Solid Tumors",
@@ -17731,6 +17873,14 @@
           "fuente_url": "https://estudiosclinicos.cl/ensayos/tumores-solidos/",
           "fecha": "2026-09-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «MK7684A-005», en James Lind Centro de Investigación del Cáncer (escrito «James Lind Centro de Investigación del Cáncer»), en una inspección de 2024.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "MK-7684A With or Without Other Anticancer Therapies in Participants With Selected Solid Tumors (MK-7684A-005) (KEYVIBE-005)",
@@ -17851,6 +18001,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT05052801",
           "fecha": "2026-05-27",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «20210096», en James Lind Centro de Investigación del Cáncer (escrito «James Lind Centro de Investigación del Cáncer»), en una inspección de 2024.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Bemarituzumab or Placebo Plus Chemotherapy in Gastric Cancers With Fibroblast Growth Factor Receptor 2b (FGFR2b) Overexpression",
@@ -17892,6 +18050,14 @@
           "fase": "Fase III",
           "fuente_url": "https://estudiosclinicos.cl/ensayos/cancer-colorectal-3/",
           "fecha": "2026-09-28",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «MK4280A-007», en James Lind Centro de Investigación del Cáncer (escrito «James Lind Centro de Investigación del Cáncer»), en una inspección de 2024.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
           "confianza": "pendiente"
         }
       ],
@@ -18439,6 +18605,14 @@
           "fuente_url": "https://estudiosclinicos.cl/ensayos/linfoma/",
           "fecha": "2026-09-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «ACT16941», en Centro de Investigaciones Clínicas Viña del Mar (escrito «Centro de Investigaciones Clínicas Viña del Mar (CICVM)»), en una inspección de 2022.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2022",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of SAR444245 With or Without Other Anticancer Therapies for the Treatment of Adults and Adolescents With Relapsed or Refractory B Cell Lymphoma (Master Protocol) [Pegathor Lymphoma 205]",
@@ -18846,6 +19020,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT05352672",
           "fecha": "2026-04-22",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «R3767-ONC-2011», en Bradford Hill Clinical Research Center (escrito «Centro de investigación clínica Bradford Hill»), en una inspección de 2023.",
+          "fase": "Fase III",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2023",
           "confianza": "pendiente"
         }
       ],
@@ -19302,6 +19484,14 @@
           "fase": "Fase II",
           "fuente_url": "https://estudiosclinicos.cl/ensayos/cancer-de-ovario-3/",
           "fecha": "2026-09-28",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «CA116-001», en Oncovida (escrito «Oncovida S.A.»), en una inspección de 2024.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
           "confianza": "pendiente"
         }
       ],
@@ -20519,6 +20709,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT06307431",
           "fecha": "2026-07-13",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "La planilla «Centros de investigación clínica inspeccionados 2016–2025» del ISP registra este estudio, con el código de protocolo «V940-004», en Centro de Cáncer Nuestra Señora de la Esperanza (UC CHRISTUS) (escrito «Centro Nuestra Señora de la Esperanza-PUC»), en una inspección de 2024.",
+          "fase": "Fase II",
+          "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls",
+          "fecha": "2024",
           "confianza": "pendiente"
         }
       ],
@@ -22590,7 +22788,9 @@
         "Instituto Oncológico Limitada Viña del Mar",
         "Hospital Clinico Vina del Mar /ID# 130100",
         "Hospital Clinico Vina del Mar /ID# 148502",
-        "Centro de Investigaciones Clinicas"
+        "Centro de Investigaciones Clinicas",
+        "Hospital Clínico Viña del Mar",
+        "Centro de Investigaciones Clínicas Viña del Mar (CICVM)"
       ],
       "hechos": [
         {
@@ -22675,7 +22875,8 @@
         "Oncovida ( Site 0402)",
         "Oncovida ( Site 0514)",
         "Sociedad Oncovida S.A. ( Site 0508)",
-        "Sociedad Oncovida S.A"
+        "Sociedad Oncovida S.A",
+        "Oncovida S.A."
       ],
       "hechos": [
         {
@@ -22925,7 +23126,8 @@
         "Centro de Investigacion Clinica SIM",
         "SIM Centro de Investigacion Clinica",
         "Medical Research Limited Society",
-        "Sociedad de Investigaciones Médicas"
+        "Sociedad de Investigaciones Médicas",
+        "Sociedad de Investigaciones Médicas Limitada (SIM), Temuco"
       ],
       "hechos": [
         {
@@ -23718,7 +23920,9 @@
         "Centro de Cancer Nuestra Senora de la Esperanza ( Site 0065)",
         "Centro de Cancer Pontificie Universidad Catolica de Chile",
         "Centro de Cancer Nuestra Senora de la Esperanza",
-        "Centro de Cáncer UC"
+        "Centro de Cáncer UC",
+        "Centro de Cáncer Nuestra Señora de la Esperanza UC",
+        "Centro Nuestra Señora de la Esperanza-PUC"
       ],
       "hechos": [
         {
@@ -23779,7 +23983,8 @@
         "Clínica UC San Carlos de Apoquindo ( Site 0211)",
         "Clínica UC San Carlos de Apoquindo ( Site 0305)",
         "Clínica UC San Carlos de Apoquindo-Hemato-Oncology ( Site 2402)",
-        "Clínica San Carlos de Apoquindo Red Salud UC Christus"
+        "Clínica San Carlos de Apoquindo Red Salud UC Christus",
+        "Clínica San Carlos de Apoquindo"
       ],
       "hechos": [
         {
@@ -69000,6 +69205,62 @@
       "destino": "farmaco-zoledronic-acid",
       "tipo": "intervención",
       "texto_en_la_fuente": "Zoledronic acid"
+    },
+    {
+      "origen": "ciec",
+      "destino": "nct02869789",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Centro Internacional de Estudios Clínicos",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct02853604",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Fundación Arturo López Pérez",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "ciec",
+      "destino": "nct02967692",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Centro Internacional de Estudios Clínicos (CIEC)",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "cic-vina",
+      "destino": "nct03024996",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Hospital Clínico Viña del Mar",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct03066778",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Orlandi Oncología (Sociedad Prosalud Montes y Orlandi Ltda.)",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03662659",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Fundación Arturo López Pérez (FALP)",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "sim",
+      "destino": "nct03797326",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Sociedad de Investigaciones Médicas Limitada (SIM), Temuco",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
+    },
+    {
+      "origen": "james-lind",
+      "destino": "nct04498117",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "James Lind Centro de Investigación del Cáncer",
+      "fuente_url": "https://www.ispch.gob.cl/wp-content/uploads/2026/01/CENTROS-DE-INVESTIGACION-CLINICA-INSPECCIONADOS_-2016-2025.xls"
     }
   ],
   "campos_confiables": [

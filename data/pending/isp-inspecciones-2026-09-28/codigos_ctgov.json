@@ -1,0 +1,4059 @@
+{
+ "NCT00080340": {
+  "org_study_id": "TLK286.3020",
+  "secondary_ids": []
+ },
+ "NCT00094653": {
+  "org_study_id": "MDX010-20",
+  "secondary_ids": [
+   "CA184-002"
+  ]
+ },
+ "NCT00324155": {
+  "org_study_id": "CA184-024",
+  "secondary_ids": []
+ },
+ "NCT00387764": {
+  "org_study_id": "VEG107769",
+  "secondary_ids": []
+ },
+ "NCT00883909": {
+  "org_study_id": "103094",
+  "secondary_ids": []
+ },
+ "NCT00026338": {
+  "org_study_id": "PA3",
+  "secondary_ids": [
+   "CAN-NCIC-PA3",
+   "OSI-CAN-NCIC-PA3",
+   "CDR0000069020"
+  ]
+ },
+ "NCT00474786": {
+  "org_study_id": "3066K1-404",
+  "secondary_ids": [
+   "B1771003"
+  ]
+ },
+ "NCT00148798": {
+  "org_study_id": "EMR 62202-046",
+  "secondary_ids": []
+ },
+ "NCT00481247": {
+  "org_study_id": "CA180-056",
+  "secondary_ids": [
+   "2006-005712-27"
+  ]
+ },
+ "NCT00083304": {
+  "org_study_id": "RT-016",
+  "secondary_ids": []
+ },
+ "NCT00861614": {
+  "org_study_id": "CA184-043",
+  "secondary_ids": [
+   "2008-003314-97",
+   "2008"
+  ]
+ },
+ "NCT00556322": {
+  "org_study_id": "BO18602",
+  "secondary_ids": []
+ },
+ "NCT00261846": {
+  "org_study_id": "3160A4-200",
+  "secondary_ids": [
+   "B1871006, 3160A4-200-WW",
+   "2005-004230-40",
+   "B1871006",
+   "2005"
+  ]
+ },
+ "NCT00300885": {
+  "org_study_id": "11961",
+  "secondary_ids": [
+   "2005-005245-19",
+   "2005"
+  ]
+ },
+ "NCT00113607": {
+  "org_study_id": "CR003448",
+  "secondary_ids": [
+   "ET743-OVA-301",
+   "2004-005276-16",
+   "2004"
+  ]
+ },
+ "NCT00062400": {
+  "org_study_id": "EORTC-10002",
+  "secondary_ids": [
+   "EORTC-10002",
+   "BIG-3-98",
+   "IBCSG-29-03"
+  ]
+ },
+ "NCT00920816": {
+  "org_study_id": "A4061051",
+  "secondary_ids": [
+   "2010-018585-23"
+  ]
+ },
+ "NCT00002851": {
+  "org_study_id": "CDR0000065094",
+  "secondary_ids": [
+   "EORTC-10925",
+   "EORTC-22922"
+  ]
+ },
+ "NCT00145639": {
+  "org_study_id": "OS99",
+  "secondary_ids": []
+ },
+ "NCT00864331": {
+  "org_study_id": "E33029",
+  "secondary_ids": []
+ },
+ "NCT00171340": {
+  "org_study_id": "CFEM345D2405",
+  "secondary_ids": []
+ },
+ "NCT00680901": {
+  "org_study_id": "EGF110656",
+  "secondary_ids": [
+   "2007-005725-29",
+   "CLAP016C2301"
+  ]
+ },
+ "NCT00715637": {
+  "org_study_id": "509912",
+  "secondary_ids": []
+ },
+ "NCT00117598": {
+  "org_study_id": "3066K1-305",
+  "secondary_ids": []
+ },
+ "NCT00022516": {
+  "org_study_id": "CDR0000068827",
+  "secondary_ids": [
+   "IBCSG-22-00",
+   "2005-005666-36",
+   "EU-20119",
+   "2005"
+  ]
+ },
+ "NCT00174655": {
+  "org_study_id": "RP56976_PR_315",
+  "secondary_ids": []
+ },
+ "NCT00411541": {
+  "org_study_id": "I-BFM-SG IR ALL",
+  "secondary_ids": []
+ },
+ "NCT00418236": {
+  "org_study_id": "3068A1-400",
+  "secondary_ids": []
+ },
+ "NCT00078832": {
+  "org_study_id": "ISRCTN31488319",
+  "secondary_ids": [
+   "EU-20227",
+   "EUDRACT-2004-003991-12"
+  ]
+ },
+ "NCT00089999": {
+  "org_study_id": "EGF20009",
+  "secondary_ids": []
+ },
+ "NCT00457691": {
+  "org_study_id": "A6181122",
+  "secondary_ids": []
+ },
+ "NCT00130897": {
+  "org_study_id": "A6181037",
+  "secondary_ids": []
+ },
+ "NCT00465491": {
+  "org_study_id": "0601",
+  "secondary_ids": []
+ },
+ "NCT00036647": {
+  "org_study_id": "BR.21",
+  "secondary_ids": []
+ },
+ "NCT00417209": {
+  "org_study_id": "EFC6596",
+  "secondary_ids": [
+   "EUDRACT: 2006-003086-14"
+  ]
+ },
+ "NCT00072462": {
+  "org_study_id": "ISRCTN37546358",
+  "secondary_ids": [
+   "EU-20226",
+   "BIG-5-02",
+   "IBCSG-31-03-DCIS",
+   "ISRCTN31488319"
+  ]
+ },
+ "NCT00457392": {
+  "org_study_id": "A6181087",
+  "secondary_ids": [
+   "SUN1087"
+  ]
+ },
+ "NCT00574873": {
+  "org_study_id": "3160A4-3000",
+  "secondary_ids": [
+   "B1871008",
+   "2007-003780-50"
+  ]
+ },
+ "NCT00901901": {
+  "org_study_id": "12917",
+  "secondary_ids": [
+   "2008-006021-14",
+   "2008"
+  ]
+ },
+ "NCT00625664": {
+  "org_study_id": "EFC6668",
+  "secondary_ids": [
+   "EUDRACT: 2007-001943-23"
+  ]
+ },
+ "NCT00722137": {
+  "org_study_id": "26866138-LYM-3002",
+  "secondary_ids": [
+   "26866138-LYM-3002CTIL",
+   "2007-005669-37",
+   "0970313683",
+   "U1111-1195-3827"
+  ]
+ },
+ "NCT00057720": {
+  "org_study_id": "TLK286.3017",
+  "secondary_ids": []
+ },
+ "NCT00002823": {
+  "org_study_id": "CDR0000065002",
+  "secondary_ids": [
+   "FRE-IALT",
+   "EU-96010"
+  ]
+ },
+ "NCT00081796": {
+  "org_study_id": "EFC6089",
+  "secondary_ids": [
+   "XRP9881B-3001"
+  ]
+ },
+ "NCT00099437": {
+  "org_study_id": "D6997C00002",
+  "secondary_ids": [
+   "2004-002371-16",
+   "2004"
+  ]
+ },
+ "NCT00532155": {
+  "org_study_id": "EFC10261",
+  "secondary_ids": [
+   "EudraCT 2007-000819-29"
+  ]
+ },
+ "NCT00917384": {
+  "org_study_id": "13893",
+  "secondary_ids": [
+   "2008-005964-15",
+   "CP12-0715",
+   "I4T-IE-JVBD",
+   "2008"
+  ]
+ },
+ "NCT00034268": {
+  "org_study_id": "6428",
+  "secondary_ids": [
+   "H7X-MC-JVAA"
+  ]
+ },
+ "NCT00034125": {
+  "org_study_id": "3883",
+  "secondary_ids": [
+   "H4Z-MC-JWXD"
+  ]
+ },
+ "NCT00417079": {
+  "org_study_id": "EFC6193",
+  "secondary_ids": []
+ },
+ "NCT00043927": {
+  "org_study_id": "104864-A/389",
+  "secondary_ids": []
+ },
+ "NCT00542308": {
+  "org_study_id": "GEN205",
+  "secondary_ids": []
+ },
+ "NCT00045032": {
+  "org_study_id": "BO16348",
+  "secondary_ids": [
+   "BIG-01-01",
+   "EU-20216",
+   "ROCHE-B016348E",
+   "ROCHE-B016348C",
+   "EORTC-10011",
+   "CAN-NCIC-MA24",
+   "IBCSG-28-02"
+  ]
+ },
+ "NCT00692770": {
+  "org_study_id": "12414",
+  "secondary_ids": [
+   "2008-001087-36",
+   "2008"
+  ]
+ },
+ "NCT00560235": {
+  "org_study_id": "A4021020",
+  "secondary_ids": []
+ },
+ "NCT00073528": {
+  "org_study_id": "EGF30008",
+  "secondary_ids": [
+   "CLAP016A2308",
+   "2004-003928-35",
+   "2004"
+  ]
+ },
+ "NCT00673049": {
+  "org_study_id": "A4021018",
+  "secondary_ids": []
+ },
+ "NCT00626548": {
+  "org_study_id": "D4320C00015",
+  "secondary_ids": []
+ },
+ "NCT00556712": {
+  "org_study_id": "BO18192",
+  "secondary_ids": []
+ },
+ "NCT00373113": {
+  "org_study_id": "A6181107",
+  "secondary_ids": []
+ },
+ "NCT00124566": {
+  "org_study_id": "IROF-018",
+  "secondary_ids": []
+ },
+ "NCT00370383": {
+  "org_study_id": "SAT2-05-07",
+  "secondary_ids": []
+ },
+ "NCT00082433": {
+  "org_study_id": "CA163-048",
+  "secondary_ids": []
+ },
+ "NCT00028704": {
+  "org_study_id": "EORTC-10974-22002",
+  "secondary_ids": [
+   "EORTC-10974",
+   "CEEOG-EORTC-10974",
+   "EORTC-22002",
+   "GOCCHI-EORTC-10974",
+   "ICCG-EORTC-10974",
+   "EORTC-BIG-0002",
+   "LAMANOMA"
+  ]
+ },
+ "NCT00553410": {
+  "org_study_id": "IBCSG 35-07 / BIG 1-07",
+  "secondary_ids": [
+   "2007-001370-88",
+   "CDR0000574249"
+  ]
+ },
+ "NCT00910910": {
+  "org_study_id": "CC-5013-CLL-008",
+  "secondary_ids": [
+   "2008-003079-32",
+   "2008"
+  ]
+ },
+ "NCT00428090": {
+  "org_study_id": "105640",
+  "secondary_ids": []
+ },
+ "NCT00574275": {
+  "org_study_id": "EFC10547",
+  "secondary_ids": [
+   "EudraCT 2007-003476-19"
+  ]
+ },
+ "NCT00561470": {
+  "org_study_id": "EFC10262",
+  "secondary_ids": [
+   "EudraCT 2007-000820-42"
+  ]
+ },
+ "NCT00105443": {
+  "org_study_id": "100554",
+  "secondary_ids": [
+   "2004-001773-26",
+   "2004"
+  ]
+ },
+ "NCT00073307": {
+  "org_study_id": "11213",
+  "secondary_ids": []
+ },
+ "NCT00374322": {
+  "org_study_id": "EGF105485",
+  "secondary_ids": []
+ },
+ "NCT00558103": {
+  "org_study_id": "VEG108838",
+  "secondary_ids": []
+ },
+ "NCT00002565": {
+  "org_study_id": "CDR0000063574",
+  "secondary_ids": [
+   "MDA-DM-94017",
+   "NCI-T94-0040D",
+   "DM94-017"
+  ]
+ },
+ "NCT00191620": {
+  "org_study_id": "6952",
+  "secondary_ids": [
+   "B9E-LA-S350"
+  ]
+ },
+ "NCT00849667": {
+  "org_study_id": "MORAb003-004",
+  "secondary_ids": [
+   "2008-005872-29",
+   "2008"
+  ]
+ },
+ "NCT00681122": {
+  "org_study_id": "NIS-OEU-ARI-2007/1",
+  "secondary_ids": []
+ },
+ "NCT00338286": {
+  "org_study_id": "CR005143",
+  "secondary_ids": [
+   "EPOANE3010",
+   "CR005143",
+   "2005-001817-17",
+   "2005"
+  ]
+ },
+ "NCT00154102": {
+  "org_study_id": "EMR 62202-013",
+  "secondary_ids": []
+ },
+ "NCT00056407": {
+  "org_study_id": "ARI40006",
+  "secondary_ids": []
+ },
+ "NCT00338247": {
+  "org_study_id": "EGF103659",
+  "secondary_ids": []
+ },
+ "NCT00625898": {
+  "org_study_id": "NSABP B-44-I",
+  "secondary_ids": [
+   "CIRG (TRIO) 011",
+   "Roche BO20906",
+   "BETH"
+  ]
+ },
+ "NCT00305188": {
+  "org_study_id": "EFC5505",
+  "secondary_ids": [
+   "EUDRACT : 2005-002570-30"
+  ]
+ },
+ "NCT00040183": {
+  "org_study_id": "PA.3",
+  "secondary_ids": []
+ },
+ "NCT00005062": {
+  "org_study_id": "CDR0000067664",
+  "secondary_ids": [
+   "FRE-IGR-PCI-99",
+   "EU-99051",
+   "FRE-IFCT-99.01",
+   "FRE-IGR-PCI99-EULINT1",
+   "EORTC-22003",
+   "EORTC-08004"
+  ]
+ },
+ "NCT00863746": {
+  "org_study_id": "13266",
+  "secondary_ids": [
+   "2008-006914-62",
+   "2008"
+  ]
+ },
+ "NCT00630110": {
+  "org_study_id": "NPI-2358-101",
+  "secondary_ids": []
+ },
+ "NCT00334282": {
+  "org_study_id": "VEG105192",
+  "secondary_ids": []
+ },
+ "NCT00935779": {
+  "org_study_id": "OAIC 043/02",
+  "secondary_ids": []
+ },
+ "NCT00643565": {
+  "org_study_id": "BO20924",
+  "secondary_ids": [
+   "2007-005017-19"
+  ]
+ },
+ "NCT00075270": {
+  "org_study_id": "EGF30001",
+  "secondary_ids": []
+ },
+ "NCT00490139": {
+  "org_study_id": "EGF106708",
+  "secondary_ids": [
+   "CLAP016B2301",
+   "2006-000562-36"
+  ]
+ },
+ "NCT00806819": {
+  "org_study_id": "1199.14",
+  "secondary_ids": [
+   "2008-002072-10",
+   "2008"
+  ]
+ },
+ "NCT00678535": {
+  "org_study_id": "EMR 200048-052",
+  "secondary_ids": [
+   "2007-004219-75"
+  ]
+ },
+ "NCT00858364": {
+  "org_study_id": "20070782",
+  "secondary_ids": [
+   "2007-005792-34"
+  ]
+ },
+ "NCT00550004": {
+  "org_study_id": "SCI-RP-Pan-P2-001",
+  "secondary_ids": []
+ },
+ "NCT00631371": {
+  "org_study_id": "3066K1-3311",
+  "secondary_ids": [
+   "B1771006",
+   "2007-003793-26"
+  ]
+ },
+ "NCT00174863": {
+  "org_study_id": "EFC5378",
+  "secondary_ids": []
+ },
+ "NCT00519285": {
+  "org_study_id": "EFC6546",
+  "secondary_ids": [
+   "2006-004756-20"
+  ]
+ },
+ "NCT00174837": {
+  "org_study_id": "EFC5512",
+  "secondary_ids": [
+   "SR259075"
+  ]
+ },
+ "NCT01571284": {
+  "org_study_id": "AFLIBC06097",
+  "secondary_ids": [
+   "2011-005724-17",
+   "U1111-1125-8949"
+  ]
+ },
+ "NCT02366143": {
+  "org_study_id": "GO29436",
+  "secondary_ids": [
+   "2014-003207-30",
+   "2014"
+  ]
+ },
+ "NCT01724021": {
+  "org_study_id": "MO28457",
+  "secondary_ids": [
+   "2012-003230-17"
+  ]
+ },
+ "NCT02467270": {
+  "org_study_id": "AP24534-14-203",
+  "secondary_ids": [
+   "2014-001617-12",
+   "15/LO/1192",
+   "U1111-1238-0007",
+   "2024-514516-27-00",
+   "2014"
+  ]
+ },
+ "NCT01077154": {
+  "org_study_id": "20060359",
+  "secondary_ids": [
+   "2009-011299-32",
+   "2009"
+  ]
+ },
+ "NCT02376023": {
+  "org_study_id": "CEC Med UC 14-213",
+  "secondary_ids": [
+   "FONIS ProyectoSA14ID0072"
+  ]
+ },
+ "NCT01989676": {
+  "org_study_id": "B3271002",
+  "secondary_ids": [
+   "REFLECTIONS B327-02",
+   "2013-001352-34",
+   "B3271002"
+  ]
+ },
+ "NCT02016534": {
+  "org_study_id": "20130111",
+  "secondary_ids": [
+   "2013-001277-24"
+  ]
+ },
+ "NCT02367794": {
+  "org_study_id": "GO29437",
+  "secondary_ids": [
+   "2014-003208-59",
+   "2014"
+  ]
+ },
+ "NCT02559583": {
+  "org_study_id": "CR105066",
+  "secondary_ids": [
+   "PCI-32765MMY4001"
+  ]
+ },
+ "NCT01057810": {
+  "org_study_id": "CA184-095",
+  "secondary_ids": [
+   "2009-016217-23",
+   "2009"
+  ]
+ },
+ "NCT02437318": {
+  "org_study_id": "CBYL719C2301",
+  "secondary_ids": [
+   "2015-000340-42",
+   "2015"
+  ]
+ },
+ "NCT01456325": {
+  "org_study_id": "OAM4971g",
+  "secondary_ids": [
+   "GO27761",
+   "2011-002224-40"
+  ]
+ },
+ "NCT02477826": {
+  "org_study_id": "CA209-227",
+  "secondary_ids": [
+   "2014-003630-23",
+   "2014"
+  ]
+ },
+ "NCT01646021": {
+  "org_study_id": "CR100848",
+  "secondary_ids": [
+   "PCI-32765MCL3001",
+   "2012-000601-74",
+   "U1111-1135-6930"
+  ]
+ },
+ "NCT01865747": {
+  "org_study_id": "XL184-308",
+  "secondary_ids": []
+ },
+ "NCT01009593": {
+  "org_study_id": "M10-963",
+  "secondary_ids": [
+   "2009-013435-38",
+   "2009"
+  ]
+ },
+ "NCT02542293": {
+  "org_study_id": "D419AC00003",
+  "secondary_ids": [
+   "2015-002197-21",
+   "2015"
+  ]
+ },
+ "NCT01125566": {
+  "org_study_id": "1200.75",
+  "secondary_ids": [
+   "2009-015476-98",
+   "2009"
+  ]
+ },
+ "NCT00949910": {
+  "org_study_id": "MO18109",
+  "secondary_ids": [
+   "2004-000564-28",
+   "INC-9042",
+   "2004"
+  ]
+ },
+ "NCT02273973": {
+  "org_study_id": "GO28888",
+  "secondary_ids": [
+   "2013-000568-28"
+  ]
+ },
+ "NCT02279862": {
+  "org_study_id": "CA184-437",
+  "secondary_ids": [
+   "2014-002987-34",
+   "2014"
+  ]
+ },
+ "NCT02008227": {
+  "org_study_id": "GO28915",
+  "secondary_ids": [
+   "2013-003331-30"
+  ]
+ },
+ "NCT02425891": {
+  "org_study_id": "WO29522",
+  "secondary_ids": [
+   "2014-005490-37",
+   "2014"
+  ]
+ },
+ "NCT01500720": {
+  "org_study_id": "ARD12166",
+  "secondary_ids": [
+   "2011-003415-31",
+   "U1111-1123-3503"
+  ]
+ },
+ "NCT02475681": {
+  "org_study_id": "ACE-CL-007",
+  "secondary_ids": [
+   "2023-509348-84-00",
+   "2014-005582-73",
+   "2014",
+   "2023"
+  ]
+ },
+ "NCT01235962": {
+  "org_study_id": "113387",
+  "secondary_ids": [
+   "2010-020965-26",
+   "CPZP034D2301"
+  ]
+ },
+ "NCT01030783": {
+  "org_study_id": "AV-951-09-301",
+  "secondary_ids": []
+ },
+ "NCT01663727": {
+  "org_study_id": "GO25632",
+  "secondary_ids": [
+   "2011-005335-97"
+  ]
+ },
+ "NCT01977651": {
+  "org_study_id": "9785-CL-0403",
+  "secondary_ids": [
+   "2013-003022-92",
+   "U1111-1157-0224"
+  ]
+ },
+ "NCT01412957": {
+  "org_study_id": "20100007",
+  "secondary_ids": [
+   "2010-022951-49"
+  ]
+ },
+ "NCT00949650": {
+  "org_study_id": "1200.32",
+  "secondary_ids": [
+   "2008-005615-18",
+   "2008"
+  ]
+ },
+ "NCT01358877": {
+  "org_study_id": "BO25126",
+  "secondary_ids": [
+   "TOC4939G",
+   "2010-022902-41",
+   "BIG 4-11"
+  ]
+ },
+ "NCT02119663": {
+  "org_study_id": "INCB 18424-363",
+  "secondary_ids": []
+ },
+ "NCT01170663": {
+  "org_study_id": "13894",
+  "secondary_ids": [
+   "I4T-IE-JVBE",
+   "CP12-0922",
+   "2010-020426-18"
+  ]
+ },
+ "NCT01774266": {
+  "org_study_id": "D09I1137",
+  "secondary_ids": [
+   "11-156"
+  ]
+ },
+ "NCT01168791": {
+  "org_study_id": "IPM3001",
+  "secondary_ids": []
+ },
+ "NCT01076010": {
+  "org_study_id": "AV-951-09-902",
+  "secondary_ids": [
+   "2009-015987-32",
+   "2009"
+  ]
+ },
+ "NCT02367040": {
+  "org_study_id": "17067",
+  "secondary_ids": [
+   "2013-003893-29"
+  ]
+ },
+ "NCT01281735": {
+  "org_study_id": "CIC1402",
+  "secondary_ids": [
+   "2010-023359-27"
+  ]
+ },
+ "NCT02386800": {
+  "org_study_id": "CINC424A2X01B",
+  "secondary_ids": [
+   "2014-003527-22",
+   "2024-515283-31-00",
+   "2014"
+  ]
+ },
+ "NCT01966471": {
+  "org_study_id": "BO28407",
+  "secondary_ids": [
+   "2012-004902-82"
+  ]
+ },
+ "NCT01933932": {
+  "org_study_id": "D1532C00079",
+  "secondary_ids": [
+   "2013-001676-38"
+  ]
+ },
+ "NCT01234311": {
+  "org_study_id": "10TASQ10",
+  "secondary_ids": []
+ },
+ "NCT01285609": {
+  "org_study_id": "CA184-104",
+  "secondary_ids": [
+   "2009-017396-19",
+   "2009"
+  ]
+ },
+ "NCT01516736": {
+  "org_study_id": "LA-EP06-302",
+  "secondary_ids": []
+ },
+ "NCT02326857": {
+  "org_study_id": "999915055",
+  "secondary_ids": [
+   "15-C-N055"
+  ]
+ },
+ "NCT02364999": {
+  "org_study_id": "B7391003",
+  "secondary_ids": [
+   "2014-003878-16",
+   "B7391003",
+   "2014"
+  ]
+ },
+ "NCT02023697": {
+  "org_study_id": "16507",
+  "secondary_ids": [
+   "2013-003118-42"
+  ]
+ },
+ "NCT01013740": {
+  "org_study_id": "CLAP016A2205 / 112620",
+  "secondary_ids": []
+ },
+ "NCT01193244": {
+  "org_study_id": "C21004",
+  "secondary_ids": [
+   "2010-018661-35",
+   "0991413276",
+   "10/H0406/75",
+   "U1111-1181-0387"
+  ]
+ },
+ "NCT01482962": {
+  "org_study_id": "C14012",
+  "secondary_ids": [
+   "2011-003545-18",
+   "DRKS00004503",
+   "NL39566.068.12",
+   "U1111-1181-8218"
+  ]
+ },
+ "NCT02231749": {
+  "org_study_id": "CA209-214",
+  "secondary_ids": [
+   "2014-001750-42",
+   "2014"
+  ]
+ },
+ "NCT01450696": {
+  "org_study_id": "BO27798",
+  "secondary_ids": [
+   "2011-001526-19"
+  ]
+ },
+ "NCT00974311": {
+  "org_study_id": "CRPC2",
+  "secondary_ids": [
+   "2009-013174-41",
+   "C3431010",
+   "2009"
+  ]
+ },
+ "NCT02300831": {
+  "org_study_id": "D1532R00004",
+  "secondary_ids": []
+ },
+ "NCT01721772": {
+  "org_study_id": "CA209-066",
+  "secondary_ids": [
+   "2012-003718-16"
+  ]
+ },
+ "NCT01308580": {
+  "org_study_id": "EFC11785",
+  "secondary_ids": [
+   "2010-022163-35"
+  ]
+ },
+ "NCT02545504": {
+  "org_study_id": "GS-US-296-1080",
+  "secondary_ids": [
+   "2015-001526-42",
+   "2015"
+  ]
+ },
+ "NCT02369874": {
+  "org_study_id": "D4193C00002",
+  "secondary_ids": []
+ },
+ "NCT01292603": {
+  "org_study_id": "BO25341",
+  "secondary_ids": [
+   "2010-021380-32"
+  ]
+ },
+ "NCT02163694": {
+  "org_study_id": "M12-914",
+  "secondary_ids": [
+   "2014-000345-70",
+   "2014"
+  ]
+ },
+ "NCT02167490": {
+  "org_study_id": "IEO S637/311",
+  "secondary_ids": []
+ },
+ "NCT01142674": {
+  "org_study_id": "T-Cell Project",
+  "secondary_ids": []
+ },
+ "NCT02049905": {
+  "org_study_id": "ALDOXORUBICIN-P3-STS-01",
+  "secondary_ids": []
+ },
+ "NCT01673867": {
+  "org_study_id": "CA209-057",
+  "secondary_ids": [
+   "2012-002472-14"
+  ]
+ },
+ "NCT02472964": {
+  "org_study_id": "MYL-Her 3001",
+  "secondary_ids": [
+   "2011-001965-42"
+  ]
+ },
+ "NCT02395172": {
+  "org_study_id": "100070-004",
+  "secondary_ids": [
+   "2014-005060-15",
+   "2014"
+  ]
+ },
+ "NCT01263886": {
+  "org_study_id": "EFC10259",
+  "secondary_ids": [
+   "2010-019384-11",
+   "U1111-1115-3677"
+  ]
+ },
+ "NCT01903733": {
+  "org_study_id": "B1871040",
+  "secondary_ids": [
+   "2013-000691-15"
+  ]
+ },
+ "NCT02352948": {
+  "org_study_id": "D4191C00004",
+  "secondary_ids": [
+   "2014-000338-46",
+   "2014"
+  ]
+ },
+ "NCT01653171": {
+  "org_study_id": "12-221",
+  "secondary_ids": []
+ },
+ "NCT02162667": {
+  "org_study_id": "CT-P6 3.2",
+  "secondary_ids": [
+   "2013-004525-84"
+  ]
+ },
+ "NCT01241591": {
+  "org_study_id": "A3921080",
+  "secondary_ids": []
+ },
+ "NCT01901146": {
+  "org_study_id": "20120283",
+  "secondary_ids": [
+   "2012-004319-29"
+  ]
+ },
+ "NCT01512199": {
+  "org_study_id": "U31287-A-U202",
+  "secondary_ids": []
+ },
+ "NCT01523587": {
+  "org_study_id": "1200.125",
+  "secondary_ids": [
+   "2011-002380-24"
+  ]
+ },
+ "NCT01450449": {
+  "org_study_id": "E33033",
+  "secondary_ids": []
+ },
+ "NCT01715285": {
+  "org_study_id": "CR100900",
+  "secondary_ids": [
+   "212082PCR3011",
+   "2012-002940-26",
+   "U1111-1135-7146"
+  ]
+ },
+ "NCT01244191": {
+  "org_study_id": "ARQ197-A-U302",
+  "secondary_ids": [
+   "2010-022365-10"
+  ]
+ },
+ "NCT02312258": {
+  "org_study_id": "C16021",
+  "secondary_ids": [
+   "U1111-1160-1702",
+   "2014-001394-13",
+   "REec-2015-1414",
+   "JapicCTI-152873",
+   "153300410A0048",
+   "1046003327",
+   "SNCTP000001745",
+   "15/NE/0167",
+   "182602",
+   "2014"
+  ]
+ },
+ "NCT01154140": {
+  "org_study_id": "A8081014",
+  "secondary_ids": [
+   "2010-021336-33",
+   "XALCORI"
+  ]
+ },
+ "NCT01566721": {
+  "org_study_id": "MO28048",
+  "secondary_ids": [
+   "2011-005328-17"
+  ]
+ },
+ "NCT01010295": {
+  "org_study_id": "IELSG27",
+  "secondary_ids": [
+   "EudraCT number 2006-005795-41"
+  ]
+ },
+ "NCT01493843": {
+  "org_study_id": "GO27912",
+  "secondary_ids": [
+   "2011-002893-21"
+  ]
+ },
+ "NCT01642004": {
+  "org_study_id": "CA209-017",
+  "secondary_ids": [
+   "2011-004792-36"
+  ]
+ },
+ "NCT01437566": {
+  "org_study_id": "GDC4950g",
+  "secondary_ids": [
+   "GO00769",
+   "2010-023763-17"
+  ]
+ },
+ "NCT01163253": {
+  "org_study_id": "A3921061",
+  "secondary_ids": [
+   "2010-020002-15"
+  ]
+ },
+ "NCT02003924": {
+  "org_study_id": "MDV3100-14",
+  "secondary_ids": [
+   "2012-005665-12",
+   "C3431005"
+  ]
+ },
+ "NCT02481830": {
+  "org_study_id": "CA209-331",
+  "secondary_ids": [
+   "2015-001097-18",
+   "2015"
+  ]
+ },
+ "NCT01949129": {
+  "org_study_id": "ALL SCTped FORUM 2012",
+  "secondary_ids": []
+ },
+ "NCT01204749": {
+  "org_study_id": "20090508",
+  "secondary_ids": []
+ },
+ "NCT02125461": {
+  "org_study_id": "D4191C00001",
+  "secondary_ids": [
+   "2014-000336-42",
+   "2014"
+  ]
+ },
+ "NCT02272413": {
+  "org_study_id": "1302.5",
+  "secondary_ids": [
+   "2014-002161-30",
+   "2014"
+  ]
+ },
+ "NCT00967616": {
+  "org_study_id": "CS7017-A-U203",
+  "secondary_ids": []
+ },
+ "NCT02075840": {
+  "org_study_id": "BO28984",
+  "secondary_ids": [
+   "2013-004133-33"
+  ]
+ },
+ "NCT02576574": {
+  "org_study_id": "EMR 100070-005",
+  "secondary_ids": [
+   "2015-001537-24",
+   "2015"
+  ]
+ },
+ "NCT02303821": {
+  "org_study_id": "CFZ008",
+  "secondary_ids": [
+   "2014-001633-84",
+   "2014"
+  ]
+ },
+ "NCT01450761": {
+  "org_study_id": "CA184-156",
+  "secondary_ids": [
+   "2011-000850-48"
+  ]
+ },
+ "NCT01633203": {
+  "org_study_id": "GOCCHI 2009-01",
+  "secondary_ids": []
+ },
+ "NCT02872116": {
+  "org_study_id": "CA209-649",
+  "secondary_ids": [
+   "2016-001018-76",
+   "2016"
+  ]
+ },
+ "NCT03400709": {
+  "org_study_id": "123606",
+  "secondary_ids": []
+ },
+ "NCT03200717": {
+  "org_study_id": "CPZP034A2410",
+  "secondary_ids": [
+   "2017-000708-10",
+   "2017"
+  ]
+ },
+ "NCT03929666": {
+  "org_study_id": "ZWI-ZW25-201",
+  "secondary_ids": []
+ },
+ "NCT02889874": {
+  "org_study_id": "ANZ1601/BIG 16-02",
+  "secondary_ids": [
+   "2016-003527-33",
+   "2016"
+  ]
+ },
+ "NCT03909997": {
+  "org_study_id": "1",
+  "secondary_ids": []
+ },
+ "NCT03937154": {
+  "org_study_id": "20170770",
+  "secondary_ids": []
+ },
+ "NCT03631199": {
+  "org_study_id": "CACZ885U2301",
+  "secondary_ids": [
+   "2024-511490-29-00"
+  ]
+ },
+ "NCT03626545": {
+  "org_study_id": "CACZ885V2301",
+  "secondary_ids": [
+   "2018-002480-26",
+   "2018"
+  ]
+ },
+ "NCT02752074": {
+  "org_study_id": "INCB 24360-301 (ECHO-301)",
+  "secondary_ids": [
+   "2015-004991-31",
+   "2015"
+  ]
+ },
+ "NCT03007147": {
+  "org_study_id": "AALL1631",
+  "secondary_ids": [
+   "NCI-2016-01588",
+   "AALL1631",
+   "2017-000705-20",
+   "AALL1631",
+   "AALL1631",
+   "U10CA180886",
+   "2017"
+  ]
+ },
+ "NCT02635672": {
+  "org_study_id": "VNC-152-101",
+  "secondary_ids": [
+   "2014-004808-30",
+   "2014"
+  ]
+ },
+ "NCT03104699": {
+  "org_study_id": "C-700-01",
+  "secondary_ids": []
+ },
+ "NCT03141177": {
+  "org_study_id": "CA209-9ER",
+  "secondary_ids": [
+   "2017-000759-20",
+   "2017"
+  ]
+ },
+ "NCT03470922": {
+  "org_study_id": "CA224-047",
+  "secondary_ids": [
+   "2024-510913-13"
+  ]
+ },
+ "NCT02788214": {
+  "org_study_id": "NCI-2020-07069",
+  "secondary_ids": [
+   "16-C-N120",
+   "999916120"
+  ]
+ },
+ "NCT03721289": {
+  "org_study_id": "D133FR00143",
+  "secondary_ids": []
+ },
+ "NCT03188406": {
+  "org_study_id": "NCI-2020-07070",
+  "secondary_ids": [
+   "17-C-N094",
+   "999917094"
+  ]
+ },
+ "NCT03056755": {
+  "org_study_id": "CBYL719X2402",
+  "secondary_ids": [
+   "2023-509167-24-00",
+   "2023"
+  ]
+ },
+ "NCT03834519": {
+  "org_study_id": "7339-010",
+  "secondary_ids": [
+   "MK-7339-010",
+   "KEYLYNK-010",
+   "2018-004118-16",
+   "2018"
+  ]
+ },
+ "NCT02823574": {
+  "org_study_id": "CA209-714",
+  "secondary_ids": [
+   "2016-001645-64",
+   "2016"
+  ]
+ },
+ "NCT02594371": {
+  "org_study_id": "KX-ORAX-001",
+  "secondary_ids": []
+ },
+ "NCT03661320": {
+  "org_study_id": "CA017-078",
+  "secondary_ids": [
+   "2024-512158-12"
+  ]
+ },
+ "NCT03740165": {
+  "org_study_id": "7339-001",
+  "secondary_ids": [
+   "ENGOT-ov43",
+   "MK-7339-001",
+   "KEYLYNK-001",
+   "194619",
+   "GOG-3036",
+   "2022-502124-52-00",
+   "U1111-1283-3793",
+   "2018-001973-25",
+   "2018"
+  ]
+ },
+ "NCT03830866": {
+  "org_study_id": "D9100C00001",
+  "secondary_ids": [
+   "2018-002872-42",
+   "2018"
+  ]
+ },
+ "NCT03158571": {
+  "org_study_id": "GCTF1",
+  "secondary_ids": []
+ },
+ "NCT03215706": {
+  "org_study_id": "CA209-9LA",
+  "secondary_ids": [
+   "2017-001195-35",
+   "2017"
+  ]
+ },
+ "NCT02967692": {
+  "org_study_id": "CPDR001F2301",
+  "secondary_ids": [
+   "2016-002794-35",
+   "2016"
+  ]
+ },
+ "NCT03138512": {
+  "org_study_id": "CA209-914",
+  "secondary_ids": [
+   "2016-004502-34",
+   "2016"
+  ]
+ },
+ "NCT03615326": {
+  "org_study_id": "3475-811",
+  "secondary_ids": [
+   "MK-3475-811",
+   "184142",
+   "2023-508253-98-00",
+   "U1111-1297-9360",
+   "2018-000224-34",
+   "2018",
+   "2023"
+  ]
+ },
+ "NCT03504397": {
+  "org_study_id": "8951-CL-0301",
+  "secondary_ids": [
+   "2017-002567-17",
+   "CTR20190258",
+   "jRCT2080224032",
+   "2024-511365-11-00",
+   "2017"
+  ]
+ },
+ "NCT02941926": {
+  "org_study_id": "CLEE011A2404",
+  "secondary_ids": [
+   "2016-003467-19",
+   "2016"
+  ]
+ },
+ "NCT03797326": {
+  "org_study_id": "7902-005",
+  "secondary_ids": [
+   "MK-7902-005",
+   "E7080-G000-224",
+   "LEAP-005",
+   "2018-003747-37",
+   "2018"
+  ]
+ },
+ "NCT02885376": {
+  "org_study_id": "ING-001",
+  "secondary_ids": []
+ },
+ "NCT03233191": {
+  "org_study_id": "EA1151",
+  "secondary_ids": [
+   "NCI-2017-01111",
+   "EA1151",
+   "EA1151",
+   "EA1151",
+   "U10CA180820",
+   "U10CA180794"
+  ]
+ },
+ "NCT03920098": {
+  "org_study_id": "1190532",
+  "secondary_ids": []
+ },
+ "NCT03296163": {
+  "org_study_id": "MB02-C-02-17",
+  "secondary_ids": []
+ },
+ "NCT03732820": {
+  "org_study_id": "D081SC00001",
+  "secondary_ids": [
+   "2018-002011-10",
+   "2018"
+  ]
+ },
+ "NCT03383458": {
+  "org_study_id": "CA209-9DX",
+  "secondary_ids": []
+ },
+ "NCT03220230": {
+  "org_study_id": "X9001083",
+  "secondary_ids": [
+   "NIRVANA"
+  ]
+ },
+ "NCT03088540": {
+  "org_study_id": "R2810-ONC-1624",
+  "secondary_ids": [
+   "2016-004407-31",
+   "2024-515052-20-00",
+   "2016"
+  ]
+ },
+ "NCT02763579": {
+  "org_study_id": "GO30081",
+  "secondary_ids": [
+   "2015-004861-97",
+   "2015"
+  ]
+ },
+ "NCT03873402": {
+  "org_study_id": "CA209-8Y8",
+  "secondary_ids": [
+   "2018-004695-35",
+   "2018"
+  ]
+ },
+ "NCT03704077": {
+  "org_study_id": "CA224-061",
+  "secondary_ids": [
+   "2018-001070-20",
+   "2018"
+  ]
+ },
+ "NCT03221426": {
+  "org_study_id": "3475-585",
+  "secondary_ids": [
+   "MK-3475-585",
+   "173786",
+   "KEYNOTE-585",
+   "PHRR200226-002534",
+   "2023-509595-42-00",
+   "2023-509595-42",
+   "2023"
+  ]
+ },
+ "NCT03713593": {
+  "org_study_id": "7902-002",
+  "secondary_ids": [
+   "MK-7902-002",
+   "E7080-G000-311",
+   "LEAP-002",
+   "194590",
+   "2018-002983-26",
+   "2018"
+  ]
+ },
+ "NCT03834493": {
+  "org_study_id": "3475-641",
+  "secondary_ids": [
+   "MK-3475-641",
+   "KEYNOTE-641",
+   "195005",
+   "2022-500785-10-00",
+   "U1111-1278-1151",
+   "2018-004117-40",
+   "2018"
+  ]
+ },
+ "NCT03646955": {
+  "org_study_id": "DBCG RT Natural Trial",
+  "secondary_ids": []
+ },
+ "NCT03029780": {
+  "org_study_id": "CA209-800",
+  "secondary_ids": []
+ },
+ "NCT02677896": {
+  "org_study_id": "9785-CL-0335",
+  "secondary_ids": [
+   "2015-003869-28",
+   "2015"
+  ]
+ },
+ "NCT03337724": {
+  "org_study_id": "CO40016",
+  "secondary_ids": [
+   "2017-001548-36",
+   "2017"
+  ]
+ },
+ "NCT02928224": {
+  "org_study_id": "ARRAY-818-302",
+  "secondary_ids": [
+   "BEACON CRC",
+   "2015-005805-35",
+   "C4221009",
+   "2015"
+  ]
+ },
+ "NCT03820986": {
+  "org_study_id": "7902-003",
+  "secondary_ids": [
+   "MK-7902-003",
+   "E7080-G000-312",
+   "LEAP-003",
+   "2018-002520-16",
+   "2018"
+  ]
+ },
+ "NCT03395197": {
+  "org_study_id": "C3441021",
+  "secondary_ids": [
+   "2017-003295-31",
+   "TALAPRO-2",
+   "2023-509087-20-00",
+   "2023",
+   "2017"
+  ]
+ },
+ "NCT02588261": {
+  "org_study_id": "8273-CL-0302",
+  "secondary_ids": [
+   "2015-002894-39",
+   "2015"
+  ]
+ },
+ "NCT02869789": {
+  "org_study_id": "CA209-817",
+  "secondary_ids": [
+   "2016-002621-10",
+   "2016"
+  ]
+ },
+ "NCT03614013": {
+  "org_study_id": "1180173",
+  "secondary_ids": []
+ },
+ "NCT02577263": {
+  "org_study_id": "019892",
+  "secondary_ids": []
+ },
+ "NCT03024996": {
+  "org_study_id": "WO39210",
+  "secondary_ids": [
+   "2016-001881-27",
+   "2016"
+  ]
+ },
+ "NCT03725475": {
+  "org_study_id": "D133HR00004",
+  "secondary_ids": [
+   "D133HR00004"
+  ]
+ },
+ "NCT03066778": {
+  "org_study_id": "3475-604",
+  "secondary_ids": [
+   "173744",
+   "MK-3475-604",
+   "KEYNOTE-604",
+   "2016-004309-15",
+   "2016"
+  ]
+ },
+ "NCT03142334": {
+  "org_study_id": "3475-564",
+  "secondary_ids": [
+   "173704",
+   "MK-3475-564",
+   "KEYNOTE-564",
+   "U1111-1275-8289",
+   "2022-501251-81-00",
+   "2016-004351-75",
+   "2016"
+  ]
+ },
+ "NCT03144648": {
+  "org_study_id": "PRECAMA",
+  "secondary_ids": []
+ },
+ "NCT03732677": {
+  "org_study_id": "D933RC00001",
+  "secondary_ids": [
+   "2023-510015-19-00",
+   "2018-001811-59",
+   "2018",
+   "2023"
+  ]
+ },
+ "NCT03553836": {
+  "org_study_id": "3475-716",
+  "secondary_ids": [
+   "MK-3475-716",
+   "KEYNOTE-716",
+   "205203",
+   "2022-501966-23",
+   "U1111-1282-6109",
+   "2018-000669-35",
+   "2018"
+  ]
+ },
+ "NCT03662659": {
+  "org_study_id": "CA224-060",
+  "secondary_ids": [
+   "2018-001069-18",
+   "2018"
+  ]
+ },
+ "NCT02809053": {
+  "org_study_id": "AGB002",
+  "secondary_ids": []
+ },
+ "NCT03377361": {
+  "org_study_id": "CA209-9N9",
+  "secondary_ids": [
+   "2017-001830-24",
+   "2017"
+  ]
+ },
+ "NCT02657434": {
+  "org_study_id": "GO29438",
+  "secondary_ids": [
+   "2015-003605-42",
+   "2015"
+  ]
+ },
+ "NCT03829319": {
+  "org_study_id": "7902-006",
+  "secondary_ids": [
+   "MK-7902-006",
+   "E7080-G000-315",
+   "LEAP-006",
+   "194658",
+   "2018-003824-35",
+   "2018"
+  ]
+ },
+ "NCT03338790": {
+  "org_study_id": "CA209-9KD",
+  "secondary_ids": []
+ },
+ "NCT03596866": {
+  "org_study_id": "Brigatinib-3001",
+  "secondary_ids": [
+   "2018-001957-29",
+   "2018"
+  ]
+ },
+ "NCT02960022": {
+  "org_study_id": "9785-CL-0123",
+  "secondary_ids": [
+   "2016-001694-32",
+   "2023-510298-33-00",
+   "jRCT2031220674",
+   "2023",
+   "2016"
+  ]
+ },
+ "NCT03675737": {
+  "org_study_id": "3475-859",
+  "secondary_ids": [
+   "MK-3475-859",
+   "KEYNOTE-859",
+   "JAPIC-CTI",
+   "2023-508890-10-00",
+   "U1111-1299-1405",
+   "2018-001757-27",
+   "2018",
+   "2023"
+  ]
+ },
+ "NCT02626455": {
+  "org_study_id": "17833",
+  "secondary_ids": [
+   "2015-001088-38",
+   "2015"
+  ]
+ },
+ "NCT03556358": {
+  "org_study_id": "TX05-03",
+  "secondary_ids": []
+ },
+ "NCT03433313": {
+  "org_study_id": "EGC002",
+  "secondary_ids": [
+   "2017-003973-33",
+   "2017"
+  ]
+ },
+ "NCT03930953": {
+  "org_study_id": "CC-99282-NHL-001",
+  "secondary_ids": [
+   "2018-003235-29",
+   "2018"
+  ]
+ },
+ "NCT03635983": {
+  "org_study_id": "CA045-001",
+  "secondary_ids": [
+   "2018-001423-40",
+   "17-214-08",
+   "2018"
+  ]
+ },
+ "NCT03678025": {
+  "org_study_id": "S1802",
+  "secondary_ids": [
+   "NCI-2018-01738",
+   "S1802",
+   "S1802",
+   "U10CA180888"
+  ]
+ },
+ "NCT02807636": {
+  "org_study_id": "WO30070",
+  "secondary_ids": [
+   "2016-000250-35",
+   "2016"
+  ]
+ },
+ "NCT03178552": {
+  "org_study_id": "BO29554",
+  "secondary_ids": [
+   "2017-000076-28",
+   "2017"
+  ]
+ },
+ "NCT03674112": {
+  "org_study_id": "MO40628",
+  "secondary_ids": [
+   "2018-002153-30",
+   "2018"
+  ]
+ },
+ "NCT03447769": {
+  "org_study_id": "CACZ885T2301",
+  "secondary_ids": [
+   "2017-004011-39",
+   "2017"
+  ]
+ },
+ "NCT03800134": {
+  "org_study_id": "D9106C00001",
+  "secondary_ids": [
+   "2018-002997-29",
+   "2018"
+  ]
+ },
+ "NCT03729245": {
+  "org_study_id": "17-214-09",
+  "secondary_ids": [
+   "CA045002"
+  ]
+ },
+ "NCT02609828": {
+  "org_study_id": "A4091061",
+  "secondary_ids": [
+   "2013-002223-42",
+   "CANCER PAIN PH 3 SC STUDY"
+  ]
+ },
+ "NCT03260894": {
+  "org_study_id": "KEYNOTE-679/ECHO-302",
+  "secondary_ids": [
+   "2024-512016-22-00",
+   "2017-002259-26",
+   "2017"
+  ]
+ },
+ "NCT02762877": {
+  "org_study_id": "14-009",
+  "secondary_ids": []
+ },
+ "NCT03302234": {
+  "org_study_id": "3475-598",
+  "secondary_ids": [
+   "MK-3475-598",
+   "KEYNOTE-598",
+   "2016-004364-20",
+   "2016"
+  ]
+ },
+ "NCT03635567": {
+  "org_study_id": "3475-826",
+  "secondary_ids": [
+   "MK-3475-826",
+   "KEYNOTE-826",
+   "184183",
+   "2018-001440-53",
+   "2018"
+  ]
+ },
+ "NCT03778229": {
+  "org_study_id": "D5084C00007",
+  "secondary_ids": [
+   "2018-003012-51",
+   "2018"
+  ]
+ },
+ "NCT03396445": {
+  "org_study_id": "5890-001",
+  "secondary_ids": [
+   "MK-5890-001",
+   "2017-004550-41",
+   "2017"
+  ]
+ },
+ "NCT02853604": {
+  "org_study_id": "ADXS001-02",
+  "secondary_ids": [
+   "2015-004844-20",
+   "2015"
+  ]
+ },
+ "NCT03371017": {
+  "org_study_id": "MO39193",
+  "secondary_ids": [
+   "2016-005119-42",
+   "2016"
+  ]
+ },
+ "NCT03782207": {
+  "org_study_id": "MO40653",
+  "secondary_ids": []
+ },
+ "NCT03834506": {
+  "org_study_id": "3475-921",
+  "secondary_ids": [
+   "MK-3475-921",
+   "KEYNOTE-921",
+   "JAPAC-CTI",
+   "2018-004116-22",
+   "2018"
+  ]
+ },
+ "NCT03735121": {
+  "org_study_id": "BP40657",
+  "secondary_ids": [
+   "2018-002328-18",
+   "2018"
+  ]
+ },
+ "NCT03519256": {
+  "org_study_id": "CA209-9UT",
+  "secondary_ids": [
+   "2017-003581-27",
+   "2017"
+  ]
+ },
+ "NCT03798626": {
+  "org_study_id": "CVPM087A2101",
+  "secondary_ids": [
+   "2018-003952-19",
+   "2018"
+  ]
+ },
+ "NCT04994717": {
+  "org_study_id": "20190360",
+  "secondary_ids": [
+   "2023-503640-14",
+   "2023"
+  ]
+ },
+ "NCT04221945": {
+  "org_study_id": "3475-A18",
+  "secondary_ids": [
+   "MK-3475-A18",
+   "KEYNOTE-A18",
+   "ENGOT-cx11",
+   "205189",
+   "GOG-3047",
+   "2022-501972-25-00",
+   "U1111-1282-6395",
+   "2019-003152-37",
+   "2019"
+  ]
+ },
+ "NCT04493853": {
+  "org_study_id": "D361BC00001",
+  "secondary_ids": [
+   "2023-504998-20-00",
+   "2020-000346-33",
+   "2023"
+  ]
+ },
+ "NCT04035486": {
+  "org_study_id": "D5169C00001",
+  "secondary_ids": [
+   "2019-000650-61",
+   "2019"
+  ]
+ },
+ "NCT04924075": {
+  "org_study_id": "6482-015",
+  "secondary_ids": [
+   "MK-6482-015",
+   "PT2977",
+   "jRCT2011220024",
+   "2023-504853-11-00",
+   "2020-005028-13",
+   "2023"
+  ]
+ },
+ "NCT03939481": {
+  "org_study_id": "S1714",
+  "secondary_ids": [
+   "NCI-2018-01568",
+   "S1714",
+   "SWOG-S1714",
+   "S1714",
+   "UG1CA189974"
+  ]
+ },
+ "NCT03937219": {
+  "org_study_id": "XL184-313",
+  "secondary_ids": [
+   "2024-515616-47-00"
+  ]
+ },
+ "NCT04191135": {
+  "org_study_id": "7339-009",
+  "secondary_ids": [
+   "MK-7339-009",
+   "KEYLYNK-009",
+   "195082",
+   "2022-500418-24-00",
+   "U1111-1275-8575",
+   "2019-001892-35",
+   "2019"
+  ]
+ },
+ "NCT04786275": {
+  "org_study_id": "190416008",
+  "secondary_ids": []
+ },
+ "NCT04116281": {
+  "org_study_id": "154/2019",
+  "secondary_ids": []
+ },
+ "NCT04987203": {
+  "org_study_id": "AV-951-20-304",
+  "secondary_ids": []
+ },
+ "NCT05052801": {
+  "org_study_id": "20210096",
+  "secondary_ids": [
+   "2023-505457-40",
+   "2023"
+  ]
+ },
+ "NCT04148911": {
+  "org_study_id": "MO39874",
+  "secondary_ids": [
+   "2019-002488-91",
+   "2019"
+  ]
+ },
+ "NCT04022109": {
+  "org_study_id": "824986",
+  "secondary_ids": [
+   "lzp-2018/2-0228",
+   "KC-L-2017/5"
+  ]
+ },
+ "NCT04154956": {
+  "org_study_id": "EFC15858",
+  "secondary_ids": [
+   "U1111-1233-0781",
+   "2024-515101-26-00",
+   "2019-001273-81",
+   "2019"
+  ]
+ },
+ "NCT05091437": {
+  "org_study_id": "D133FR00176",
+  "secondary_ids": []
+ },
+ "NCT05002569": {
+  "org_study_id": "CA224-098",
+  "secondary_ids": [
+   "2021-001641-13"
+  ]
+ },
+ "NCT05064059": {
+  "org_study_id": "4280A-007",
+  "secondary_ids": [
+   "MK-4280A-007",
+   "jRCT2031210482",
+   "2024-511043-25-00",
+   "U1111-1302-9933"
+  ]
+ },
+ "NCT04736199": {
+  "org_study_id": "21140",
+  "secondary_ids": [
+   "2022-502244-12-00",
+   "2020-003093-48"
+  ]
+ },
+ "NCT04613596": {
+  "org_study_id": "CA239-0009",
+  "secondary_ids": [
+   "CA239-0009",
+   "849-007",
+   "2023-508922-83",
+   "2023"
+  ]
+ },
+ "NCT04524689": {
+  "org_study_id": "ACT16146",
+  "secondary_ids": [
+   "U1111-1233-9798",
+   "2023-509115-84",
+   "2023"
+  ]
+ },
+ "NCT04634877": {
+  "org_study_id": "3475-B21",
+  "secondary_ids": [
+   "KEYNOTE-B21",
+   "ENGOT-en11",
+   "GOG-3053",
+   "jRCT2031200399",
+   "2022-501973-37-00",
+   "U1111-1282-6430",
+   "2020-003424-17"
+  ]
+ },
+ "NCT04456699": {
+  "org_study_id": "7339-003",
+  "secondary_ids": [
+   "MK-7339-003",
+   "LYNK-003",
+   "jRCT2031200146",
+   "2019-000698-22",
+   "2019"
+  ]
+ },
+ "NCT04914897": {
+  "org_study_id": "ACT16849",
+  "secondary_ids": [
+   "U1111-1254-0107",
+   "MK-3475-B71",
+   "KEYNOTE-B71",
+   "2020-005331-78"
+  ]
+ },
+ "NCT04305054": {
+  "org_study_id": "3475-02B",
+  "secondary_ids": [
+   "MK-3475-02B",
+   "KEYMAKER-U02",
+   "2023-506313-21-00",
+   "U1111-1293-5644",
+   "2019-003977-24",
+   "2019",
+   "2023"
+  ]
+ },
+ "NCT05153239": {
+  "org_study_id": "PM1183-C-008-21",
+  "secondary_ids": []
+ },
+ "NCT04821609": {
+  "org_study_id": "SA20I0060",
+  "secondary_ids": []
+ },
+ "NCT04384484": {
+  "org_study_id": "ADCT-402-311",
+  "secondary_ids": [
+   "2020-000241-14"
+  ]
+ },
+ "NCT04266301": {
+  "org_study_id": "CMBG453B12301",
+  "secondary_ids": [
+   "2019-002089-11",
+   "2019"
+  ]
+ },
+ "NCT04498117": {
+  "org_study_id": "QPT-ORE-005",
+  "secondary_ids": [
+   "GOG-3035",
+   "FLORA-5",
+   "FLORA5"
+  ]
+ },
+ "NCT04742192": {
+  "org_study_id": "D5161R00028",
+  "secondary_ids": []
+ },
+ "NCT04195750": {
+  "org_study_id": "6482-005",
+  "secondary_ids": [
+   "MK-6482",
+   "205262",
+   "jRCT2080225166",
+   "2023-506635-15-00",
+   "U1111-1294-1321",
+   "2019-003444-72",
+   "2019",
+   "2023"
+  ]
+ },
+ "NCT05139017": {
+  "org_study_id": "2140-003",
+  "secondary_ids": [
+   "VLS-101",
+   "MK-2140-003",
+   "waveLINE-003",
+   "2022-502646-27-00",
+   "U1111-1285-0898",
+   "jRCT2011250068"
+  ]
+ },
+ "NCT05043090": {
+  "org_study_id": "D5086C00001",
+  "secondary_ids": [
+   "2022-503105-38-00",
+   "2021-000336-55"
+  ]
+ },
+ "NCT04026412": {
+  "org_study_id": "CA209-73L",
+  "secondary_ids": [
+   "2019-001222-98",
+   "2019"
+  ]
+ },
+ "NCT04960709": {
+  "org_study_id": "D910PC00001",
+  "secondary_ids": [
+   "2020-005452-38"
+  ]
+ },
+ "NCT04964908": {
+  "org_study_id": "D8220R00031",
+  "secondary_ids": []
+ },
+ "NCT04928846": {
+  "org_study_id": "M18-868",
+  "secondary_ids": [
+   "2023-505749-14-00",
+   "2023"
+  ]
+ },
+ "NCT04227457": {
+  "org_study_id": "LACOG 0116",
+  "secondary_ids": []
+ },
+ "NCT04008030": {
+  "org_study_id": "CA209-8HW",
+  "secondary_ids": [
+   "2018-000040-26",
+   "2018"
+  ]
+ },
+ "NCT04896242": {
+  "org_study_id": "11190071",
+  "secondary_ids": []
+ },
+ "NCT04810078": {
+  "org_study_id": "CA209-67T",
+  "secondary_ids": [
+   "2020-003655-15",
+   "U1111-1255-9514"
+  ]
+ },
+ "NCT05123391": {
+  "org_study_id": "210406002",
+  "secondary_ids": []
+ },
+ "NCT04149574": {
+  "org_study_id": "CA209-7G8",
+  "secondary_ids": []
+ },
+ "NCT04884360": {
+  "org_study_id": "D9319C00001",
+  "secondary_ids": [
+   "2020-005960-68"
+  ]
+ },
+ "NCT04581824": {
+  "org_study_id": "213403",
+  "secondary_ids": []
+ },
+ "NCT05008224": {
+  "org_study_id": "3475-C11",
+  "secondary_ids": [
+   "MK-3475-C11",
+   "KEYNOTE-C11",
+   "2022-501615-14-00",
+   "U1111-1281-5347",
+   "2021-001244-95"
+  ]
+ },
+ "NCT04155034": {
+  "org_study_id": "S1827",
+  "secondary_ids": [
+   "NCI-2019-05338",
+   "S1827",
+   "S1827",
+   "U10CA180888"
+  ]
+ },
+ "NCT04380636": {
+  "org_study_id": "7339-012",
+  "secondary_ids": [
+   "MK-7339-012",
+   "KEYLYNK-012",
+   "205352",
+   "2023-503591-25-00",
+   "U1111-1287-5477",
+   "2019-003237-41",
+   "2019",
+   "2023"
+  ]
+ },
+ "NCT04475939": {
+  "org_study_id": "213400",
+  "secondary_ids": [
+   "2023-508443-40",
+   "2020-002202-20",
+   "2023"
+  ]
+ },
+ "NCT04623775": {
+  "org_study_id": "CA224-104",
+  "secondary_ids": [
+   "2020-004026-31",
+   "U1111-1256-8115"
+  ]
+ },
+ "NCT05132582": {
+  "org_study_id": "SGNTUC-028",
+  "secondary_ids": [
+   "C4251007",
+   "2023-503826-37-00",
+   "2023"
+  ]
+ },
+ "NCT04704934": {
+  "org_study_id": "DS8201-A-U306",
+  "secondary_ids": [
+   "2020-004559-34"
+  ]
+ },
+ "NCT04191096": {
+  "org_study_id": "3475-991",
+  "secondary_ids": [
+   "MK-3475-991",
+   "KEYNOTE-991",
+   "jRCT2080225171",
+   "2023-507024-24-00",
+   "U1111-1294-9592",
+   "2019-003633-41",
+   "2019",
+   "2023"
+  ]
+ },
+ "NCT04626479": {
+  "org_study_id": "3475-03A",
+  "secondary_ids": [
+   "MK-3475-03A",
+   "2023-506838-68-00",
+   "U1111-1294-4527",
+   "2019-003609-84",
+   "2019",
+   "2023"
+  ]
+ },
+ "NCT04626518": {
+  "org_study_id": "3475-03B",
+  "secondary_ids": [
+   "MK-3475-03B",
+   "KEYMAKER-U03",
+   "2023-506839-15-00",
+   "U1111-1294-4557",
+   "2019-003610-13",
+   "2019",
+   "2023"
+  ]
+ },
+ "NCT04622319": {
+  "org_study_id": "DS8201-A-U305",
+  "secondary_ids": [
+   "2020-003982-20",
+   "DESTINY-Breast05",
+   "NSABP B-60",
+   "GBG-103",
+   "SOLTI-2001"
+  ]
+ },
+ "NCT04961996": {
+  "org_study_id": "GO42784",
+  "secondary_ids": [
+   "2021-000129-28",
+   "2023-507172-44-00",
+   "2023"
+  ]
+ },
+ "NCT03974022": {
+  "org_study_id": "DZ2019E0001",
+  "secondary_ids": []
+ },
+ "NCT04446117": {
+  "org_study_id": "XL184-315",
+  "secondary_ids": []
+ },
+ "NCT04015466": {
+  "org_study_id": "LEGACY-2",
+  "secondary_ids": []
+ },
+ "NCT04604132": {
+  "org_study_id": "DZB-CS-202",
+  "secondary_ids": []
+ },
+ "NCT04078152": {
+  "org_study_id": "D910FC00001",
+  "secondary_ids": [
+   "2019-001402-20",
+   "2019"
+  ]
+ },
+ "NCT04534205": {
+  "org_study_id": "BNT113-01",
+  "secondary_ids": [
+   "2020-001400-41",
+   "2024-512671-12-00"
+  ]
+ },
+ "NCT04895358": {
+  "org_study_id": "3475-B49",
+  "secondary_ids": [
+   "MK-3475-B49",
+   "KEYNOTE-B49",
+   "2023-506752-24-00",
+   "U1111-1294-3354",
+   "jRCT2051210049",
+   "PHRR210721-003751",
+   "2020-005407-38",
+   "2023"
+  ]
+ },
+ "NCT04736706": {
+  "org_study_id": "6482-012",
+  "secondary_ids": [
+   "MK-6482-012",
+   "jRCT2031210435",
+   "PHRR210911-003887",
+   "2022-502122-41-00",
+   "U1111-1283-3681",
+   "2020-002216-52"
+  ]
+ },
+ "NCT05007106": {
+  "org_study_id": "7684A-005",
+  "secondary_ids": [
+   "MK-7684A-005",
+   "jRCT2031210335",
+   "KEYVIBE-005",
+   "2023-505284-36-00",
+   "U1111-1291-4290",
+   "2021-001009-56",
+   "2023"
+  ]
+ },
+ "NCT03957031": {
+  "org_study_id": "LEGACY-1",
+  "secondary_ids": []
+ },
+ "NCT05128773": {
+  "org_study_id": "EFC16133",
+  "secondary_ids": [
+   "U1111-1244-1767",
+   "BIG 20-01",
+   "AFT-55",
+   "EORTC-2033",
+   "2021-000398-10"
+  ]
+ },
+ "NCT04478266": {
+  "org_study_id": "EFC15935",
+  "secondary_ids": [
+   "2020-001824-33",
+   "U1111-1233-0486"
+  ]
+ },
+ "NCT05005273": {
+  "org_study_id": "CA020-016",
+  "secondary_ids": [
+   "2021-000039-29",
+   "U1111-1263-4850"
+  ]
+ },
+ "NCT04241185": {
+  "org_study_id": "3475-992",
+  "secondary_ids": [
+   "MK-3475-992",
+   "205383",
+   "U1111-1287-4190",
+   "2023-503500-87-00",
+   "jRCT2080225287",
+   "2019-004023-20",
+   "2019",
+   "2023"
+  ]
+ },
+ "NCT04567615": {
+  "org_study_id": "CA224-073",
+  "secondary_ids": [
+   "2018-003151-38",
+   "U1111-1218-6499",
+   "2018"
+  ]
+ },
+ "NCT04659603": {
+  "org_study_id": "ACT16432",
+  "secondary_ids": [
+   "U1111-1244-1644",
+   "2020-003096-18"
+  ]
+ },
+ "NCT03985072": {
+  "org_study_id": "AB1537-002",
+  "secondary_ids": []
+ },
+ "NCT04879329": {
+  "org_study_id": "RC48G001",
+  "secondary_ids": [
+   "C5731002",
+   "2022-500030-28-01"
+  ]
+ },
+ "NCT05104567": {
+  "org_study_id": "ACT16902",
+  "secondary_ids": [
+   "U1111-1251-4981",
+   "MK-3475-B78",
+   "KEYNOTE-B78",
+   "2021-002181-41"
+  ]
+ },
+ "NCT04100018": {
+  "org_study_id": "CA209-7DX",
+  "secondary_ids": [
+   "2019-002030-36",
+   "2019"
+  ]
+ },
+ "NCT05144841": {
+  "org_study_id": "2140-004",
+  "secondary_ids": [
+   "MK-2140-004",
+   "2022-501243-33-00",
+   "U1111-1279-9073",
+   "2021-003397-32"
+  ]
+ },
+ "NCT04109066": {
+  "org_study_id": "CA209-7FL",
+  "secondary_ids": []
+ },
+ "NCT04246177": {
+  "org_study_id": "7902-012",
+  "secondary_ids": [
+   "MK-7902-012",
+   "LEAP-012",
+   "E7080-G000-318",
+   "205286",
+   "2022-502116-36-00",
+   "U1111-1283-3439",
+   "2019-002345-37",
+   "2019"
+  ]
+ },
+ "NCT04152863": {
+  "org_study_id": "V937-011",
+  "secondary_ids": [
+   "V937-011",
+   "2019-002034-36",
+   "2019"
+  ]
+ },
+ "NCT05166135": {
+  "org_study_id": "X9001302",
+  "secondary_ids": [
+   "LOYAL"
+  ]
+ },
+ "NCT04158258": {
+  "org_study_id": "MO39485",
+  "secondary_ids": []
+ },
+ "NCT05111626": {
+  "org_study_id": "20210098",
+  "secondary_ids": [
+   "2023-505458-16",
+   "2023"
+  ]
+ },
+ "NCT04738487": {
+  "org_study_id": "7684A-003",
+  "secondary_ids": [
+   "MK-7684A-003",
+   "jRCT2021210025",
+   "KEYVIBE-003",
+   "PHRR230831-006054",
+   "2023-505362-28-00",
+   "U1111-1291-5552",
+   "2020-004049-35",
+   "2023"
+  ]
+ },
+ "NCT04913220": {
+  "org_study_id": "ACT16845",
+  "secondary_ids": [
+   "U1111-1254-0189",
+   "2020-005332-30"
+  ]
+ },
+ "NCT04152499": {
+  "org_study_id": "KL264-01",
+  "secondary_ids": []
+ },
+ "NCT04019808": {
+  "org_study_id": "LEGACY-3",
+  "secondary_ids": []
+ },
+ "NCT05152147": {
+  "org_study_id": "ZWI-ZW25-301",
+  "secondary_ids": [
+   "2021-000296-36",
+   "jRCT2061230026",
+   "2023-510319-20-00",
+   "2023"
+  ]
+ },
+ "NCT04351555": {
+  "org_study_id": "D516AC00001",
+  "secondary_ids": [
+   "2022-502606-33-00",
+   "2020-000058-89"
+  ]
+ },
+ "NCT04039607": {
+  "org_study_id": "CA209-9DW",
+  "secondary_ids": []
+ },
+ "NCT04915755": {
+  "org_study_id": "213831",
+  "secondary_ids": [
+   "2020-003973-23"
+  ]
+ },
+ "NCT03980314": {
+  "org_study_id": "CA209-8FC",
+  "secondary_ids": [
+   "2018-002993-38",
+   "2018"
+  ]
+ },
+ "NCT05116189": {
+  "org_study_id": "3475-B96",
+  "secondary_ids": [
+   "MK-3475-B96",
+   "KEYNOTE-B96",
+   "ENGOT-ov65",
+   "jRCT2051210184",
+   "2023-506177-35-00",
+   "U1111-1287-5318",
+   "2020-005027-37",
+   "2023"
+  ]
+ },
+ "NCT04948983": {
+  "org_study_id": "SA18i0002",
+  "secondary_ids": []
+ },
+ "NCT04586231": {
+  "org_study_id": "6482-011",
+  "secondary_ids": [
+   "MK-6482-011",
+   "jRCT2031210311",
+   "2024-510620-39-00",
+   "U1111-1302-2815",
+   "2020-002075-35"
+  ]
+ },
+ "NCT04943900": {
+  "org_study_id": "CA102-003",
+  "secondary_ids": []
+ },
+ "NCT04109391": {
+  "org_study_id": "TX05-03E",
+  "secondary_ids": []
+ },
+ "NCT04711252": {
+  "org_study_id": "D8532C00001",
+  "secondary_ids": [
+   "2020-002276-12"
+  ]
+ },
+ "NCT06236438": {
+  "org_study_id": "M23-721",
+  "secondary_ids": [
+   "2023-505773-32-00",
+   "2023"
+  ]
+ },
+ "NCT06132958": {
+  "org_study_id": "2870-005",
+  "secondary_ids": [
+   "2023-504816-14-00",
+   "U1111-1288-7581",
+   "jRCT2031240041",
+   "2023"
+  ]
+ },
+ "NCT06504394": {
+  "org_study_id": "3475A-F65",
+  "secondary_ids": [
+   "MK-3475A-065",
+   "2024-510969-42-00",
+   "U1111-1302-8349"
+  ]
+ },
+ "NCT05415215": {
+  "org_study_id": "MO43110",
+  "secondary_ids": [
+   "2021-002346-33",
+   "2023-506380-33-00",
+   "2023"
+  ]
+ },
+ "NCT06252649": {
+  "org_study_id": "20210081",
+  "secondary_ids": []
+ },
+ "NCT05690295": {
+  "org_study_id": "DFP22-0020",
+  "secondary_ids": []
+ },
+ "NCT06077760": {
+  "org_study_id": "V940-002",
+  "secondary_ids": [
+   "2023-504923-20-00",
+   "U1111-1290-3969",
+   "jRCT2061240063",
+   "PHRR240705-007252",
+   "2023"
+  ]
+ },
+ "NCT06091865": {
+  "org_study_id": "R1979-ONC-2105",
+  "secondary_ids": [
+   "2022-502785-25-00"
+  ]
+ },
+ "NCT05774951": {
+  "org_study_id": "D8531C00002",
+  "secondary_ids": [
+   "2022-501024-20-00"
+  ]
+ },
+ "NCT05239728": {
+  "org_study_id": "6482-022",
+  "secondary_ids": [
+   "MK-6482-022",
+   "LITESPARK-022",
+   "jRCT2051220030",
+   "2023-505023-31-00",
+   "U1111-1290-7346",
+   "2021-003436-92",
+   "2023"
+  ]
+ },
+ "NCT05215340": {
+  "org_study_id": "DS1062-A-U304",
+  "secondary_ids": [
+   "2021-002555-10",
+   "KEYNOTE-C73",
+   "MK3475-C73",
+   "2023-507933-12-00",
+   "2023"
+  ]
+ },
+ "NCT06099782": {
+  "org_study_id": "3475A-F11",
+  "secondary_ids": [
+   "2023-506017-22-00",
+   "U1111-1293-0814",
+   "MK-3475A-F11",
+   "jRCT2051230147",
+   "2023"
+  ]
+ },
+ "NCT06230224": {
+  "org_study_id": "R1979-HM-2299",
+  "secondary_ids": [
+   "2022-502783-21-00"
+  ]
+ },
+ "NCT05254743": {
+  "org_study_id": "18281",
+  "secondary_ids": [
+   "J2N-OX-JZNU",
+   "LOXO-BTK-20030",
+   "2023-507699-38-00",
+   "2023"
+  ]
+ },
+ "NCT05352672": {
+  "org_study_id": "R3767-ONC-2011",
+  "secondary_ids": [
+   "2021-004453-23",
+   "2023-505772-30-00",
+   "2023"
+  ]
+ },
+ "NCT05508867": {
+  "org_study_id": "4280A-008",
+  "secondary_ids": [
+   "MK-4280A-008",
+   "2023-503615-14-00",
+   "U1111-1287-5864",
+   "2022-000371-39",
+   "2023"
+  ]
+ },
+ "NCT05730036": {
+  "org_study_id": "R5458-ONC-2245",
+  "secondary_ids": [
+   "2022-501396-62-00"
+  ]
+ },
+ "NCT05568095": {
+  "org_study_id": "STAR-221",
+  "secondary_ids": [
+   "jRCT2051220179",
+   "MOH_2023-04-30_012590",
+   "CTR20233469",
+   "CTR20233470",
+   "2023-507522-16-00",
+   "2023"
+  ]
+ },
+ "NCT05665595": {
+  "org_study_id": "7684A-010",
+  "secondary_ids": [
+   "MK-7684A-010",
+   "KEYVIBE-010",
+   "2022-501417-31-00",
+   "jRCT2031230099",
+   "U1111-1280-3661"
+  ]
+ },
+ "NCT06120491": {
+  "org_study_id": "D9723C00001",
+  "secondary_ids": [
+   "2023-504214-30-00",
+   "2023"
+  ]
+ },
+ "NCT06312137": {
+  "org_study_id": "2870-019",
+  "secondary_ids": [
+   "2023-508012-35-00",
+   "MK-2870-019",
+   "jRCT2021240020",
+   "U1111-1297-4260",
+   "2023"
+  ]
+ },
+ "NCT05907122": {
+  "org_study_id": "20220083",
+  "secondary_ids": []
+ },
+ "NCT05624554": {
+  "org_study_id": "1026-008",
+  "secondary_ids": [
+   "2022-501481-21-00",
+   "MK-1026-008",
+   "U1111-1274-2574",
+   "2021-006593-23"
+  ]
+ },
+ "NCT06232707": {
+  "org_study_id": "CA058-1019",
+  "secondary_ids": [
+   "2023-509472-42",
+   "U1111-1281-8227",
+   "2023"
+  ]
+ },
+ "NCT05382299": {
+  "org_study_id": "GS-US-592-6238",
+  "secondary_ids": [
+   "2021-005743-79",
+   "DOH-27082022-7958",
+   "jRCT2041220122",
+   "CTR20234162",
+   "2023-504195-14",
+   "2023"
+  ]
+ },
+ "NCT05969444": {
+  "org_study_id": "1230504 (AR)",
+  "secondary_ids": []
+ },
+ "NCT06430866": {
+  "org_study_id": "20230127",
+  "secondary_ids": []
+ },
+ "NCT05577715": {
+  "org_study_id": "CA116-003",
+  "secondary_ids": [
+   "2022-000131-23",
+   "MORAb-202-G000-203"
+  ]
+ },
+ "NCT05722015": {
+  "org_study_id": "3475A-D77",
+  "secondary_ids": [
+   "2022-501506-36-00",
+   "MK-3475A-D77",
+   "jRCT2031230049",
+   "U1111-1280-9384"
+  ]
+ },
+ "NCT06065748": {
+  "org_study_id": "CO44657",
+  "secondary_ids": [
+   "2022-502980-39-00"
+  ]
+ },
+ "NCT06161441": {
+  "org_study_id": "R3767-ONC-2266",
+  "secondary_ids": [
+   "2023-505172-29-00",
+   "2023"
+  ]
+ },
+ "NCT05405166": {
+  "org_study_id": "EFC15951",
+  "secondary_ids": [
+   "U1111-1261-5846",
+   "2023-508869-32",
+   "2023-508869-32",
+   "2023"
+  ]
+ },
+ "NCT06428409": {
+  "org_study_id": "9999-02A",
+  "secondary_ids": [
+   "MK-9999-02A",
+   "2023-508703-21-00",
+   "U1111-1298-8273",
+   "jRCT2031240178",
+   "2023"
+  ]
+ },
+ "NCT06101134": {
+  "org_study_id": "CA224-1044",
+  "secondary_ids": [
+   "U1111-1289-5947",
+   "2023-504515-33-00",
+   "2023"
+  ]
+ },
+ "NCT06136624": {
+  "org_study_id": "5684-003",
+  "secondary_ids": [
+   "2023-504899-25-00",
+   "MK-5684-003",
+   "jRCT2031240029",
+   "U1111-1287-5304",
+   "2023"
+  ]
+ },
+ "NCT05609968": {
+  "org_study_id": "3475-D46",
+  "secondary_ids": [
+   "MK-3475-D46",
+   "PHRR230203-005387",
+   "jRCT2031230031",
+   "2023-503501-11-00",
+   "U1111-1287-4239",
+   "2022-000836-49",
+   "2023"
+  ]
+ },
+ "NCT06311721": {
+  "org_study_id": "20210033",
+  "secondary_ids": [
+   "2023-508336-57",
+   "2024-514304-14-00",
+   "2023"
+  ]
+ },
+ "NCT05253651": {
+  "org_study_id": "SGNTUC-029",
+  "secondary_ids": [
+   "C4251008",
+   "2024-514180-25-00"
+  ]
+ },
+ "NCT06136559": {
+  "org_study_id": "1026-011",
+  "secondary_ids": [
+   "2022-501697-19-00",
+   "U1111-1281-7895",
+   "MK-1026-011",
+   "BELLWAVE-011",
+   "jRCT2031230697"
+  ]
+ },
+ "NCT05840211": {
+  "org_study_id": "GS-US-598-6168",
+  "secondary_ids": [
+   "2022-502593-17-00",
+   "jRCT2061230032",
+   "DOH-27-082023-6901",
+   "MOH_2023-07-17_012821",
+   "CTR20233370"
+  ]
+ },
+ "NCT06428396": {
+  "org_study_id": "6482-029",
+  "secondary_ids": [
+   "MK-6482-029",
+   "LITESPARK-029"
+  ]
+ },
+ "NCT06152575": {
+  "org_study_id": "C1071032",
+  "secondary_ids": [
+   "MAGNETISMM-32",
+   "2023-507871-23-00",
+   "2023"
+  ]
+ },
+ "NCT05933577": {
+  "org_study_id": "V940-001",
+  "secondary_ids": [
+   "V940-001",
+   "2023-503652-27-00",
+   "jRCT2041230169",
+   "U1111-1287-6366",
+   "2023"
+  ]
+ },
+ "NCT06309290": {
+  "org_study_id": "FAPESP-UFRO",
+  "secondary_ids": []
+ },
+ "NCT06356129": {
+  "org_study_id": "CA073-1020",
+  "secondary_ids": [
+   "2023-510178-15",
+   "U1111-1300-8493",
+   "2023"
+  ]
+ },
+ "NCT05920356": {
+  "org_study_id": "20190341",
+  "secondary_ids": [
+   "2022-501863-41-00"
+  ]
+ },
+ "NCT05211895": {
+  "org_study_id": "D9075C00001",
+  "secondary_ids": [
+   "2021-004327-32"
+  ]
+ },
+ "NCT05973773": {
+  "org_study_id": "TAS6417-301",
+  "secondary_ids": [
+   "2023-503575-21",
+   "2023"
+  ]
+ },
+ "NCT05329766": {
+  "org_study_id": "ARC-21",
+  "secondary_ids": [
+   "2021-006291-16",
+   "2024-511917-40-00"
+  ]
+ },
+ "NCT05592938": {
+  "org_study_id": "22-5074",
+  "secondary_ids": []
+ },
+ "NCT05226598": {
+  "org_study_id": "7684A-007",
+  "secondary_ids": [
+   "MK-7684A-007",
+   "KEYVIBE-007",
+   "jRCT2031220098",
+   "2023-506074-12-00",
+   "U1111-1293-2114",
+   "2023"
+  ]
+ },
+ "NCT05519085": {
+  "org_study_id": "CA057-001",
+  "secondary_ids": [
+   "2023-509859-13",
+   "2023"
+  ]
+ },
+ "NCT05261399": {
+  "org_study_id": "D5087C00001",
+  "secondary_ids": [
+   "2024-511169-12-00",
+   "2021-006374-24"
+  ]
+ },
+ "NCT05447988": {
+  "org_study_id": "CLINP-001001",
+  "secondary_ids": []
+ },
+ "NCT06307431": {
+  "org_study_id": "V940-004",
+  "secondary_ids": [
+   "2023-505177-32-00",
+   "U1111-1291-1851",
+   "V940-004",
+   "2023"
+  ]
+ },
+ "NCT06459180": {
+  "org_study_id": "2870-020",
+  "secondary_ids": [
+   "MK-2870-020",
+   "TroFuse-020",
+   "2023-508323-12-00",
+   "U1111-1298-0563",
+   "GOG-3101",
+   "ENGOT-cx20",
+   "jRCT2031240201",
+   "2023"
+  ]
+ },
+ "NCT06380751": {
+  "org_study_id": "D9722C00001",
+  "secondary_ids": []
+ },
+ "NCT06345729": {
+  "org_study_id": "1084-004",
+  "secondary_ids": [
+   "MK-1084-004",
+   "U1111-1296-8093",
+   "2023-507776-42-00",
+   "jRCT2031240213",
+   "PHRR241128-007796",
+   "KANDLELIT-004",
+   "2023"
+  ]
+ },
+ "NCT06225596": {
+  "org_study_id": "BT8009-230",
+  "secondary_ids": [
+   "2023-504231-41",
+   "U1111-1300-3791",
+   "2023"
+  ]
+ },
+ "NCT05952557": {
+  "org_study_id": "D8535C00001",
+  "secondary_ids": [
+   "2023-504031-41-00",
+   "2023"
+  ]
+ },
+ "NCT05171777": {
+  "org_study_id": "MO43576",
+  "secondary_ids": []
+ },
+ "NCT06425302": {
+  "org_study_id": "CA073-1022",
+  "secondary_ids": [
+   "U1111-1303-4594",
+   "2024-511304-16"
+  ]
+ },
+ "NCT05608291": {
+  "org_study_id": "R3767-ONC-2055",
+  "secondary_ids": [
+   "2022-501576-25-00"
+  ]
+ },
+ "NCT06054555": {
+  "org_study_id": "20210031",
+  "secondary_ids": [
+   "2023-503288-40",
+   "2023"
+  ]
+ },
+ "NCT05173987": {
+  "org_study_id": "3475-C93",
+  "secondary_ids": [
+   "MK-3475-C93",
+   "KEYNOTE-C93",
+   "GOG-3064",
+   "ENGOT-en15",
+   "jRCT2011210065",
+   "2023-506361-56-00",
+   "U1111-1292-6057",
+   "2021-003185-12",
+   "2023"
+  ]
+ },
+ "NCT05625399": {
+  "org_study_id": "CA224-127",
+  "secondary_ids": [
+   "U1111-1274-0193",
+   "2022-500967-11-00"
+  ]
+ },
+ "NCT05911295": {
+  "org_study_id": "SGNDV-001",
+  "secondary_ids": [
+   "C5731001",
+   "2022-501105-12-00"
+  ]
+ },
+ "NCT06148077": {
+  "org_study_id": "DIM23-0023",
+  "secondary_ids": []
+ },
+ "NCT05678673": {
+  "org_study_id": "XL092-304",
+  "secondary_ids": [
+   "EU CTR: 2022-501703-27-0"
+  ]
+ },
+ "NCT06152367": {
+  "org_study_id": "UCHD04T2026",
+  "secondary_ids": []
+ },
+ "NCT05328908": {
+  "org_study_id": "CA224-123",
+  "secondary_ids": [
+   "2021-004285-35"
+  ]
+ },
+ "NCT06151574": {
+  "org_study_id": "1479-0008",
+  "secondary_ids": [
+   "2023-504308-27-00",
+   "U1111-1294-1407",
+   "2023"
+  ]
+ },
+ "NCT05613088": {
+  "org_study_id": "CA116-001",
+  "secondary_ids": [
+   "2021-004807-42"
+  ]
+ },
+ "NCT05179603": {
+  "org_study_id": "ACT16941",
+  "secondary_ids": [
+   "U1111-1251-5834",
+   "MK-3475-C39",
+   "KEYNOTE-C39",
+   "2021-002150-91"
+  ]
+ },
+ "NCT05170204": {
+  "org_study_id": "BO42777",
+  "secondary_ids": [
+   "2023-503920-14-00",
+   "2023"
+  ]
+ },
+ "NCT06074588": {
+  "org_study_id": "2870-004",
+  "secondary_ids": [
+   "2023-503539-16-00",
+   "jRCT2031240108",
+   "U1111-1287-4913",
+   "2023"
+  ]
+ },
+ "NCT06305767": {
+  "org_study_id": "V940-005",
+  "secondary_ids": [
+   "V940-005",
+   "U1111-1292-1952",
+   "2023-505658-17-00",
+   "INTerpath-005",
+   "2023"
+  ]
+ },
+ "NCT06097364": {
+  "org_study_id": "R1979-ONC-2075",
+  "secondary_ids": [
+   "2022-502113-28-00"
+  ]
+ },
+ "NCT06090539": {
+  "org_study_id": "CA123-1000",
+  "secondary_ids": [
+   "2023-506654-20",
+   "U1111-1291-2654",
+   "2023"
+  ]
+ },
+ "NCT06353386": {
+  "org_study_id": "5684-01A",
+  "secondary_ids": [
+   "MK-5684-01A",
+   "2023-506288-33-00",
+   "U1111-1292-6912",
+   "jRCT2031240224",
+   "2023"
+  ]
+ },
+ "NCT05458297": {
+  "org_study_id": "2140-006",
+  "secondary_ids": [
+   "MK-2140-006",
+   "jRCT2011230019",
+   "2022-501374-19-00",
+   "U1111-1280-1849",
+   "2021-004450-36"
+  ]
+ },
+ "NCT05348577": {
+  "org_study_id": "D361EC00001",
+  "secondary_ids": [
+   "2023-504996-26-00",
+   "2021-005201-27",
+   "2023"
+  ]
+ },
+ "NCT06312176": {
+  "org_study_id": "2870-010",
+  "secondary_ids": [
+   "MK-2870-010",
+   "2023-504918-29-00",
+   "U1111-1289-8119",
+   "jRCT2031240476",
+   "2023"
+  ]
+ },
+ "NCT06140836": {
+  "org_study_id": "CA127-1030",
+  "secondary_ids": [
+   "U1111-1292-0487"
+  ]
+ },
+ "NCT06432426": {
+  "org_study_id": "38330628",
+  "secondary_ids": []
+ },
+ "NCT06395103": {
+  "org_study_id": "9999-01A",
+  "secondary_ids": [
+   "MK-9999-01A",
+   "LIGHTBEAM-U01",
+   "2023-507178-41-00",
+   "U1111-1295-3459",
+   "jRCT2031250824",
+   "2023"
+  ]
+ },
+ "NCT06012435": {
+  "org_study_id": "SGNB6A-002",
+  "secondary_ids": [
+   "C5751002",
+   "2023-503827-25-01",
+   "2023"
+  ]
+ },
+ "NCT05382286": {
+  "org_study_id": "GS-US-592-6173",
+  "secondary_ids": [
+   "2021-005742-14",
+   "KEYNOTE-D19",
+   "jRCT2041220123",
+   "MK-3475-D19",
+   "2023-504194-21",
+   "2023"
+  ]
+ },
+ "NCT06330064": {
+  "org_study_id": "DS7300-203",
+  "secondary_ids": [
+   "2023-509632-26-00",
+   "jRCT2031240016",
+   "2023"
+  ]
+ },
+ "NCT05298423": {
+  "org_study_id": "7684A-006",
+  "secondary_ids": [
+   "MK-7684A-006",
+   "KEYVIBE-006",
+   "jRCT2021220015",
+   "PHRR230831-006071",
+   "2022-502752-31-00",
+   "U1111-1285-3656",
+   "2021-005135-23"
+  ]
+ },
+ "NCT05502237": {
+  "org_study_id": "GS-US-626-6216",
+  "secondary_ids": [
+   "2022-000578-25"
+  ]
+ },
+ "NCT05446870": {
+  "org_study_id": "4830-002",
+  "secondary_ids": [
+   "MK-4830-002",
+   "2023-505005-16-00",
+   "U1111-1290-6634",
+   "2021-005458-27",
+   "2023"
+  ]
+ },
+ "NCT06091254": {
+  "org_study_id": "R1979-HM-2298",
+  "secondary_ids": [
+   "2022-502660-20-00"
+  ]
+ },
+ "NCT05947851": {
+  "org_study_id": "1026-010",
+  "secondary_ids": [
+   "MK-1026-010",
+   "BELLWAVE-010",
+   "2022-501560-17-00",
+   "U1111-1281-1520",
+   "jRCT2061260028"
+  ]
+ },
+ "NCT05555732": {
+  "org_study_id": "DS1062-A-U303",
+  "secondary_ids": [
+   "2022-500802-16-00",
+   "MK-3475-E10",
+   "jRCT2061220066",
+   "TROPION-Lung07",
+   "KEYNOTE-E10"
+  ]
+ },
+ "NCT05669989": {
+  "org_study_id": "LTS17704",
+  "secondary_ids": [
+   "U1111-1277-6635",
+   "2023-507180-19",
+   "2022-002253-26",
+   "2023"
+  ]
+ },
+ "NCT06170788": {
+  "org_study_id": "2870-007",
+  "secondary_ids": [
+   "MK-2870-007",
+   "2023-503376-24-00",
+   "jRCT2051240089",
+   "U1111-1287-1395",
+   "2023"
+  ]
+ },
+ "NCT06136650": {
+  "org_study_id": "5684-004",
+  "secondary_ids": [
+   "MK-5684-004",
+   "jRCT2031240030",
+   "2023-504957-11-00",
+   "U1111-1288-5002",
+   "2023"
+  ]
+ },
+ "NCT05827016": {
+  "org_study_id": "IM048-022",
+  "secondary_ids": [
+   "U1111-1280-9492",
+   "2022-501515-14-00"
+  ]
+ },
+ "NCT06422143": {
+  "org_study_id": "2870-023",
+  "secondary_ids": [
+   "2023-510128-66-00",
+   "U1111-1301-2790",
+   "jRCT2021240015",
+   "MK-2870-023",
+   "2023"
+  ]
+ },
+ "NCT06623422": {
+  "org_study_id": "V940-009",
+  "secondary_ids": [
+   "2023-506327-29-00",
+   "U1111-1293-5814",
+   "INTerpath-009",
+   "jRCT2061240105",
+   "2023"
+  ]
+ },
+ "NCT07519772": {
+  "org_study_id": "1045-008",
+  "secondary_ids": [
+   "U1111-1324-8720",
+   "2025-523005-15-00",
+   "MK-1045-008",
+   "2025"
+  ]
+ },
+ "NCT06561386": {
+  "org_study_id": "CA224-1093",
+  "secondary_ids": [
+   "2024-513682-40",
+   "U1111-1306-8896"
+  ]
+ },
+ "NCT07131735": {
+  "org_study_id": "230719001",
+  "secondary_ids": []
+ },
+ "NCT07398820": {
+  "org_study_id": "FAIN202201",
+  "secondary_ids": []
+ },
+ "NCT07221149": {
+  "org_study_id": "CA266-0004",
+  "secondary_ids": [
+   "2025-523263-37",
+   "U1111-1325-8116",
+   "2025"
+  ]
+ },
+ "NCT06731907": {
+  "org_study_id": "3475-01G",
+  "secondary_ids": [
+   "2024-515772-12-00",
+   "U1111-1309-7532",
+   "KEYMAKER U01",
+   "MK-3475-01G"
+  ]
+ },
+ "NCT07087054": {
+  "org_study_id": "CRN00808-12",
+  "secondary_ids": [
+   "2024-519875-24-00"
+  ]
+ },
+ "NCT07291076": {
+  "org_study_id": "CA266-0006",
+  "secondary_ids": [
+   "2025-523602-33",
+   "U1111-1327-4912",
+   "2025"
+  ]
+ },
+ "NCT07049926": {
+  "org_study_id": "3475-03C",
+  "secondary_ids": [
+   "MK-3475-03C",
+   "2024-516437-12-00",
+   "U1111-1310-6076",
+   "KEYMAKER-U03"
+  ]
+ },
+ "NCT07476326": {
+  "org_study_id": "BIO-NIVOLU-103",
+  "secondary_ids": [
+   "2025-525158-20-00",
+   "2025"
+  ]
+ },
+ "NCT06952803": {
+  "org_study_id": "D9727C00001",
+  "secondary_ids": [
+   "2024-513586-39"
+  ]
+ },
+ "NCT06926868": {
+  "org_study_id": "CA244-0008",
+  "secondary_ids": [
+   "2024-519871-24",
+   "U1111-1316-1533"
+  ]
+ },
+ "NCT06863272": {
+  "org_study_id": "2400-01A",
+  "secondary_ids": [
+   "MK-2400-01A",
+   "2024-516036-94-00",
+   "U1111-1310-5406",
+   "IDeate-Prostate02"
+  ]
+ },
+ "NCT07076121": {
+  "org_study_id": "CA240-0030",
+  "secondary_ids": [
+   "2025-522598-12",
+   "U1111-1320-4708",
+   "CA2400030",
+   "2025"
+  ]
+ },
+ "NCT07227402": {
+  "org_study_id": "6482-033",
+  "secondary_ids": [
+   "U1111-1311-6892",
+   "2024-517136-21"
+  ]
+ },
+ "NCT06731478": {
+  "org_study_id": "DS8201-724",
+  "secondary_ids": [
+   "KEYNOTE-G03",
+   "MK-3475-G03"
+  ]
+ },
+ "NCT07361497": {
+  "org_study_id": "CA266-0001",
+  "secondary_ids": []
+ },
+ "NCT06899126": {
+  "org_study_id": "DS8201-793",
+  "secondary_ids": [
+   "2024-515658-26-00",
+   "KEYNOTE-G23",
+   "MK-3475-G23"
+  ]
+ },
+ "NCT06629779": {
+  "org_study_id": "C2321003",
+  "secondary_ids": [
+   "2024-511652-40-00"
+  ]
+ },
+ "NCT06780085": {
+  "org_study_id": "3475-01H",
+  "secondary_ids": [
+   "2024-518761-10-00",
+   "MK-3475-01H",
+   "U1111-1314-1785",
+   "KEYMAKER-U01"
+  ]
+ },
+ "NCT07216703": {
+  "org_study_id": "2870-036",
+  "secondary_ids": [
+   "U1111-1319-9926",
+   "2025-521514-26-00",
+   "MK-2870-036",
+   "TroFuse-036",
+   "GOG-3123",
+   "ENGOT-cx22",
+   "jRCT2031250604",
+   "2025"
+  ]
+ },
+ "NCT06556004": {
+  "org_study_id": "UCHIT19I0061",
+  "secondary_ids": [
+   "IT19I0061"
+  ]
+ },
+ "NCT07252739": {
+  "org_study_id": "3475-01J",
+  "secondary_ids": [
+   "U1111-1321-3999",
+   "2025-521939-36-00",
+   "2025"
+  ]
+ },
+ "NCT06901531": {
+  "org_study_id": "8951-CL-0305",
+  "secondary_ids": [
+   "2024-519773-19",
+   "jRCT2031250021",
+   "CTR20253090"
+  ]
+ },
+ "NCT07221357": {
+  "org_study_id": "CA266-0003",
+  "secondary_ids": [
+   "2025-523224-45",
+   "U1111-1325-6505",
+   "2025"
+  ]
+ },
+ "NCT06587451": {
+  "org_study_id": "CJPB898A12301",
+  "secondary_ids": []
+ },
+ "NCT07227597": {
+  "org_study_id": "6070-003",
+  "secondary_ids": [
+   "MK-6070-003",
+   "U1111-1318-5025",
+   "2025-521032-11-00",
+   "2025"
+  ]
+ },
+ "NCT06875310": {
+  "org_study_id": "CA239-0004",
+  "secondary_ids": [
+   "2024-515698-85",
+   "U1111-1309-5596",
+   "CA2390004"
+  ]
+ },
+ "NCT06624059": {
+  "org_study_id": "BO43249",
+  "secondary_ids": []
+ },
+ "NCT06946797": {
+  "org_study_id": "CA209-1533",
+  "secondary_ids": []
+ },
+ "NCT07593066": {
+  "org_study_id": "UC-CCU-PRIORITY-2026",
+  "secondary_ids": [
+   "FNC-2025-1440"
+  ]
+ },
+ "NCT07221474": {
+  "org_study_id": "V940-013",
+  "secondary_ids": [
+   "V940-013",
+   "U1111-1318-2495",
+   "2025-520902-37-00",
+   "2025"
+  ]
+ },
+ "NCT07361510": {
+  "org_study_id": "CA266-0002",
+  "secondary_ids": [
+   "2025-523586-18",
+   "U1111-1326-9286",
+   "2025"
+  ]
+ },
+ "NCT06646276": {
+  "org_study_id": "CA245-0001",
+  "secondary_ids": [
+   "2024-515740-23",
+   "U1111-1308-1151"
+  ]
+ },
+ "NCT06911502": {
+  "org_study_id": "CA073-1003",
+  "secondary_ids": [
+   "2024-519152-82",
+   "U1111-1314-3909"
+  ]
+ },
+ "NCT06508658": {
+  "org_study_id": "M22-128",
+  "secondary_ids": [
+   "2024-510965-41"
+  ]
+ },
+ "NCT07431827": {
+  "org_study_id": "1084-013",
+  "secondary_ids": [
+   "U1111-1312-0627",
+   "2024-517337-41-00",
+   "jRCT2071260063"
+  ]
+ },
+ "NCT07190248": {
+  "org_study_id": "1084-007",
+  "secondary_ids": [
+   "U1111-1307-9569",
+   "2024-514500-14-00",
+   "MK-1084-007",
+   "KANDLELIT-007",
+   "jRCT2031240722"
+  ]
+ },
+ "NCT06726265": {
+  "org_study_id": "TACTI-004",
+  "secondary_ids": [
+   "2024-513621-23-00",
+   "KEYNOTE-F91",
+   "MK-3475-F91",
+   "IMP321-P026"
+  ]
+ },
+ "NCT07318558": {
+  "org_study_id": "2870-021",
+  "secondary_ids": [
+   "MK-2870-021",
+   "GOG-3102",
+   "ENGOT-ov85",
+   "U1111-1297-5158",
+   "2023-508047-40-00",
+   "jRCT2031250647",
+   "2023"
+  ]
+ },
+ "NCT07472517": {
+  "org_study_id": "1438-0012",
+  "secondary_ids": [
+   "2025-520565-51-00",
+   "U1111-1317-4955",
+   "2025"
+  ]
+ },
+ "NCT06766903": {
+  "org_study_id": "UNAB-FCR-KINE2024A",
+  "secondary_ids": []
+ },
+ "NCT06788912": {
+  "org_study_id": "3475-01E",
+  "secondary_ids": [
+   "MK-3475-01E",
+   "KEYMAKER-U01",
+   "2023-509234-19-00",
+   "U1111-1299-6753",
+   "2023"
+  ]
+ },
+ "NCT06868277": {
+  "org_study_id": "D702GC00001",
+  "secondary_ids": [
+   "2024-517780-24-00"
+  ]
+ },
+ "NCT07195695": {
+  "org_study_id": "1479-0032",
+  "secondary_ids": [
+   "U1111-1320-6149",
+   "2025-521284-12-00",
+   "2025"
+  ]
+ },
+ "NCT06765109": {
+  "org_study_id": "NVL-655-04",
+  "secondary_ids": [
+   "2024-517553-26"
+  ]
+ },
+ "NCT07022483": {
+  "org_study_id": "DS8201-854",
+  "secondary_ids": []
+ },
+ "NCT06635824": {
+  "org_study_id": "GCT1046-06",
+  "secondary_ids": [
+   "2024-512998-27-00",
+   "jRCT2051240178",
+   "1010602",
+   "NL-OMON57246"
+  ]
+ },
+ "NCT07680764": {
+  "org_study_id": "CA052-1000",
+  "secondary_ids": [
+   "2026-525170-19",
+   "U1111-1333-5867"
+  ]
+ },
+ "NCT06841354": {
+  "org_study_id": "2870-011",
+  "secondary_ids": [
+   "MK-2870-011",
+   "TroFuse-011",
+   "2024-516834-36-00",
+   "U1111-1311-2310"
+  ]
+ },
+ "NCT07740122": {
+  "org_study_id": "HSR-FAEX-CRC-FIT-2026",
+  "secondary_ids": []
+ },
+ "NCT06925737": {
+  "org_study_id": "2400-001",
+  "secondary_ids": [
+   "U1111-1312-2498",
+   "2024-517423-40-00",
+   "MK-2400-001"
+  ]
+ },
+ "NCT07060807": {
+  "org_study_id": "1022-016",
+  "secondary_ids": [
+   "U1111-1317-5490",
+   "2025-520582-51-00",
+   "jRCT2031250297",
+   "2025"
+  ]
+ },
+ "NCT06525220": {
+  "org_study_id": "MCLA-158-CL03",
+  "secondary_ids": [
+   "2023-510323-30-00",
+   "2023"
+  ]
+ },
+ "NCT07100080": {
+  "org_study_id": "CA244-0010",
+  "secondary_ids": [
+   "EU CTR",
+   "WHO",
+   "CA2440010"
+  ]
+ },
+ "NCT06764875": {
+  "org_study_id": "D702AC00001",
+  "secondary_ids": [
+   "2024-512583-57-00"
+  ]
+ },
+ "NCT06966700": {
+  "org_study_id": "2870-032",
+  "secondary_ids": [
+   "U1111-1316-7898",
+   "2024-520190-12-00",
+   "jRCT2031250231"
+  ]
+ },
+ "NCT06767462": {
+  "org_study_id": "D853AC00001",
+  "secondary_ids": []
+ },
+ "NCT07218809": {
+  "org_study_id": "D8991C00001",
+  "secondary_ids": []
+ },
+ "NCT07232602": {
+  "org_study_id": "3475-04D",
+  "secondary_ids": [
+   "U1111-1322-3713",
+   "2025-522253-19-00",
+   "MK-3475-04D",
+   "2025"
+  ]
+ },
+ "NCT07413939": {
+  "org_study_id": "WO46069",
+  "secondary_ids": [
+   "2025-524498-17-00",
+   "2025"
+  ]
+ },
+ "NCT06758401": {
+  "org_study_id": "C5751003",
+  "secondary_ids": [
+   "2024-517968-36-00"
+  ]
+ },
+ "NCT06764485": {
+  "org_study_id": "CA071-1000",
+  "secondary_ids": [
+   "2024-517422-25",
+   "U1111-1311-0532"
+  ]
+ },
+ "NCT06618287": {
+  "org_study_id": "CA244-0001",
+  "secondary_ids": [
+   "2024-514947-27",
+   "U1111-1308-2752"
+  ]
+ },
+ "NCT06780098": {
+  "org_study_id": "3475-01I",
+  "secondary_ids": [
+   "MK-3475-01I",
+   "U1111-1314-2392",
+   "2024-518839-11-00",
+   "KEYMAKER-01I"
+  ]
+ },
+ "NCT06717347": {
+  "org_study_id": "2140-010",
+  "secondary_ids": [
+   "MK-2140-010",
+   "2024-515566-13-00",
+   "U1111-1309-3971",
+   "jRCT2061240099"
+  ]
+ },
+ "NCT06529302": {
+  "org_study_id": "2024-00186; bb24Weber",
+  "secondary_ids": []
+ },
+ "NCT07286149": {
+  "org_study_id": "3475-01F",
+  "secondary_ids": [
+   "MK-3475-01F",
+   "2024-512248-47-00",
+   "U1111-1304-4707"
+  ]
+ },
+ "NCT06780137": {
+  "org_study_id": "6070-002",
+  "secondary_ids": [
+   "2024-517926-25-00",
+   "MK-6070-002",
+   "jRCT2031250039"
+  ]
+ },
+ "NCT06997497": {
+  "org_study_id": "1084-012",
+  "secondary_ids": [
+   "MK-1084-012",
+   "KANDLELIT-012",
+   "2024-517232-22-00",
+   "U1111-1311-8311",
+   "jRCT2031250265"
+  ]
+ },
+ "NCT06532006": {
+  "org_study_id": "HLX22-GC-301",
+  "secondary_ids": []
+ },
+ "NCT07063745": {
+  "org_study_id": "CA240-0029",
+  "secondary_ids": [
+   "2025-521511-40",
+   "U1111-1319-8383",
+   "CA2400029",
+   "2025"
+  ]
+ },
+ "NCT07293351": {
+  "org_study_id": "CA266-0008",
+  "secondary_ids": [
+   "U1111-1327-6332",
+   "2026-527163-15-00"
+  ]
+ },
+ "NCT07489495": {
+  "org_study_id": "6482-034",
+  "secondary_ids": [
+   "U1111-1311-4692",
+   "2024-516993-31-00",
+   "LITESPARK-034",
+   "MK-6482-034",
+   "LS-034"
+  ]
+ },
+ "NCT06824467": {
+  "org_study_id": "2870-022",
+  "secondary_ids": [
+   "MK-2870-022",
+   "TroFuse-022",
+   "2023-508015-23-00",
+   "U1111-1297-4489",
+   "GOG-3103",
+   "ENGOT-ov84",
+   "jRCT2031240722",
+   "2023"
+  ]
+ },
+ "NCT06833073": {
+  "org_study_id": "V940-011",
+  "secondary_ids": [
+   "2024-517335-46-00",
+   "U1111-1312-0572",
+   "INTerpath-011",
+   "V940-011"
+  ]
+ },
+ "NCT06952504": {
+  "org_study_id": "2870-033",
+  "secondary_ids": [
+   "2024-519331-42-00",
+   "U1111-1315-0794",
+   "GOG-3119",
+   "ENGOT-en29",
+   "TroFuse-033",
+   "jRCT2011250020"
+  ]
+ },
+ "NCT06890598": {
+  "org_study_id": "18763",
+  "secondary_ids": [
+   "2024-512302-25-00",
+   "J3M-MC-JZQH"
+  ]
+ }
+}

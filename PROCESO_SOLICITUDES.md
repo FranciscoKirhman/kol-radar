@@ -71,9 +71,10 @@ Plantilla B o C. `python3 scripts/exclusiones.py estado` muestra cada solicitud 
 
 ## Por qué la próxima recolección no la vuelve a traer
 Todos los scripts que escriben la muestra (`integrar_beta.py`, `integrar_farmacos_ctgov.py`,
-`clasificar_farmacos_ncit.py`, `resolver_sedes_web.py`, `integrar_estudiosclinicos_cl.py`) guardan a través de `exclusiones.guardar_muestra()`, que quita a las
+`clasificar_farmacos_ncit.py`, `resolver_sedes_web.py`, `integrar_estudiosclinicos_cl.py`,
+`integrar_isp_inspecciones.py`) guardan a través de `exclusiones.guardar_muestra()`, que quita a las
 personas excluidas antes de escribir. Los que crean personas o candidatos (`integrar_beta.py`,
-`preintegracion_clinicaltrials.py`) además las saltan al crearlas:
+`preintegracion_clinicaltrials.py`, `integrar_isp_inspecciones.py`) además las saltan al crearlas:
 una coincidencia exacta no se crea ni se lista en la bandeja de revisión, y una **posible** (mismo
 nombre y apellido, otra forma del nombre) no se crea sola y queda marcada para que la revise una
 persona.
