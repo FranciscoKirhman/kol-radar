@@ -312,6 +312,12 @@
               <td>Solo el hecho ensayo ↔ centro, con su URL. <code>robots.txt</code> sin restricciones.</td>
             </tr>
             <tr>
+              <td><a href="https://www.ispch.gob.cl/anamed/establecimientos-farmaceuticos-y-cosmeticos/centros-de-investigacion-clinica/" target="_blank" rel="noopener">Centros de investigación clínica inspeccionados 2016–2025</a><span class="quien">Instituto de Salud Pública de Chile</span></td>
+              <td>Qué centro fue sede de un ensayo, por su código de protocolo, y quién fue su investigador principal. Dio 8 vínculos centro–ensayo y 18 investigadores, que entraron antes de la revisión de identidad.</td>
+              <td>El código de protocolo se cruza con el <code>orgStudyId</code> de ClinicalTrials.gov (2026-09-28): <code>scripts/integrar_isp_inspecciones.py</code>. No se copian el resultado ni el motivo de las inspecciones.</td>
+              <td>Información pública de un organismo del Estado (Ley 20.285). Solo el hecho, con la URL de la planilla.</td>
+            </tr>
+            <tr>
               <td><a href="https://evsexplore.semantics.cancer.gov/" target="_blank" rel="noopener">NCI Thesaurus</a><span class="quien">National Cancer Institute, EE. UU. · API EVS</span></td>
               <td>El tipo de cada fármaco: inhibidor de checkpoint, terapia dirigida, quimioterapia, conjugado anticuerpo-fármaco, terapia hormonal…</td>
               <td>Búsqueda del concepto y de toda su jerarquía, con reglas explícitas y en orden (2026-09-28): <code>scripts/clasificar_farmacos_ncit.py</code>.</td>
@@ -357,8 +363,7 @@
         </table>
       </div>
       <p class="section-sub">Consultadas y descartadas: SER Chile (sus páginas devolvían error al recolectar), WCLC/IASLC y ASCO
-        (prohíben la recolección en sus términos), LinkedIn (prohibido por sus términos). Evaluada para después: la planilla
-        del ISP de centros de investigación clínica inspeccionados, que nombra investigadores principales.</p>
+        (prohíben la recolección en sus términos), LinkedIn (prohibido por sus términos).</p>
 
       <h3 class="sub-title">2. Cuánto aporta cada fuente</h3>
       <p class="section-sub" id="fuentes-resumen">Calculando desde los datos…</p>
@@ -470,7 +475,8 @@
     "scielo.conicyt.cl": "SciELO Chile (conicyt)", "estudiosclinicos.cl": "Buscador de estudios clínicos de la CIF",
     "evsexplore.semantics.cancer.gov": "NCI Thesaurus", "datos.gob.cl": "DEIS — Establecimientos de Salud (datos.gob.cl)",
     "openstreetmap.org": "OpenStreetMap", "orcid.org": "ORCID", "unensayoparami.org": "Un Ensayo para Mí",
-    "superdesalud.gob.cl": "Superintendencia de Salud", "geoboundaries.org": "geoBoundaries"
+    "superdesalud.gob.cl": "Superintendencia de Salud", "geoboundaries.org": "geoBoundaries",
+    "ispch.gob.cl": "ISP — Centros de investigación clínica inspeccionados"
   };
   var QUE_LABEL = { hecho: "hecho", subtitulo: "afiliación mostrada", vinculo: "vínculo", direccion: "dirección",
                     coordenadas: "punto en el mapa", otra_sede: "otra sede", revisada: "revisada sin resultado", conjunto: "conjunto de datos" };
