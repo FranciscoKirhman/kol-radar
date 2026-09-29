@@ -29,12 +29,12 @@ de retiro, bloquear primero y decidir después.**
   ingreso**: de ahí corren los plazos.
 - Identificar qué ficha es. El id está en la URL del perfil (`#ficha=<id>`).
 
-### 2. ¿Es la persona? — decide el responsable
-Retirar la ficha de alguien por pedido de un tercero también es un error. Lo mínimo razonable
-suele ser que escriba desde un correo institucional que se pueda relacionar con la ficha, o que
-responda desde el correo que ya figura en una fuente pública. **No pedir documentos de identidad
-por correo.** El criterio exacto lo fija el responsable con su abogado; mientras tanto, si hay
-duda, bloquear (paso 3) no le hace daño a nadie y da tiempo.
+### 2. ¿Es la persona? — la verifica Francisco, caso a caso (decisión 2026-09-29)
+Retirar la ficha de alguien por pedido de un tercero también es un error. Francisco decide en cada
+caso qué alcanza (por ejemplo, un correo institucional que se pueda relacionar con la ficha, o una
+respuesta desde un correo que ya figura en una fuente pública). **No pedir documentos de identidad por
+correo.** Anotar en el hilo del correo qué se pidió y por qué bastó. Si hay duda, bloquear (paso 3)
+no le hace daño a nadie y da tiempo.
 
 ### 3. Bloqueo, dentro de 2 días hábiles
 ```bash
