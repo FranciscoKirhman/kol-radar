@@ -16,13 +16,20 @@ Reglas:
      Un nombre que no está en la tabla no crea nada: queda listado como pendiente.
   3. El vínculo guarda el texto literal de la CIF y la URL de la ficha. El ensayo recibe un hecho
      con la lista de centros y la misma URL.
-  4. Nada se confirma. Correrlo dos veces no cambia nada.
+  4. La página de la CIF a veces asigna el mismo NCT a dos estudios distintos (NCT04976634 aparece
+     como MK6482-016 de MSD y como ACT16432 de Sanofi). Un NCT que aparece en fichas con códigos de
+     estudio distintos no se usa. Y una ficha solo liga centros si su laboratorio corresponde al
+     patrocinador que declara ClinicalTrials.gov (LABORATORIOS, con las equivalencias explícitas:
+     MSD = Merck Sharp & Dohme, BMS = Bristol-Myers Squibb = Celgene…). Lo descartado se informa.
+  5. Nada se confirma. Correrlo dos veces no cambia nada.
 
 Uso:  python3 scripts/integrar_estudiosclinicos_cl.py data/pending/estudiosclinicos-cl-AAAA-MM-DD/fichas.json
 """
 import json
 import os
+import re
 import sys
+import unicodedata
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -89,6 +96,31 @@ NUEVAS = [
 PENDIENTES_CTGOV = {"UROMED": "uromed"}
 
 
+# Grupo farmacéutico → formas con que lo escriben la CIF y ClinicalTrials.gov. Se busca en orden:
+# "Merck" a secas es Merck KGaA, así que MSD tiene que revisarse antes.
+LABORATORIOS = [
+    ("msd", ["msd", "merck sharp"]),
+    ("bms", ["bristol myers squibb", "celgene"]),
+    ("roche", ["roche", "hoffmann la roche", "genentech"]),
+    ("sanofi", ["sanofi", "genzyme"]),
+    ("novartis", ["novartis"]),
+    ("astrazeneca", ["astrazeneca"]),
+    ("boehringer", ["boehringer ingelheim"]),
+    ("abbvie", ["abbvie"]),
+    ("biogen", ["biogen"]),
+    ("merck kgaa", ["merck kgaa", "emd serono", "merck healthcare", "merck"]),
+]
+
+
+def grupo_laboratorio(texto):
+    t = " " + re.sub(r"[^a-z0-9]+", " ", unicodedata.normalize("NFD", texto or "").encode("ascii", "ignore")
+                     .decode().lower()).strip() + " "
+    for grupo, formas in LABORATORIOS:
+        if any(" " + f + " " in t for f in formas):
+            return grupo
+    return None
+
+
 def main():
     # Antes de cualquier consulta: si hay exclusiones y falta la clave, se detiene acá y no al
     # final de la corrida. Ver scripts/exclusiones.py.
@@ -119,10 +151,25 @@ def main():
 
     ya = {(v["origen"], v["destino"]) for v in vin}
     nuevos, ensayos_tocados, sin_tabla = 0, set(), {}
+    codigos = {}
+    for f in cif["fichas"]:
+        if f.get("nct"):
+            codigos.setdefault(f["nct"].lower(), set()).add((f.get("codigo") or "").strip().upper())
+    descartados = []
     for f in cif["fichas"]:
         nct = (f.get("nct") or "").lower()
         e = por_id.get(nct)
         if not e or e["tipo"] != "ensayo_clinico" or not f["sitios"]:
+            continue
+        if len(codigos[nct]) > 1:
+            descartados.append({"nct": nct.upper(), "url": f["url"], "motivo": "la CIF asigna este NCT a estudios con "
+                                "códigos distintos: " + ", ".join(sorted(codigos[nct]))})
+            continue
+        gl, gp = grupo_laboratorio(f.get("laboratorio")), grupo_laboratorio(e.get("patrocinador"))
+        if not gl or gl != gp:
+            descartados.append({"nct": nct.upper(), "url": f["url"], "motivo": "el laboratorio de la CIF («%s») no "
+                                "corresponde al patrocinador de ClinicalTrials.gov («%s»)"
+                                % (f.get("laboratorio"), e.get("patrocinador"))})
             continue
         nombres = []
         for s in f["sitios"]:
@@ -186,7 +233,8 @@ def main():
 
     exclusiones.guardar_muestra(base, MUESTRA, registro)
     print(json.dumps({"vinculos_nuevos": nuevos, "ensayos_con_sede_nueva": len(ensayos_tocados),
-                      "centros_sin_tabla": sin_tabla}, ensure_ascii=False, indent=1))
+                      "centros_sin_tabla": sin_tabla, "fichas_descartadas": descartados},
+                     ensure_ascii=False, indent=1))
 
 
 if __name__ == "__main__":
