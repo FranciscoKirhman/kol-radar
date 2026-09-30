@@ -22,6 +22,8 @@ No inventa ningún dato: cada campo sale del JSON crudo de la API o del artefact
 preintegración ya auditado.
 """
 import collections
+import datetime
+import glob
 import json
 import os
 import re
@@ -31,14 +33,19 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
-PRE = os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-2026-09-09")
-FECHA = "2026-09-09"
+# La preintegración que se integra: la indicada en KOL_PREINTEGRACION, o la más reciente.
+PRE = os.environ.get("KOL_PREINTEGRACION") or (
+    sorted(glob.glob(os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-*"))) or [""])[-1]
+FECHA = os.environ.get("KOL_FECHA") or re.sub(r"^.*preintegracion-clinicaltrials-", "", PRE) or \
+    datetime.date.today().isoformat()
 
+# La descarga cruda la genera scripts/descargar_ctgov.py. KOL_NORMALIZADOR solo hace falta para usar
+# otro normalizador que el del repositorio (scripts/normalizar.py).
 CRUDO = os.environ.get("KOL_CRUDO")
-NORM = os.environ.get("KOL_NORMALIZADOR")
-if not CRUDO or not NORM:
-    sys.exit("Definí KOL_CRUDO y KOL_NORMALIZADOR.")
-sys.path.insert(0, os.path.dirname(NORM))
+if not CRUDO:
+    sys.exit("Definí KOL_CRUDO con la descarga de scripts/descargar_ctgov.py.")
+if os.environ.get("KOL_NORMALIZADOR"):
+    sys.path.insert(0, os.path.dirname(os.environ["KOL_NORMALIZADOR"]))
 import normalizar  # noqa: E402
 
 ESTADO = {
@@ -305,7 +312,7 @@ def main():
                     vin.append({"origen": pid, "destino": icid, "tipo": "afiliación",
                                 "alias_fuente": p["sede_texto_original"]})
 
-    base["actualizado"] = "2026-09-10"
+    base["actualizado"] = datetime.date.today().isoformat()
     base["especialidad_muestra"] = "oncología (19 áreas)"
     base["nota_beta"] = (
         "Beta. La expansión del 2026-09-09 sumó ensayos de ClinicalTrials.gov con al menos una "

@@ -91,19 +91,59 @@ Tres niveles, de menos a más compromiso:
 ## Cómo se actualizan los datos
 
 Cada fuente tiene su script en `scripts/`, y todo lo que entra deja un artefacto en `data/pending/`
-para revisión:
+para revisión. Desde un clon limpio, en este orden (cada paso lee lo que dejó el anterior):
+
+```bash
+python3 scripts/exclusiones.py iniciar
+```
+```bash
+python3 scripts/descargar_ctgov.py --salida ~/.cache/kol-radar/ctgov.json
+```
+```bash
+KOL_CRUDO=~/.cache/kol-radar/ctgov.json python3 scripts/preintegracion_clinicaltrials.py
+```
+```bash
+KOL_CRUDO=~/.cache/kol-radar/ctgov.json python3 scripts/integrar_beta.py
+```
+```bash
+python3 scripts/integrar_farmacos_ctgov.py && python3 scripts/clasificar_farmacos_ncit.py ~/.cache/kol-radar/ncit
+```
+```bash
+python3 scripts/resolver_sedes_web.py
+```
+```bash
+python3 scripts/recolectar_estudiosclinicos_cl.py && python3 scripts/integrar_estudiosclinicos_cl.py data/pending/estudiosclinicos-cl-<fecha>/fichas.json
+```
+```bash
+python3 scripts/integrar_isp_inspecciones.py && python3 scripts/sedes_por_codigo_postal.py
+```
+```bash
+python3 scripts/fusionar_personas.py && python3 scripts/consolidar_ubicaciones.py
+```
+```bash
+python3 scripts/exclusiones.py verificar && python3 scripts/test_puntaje_paridad.py
+```
+
+`clasificar_farmacos_ncit.py` tarda ~13 minutos la primera vez (la carpeta que recibe es su caché), y
+termina con error si la API no respondió para algún fármaco, sin borrar su clase anterior.
 
 | Script | Qué hace |
 |---|---|
+| `descargar_ctgov.py` | Descarga cruda de ClinicalTrials.gov: una consulta por área, sedes en Chile. Reproduce 578 de los 579 ensayos de la muestra del 2026-09-09; el que falta dejó de declarar la condición consultada |
+| `normalizar.py` | Texto de sede → institución, solo por alias documentado; y los marcadores del patrocinador. Lo usan los dos siguientes |
+| `preintegracion_clinicaltrials.py` | Artefacto de revisión antes de integrar: ensayos, sedes, alias, personas candidatas |
 | `integrar_beta.py` | Ensayos con sede en Chile desde ClinicalTrials.gov |
 | `integrar_farmacos_ctgov.py` | Fármacos desde las intervenciones estructuradas de cada ensayo |
 | `clasificar_farmacos_ncit.py` | Tipo de cada fármaco según el NCI Thesaurus. Se corre **después** del anterior, que recrea los fármacos |
 | `resolver_sedes_web.py` | Liga textos de sede a instituciones, con evidencia buscada a mano |
 | `recolectar_estudiosclinicos_cl.py` + `integrar_estudiosclinicos_cl.py` | Centros que la CIF nombra para ensayos que reclutan |
+| `integrar_isp_inspecciones.py` | Centros que el ISP inspeccionó, por código de protocolo, y sus investigadores (requiere `pip install xlrd`) |
 | `sedes_por_codigo_postal.py` | Sedes que ClinicalTrials.gov oculta, inferidas por el código postal que sí declara (marcadas como inferidas) |
-| `integrar_isp_inspecciones.py` | Centros que el ISP inspeccionó, por código de protocolo (requiere `pip install xlrd`) |
-| `consolidar_ubicaciones.py` | Dirección y punto de cada institución (DEIS, sitios oficiales, OpenStreetMap) |
+| `fusionar_personas.py` | Fusiones de identidad decididas, con su evidencia |
+| `consolidar_ubicaciones.py` | Dirección y punto de cada institución (DEIS, sitios oficiales, OpenStreetMap, respuestas revisadas de ChatGPT) |
+| `preparar_tarea_chatgpt_ronda3.py` + `validar_respuesta_chatgpt.py` | Lo que no se encontró, como tarea para ChatGPT, y la validación de sus respuestas |
 | `enriquecer_openalex.py` | Propuestas de afiliación desde OpenAlex (vía PR, nunca directo) |
+| `exclusiones.py` | Registro de quienes pidieron salir; todos los anteriores lo respetan |
 
 Una cadencia razonable: mensual para ClinicalTrials.gov y la CIF (el estado de reclutamiento cambia),
 trimestral para lo demás.

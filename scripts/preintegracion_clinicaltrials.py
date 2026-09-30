@@ -26,15 +26,17 @@ import json, os, re, sys, collections, datetime
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(RAIZ, "scripts"))
-FECHA_CONSULTA = "2026-09-09"
-DESTINO = os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-2026-09-09")
+# La fecha de la descarga (KOL_FECHA, por defecto hoy) nombra la carpeta de salida.
+FECHA_CONSULTA = os.environ.get("KOL_FECHA") or datetime.date.today().isoformat()
+DESTINO = os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-" + FECHA_CONSULTA)
 
-# El normalizador vive junto a la recolección, en el scratchpad de la sesión.
-NORM = os.environ.get("KOL_NORMALIZADOR")
+# La descarga cruda la genera scripts/descargar_ctgov.py; el normalizador es scripts/normalizar.py
+# (KOL_NORMALIZADOR solo para usar otro).
 CRUDO = os.environ.get("KOL_CRUDO")
-if not NORM or not CRUDO:
-    sys.exit("Definí KOL_NORMALIZADOR y KOL_CRUDO (ver el informe de esta sesión).")
-sys.path.insert(0, os.path.dirname(NORM))
+if not CRUDO:
+    sys.exit("Definí KOL_CRUDO con la descarga de scripts/descargar_ctgov.py.")
+if os.environ.get("KOL_NORMALIZADOR"):
+    sys.path.insert(0, os.path.dirname(os.environ["KOL_NORMALIZADOR"]))
 import normalizar  # noqa: E402
 import exclusiones  # noqa: E402
 
@@ -68,7 +70,7 @@ def clave_nombre(n):
 
 
 def main():
-    registro = exclusiones.Registro()
+    excl = exclusiones.Registro()   # no "registro": ese nombre ya es cada sede, más abajo
     crudo = json.load(open(CRUDO, encoding="utf-8"))
     base = json.load(open(os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json"),
                           encoding="utf-8"))
@@ -151,7 +153,7 @@ def main():
     for c in contactos:
         limpio = limpiar_nombre(c["bruto"])
         # Quien pidió no aparecer tampoco aparece en la bandeja de revisión, que es pública.
-        excluida = registro.estado_persona(nombre=limpio) if limpio else None
+        excluida = excl.estado_persona(nombre=limpio) if limpio else None
         if excluida == "exacta":
             continue
         if not limpio or NO_PERSONA.match(limpio) or len(clave_nombre(limpio)) < 2:

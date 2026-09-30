@@ -54165,7 +54165,7 @@
       "alias_fuente": "ONCOCENTRO APYS; Oncología"
     },
     {
-      "origen": "clinica-alemana",
+      "origen": "clinica-alemana-temuco",
       "destino": "nct01989676",
       "tipo": "sitio del ensayo",
       "alias_fuente": "Clinica Alemana de Temuco"
@@ -58329,7 +58329,7 @@
       "alias_fuente": "CECIM-Centro de Estudios Cliicos e Investigaciones Medicas"
     },
     {
-      "origen": "puc",
+      "origen": "hosp-clinico-uc",
       "destino": "nct07131735",
       "tipo": "sitio del ensayo",
       "alias_fuente": "Hospital Clínico UC CHRISTUS"
