@@ -233,13 +233,13 @@ el archivo sin servidor — revisa que la URL empiece con `http://localhost`, no
 **Actualización 2026-09-28** — el prototipo pasó a buscar por las cuatro cosas que busca un MSL
 (fármaco, estudio, profesional, institución) y a mostrar un perfil de cada una:
 
-| | 2026-09-10 | 2026-09-28 |
-|---|---|---|
-| Fichas | 717 | 1.146 (+380 fármacos, +49 instituciones) |
-| Vínculos | 1.198 | 3.130 |
-| Ensayos sin ninguna institución | 262 | 212 — el resto tiene la sede oculta en las dos fuentes |
-| Fichas sin ninguna conexión | 262 | 12 |
-| Instituciones ubicadas en el mapa | 56 | 90 |
+| | 2026-09-10 | 2026-09-28 | 2026-09-29 |
+|---|---|---|---|
+| Fichas | 717 | 1.146 (+380 fármacos, +49 instituciones) | 1.133 (361 fármacos, sin 19 duplicados; 83 personas) |
+| Vínculos | 1.198 | 3.130 | 3.352 |
+| Ensayos sin ninguna institución | 262 | 212 — el resto tiene la sede oculta en las dos fuentes | 109 — con el ISP y el código postal (inferido, marcado como tal) |
+| Fichas sin ninguna conexión | 262 | 12 | — |
+| Instituciones ubicadas en el mapa | 56 | 90 | 94 |
 
 De dónde salió lo nuevo, sin inventar nada: los fármacos, de las intervenciones estructuradas de
 ClinicalTrials.gov (uniendo nombres solo cuando la fuente declara la equivalencia), con su tipo

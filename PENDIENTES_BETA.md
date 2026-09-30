@@ -42,6 +42,19 @@ Fecha de corte: 2026-09-10.
 > - Siguen igual, por ser decisión humana: fusiones de identidad, revisión humana, validación con
 >   MSL, modelo de puntaje, nombres tal como los escribe la fuente.
 
+> **Actualización 2026-09-29, tercera ronda** (misma rama):
+> - **Fusiones**: resueltas las dos abiertas (Aguayo, Díaz Patiño) con evidencia re-verificada; los 7
+>   candidatos de ClinicalTrials.gov ya estaban ligados. `uchile` y `hosp-uchile` quedan separadas.
+>   Ninguna fusión la revisó todavía una persona.
+> - **Ensayos sin institución**: 212 → 109, 99 de ellos por código postal (inferencia marcada en la
+>   ficha). Los 109 restantes van a ChatGPT (`data/pending/tarea-chatgpt-2026-09-29-ronda3/`).
+> - **Sedes en cola**: 51, de las cuales 35 son marcadores del patrocinador; las 16 restantes, a ChatGPT.
+> - **Instituciones sin ubicación**: 20 → 16, las 16 a ChatGPT.
+> - **Fármacos**: 380 → 361 (cortes y sufijos unidos); clases "Soporte" y "Otros agentes" separadas.
+> - **Reproducibilidad**: `normalizar.py` y `descargar_ctgov.py` en el repo; secuencia completa en `PUBLICAR.md`.
+> - **Legal**: revisión en `REVISION_LEGAL.md`. Lo más importante: el tier público por persona es
+>   elaboración de perfiles; decidir qué hacer con él antes del 1 de diciembre.
+
 ## Datos
 
 - **253 sedes sin resolver.** Son textos de sede que ClinicalTrials.gov declara en Chile y que

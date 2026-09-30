@@ -23,7 +23,7 @@ Resumen oficial: <https://opendatacommons.org/licenses/odbl/summary/>
 
 ## Por qué ODbL y no otra
 
-Las coordenadas de 27 instituciones (en esta versión) y parte de las direcciones vienen de **OpenStreetMap**, que se
+Las coordenadas de parte de las instituciones y parte de las direcciones vienen de **OpenStreetMap** (cuántas, en el campo `resumen` de `data/geo/ubicaciones-instituciones.json`), que se
 licencia bajo ODbL con cláusula de "compartir igual": una base derivada de OpenStreetMap que se
 publica tiene que usar la misma licencia. Elegir otra (por ejemplo CC BY-NC, "no comercial")
 obligaría antes a sacar esos puntos de la base. Si en algún momento se quiere cambiar la licencia,

@@ -74,7 +74,7 @@ Estas ya se discutieron y se decidieron. No las re-litigues salvo que tengas un 
   Vue, Svelte, Tailwind, D3, Vite ni npm. La restricción es del proyecto, no una carencia: el
   sitio tiene que poder abrirse, auditarse y publicarse sin cadena de herramientas.
 - **Estilo ES5 en el JS**: `var`, `function () {}`. Es consistente en todo el archivo; seguilo.
-- Todo el sitio son dos archivos: `web/index.html` (2.400 líneas, el producto) y
+- Todo el sitio son dos archivos: `web/index.html` (unas 6.600 líneas, el producto) y
   `web/interno.html` (la vista de cómo se construyó).
 - Los datos entran por `fetch()`, así que **hay que servir por HTTP** — abrir el archivo con
   `file://` falla. Para probar: `python3 -m http.server 8181` y entrar a
@@ -86,7 +86,7 @@ Estas ya se discutieron y se decidieron. No las re-litigues salvo que tengas un 
 
 ## 5. El modelo de datos
 
-Un solo archivo: `data/sample/perfiles-muestra.json` (223 KB). **No pidas que te lo peguen
+Un solo archivo: `data/sample/perfiles-muestra.json` (2,8 MB). **No pidas que te lo peguen
 entero** — no cabe cómodo en una conversación. Trabajá con el esquema y pedí las entidades
 puntuales que necesites.
 
@@ -96,7 +96,7 @@ puntuales que necesites.
     {
       "id": "carlos-rojas",
       "nombre": "Carlos Rojas",
-      "tipo": "persona",            // persona | institucion | ensayo_clinico
+      "tipo": "persona",            // persona | institucion | ensayo_clinico | farmaco
       "ciudad": "Santiago",
       "subtitulo": "Bradford Hill Clinical Research Center",
       "subtitulo_fuente": "https://...",   // de dónde sale el subtítulo
@@ -121,8 +121,18 @@ puntuales que necesites.
 }
 ```
 
+Campos propios de cada tipo, además de los de arriba:
+- **ensayo_clinico**: `patrocinador`, `estado_reclutamiento`, `sitios_chile`, `condiciones`,
+  `intervenciones`, `titulo_fuente`; `ficha_cif` (URL en el buscador de la CIF) y
+  `sedes_pendientes_resolucion` (textos de sede que no calzan con ninguna institución) cuando aplican.
+- **farmaco**: `clase` (tipo según el NCI Thesaurus: "Inmunoterapia (checkpoint)", "Terapia
+  dirigida"…), `ncit` (código del concepto) y `clase_ncit` (su clase padre en el tesauro).
+- **institucion**: `alias_en_la_fuente`, cada texto con que una fuente la nombra.
+
 Tipos de vínculo en uso: `afiliación`, `afiliación secundaria`, `investigador de sitio`,
-`sitio del ensayo`, `coautoría`.
+`sitio del ensayo`, `coautoría`, `intervención` (ensayo → fármaco). Un vínculo puede llevar
+`alias_fuente` (el texto literal de la fuente), `fuente_url`, y `criterio: "codigo_postal"` cuando la
+sede se infirió por el código postal que declara ClinicalTrials.gov en vez de leerse de su nombre.
 
 Detalle importante sobre `coautoría`: dos personas se conectan **solo si citan exactamente la
 misma fuente** (mismo PMID o mismo artículo de SciELO) en sus propios hechos. No se infiere
@@ -130,16 +140,19 @@ coautoría por apellido, institución ni tema.
 
 ---
 
-## 6. Estado actual (verificado el 2026-09-09)
+## 6. Estado actual (calculado el 2026-09-29)
 
 | | |
 |---|---|
-| Entidades | **173** — 70 personas, 28 instituciones, 75 ensayos clínicos |
-| Vínculos | **349** |
-| Hechos | **274**, cada uno con URL de origen |
-| Áreas | cáncer de pulmón (146), cáncer de mama (22), cáncer gástrico (5) |
-| Fuentes | ClinicalTrials.gov (138 hechos), PubMed (73), SciELO (50), sitios institucionales (12), ORCID (1) |
-| Confianza | **273 `pendiente`, 1 `confirmado`** |
+| Entidades | **1.133** — 83 personas, 110 instituciones, 579 ensayos clínicos, 361 fármacos |
+| Vínculos | **3.352** — 1.651 ensayo → fármaco, 1.450 sede de ensayo (183 inferidos por código postal), 113 coautorías, 87 afiliaciones, 51 investigador de sitio |
+| Hechos | **3.194**, cada uno con URL de origen |
+| Áreas | 19 de oncología |
+| Fuentes | ClinicalTrials.gov (2.565 hechos), NCI Thesaurus (346), PubMed (74), CIF (69), ISP (42), SciELO (50), DEIS (26), sitios institucionales, ORCID |
+| Confianza | **3.193 `pendiente`, 1 `confirmado`** |
+
+Las cifras cambian con cada integración: para las del día, contá sobre el JSON en vez de copiar esta
+tabla. La pestaña "Fuentes" de `web/interno.html` las calcula en vivo.
 
 Esa última fila es la más importante y la más incómoda: **prácticamente nada pasó por revisión
 humana todavía.** Los datos están verificados contra la API de origen (se comprobó que cada autor
@@ -189,9 +202,9 @@ En orden aproximado de valor:
    recencia producen un orden que un MSL reconocería como sensato? Es la pieza más opinable del
    producto y la que menos ojos externos ha tenido.
 2. **Auditar el texto de cara al usuario** en `web/index.html`: ¿promete más de lo que los datos
-   sostienen? Con 273 hechos `pendiente`, cualquier frase que sugiera validación es un problema.
+   sostienen? Con 3.193 hechos `pendiente`, cualquier frase que sugiera validación es un problema.
 3. **Diseñar la etapa de revisión humana.** Está pendiente y es el cuello de botella real: cómo
-   se revisa hecho por hecho sin que sean 274 clicks, qué se muestra para decidir, qué pasa
+   se revisa hecho por hecho sin que sean 3.194 clicks, qué se muestra para decidir, qué pasa
    cuando la fuente cambia después. Hay un esbozo en `DECISIONS.md` §3.
 4. **Proponer consultas concretas a fuentes ya aprobadas.** No los datos: la consulta. Ejemplo
    del formato que sirve — la sintaxis Essie de ClinicalTrials.gov v2 que ya se usa:
@@ -201,7 +214,7 @@ En orden aproximado de valor:
    contra los completos generan duplicados sistemáticos. Hay dos pares esperando decisión en
    `DECISIONS.md` §5. Una regla general para detectarlos sin fusionar de más es valioso.
 6. **Accesibilidad y lectura del grafo.** Ya se arregló la colisión de etiquetas; lo que queda
-   abierto es cómo un lector de pantalla recorre una red de 173 nodos.
+   abierto es cómo un lector de pantalla recorre una red de más de mil nodos.
 
 ---
 
