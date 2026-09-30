@@ -1,0 +1,1889 @@
+{
+  "generado": "2026-09-30",
+  "fuente": "OpenAlex API (https://api.openalex.org)",
+  "estado": "PROPUESTA — no aplicado a la muestra",
+  "como_revisar": "Cada entrada es una coincidencia PROPUESTA entre una persona de la muestra y un autor de OpenAlex. Revisá 'razones_match' y, si 'match_ambiguo' es true, revisá 'candidatos_alternativos' antes de aceptar. Nada de esto entra a la muestra hasta que una persona lo apruebe.",
+  "resumen": {
+    "personas_revisadas": 83,
+    "propuestas": 28,
+    "ambiguas": 5,
+    "afiliacion_no_coincide": 21,
+    "sin_coincidencia": 55,
+    "conflictos": 0
+  },
+  "propuestas": [
+    {
+      "id": "mauricio-burotto",
+      "nombre": "Mauricio Burotto",
+      "openalex_id": "https://openalex.org/A5074832020",
+      "openalex_nombre": "Mauricio Burotto",
+      "orcid": "0000-0002-7150-4033",
+      "works_count": 174,
+      "cited_by_count": 9303,
+      "instituciones": [
+        "Universidad de Los Andes, Chile",
+        "Finis Terrae University"
+      ],
+      "publicaciones_por_ano": {
+        "2001": 1,
+        "2010": 1,
+        "2011": 1,
+        "2012": 1,
+        "2013": 2,
+        "2014": 8,
+        "2015": 7,
+        "2016": 5,
+        "2017": 7,
+        "2018": 6,
+        "2019": 7,
+        "2020": 12,
+        "2021": 20,
+        "2022": 15,
+        "2023": 15,
+        "2024": 25,
+        "2025": 23,
+        "2026": 18
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Universidad de Los Andes, Chile; Finis Terrae University)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Bradford Hill Clinical Research Center) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "174 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5054162269",
+          "nombre": "Mauricio Burotto P",
+          "orcid": null,
+          "works": 3,
+          "puntaje": 3
+        },
+        {
+          "id": "https://openalex.org/A5110534879",
+          "nombre": "Mauricio Burotto P.",
+          "orcid": null,
+          "works": 1,
+          "puntaje": 3
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5074832020"
+    },
+    {
+      "id": "fernando-saldias",
+      "nombre": "Fernando Saldías P.",
+      "openalex_id": "https://openalex.org/A5064140110",
+      "openalex_nombre": "Fernando Saldías P",
+      "orcid": "0000-0002-5330-8004",
+      "works_count": 126,
+      "cited_by_count": 1878,
+      "instituciones": [
+        "Pontificia Universidad Católica de Chile"
+      ],
+      "publicaciones_por_ano": {
+        "1977": 1,
+        "1980": 1,
+        "1991": 1,
+        "1994": 2,
+        "1995": 2,
+        "1996": 2,
+        "1997": 2,
+        "1998": 6,
+        "1999": 5,
+        "2000": 2,
+        "2001": 2,
+        "2002": 5,
+        "2003": 4,
+        "2004": 1,
+        "2005": 10,
+        "2006": 4,
+        "2007": 7,
+        "2008": 7,
+        "2009": 5,
+        "2010": 5,
+        "2011": 10,
+        "2012": 4,
+        "2013": 6,
+        "2014": 5,
+        "2015": 6,
+        "2016": 3,
+        "2017": 4,
+        "2018": 3,
+        "2020": 1,
+        "2021": 3,
+        "2022": 1,
+        "2023": 3,
+        "2024": 3
+      },
+      "puntaje_match": 9,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Chile)",
+        "ORCID publicado",
+        "coincide con la afiliación de nuestra muestra (Pontificia Universidad Católica de Chile)",
+        "126 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": false,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5064140110"
+    },
+    {
+      "id": "javiera-martinez",
+      "nombre": "Javiera Martinez-Gutierrez",
+      "openalex_id": "https://openalex.org/A5089297236",
+      "openalex_nombre": "Javiera Martínez-Gutiérrez",
+      "orcid": "0000-0002-2493-9974",
+      "works_count": 77,
+      "cited_by_count": 749,
+      "instituciones": [
+        "Pontificia Universidad Católica de Chile",
+        "The University of Melbourne",
+        "Victorian Comprehensive Cancer Centre"
+      ],
+      "publicaciones_por_ano": {
+        "2006": 1,
+        "2007": 1,
+        "2008": 1,
+        "2010": 2,
+        "2012": 4,
+        "2013": 4,
+        "2014": 4,
+        "2015": 2,
+        "2016": 6,
+        "2017": 5,
+        "2018": 4,
+        "2019": 2,
+        "2020": 2,
+        "2021": 7,
+        "2022": 3,
+        "2023": 4,
+        "2024": 8,
+        "2025": 10,
+        "2026": 7
+      },
+      "puntaje_match": 10,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Chile; The University of Melbourne; Victorian Comprehensive Cancer Centre)",
+        "ORCID publicado",
+        "coincide con la afiliación de nuestra muestra (Pontificia Universidad Católica de Chile)",
+        "nombre idéntico",
+        "77 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": false,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5089297236"
+    },
+    {
+      "id": "rodrigo-uribe",
+      "nombre": "Rodrigo Uribe",
+      "openalex_id": "https://openalex.org/A5087242947",
+      "openalex_nombre": "Rodrigo Uribe",
+      "orcid": "0000-0002-1196-9832",
+      "works_count": 55,
+      "cited_by_count": 868,
+      "instituciones": [
+        "University of Chile"
+      ],
+      "publicaciones_por_ano": {
+        "1965": 1,
+        "1968": 1,
+        "1997": 1,
+        "2000": 1,
+        "2004": 1,
+        "2006": 1,
+        "2007": 4,
+        "2008": 4,
+        "2009": 1,
+        "2010": 2,
+        "2011": 6,
+        "2012": 3,
+        "2013": 3,
+        "2015": 4,
+        "2016": 3,
+        "2017": 7,
+        "2018": 4,
+        "2019": 1,
+        "2020": 4,
+        "2021": 1,
+        "2022": 1,
+        "2026": 1
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (University of Chile)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Fundación Arturo López Pérez (FALP)) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "55 trabajos indexados"
+      ],
+      "match_ambiguo": true,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5011067580",
+          "nombre": "Rodrigo Momberg Uribe",
+          "orcid": "https://orcid.org/0000-0002-4774-4256",
+          "works": 58,
+          "puntaje": 7
+        },
+        {
+          "id": "https://openalex.org/A5026544443",
+          "nombre": "Rodrigo Alberto Uribe Otaíza",
+          "orcid": "https://orcid.org/0000-0002-0235-1037",
+          "works": 2,
+          "puntaje": 6
+        },
+        {
+          "id": "https://openalex.org/A5103379585",
+          "nombre": "Rodrigo Uribe Bravo",
+          "orcid": null,
+          "works": 12,
+          "puntaje": 4
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5087242947"
+    },
+    {
+      "id": "pamela-salman",
+      "nombre": "Pamela Salman",
+      "openalex_id": "https://openalex.org/A5101938282",
+      "openalex_nombre": "Pamela Salman",
+      "orcid": "0000-0003-4389-8124",
+      "works_count": 78,
+      "cited_by_count": 22748,
+      "instituciones": [
+        "Universidad Mayor",
+        "Fundación Arturo López Pérez"
+      ],
+      "publicaciones_por_ano": {
+        "1998": 1,
+        "1999": 1,
+        "2000": 1,
+        "2007": 1,
+        "2009": 1,
+        "2010": 1,
+        "2012": 1,
+        "2013": 5,
+        "2015": 2,
+        "2016": 1,
+        "2017": 3,
+        "2018": 5,
+        "2019": 5,
+        "2020": 3,
+        "2021": 9,
+        "2022": 8,
+        "2023": 14,
+        "2024": 10,
+        "2025": 2,
+        "2026": 4
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Universidad Mayor; Fundación Arturo López Pérez)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Centro de Oncología de Precisión) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "78 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5120843522",
+          "nombre": "Pamela Salman",
+          "orcid": null,
+          "works": 1,
+          "puntaje": 4
+        },
+        {
+          "id": "https://openalex.org/A5118757317",
+          "nombre": "Pamela Salman-Boghikian",
+          "orcid": null,
+          "works": 1,
+          "puntaje": 3
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5101938282"
+    },
+    {
+      "id": "christian-caglevic",
+      "nombre": "Christian Caglevic",
+      "openalex_id": "https://openalex.org/A5014075249",
+      "openalex_nombre": "Christian Caglevic",
+      "orcid": "0000-0003-3319-1678",
+      "works_count": 114,
+      "cited_by_count": 9816,
+      "instituciones": [
+        "Universidad de Los Andes, Chile",
+        "Fundación Arturo López Pérez"
+      ],
+      "publicaciones_por_ano": {
+        "2012": 1,
+        "2013": 1,
+        "2014": 2,
+        "2015": 3,
+        "2016": 10,
+        "2017": 6,
+        "2018": 16,
+        "2019": 11,
+        "2020": 13,
+        "2021": 12,
+        "2022": 7,
+        "2023": 4,
+        "2024": 7,
+        "2025": 8,
+        "2026": 13
+      },
+      "puntaje_match": 10,
+      "razones_match": [
+        "institución conocida en Chile (Universidad de Los Andes, Chile; Fundación Arturo López Pérez)",
+        "ORCID publicado",
+        "coincide con la afiliación de nuestra muestra (Fundación Arturo López Pérez (FALP))",
+        "nombre idéntico",
+        "114 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": false,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5105779766",
+          "nombre": "Christian Caglevic M",
+          "orcid": null,
+          "works": 1,
+          "puntaje": 3
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5014075249"
+    },
+    {
+      "id": "hector-galindo",
+      "nombre": "Héctor Galindo",
+      "openalex_id": "https://openalex.org/A5056404979",
+      "openalex_nombre": "Héctor Galindo",
+      "orcid": "0000-0001-5741-2266",
+      "works_count": 57,
+      "cited_by_count": 4033,
+      "instituciones": [
+        "Pontificia Universidad Católica de Chile",
+        "Centro Medico Nacional Siglo XXI"
+      ],
+      "publicaciones_por_ano": {
+        "2006": 3,
+        "2007": 3,
+        "2008": 2,
+        "2009": 1,
+        "2011": 2,
+        "2012": 4,
+        "2013": 1,
+        "2014": 2,
+        "2016": 2,
+        "2018": 6,
+        "2019": 4,
+        "2020": 7,
+        "2021": 4,
+        "2023": 12,
+        "2025": 4
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Chile; Centro Medico Nacional Siglo XXI)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Centro de Investigaciones Clínicas UC (PUC)) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "57 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5056404979"
+    },
+    {
+      "id": "francisco-orlandi",
+      "nombre": "Francisco Orlandi",
+      "openalex_id": "https://openalex.org/A5054252430",
+      "openalex_nombre": "Francisco Javier Orlandi",
+      "orcid": "0000-0002-5308-4768",
+      "works_count": 14,
+      "cited_by_count": 460,
+      "instituciones": [
+        "Instituto Nacional del Tórax"
+      ],
+      "publicaciones_por_ano": {
+        "2007": 1,
+        "2008": 1,
+        "2009": 1,
+        "2011": 1,
+        "2013": 1,
+        "2021": 2,
+        "2023": 2,
+        "2024": 1,
+        "2025": 2,
+        "2026": 2
+      },
+      "puntaje_match": 9,
+      "razones_match": [
+        "institución conocida en Chile (Instituto Nacional del Tórax)",
+        "ORCID publicado",
+        "coincide con la afiliación de nuestra muestra (Instituto Nacional del Tórax)",
+        "14 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": false,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5116474231",
+          "nombre": "Francisco Orlandi-Jorquera",
+          "orcid": null,
+          "works": 1,
+          "puntaje": 5
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5054252430"
+    },
+    {
+      "id": "pablo-munoz-schuffenegger",
+      "nombre": "Pablo Muñoz-Schuffenegger",
+      "openalex_id": "https://openalex.org/A5033695975",
+      "openalex_nombre": "Pablo Muñoz-Schuffenegger",
+      "orcid": "0000-0002-9687-5404",
+      "works_count": 45,
+      "cited_by_count": 353,
+      "instituciones": [
+        "Pontificia Universidad Católica de Chile"
+      ],
+      "publicaciones_por_ano": {
+        "2016": 2,
+        "2017": 3,
+        "2018": 3,
+        "2019": 7,
+        "2020": 3,
+        "2021": 3,
+        "2022": 1,
+        "2023": 2,
+        "2024": 9,
+        "2025": 7,
+        "2026": 5
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Chile)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Radiation Oncology Unit) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "45 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5081090463",
+          "nombre": "P. Munoz Schuffenegger",
+          "orcid": null,
+          "works": 15,
+          "puntaje": 4
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5033695975"
+    },
+    {
+      "id": "claudio-sole-p",
+      "nombre": "Claudio Solé P",
+      "openalex_id": "https://openalex.org/A5069135627",
+      "openalex_nombre": "Claudio V. Sole",
+      "orcid": "0000-0003-3617-163X",
+      "works_count": 121,
+      "cited_by_count": 1505,
+      "instituciones": [
+        "Instituto de Radiomedicina",
+        "Universidad Diego Portales"
+      ],
+      "publicaciones_por_ano": {
+        "1985": 1,
+        "1986": 2,
+        "1990": 1,
+        "2007": 1,
+        "2011": 2,
+        "2012": 16,
+        "2013": 27,
+        "2014": 20,
+        "2015": 9,
+        "2016": 15,
+        "2017": 2,
+        "2018": 6,
+        "2019": 6,
+        "2020": 6,
+        "2022": 1,
+        "2023": 2,
+        "2024": 1,
+        "2025": 3
+      },
+      "puntaje_match": 7,
+      "razones_match": [
+        "institución conocida en Chile (Instituto de Radiomedicina; Universidad Diego Portales)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Sociedad Chilena de Radioterapia) — verificar que sea la misma persona",
+        "121 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5069135627"
+    },
+    {
+      "id": "ruben-valenzuela-m",
+      "nombre": "Rubén Valenzuela M",
+      "openalex_id": "https://openalex.org/A5102757818",
+      "openalex_nombre": "Rubén Valenzuela",
+      "orcid": "0000-0002-7862-2294",
+      "works_count": 9,
+      "cited_by_count": 2,
+      "instituciones": [
+        "Hospital San Juan de Dios",
+        "University of Chile"
+      ],
+      "publicaciones_por_ano": {
+        "1955": 1,
+        "1999": 2,
+        "2018": 1,
+        "2023": 1,
+        "2024": 1,
+        "2025": 1,
+        "2026": 2
+      },
+      "puntaje_match": 7,
+      "razones_match": [
+        "institución conocida en Chile (Hospital San Juan de Dios; University of Chile)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Sociedad de Cirujanos de Chile) — verificar que sea la misma persona",
+        "9 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5102757818"
+    },
+    {
+      "id": "ricardo-armisen",
+      "nombre": "Ricardo Armisén",
+      "openalex_id": "https://openalex.org/A5080310317",
+      "openalex_nombre": "Ricardo Armisén",
+      "orcid": "0000-0003-2567-0521",
+      "works_count": 118,
+      "cited_by_count": 2096,
+      "instituciones": [
+        "Universidad del Desarrollo",
+        "Clínica Alemana",
+        "Universidad del Desarrollo del Estado de Puebla"
+      ],
+      "publicaciones_por_ano": {
+        "1996": 1,
+        "2002": 1,
+        "2004": 1,
+        "2006": 1,
+        "2007": 2,
+        "2008": 2,
+        "2010": 4,
+        "2011": 7,
+        "2012": 2,
+        "2013": 1,
+        "2014": 4,
+        "2015": 3,
+        "2016": 8,
+        "2017": 3,
+        "2018": 15,
+        "2019": 3,
+        "2020": 6,
+        "2021": 9,
+        "2022": 6,
+        "2023": 2,
+        "2024": 13,
+        "2025": 14,
+        "2026": 10
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Universidad del Desarrollo; Clínica Alemana; Universidad del Desarrollo del Estado de Puebla)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Centro de Genética y Genómica) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "118 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5103745960",
+          "nombre": "Ricardo Armisén Yañez",
+          "orcid": null,
+          "works": 2,
+          "puntaje": 3
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5080310317"
+    },
+    {
+      "id": "gonzalo-labarca",
+      "nombre": "Gonzalo Labarca",
+      "openalex_id": "https://openalex.org/A5004568141",
+      "openalex_nombre": "Gonzalo Labarca T.",
+      "orcid": "0000-0002-0069-3420",
+      "works_count": 227,
+      "cited_by_count": 5221,
+      "instituciones": [
+        "Brigham and Women's Hospital",
+        "Harvard University",
+        "Pontificia Universidad Católica de Chile",
+        "University of Concepción",
+        "Mayo Clinic in Florida"
+      ],
+      "publicaciones_por_ano": {
+        "2011": 2,
+        "2012": 3,
+        "2013": 4,
+        "2014": 9,
+        "2015": 9,
+        "2016": 12,
+        "2017": 20,
+        "2018": 15,
+        "2019": 20,
+        "2020": 14,
+        "2021": 22,
+        "2022": 19,
+        "2023": 29,
+        "2024": 21,
+        "2025": 18,
+        "2026": 10
+      },
+      "puntaje_match": 7,
+      "razones_match": [
+        "institución conocida en Chile (Brigham and Women's Hospital; Harvard University; Pontificia Universidad Católica de Chile; University of Concepción; Mayo Clinic in Florida)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Facultad de Medicina) — verificar que sea la misma persona",
+        "227 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5004568141"
+    },
+    {
+      "id": "alejandro-h-corvalan",
+      "nombre": "Alejandro H. Corvalán",
+      "openalex_id": "https://openalex.org/A5091457383",
+      "openalex_nombre": "Alejandro H. Corvalán",
+      "orcid": "0000-0001-5492-3853",
+      "works_count": 285,
+      "cited_by_count": 5421,
+      "instituciones": [
+        "Pontificia Universidad Católica de Chile",
+        "Advanced Center for Chronic Diseases"
+      ],
+      "publicaciones_por_ano": {
+        "1978": 1,
+        "1986": 1,
+        "1992": 1,
+        "1993": 2,
+        "1997": 1,
+        "1998": 1,
+        "1999": 1,
+        "2000": 1,
+        "2001": 3,
+        "2002": 1,
+        "2004": 1,
+        "2005": 3,
+        "2006": 5,
+        "2007": 10,
+        "2008": 7,
+        "2009": 3,
+        "2010": 12,
+        "2011": 6,
+        "2012": 10,
+        "2013": 8,
+        "2014": 3,
+        "2015": 18,
+        "2016": 18,
+        "2017": 21,
+        "2018": 13,
+        "2019": 15,
+        "2020": 19,
+        "2021": 13,
+        "2022": 14,
+        "2023": 41,
+        "2024": 15,
+        "2025": 6,
+        "2026": 11
+      },
+      "puntaje_match": 10,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Chile; Advanced Center for Chronic Diseases)",
+        "ORCID publicado",
+        "coincide con la afiliación de nuestra muestra (Advanced Center for Chronic Diseases (ACCDiS))",
+        "nombre idéntico",
+        "285 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": false,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5091457383"
+    },
+    {
+      "id": "francisco-aguayo",
+      "nombre": "Francisco Aguayo",
+      "openalex_id": "https://openalex.org/A5035117288",
+      "openalex_nombre": "Francisco Aguayo",
+      "orcid": "0000-0002-9619-7535",
+      "works_count": 106,
+      "cited_by_count": 2214,
+      "instituciones": [
+        "University of Tarapacá"
+      ],
+      "publicaciones_por_ano": {
+        "1999": 1,
+        "2002": 1,
+        "2006": 2,
+        "2007": 4,
+        "2008": 7,
+        "2010": 8,
+        "2011": 3,
+        "2012": 6,
+        "2014": 2,
+        "2015": 8,
+        "2016": 3,
+        "2017": 5,
+        "2018": 8,
+        "2019": 9,
+        "2020": 11,
+        "2021": 5,
+        "2022": 9,
+        "2023": 4,
+        "2024": 3,
+        "2025": 4,
+        "2026": 3
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (University of Tarapacá)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Laboratorio de Oncovirología) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "106 trabajos indexados"
+      ],
+      "match_ambiguo": true,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5068804749",
+          "nombre": "Francisco Aguayo",
+          "orcid": "https://orcid.org/0000-0003-4113-952X",
+          "works": 21,
+          "puntaje": 8
+        },
+        {
+          "id": "https://openalex.org/A5102926909",
+          "nombre": "Francisco Aguayo",
+          "orcid": "https://orcid.org/0000-0002-1557-0490",
+          "works": 9,
+          "puntaje": 8
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5035117288"
+    },
+    {
+      "id": "martin-montecino",
+      "nombre": "Martín Montecino",
+      "openalex_id": "https://openalex.org/A5012717530",
+      "openalex_nombre": "Martin A. Montecino",
+      "orcid": "0000-0002-6025-0023",
+      "works_count": 273,
+      "cited_by_count": 10352,
+      "instituciones": [
+        "University of Vermont",
+        "Universidad Andrés Bello",
+        "University of Chile"
+      ],
+      "publicaciones_por_ano": {
+        "1991": 1,
+        "1993": 2,
+        "1994": 4,
+        "1995": 2,
+        "1996": 10,
+        "1997": 5,
+        "1998": 1,
+        "1999": 9,
+        "2000": 8,
+        "2001": 3,
+        "2002": 11,
+        "2003": 11,
+        "2004": 22,
+        "2005": 5,
+        "2006": 5,
+        "2007": 16,
+        "2008": 17,
+        "2009": 6,
+        "2010": 14,
+        "2011": 12,
+        "2012": 9,
+        "2013": 3,
+        "2014": 7,
+        "2015": 8,
+        "2016": 6,
+        "2017": 13,
+        "2018": 6,
+        "2019": 5,
+        "2020": 10,
+        "2021": 5,
+        "2022": 8,
+        "2023": 10,
+        "2024": 5,
+        "2025": 8,
+        "2026": 6
+      },
+      "puntaje_match": 7,
+      "razones_match": [
+        "institución conocida en Chile (University of Vermont; Universidad Andrés Bello; University of Chile)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Institute of Biomedical Sciences) — verificar que sea la misma persona",
+        "273 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5139800607",
+          "nombre": "Martín Montecino",
+          "orcid": null,
+          "works": 4,
+          "puntaje": 4
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5012717530"
+    },
+    {
+      "id": "enrique-seguel-s",
+      "nombre": "Enrique Seguel S.",
+      "openalex_id": "https://openalex.org/A5021209757",
+      "openalex_nombre": "Enrique Seguel S.",
+      "orcid": "0000-0001-8391-8623",
+      "works_count": 76,
+      "cited_by_count": 124,
+      "instituciones": [
+        "University of Concepción",
+        "Hospital Regional de Concepción"
+      ],
+      "publicaciones_por_ano": {
+        "1939": 1,
+        "2000": 1,
+        "2002": 1,
+        "2004": 2,
+        "2005": 5,
+        "2009": 3,
+        "2010": 2,
+        "2011": 2,
+        "2012": 2,
+        "2013": 2,
+        "2014": 1,
+        "2015": 2,
+        "2016": 2,
+        "2017": 1,
+        "2018": 3,
+        "2019": 7,
+        "2020": 12,
+        "2021": 6,
+        "2022": 6,
+        "2023": 3,
+        "2024": 2,
+        "2025": 5,
+        "2026": 5
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (University of Concepción; Hospital Regional de Concepción)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Centro Cardiovascular) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "76 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5021209757"
+    },
+    {
+      "id": "orlando-diaz-p",
+      "nombre": "Orlando Díaz P.",
+      "openalex_id": "https://openalex.org/A5041118965",
+      "openalex_nombre": "Orlando Díaz P",
+      "orcid": "0000-0002-5860-1381",
+      "works_count": 153,
+      "cited_by_count": 2941,
+      "instituciones": [
+        "Houston Methodist",
+        "Pontificia Universidad Católica de Chile"
+      ],
+      "publicaciones_por_ano": {
+        "1986": 1,
+        "1987": 2,
+        "1988": 2,
+        "1989": 2,
+        "1991": 1,
+        "1995": 1,
+        "1996": 5,
+        "1997": 8,
+        "1998": 5,
+        "1999": 1,
+        "2000": 2,
+        "2001": 6,
+        "2002": 4,
+        "2003": 4,
+        "2004": 3,
+        "2005": 4,
+        "2006": 1,
+        "2007": 5,
+        "2008": 11,
+        "2009": 4,
+        "2010": 9,
+        "2011": 8,
+        "2012": 3,
+        "2013": 8,
+        "2014": 3,
+        "2015": 7,
+        "2016": 2,
+        "2017": 5,
+        "2018": 4,
+        "2019": 4,
+        "2020": 11,
+        "2022": 3,
+        "2023": 2,
+        "2024": 2,
+        "2025": 4,
+        "2026": 6
+      },
+      "puntaje_match": 7,
+      "razones_match": [
+        "institución conocida en Chile (Houston Methodist; Pontificia Universidad Católica de Chile)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Departamento de Enfermedades Respiratorias) — verificar que sea la misma persona",
+        "153 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5041118965"
+    },
+    {
+      "id": "leda-guzman-m",
+      "nombre": "Leda Guzmán M.",
+      "openalex_id": "https://openalex.org/A5024487616",
+      "openalex_nombre": "Leda Guzmán",
+      "orcid": "0000-0001-7334-2288",
+      "works_count": 38,
+      "cited_by_count": 580,
+      "instituciones": [
+        "Pontificia Universidad Católica de Valparaíso"
+      ],
+      "publicaciones_por_ano": {
+        "1993": 1,
+        "1994": 1,
+        "1997": 3,
+        "1999": 1,
+        "2000": 1,
+        "2007": 2,
+        "2008": 2,
+        "2009": 1,
+        "2010": 1,
+        "2012": 2,
+        "2014": 2,
+        "2015": 3,
+        "2016": 1,
+        "2018": 1,
+        "2019": 2,
+        "2020": 2,
+        "2021": 1,
+        "2022": 2,
+        "2023": 2,
+        "2024": 2,
+        "2025": 4,
+        "2026": 1
+      },
+      "puntaje_match": 7,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Valparaíso)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Laboratorio Nacional y de Referencia de Inmunología) — verificar que sea la misma persona",
+        "38 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5021118901",
+          "nombre": "Leda Guzmán M",
+          "orcid": null,
+          "works": 1,
+          "puntaje": 3
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5024487616"
+    },
+    {
+      "id": "david-ladron-de-guevara-h",
+      "nombre": "David Ladrón de Guevara H.",
+      "openalex_id": "https://openalex.org/A5051515434",
+      "openalex_nombre": "David Ladrón de Guevara H.",
+      "orcid": "0000-0001-5984-7546",
+      "works_count": 75,
+      "cited_by_count": 181,
+      "instituciones": [
+        "Hospital San Juan de Dios"
+      ],
+      "publicaciones_por_ano": {
+        "2000": 2,
+        "2001": 1,
+        "2002": 2,
+        "2003": 5,
+        "2004": 1,
+        "2007": 1,
+        "2009": 1,
+        "2010": 2,
+        "2011": 1,
+        "2012": 1,
+        "2013": 6,
+        "2015": 3,
+        "2016": 3,
+        "2017": 3,
+        "2018": 3,
+        "2019": 6,
+        "2020": 7,
+        "2021": 3,
+        "2022": 3,
+        "2023": 12,
+        "2024": 7,
+        "2025": 1,
+        "2026": 1
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Hospital San Juan de Dios)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Clínica Las Condes) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "75 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5051515434"
+    },
+    {
+      "id": "annerleim-walton-diaz",
+      "nombre": "Annerleim Walton-diaz",
+      "openalex_id": "https://openalex.org/A5123401339",
+      "openalex_nombre": "Annerleim Walton-Díaz",
+      "orcid": null,
+      "works_count": 1,
+      "cited_by_count": 0,
+      "instituciones": [
+        "National Cancer Institute",
+        "Instituto Nacional del Cáncer"
+      ],
+      "publicaciones_por_ano": {
+        "2026": 1
+      },
+      "puntaje_match": 6,
+      "razones_match": [
+        "institución conocida en Chile (National Cancer Institute; Instituto Nacional del Cáncer)",
+        "coincide con la afiliación de nuestra muestra (Instituto Nacional del Cáncer)",
+        "nombre idéntico"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": false,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5123401339"
+    },
+    {
+      "id": "eduardo-ya-ez",
+      "nombre": "Eduardo Yañez",
+      "openalex_id": "https://openalex.org/A5028612075",
+      "openalex_nombre": "Eduardo Yáñez",
+      "orcid": "0000-0003-1839-5314",
+      "works_count": 43,
+      "cited_by_count": 1053,
+      "instituciones": [
+        "Universidad de La Frontera"
+      ],
+      "publicaciones_por_ano": {
+        "1999": 2,
+        "2015": 2,
+        "2017": 2,
+        "2019": 1,
+        "2020": 3,
+        "2021": 15,
+        "2022": 7,
+        "2023": 4,
+        "2024": 5,
+        "2025": 1,
+        "2026": 1
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Universidad de La Frontera)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Sociedad de Investigaciones Médicas (SIM)) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "43 trabajos indexados"
+      ],
+      "match_ambiguo": true,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5026888630",
+          "nombre": "Eduardo Yáñez San Francisco",
+          "orcid": "https://orcid.org/0000-0002-7372-0960",
+          "works": 9,
+          "puntaje": 7
+        },
+        {
+          "id": "https://openalex.org/A5057265985",
+          "nombre": "Eduardo Yañez",
+          "orcid": null,
+          "works": 8,
+          "puntaje": 5
+        },
+        {
+          "id": "https://openalex.org/A5114227210",
+          "nombre": "Eduardo Patricio Yanez Ruiz",
+          "orcid": null,
+          "works": 16,
+          "puntaje": 4
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5028612075"
+    },
+    {
+      "id": "nicolas-saez",
+      "nombre": "Nicolas Saez",
+      "openalex_id": "https://openalex.org/A5068618123",
+      "openalex_nombre": "Nicolás Saez",
+      "orcid": "0009-0008-5544-7738",
+      "works_count": 20,
+      "cited_by_count": 70,
+      "instituciones": [
+        "Pontificia Universidad Católica de Chile",
+        "Hospital Clínico de la Universidad Católica",
+        "Complejo Asistencial Sótero del Río"
+      ],
+      "publicaciones_por_ano": {
+        "2008": 1,
+        "2015": 2,
+        "2016": 1,
+        "2019": 1,
+        "2020": 2,
+        "2024": 3,
+        "2025": 2,
+        "2026": 8
+      },
+      "puntaje_match": 10,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Chile; Hospital Clínico de la Universidad Católica; Complejo Asistencial Sótero del Río)",
+        "ORCID publicado",
+        "coincide con la afiliación de nuestra muestra (Pontificia Universidad Católica de Chile)",
+        "nombre idéntico",
+        "20 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": false,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5093747162",
+          "nombre": "Nicolas Valderrama Saez",
+          "orcid": "https://orcid.org/0009-0009-3540-2062",
+          "works": 3,
+          "puntaje": 6
+        },
+        {
+          "id": "https://openalex.org/A5038312702",
+          "nombre": "Nicolás Rubio Sáez",
+          "orcid": null,
+          "works": 19,
+          "puntaje": 6
+        },
+        {
+          "id": "https://openalex.org/A5054286122",
+          "nombre": "Nicolás Sáez O",
+          "orcid": null,
+          "works": 3,
+          "puntaje": 5
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5068618123"
+    },
+    {
+      "id": "fernando-valenzuela",
+      "nombre": "Fernando Valenzuela",
+      "openalex_id": "https://openalex.org/A5041765554",
+      "openalex_nombre": "Fernando Valenzuela",
+      "orcid": "0000-0003-1032-9347",
+      "works_count": 209,
+      "cited_by_count": 3427,
+      "instituciones": [
+        "Universidad de Los Andes, Chile",
+        "Hospital Clínico de la Universidad de Chile",
+        "University of Chile"
+      ],
+      "publicaciones_por_ano": {
+        "1970": 1,
+        "1975": 1,
+        "1984": 1,
+        "1987": 1,
+        "1989": 1,
+        "1993": 1,
+        "1994": 1,
+        "1996": 2,
+        "1997": 1,
+        "2000": 5,
+        "2002": 5,
+        "2003": 3,
+        "2004": 1,
+        "2005": 2,
+        "2006": 2,
+        "2007": 4,
+        "2008": 5,
+        "2009": 1,
+        "2010": 4,
+        "2011": 6,
+        "2012": 4,
+        "2013": 7,
+        "2014": 2,
+        "2015": 5,
+        "2016": 7,
+        "2017": 8,
+        "2018": 19,
+        "2019": 15,
+        "2020": 14,
+        "2021": 15,
+        "2022": 11,
+        "2023": 15,
+        "2024": 13,
+        "2025": 20,
+        "2026": 6
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Universidad de Los Andes, Chile; Hospital Clínico de la Universidad de Chile; University of Chile)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Centro Internacional de Estudios Clínicos (CIEC)) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "209 trabajos indexados"
+      ],
+      "match_ambiguo": true,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5102968927",
+          "nombre": "Fernando Valenzuela",
+          "orcid": "https://orcid.org/0000-0002-0920-8380",
+          "works": 33,
+          "puntaje": 8
+        },
+        {
+          "id": "https://openalex.org/A5101440699",
+          "nombre": "Fernando Valenzuela",
+          "orcid": "https://orcid.org/0000-0002-4077-9034",
+          "works": 11,
+          "puntaje": 8
+        },
+        {
+          "id": "https://openalex.org/A5101440700",
+          "nombre": "Fernando A. Valenzuela",
+          "orcid": "https://orcid.org/0000-0002-7987-0150",
+          "works": 41,
+          "puntaje": 7
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5041765554"
+    },
+    {
+      "id": "alejandro-acevedo",
+      "nombre": "Alejandro Acevedo",
+      "openalex_id": "https://openalex.org/A5048075645",
+      "openalex_nombre": "Alejandro Acevedo Amorocho",
+      "orcid": "0000-0001-6715-2832",
+      "works_count": 44,
+      "cited_by_count": 29,
+      "instituciones": [
+        "Universidad Santo Tomás",
+        "Universidad Santo Tomás",
+        "University of Santo Tomas"
+      ],
+      "publicaciones_por_ano": {
+        "2012": 1,
+        "2014": 1,
+        "2016": 1,
+        "2017": 1,
+        "2018": 2,
+        "2019": 9,
+        "2020": 10,
+        "2021": 1,
+        "2023": 4,
+        "2024": 4,
+        "2026": 10
+      },
+      "puntaje_match": 7,
+      "razones_match": [
+        "institución conocida en Chile (Universidad Santo Tomás; Universidad Santo Tomás; University of Santo Tomas)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Centro de Investigaciones Clínicas Viña del Mar) — verificar que sea la misma persona",
+        "44 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5104112321",
+          "nombre": "Alejandro Acevedo",
+          "orcid": null,
+          "works": 13,
+          "puntaje": 5
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5048075645"
+    },
+    {
+      "id": "christine-rojas",
+      "nombre": "Christine Rojas",
+      "openalex_id": "https://openalex.org/A5113547507",
+      "openalex_nombre": "Christine Rojas",
+      "orcid": "0000-0001-8626-4434",
+      "works_count": 79,
+      "cited_by_count": 671,
+      "instituciones": [
+        "Hospital Dr. Gustavo Fricke"
+      ],
+      "publicaciones_por_ano": {
+        "1988": 1,
+        "2009": 1,
+        "2013": 2,
+        "2014": 1,
+        "2015": 2,
+        "2018": 3,
+        "2019": 12,
+        "2020": 11,
+        "2021": 5,
+        "2022": 12,
+        "2023": 10,
+        "2024": 5,
+        "2025": 6,
+        "2026": 8
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Hospital Dr. Gustavo Fricke)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Centro de Investigaciones Clínicas Viña del Mar) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "79 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5031908713",
+          "nombre": "Christine Rojas Hopkins",
+          "orcid": null,
+          "works": 4,
+          "puntaje": 3
+        },
+        {
+          "id": "https://openalex.org/A5072604751",
+          "nombre": "CHRISTINE ROJAS H",
+          "orcid": null,
+          "works": 1,
+          "puntaje": 3
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5113547507"
+    },
+    {
+      "id": "cesar-sanchez",
+      "nombre": "César Sánchez",
+      "openalex_id": "https://openalex.org/A5038917463",
+      "openalex_nombre": "Cesar G Sanchez",
+      "orcid": "0000-0001-7512-6474",
+      "works_count": 143,
+      "cited_by_count": 2673,
+      "instituciones": [
+        "Pontificia Universidad Católica de Chile"
+      ],
+      "publicaciones_por_ano": {
+        "2002": 1,
+        "2003": 1,
+        "2005": 2,
+        "2006": 3,
+        "2007": 4,
+        "2008": 1,
+        "2009": 4,
+        "2011": 2,
+        "2012": 1,
+        "2013": 7,
+        "2014": 5,
+        "2015": 6,
+        "2016": 12,
+        "2017": 1,
+        "2018": 10,
+        "2019": 7,
+        "2020": 14,
+        "2021": 7,
+        "2022": 8,
+        "2023": 24,
+        "2024": 11,
+        "2025": 7,
+        "2026": 5
+      },
+      "puntaje_match": 7,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Chile)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Clínica UC CHRISTUS San Carlos de Apoquindo) — verificar que sea la misma persona",
+        "143 trabajos indexados"
+      ],
+      "match_ambiguo": false,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5038917463"
+    },
+    {
+      "id": "carolina-ibanez",
+      "nombre": "Carolina Ibáñez",
+      "openalex_id": "https://openalex.org/A5070646200",
+      "openalex_nombre": "Carolina Ibáñez",
+      "orcid": "0000-0001-6259-9862",
+      "works_count": 105,
+      "cited_by_count": 1920,
+      "instituciones": [
+        "Pontificia Universidad Católica de Chile",
+        "Hospital Luis Calvo Mackenna",
+        "Millennium Institute on Immunology and Immunotherapy",
+        "University of Chile"
+      ],
+      "publicaciones_por_ano": {
+        "1985": 1,
+        "2000": 1,
+        "2001": 1,
+        "2012": 2,
+        "2013": 6,
+        "2014": 3,
+        "2015": 6,
+        "2016": 5,
+        "2017": 4,
+        "2018": 4,
+        "2019": 9,
+        "2020": 6,
+        "2021": 5,
+        "2022": 3,
+        "2023": 10,
+        "2024": 14,
+        "2025": 13,
+        "2026": 12
+      },
+      "puntaje_match": 8,
+      "razones_match": [
+        "institución conocida en Chile (Pontificia Universidad Católica de Chile; Hospital Luis Calvo Mackenna; Millennium Institute on Immunology and Immunotherapy; University of Chile)",
+        "ORCID publicado",
+        "OJO: ninguna institución de OpenAlex coincide con la afiliación de nuestra muestra (Centro de Cáncer Nuestra Señora de la Esperanza (UC CHRISTUS)) — verificar que sea la misma persona",
+        "nombre idéntico",
+        "105 trabajos indexados"
+      ],
+      "match_ambiguo": true,
+      "afiliacion_no_coincide": true,
+      "candidatos_alternativos": [
+        {
+          "id": "https://openalex.org/A5103151291",
+          "nombre": "Carolina Ibáñez",
+          "orcid": "https://orcid.org/0000-0001-6982-7928",
+          "works": 15,
+          "puntaje": 8
+        },
+        {
+          "id": "https://openalex.org/A5043827139",
+          "nombre": "Carolina Ibáñez H",
+          "orcid": null,
+          "works": 4,
+          "puntaje": 3
+        },
+        {
+          "id": "https://openalex.org/A5033854865",
+          "nombre": "Carolina Ibáñez C",
+          "orcid": null,
+          "works": 1,
+          "puntaje": 3
+        }
+      ],
+      "confianza": "pendiente",
+      "fuente_url": "https://openalex.org/A5070646200"
+    }
+  ],
+  "sin_coincidencia": [
+    {
+      "id": "carlos-rojas",
+      "nombre": "Carlos Rojas",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 10
+    },
+    {
+      "id": "roberto-gonzalez",
+      "nombre": "Roberto González L.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 10
+    },
+    {
+      "id": "andres-rojas",
+      "nombre": "Andrés Rojas G.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 6
+    },
+    {
+      "id": "pablo-rodriguez",
+      "nombre": "Pablo Rodríguez Monarca",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "alejandra-maldonado",
+      "nombre": "Alejandra Maldonado Villegas",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "antonio-hernandez",
+      "nombre": "Antonio Alexis Hernández Morelle",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 0
+    },
+    {
+      "id": "pedro-carrasco",
+      "nombre": "Pedro Alejandro Carrasco Galleguillos",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 0
+    },
+    {
+      "id": "jorge-salguero",
+      "nombre": "Jorge Eduardo Salguero Aparicio",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 0
+    },
+    {
+      "id": "juan-cheyre",
+      "nombre": "Juan Emilio Cheyre Forestier",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "nicolas-von-jentschyk",
+      "nombre": "Nicolás Von Jentschyk Rojas",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "hernan-cabello",
+      "nombre": "Hernán Patricio Cabello Araya",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 0
+    },
+    {
+      "id": "suraj-samtani",
+      "nombre": "Suraj Samtani",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 5
+    },
+    {
+      "id": "osvaldo-aren-frontera",
+      "nombre": "Osvaldo Arén Frontera",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "francisco-suarez",
+      "nombre": "Francisco Suárez",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 10
+    },
+    {
+      "id": "maria-paz-saavedra",
+      "nombre": "María Paz Saavedra",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 10
+    },
+    {
+      "id": "jaime-verdugo-b",
+      "nombre": "Jaime Verdugo B",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "felipe-sanchez-t",
+      "nombre": "Felipe Sánchez T",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "alfredo-jalilie-e",
+      "nombre": "Alfredo Jalilie E",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "roberto-diaz-pena",
+      "nombre": "Roberto Díaz-Peña",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "solange-rivas",
+      "nombre": "Solange Rivas",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 5
+    },
+    {
+      "id": "rodrigo-lopez-munoz",
+      "nombre": "Rodrigo López-Muñoz",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 6
+    },
+    {
+      "id": "antonia-martin-martin",
+      "nombre": "Antonia Martín-Martín",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 10
+    },
+    {
+      "id": "alejandra-riquelme-u",
+      "nombre": "Alejandra Riquelme U.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "rodrigo-reyes-m",
+      "nombre": "Rodrigo Reyes M.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 6
+    },
+    {
+      "id": "m-loreto-spencer-l",
+      "nombre": "M. Loreto Spencer L.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "aleck-stockins-l",
+      "nombre": "Aleck Stockins L.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "andres-jadue-t",
+      "nombre": "Andrés Jadue T.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "emilio-alarcon-c",
+      "nombre": "Emilio Alarcón C.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "rodrigo-diaz-t",
+      "nombre": "Rodrigo Díaz T.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 7
+    },
+    {
+      "id": "marcela-opazo-v",
+      "nombre": "Marcela Opazo V.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "marcela-hernandez-p",
+      "nombre": "Marcela Hernández P.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 4
+    },
+    {
+      "id": "paulina-avila-v",
+      "nombre": "Paulina Ávila V.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "daniel-villalobos-s",
+      "nombre": "Daniel Villalobos S.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "waldo-adonis-r",
+      "nombre": "Waldo Adonis R.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "eugenia-cordero-s",
+      "nombre": "Eugenia Cordero S.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "luis-rodriguez-a",
+      "nombre": "Luis Rodríguez A.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 10
+    },
+    {
+      "id": "darwins-castillo-a",
+      "nombre": "Darwins Castillo A.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "raul-pefaur-d",
+      "nombre": "Raúl Pefaur D.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "arturo-morales-s",
+      "nombre": "Arturo Morales S.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 5
+    },
+    {
+      "id": "sergio-gonzalez-b",
+      "nombre": "Sergio González B.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 7
+    },
+    {
+      "id": "juan-carlos-diaz-patino",
+      "nombre": "Juan Carlos Díaz Patiño",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "julia-alegria-bobadilla",
+      "nombre": "Julia Alegría Bobadilla",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "yumay-pires",
+      "nombre": "Yumay Pires",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "guillermo-chong-medel",
+      "nombre": "Guillermo Chong Medel",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "claudio-silva-fuente-alba",
+      "nombre": "Claudio Silva Fuente-Alba",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "g-cristobal-ramos-gomez",
+      "nombre": "G. Cristóbal Ramos Gómez",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "marcia-erazo-b",
+      "nombre": "Marcia Erazo B.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "juan-guillermo-gormaz-a",
+      "nombre": "Juan Guillermo Gormaz A.",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "ariel-zwenger",
+      "nombre": "Ariel Zwenger",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "myriam-campbell-bull",
+      "nombre": "Myriam Campbell Bull",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 1
+    },
+    {
+      "id": "scarlet-mu-oz",
+      "nombre": "Scarlet Muñoz",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 3
+    },
+    {
+      "id": "mauricio-olivera",
+      "nombre": "Mauricio Olivera",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 10
+    },
+    {
+      "id": "bruno-nervi-nattero",
+      "nombre": "Bruno Nervi Nattero",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    },
+    {
+      "id": "angela-estay",
+      "nombre": "Ángela Estay",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 4
+    },
+    {
+      "id": "patricio-yanez-weber",
+      "nombre": "Patricio Yáñez Weber",
+      "motivo": "ninguna coincidencia superó el umbral de evidencia",
+      "candidatos_vistos": 2
+    }
+  ],
+  "conflictos": []
+}
