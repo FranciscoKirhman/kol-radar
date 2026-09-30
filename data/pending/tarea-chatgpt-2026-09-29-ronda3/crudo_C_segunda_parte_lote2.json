@@ -1,0 +1,188 @@
+{
+  "lote": 2,
+  "tareas_incluidas": [
+    "C"
+  ],
+  "C": [
+    {
+      "nct": "NCT03980314",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03980314",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 4,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0024",
+        "Local Institution - 0045",
+        "Local Institution - 0023",
+        "Local Institution - 0022"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT04078152",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT04078152",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT04266301",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT04266301",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Novartis Investigative Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT04821609",
+      "resultado": "sedes_nombradas",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT04821609",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Karol Ramírez"
+      ],
+      "sedes": [
+        {
+          "texto_en_clinicaltrials": "Karol Ramírez",
+          "ciudad": "Puente Alto",
+          "resolucion": "no_resoluble",
+          "cita_textual": "Karol Ramírez",
+          "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT04821609",
+          "fecha_consulta": "2026-09-30",
+          "notas": "El campo facility contiene un nombre de persona; el registro no identifica una institución para esta ubicación."
+        }
+      ]
+    },
+    {
+      "nct": "NCT04948983",
+      "resultado": "sedes_nombradas",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT04948983",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Alejandra Martínez"
+      ],
+      "sedes": [
+        {
+          "texto_en_clinicaltrials": "Alejandra Martínez",
+          "ciudad": "Santiago",
+          "resolucion": "no_resoluble",
+          "cita_textual": "Alejandra Martínez",
+          "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT04948983",
+          "fecha_consulta": "2026-09-30",
+          "notas": "El campo facility contiene un nombre de persona; el registro no identifica una institución para esta ubicación."
+        }
+      ]
+    },
+    {
+      "nct": "NCT04964908",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT04964908",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT05091437",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT05091437",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT05329766",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT05329766",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 4,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT05568095",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT05568095",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 6,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT05669989",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT05669989",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Investigational Site Number : 1520001"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT06587451",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT06587451",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Sandoz Investigational Site 1",
+        "Sandoz Investigational Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT06901531",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT06901531",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Site CL56004",
+        "Site CL56001"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT06946797",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT06946797",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0067"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT07476326",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT07476326",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 4,
+      "texto_en_clinicaltrials": [
+        "Biocon Investigational Site",
+        "Biocon Investigational Site 1"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    }
+  ]
+}

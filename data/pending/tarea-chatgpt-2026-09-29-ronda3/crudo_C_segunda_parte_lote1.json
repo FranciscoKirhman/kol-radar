@@ -1,0 +1,482 @@
+{
+  "lote": 1,
+  "tareas_incluidas": [
+    "C"
+  ],
+  "C": [
+    {
+      "nct": "NCT01642004",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT01642004",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 5,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0117",
+        "Local Institution - 0131",
+        "Local Institution - 0110",
+        "Local Institution - 0161",
+        "Local Institution - 0154"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT01646021",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT01646021",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT01673867",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT01673867",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 4,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0058",
+        "Local Institution - 0077",
+        "Local Institution - 0134",
+        "Local Institution - 0012"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT01715285",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT01715285",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT01721772",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT01721772",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 3,
+      "texto_en_clinicaltrials": [
+        "Local Institution"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT01724021",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT01724021",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 3,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT01865747",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT01865747",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT02119663",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02119663",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT02125461",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02125461",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 3,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02162667",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02162667",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT02231749",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02231749",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 4,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0101",
+        "Local Institution - 0102",
+        "Local Institution - 0144",
+        "Local Institution - 0103"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02279862",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02279862",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 3,
+      "texto_en_clinicaltrials": [
+        "Local Institution"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02300831",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02300831",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02352948",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02352948",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 3,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02367040",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02367040",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT02369874",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02369874",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02437318",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02437318",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 3,
+      "texto_en_clinicaltrials": [
+        "Novartis Investigative Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02472964",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02472964",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Mylan Investigational Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02481830",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02481830",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0025"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02559583",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02559583",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT02677896",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02677896",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 6,
+      "texto_en_clinicaltrials": [
+        "Site CL56002",
+        "Site CL56001",
+        "Site CL56007",
+        "Site CL56005",
+        "Site CL56004",
+        "Site CL56003"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02752074",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02752074",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        null
+      ],
+      "notas": "Ubicación chilena sin nombre de institución en el campo facility."
+    },
+    {
+      "nct": "NCT02809053",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02809053",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Research site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02823574",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02823574",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0115"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02872116",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02872116",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 5,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0032",
+        "Local Institution - 0058",
+        "Local Institution - 0057",
+        "Local Institution - 0031",
+        "Local Institution - 0033"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT02941926",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT02941926",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Novartis Investigative Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03088540",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03088540",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 4,
+      "texto_en_clinicaltrials": [
+        "Clinical Study Site",
+        "Clincial Study Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03141177",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03141177",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0045"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03200717",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03200717",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Novartis Investigative Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03338790",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03338790",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0034",
+        "Local Institution - 0051"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03377361",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03377361",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0117",
+        "Local Institution - 0118"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03400709",
+      "resultado": "sedes_nombradas",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03400709",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Daniel Munoz"
+      ],
+      "sedes": [
+        {
+          "texto_en_clinicaltrials": "Daniel Munoz",
+          "ciudad": "Santiago",
+          "resolucion": "no_resoluble",
+          "cita_textual": "Daniel Munoz",
+          "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03400709",
+          "fecha_consulta": "2026-09-30",
+          "notas": "El campo facility contiene un nombre de persona; el registro no identifica una institución para esta ubicación."
+        }
+      ]
+    },
+    {
+      "nct": "NCT03470922",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03470922",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0001"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03519256",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03519256",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0154",
+        "Local Institution - 0069"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03626545",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03626545",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Novartis Investigative Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03631199",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03631199",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Novartis Investigative Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03635983",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03635983",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Local Institution - 0174",
+        "Local Institution - 0173"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03704077",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03704077",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 2,
+      "texto_en_clinicaltrials": [
+        "Local Institution"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03721289",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03721289",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    },
+    {
+      "nct": "NCT03725475",
+      "resultado": "solo_marcadores",
+      "evidencia_url": "https://clinicaltrials.gov/api/v2/studies/NCT03725475",
+      "fecha_consulta": "2026-09-30",
+      "ubicaciones_chile": 1,
+      "texto_en_clinicaltrials": [
+        "Research Site"
+      ],
+      "notas": "Nombres genéricos, códigos del sitio o marcadores del patrocinador; ninguna institución identificable."
+    }
+  ]
+}

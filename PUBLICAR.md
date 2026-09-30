@@ -115,7 +115,7 @@ python3 scripts/resolver_sedes_web.py
 python3 scripts/recolectar_estudiosclinicos_cl.py && python3 scripts/integrar_estudiosclinicos_cl.py data/pending/estudiosclinicos-cl-<fecha>/fichas.json
 ```
 ```bash
-python3 scripts/integrar_isp_inspecciones.py && python3 scripts/sedes_por_codigo_postal.py
+python3 scripts/integrar_isp_inspecciones.py && python3 scripts/integrar_sedes_documentos.py && python3 scripts/sedes_por_codigo_postal.py
 ```
 ```bash
 python3 scripts/fusionar_personas.py && python3 scripts/consolidar_ubicaciones.py
@@ -138,6 +138,7 @@ termina con error si la API no respondió para algún fármaco, sin borrar su cl
 | `resolver_sedes_web.py` | Liga textos de sede a instituciones, con evidencia buscada a mano |
 | `recolectar_estudiosclinicos_cl.py` + `integrar_estudiosclinicos_cl.py` | Centros que la CIF nombra para ensayos que reclutan |
 | `integrar_isp_inspecciones.py` | Centros que el ISP inspeccionó, por código de protocolo, y sus investigadores (requiere `pip install xlrd`) |
+| `integrar_sedes_documentos.py` | Sedes que ClinicalTrials.gov oculta y que nombra un documento del propio estudio (publicación, informe de resultados), verificadas a mano |
 | `sedes_por_codigo_postal.py` | Sedes que ClinicalTrials.gov oculta, inferidas por el código postal que sí declara (marcadas como inferidas) |
 | `fusionar_personas.py` | Fusiones de identidad decididas, con su evidencia |
 | `consolidar_ubicaciones.py` | Dirección y punto de cada institución (DEIS, sitios oficiales, OpenStreetMap, respuestas revisadas de ChatGPT) |

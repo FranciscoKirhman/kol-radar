@@ -5938,9 +5938,11 @@
                  valor: vecinosDe(f.id, "ensayo_clinico").length, unidad: ["estudio en Chile", "estudios en Chile"] };
       });
       var inferidos = vecinosDe(n.id, "institucion").filter(function (a) { return a.v.criterio === "codigo_postal"; }).length;
+      var porDocumento = vecinosDe(n.id, "institucion").filter(function (a) { return a.v.criterio === "documento_del_estudio"; }).length;
       var centros = vecinosDe(n.id, "institucion").map(function (a) {
         var i = byId[a.otro], u = a.v.fuente_url || "";
         var segun = a.v.criterio === "codigo_postal" ? "sede inferida por código postal (ClinicalTrials.gov no la nombra)"
+          : a.v.criterio === "documento_del_estudio" ? "sede según " + (a.v.fuente_descripcion || "un documento del estudio").split(" (")[0]
           : u.indexOf("estudiosclinicos.cl") !== -1 ? "centro abierto según la CIF"
           : u.indexOf("ispch.gob.cl") !== -1 ? "sede según las inspecciones del ISP" : "sede según ClinicalTrials.gov";
         return { id: i.id, etiqueta: i.nombre, sub: [i.ciudad, segun].filter(Boolean).join(" · "),
@@ -5971,7 +5973,8 @@
         (n.sitios_chile_reclutando ? ", " + n.sitios_chile_reclutando + " reclutando" : "") + "; " +
         (centros.length ? plural(centros.length, "centro identificado", "centros identificados") +
           (inferidos ? " (" + (inferidos === centros.length ? (inferidos === 1 ? "inferido" : "todos inferidos") : inferidos + " inferido" + (inferidos === 1 ? "" : "s")) +
-            " por código postal, porque la fuente no nombra la sede)." : " por nombre.")
+            " por código postal, porque la fuente no nombra la sede)."
+            : porDocumento === centros.length ? " en un documento del estudio, porque ClinicalTrials.gov no nombra la sede." : " por nombre.")
           : "ninguno identificado por nombre."));
       if (parecidos.length) frases.push("Hay " + plural(parecidos.length, "otro estudio", "otros estudios") + " en Chile con alguno de sus fármacos.");
       var pend = n.sedes_pendientes_resolucion || [];
@@ -6432,6 +6435,20 @@
           wrapVer.appendChild(document.createTextNode(" · "));
           wrapVer.appendChild(cif);
         }
+        // Sedes que ClinicalTrials.gov enmascara y nombra un documento del estudio: el enlace a ese
+        // documento, que es la fuente del vínculo.
+        var docs = {};
+        vecinosDe(n.id, "institucion").forEach(function (a) {
+          if (a.v.criterio === "documento_del_estudio" && esUrlSegura(a.v.fuente_url)) docs[a.v.fuente_url] = a.v.fuente_descripcion;
+        });
+        Object.keys(docs).forEach(function (u) {
+          var doc = document.createElement("a");
+          doc.className = "sheet-sub-fuente";
+          doc.href = u; doc.target = "_blank"; doc.rel = "noopener noreferrer";
+          doc.textContent = "Centros en Chile según " + (docs[u] || "un documento del estudio").split(" (")[0] + " ↗";
+          wrapVer.appendChild(document.createTextNode(" · "));
+          wrapVer.appendChild(doc);
+        });
         meta.appendChild(wrapVer);
       }
       content.appendChild(meta);

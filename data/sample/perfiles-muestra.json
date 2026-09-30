@@ -5769,6 +5769,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00072462",
           "fecha": "2024-09-19",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el apéndice de investigadores de la publicación del ensayo (Forbes et al., The Lancet, 2016): Fundación Arturo López Pérez (FALP), Hospital Militar de Santiago, Instituto de Radiomedicina (IRAM) y Hospital Clínico San Borja Arriarán.",
+          "fase": "Fase III",
+          "fuente_url": "https://discovery.ucl.ac.uk/1493474/1/IBIS-II%20DCIS%20trial%20PIIS0140673615011290.pdf",
+          "fecha": "2026-09-30",
+          "confianza": "pendiente"
         }
       ],
       "sedes_pendientes_resolucion": [
@@ -7357,6 +7365,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00481247",
           "fecha": "2017-02-15",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA180-056), lista de centros: Hospital del Salvador.",
+          "fase": "Fase III",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-2703363-3-0-48CC42-20190814095642.pdf",
+          "fecha": "2026-09-30",
           "confianza": "pendiente"
         }
       ],
@@ -9069,6 +9085,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01057810",
           "fecha": "2016-08-18",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-095), lista de centros: Instituto Oncológico — Clínica Bupa Reñaca, Instituto Clínico Oncológico del Sur (ICOS) y Instituto de Radiomedicina (IRAM).",
+          "fase": "Fase III",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-1156_01-2-0-76FC19-20161124160439.pdf",
+          "fecha": "2026-09-30",
           "confianza": "pendiente"
         }
       ],
@@ -72122,6 +72146,78 @@
       "alias_fuente": "Local Institution - 0084",
       "criterio": "codigo_postal",
       "fuente_url": "https://clinicaltrials.gov/study/NCT07680764"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00072462",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Fundacion Arturo Lopez Perez, Santiago, Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://discovery.ucl.ac.uk/1493474/1/IBIS-II%20DCIS%20trial%20PIIS0140673615011290.pdf",
+      "fuente_descripcion": "el apéndice de investigadores de la publicación del ensayo (Forbes et al., The Lancet, 2016)"
+    },
+    {
+      "origen": "hosp-militar",
+      "destino": "nct00072462",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Hospital Militar, Santiago, Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://discovery.ucl.ac.uk/1493474/1/IBIS-II%20DCIS%20trial%20PIIS0140673615011290.pdf",
+      "fuente_descripcion": "el apéndice de investigadores de la publicación del ensayo (Forbes et al., The Lancet, 2016)"
+    },
+    {
+      "origen": "iram",
+      "destino": "nct00072462",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Instituto de Radiomedicina, Santiago, Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://discovery.ucl.ac.uk/1493474/1/IBIS-II%20DCIS%20trial%20PIIS0140673615011290.pdf",
+      "fuente_descripcion": "el apéndice de investigadores de la publicación del ensayo (Forbes et al., The Lancet, 2016)"
+    },
+    {
+      "origen": "hosp-san-borja",
+      "destino": "nct00072462",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Hospital Clinico San Borja Arriarán, Santiago, Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://discovery.ucl.ac.uk/1493474/1/IBIS-II%20DCIS%20trial%20PIIS0140673615011290.pdf",
+      "fuente_descripcion": "el apéndice de investigadores de la publicación del ensayo (Forbes et al., The Lancet, 2016)"
+    },
+    {
+      "origen": "hosp-salvador",
+      "destino": "nct00481247",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Hospital Del Salvador (Patient Treatment - Hospital/Medical Center), Av. Salvador 364, Providencia, Santiago",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2703363-3-0-48CC42-20190814095642.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA180-056), lista de centros"
+    },
+    {
+      "origen": "instituto-oncologico-vina",
+      "destino": "nct01057810",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Instituto Oncologico (Pt Tx Ctr - Hosp/Med Ctr), Anabaena 336, Jardin Del Mar, Renaca, Vina Del Mar",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-1156_01-2-0-76FC19-20161124160439.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-095), lista de centros"
+    },
+    {
+      "origen": "icos",
+      "destino": "nct01057810",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "ICOS – Inmunomedica (Pt Tx Ctr - Med Office/Clinic), Lago Puyehue 1745, Temuco",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-1156_01-2-0-76FC19-20161124160439.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-095), lista de centros"
+    },
+    {
+      "origen": "iram",
+      "destino": "nct01057810",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "IRAM (Pt Tx Ctr - Hosp/Med Ctr), Av. Americo Vespucio Norte, Nro. 1314, Santiago",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-1156_01-2-0-76FC19-20161124160439.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-095), lista de centros"
     }
   ],
   "campos_confiables": [

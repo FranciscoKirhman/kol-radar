@@ -6,7 +6,8 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
 ## Lo que falta
 
 ### Decisiones de Francisco (bloquean publicar más allá de una demo)
-1. **Publicar la rama `pendientes-beta-2026-09-28`** en `main`: el push lo hace una persona.
+1. **Publicar la rama `pendientes-beta-2026-09-28`** en `main` cada vez que avance: el push lo hace
+   una persona (`PUBLICAR.md`).
 2. ~~El tier público por persona~~: decidido el 2026-09-30, **se mantiene con garantías**
    (explicación en cada ficha, oposición al indicador, evaluación de impacto en `EVALUACION_IMPACTO.md`).
 3. ~~Responsable y domicilio~~: Francisco Kirhman, Bello Horizonte 979, Las Condes. Aviso publicado
@@ -16,16 +17,17 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
    Google Search Console y enviar el sitemap (lo hace Francisco con su cuenta).
 
 ### Tareas externas
-5. **Tercera ronda para ChatGPT** (`data/pending/tarea-chatgpt-2026-09-29-ronda3/`): 16 instituciones
-   sin dirección, 16 textos de sede y 109 ensayos sin institución. Las respuestas se validan con
-   `scripts/validar_respuesta_chatgpt.py` y se integran.
-6. **OpenAlex**: guardar la API key como secret `OPENALEX_API_KEY` del repositorio (Francisco) y
-   correr el workflow "Enriquecer desde OpenAlex". No hace falta ningún correo.
+5. **Tercera ronda para ChatGPT** (`data/pending/tarea-chatgpt-2026-09-29-ronda3/`): la tarea C está
+   hecha (3 ensayos con sede, integrados). Faltan 8 instituciones de la A y los 16 textos de sede de la B;
+   la segunda parte de la C se puede repetir con una búsqueda de verdad (ver el README de la ronda).
+6. **OpenAlex**: la API key está como secret y el workflow corre (2026-09-30). Falta revisar su
+   propuesta, el PR #2 (28 coincidencias, 5 ambiguas, 21 con otra afiliación), y cerrar el PR #1, del
+   2026-08-18, que quedó viejo.
 7. **Respaldar** el registro de exclusiones y su clave (`~/.config/kol-radar/`): no hace falta todavía
    (decisión del 2026-09-30), el registro está vacío.
 
 ### Revisión humana (sin fecha)
-8. **Fichas de personas** (Etapa 3): 1 de 3.194 hechos revisado. Empezar por las 8 que entraron desde
+8. **Fichas de personas** (Etapa 3): 1 de 3.197 hechos revisado. Empezar por las 8 que entraron desde
    el ISP sin revisión de identidad, las ligaduras de nombre parcial (evidencia encontrada en la
    bandeja del ISP) y las 2 fusiones del 2026-09-29.
 9. **Validación con 3–5 MSL** (Etapa 6). Recién después tiene sentido recalibrar el puntaje.
@@ -46,13 +48,17 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
 | | |
 |---|---|
 | Fichas | 1.133: 83 personas, 110 instituciones, 579 ensayos, 361 fármacos |
-| Ensayos sin ninguna institución | 109 (eran 262 el 2026-09-10) |
-| Instituciones ubicadas en el mapa | 94 de 110 |
-| Hechos revisados por una persona | 1 de 3.194 |
+| Ensayos sin ninguna institución | 106 (eran 262 el 2026-09-10) |
+| Instituciones ubicadas en el mapa | 96 de 110 |
+| Hechos revisados por una persona | 1 de 3.197 |
 
 ## Lo resuelto
 
 **2026-09-30**
+- Tercera ronda de ChatGPT, primera entrega: 8 sedes nuevas en 3 ensayos que ClinicalTrials.gov
+  enmascaraba, tomadas de la publicación o del informe de resultados del estudio (109 → 106 ensayos sin
+  institución), y 2 direcciones nuevas (94 → 96 instituciones en el mapa).
+- OpenAlex funcionando con la API key como secret; primera propuesta en el PR #2.
 - Un enlace `#ficha=` mal formado ya no muestra un error falso; los ids de fichas fusionadas siguen
   abriendo la ficha que quedó (T8).
 - Evidencia buscada para las tres ligaduras de nombre parcial del ISP (Burotto, Arén, Yáñez), en la
