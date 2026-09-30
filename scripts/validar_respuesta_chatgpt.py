@@ -29,7 +29,9 @@ PROHIBIDOS = ("linkedin.com", "goo.gl", "bit.ly", "maps.app.goo.gl", "google.com
 RESULTADOS = {
     "A": {"ubicada", "confirmada", "corregida", "no_encontrada"},
     "B": {"institucion_existente", "institucion_nueva", "marcador_patrocinador", "no_resoluble"},
-    "C": {"sedes_nombradas", "solo_marcadores", "sin_sedes_en_chile"},
+    # Ronda 1: revisar la lista de sedes de ClinicalTrials.gov. Ronda 3: buscar la sede enmascarada
+    # en otra fuente que nombre el estudio y el centro.
+    "C": {"sedes_nombradas", "solo_marcadores", "sin_sedes_en_chile", "sede_encontrada", "no_encontrada"},
     "D": {"afiliacion_encontrada", "no_encontrada"},
 }
 FUENTE_TIPOS = {"sitio_oficial", "superintendencia_salud", "deis_minsal", "openstreetmap", "registro_empresas", "otro"}
@@ -228,6 +230,31 @@ def main(rutas):
                 inf.error("C", clave, "nct que no está en C_ensayos_sin_sede_nombrada.csv"); continue
             if item.get("resultado") not in RESULTADOS["C"]:
                 inf.error("C", clave, "resultado inválido: %s" % item.get("resultado")); continue
+            if item["resultado"] == "no_encontrada":
+                if not (item.get("motivo_si_no_encontrada") or "").strip():
+                    inf.error("C", clave, "no_encontrada sin motivo")
+                if len(inf.errores) == n:
+                    inf.ok["C"] += 1
+                continue
+            if item["resultado"] == "sede_encontrada":
+                if not item.get("sedes"):
+                    inf.error("C", clave, "sede_encontrada sin sedes")
+                for sede in item.get("sedes") or []:
+                    if sede.get("resultado") not in ("institucion_existente", "institucion_nueva"):
+                        inf.error("C", clave, "sede con resultado inválido: %s" % sede.get("resultado"))
+                    revisar_url(inf, "C", clave, sede.get("evidencia_url"), "evidencia_url")
+                    if not sede.get("cita_textual"):
+                        inf.error("C", clave, "sede sin cita_textual")
+                    elif clave.lower() not in (sede.get("cita_textual") or "").lower() and \
+                            clave.lower() not in (sede.get("evidencia_url") or "").lower():
+                        inf.aviso("C", clave, "ni la cita ni la URL mencionan el NCT: revisar que la página nombre este estudio")
+                    if sede.get("resultado") == "institucion_existente" and sede.get("id_institucion") not in instituciones:
+                        inf.error("C", clave, "id_institucion inexistente: %s" % sede.get("id_institucion"))
+                    if sede.get("resultado") == "institucion_nueva":
+                        revisar_lugar(inf, "C", clave, sede.get("institucion_nueva") or {}, sede.get("ciudad"))
+                if len(inf.errores) == n:
+                    inf.ok["C"] += 1
+                continue
             if not re.search(r"clinicaltrials\.gov/study/%s" % re.escape(clave), item.get("evidencia_url") or "", re.I):
                 inf.error("C", clave, "evidencia_url debe ser la ficha de ese mismo NCT")
             for sede in item.get("sedes") or []:
