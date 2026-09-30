@@ -2026,7 +2026,7 @@
   // un MSL los piensa, no alfabético.
   var ORDEN_CLASES = ["Inmunoterapia (checkpoint)", "Terapia dirigida", "Conjugado anticuerpo-fármaco",
     "Anticuerpo biespecífico", "Terapia hormonal", "Quimioterapia", "Terapia celular, génica o vacuna", "Radiofármaco",
-    "Otra inmunoterapia", "Soporte y otros", "Sin clasificar"];
+    "Otra inmunoterapia", "Otros agentes", "Soporte", "Sin clasificar"];
   function contarClases(lista) {
     var c = {};
     lista.forEach(function (n) { if (n.tipo === "farmaco") { var k = n.clase || "Sin clasificar"; c[k] = (c[k] || 0) + 1; } });
@@ -5596,7 +5596,7 @@
         var vistos = {};
         vecinosDe(t.id, "farmaco").forEach(function (a) {
           var k = byId[a.otro].clase;
-          if (!k || k === "Sin clasificar" || k === "Soporte y otros" || vistos[k]) return;
+          if (!k || k === "Sin clasificar" || k === "Soporte" || vistos[k]) return;
           vistos[k] = true;
           var r = m[k] || (m[k] = { etiqueta: k, n: 0, recl: 0 });
           r.n++;

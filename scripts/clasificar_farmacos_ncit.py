@@ -18,7 +18,10 @@ Reglas:
   3. La ficha guarda la clase, el padre inmediato en el NCIt (lo más específico: "Anti-PD1
      Monoclonal Antibody") y un hecho con la URL del concepto. Si no hay concepto, queda
      "Sin clasificar" — no se adivina.
-  4. Nada se confirma: todo entra `pendiente`.
+  4. "Sin clasificar" quiere decir que el tesauro no lo tiene, no que la consulta falló. Si la API
+     no responde para un fármaco, ese fármaco conserva la clase que ya tenía, la corrida lo lista y
+     termina con código de salida 1: una corrida sin red no puede borrar clasificaciones en silencio.
+  5. Nada se confirma: todo entra `pendiente`.
 
 Se corre DESPUÉS de integrar_farmacos_ctgov.py, que recrea los fármacos desde cero.
 
@@ -64,20 +67,26 @@ CLASES = [
     ("Terapia hormonal", [r"hormone therapy", r"hormonal", r"antiandrogen", r"androgen receptor",
                           r"aromatase inhibitor", r"estrogen receptor", r"gonadotropin", r"gnrh", r"lhrh",
                           r"antiestrogen", r"steroid synthesis inhibitor", r"cyp17", r"cyp11a1"]),
-    ("Soporte y otros", [r"colony[- ]stimulating factor", r"erythropoie", r"antiemetic", r"bisphosphonate",
-                         r"folic acid derivative", r"^adjuvant$", r"hyaluronidase"]),
+    ("Soporte", [r"colony[- ]stimulating factor", r"erythropoie", r"antiemetic", r"bisphosphonate",
+                 r"folic acid derivative", r"^adjuvant$", r"hyaluronidase"]),
     ("Terapia dirigida", [r"targeted therapy agent", r"kinase inhibitor", r"poly \(adp-ribose\) polymerase inhibitor",
                           r"antineoplastic antibody", r"proteasome inhibitor", r"kras", r"bcl-2", r"hif-2",
                           r"angiogenesis inhibitor", r"signal transduction inhibitor", r"mtor", r"hedgehog",
                           r"histone deacetylase", r"hdac", r"cdk", r"ezh2", r"menin", r"idh", r"prmt5",
                           r"protein degrader", r"antineoplastic enzyme inhibitor"]),
     ("Otra inmunoterapia", [r"immunotherapeutic agent", r"immunomodulat", r"cytokine", r"interleukin", r"interferon"]),
-    ("Soporte y otros", [r".*"]),
+    # Lo que el tesauro conoce pero no calza en ninguna clase de arriba: un agente en investigación
+    # con un mecanismo nuevo, por ejemplo. Antes caía en "Soporte y otros", que lo hacía pasar por
+    # un medicamento de soporte.
+    ("Otros agentes", [r".*"]),
 ]
 # Calificativos que la fuente agrega al nombre y que el tesauro no tiene: si el nombre entero no
 # aparece, se busca sin ellos ("Bevacizumab biosimilar" → "Bevacizumab").
 CALIFICATIVOS = r"\b(biosimilar|weekly|combined|sequential|combination|co-formulation|fixed[- ]dose|for injection|" \
                 r"injection|hydrochloride|hcl|itu|for subcutaneous administration|of)\b"
+
+
+FALLAS = []   # URL que no respondieron en esta corrida
 
 
 def pedir(url, cache):
@@ -91,6 +100,7 @@ def pedir(url, cache):
         except Exception:
             time.sleep(2 + intento * 3)
     else:
+        FALLAS.append(url)
         return None
     time.sleep(0.25)
     if clave:
@@ -123,8 +133,11 @@ def main():
     if cache:
         os.makedirs(cache, exist_ok=True)
     base = json.load(open(MUESTRA, encoding="utf-8"))
-    decisiones = []
+    decisiones, no_consultados = [], []
     for f in [e for e in base["entidades"] if e["tipo"] == "farmaco"]:
+        fallas_antes = len(FALLAS)
+        previo = {k: f[k] for k in ("clase", "clase_ncit", "ncit") if k in f}
+        previos_hechos = list(f["hechos"])
         f["hechos"] = [h for h in f["hechos"] if not (h.get("fuente_url") or "").startswith(PAGINA)]
         for k in ("clase", "clase_ncit", "ncit"):
             f.pop(k, None)
@@ -146,6 +159,15 @@ def main():
             termino = t
             break
         fila = {"id": f["id"], "nombre": f["nombre"], "buscado_como": termino}
+        if len(FALLAS) > fallas_antes:
+            # La API no respondió para este fármaco: no se sabe si el tesauro lo tiene. Se deja
+            # como estaba y se informa, en vez de marcarlo "Sin clasificar".
+            f.update(previo)
+            f["hechos"] = previos_hechos
+            fila["clase"] = "No consultado (se mantiene: %s)" % previo.get("clase", "sin clase previa")
+            no_consultados.append(f["nombre"])
+            decisiones.append(fila)
+            continue
         if not concepto:
             f["clase"] = "Sin clasificar"
             fila["clase"] = "Sin clasificar"
@@ -175,6 +197,10 @@ def main():
     for d in decisiones:
         cuenta[d["clase"]] = cuenta.get(d["clase"], 0) + 1
     print(json.dumps(dict(sorted(cuenta.items(), key=lambda kv: -kv[1])), ensure_ascii=False, indent=1))
+    if no_consultados:
+        print("\n%d fármaco(s) sin respuesta de la API; conservan su clase anterior. Volver a correr:\n  %s"
+              % (len(no_consultados), "\n  ".join(no_consultados)), file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,4505 @@
+[
+ {
+  "id": "farmaco-pembrolizumab",
+  "nombre": "Pembrolizumab",
+  "buscado_como": "Pembrolizumab",
+  "ncit": "C106432",
+  "nombre_ncit": "Pembrolizumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-carboplatin",
+  "nombre": "Carboplatin",
+  "buscado_como": "Carboplatin",
+  "ncit": "C1282",
+  "nombre_ncit": "Carboplatin",
+  "padres": [
+   "Platinum Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-paclitaxel",
+  "nombre": "Paclitaxel",
+  "buscado_como": "Paclitaxel",
+  "ncit": "C1411",
+  "nombre_ncit": "Paclitaxel",
+  "padres": [
+   "Taxane Compound",
+   "Taxane-Pocket Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-cisplatin",
+  "nombre": "Cisplatin",
+  "buscado_como": "Cisplatin",
+  "ncit": "C376",
+  "nombre_ncit": "Cisplatin",
+  "padres": [
+   "Platinum Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-nivolumab",
+  "nombre": "Nivolumab",
+  "buscado_como": "Nivolumab",
+  "ncit": "C68814",
+  "nombre_ncit": "Nivolumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-pemetrexed",
+  "nombre": "Pemetrexed",
+  "buscado_como": "Pemetrexed",
+  "ncit": "C61614",
+  "nombre_ncit": "Pemetrexed",
+  "padres": [
+   "Folate Antagonist",
+   "Thymidylate Synthase Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-docetaxel",
+  "nombre": "Docetaxel",
+  "buscado_como": "Docetaxel",
+  "ncit": "C1526",
+  "nombre_ncit": "Docetaxel",
+  "padres": [
+   "Taxane Compound",
+   "Taxane-Pocket Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-gemcitabine",
+  "nombre": "Gemcitabine",
+  "buscado_como": "Gemcitabine",
+  "ncit": "C66876",
+  "nombre_ncit": "Gemcitabine",
+  "padres": [
+   "Pyrimidine Antagonist",
+   "Ribonucleotide Reductase Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-capecitabine",
+  "nombre": "Capecitabine",
+  "buscado_como": "Capecitabine",
+  "ncit": "C1794",
+  "nombre_ncit": "Capecitabine",
+  "padres": [
+   "Pyrimidine Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-ipilimumab",
+  "nombre": "Ipilimumab",
+  "buscado_como": "Ipilimumab",
+  "ncit": "C2654",
+  "nombre_ncit": "Ipilimumab",
+  "padres": [
+   "Anti-CTLA-4 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-bevacizumab",
+  "nombre": "Bevacizumab",
+  "buscado_como": "Bevacizumab",
+  "ncit": "C2039",
+  "nombre_ncit": "Bevacizumab",
+  "padres": [
+   "Anti-VEGF Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-fluorouracil",
+  "nombre": "5-Fluorouracil",
+  "buscado_como": "5-Fluorouracil",
+  "ncit": "C505",
+  "nombre_ncit": "Fluorouracil",
+  "padres": [
+   "Fluoropyrimidine",
+   "Thymidylate Synthase Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-trastuzumab",
+  "nombre": "Trastuzumab",
+  "buscado_como": "Trastuzumab",
+  "ncit": "C1647",
+  "nombre_ncit": "Trastuzumab",
+  "padres": [
+   "Anti-HER2 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-cyclophosphamide",
+  "nombre": "Cyclophosphamide",
+  "buscado_como": "Cyclophosphamide",
+  "ncit": "C405",
+  "nombre_ncit": "Cyclophosphamide",
+  "padres": [
+   "Immunosuppressant",
+   "Nitrogen Mustard Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-nab-paclitaxel",
+  "nombre": "Nab-paclitaxel",
+  "buscado_como": "Nab-paclitaxel",
+  "ncit": "C2688",
+  "nombre_ncit": "Nab-paclitaxel",
+  "padres": [
+   "Paclitaxel Preparation"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-oxaliplatin",
+  "nombre": "Oxaliplatin",
+  "buscado_como": "Oxaliplatin",
+  "ncit": "C1181",
+  "nombre_ncit": "Oxaliplatin",
+  "padres": [
+   "Platinum Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-rituximab",
+  "nombre": "Rituximab",
+  "buscado_como": "Rituximab",
+  "ncit": "C1702",
+  "nombre_ncit": "Rituximab",
+  "padres": [
+   "Anti-CD20 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-atezolizumab",
+  "nombre": "Atezolizumab",
+  "buscado_como": "Atezolizumab",
+  "ncit": "C106250",
+  "nombre_ncit": "Atezolizumab",
+  "padres": [
+   "Anti-PD-L1 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-doxorubicin",
+  "nombre": "Doxorubicin",
+  "buscado_como": "Doxorubicin",
+  "ncit": "C456",
+  "nombre_ncit": "Doxorubicin",
+  "padres": [
+   "Doxorubicin Preparation"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-durvalumab",
+  "nombre": "Durvalumab",
+  "buscado_como": "Durvalumab",
+  "ncit": "C103194",
+  "nombre_ncit": "Durvalumab",
+  "padres": [
+   "Anti-PD-L1 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-sacituzumab-tirumotecan",
+  "nombre": "Sacituzumab tirumotecan",
+  "buscado_como": "Sacituzumab tirumotecan",
+  "ncit": "C166409",
+  "nombre_ncit": "Sacituzumab Tirumotecan",
+  "padres": [
+   "Anti-TROP2 Antibody-drug Conjugate",
+   "Topoisomerase I Inhibitor-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-trop2 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-enzalutamide",
+  "nombre": "Enzalutamide",
+  "buscado_como": "Enzalutamide",
+  "ncit": "C71744",
+  "nombre_ncit": "Enzalutamide",
+  "padres": [
+   "Androgen Receptor Inhibitor",
+   "Androgen Receptor Pathway Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "androgen receptor inhibitor"
+ },
+ {
+  "id": "farmaco-erlotinib",
+  "nombre": "Erlotinib",
+  "buscado_como": "Erlotinib",
+  "ncit": "C65530",
+  "nombre_ncit": "Erlotinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-etoposide",
+  "nombre": "Etoposide",
+  "buscado_como": "Etoposide",
+  "ncit": "C491",
+  "nombre_ncit": "Etoposide",
+  "padres": [
+   "Epipodophyllotoxin Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "topoisomerase inhibitor"
+ },
+ {
+  "id": "farmaco-vincristine",
+  "nombre": "Vincristine",
+  "buscado_como": "Vincristine",
+  "ncit": "C933",
+  "nombre_ncit": "Vincristine",
+  "padres": [
+   "Vinca Alkaloid Compound",
+   "Vinca-Domain Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-leucovorin",
+  "nombre": "Leucovorin",
+  "buscado_como": "Leucovorin",
+  "ncit": "C71631",
+  "nombre_ncit": "Leucovorin",
+  "padres": [
+   "Folic Acid Derivative"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "adjuvant"
+ },
+ {
+  "id": "farmaco-abiraterone",
+  "nombre": "Abiraterone acetate",
+  "buscado_como": "Abiraterone acetate",
+  "ncit": "C68845",
+  "nombre_ncit": "Abiraterone Acetate",
+  "padres": [
+   "Androgen Receptor Pathway Inhibitor",
+   "CYP17A1 Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "androgen receptor pathway inhibitor"
+ },
+ {
+  "id": "farmaco-lenvatinib",
+  "nombre": "Lenvatinib",
+  "buscado_como": "Lenvatinib",
+  "ncit": "C95124",
+  "nombre_ncit": "Lenvatinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-sorafenib",
+  "nombre": "Sorafenib",
+  "buscado_como": "Sorafenib",
+  "ncit": "C61948",
+  "nombre_ncit": "Sorafenib",
+  "padres": [
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "PDGFR Inhibitor",
+   "Raf Kinase Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-belzutifan",
+  "nombre": "Belzutifan",
+  "buscado_como": "Belzutifan",
+  "ncit": "C135627",
+  "nombre_ncit": "Belzutifan",
+  "padres": [
+   "HIF-2alpha Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "hif-2alpha inhibitor"
+ },
+ {
+  "id": "farmaco-cetuximab",
+  "nombre": "Cetuximab",
+  "buscado_como": "Cetuximab",
+  "ncit": "C1723",
+  "nombre_ncit": "Cetuximab",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "Anti-EGFR Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-letrozole",
+  "nombre": "Letrozole",
+  "buscado_como": "Letrozole",
+  "ncit": "C1527",
+  "nombre_ncit": "Letrozole",
+  "padres": [
+   "Non-Steroidal Aromatase Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-sunitinib",
+  "nombre": "Sunitinib",
+  "buscado_como": "Sunitinib",
+  "ncit": "C71622",
+  "nombre_ncit": "Sunitinib",
+  "padres": [
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "PDGFR Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor",
+   "c-KIT Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-cabozantinib",
+  "nombre": "Cabozantinib",
+  "buscado_como": "Cabozantinib",
+  "ncit": "C52200",
+  "nombre_ncit": "Cabozantinib",
+  "padres": [
+   "AXL Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "RET Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor",
+   "c-Met Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-olaparib",
+  "nombre": "Olaparib",
+  "buscado_como": "Olaparib",
+  "ncit": "C71721",
+  "nombre_ncit": "Olaparib",
+  "padres": [
+   "Poly (ADP-Ribose) Polymerase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "poly (adp-ribose) polymerase inhibitor"
+ },
+ {
+  "id": "farmaco-bendamustine",
+  "nombre": "Bendamustine",
+  "buscado_como": "Bendamustine",
+  "ncit": "C73261",
+  "nombre_ncit": "Bendamustine",
+  "padres": [
+   "Nitrogen Mustard Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-lapatinib",
+  "nombre": "Lapatinib",
+  "buscado_como": "Lapatinib",
+  "ncit": "C26653",
+  "nombre_ncit": "Lapatinib",
+  "padres": [
+   "AKT Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor",
+   "HER2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-pumitamig",
+  "nombre": "Pumitamig",
+  "buscado_como": "Pumitamig",
+  "ncit": "C215265",
+  "nombre_ncit": "Pumitamig",
+  "padres": [
+   "Anti-PD-L1/Anti-VEGF Bispecific Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-relatlimab",
+  "nombre": "Relatlimab",
+  "buscado_como": "Relatlimab",
+  "ncit": "C111999",
+  "nombre_ncit": "Relatlimab",
+  "padres": [
+   "Anti-LAG-3 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-topotecan",
+  "nombre": "Topotecan",
+  "buscado_como": "Topotecan",
+  "ncit": "C1413",
+  "nombre_ncit": "Topotecan",
+  "padres": [
+   "Camptothecin Analogue"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "topoisomerase inhibitor"
+ },
+ {
+  "id": "farmaco-fulvestrant",
+  "nombre": "Fulvestrant",
+  "buscado_como": "Fulvestrant",
+  "ncit": "C1379",
+  "nombre_ncit": "Fulvestrant",
+  "padres": [
+   "Complete Estrogen Receptor Antagonist",
+   "Selective Estrogen Receptor Down Regulator"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-ifinatamab-deruxtecan",
+  "nombre": "Ifinatamab Deruxtecan",
+  "buscado_como": "Ifinatamab Deruxtecan",
+  "ncit": "C171577",
+  "nombre_ncit": "Ifinatamab Deruxtecan",
+  "padres": [
+   "Anti-B7-H3 Antibody-drug Conjugate",
+   "Deruxtecan-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-b7-h3 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-intismeran-autogene",
+  "nombre": "Intismeran autogene",
+  "buscado_como": "Intismeran autogene",
+  "ncit": "C146813",
+  "nombre_ncit": "Intismeran Autogene",
+  "padres": [
+   "mRNA Cancer Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "antineoplastic vaccine"
+ },
+ {
+  "id": "farmaco-trastuzumab-deruxtecan",
+  "nombre": "Trastuzumab deruxtecan",
+  "buscado_como": "Trastuzumab deruxtecan",
+  "ncit": "C128799",
+  "nombre_ncit": "Trastuzumab Deruxtecan",
+  "padres": [
+   "Anti-HER2 Antibody-drug Conjugate",
+   "Deruxtecan-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-her2 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-vibostolimab",
+  "nombre": "Vibostolimab",
+  "buscado_como": "Vibostolimab",
+  "ncit": "C140041",
+  "nombre_ncit": "Vibostolimab",
+  "padres": [
+   "Anti-TIGIT Monoclonal Antibody",
+   "Antineoplastic Immunomodulating Agent"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-alectinib",
+  "nombre": "Alectinib",
+  "buscado_como": "Alectinib",
+  "ncit": "C101790",
+  "nombre_ncit": "Alectinib",
+  "padres": [
+   "ALK Inhibitor",
+   "Antineoplastic Enzyme Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-anastrozole",
+  "nombre": "Anastrozole",
+  "buscado_como": "Anastrozole",
+  "ncit": "C1607",
+  "nombre_ncit": "Anastrozole",
+  "padres": [
+   "Non-Steroidal Aromatase Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-calderasib",
+  "nombre": "Calderasib",
+  "buscado_como": "Calderasib",
+  "ncit": "C185288",
+  "nombre_ncit": "Calderasib",
+  "padres": [
+   "KRAS G12C Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "kras g12c inhibitor"
+ },
+ {
+  "id": "farmaco-cemiplimab",
+  "nombre": "Cemiplimab",
+  "buscado_como": "Cemiplimab",
+  "ncit": "C121540",
+  "nombre_ncit": "Cemiplimab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-epirubicin",
+  "nombre": "Epirubicin",
+  "buscado_como": "Epirubicin",
+  "ncit": "C62028",
+  "nombre_ncit": "Epirubicin",
+  "padres": [
+   "Anthracycline Antineoplastic Antibiotic"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-folfiri",
+  "nombre": "FOLFIRI",
+  "buscado_como": "FOLFIRI",
+  "ncit": "C136250",
+  "nombre_ncit": "FOLFIRI-Ziv-aflibercept Regimen",
+  "padres": [
+   "Regimen Used to Treat Appendiceal Cancer",
+   "Regimen Used to Treat Colorectal Carcinoma"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "chemo/immuno/hormone therapy regimen"
+ },
+ {
+  "id": "farmaco-irinotecan",
+  "nombre": "Irinotecan",
+  "buscado_como": "Irinotecan",
+  "ncit": "C62040",
+  "nombre_ncit": "Irinotecan",
+  "padres": [
+   "Camptothecin Analogue"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "topoisomerase inhibitor"
+ },
+ {
+  "id": "farmaco-levoleucovorin",
+  "nombre": "Levoleucovorin",
+  "buscado_como": "Levoleucovorin",
+  "ncit": "C1559",
+  "nombre_ncit": "Levoleucovorin",
+  "padres": [
+   "Folic Acid Derivative"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "adjuvant"
+ },
+ {
+  "id": "farmaco-pazopanib",
+  "nombre": "Pazopanib",
+  "buscado_como": "Pazopanib",
+  "ncit": "C74547",
+  "nombre_ncit": "Pazopanib",
+  "padres": [
+   "FGFR Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "PDGFR Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor",
+   "c-KIT Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-pertuzumab",
+  "nombre": "Pertuzumab",
+  "buscado_como": "Pertuzumab",
+  "ncit": "C38692",
+  "nombre_ncit": "Pertuzumab",
+  "padres": [
+   "Anti-HER2 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-pomalidomide",
+  "nombre": "Pomalidomide",
+  "buscado_como": "Pomalidomide",
+  "ncit": "C72560",
+  "nombre_ncit": "Pomalidomide",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "Immunomodulatory Imide Drug",
+   "Indole Compound"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-ramucirumab",
+  "nombre": "Ramucirumab",
+  "buscado_como": "Ramucirumab",
+  "ncit": "C70792",
+  "nombre_ncit": "Ramucirumab",
+  "padres": [
+   "Anti-VEGFR Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-vinorelbine",
+  "nombre": "Vinorelbine",
+  "buscado_como": "Vinorelbine",
+  "ncit": "C1275",
+  "nombre_ncit": "Vinorelbine",
+  "padres": [
+   "Vinca Alkaloid Compound",
+   "Vinca-Domain Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-cytarabine",
+  "nombre": "Cytarabine",
+  "buscado_como": "Cytarabine",
+  "ncit": "C408",
+  "nombre_ncit": "Cytarabine",
+  "padres": [
+   "Pyrimidine Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-favezelimab",
+  "nombre": "Favezelimab",
+  "buscado_como": "Favezelimab",
+  "ncit": "C142077",
+  "nombre_ncit": "Favezelimab",
+  "padres": [
+   "Anti-LAG-3 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-golcadomide",
+  "nombre": "Golcadomide",
+  "buscado_como": "Golcadomide",
+  "ncit": "C172396",
+  "nombre_ncit": "Golcadomide",
+  "padres": [
+   "Antineoplastic Protein Degrader",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic protein degrader"
+ },
+ {
+  "id": "farmaco-lenalidomide",
+  "nombre": "Lenalidomide",
+  "buscado_como": "Lenalidomide",
+  "ncit": "C2668",
+  "nombre_ncit": "Lenalidomide",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "Immunomodulatory Imide Drug",
+   "Indole Compound"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-osimertinib",
+  "nombre": "Osimertinib",
+  "buscado_como": "Osimertinib",
+  "ncit": "C116377",
+  "nombre_ncit": "Osimertinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-tamoxifen",
+  "nombre": "Tamoxifen",
+  "buscado_como": "Tamoxifen",
+  "ncit": "C62078",
+  "nombre_ncit": "Tamoxifen",
+  "padres": [
+   "Protein Kinase C Inhibitor",
+   "Selective Estrogen Receptor Modulator"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-zilovertamab-vedotin",
+  "nombre": "Zilovertamab vedotin",
+  "buscado_como": "Zilovertamab vedotin",
+  "ncit": "C157772",
+  "nombre_ncit": "Zilovertamab Vedotin",
+  "padres": [
+   "Anti-ROR1 Antibody-drug Conjugate",
+   "Monomethyl Auristatin E-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-ror1 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-aflibercept",
+  "nombre": "Aflibercept",
+  "buscado_como": "Aflibercept",
+  "ncit": "C2682",
+  "nombre_ncit": "Ziv-Aflibercept",
+  "padres": [
+   "Angiogenesis Activator Inhibitor",
+   "Therapeutic Fc Fusion Protein",
+   "VEGF-targeting Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-berahyaluronidase-alfa",
+  "nombre": "Berahyaluronidase alfa",
+  "buscado_como": "Berahyaluronidase alfa",
+  "ncit": "C199025",
+  "nombre_ncit": "Berahyaluronidase Alfa",
+  "padres": [
+   "Adjuvant"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "adjuvant"
+ },
+ {
+  "id": "farmaco-cabazitaxel",
+  "nombre": "Cabazitaxel",
+  "buscado_como": "Cabazitaxel",
+  "ncit": "C66937",
+  "nombre_ncit": "Cabazitaxel",
+  "padres": [
+   "Taxane Compound",
+   "Taxane-Pocket Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-camizestrant",
+  "nombre": "Camizestrant",
+  "buscado_como": "Camizestrant",
+  "ncit": "C160603",
+  "nombre_ncit": "Camizestrant",
+  "padres": [
+   "Selective Estrogen Receptor Down Regulator"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-carfilzomib",
+  "nombre": "Carfilzomib",
+  "buscado_como": "Carfilzomib",
+  "ncit": "C52196",
+  "nombre_ncit": "Carfilzomib",
+  "padres": [
+   "Proteasome Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "proteasome inhibitor"
+ },
+ {
+  "id": "farmaco-domvanalimab",
+  "nombre": "Domvanalimab",
+  "buscado_como": "Domvanalimab",
+  "ncit": "C162875",
+  "nombre_ncit": "Domvanalimab",
+  "padres": [
+   "Anti-TIGIT Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-exemestane",
+  "nombre": "Exemestane",
+  "buscado_como": "Exemestane",
+  "ncit": "C1097",
+  "nombre_ncit": "Exemestane",
+  "padres": [
+   "Steroidal Aromatase Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-goserelin",
+  "nombre": "Goserelin",
+  "buscado_como": "Goserelin",
+  "ncit": "C1374",
+  "nombre_ncit": "Goserelin",
+  "padres": [
+   "Gonadotropin-releasing Hormone Analog"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "gonadotropin-releasing hormone analog"
+ },
+ {
+  "id": "farmaco-ifosfamide",
+  "nombre": "Ifosfamide",
+  "buscado_como": "Ifosfamide",
+  "ncit": "C564",
+  "nombre_ncit": "Ifosfamide",
+  "padres": [
+   "Nitrogen Mustard Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-leuprolide",
+  "nombre": "Leuprolide",
+  "buscado_como": "Leuprolide",
+  "ncit": "C62042",
+  "nombre_ncit": "Leuprolide",
+  "padres": [
+   "Gonadotropin-releasing Hormone Analog"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "gonadotropin-releasing hormone analog"
+ },
+ {
+  "id": "farmaco-mitoxantrone",
+  "nombre": "Mitoxantrone",
+  "buscado_como": "Mitoxantrone",
+  "ncit": "C62050",
+  "nombre_ncit": "Mitoxantrone",
+  "padres": [
+   "Anthraquinone Analogue"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "cytotoxic chemotherapeutic agent"
+ },
+ {
+  "id": "farmaco-nemtabrutinib",
+  "nombre": "Nemtabrutinib",
+  "buscado_como": "Nemtabrutinib",
+  "ncit": "C138066",
+  "nombre_ncit": "Nemtabrutinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Non-covalent BTK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-odronextamab",
+  "nombre": "Odronextamab",
+  "buscado_como": "Odronextamab",
+  "ncit": "C119615",
+  "nombre_ncit": "Odronextamab",
+  "padres": [
+   "Anti-CD20/Anti-CD3 Bispecific Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "anti-cd20 bispecific antibody"
+ },
+ {
+  "id": "farmaco-opdivo",
+  "nombre": "Opdivo",
+  "buscado_como": "Opdivo",
+  "ncit": "C68814",
+  "nombre_ncit": "Nivolumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-opevesostat",
+  "nombre": "Opevesostat",
+  "buscado_como": "Opevesostat",
+  "ncit": "C156744",
+  "nombre_ncit": "Opevesostat",
+  "padres": [
+   "CYP11A1 Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "cyp11a1 inhibitor"
+ },
+ {
+  "id": "farmaco-palbociclib",
+  "nombre": "Palbociclib",
+  "buscado_como": "Palbociclib",
+  "ncit": "C49176",
+  "nombre_ncit": "Palbociclib",
+  "padres": [
+   "Cyclin-Dependent Kinase 4 Inhibitor",
+   "Cyclin-Dependent Kinase 6 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-quavonlimab",
+  "nombre": "Quavonlimab",
+  "buscado_como": "Quavonlimab",
+  "ncit": "C150679",
+  "nombre_ncit": "Quavonlimab",
+  "padres": [
+   "Anti-CTLA-4 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-rhuph20",
+  "nombre": "rHuPH20",
+  "buscado_como": "rHuPH20",
+  "ncit": "C61504",
+  "nombre_ncit": "Recombinant Human Hyaluronidase",
+  "padres": [
+   "Adjuvant"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "adjuvant"
+ },
+ {
+  "id": "farmaco-sacituzumab-govitecan",
+  "nombre": "Sacituzumab Govitecan-hziy",
+  "buscado_como": "Sacituzumab Govitecan-hziy",
+  "ncit": "C102783",
+  "nombre_ncit": "Sacituzumab Govitecan",
+  "padres": [
+   "Anti-TROP2 Antibody-drug Conjugate",
+   "Topoisomerase I Inhibitor-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-trop2 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-temsirolimus",
+  "nombre": "Temsirolimus",
+  "buscado_como": "Temsirolimus",
+  "ncit": "C1844",
+  "nombre_ncit": "Temsirolimus",
+  "padres": [
+   "mTOR Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "mtor inhibitor"
+ },
+ {
+  "id": "farmaco-thor707",
+  "nombre": "THOR-707",
+  "buscado_como": "THOR-707",
+  "ncit": "C162645",
+  "nombre_ncit": "Pegenzileukin",
+  "padres": [
+   "Recombinant Interleukin-2"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-trastuzumab-emtansine",
+  "nombre": "Trastuzumab Emtansine",
+  "buscado_como": "Trastuzumab Emtansine",
+  "ncit": "C82492",
+  "nombre_ncit": "Trastuzumab Emtansine",
+  "padres": [
+   "Anti-HER2 Antibody-drug Conjugate",
+   "DM1-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-her2 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-tremelimumab",
+  "nombre": "Tremelimumab",
+  "buscado_como": "Tremelimumab",
+  "ncit": "C49085",
+  "nombre_ncit": "Tremelimumab",
+  "padres": [
+   "Anti-CTLA-4 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-zanzalintinib",
+  "nombre": "Zanzalintinib",
+  "buscado_como": "Zanzalintinib",
+  "ncit": "C161598",
+  "nombre_ncit": "Zanzalintinib",
+  "padres": [
+   "AXL Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor",
+   "c-Met Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-abemaciclib",
+  "nombre": "Abemaciclib",
+  "buscado_como": "Abemaciclib",
+  "ncit": "C97660",
+  "nombre_ncit": "Abemaciclib",
+  "padres": [
+   "Cyclin-Dependent Kinase 4 Inhibitor",
+   "Cyclin-Dependent Kinase 6 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-avelumab",
+  "nombre": "Avelumab",
+  "buscado_como": "Avelumab",
+  "ncit": "C116870",
+  "nombre_ncit": "Avelumab",
+  "padres": [
+   "Anti-PD-L1 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-bcg",
+  "nombre": "BCG",
+  "buscado_como": "BCG",
+  "ncit": "C1328",
+  "nombre_ncit": "BCG",
+  "padres": [
+   "Retired Concept 2006"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "retired concept"
+ },
+ {
+  "id": "farmaco-bortezomib",
+  "nombre": "Bortezomib",
+  "buscado_como": "Bortezomib",
+  "ncit": "C1851",
+  "nombre_ncit": "Bortezomib",
+  "padres": [
+   "Proteasome Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "proteasome inhibitor"
+ },
+ {
+  "id": "farmaco-bosutinib",
+  "nombre": "Bosutinib",
+  "buscado_como": "Bosutinib",
+  "ncit": "C60809",
+  "nombre_ncit": "Bosutinib",
+  "padres": [
+   "BCR-ABL Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "Src Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-canakinumab",
+  "nombre": "Canakinumab",
+  "buscado_como": "Canakinumab",
+  "ncit": "C80971",
+  "nombre_ncit": "Canakinumab",
+  "padres": [
+   "Anti-interleukin-1 Beta Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "anti-interleukin-1 beta monoclonal antibody"
+ },
+ {
+  "id": "farmaco-dacarbazine",
+  "nombre": "Dacarbazine",
+  "buscado_como": "Dacarbazine",
+  "ncit": "C411",
+  "nombre_ncit": "Dacarbazine",
+  "padres": [
+   "Triazene Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-daunorubicin",
+  "nombre": "Daunorubicin",
+  "buscado_como": "Daunorubicin",
+  "ncit": "C62091",
+  "nombre_ncit": "Daunorubicin",
+  "padres": [
+   "Anthracycline Antineoplastic Antibiotic"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-elotuzumab",
+  "nombre": "Elotuzumab",
+  "buscado_como": "Elotuzumab",
+  "ncit": "C66982",
+  "nombre_ncit": "Elotuzumab",
+  "padres": [
+   "Anti-SLAMF7 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-everolimus",
+  "nombre": "Everolimus",
+  "buscado_como": "Everolimus",
+  "ncit": "C48387",
+  "nombre_ncit": "Everolimus",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "Immunosuppressant",
+   "mTOR Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-fianlimab",
+  "nombre": "Fianlimab",
+  "buscado_como": "Fianlimab",
+  "ncit": "C132339",
+  "nombre_ncit": "Fianlimab",
+  "padres": [
+   "Anti-LAG-3 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-fludarabine",
+  "nombre": "Fludarabine",
+  "buscado_como": "Fludarabine",
+  "ncit": "C1094",
+  "nombre_ncit": "Fludarabine",
+  "padres": [
+   "Purine Antagonist",
+   "Ribonucleotide Reductase Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-folfox",
+  "nombre": "FOLFOX",
+  "buscado_como": "FOLFOX",
+  "ncit": "C11197",
+  "nombre_ncit": "FOLFOX Regimen",
+  "padres": [
+   "Regimen Used to Treat Ampullary Adenocarcinoma",
+   "Regimen Used to Treat Colorectal Carcinoma"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "chemo/immuno/hormone therapy regimen"
+ },
+ {
+  "id": "farmaco-folinic-acid",
+  "nombre": "Folinic Acid",
+  "buscado_como": "Folinic Acid",
+  "ncit": "C607",
+  "nombre_ncit": "Leucovorin Calcium",
+  "padres": [
+   "Folic Acid Derivative"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "adjuvant"
+ },
+ {
+  "id": "farmaco-ibrutinib",
+  "nombre": "Ibrutinib",
+  "buscado_como": "Ibrutinib",
+  "ncit": "C81934",
+  "nombre_ncit": "Ibrutinib",
+  "padres": [
+   "BMX Inhibitor",
+   "Covalent BTK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-imatinib",
+  "nombre": "Imatinib",
+  "buscado_como": "Imatinib",
+  "ncit": "C62035",
+  "nombre_ncit": "Imatinib",
+  "padres": [
+   "BCR-ABL Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "PDGFR Inhibitor",
+   "c-KIT Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-iza-bren",
+  "nombre": "Iza-bren",
+  "buscado_como": "BL-B01D1",
+  "ncit": "C203048",
+  "nombre_ncit": "Izalontamab Brengitecan",
+  "padres": [
+   "Anti-EGFR Antibody-drug Conjugate",
+   "Anti-HER3/Topoisomerase I Inhibitor Antibody-drug Conjugate",
+   "Exatecan Derivative-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-egfr antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-larotaxel",
+  "nombre": "Larotaxel",
+  "buscado_como": "Larotaxel",
+  "ncit": "C48427",
+  "nombre_ncit": "Larotaxel",
+  "padres": [
+   "Taxane Compound",
+   "Taxane-Pocket Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-methotrexate",
+  "nombre": "Methotrexate",
+  "buscado_como": "Methotrexate",
+  "ncit": "C642",
+  "nombre_ncit": "Methotrexate",
+  "padres": [
+   "Dihydrofolate Reductase Inhibitor",
+   "Folate Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-obinutuzumab",
+  "nombre": "Obinutuzumab",
+  "buscado_como": "Obinutuzumab",
+  "ncit": "C70741",
+  "nombre_ncit": "Obinutuzumab",
+  "padres": [
+   "Anti-CD20 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-patritumab-deruxtecan",
+  "nombre": "Patritumab deruxtecan",
+  "buscado_como": "Patritumab deruxtecan",
+  "ncit": "C136987",
+  "nombre_ncit": "Patritumab Deruxtecan",
+  "padres": [
+   "Anti-HER3/Topoisomerase I Inhibitor Antibody-drug Conjugate",
+   "Deruxtecan-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-her3 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-pegylated-liposomal-doxorubicin",
+  "nombre": "Pegylated Liposomal Doxorubicin",
+  "buscado_como": "Pegylated Liposomal Doxorubicin",
+  "ncit": "C1555",
+  "nombre_ncit": "Pegylated Liposomal Doxorubicin Hydrochloride",
+  "padres": [
+   "Doxorubicin Preparation",
+   "Pegylated Topoisomerase Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-regorafenib",
+  "nombre": "Regorafenib",
+  "buscado_como": "Regorafenib",
+  "ncit": "C184955",
+  "nombre_ncit": "Regorafenib",
+  "padres": [
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-ribociclib",
+  "nombre": "Ribociclib",
+  "buscado_como": "Ribociclib",
+  "ncit": "C95701",
+  "nombre_ncit": "Ribociclib",
+  "padres": [
+   "Cyclin-Dependent Kinase 4 Inhibitor",
+   "Cyclin-Dependent Kinase 6 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-saruparib",
+  "nombre": "Saruparib",
+  "buscado_como": "Saruparib",
+  "ncit": "C176783",
+  "nombre_ncit": "Saruparib",
+  "padres": [
+   "Poly (ADP-Ribose) Polymerase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "poly (adp-ribose) polymerase inhibitor"
+ },
+ {
+  "id": "farmaco-savolitinib",
+  "nombre": "Savolitinib",
+  "buscado_como": "Savolitinib",
+  "ncit": "C104732",
+  "nombre_ncit": "Savolitinib",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "Antineoplastic Enzyme Inhibitor",
+   "c-Met Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-tivozanib",
+  "nombre": "Tivozanib",
+  "buscado_como": "Tivozanib",
+  "ncit": "C85444",
+  "nombre_ncit": "Tivozanib",
+  "padres": [
+   "VEGFR Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-tucatinib",
+  "nombre": "Tucatinib",
+  "buscado_como": "Tucatinib",
+  "ncit": "C77896",
+  "nombre_ncit": "Tucatinib",
+  "padres": [
+   "HER2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-tusamitamab-ravtansine",
+  "nombre": "SAR408701",
+  "buscado_como": "SAR408701",
+  "ncit": "C117229",
+  "nombre_ncit": "Tusamitamab Ravtansine",
+  "padres": [
+   "Anti-CEA Antibody-drug Conjugate",
+   "DM4-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-cea antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-zimberelimab",
+  "nombre": "Zimberelimab",
+  "buscado_como": "Zimberelimab",
+  "ncit": "C159549",
+  "nombre_ncit": "Zimberelimab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-abp206",
+  "nombre": "ABP 206",
+  "buscado_como": "ABP 206",
+  "ncit": "C68814",
+  "nombre_ncit": "Nivolumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-abp234",
+  "nombre": "ABP 234",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-acalabrutinib",
+  "nombre": "Acalabrutinib",
+  "buscado_como": "Acalabrutinib",
+  "ncit": "C113442",
+  "nombre_ncit": "Acalabrutinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Covalent BTK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-adagrasib",
+  "nombre": "Adagrasib",
+  "buscado_como": "Adagrasib",
+  "ncit": "C157493",
+  "nombre_ncit": "Adagrasib",
+  "padres": [
+   "KRAS G12C Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "kras g12c inhibitor"
+ },
+ {
+  "id": "farmaco-alpelisib",
+  "nombre": "Alpelisib",
+  "buscado_como": "Alpelisib",
+  "ncit": "C94214",
+  "nombre_ncit": "Alpelisib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Phosphatidylinositide 3-Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-amcenestrant",
+  "nombre": "Amcenestrant",
+  "buscado_como": "Amcenestrant",
+  "ncit": "C174915",
+  "nombre_ncit": "Amcenestrant",
+  "padres": [
+   "Selective Estrogen Receptor Down Regulator"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-bemarituzumab",
+  "nombre": "Bemarituzumab",
+  "buscado_como": "Bemarituzumab",
+  "ncit": "C120040",
+  "nombre_ncit": "Bemarituzumab",
+  "padres": [
+   "Anti-FGFR Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-bempegaldesleukin",
+  "nombre": "Bempegaldesleukin",
+  "buscado_como": "Bempegaldesleukin",
+  "ncit": "C131019",
+  "nombre_ncit": "Bempegaldesleukin",
+  "padres": [
+   "Recombinant Interleukin-2"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-bibw2992",
+  "nombre": "BIBW 2992",
+  "buscado_como": "BIBW 2992",
+  "ncit": "C66940",
+  "nombre_ncit": "Afatinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-bleomycin",
+  "nombre": "Bleomycin",
+  "buscado_como": "Bleomycin",
+  "ncit": "C313",
+  "nombre_ncit": "Bleomycin",
+  "padres": [
+   "Bleomycin Antibiotic"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "cytotoxic chemotherapeutic agent"
+ },
+ {
+  "id": "farmaco-capivasertib",
+  "nombre": "Capivasertib",
+  "buscado_como": "Capivasertib",
+  "ncit": "C102564",
+  "nombre_ncit": "Capivasertib",
+  "padres": [
+   "AKT Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-capox",
+  "nombre": "Capox",
+  "buscado_como": "Capox",
+  "ncit": "C63596",
+  "nombre_ncit": "CAPOX Regimen",
+  "padres": [
+   "Regimen Used to Treat Ampullary Adenocarcinoma",
+   "Regimen Used to Treat Appendiceal Cancer",
+   "Regimen Used to Treat Colorectal Carcinoma",
+   "Regimen Used to Treat Esophageal Carcinoma",
+   "Regimen Used to Treat Gastric Carcinoma",
+   "Regimen Used to Treat Malignant Anal Neoplasm",
+   "Regimen Used to Treat Malignant Intestinal Neoplasm",
+   "Regimen Used to Treat Malignant Neuroendocrine and Adrenal Neoplasm",
+   "Regimen Used to Treat Malignant Ovarian Neoplasm",
+   "Regimen Used to Treat Pancreatic Carcinoma"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "chemo/immuno/hormone therapy regimen"
+ },
+ {
+  "id": "farmaco-chlorambucil",
+  "nombre": "Chlorambucil",
+  "buscado_como": "Chlorambucil",
+  "ncit": "C362",
+  "nombre_ncit": "Chlorambucil",
+  "padres": [
+   "Nitrogen Mustard Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-copanlisib",
+  "nombre": "Copanlisib",
+  "buscado_como": "Copanlisib",
+  "ncit": "C96796",
+  "nombre_ncit": "Copanlisib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Phosphatidylinositide 3-Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-cp690-550",
+  "nombre": "CP-690,550",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-cp751-871",
+  "nombre": "CP-751,871",
+  "buscado_como": "CP-751,871",
+  "ncit": "C52187",
+  "nombre_ncit": "Figitumumab",
+  "padres": [
+   "Anti-IGF1R Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-crizotinib",
+  "nombre": "Crizotinib",
+  "buscado_como": "Crizotinib",
+  "ncit": "C74061",
+  "nombre_ncit": "Crizotinib",
+  "padres": [
+   "ALK Inhibitor",
+   "Antineoplastic Enzyme Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "c-Met Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-darolutamide",
+  "nombre": "Darolutamide",
+  "buscado_como": "Darolutamide",
+  "ncit": "C104748",
+  "nombre_ncit": "Darolutamide",
+  "padres": [
+   "Androgen Receptor Inhibitor",
+   "Androgen Receptor Pathway Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "androgen receptor inhibitor"
+ },
+ {
+  "id": "farmaco-datopotamab-deruxtecan",
+  "nombre": "Datopotamab Deruxtecan",
+  "buscado_como": "Datopotamab Deruxtecan",
+  "ncit": "C151967",
+  "nombre_ncit": "Datopotamab Deruxtecan",
+  "padres": [
+   "Anti-TROP2 Antibody-drug Conjugate",
+   "Deruxtecan-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-trop2 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-disitamab-vedotin",
+  "nombre": "Disitamab vedotin",
+  "buscado_como": "Disitamab vedotin",
+  "ncit": "C169918",
+  "nombre_ncit": "Disitamab Vedotin",
+  "padres": [
+   "Anti-HER2 Antibody-drug Conjugate",
+   "Monomethyl Auristatin E-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-her2 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-dutasteride",
+  "nombre": "Dutasteride",
+  "buscado_como": "Dutasteride",
+  "ncit": "C47503",
+  "nombre_ncit": "Dutasteride",
+  "padres": [
+   "5 Alpha-Reductase Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-enfortumab-vedotin",
+  "nombre": "Enfortumab Vedotin",
+  "buscado_como": "Enfortumab Vedotin",
+  "ncit": "C114500",
+  "nombre_ncit": "Enfortumab Vedotin",
+  "padres": [
+   "Anti-nectin-4 Antibody-drug Conjugate",
+   "Monomethyl Auristatin E-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-nectin-4 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-entrectinib",
+  "nombre": "Entrectinib",
+  "buscado_como": "Entrectinib",
+  "ncit": "C114984",
+  "nombre_ncit": "Entrectinib",
+  "padres": [
+   "ALK Inhibitor",
+   "Antineoplastic Enzyme Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-epacadostat",
+  "nombre": "Epacadostat",
+  "buscado_como": "Epacadostat",
+  "ncit": "C92582",
+  "nombre_ncit": "Epacadostat",
+  "padres": [
+   "Antineoplastic Immunomodulating Agent",
+   "IDO1 Inhibitor"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "antineoplastic immunomodulating agent"
+ },
+ {
+  "id": "farmaco-epcoritamab",
+  "nombre": "Epcoritamab",
+  "buscado_como": "Epcoritamab",
+  "ncit": "C163022",
+  "nombre_ncit": "Epcoritamab",
+  "padres": [
+   "Anti-CD20/Anti-CD3 Bispecific Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "anti-cd20 bispecific antibody"
+ },
+ {
+  "id": "farmaco-filgrastim",
+  "nombre": "Filgrastim",
+  "buscado_como": "Filgrastim",
+  "ncit": "C1474",
+  "nombre_ncit": "Filgrastim",
+  "padres": [
+   "Recombinant Granulocyte Colony-Stimulating Factor"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "recombinant colony stimulating factor"
+ },
+ {
+  "id": "farmaco-gefitinib",
+  "nombre": "Gefitinib",
+  "buscado_como": "Gefitinib",
+  "ncit": "C1855",
+  "nombre_ncit": "Gefitinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-giredestrant",
+  "nombre": "Giredestrant",
+  "buscado_como": "Giredestrant",
+  "ncit": "C147030",
+  "nombre_ncit": "Giredestrant",
+  "padres": [
+   "Selective Estrogen Receptor Down Regulator"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-gocatamig",
+  "nombre": "Gocatamig",
+  "buscado_como": "Gocatamig",
+  "ncit": "C175947",
+  "nombre_ncit": "Gocatamig",
+  "padres": [
+   "Antineoplastic Immunomodulating Agent",
+   "DLL3-targeting Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "targeted therapy agent"
+ },
+ {
+  "id": "farmaco-isatuximab",
+  "nombre": "Isatuximab",
+  "buscado_como": "Isatuximab",
+  "ncit": "C90578",
+  "nombre_ncit": "Isatuximab",
+  "padres": [
+   "Anti-CD38 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "targeted therapy agent"
+ },
+ {
+  "id": "farmaco-liposomal-doxorubicin",
+  "nombre": "Liposomal doxorubicin",
+  "buscado_como": "doxorubicin",
+  "ncit": "C456",
+  "nombre_ncit": "Doxorubicin",
+  "padres": [
+   "Doxorubicin Preparation"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-mercaptopurine",
+  "nombre": "Mercaptopurine",
+  "buscado_como": "Mercaptopurine",
+  "ncit": "C195",
+  "nombre_ncit": "Mercaptopurine",
+  "padres": [
+   "Immunosuppressant",
+   "Purine Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-mk4830",
+  "nombre": "MK-4830",
+  "buscado_como": "MK-4830",
+  "ncit": "C160204",
+  "nombre_ncit": "Anti-ILT4 Monoclonal Antibody MK-4830",
+  "padres": [
+   "Anti-ILT4 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-morab202",
+  "nombre": "MORAb-202",
+  "buscado_como": "MORAb-202",
+  "ncit": "C173946",
+  "nombre_ncit": "Farletuzumab Ecteribulin",
+  "padres": [
+   "Anti-FOLR1 Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-folr1 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-n-acetylcysteine",
+  "nombre": "N-acetylcysteine",
+  "buscado_como": "N-acetylcysteine",
+  "ncit": "C200",
+  "nombre_ncit": "Acetylcysteine",
+  "padres": [
+   "Antioxidant",
+   "Mucolytic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting respiratory system"
+ },
+ {
+  "id": "farmaco-navlimetostat",
+  "nombre": "Navlimetostat",
+  "buscado_como": "Navlimetostat",
+  "ncit": "C215286",
+  "nombre_ncit": "Navlimetostat",
+  "padres": [
+   "PRMT5 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "prmt5 inhibitor"
+ },
+ {
+  "id": "farmaco-niraparib",
+  "nombre": "Niraparib",
+  "buscado_como": "Niraparib",
+  "ncit": "C80059",
+  "nombre_ncit": "Niraparib",
+  "padres": [
+   "Poly (ADP-Ribose) Polymerase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "poly (adp-ribose) polymerase inhibitor"
+ },
+ {
+  "id": "farmaco-nivolumab-relatlimab-fdc",
+  "nombre": "Nivolumab-relatlimab FDC",
+  "buscado_como": "BMS-986213",
+  "ncit": "C186440",
+  "nombre_ncit": "Nivolumab/Relatlimab-rmbw",
+  "padres": [
+   "Anti-LAG-3 Monoclonal Antibody",
+   "Anti-PD1 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-panitumumab",
+  "nombre": "Panitumumab",
+  "buscado_como": "Panitumumab",
+  "ncit": "C1857",
+  "nombre_ncit": "Panitumumab",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "Anti-EGFR Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-pegaspargase",
+  "nombre": "PEG-asparaginase",
+  "buscado_como": "PEG-asparaginase",
+  "ncit": "C1200",
+  "nombre_ncit": "Pegaspargase",
+  "padres": [
+   "Asparaginase-based Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "asparaginase-based agent"
+ },
+ {
+  "id": "farmaco-pictilisib",
+  "nombre": "Pictilisib",
+  "buscado_como": "Pictilisib",
+  "ncit": "C165479",
+  "nombre_ncit": "Pictilisib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Phosphatidylinositide 3-Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-raludotatug-deruxtecan",
+  "nombre": "Raludotatug Deruxtecan",
+  "buscado_como": "Raludotatug Deruxtecan",
+  "ncit": "C179214",
+  "nombre_ncit": "Raludotatug Deruxtecan",
+  "padres": [
+   "Anti-CDH6 Antibody-drug Conjugate",
+   "Deruxtecan-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-cdh6 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-rilvegostomig",
+  "nombre": "Rilvegostomig",
+  "buscado_como": "Rilvegostomig",
+  "ncit": "C188211",
+  "nombre_ncit": "Rilvegostomig",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Anti-TIGIT Monoclonal Antibody",
+   "Antineoplastic Antibody",
+   "Bispecific Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-ruxolitinib",
+  "nombre": "Ruxolitinib",
+  "buscado_como": "Ruxolitinib",
+  "ncit": "C77888",
+  "nombre_ncit": "Ruxolitinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "JAK1 Inhibitor",
+   "JAK2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-sigvotatug-vedotin",
+  "nombre": "Sigvotatug Vedotin",
+  "buscado_como": "Sigvotatug Vedotin",
+  "ncit": "C203047",
+  "nombre_ncit": "Sigvotatug Vedotin",
+  "padres": [
+   "Integrin Beta-6-targeting Agent",
+   "Monomethyl Auristatin E-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "antineoplastic antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-sotorasib",
+  "nombre": "Sotorasib",
+  "buscado_como": "Sotorasib",
+  "ncit": "C154287",
+  "nombre_ncit": "Sotorasib",
+  "padres": [
+   "KRAS G12C Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "kras g12c inhibitor"
+ },
+ {
+  "id": "farmaco-tas102",
+  "nombre": "TAS-102",
+  "buscado_como": "TAS-102",
+  "ncit": "C102554",
+  "nombre_ncit": "Trifluridine and Tipiracil Hydrochloride",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "Pyrimidine Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-tlk286",
+  "nombre": "TLK286 HCl for Injection",
+  "buscado_como": "Telcyta",
+  "ncit": "C2641",
+  "nombre_ncit": "Canfosfamide Hydrochloride",
+  "padres": [
+   "Mustard Prodrug"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-trametinib",
+  "nombre": "Trametinib",
+  "buscado_como": "Trametinib",
+  "ncit": "C77908",
+  "nombre_ncit": "Trametinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Mitogen-Activated Protein Kinase Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-vinblastine",
+  "nombre": "Vinblastine",
+  "buscado_como": "Vinblastine",
+  "ncit": "C930",
+  "nombre_ncit": "Vinblastine",
+  "padres": [
+   "Vinca Alkaloid Compound",
+   "Vinca-Domain Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-zanidatamab",
+  "nombre": "Zanidatamab",
+  "buscado_como": "Zanidatamab",
+  "ncit": "C130010",
+  "nombre_ncit": "Zanidatamab",
+  "padres": [
+   "Anti-HER2 Monoclonal Antibody",
+   "Bispecific Monoclonal Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "bispecific antibody"
+ },
+ {
+  "id": "farmaco-zolbetuximab",
+  "nombre": "Zolbetuximab",
+  "buscado_como": "Zolbetuximab",
+  "ncit": "C85475",
+  "nombre_ncit": "Zolbetuximab",
+  "padres": [
+   "Anti-claudin18.2 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-zongertinib",
+  "nombre": "Zongertinib",
+  "buscado_como": "Zongertinib",
+  "ncit": "C199022",
+  "nombre_ncit": "Zongertinib",
+  "padres": [
+   "HER2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-abp980",
+  "nombre": "ABP 980",
+  "buscado_como": "ABP 980",
+  "ncit": "C1647",
+  "nombre_ncit": "Trastuzumab",
+  "padres": [
+   "Anti-HER2 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-abt869",
+  "nombre": "ABT-869",
+  "buscado_como": "ABT-869",
+  "ncit": "C71759",
+  "nombre_ncit": "Linifanib",
+  "padres": [
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "PDGFR Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-acasunlimab",
+  "nombre": "Acasunlimab",
+  "buscado_como": "Acasunlimab",
+  "ncit": "C172194",
+  "nombre_ncit": "Acasunlimab",
+  "padres": [
+   "Anti-CD137 Monoclonal Antibody",
+   "Anti-PD-L1 Monoclonal Antibody",
+   "Antineoplastic Antibody",
+   "Bispecific Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-adxs11001",
+  "nombre": "ADXS11-001",
+  "buscado_como": "ADXS11-001",
+  "ncit": "C74595",
+  "nombre_ncit": "Axalimogene Filolisbac",
+  "padres": [
+   "Antineoplastic Vaccine",
+   "Attenuated Live Virus Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "antineoplastic vaccine"
+ },
+ {
+  "id": "farmaco-afatinib",
+  "nombre": "Afatinib",
+  "buscado_como": "Afatinib",
+  "ncit": "C66940",
+  "nombre_ncit": "Afatinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-aflibercept-ave0005",
+  "nombre": "AFLIBERCEPT AVE0005",
+  "buscado_como": "AFLIBERCEPT",
+  "ncit": "C2682",
+  "nombre_ncit": "Ziv-Aflibercept",
+  "padres": [
+   "Angiogenesis Activator Inhibitor",
+   "Therapeutic Fc Fusion Protein",
+   "VEGF-targeting Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-agen2034",
+  "nombre": "AGEN2034",
+  "buscado_como": "AGEN2034",
+  "ncit": "C136465",
+  "nombre_ncit": "Balstilimab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-aldoxorubicin",
+  "nombre": "Aldoxorubicin",
+  "buscado_como": "Aldoxorubicin",
+  "ncit": "C68921",
+  "nombre_ncit": "Aldoxorubicin",
+  "padres": [
+   "Doxorubicin Preparation"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-alisertib",
+  "nombre": "Alisertib",
+  "buscado_como": "Alisertib",
+  "ncit": "C71717",
+  "nombre_ncit": "Alisertib",
+  "padres": [
+   "Aurora Kinase A Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-alnuctamab",
+  "nombre": "Alnuctamab",
+  "buscado_como": "Alnuctamab",
+  "ncit": "C175740",
+  "nombre_ncit": "Alnuctamab",
+  "padres": [
+   "Anti-BCMA/CD3 Bispecific Monoclonal Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "bispecific antibody"
+ },
+ {
+  "id": "farmaco-amg337",
+  "nombre": "AMG 337",
+  "buscado_como": "AMG 337",
+  "ncit": "C95203",
+  "nombre_ncit": "c-Met Inhibitor AMG 337",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "c-Met Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-amg386",
+  "nombre": "AMG 386",
+  "buscado_como": "AMG 386",
+  "ncit": "C91711",
+  "nombre_ncit": "Trebananib",
+  "padres": [
+   "Angiogenesis Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-amonafide",
+  "nombre": "Amonafide",
+  "buscado_como": "Amonafide",
+  "ncit": "C71628",
+  "nombre_ncit": "Amonafide",
+  "padres": [
+   "DNA Intercalating Agent",
+   "Topoisomerase-II Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "cytotoxic chemotherapeutic agent"
+ },
+ {
+  "id": "farmaco-amrubicin",
+  "nombre": "Amrubicin",
+  "buscado_como": "Amrubicin",
+  "ncit": "C80089",
+  "nombre_ncit": "Amrubicin",
+  "padres": [
+   "Anthracycline Antineoplastic Antibiotic"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-andecaliximab",
+  "nombre": "Andecaliximab",
+  "buscado_como": "Andecaliximab",
+  "ncit": "C105803",
+  "nombre_ncit": "Andecaliximab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-andes1537",
+  "nombre": "Andes-1537 for Injection",
+  "buscado_como": "Andes-1537",
+  "ncit": "C123825",
+  "nombre_ncit": "Mulnitorsen",
+  "padres": [
+   "Antisense Oligonucleotides"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "gene therapy agent"
+ },
+ {
+  "id": "farmaco-anthracycline",
+  "nombre": "Anthracycline",
+  "buscado_como": "Anthracycline",
+  "ncit": "C1594",
+  "nombre_ncit": "Anthracycline Antineoplastic Antibiotic",
+  "padres": [
+   "Antineoplastic Antibiotic",
+   "DNA Minor Groove Binding Agent",
+   "Topoisomerase-II Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "cytotoxic chemotherapeutic agent"
+ },
+ {
+  "id": "farmaco-atg-thymoglobulin",
+  "nombre": "ATG Thymoglobulin",
+  "buscado_como": "Thymoglobulin",
+  "ncit": "C80833",
+  "nombre_ncit": "Lapine T-Lymphocyte Immune Globulin",
+  "padres": [
+   "Anti-Thymocyte Globulin",
+   "Therapeutic Immune Globulin"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-atra",
+  "nombre": "ATRA",
+  "buscado_como": "ATRA",
+  "ncit": "C900",
+  "nombre_ncit": "Tretinoin",
+  "padres": [
+   "Retinoic Acid Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "antineoplastic immunomodulating agent"
+ },
+ {
+  "id": "farmaco-axitinib",
+  "nombre": "Axitinib",
+  "buscado_como": "Axitinib",
+  "ncit": "C38718",
+  "nombre_ncit": "Axitinib",
+  "padres": [
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "PDGFR Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor",
+   "c-KIT Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-azacitidine",
+  "nombre": "Azacitidine",
+  "buscado_como": "Azacitidine",
+  "ncit": "C288",
+  "nombre_ncit": "Azacitidine",
+  "padres": [
+   "DNA Methyltransferase Inhibitor",
+   "Pyrimidine Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-azd5335",
+  "nombre": "AZD5335",
+  "buscado_como": "AZD5335",
+  "ncit": "C200057",
+  "nombre_ncit": "Torvutatug Samrotecan",
+  "padres": [
+   "Anti-FOLR1 Antibody-drug Conjugate",
+   "Topoisomerase I Inhibitor-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-folr1 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-bevacizumab-biosimilar",
+  "nombre": "Bevacizumab biosimilar",
+  "buscado_como": "Bevacizumab",
+  "ncit": "C2039",
+  "nombre_ncit": "Bevacizumab",
+  "padres": [
+   "Anti-VEGF Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-bevacizumab-pfizer",
+  "nombre": "Bevacizumab-Pfizer",
+  "buscado_como": "Bevacizumab",
+  "ncit": "C2039",
+  "nombre_ncit": "Bevacizumab",
+  "padres": [
+   "Anti-VEGF Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-bi695502",
+  "nombre": "BI 695502",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bicalutamide",
+  "nombre": "Bicalutamide",
+  "buscado_como": "Bicalutamide",
+  "ncit": "C1599",
+  "nombre_ncit": "Bicalutamide",
+  "padres": [
+   "Androgen Receptor Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "androgen receptor inhibitor"
+ },
+ {
+  "id": "farmaco-binimetinib",
+  "nombre": "Binimetinib",
+  "buscado_como": "Binimetinib",
+  "ncit": "C84865",
+  "nombre_ncit": "Binimetinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Mitogen-Activated Protein Kinase Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-blinatumomab",
+  "nombre": "Blinatumomab",
+  "buscado_como": "Blinatumomab",
+  "ncit": "C62528",
+  "nombre_ncit": "Blinatumomab",
+  "padres": [
+   "Anti-CD19 Monoclonal Antibody",
+   "T-cell Engaging Bispecific Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "bispecific antibody"
+ },
+ {
+  "id": "farmaco-bmab1700",
+  "nombre": "Bmab1700",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bms986205",
+  "nombre": "BMS-986205",
+  "buscado_como": "BMS-986205",
+  "ncit": "C141135",
+  "nombre_ncit": "Linrodostat",
+  "padres": [
+   "Antineoplastic Immunomodulating Agent",
+   "IDO1 Inhibitor"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "antineoplastic immunomodulating agent"
+ },
+ {
+  "id": "farmaco-bms986207",
+  "nombre": "BMS-986207",
+  "buscado_como": "BMS-986207",
+  "ncit": "C131907",
+  "nombre_ncit": "Renvistobart",
+  "padres": [
+   "Anti-TIGIT Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-bms986365",
+  "nombre": "BMS-986365",
+  "buscado_como": "BMS-986365",
+  "ncit": "C226271",
+  "nombre_ncit": "Dezandrodeg",
+  "padres": [
+   "Androgen Receptor Degrader"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "androgen receptor degrader"
+ },
+ {
+  "id": "farmaco-bms986416",
+  "nombre": "BMS-986416",
+  "buscado_como": "BMS-986416",
+  "ncit": "C159817",
+  "nombre_ncit": "TGFbeta Receptor Ectodomain-IgG Fc Fusion Protein BMS-986416",
+  "padres": [
+   "Antineoplastic Immunomodulating Agent",
+   "TGF-beta-targeting Agent",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "targeted therapy agent"
+ },
+ {
+  "id": "farmaco-bms986458",
+  "nombre": "BMS-986458",
+  "buscado_como": "BMS-986458",
+  "ncit": "C202207",
+  "nombre_ncit": "BCL6 Degrader BMS-986458",
+  "padres": [
+   "Antineoplastic Protein Degrader"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic protein degrader"
+ },
+ {
+  "id": "farmaco-bms986489",
+  "nombre": "BMS-986489",
+  "buscado_como": "BMS-986489",
+  "ncit": "C217158",
+  "nombre_ncit": "Atigotatug/Nivolumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-bnt113",
+  "nombre": "BNT113",
+  "buscado_como": "BNT113",
+  "ncit": "C178403",
+  "nombre_ncit": "HPV16 E6/7 mRNA Vaccine BNT113",
+  "padres": [
+   "mRNA Cancer Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "antineoplastic vaccine"
+ },
+ {
+  "id": "farmaco-boserolimab",
+  "nombre": "Boserolimab",
+  "buscado_como": "Boserolimab",
+  "ncit": "C172056",
+  "nombre_ncit": "Boserolimab",
+  "padres": [
+   "Anti-CD27 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-brigatinib",
+  "nombre": "Brigatinib",
+  "buscado_como": "Brigatinib",
+  "ncit": "C98831",
+  "nombre_ncit": "Brigatinib",
+  "padres": [
+   "ALK Inhibitor",
+   "Antineoplastic Enzyme Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-budigalimab",
+  "nombre": "Budigalimab",
+  "buscado_como": "Budigalimab",
+  "ncit": "C137682",
+  "nombre_ncit": "Budigalimab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-busulfan",
+  "nombre": "Busulfan",
+  "buscado_como": "Busulfan",
+  "ncit": "C321",
+  "nombre_ncit": "Busulfan",
+  "padres": [
+   "Alkylsulfonate Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-calaspargase-pegol",
+  "nombre": "Calaspargase Pegol",
+  "buscado_como": "Calaspargase Pegol",
+  "ncit": "C78198",
+  "nombre_ncit": "Calaspargase Pegol",
+  "padres": [
+   "Enzyme Replacement or Supplement Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biological agent"
+ },
+ {
+  "id": "farmaco-casdatifan",
+  "nombre": "Casdatifan",
+  "buscado_como": "Casdatifan",
+  "ncit": "C192674",
+  "nombre_ncit": "Casdatifan",
+  "padres": [
+   "HIF-2alpha Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "hif-2alpha inhibitor"
+ },
+ {
+  "id": "farmaco-chop",
+  "nombre": "CHOP regimen",
+  "buscado_como": "CHOP regimen",
+  "ncit": "C9549",
+  "nombre_ncit": "CHOP Regimen",
+  "padres": [
+   "Regimen Used to Treat Acute Myeloid Leukemia",
+   "Regimen Used to Treat Castleman disease",
+   "Regimen Used to Treat Histiocytic and Dendritic Cell Neoplasm",
+   "Regimen Used to Treat Hodgkin Lymphoma",
+   "Regimen Used to Treat Lymphocytic Neoplasm",
+   "Regimen Used to Treat Non-Hodgkin Lymphoma"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "chemo/immuno/hormone therapy regimen"
+ },
+ {
+  "id": "farmaco-cobimetinib",
+  "nombre": "Cobimetinib",
+  "buscado_como": "Cobimetinib",
+  "ncit": "C68923",
+  "nombre_ncit": "Cobimetinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Mitogen-Activated Protein Kinase Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-cs7017",
+  "nombre": "CS7017",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-dabrafenib",
+  "nombre": "Dabrafenib",
+  "buscado_como": "Dabrafenib",
+  "ncit": "C82386",
+  "nombre_ncit": "Dabrafenib",
+  "padres": [
+   "BRAF Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-daratumumab",
+  "nombre": "Daratumumab",
+  "buscado_como": "Daratumumab",
+  "ncit": "C74007",
+  "nombre_ncit": "Daratumumab",
+  "padres": [
+   "Anti-CD38 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-darbepoetin-alfa",
+  "nombre": "Darbepoetin alfa",
+  "buscado_como": "Darbepoetin alfa",
+  "ncit": "C1878",
+  "nombre_ncit": "Darbepoetin Alfa",
+  "padres": [
+   "Recombinant Erythropoietin"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "recombinant erythropoietin"
+ },
+ {
+  "id": "farmaco-dasatinib",
+  "nombre": "Dasatinib",
+  "buscado_como": "Dasatinib",
+  "ncit": "C38713",
+  "nombre_ncit": "Dasatinib",
+  "padres": [
+   "BCR-ABL Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-degarelix",
+  "nombre": "Degarelix",
+  "buscado_como": "Degarelix",
+  "ncit": "C48385",
+  "nombre_ncit": "Degarelix",
+  "padres": [
+   "Gonadotropin Releasing Hormone Antagonist"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "gonadotropin releasing hormone antagonist"
+ },
+ {
+  "id": "farmaco-denosumab",
+  "nombre": "Denosumab",
+  "buscado_como": "Denosumab",
+  "ncit": "C61313",
+  "nombre_ncit": "Denosumab",
+  "padres": [
+   "Anti-RANKL Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-derazantinib",
+  "nombre": "Derazantinib",
+  "buscado_como": "Derazantinib",
+  "ncit": "C104267",
+  "nombre_ncit": "Derazantinib",
+  "padres": [
+   "FGFR Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-dexrazoxane",
+  "nombre": "Dexrazoxane Hydrochloride",
+  "buscado_como": "Dexrazoxane Hydrochloride",
+  "ncit": "C66945",
+  "nombre_ncit": "Dexrazoxane Hydrochloride",
+  "padres": [
+   "Chelating Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "chelating agent"
+ },
+ {
+  "id": "farmaco-divarasib",
+  "nombre": "Divarasib",
+  "buscado_como": "Divarasib",
+  "ncit": "C173995",
+  "nombre_ncit": "Divarasib",
+  "padres": [
+   "KRAS G12C Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "kras g12c inhibitor"
+ },
+ {
+  "id": "farmaco-docetetaxel",
+  "nombre": "Docetetaxel",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-dostarlimab",
+  "nombre": "Dostarlimab",
+  "buscado_como": "Dostarlimab",
+  "ncit": "C126799",
+  "nombre_ncit": "Dostarlimab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-doxil",
+  "nombre": "DOXIL",
+  "buscado_como": "DOXIL",
+  "ncit": "C1555",
+  "nombre_ncit": "Pegylated Liposomal Doxorubicin Hydrochloride",
+  "padres": [
+   "Doxorubicin Preparation",
+   "Pegylated Topoisomerase Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-doxorubicin-hcl-liposome",
+  "nombre": "doxorubicin HCl liposome injection",
+  "buscado_como": "doxorubicin",
+  "ncit": "C456",
+  "nombre_ncit": "Doxorubicin",
+  "padres": [
+   "Doxorubicin Preparation"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-doxycycline",
+  "nombre": "Doxycycline",
+  "buscado_como": "Doxycycline",
+  "ncit": "C457",
+  "nombre_ncit": "Doxycycline",
+  "padres": [
+   "Tetracycline Antibiotic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-efaproxiral",
+  "nombre": "Efaproxiral",
+  "buscado_como": "Efaproxiral",
+  "ncit": "C1435",
+  "nombre_ncit": "Efaproxiral",
+  "padres": [
+   "Radiosensitizing Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "antineoplastic agent"
+ },
+ {
+  "id": "farmaco-eftilagimod-alfa",
+  "nombre": "Eftilagimod alfa",
+  "buscado_como": "Eftilagimod alfa",
+  "ncit": "C62509",
+  "nombre_ncit": "Eftilagimod Alpha",
+  "padres": [
+   "Immunostimulant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-eg12014",
+  "nombre": "EG12014",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-elranatamab",
+  "nombre": "Elranatamab",
+  "buscado_como": "Elranatamab",
+  "ncit": "C146860",
+  "nombre_ncit": "Elranatamab",
+  "padres": [
+   "Anti-BCMA/CD3 Bispecific Monoclonal Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "bispecific antibody"
+ },
+ {
+  "id": "farmaco-encorafenib",
+  "nombre": "Encorafenib",
+  "buscado_como": "Encorafenib",
+  "ncit": "C98283",
+  "nombre_ncit": "Encorafenib",
+  "padres": [
+   "BRAF Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-epoetin-alfa",
+  "nombre": "Epoetin alfa",
+  "buscado_como": "Epoetin alfa",
+  "ncit": "C2695",
+  "nombre_ncit": "Epoetin Alfa",
+  "padres": [
+   "Recombinant Erythropoietin"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "recombinant erythropoietin"
+ },
+ {
+  "id": "farmaco-etanercept",
+  "nombre": "Etanercept",
+  "buscado_como": "Etanercept",
+  "ncit": "C2381",
+  "nombre_ncit": "Etanercept",
+  "padres": [
+   "Immunosuppressant",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-farletuzumab",
+  "nombre": "Farletuzumab",
+  "buscado_como": "Farletuzumab",
+  "ncit": "C61503",
+  "nombre_ncit": "Farletuzumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-fentanyl",
+  "nombre": "Fentanyl",
+  "buscado_como": "Fentanyl",
+  "ncit": "C494",
+  "nombre_ncit": "Fentanyl",
+  "padres": [
+   "Opioid",
+   "Opioid Receptor Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-flutamide",
+  "nombre": "Flutamide",
+  "buscado_como": "Flutamide",
+  "ncit": "C509",
+  "nombre_ncit": "Flutamide",
+  "padres": [
+   "Anti-Androgen",
+   "Aromatic Compounds"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-gdc0980",
+  "nombre": "GDC-0980",
+  "buscado_como": "GDC-0980",
+  "ncit": "C91731",
+  "nombre_ncit": "Apitolisib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Phosphatidylinositide 3-Kinase Inhibitor",
+   "mTOR Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-gebasaxturev",
+  "nombre": "Gebasaxturev",
+  "buscado_como": "Gebasaxturev",
+  "ncit": "C61493",
+  "nombre_ncit": "Gebasaxturev",
+  "padres": [
+   "Oncolytic Virus"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "oncolytic virus"
+ },
+ {
+  "id": "farmaco-gebasaxturev-itu",
+  "nombre": "Gebasaxturev ITu",
+  "buscado_como": "Gebasaxturev",
+  "ncit": "C61493",
+  "nombre_ncit": "Gebasaxturev",
+  "padres": [
+   "Oncolytic Virus"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "oncolytic virus"
+ },
+ {
+  "id": "farmaco-gevokizumab",
+  "nombre": "Gevokizumab",
+  "buscado_como": "Gevokizumab",
+  "ncit": "C97945",
+  "nombre_ncit": "Gevokizumab",
+  "padres": [
+   "Anti-interleukin-1 Beta Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "anti-interleukin-1 beta monoclonal antibody"
+ },
+ {
+  "id": "farmaco-glofitamab",
+  "nombre": "Glofitamab",
+  "buscado_como": "Glofitamab",
+  "ncit": "C148486",
+  "nombre_ncit": "Glofitamab",
+  "padres": [
+   "Anti-CD20/Anti-CD3 Bispecific Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "anti-cd20 bispecific antibody"
+ },
+ {
+  "id": "farmaco-grafalon",
+  "nombre": "Grafalon",
+  "buscado_como": "Grafalon",
+  "ncit": "C80833",
+  "nombre_ncit": "Lapine T-Lymphocyte Immune Globulin",
+  "padres": [
+   "Anti-Thymocyte Globulin",
+   "Therapeutic Immune Globulin"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-granulocyte-colony-stimulating-factor",
+  "nombre": "Granulocyte Colony-Stimulating Factor",
+  "buscado_como": "Granulocyte Colony-Stimulating Factor",
+  "ncit": "C26078",
+  "nombre_ncit": "Granulocyte Colony-Stimulating Factor",
+  "padres": [
+   "Colony Stimulating Factor"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "colony stimulating factor"
+ },
+ {
+  "id": "farmaco-gw572016",
+  "nombre": "GW572016",
+  "buscado_como": "GW572016",
+  "ncit": "C26653",
+  "nombre_ncit": "Lapatinib",
+  "padres": [
+   "AKT Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor",
+   "HER2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-histrelin",
+  "nombre": "Histrelin Acetate",
+  "buscado_como": "Histrelin Acetate",
+  "ncit": "C77424",
+  "nombre_ncit": "Histrelin Acetate",
+  "padres": [
+   "Gonadotropin-releasing Hormone Analog"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "gonadotropin-releasing hormone analog"
+ },
+ {
+  "id": "farmaco-hlx22",
+  "nombre": "HLX22",
+  "buscado_como": "HLX22",
+  "ncit": "C172198",
+  "nombre_ncit": "Dulpatatug",
+  "padres": [
+   "Anti-HER2 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-hydroxydaunorubicin",
+  "nombre": "Hydroxydaunorubicin",
+  "buscado_como": "Hydroxydaunorubicin",
+  "ncit": "C1326",
+  "nombre_ncit": "Doxorubicin Hydrochloride",
+  "padres": [
+   "Doxorubicin Preparation"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-iberdomide",
+  "nombre": "Iberdomide",
+  "buscado_como": "Iberdomide",
+  "ncit": "C129048",
+  "nombre_ncit": "Iberdomide",
+  "padres": [
+   "Antineoplastic Protein Degrader",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic protein degrader"
+ },
+ {
+  "id": "farmaco-idarubicin",
+  "nombre": "Idarubicin",
+  "buscado_como": "Idarubicin",
+  "ncit": "C562",
+  "nombre_ncit": "Idarubicin",
+  "padres": [
+   "Anthracycline Antineoplastic Antibiotic"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "anthracycline antineoplastic antibiotic"
+ },
+ {
+  "id": "farmaco-imzokitug",
+  "nombre": "Imzokitug",
+  "buscado_como": "Imzokitug",
+  "ncit": "C179913",
+  "nombre_ncit": "Imzokitug",
+  "padres": [
+   "Anti-CCR8 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-infliximab",
+  "nombre": "Infliximab",
+  "buscado_como": "Infliximab",
+  "ncit": "C1789",
+  "nombre_ncit": "Infliximab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-interferon-9mu",
+  "nombre": "Interferon-Alfa 9MU",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ipatasertib",
+  "nombre": "Ipatasertib",
+  "buscado_como": "Ipatasertib",
+  "ncit": "C91072",
+  "nombre_ncit": "Ipatasertib",
+  "padres": [
+   "AKT Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-irofulven",
+  "nombre": "Irofulven",
+  "buscado_como": "Irofulven",
+  "ncit": "C1717",
+  "nombre_ncit": "Irofulven",
+  "padres": [
+   "Antineoplastic Alkylating Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-ixabepilone",
+  "nombre": "Ixabepilone",
+  "buscado_como": "Ixabepilone",
+  "ncit": "C37452",
+  "nombre_ncit": "Ixabepilone",
+  "padres": [
+   "Epothilone B Analogue"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-ixazomib",
+  "nombre": "Ixazomib",
+  "buscado_como": "Ixazomib",
+  "ncit": "C97940",
+  "nombre_ncit": "Ixazomib",
+  "padres": [
+   "Proteasome Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "proteasome inhibitor"
+ },
+ {
+  "id": "farmaco-jpb898",
+  "nombre": "JPB898",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-la-ep2006",
+  "nombre": "LA-EP2006",
+  "buscado_como": "LA-EP2006",
+  "ncit": "C104005",
+  "nombre_ncit": "Pegfilgrastim Biosimilar LA-EP2006",
+  "padres": [
+   "Recombinant Granulocyte Colony-Stimulating Factor"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "recombinant colony stimulating factor"
+ },
+ {
+  "id": "farmaco-linvoseltamab",
+  "nombre": "Linvoseltamab",
+  "buscado_como": "Linvoseltamab",
+  "ncit": "C158504",
+  "nombre_ncit": "Linvoseltamab",
+  "padres": [
+   "Anti-BCMA/CD3 Bispecific Monoclonal Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "bispecific antibody"
+ },
+ {
+  "id": "farmaco-livmoniplimab",
+  "nombre": "Livmoniplimab",
+  "buscado_como": "Livmoniplimab",
+  "ncit": "C165684",
+  "nombre_ncit": "Livmoniplimab",
+  "padres": [
+   "Anti-GARP Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-loncastuximab-tesirine",
+  "nombre": "Loncastuximab Tesirine",
+  "buscado_como": "Loncastuximab Tesirine",
+  "ncit": "C125549",
+  "nombre_ncit": "Loncastuximab Tesirine",
+  "padres": [
+   "Anti-CD19 Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-cd19 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-lurbinectedin",
+  "nombre": "Lurbinectedin",
+  "buscado_como": "Lurbinectedin",
+  "ncit": "C82382",
+  "nombre_ncit": "Lurbinectedin",
+  "padres": [
+   "DNA Crosslinking Agent",
+   "DNA Minor Groove Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "cytotoxic chemotherapeutic agent"
+ },
+ {
+  "id": "farmaco-ly353381",
+  "nombre": "LY353381",
+  "buscado_como": "LY353381",
+  "ncit": "C1805",
+  "nombre_ncit": "Arzoxifene",
+  "padres": [
+   "Selective Estrogen Receptor Modulator"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-ly900003",
+  "nombre": "LY900003",
+  "buscado_como": "LY900003",
+  "ncit": "C1788",
+  "nombre_ncit": "Aprinocarsen",
+  "padres": [
+   "Antisense Oligonucleotides"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "gene therapy agent"
+ },
+ {
+  "id": "farmaco-mdx-1379-melanoma-peptide-vaccine",
+  "nombre": "MDX-1379 Melanoma Peptide Vaccine",
+  "buscado_como": "gp100",
+  "ncit": "C2386",
+  "nombre_ncit": "gp100 Antigen",
+  "padres": [
+   "Tumor Antigen"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "antigen"
+ },
+ {
+  "id": "farmaco-mezigdomide",
+  "nombre": "Mezigdomide",
+  "buscado_como": "Mezigdomide",
+  "ncit": "C146660",
+  "nombre_ncit": "Mezigdomide",
+  "padres": [
+   "Antineoplastic Protein Degrader",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic protein degrader"
+ },
+ {
+  "id": "farmaco-mfolfox6",
+  "nombre": "mFOLFOX6",
+  "buscado_como": "mFOLFOX6",
+  "ncit": "C155746",
+  "nombre_ncit": "Modified FOLFOX6 Regimen",
+  "padres": [
+   "Regimen Used to Treat Appendiceal Cancer",
+   "Regimen Used to Treat Bladder Carcinoma",
+   "Regimen Used to Treat Colorectal Carcinoma",
+   "Regimen Used to Treat Esophageal Carcinoma",
+   "Regimen Used to Treat Gastric Carcinoma",
+   "Regimen Used to Treat Malignant Anal Neoplasm",
+   "Regimen Used to Treat Malignant Intestinal Neoplasm",
+   "Regimen Used to Treat Malignant Neuroendocrine and Adrenal Neoplasm",
+   "Regimen Used to Treat Malignant Renal Neoplasm",
+   "Regimen Used to Treat Pancreatic Carcinoma"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "chemo/immuno/hormone therapy regimen"
+ },
+ {
+  "id": "farmaco-mirvetuximab-soravtansine",
+  "nombre": "Mirvetuximab Soravtansine",
+  "buscado_como": "Mirvetuximab Soravtansine",
+  "ncit": "C102566",
+  "nombre_ncit": "Mirvetuximab Soravtansine",
+  "padres": [
+   "Anti-FOLR1 Antibody-drug Conjugate",
+   "DM4-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-folr1 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-mitomycin-c",
+  "nombre": "Mitomycin C",
+  "buscado_como": "Mitomycin C",
+  "ncit": "C1820",
+  "nombre_ncit": "Mitomycin",
+  "padres": [
+   "Mitomycin Antineoplastic Antibiotic"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-mk1045",
+  "nombre": "MK-1045",
+  "buscado_como": "MK-1045",
+  "ncit": "C192820",
+  "nombre_ncit": "Anti-CD19/CD3 Bispecific Antibody MK-1045",
+  "padres": [
+   "Anti-CD19 Monoclonal Antibody",
+   "T-cell Engaging Bispecific Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "bispecific antibody"
+ },
+ {
+  "id": "farmaco-mk3120",
+  "nombre": "MK-3120",
+  "buscado_como": "MK-3120",
+  "ncit": "C219034",
+  "nombre_ncit": "Anti-nectin-4 Antibody-drug Conjugate MK-3120",
+  "padres": [
+   "Anti-nectin-4 Antibody-drug Conjugate",
+   "Topoisomerase I Inhibitor-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-nectin-4 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-mk3475a",
+  "nombre": "MK-3475A",
+  "buscado_como": "MK-3475A",
+  "ncit": "C200181",
+  "nombre_ncit": "Berahyaluronidase Alfa and Pembrolizumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-modified-folfox6",
+  "nombre": "Modified FOLFOX6",
+  "buscado_como": "Modified FOLFOX6",
+  "ncit": "C155746",
+  "nombre_ncit": "Modified FOLFOX6 Regimen",
+  "padres": [
+   "Regimen Used to Treat Appendiceal Cancer",
+   "Regimen Used to Treat Bladder Carcinoma",
+   "Regimen Used to Treat Colorectal Carcinoma",
+   "Regimen Used to Treat Esophageal Carcinoma",
+   "Regimen Used to Treat Gastric Carcinoma",
+   "Regimen Used to Treat Malignant Anal Neoplasm",
+   "Regimen Used to Treat Malignant Intestinal Neoplasm",
+   "Regimen Used to Treat Malignant Neuroendocrine and Adrenal Neoplasm",
+   "Regimen Used to Treat Malignant Renal Neoplasm",
+   "Regimen Used to Treat Pancreatic Carcinoma"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "chemo/immuno/hormone therapy regimen"
+ },
+ {
+  "id": "farmaco-montelukast",
+  "nombre": "Montelukast",
+  "buscado_como": "Montelukast",
+  "ncit": "C66189",
+  "nombre_ncit": "Montelukast",
+  "padres": [
+   "Anti-asthmatic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting respiratory system"
+ },
+ {
+  "id": "farmaco-mosunetuzumab",
+  "nombre": "Mosunetuzumab",
+  "buscado_como": "Mosunetuzumab",
+  "ncit": "C129691",
+  "nombre_ncit": "Mosunetuzumab",
+  "padres": [
+   "Anti-CD20/Anti-CD3 Bispecific Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "anti-cd20 bispecific antibody"
+ },
+ {
+  "id": "farmaco-myl1401o",
+  "nombre": "MYL- 1401O",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-naquotinib-mesilate",
+  "nombre": "Naquotinib mesilate",
+  "buscado_como": "ASP8273",
+  "ncit": "C115110",
+  "nombre_ncit": "Naquotinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Epidermal Growth Factor Receptor Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-neladalkib",
+  "nombre": "Neladalkib",
+  "buscado_como": "Neladalkib",
+  "ncit": "C188054",
+  "nombre_ncit": "ALK Inhibitor NVL-655",
+  "padres": [
+   "ALK Inhibitor",
+   "Antineoplastic Enzyme Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-neulasta",
+  "nombre": "Neulasta®",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-nilutamide",
+  "nombre": "Nilutamide",
+  "buscado_como": "Nilutamide",
+  "ncit": "C1173",
+  "nombre_ncit": "Nilutamide",
+  "padres": [
+   "Androgen Receptor Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "androgen receptor inhibitor"
+ },
+ {
+  "id": "farmaco-nintedanib",
+  "nombre": "Nintedanib",
+  "buscado_como": "Nintedanib",
+  "ncit": "C62765",
+  "nombre_ncit": "Nintedanib",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "FGFR Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-npi2358",
+  "nombre": "NPI-2358",
+  "buscado_como": "NPI-2358",
+  "ncit": "C62444",
+  "nombre_ncit": "Plinabulin",
+  "padres": [
+   "Colchicine-Site Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-obrixtamig",
+  "nombre": "Obrixtamig",
+  "buscado_como": "Obrixtamig",
+  "ncit": "C177765",
+  "nombre_ncit": "Obrixtamig",
+  "padres": [
+   "Anti-DLL3 Monoclonal Antibody",
+   "T-cell Engaging Bispecific Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "bispecific antibody"
+ },
+ {
+  "id": "farmaco-olomorasib",
+  "nombre": "Olomorasib",
+  "buscado_como": "Olomorasib",
+  "ncit": "C181751",
+  "nombre_ncit": "Olomorasib",
+  "padres": [
+   "KRAS G12C Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "kras g12c inhibitor"
+ },
+ {
+  "id": "farmaco-ombrabulin",
+  "nombre": "Ombrabulin",
+  "buscado_como": "Ombrabulin",
+  "ncit": "C78480",
+  "nombre_ncit": "Ombrabulin",
+  "padres": [
+   "Colchicine-Site Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-onartuzumab",
+  "nombre": "Onartuzumab",
+  "buscado_como": "Onartuzumab",
+  "ncit": "C82348",
+  "nombre_ncit": "Onartuzumab",
+  "padres": [
+   "Anti-c-Met Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-oregovomab",
+  "nombre": "Oregovomab",
+  "buscado_como": "Oregovomab",
+  "ncit": "C1784",
+  "nombre_ncit": "Oregovomab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody",
+   "Mucin-16-targeting Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-orteronel",
+  "nombre": "Orteronel",
+  "buscado_como": "Orteronel",
+  "ncit": "C90582",
+  "nombre_ncit": "Orteronel",
+  "padres": [
+   "CYP17A1 Inhibitor"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "cyp17a1 inhibitor"
+ },
+ {
+  "id": "farmaco-palifosfamide",
+  "nombre": "Palifosfamide-tris",
+  "buscado_como": "Palifosfamide-tris",
+  "ncit": "C95703",
+  "nombre_ncit": "Palifosfamide Tromethamine",
+  "padres": [
+   "Nitrogen Mustard Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-paltusotine",
+  "nombre": "Paltusotine",
+  "buscado_como": "Paltusotine",
+  "ncit": "C175836",
+  "nombre_ncit": "Paltusotine",
+  "padres": [
+   "Somatostatin Receptor Agonist"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-panobinostat",
+  "nombre": "Panobinostat",
+  "buscado_como": "Panobinostat",
+  "ncit": "C66948",
+  "nombre_ncit": "Panobinostat",
+  "padres": [
+   "Histone Deacetylase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "histone deacetylase inhibitor"
+ },
+ {
+  "id": "farmaco-pegylated-filgrastim",
+  "nombre": "Pegylated filgrastim",
+  "buscado_como": "filgrastim",
+  "ncit": "C1474",
+  "nombre_ncit": "Filgrastim",
+  "padres": [
+   "Recombinant Granulocyte Colony-Stimulating Factor"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "recombinant colony stimulating factor"
+ },
+ {
+  "id": "farmaco-pegylated-g-csf",
+  "nombre": "Pegylated G-CSF",
+  "buscado_como": "Pegylated G-CSF",
+  "ncit": "C1854",
+  "nombre_ncit": "Pegfilgrastim",
+  "padres": [
+   "Recombinant Granulocyte Colony-Stimulating Factor"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "recombinant colony stimulating factor"
+ },
+ {
+  "id": "farmaco-petosemtamab",
+  "nombre": "Petosemtamab",
+  "buscado_como": "Petosemtamab",
+  "ncit": "C174952",
+  "nombre_ncit": "Petosemtamab",
+  "padres": [
+   "Anti-EGFR Monoclonal Antibody",
+   "Antineoplastic Antibody",
+   "Bispecific Monoclonal Antibody"
+  ],
+  "clase": "Anticuerpo biespecífico",
+  "por_ancestro": "bispecific antibody"
+ },
+ {
+  "id": "farmaco-pf05280014",
+  "nombre": "PF-05280014",
+  "buscado_como": "PF-05280014",
+  "ncit": "C1647",
+  "nombre_ncit": "Trastuzumab",
+  "padres": [
+   "Anti-HER2 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-pf06821497",
+  "nombre": "PF-06821497",
+  "buscado_como": "PF-06821497",
+  "ncit": "C156743",
+  "nombre_ncit": "Mevrometostat",
+  "padres": [
+   "EZH2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "ezh2 inhibitor"
+ },
+ {
+  "id": "farmaco-picoplatin",
+  "nombre": "Picoplatin",
+  "buscado_como": "Picoplatin",
+  "ncit": "C48416",
+  "nombre_ncit": "Picoplatin",
+  "padres": [
+   "Platinum Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-pirtobrutinib",
+  "nombre": "Pirtobrutinib",
+  "buscado_como": "Pirtobrutinib",
+  "ncit": "C158617",
+  "nombre_ncit": "Pirtobrutinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Non-covalent BTK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-ponatinib",
+  "nombre": "Ponatinib",
+  "buscado_como": "Ponatinib",
+  "ncit": "C95777",
+  "nombre_ncit": "Ponatinib",
+  "padres": [
+   "BCR-ABL Inhibitor",
+   "FGFR Inhibitor",
+   "FLT3 Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "PDGFR Inhibitor",
+   "RET Inhibitor",
+   "VEGFR Tyrosine Kinase Inhibitor",
+   "c-KIT Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-pralatrexate",
+  "nombre": "Pralatrexate",
+  "buscado_como": "Pralatrexate",
+  "ncit": "C2250",
+  "nombre_ncit": "Pralatrexate",
+  "padres": [
+   "Dihydrofolate Reductase Inhibitor",
+   "Folate Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-procarbazine",
+  "nombre": "Procarbazine",
+  "buscado_como": "Procarbazine",
+  "ncit": "C62072",
+  "nombre_ncit": "Procarbazine",
+  "padres": [
+   "Triazene Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-quemliclustat",
+  "nombre": "Quemliclustat",
+  "buscado_como": "Quemliclustat",
+  "ncit": "C167156",
+  "nombre_ncit": "Quemliclustat",
+  "padres": [
+   "Antineoplastic Immunomodulating Agent",
+   "CD73 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "targeted therapy agent"
+ },
+ {
+  "id": "farmaco-radium-223-dichloride",
+  "nombre": "Radium-223 dichloride",
+  "buscado_como": "Radium-223 dichloride",
+  "ncit": "C62535",
+  "nombre_ncit": "Radium Ra 223 Dichloride",
+  "padres": [
+   "Targeted Alpha Therapy Agent"
+  ],
+  "clase": "Radiofármaco",
+  "por_ancestro": "antineoplastic radiopharmaceutical agent"
+ },
+ {
+  "id": "farmaco-repotrectinib",
+  "nombre": "Repotrectinib",
+  "buscado_como": "Repotrectinib",
+  "ncit": "C133821",
+  "nombre_ncit": "Repotrectinib",
+  "padres": [
+   "ALK Inhibitor",
+   "FAK Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor",
+   "ROS1 Inhibitor",
+   "Src Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-riabni",
+  "nombre": "Riabni",
+  "buscado_como": "Riabni",
+  "ncit": "C1702",
+  "nombre_ncit": "Rituximab",
+  "padres": [
+   "Anti-CD20 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-rituximab-biosimilar",
+  "nombre": "Rituximab Biosimilar",
+  "buscado_como": "Rituximab",
+  "ncit": "C1702",
+  "nombre_ncit": "Rituximab",
+  "padres": [
+   "Anti-CD20 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-ro7771950",
+  "nombre": "RO7771950",
+  "buscado_como": "ZN-A-1041",
+  "ncit": "C178299",
+  "nombre_ncit": "HER2 Inhibitor ZN-A-1041",
+  "padres": [
+   "HER2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-romidepsin",
+  "nombre": "Romidepsin",
+  "buscado_como": "Romidepsin",
+  "ncit": "C1544",
+  "nombre_ncit": "Romidepsin",
+  "padres": [
+   "Depsipeptide Antineoplastic Antibiotic",
+   "Histone Deacetylase Inhibitor"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "cytotoxic chemotherapeutic agent"
+ },
+ {
+  "id": "farmaco-romiplostim",
+  "nombre": "Romiplostim",
+  "buscado_como": "Romiplostim",
+  "ncit": "C52183",
+  "nombre_ncit": "Romiplostim",
+  "padres": [
+   "Recombinant Colony Stimulating Factor",
+   "Thrombopoietin Receptor Agonist"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "recombinant colony stimulating factor"
+ },
+ {
+  "id": "farmaco-rosiglitazone",
+  "nombre": "Rosiglitazone",
+  "buscado_como": "Rosiglitazone",
+  "ncit": "C62076",
+  "nombre_ncit": "Rosiglitazone",
+  "padres": [
+   "Differentiation Inducer",
+   "Thiazolidinedione Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-rp101",
+  "nombre": "RP101",
+  "buscado_como": "RP101",
+  "ncit": "C67088",
+  "nombre_ncit": "Brivudine",
+  "padres": [
+   "Antiviral Agent",
+   "Enzyme Inhibitor",
+   "Pyrimidine Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-rucaparib",
+  "nombre": "Rucaparib",
+  "buscado_como": "Rucaparib",
+  "ncit": "C137800",
+  "nombre_ncit": "Rucaparib",
+  "padres": [
+   "Poly (ADP-Ribose) Polymerase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "poly (adp-ribose) polymerase inhibitor"
+ },
+ {
+  "id": "farmaco-ruxience",
+  "nombre": "Ruxience",
+  "buscado_como": "Ruxience",
+  "ncit": "C1702",
+  "nombre_ncit": "Rituximab",
+  "padres": [
+   "Anti-CD20 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-sabatolimab",
+  "nombre": "Sabatolimab",
+  "buscado_como": "Sabatolimab",
+  "ncit": "C124850",
+  "nombre_ncit": "Sabatolimab",
+  "padres": [
+   "Anti-TIM-3 Monoclonal Antibody",
+   "Antineoplastic Immunomodulating Agent"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-sait101",
+  "nombre": "SAIT101",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-satraplatin",
+  "nombre": "Satraplatin",
+  "buscado_como": "Satraplatin",
+  "ncit": "C1493",
+  "nombre_ncit": "Satraplatin",
+  "padres": [
+   "Platinum Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-selumetinib",
+  "nombre": "Selumetinib",
+  "buscado_como": "Selumetinib",
+  "ncit": "C66939",
+  "nombre_ncit": "Selumetinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Mitogen-Activated Protein Kinase Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-sox",
+  "nombre": "SOX",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-spartalizumab",
+  "nombre": "Spartalizumab",
+  "buscado_como": "Spartalizumab",
+  "ncit": "C121625",
+  "nombre_ncit": "Spartalizumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-sr31747a",
+  "nombre": "SR31747A",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-sunvozertinib",
+  "nombre": "Sunvozertinib",
+  "buscado_como": "Sunvozertinib",
+  "ncit": "C167205",
+  "nombre_ncit": "Sunvozertinib",
+  "padres": [
+   "EGFR Exon 20 Inhibitor",
+   "HER2 Inhibitor",
+   "Multitargeted Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-tafasitamab",
+  "nombre": "Tafasitamab",
+  "buscado_como": "Tafasitamab",
+  "ncit": "C95768",
+  "nombre_ncit": "Tafasitamab",
+  "padres": [
+   "Anti-CD19 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-talazoparib",
+  "nombre": "Talazoparib",
+  "buscado_como": "Talazoparib",
+  "ncit": "C95733",
+  "nombre_ncit": "Talazoparib",
+  "padres": [
+   "Poly (ADP-Ribose) Polymerase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "poly (adp-ribose) polymerase inhibitor"
+ },
+ {
+  "id": "farmaco-tanezumab",
+  "nombre": "Tanezumab",
+  "buscado_como": "Tanezumab",
+  "ncit": "C71522",
+  "nombre_ncit": "Tanezumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-tapcells-vaccine",
+  "nombre": "TAPCells vaccine",
+  "buscado_como": "Proleukin",
+  "ncit": "C1498",
+  "nombre_ncit": "Aldesleukin",
+  "padres": [
+   "Recombinant Interleukin-2"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-tas6417",
+  "nombre": "TAS6417",
+  "buscado_como": "TAS6417",
+  "ncit": "C165567",
+  "nombre_ncit": "Zipalertinib",
+  "padres": [
+   "EGFR Exon 20 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-taselisib",
+  "nombre": "Taselisib",
+  "buscado_como": "Taselisib",
+  "ncit": "C116876",
+  "nombre_ncit": "Taselisib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "PI3K Alpha Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-tasquinimod",
+  "nombre": "Tasquinimod",
+  "buscado_como": "Tasquinimod",
+  "ncit": "C74080",
+  "nombre_ncit": "Tasquinimod",
+  "padres": [
+   "Angiogenesis Inhibitor",
+   "Antineoplastic Immunomodulating Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-taxane",
+  "nombre": "Taxane",
+  "buscado_como": "Taxane",
+  "ncit": "C1490",
+  "nombre_ncit": "Taxane Compound",
+  "padres": [
+   "Terpene Compound"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug or chemical by structure"
+ },
+ {
+  "id": "farmaco-telisotuzumab-vedotin",
+  "nombre": "Telisotuzumab Vedotin",
+  "buscado_como": "Telisotuzumab Vedotin",
+  "ncit": "C118571",
+  "nombre_ncit": "Telisotuzumab Vedotin",
+  "padres": [
+   "Anti-c-Met Antibody-drug Conjugate",
+   "Monomethyl Auristatin E-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-c-met antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-therapeutic-hydrocortisone",
+  "nombre": "Therapeutic Hydrocortisone",
+  "buscado_como": "Therapeutic Hydrocortisone",
+  "ncit": "C555",
+  "nombre_ncit": "Therapeutic Hydrocortisone",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-thioguanine",
+  "nombre": "Thioguanine",
+  "buscado_como": "Thioguanine",
+  "ncit": "C876",
+  "nombre_ncit": "Thioguanine",
+  "padres": [
+   "Amidophosphoribosyltransferase Inhibitor",
+   "Purine Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-thiotepa",
+  "nombre": "Thiotepa",
+  "buscado_como": "Thiotepa",
+  "ncit": "C875",
+  "nombre_ncit": "Thiotepa",
+  "padres": [
+   "Ethylenimine Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-tirapazamine",
+  "nombre": "Tirapazamine",
+  "buscado_como": "Tirapazamine",
+  "ncit": "C1464",
+  "nombre_ncit": "Tirapazamine",
+  "padres": [
+   "Bioreductive Agent",
+   "Radiosensitizing Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "antineoplastic agent"
+ },
+ {
+  "id": "farmaco-tislelizumab",
+  "nombre": "Tislelizumab",
+  "buscado_como": "Tislelizumab",
+  "ncit": "C121775",
+  "nombre_ncit": "Tislelizumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-tisotumab-vedotin",
+  "nombre": "Tisotumab Vedotin",
+  "buscado_como": "Tisotumab Vedotin",
+  "ncit": "C113164",
+  "nombre_ncit": "Tisotumab Vedotin",
+  "padres": [
+   "Anti-Tissue Factor Antibody-drug Conjugate",
+   "Monomethyl Auristatin E-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-tissue factor antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-tivantinib",
+  "nombre": "Tivantinib",
+  "buscado_como": "Tivantinib",
+  "ncit": "C62437",
+  "nombre_ncit": "Tivantinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "c-Met Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-trabectedin",
+  "nombre": "Trabectedin",
+  "buscado_como": "Trabectedin",
+  "ncit": "C1691",
+  "nombre_ncit": "Trabectedin",
+  "padres": [
+   "DNA Minor Groove Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "cytotoxic chemotherapeutic agent"
+ },
+ {
+  "id": "farmaco-treosulfan",
+  "nombre": "Treosulfan",
+  "buscado_como": "Treosulfan",
+  "ncit": "C1257",
+  "nombre_ncit": "Treosulfan",
+  "padres": [
+   "Alkylsulfonate Compound"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antineoplastic alkylating agent"
+ },
+ {
+  "id": "farmaco-trimelvax",
+  "nombre": "TRIMELVAX",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-triptorelin",
+  "nombre": "Triptorelin",
+  "buscado_como": "Triptorelin",
+  "ncit": "C1267",
+  "nombre_ncit": "Triptorelin",
+  "padres": [
+   "Gonadotropin-releasing Hormone Analog"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "gonadotropin-releasing hormone analog"
+ },
+ {
+  "id": "farmaco-truxima",
+  "nombre": "Truxima",
+  "buscado_como": "Truxima",
+  "ncit": "C1702",
+  "nombre_ncit": "Rituximab",
+  "padres": [
+   "Anti-CD20 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-u31287",
+  "nombre": "U3-1287",
+  "buscado_como": "U3-1287",
+  "ncit": "C78853",
+  "nombre_ncit": "Patritumab",
+  "padres": [
+   "Anti-HER3 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-valemetostat",
+  "nombre": "Valemetostat",
+  "buscado_como": "Valemetostat",
+  "ncit": "C127114",
+  "nombre_ncit": "Valemetostat",
+  "padres": [
+   "EZH2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "ezh2 inhibitor"
+ },
+ {
+  "id": "farmaco-vedolizumab",
+  "nombre": "Vedolizumab",
+  "buscado_como": "Vedolizumab",
+  "ncit": "C95798",
+  "nombre_ncit": "Vedolizumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-veliparib",
+  "nombre": "Veliparib",
+  "buscado_como": "Veliparib",
+  "ncit": "C60768",
+  "nombre_ncit": "Veliparib",
+  "padres": [
+   "Poly (ADP-Ribose) Polymerase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "poly (adp-ribose) polymerase inhibitor"
+ },
+ {
+  "id": "farmaco-vemurafenib",
+  "nombre": "Vemurafenib",
+  "buscado_como": "Vemurafenib",
+  "ncit": "C64768",
+  "nombre_ncit": "Vemurafenib",
+  "padres": [
+   "BRAF Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-venetoclax",
+  "nombre": "Venetoclax",
+  "buscado_como": "Venetoclax",
+  "ncit": "C103147",
+  "nombre_ncit": "Venetoclax",
+  "padres": [
+   "BCL-2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "bcl-2 family protein inhibitor"
+ },
+ {
+  "id": "farmaco-vindesine",
+  "nombre": "Vindesine",
+  "buscado_como": "Vindesine",
+  "ncit": "C934",
+  "nombre_ncit": "Vindesine",
+  "padres": [
+   "Vinca Alkaloid Compound",
+   "Vinca-Domain Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-vip152",
+  "nombre": "VIP152",
+  "buscado_como": "VIP152",
+  "ncit": "C128266",
+  "nombre_ncit": "Enitociclib",
+  "padres": [
+   "Cyclin-Dependent Kinase 9 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-xaliproden",
+  "nombre": "Xaliproden",
+  "buscado_como": "Xaliproden",
+  "ncit": "C152924",
+  "nombre_ncit": "Xaliproden",
+  "padres": [
+   "Neuroprotective Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-xelox",
+  "nombre": "XELOX",
+  "buscado_como": "XELOX",
+  "ncit": "C11635",
+  "nombre_ncit": "Capecitabine/Oxaliplatin",
+  "padres": [
+   "Agent Combination Indexed in Open Clinical Trials"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "chemotherapy regimen or agent combination"
+ },
+ {
+  "id": "farmaco-zalutumumab",
+  "nombre": "Zalutumumab",
+  "buscado_como": "Zalutumumab",
+  "ncit": "C64620",
+  "nombre_ncit": "Zalutumumab",
+  "padres": [
+   "Anti-EGFR Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-zd4054",
+  "nombre": "ZD4054",
+  "buscado_como": "ZD4054",
+  "ncit": "C48430",
+  "nombre_ncit": "Zibotentan",
+  "padres": [
+   "Endothelin Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-zelenectide-pevedotin",
+  "nombre": "Zelenectide pevedotin",
+  "buscado_como": "Zelenectide pevedotin",
+  "ncit": "C178397",
+  "nombre_ncit": "Zelenectide Pevedotin",
+  "padres": [
+   "Immunoconjugate",
+   "Nectin-4-targeting Agent"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "targeted therapy agent"
+ },
+ {
+  "id": "farmaco-zoledronic-acid",
+  "nombre": "Zoledronic acid",
+  "buscado_como": "Zoledronic acid",
+  "ncit": "C1699",
+  "nombre_ncit": "Zoledronic Acid",
+  "padres": [
+   "Biphosphonate",
+   "Bone Resorption Inhibitor",
+   "Malignancy-Associated Hypercalcemia Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ }
+]

@@ -16,10 +16,13 @@ Reglas, todas explícitas:
      en EXCLUIR, y cada exclusión queda registrada en el artefacto de revisión con su motivo.
      La ficha del ensayo sigue mostrando la intervención completa: solo no se dibuja la arista.
   3. Una intervención compuesta se separa en sus componentes solo cuando la fuente los escribe
-     unidos por "+", "/", " plus ", " and ", "(+)" o "formulated with". Un régimen con nombre
-     propio (FOLFOX) no se expande: eso sería inferir su composición.
+     unidos por "+", "/", " plus ", " and ", " or ", " with ", ";", ", ", "(+)" o "formulated
+     with", o cuando escribe "A-B-C combination" y cada parte es una denominación común (DCI).
+     Un régimen con nombre propio (FOLFOX, CHOP) no se expande: eso sería inferir su composición.
   4. Dos nombres se unen en un mismo fármaco solo por normalización tipográfica (mayúsculas,
-     tildes, ®, sufijo de sal, sufijo de cuatro letras de la FDA) o porque la propia fuente los
+     tildes, ®, sufijo de sal, sufijo de cuatro letras de la FDA, calificativos de esquema o de
+     presentación como "weekly", "for injection", "fixed-dose combination", restos de un corte
+     como "and 5-fluorouracil" o "Levo- leucovorin", erratas documentadas) o porque la propia fuente los
      declara equivalentes en `otherNames`, y solo cuando esa equivalencia no es ambigua: si un
      código aparece asociado a dos principios activos distintos en la fuente, no se une a
      ninguno. Nada se une por parecido de nombre.
@@ -76,13 +79,25 @@ EXCLUIR = [
      r"|calcium|vitamin d|simethicone)$|transfusion"),
 ]
 SALES = r" (acetate|sulfate|sulphate|hydrochloride|hcl|mesylate|maleate|dimaleate|citrate|tosylate" \
-        r"|sodium|disodium|malate|besylate|succinate|tartrate|phosphate|bromide|fumarate|dihydrochloride)$"
+        r"|sodium|disodium|malate|besylate|succinate|tartrate|phosphate|bromide|fumarate|dihydrochloride|calcium)$"
+# Calificativos que la fuente agrega al principio activo y que no lo cambian: cómo se da (semanal,
+# inyectable), o que va en una combinación fija con otro. Se quitan al final, repetidamente
+# ("Trastuzumab Fixed-Dose Combination for Subcutaneous Administration" → trastuzumab).
+# "for" suelto es lo que queda de "for injection" cuando el paso anterior ya quitó "injection".
+CALIFICATIVOS = r" (weekly|combined|sequential|co-formulation|combination|fixed[- ]dose combination|for injection" \
+                r"|for subcutaneous (use|administration)|for intravenous use|for)$"
 SEPARADORES = r"\s*\(\+\)\s*|\s+formulated with\s+|\s*\+\s*|\s*/\s*|\s+plus\s+|\s+and\s+|\s+or\s+" \
               r"|\s+with\s+|\s*;\s*|,\s+"
 # Equivalencias tipográficas universales (no dependen de la fuente): prefijos y abreviaturas INN.
 TIPOGRAFICAS = {"5-fluorouracil": "fluorouracil", "5-fu": "fluorouracil", "5fu": "fluorouracil",
+                "5 fluorouracil": "fluorouracil",
                 "nab paclitaxel": "nab-paclitaxel", "albumin-bound paclitaxel": "nab-paclitaxel",
-                "abraxane": "nab-paclitaxel"}
+                "abraxane": "nab-paclitaxel",
+                "levo-leucovorin": "levoleucovorin", "n acetylcysteine": "n-acetylcysteine",
+                # Grafía francesa de la misma DCI, no un parecido de nombre.
+                "doxorubicine": "doxorubicin",
+                # Errata de la fuente, como "palcebo": no existe ningún principio activo "emtamsine".
+                "trastuzumab emtamsine": "trastuzumab emtansine"}
 
 
 def sin_tildes(t):
@@ -96,11 +111,22 @@ def normalizar(t):
     for marca in ("\u00ae", "\u2122", "\u00a9", "^tm", "^", "\u00a0"):
         t = t.replace(marca, " " if marca == "\u00a0" else "")
     t = re.sub(r"\s+", " ", t).strip(" .,;:-")
+    # Restos de cortar una lista por comas ("…, and 5-fluorouracil") y guiones separados del resto
+    # por un espacio en la fuente ("Levo- leucovorin", "MYL- 1401O").
+    t = re.sub(r"^(and|or|plus|with) ", "", t)
+    t = re.sub(r"(?<=[a-z0-9])- (?=[a-z0-9])", "-", t)
+    t = re.sub(r"^fixed[- ]dose combination (of )?", "", t)
     t = re.sub(r"\s+\d+(\.\d+)?\s*(mg|mcg|ug|g|iu|ui|ml)(/m2|/kg)?\b.*$", "", t)   # dosis
     t = re.sub(r"^(intrathecal|intravenous|subcutaneous|oral|iv|sc|combination product:) ", "", t)
     t = re.sub(r" (for subcutaneous (use|administration)|for intravenous use|iv|sc|po|dp|oral"
                r"|intravenous|subcutaneous|injection|tablets?|capsules?|in combination|-eu|-us)$", "", t)
     t = re.sub(r"-(eu|us)$", "", t)
+    for _ in range(4):
+        antes = t
+        t = re.sub(CALIFICATIVOS, "", t)
+        t = re.sub(SALES, "", t)
+        if t == antes:
+            break
     t = re.sub(r" regimen$", "", t)
     t = re.sub(r"^(fam|ado)-", "", t)
     t = re.sub(r"(\w{6,})-[a-z]{4}$", r"\1", t)          # govitecan-hziy → govitecan
@@ -130,6 +156,10 @@ def componentes(nombre):
     nombre = nombre.replace("(+)", " + ")
     nombre = re.sub(r",\s+(an?|the)\s.*$", "", nombre)      # "Atezolizumab, an engineered…"
     base, alias_global = parentesis(nombre)
+    # "Derazantinib-paclitaxel-ramucirumab combination": se separa solo si cada parte es una DCI.
+    m = re.fullmatch(r"\s*([A-Za-z]+(?:-[A-Za-z]+)+)\s+combination\s*", base, flags=re.I)
+    if m and all(es_dci(p.lower()) for p in m.group(1).split("-")):
+        return [(p, []) for p in m.group(1).split("-")]
     partes = [p for p in re.split(SEPARADORES, base, flags=re.I) if p and p.strip()]
     if len(partes) == 1:
         return [(partes[0], alias_global)]
