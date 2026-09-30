@@ -5880,9 +5880,11 @@
         return { id: f.id, etiqueta: f.nombre, sub: a.v.texto_en_la_fuente && a.v.texto_en_la_fuente !== f.nombre ? "en la fuente: " + a.v.texto_en_la_fuente : null,
                  valor: vecinosDe(f.id, "ensayo_clinico").length, unidad: ["estudio en Chile", "estudios en Chile"] };
       });
+      var inferidos = vecinosDe(n.id, "institucion").filter(function (a) { return a.v.criterio === "codigo_postal"; }).length;
       var centros = vecinosDe(n.id, "institucion").map(function (a) {
         var i = byId[a.otro], u = a.v.fuente_url || "";
-        var segun = u.indexOf("estudiosclinicos.cl") !== -1 ? "centro abierto según la CIF"
+        var segun = a.v.criterio === "codigo_postal" ? "sede inferida por código postal (ClinicalTrials.gov no la nombra)"
+          : u.indexOf("estudiosclinicos.cl") !== -1 ? "centro abierto según la CIF"
           : u.indexOf("ispch.gob.cl") !== -1 ? "sede según las inspecciones del ISP" : "sede según ClinicalTrials.gov";
         return { id: i.id, etiqueta: i.nombre, sub: [i.ciudad, segun].filter(Boolean).join(" · "),
                  valor: vecinosDe(i.id, "ensayo_clinico").length, unidad: ["estudio en total", "estudios en total"] };
@@ -5910,7 +5912,10 @@
       if (farm.length) frases.push("Evalúa " + lista(farm.map(function (f) { return f.etiqueta; })) + ".");
       if (n.sitios_chile) frases.push("ClinicalTrials.gov declara " + plural(n.sitios_chile, "sitio", "sitios") + " en Chile" +
         (n.sitios_chile_reclutando ? ", " + n.sitios_chile_reclutando + " reclutando" : "") + "; " +
-        (centros.length ? plural(centros.length, "centro identificado", "centros identificados") + " por nombre." : "ninguno identificado por nombre."));
+        (centros.length ? plural(centros.length, "centro identificado", "centros identificados") +
+          (inferidos ? " (" + (inferidos === centros.length ? (inferidos === 1 ? "inferido" : "todos inferidos") : inferidos + " inferido" + (inferidos === 1 ? "" : "s")) +
+            " por código postal, porque la fuente no nombra la sede)." : " por nombre.")
+          : "ninguno identificado por nombre."));
       if (parecidos.length) frases.push("Hay " + plural(parecidos.length, "otro estudio", "otros estudios") + " en Chile con alguno de sus fármacos.");
       var pend = n.sedes_pendientes_resolucion || [];
       return {

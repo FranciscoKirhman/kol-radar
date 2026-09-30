@@ -1,0 +1,3009 @@
+[
+ {
+  "ensayo": "NCT00073528",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00075270",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00089999",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00089999",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT00099437",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00300885",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00334282",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00338247",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7501088",
+  "centros_con_ese_codigo": {
+   "itop": 3
+  },
+  "institucion": "itop",
+  "registros_con_nombre": 3,
+  "respaldo": [
+   "NCT00849667",
+   "NCT00920816",
+   "NCT01523587"
+  ]
+ },
+ {
+  "ensayo": "NCT00374322",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7501088",
+  "centros_con_ese_codigo": {
+   "itop": 3
+  },
+  "institucion": "itop",
+  "registros_con_nombre": 3,
+  "respaldo": [
+   "NCT00849667",
+   "NCT00920816",
+   "NCT01523587"
+  ]
+ },
+ {
+  "ensayo": "NCT00374322",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00387764",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00428090",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Puente Alto - Santiago",
+  "codigo_postal": "8207257",
+  "centros_con_ese_codigo": {
+   "hosp-sotero": 2
+  },
+  "institucion": "hosp-sotero",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT03233191",
+   "NCT07740122"
+  ]
+ },
+ {
+  "ensayo": "NCT00457392",
+  "sede_en_la_fuente": "Pfizer Investigational Site",
+  "ciudad": "Independencia",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT00457392",
+  "sede_en_la_fuente": "Pfizer Investigational Site",
+  "ciudad": "Providencia",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00457691",
+  "sede_en_la_fuente": "Pfizer Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7510032",
+  "centros_con_ese_codigo": {
+   "oncovida": 13
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT03635567",
+   "NCT03675737",
+   "NCT03740165"
+  ]
+ },
+ {
+  "ensayo": "NCT00490139",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00490139",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8360160",
+  "centros_con_ese_codigo": {
+   "hosp-san-borja": 2
+  },
+  "institucion": "hosp-san-borja",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02272413",
+   "NCT02576574"
+  ]
+ },
+ {
+  "ensayo": "NCT00490139",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00558103",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00560235",
+  "sede_en_la_fuente": "Pfizer Investigational Site",
+  "ciudad": "Providencia",
+  "codigo_postal": "7500539",
+  "centros_con_ese_codigo": {
+   "hosp-calvo-mackenna": 3
+  },
+  "institucion": "hosp-calvo-mackenna",
+  "registros_con_nombre": 3,
+  "respaldo": [
+   "NCT00643565",
+   "NCT02303821",
+   "NCT06395103"
+  ]
+ },
+ {
+  "ensayo": "NCT00561470",
+  "sede_en_la_fuente": "Sanofi-Aventis Investigational Site Number 152002",
+  "ciudad": "Santiago",
+  "codigo_postal": "7510032",
+  "centros_con_ese_codigo": {
+   "oncovida": 13
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT03635567",
+   "NCT03675737",
+   "NCT03740165"
+  ]
+ },
+ {
+  "ensayo": "NCT00561470",
+  "sede_en_la_fuente": "Sanofi-Aventis Investigational Site Number 152001",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00561470",
+  "sede_en_la_fuente": "Sanofi-Aventis Investigational Site Number 152005",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT00625664",
+  "sede_en_la_fuente": "Sanofi-Aventis Investigational Site Number 152001",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00673049",
+  "sede_en_la_fuente": "Pfizer Investigational Site",
+  "ciudad": "Independencia",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00680901",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT00680901",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7510032",
+  "centros_con_ese_codigo": {
+   "oncovida": 13
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT03635567",
+   "NCT03675737",
+   "NCT03740165"
+  ]
+ },
+ {
+  "ensayo": "NCT00858364",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00861614",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Santiago",
+  "codigo_postal": "7510032",
+  "centros_con_ese_codigo": {
+   "oncovida": 13
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT03635567",
+   "NCT03675737",
+   "NCT03740165"
+  ]
+ },
+ {
+  "ensayo": "NCT00863746",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00863746",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT00901901",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT00917384",
+  "sede_en_la_fuente": "ImClone Investigational Site",
+  "ciudad": "Concepción",
+  "codigo_postal": "4070038",
+  "centros_con_ese_codigo": {
+   "hosp-concepcion": 2
+  },
+  "institucion": "hosp-concepcion",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT05166135",
+   "NCT06395103"
+  ]
+ },
+ {
+  "ensayo": "NCT01013740",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7501088",
+  "centros_con_ese_codigo": {
+   "itop": 3
+  },
+  "institucion": "itop",
+  "registros_con_nombre": 3,
+  "respaldo": [
+   "NCT00849667",
+   "NCT00920816",
+   "NCT01523587"
+  ]
+ },
+ {
+  "ensayo": "NCT01077154",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT01235962",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT01244191",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT01244191",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "7520378",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 2
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02576574",
+   "NCT06161441"
+  ]
+ },
+ {
+  "ensayo": "NCT01244191",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT01263886",
+  "sede_en_la_fuente": "Investigational Site Number 152002",
+  "ciudad": "Santiago",
+  "codigo_postal": "7510032",
+  "centros_con_ese_codigo": {
+   "oncovida": 13
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT03635567",
+   "NCT03675737",
+   "NCT03740165"
+  ]
+ },
+ {
+  "ensayo": "NCT01263886",
+  "sede_en_la_fuente": "Investigational Site Number 152003",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT01285609",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Santiago",
+  "codigo_postal": "7520378",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 2
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02576574",
+   "NCT06161441"
+  ]
+ },
+ {
+  "ensayo": "NCT01285609",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT01308580",
+  "sede_en_la_fuente": "Investigational Site Number 152004",
+  "ciudad": "Santiago",
+  "codigo_postal": "7510032",
+  "centros_con_ese_codigo": {
+   "oncovida": 13
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT03635567",
+   "NCT03675737",
+   "NCT03740165"
+  ]
+ },
+ {
+  "ensayo": "NCT01308580",
+  "sede_en_la_fuente": "Investigational Site Number 152002",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT01450696",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT01450696",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT01450761",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Santiago",
+  "codigo_postal": "8360160",
+  "centros_con_ese_codigo": {
+   "hosp-san-borja": 2
+  },
+  "institucion": "hosp-san-borja",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02272413",
+   "NCT02576574"
+  ]
+ },
+ {
+  "ensayo": "NCT01500720",
+  "sede_en_la_fuente": "Investigational Site Number 152001",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT01901146",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8360160",
+  "centros_con_ese_codigo": {
+   "hosp-san-borja": 2
+  },
+  "institucion": "hosp-san-borja",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02272413",
+   "NCT02576574"
+  ]
+ },
+ {
+  "ensayo": "NCT01933932",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT01933932",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7520349",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 4
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT02272413",
+   "NCT03729245",
+   "NCT06311721"
+  ]
+ },
+ {
+  "ensayo": "NCT01933932",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8360160",
+  "centros_con_ese_codigo": {
+   "hosp-san-borja": 2
+  },
+  "institucion": "hosp-san-borja",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02272413",
+   "NCT02576574"
+  ]
+ },
+ {
+  "ensayo": "NCT01933932",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT01977651",
+  "sede_en_la_fuente": "Site CL56002",
+  "ciudad": "Temuco",
+  "codigo_postal": "4781156",
+  "centros_con_ese_codigo": {
+   "cics-temuco": 3
+  },
+  "institucion": "cics-temuco",
+  "registros_con_nombre": 3,
+  "respaldo": [
+   "NCT03395197",
+   "NCT04736199",
+   "NCT06629779"
+  ]
+ },
+ {
+  "ensayo": "NCT02016534",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT02023697",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT02475681",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT02477826",
+  "sede_en_la_fuente": "Local Institution - 0173",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT02542293",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT02542293",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT02542293",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7520349",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 4
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT02272413",
+   "NCT03729245",
+   "NCT06311721"
+  ]
+ },
+ {
+  "ensayo": "NCT02542293",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT02588261",
+  "sede_en_la_fuente": "Site CL56001",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT02960022",
+  "sede_en_la_fuente": "Site CL56006",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT03056755",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT03138512",
+  "sede_en_la_fuente": "Local Institution - 0223",
+  "ciudad": "La Serena",
+  "codigo_postal": "1720430",
+  "centros_con_ese_codigo": {
+   "ic-la-serena": 22
+  },
+  "institucion": "ic-la-serena",
+  "registros_con_nombre": 22,
+  "respaldo": [
+   "NCT04738487",
+   "NCT04879329",
+   "NCT05111626"
+  ]
+ },
+ {
+  "ensayo": "NCT03138512",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT03138512",
+  "sede_en_la_fuente": "Local Institution - 0222",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT03215706",
+  "sede_en_la_fuente": "Local Institution - 0059",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT03383458",
+  "sede_en_la_fuente": "Local Institution - 0247",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT03447769",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT03504397",
+  "sede_en_la_fuente": "Site CL56003",
+  "ciudad": "Providencia",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT03504397",
+  "sede_en_la_fuente": "Site CL56008",
+  "ciudad": "Providencia",
+  "codigo_postal": "7520378",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 2
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02576574",
+   "NCT06161441"
+  ]
+ },
+ {
+  "ensayo": "NCT03504397",
+  "sede_en_la_fuente": "Site CL56005",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330032",
+  "centros_con_ese_codigo": {
+   "puc": 25,
+   "centro-cancer-uc": 1,
+   "centro-precision": 1
+  },
+  "institucion": "puc",
+  "registros_con_nombre": 25,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03302234",
+   "NCT03614013"
+  ]
+ },
+ {
+  "ensayo": "NCT03556358",
+  "sede_en_la_fuente": "Tanvex Investigational Site 4002",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT03732677",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7520349",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 4
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT02272413",
+   "NCT03729245",
+   "NCT06311721"
+  ]
+ },
+ {
+  "ensayo": "NCT03732677",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810218",
+  "centros_con_ese_codigo": {
+   "cido": 10
+  },
+  "institucion": "cido",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03740165",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT03732820",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7520349",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 4
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT02272413",
+   "NCT03729245",
+   "NCT06311721"
+  ]
+ },
+ {
+  "ensayo": "NCT03732820",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4781156",
+  "centros_con_ese_codigo": {
+   "cics-temuco": 3
+  },
+  "institucion": "cics-temuco",
+  "registros_con_nombre": 3,
+  "respaldo": [
+   "NCT03395197",
+   "NCT04736199",
+   "NCT06629779"
+  ]
+ },
+ {
+  "ensayo": "NCT03778229",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT03778229",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7520349",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 4
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT02272413",
+   "NCT03729245",
+   "NCT06311721"
+  ]
+ },
+ {
+  "ensayo": "NCT03800134",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT03800134",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT03830866",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT03830866",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380455",
+  "centros_con_ese_codigo": {
+   "inc": 19
+  },
+  "institucion": "inc",
+  "registros_con_nombre": 19,
+  "respaldo": [
+   "NCT00631371",
+   "NCT01633203",
+   "NCT02163694"
+  ]
+ },
+ {
+  "ensayo": "NCT03830866",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810218",
+  "centros_con_ese_codigo": {
+   "cido": 10
+  },
+  "institucion": "cido",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03740165",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT03873402",
+  "sede_en_la_fuente": "Local Institution - 0004",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT03937219",
+  "sede_en_la_fuente": "Exelixis Clinical Site #91",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT04035486",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT04039607",
+  "sede_en_la_fuente": "Local Institution - 0094",
+  "ciudad": "La Serena",
+  "codigo_postal": "1720430",
+  "centros_con_ese_codigo": {
+   "ic-la-serena": 22
+  },
+  "institucion": "ic-la-serena",
+  "registros_con_nombre": 22,
+  "respaldo": [
+   "NCT04738487",
+   "NCT04879329",
+   "NCT05111626"
+  ]
+ },
+ {
+  "ensayo": "NCT04039607",
+  "sede_en_la_fuente": "Local Institution - 0156",
+  "ciudad": "Santiago",
+  "codigo_postal": "8380456",
+  "centros_con_ese_codigo": {
+   "hosp-uchile": 11,
+   "oncovida": 1
+  },
+  "institucion": "hosp-uchile",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT01154140",
+   "NCT02576574",
+   "NCT01241591"
+  ]
+ },
+ {
+  "ensayo": "NCT04039607",
+  "sede_en_la_fuente": "Local Institution - 0012",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT04109066",
+  "sede_en_la_fuente": "Local Institution - 0197",
+  "ciudad": "La Serena",
+  "codigo_postal": "1720430",
+  "centros_con_ese_codigo": {
+   "ic-la-serena": 22
+  },
+  "institucion": "ic-la-serena",
+  "registros_con_nombre": 22,
+  "respaldo": [
+   "NCT04738487",
+   "NCT04879329",
+   "NCT05111626"
+  ]
+ },
+ {
+  "ensayo": "NCT04109066",
+  "sede_en_la_fuente": "Local Institution - 0318",
+  "ciudad": "Santiago",
+  "codigo_postal": "6900941",
+  "centros_con_ese_codigo": {
+   "falp": 4
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT03396445",
+   "NCT05008224",
+   "NCT04152863"
+  ]
+ },
+ {
+  "ensayo": "NCT04109066",
+  "sede_en_la_fuente": "Local Institution - 0019",
+  "ciudad": "Santiago Region Metropolitana",
+  "codigo_postal": "8330034",
+  "centros_con_ese_codigo": {
+   "puc": 2
+  },
+  "institucion": "puc",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT07291076",
+   "NCT07022483"
+  ]
+ },
+ {
+  "ensayo": "NCT04109066",
+  "sede_en_la_fuente": "Local Institution - 0018",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT04109391",
+  "sede_en_la_fuente": "Tanvex Investigational Site 4001E",
+  "ciudad": "Temuco",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT04149574",
+  "sede_en_la_fuente": "Local Institution - 0011",
+  "ciudad": "La Serena",
+  "codigo_postal": "1720430",
+  "centros_con_ese_codigo": {
+   "ic-la-serena": 22
+  },
+  "institucion": "ic-la-serena",
+  "registros_con_nombre": 22,
+  "respaldo": [
+   "NCT04738487",
+   "NCT04879329",
+   "NCT05111626"
+  ]
+ },
+ {
+  "ensayo": "NCT04149574",
+  "sede_en_la_fuente": "Local Institution - 0072",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT04446117",
+  "sede_en_la_fuente": "Exelixis Clinical Site #139",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT04446117",
+  "sede_en_la_fuente": "Exelixis Clinical Site #247",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT04446117",
+  "sede_en_la_fuente": "Exelixis Clinical Site #142",
+  "ciudad": "Providencia",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT04446117",
+  "sede_en_la_fuente": "Exelixis Clinical Site #90",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT04475939",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT04475939",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT04581824",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT04613596",
+  "sede_en_la_fuente": "Local Institution - 007-699",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT04659603",
+  "sede_en_la_fuente": "Investigational Site Number : 1520003",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT04742192",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT04810078",
+  "sede_en_la_fuente": "Local Institution - 0104",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT04810078",
+  "sede_en_la_fuente": "Local Institution - 0076",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT04810078",
+  "sede_en_la_fuente": "Local Institution - 0077",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT04915755",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT04915755",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500836",
+  "centros_con_ese_codigo": {
+   "falp": 6
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 6,
+  "respaldo": [
+   "NCT02003924",
+   "NCT02762877",
+   "NCT06152575"
+  ]
+ },
+ {
+  "ensayo": "NCT04960709",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT04960709",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT05043090",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Providencia",
+  "codigo_postal": "7510032",
+  "centros_con_ese_codigo": {
+   "oncovida": 13
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT03635567",
+   "NCT03675737",
+   "NCT03740165"
+  ]
+ },
+ {
+  "ensayo": "NCT05043090",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT05261399",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT05348577",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT05348577",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7650568",
+  "centros_con_ese_codigo": {
+   "clinica-alemana": 11
+  },
+  "institucion": "clinica-alemana",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT05144841",
+   "NCT04191096",
+   "NCT06136559"
+  ]
+ },
+ {
+  "ensayo": "NCT05519085",
+  "sede_en_la_fuente": "Local Institution - 0329",
+  "ciudad": "Santiago",
+  "codigo_postal": "7580206",
+  "centros_con_ese_codigo": {
+   "inmunocel": 13
+  },
+  "institucion": "inmunocel",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT04994717",
+   "NCT05139017",
+   "NCT05947851"
+  ]
+ },
+ {
+  "ensayo": "NCT05678673",
+  "sede_en_la_fuente": "Exelixis Clinical Site #53",
+  "ciudad": "Providencia",
+  "codigo_postal": "7520378",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 2
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02576574",
+   "NCT06161441"
+  ]
+ },
+ {
+  "ensayo": "NCT05678673",
+  "sede_en_la_fuente": "Exelixis Clinical Site #106",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT05678673",
+  "sede_en_la_fuente": "Exelixis Clinical Site #108",
+  "ciudad": "Santiago",
+  "codigo_postal": "7520378",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 2
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT02576574",
+   "NCT06161441"
+  ]
+ },
+ {
+  "ensayo": "NCT05774951",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Concepción",
+  "codigo_postal": "4070196",
+  "centros_con_ese_codigo": {
+   "biocenter": 10
+  },
+  "institucion": "biocenter",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT05139017",
+   "NCT05947851",
+   "NCT06504394"
+  ]
+ },
+ {
+  "ensayo": "NCT05774951",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "La Serena",
+  "codigo_postal": "1720430",
+  "centros_con_ese_codigo": {
+   "ic-la-serena": 22
+  },
+  "institucion": "ic-la-serena",
+  "registros_con_nombre": 22,
+  "respaldo": [
+   "NCT04738487",
+   "NCT04879329",
+   "NCT05111626"
+  ]
+ },
+ {
+  "ensayo": "NCT05774951",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Port Montt",
+  "codigo_postal": "5500243",
+  "centros_con_ese_codigo": {
+   "clinica-puerto-montt": 8
+  },
+  "institucion": "clinica-puerto-montt",
+  "registros_con_nombre": 8,
+  "respaldo": [
+   "NCT04738487",
+   "NCT05116189",
+   "NCT05502237"
+  ]
+ },
+ {
+  "ensayo": "NCT05774951",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330032",
+  "centros_con_ese_codigo": {
+   "puc": 25,
+   "centro-cancer-uc": 1,
+   "centro-precision": 1
+  },
+  "institucion": "puc",
+  "registros_con_nombre": 25,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03302234",
+   "NCT03614013"
+  ]
+ },
+ {
+  "ensayo": "NCT05774951",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330336",
+  "centros_con_ese_codigo": {
+   "cecim": 4
+  },
+  "institucion": "cecim",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT05111626",
+   "NCT05152147",
+   "NCT06252649"
+  ]
+ },
+ {
+  "ensayo": "NCT05952557",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Concepción",
+  "codigo_postal": "4070196",
+  "centros_con_ese_codigo": {
+   "biocenter": 10
+  },
+  "institucion": "biocenter",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT05139017",
+   "NCT05947851",
+   "NCT06504394"
+  ]
+ },
+ {
+  "ensayo": "NCT05952557",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "La Serena",
+  "codigo_postal": "1720430",
+  "centros_con_ese_codigo": {
+   "ic-la-serena": 22
+  },
+  "institucion": "ic-la-serena",
+  "registros_con_nombre": 22,
+  "respaldo": [
+   "NCT04738487",
+   "NCT04879329",
+   "NCT05111626"
+  ]
+ },
+ {
+  "ensayo": "NCT05952557",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Port Montt",
+  "codigo_postal": "5500243",
+  "centros_con_ese_codigo": {
+   "clinica-puerto-montt": 8
+  },
+  "institucion": "clinica-puerto-montt",
+  "registros_con_nombre": 8,
+  "respaldo": [
+   "NCT04738487",
+   "NCT05116189",
+   "NCT05502237"
+  ]
+ },
+ {
+  "ensayo": "NCT05952557",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7620157",
+  "centros_con_ese_codigo": {
+   "uandes": 4
+  },
+  "institucion": "uandes",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT06152575",
+   "NCT06097364",
+   "NCT05730036"
+  ]
+ },
+ {
+  "ensayo": "NCT05952557",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330032",
+  "centros_con_ese_codigo": {
+   "puc": 25,
+   "centro-cancer-uc": 1,
+   "centro-precision": 1
+  },
+  "institucion": "puc",
+  "registros_con_nombre": 25,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03302234",
+   "NCT03614013"
+  ]
+ },
+ {
+  "ensayo": "NCT05952557",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330336",
+  "centros_con_ese_codigo": {
+   "cecim": 4
+  },
+  "institucion": "cecim",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT05111626",
+   "NCT05152147",
+   "NCT06252649"
+  ]
+ },
+ {
+  "ensayo": "NCT05952557",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810218",
+  "centros_con_ese_codigo": {
+   "cido": 10
+  },
+  "institucion": "cido",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03740165",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT06090539",
+  "sede_en_la_fuente": "Local Institution - 0105",
+  "ciudad": "Santiago",
+  "codigo_postal": "7580206",
+  "centros_con_ese_codigo": {
+   "inmunocel": 13
+  },
+  "institucion": "inmunocel",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT04994717",
+   "NCT05139017",
+   "NCT05947851"
+  ]
+ },
+ {
+  "ensayo": "NCT06120491",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Concepción",
+  "codigo_postal": "4070196",
+  "centros_con_ese_codigo": {
+   "biocenter": 10
+  },
+  "institucion": "biocenter",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT05139017",
+   "NCT05947851",
+   "NCT06504394"
+  ]
+ },
+ {
+  "ensayo": "NCT06120491",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "La Serena",
+  "codigo_postal": "1720430",
+  "centros_con_ese_codigo": {
+   "ic-la-serena": 22
+  },
+  "institucion": "ic-la-serena",
+  "registros_con_nombre": 22,
+  "respaldo": [
+   "NCT04738487",
+   "NCT04879329",
+   "NCT05111626"
+  ]
+ },
+ {
+  "ensayo": "NCT06120491",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7520349",
+  "centros_con_ese_codigo": {
+   "clinica-santa-maria": 4
+  },
+  "institucion": "clinica-santa-maria",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT02272413",
+   "NCT03729245",
+   "NCT06311721"
+  ]
+ },
+ {
+  "ensayo": "NCT06120491",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330032",
+  "centros_con_ese_codigo": {
+   "puc": 25,
+   "centro-cancer-uc": 1,
+   "centro-precision": 1
+  },
+  "institucion": "puc",
+  "registros_con_nombre": 25,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03302234",
+   "NCT03614013"
+  ]
+ },
+ {
+  "ensayo": "NCT06120491",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4781156",
+  "centros_con_ese_codigo": {
+   "cics-temuco": 3
+  },
+  "institucion": "cics-temuco",
+  "registros_con_nombre": 3,
+  "respaldo": [
+   "NCT03395197",
+   "NCT04736199",
+   "NCT06629779"
+  ]
+ },
+ {
+  "ensayo": "NCT06232707",
+  "sede_en_la_fuente": "Local Institution - 0027",
+  "ciudad": "Santiago",
+  "codigo_postal": "7580206",
+  "centros_con_ese_codigo": {
+   "inmunocel": 13
+  },
+  "institucion": "inmunocel",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT04994717",
+   "NCT05139017",
+   "NCT05947851"
+  ]
+ },
+ {
+  "ensayo": "NCT06232707",
+  "sede_en_la_fuente": "Local Institution - 0030",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT06232707",
+  "sede_en_la_fuente": "Local Institution - 0029",
+  "ciudad": "Santiago",
+  "codigo_postal": "7650568",
+  "centros_con_ese_codigo": {
+   "clinica-alemana": 11
+  },
+  "institucion": "clinica-alemana",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT05144841",
+   "NCT04191096",
+   "NCT06136559"
+  ]
+ },
+ {
+  "ensayo": "NCT06356129",
+  "sede_en_la_fuente": "Local Institution - 0106",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT06356129",
+  "sede_en_la_fuente": "Local Institution - 0107",
+  "ciudad": "Santiago",
+  "codigo_postal": "7580206",
+  "centros_con_ese_codigo": {
+   "inmunocel": 13
+  },
+  "institucion": "inmunocel",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT04994717",
+   "NCT05139017",
+   "NCT05947851"
+  ]
+ },
+ {
+  "ensayo": "NCT06380751",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Providencia",
+  "codigo_postal": "7500994",
+  "centros_con_ese_codigo": {
+   "oncovida": 10
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT04305054",
+   "NCT04626479",
+   "NCT05609968"
+  ]
+ },
+ {
+  "ensayo": "NCT06380751",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Recoleta",
+  "codigo_postal": "8420391",
+  "centros_con_ese_codigo": {
+   "bradford-hill": 2
+  },
+  "institucion": "bradford-hill",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT07221357",
+   "NCT06875310"
+  ]
+ },
+ {
+  "ensayo": "NCT06380751",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330034",
+  "centros_con_ese_codigo": {
+   "puc": 2
+  },
+  "institucion": "puc",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT07291076",
+   "NCT07022483"
+  ]
+ },
+ {
+  "ensayo": "NCT06425302",
+  "sede_en_la_fuente": "Local Institution - 0049",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT06425302",
+  "sede_en_la_fuente": "Local Institution - 0050",
+  "ciudad": "Santiago",
+  "codigo_postal": "7580206",
+  "centros_con_ese_codigo": {
+   "inmunocel": 13
+  },
+  "institucion": "inmunocel",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT04994717",
+   "NCT05139017",
+   "NCT05947851"
+  ]
+ },
+ {
+  "ensayo": "NCT06525220",
+  "sede_en_la_fuente": "Site 40",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT06525220",
+  "sede_en_la_fuente": "Site 32",
+  "ciudad": "Santiago",
+  "codigo_postal": "7560908",
+  "centros_con_ese_codigo": {
+   "centro-precision": 13
+  },
+  "institucion": "centro-precision",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT04246177",
+   "NCT04924075",
+   "NCT05226598"
+  ]
+ },
+ {
+  "ensayo": "NCT06525220",
+  "sede_en_la_fuente": "Site 34",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330336",
+  "centros_con_ese_codigo": {
+   "cecim": 4
+  },
+  "institucion": "cecim",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT05111626",
+   "NCT05152147",
+   "NCT06252649"
+  ]
+ },
+ {
+  "ensayo": "NCT06646276",
+  "sede_en_la_fuente": "Local Institution - 0085",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT06646276",
+  "sede_en_la_fuente": "Local Institution - 0083",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330032",
+  "centros_con_ese_codigo": {
+   "puc": 25,
+   "centro-cancer-uc": 1,
+   "centro-precision": 1
+  },
+  "institucion": "puc",
+  "registros_con_nombre": 25,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03302234",
+   "NCT03614013"
+  ]
+ },
+ {
+  "ensayo": "NCT06646276",
+  "sede_en_la_fuente": "Local Institution - 0082",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT06764485",
+  "sede_en_la_fuente": "Local Institution - 0236",
+  "ciudad": "Valdivia",
+  "codigo_postal": "5112129",
+  "centros_con_ese_codigo": {
+   "oncocentro": 11
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 11,
+  "respaldo": [
+   "NCT04738487",
+   "NCT05139017",
+   "NCT04241185"
+  ]
+ },
+ {
+  "ensayo": "NCT06764485",
+  "sede_en_la_fuente": "Local Institution - 0135",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT06764485",
+  "sede_en_la_fuente": "Local Institution - 0127",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT06764875",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT06764875",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810218",
+  "centros_con_ese_codigo": {
+   "cido": 10
+  },
+  "institucion": "cido",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03740165",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT06764875",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ },
+ {
+  "ensayo": "NCT06767462",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7620157",
+  "centros_con_ese_codigo": {
+   "uandes": 4
+  },
+  "institucion": "uandes",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT06152575",
+   "NCT06097364",
+   "NCT05730036"
+  ]
+ },
+ {
+  "ensayo": "NCT06868277",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Conception",
+  "codigo_postal": "4070196",
+  "centros_con_ese_codigo": {
+   "biocenter": 10
+  },
+  "institucion": "biocenter",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT05139017",
+   "NCT05947851",
+   "NCT06504394"
+  ]
+ },
+ {
+  "ensayo": "NCT06868277",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT06868277",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT06911502",
+  "sede_en_la_fuente": "Local Institution - 0154",
+  "ciudad": "Santiago",
+  "codigo_postal": "7580206",
+  "centros_con_ese_codigo": {
+   "inmunocel": 13
+  },
+  "institucion": "inmunocel",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT04994717",
+   "NCT05139017",
+   "NCT05947851"
+  ]
+ },
+ {
+  "ensayo": "NCT06952803",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Concepción",
+  "codigo_postal": "4070196",
+  "centros_con_ese_codigo": {
+   "biocenter": 10
+  },
+  "institucion": "biocenter",
+  "registros_con_nombre": 10,
+  "respaldo": [
+   "NCT05139017",
+   "NCT05947851",
+   "NCT06504394"
+  ]
+ },
+ {
+  "ensayo": "NCT06952803",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "La Serena",
+  "codigo_postal": "1720430",
+  "centros_con_ese_codigo": {
+   "ic-la-serena": 22
+  },
+  "institucion": "ic-la-serena",
+  "registros_con_nombre": 22,
+  "respaldo": [
+   "NCT04738487",
+   "NCT04879329",
+   "NCT05111626"
+  ]
+ },
+ {
+  "ensayo": "NCT06952803",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4781156",
+  "centros_con_ese_codigo": {
+   "cics-temuco": 3
+  },
+  "institucion": "cics-temuco",
+  "registros_con_nombre": 3,
+  "respaldo": [
+   "NCT03395197",
+   "NCT04736199",
+   "NCT06629779"
+  ]
+ },
+ {
+  "ensayo": "NCT07063745",
+  "sede_en_la_fuente": "Local Institution - 0473",
+  "ciudad": "Providencia",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT07100080",
+  "sede_en_la_fuente": "Local Institution - 0005",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT07218809",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Providencia",
+  "codigo_postal": "7510032",
+  "centros_con_ese_codigo": {
+   "oncovida": 13
+  },
+  "institucion": "oncovida",
+  "registros_con_nombre": 13,
+  "respaldo": [
+   "NCT03635567",
+   "NCT03675737",
+   "NCT03740165"
+  ]
+ },
+ {
+  "ensayo": "NCT07218809",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500653",
+  "centros_con_ese_codigo": {
+   "saga": 29
+  },
+  "institucion": "saga",
+  "registros_con_nombre": 29,
+  "respaldo": [
+   "NCT03929666",
+   "NCT04534205",
+   "NCT04738487"
+  ]
+ },
+ {
+  "ensayo": "NCT07218809",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330032",
+  "centros_con_ese_codigo": {
+   "puc": 25,
+   "centro-cancer-uc": 1,
+   "centro-precision": 1
+  },
+  "institucion": "puc",
+  "registros_con_nombre": 25,
+  "respaldo": [
+   "NCT03829319",
+   "NCT03302234",
+   "NCT03614013"
+  ]
+ },
+ {
+  "ensayo": "NCT07218809",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8331143",
+  "centros_con_ese_codigo": {
+   "cecim": 4
+  },
+  "institucion": "cecim",
+  "registros_con_nombre": 4,
+  "respaldo": [
+   "NCT04604132",
+   "NCT05502237",
+   "NCT06012435"
+  ]
+ },
+ {
+  "ensayo": "NCT07221149",
+  "sede_en_la_fuente": "Local Institution - 0068",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT07221357",
+  "sede_en_la_fuente": "Bradfordhill",
+  "ciudad": "Recoleta",
+  "codigo_postal": "8420391",
+  "centros_con_ese_codigo": {
+   "bradford-hill": 2
+  },
+  "institucion": "bradford-hill",
+  "registros_con_nombre": 2,
+  "respaldo": [
+   "NCT06875310"
+  ]
+ },
+ {
+  "ensayo": "NCT07221357",
+  "sede_en_la_fuente": "Fundacion Oncologia Arturo Lopez Perez",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500921",
+  "centros_con_ese_codigo": {
+   "ceos": 1,
+   "falp": 90
+  },
+  "institucion": "falp",
+  "registros_con_nombre": 90,
+  "respaldo": [
+   "NCT01663727",
+   "NCT02395172",
+   "NCT01358877"
+  ]
+ },
+ {
+  "ensayo": "NCT07680764",
+  "sede_en_la_fuente": "Local Institution - 0081",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500713",
+  "centros_con_ese_codigo": {
+   "orlandi": 18
+  },
+  "institucion": "orlandi",
+  "registros_con_nombre": 18,
+  "respaldo": [
+   "NCT03395197",
+   "NCT03829319",
+   "NCT03937154"
+  ]
+ },
+ {
+  "ensayo": "NCT07680764",
+  "sede_en_la_fuente": "Local Institution - 0084",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520598",
+  "centros_con_ese_codigo": {
+   "oncocentro": 57
+  },
+  "institucion": "oncocentro",
+  "registros_con_nombre": 57,
+  "respaldo": [
+   "NCT02008227",
+   "NCT01966471",
+   "NCT03829319"
+  ]
+ }
+]

@@ -5828,6 +5828,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00073528",
           "fecha": "2021-02-24",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00073528",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study Comparing Lapatinib (GW572016) And Letrozole Versus Letrozole In Subjects With Advanced Or Metastatic Breast Cancer",
@@ -5859,6 +5867,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00075270",
           "fecha": "2015-05-06",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00075270",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -6061,6 +6077,22 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00089999",
           "fecha": "2017-02-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00089999",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00089999",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Lapatinib In Chemotherapy-Naive Or Metastatic Breast Cancer",
@@ -6124,6 +6156,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00099437",
           "fecha": "2026-06-11",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00099437",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -6612,6 +6652,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00300885",
           "fecha": "2014-11-04",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00300885",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Randomized Controlled Trial Comparing Safety and Efficacy of Carboplatin and Paclitaxel Plus or Minus Sorafenib (BAY 43-9006) in Chemonaive Patients With Stage IIIB-IV Non-Small Cell Lung Cancer (NSCLC)",
@@ -6712,6 +6760,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00334282",
           "fecha": "2016-02-05",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00334282",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Safety and Efficacy of GW786034 (Pazopanib) In Metastatic Renal Cell Carcinoma",
@@ -6742,6 +6798,14 @@
           "fase": null,
           "fuente_url": "https://clinicaltrials.gov/study/NCT00338247",
           "fecha": "2016-04-06",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7501088). Ese código postal es el que la misma fuente declara para Instituto de Terapias Oncológicas Providencia en 3 registro(s) con nombre (por ejemplo NCT00849667, NCT00920816, NCT01523587): se infiere que es ese centro.",
+          "fase": null,
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00338247",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -6875,6 +6939,22 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00374322",
           "fecha": "2014-08-18",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7501088). Ese código postal es el que la misma fuente declara para Instituto de Terapias Oncológicas Providencia en 3 registro(s) con nombre (por ejemplo NCT00849667, NCT00920816, NCT01523587): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00374322",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00374322",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Tykerb Evaluation After Chemotherapy (TEACH): Lapatinib Versus Placebo In Women With Early-Stage Breast Cancer",
@@ -6905,6 +6985,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00387764",
           "fecha": "2014-01-14",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00387764",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -7065,6 +7153,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00428090",
           "fecha": "2017-05-19",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Puente Alto - Santiago, código postal 8207257). Ese código postal es el que la misma fuente declara para Hospital Sótero del Río en 2 registro(s) con nombre (por ejemplo NCT03233191, NCT07740122): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00428090",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Rosiglitazone (Extended Release Tablets) As Monotherapy In Subjects With Mild To Moderate Alzheimer's Disease",
@@ -7099,6 +7195,22 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00457392",
           "fecha": "2013-10-29",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Pfizer Investigational Site», Independencia, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00457392",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Pfizer Investigational Site», Providencia, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00457392",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study In Patients With Non-Small Cell Lung Cancer To Test If Erlotinib Plus SU011248 Is Better Than Erlotinib Alone",
@@ -7132,6 +7244,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00457691",
           "fecha": "2015-03-30",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Pfizer Investigational Site», Santiago, código postal 7510032). Ese código postal es el que la misma fuente declara para Oncovida en 13 registro(s) con nombre (por ejemplo NCT03635567, NCT03675737, NCT03740165): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00457691",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -7260,6 +7380,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00490139",
           "fecha": "2025-03-21",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00490139",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 8360160). Ese código postal es el que la misma fuente declara para Hospital Clínico San Borja Arriarán en 2 registro(s) con nombre (por ejemplo NCT02272413, NCT02576574): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00490139",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00490139",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -7523,6 +7667,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00558103",
           "fecha": "2013-02-04",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00558103",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Pazopanib Plus Lapatinib Compared To Lapatinib Alone In Subjects With Inflammatory Breast Cancer",
@@ -7553,6 +7705,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00560235",
           "fecha": "2015-10-28",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Pfizer Investigational Site», Providencia, código postal 7500539). Ese código postal es el que la misma fuente declara para Hospital Luis Calvo Mackenna en 3 registro(s) con nombre (por ejemplo NCT00643565, NCT02303821, NCT06395103): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00560235",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -7587,6 +7747,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00561470",
           "fecha": "2012-09-28",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Sanofi-Aventis Investigational Site Number 152002», Santiago, código postal 7510032). Ese código postal es el que la misma fuente declara para Oncovida en 13 registro(s) con nombre (por ejemplo NCT03635567, NCT03675737, NCT03740165): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00561470",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Sanofi-Aventis Investigational Site Number 152001», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00561470",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Sanofi-Aventis Investigational Site Number 152005», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00561470",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -7686,6 +7870,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00625664",
           "fecha": "2016-05-05",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Sanofi-Aventis Investigational Site Number 152001», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00625664",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -7884,6 +8076,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00673049",
           "fecha": "2013-07-24",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Pfizer Investigational Site», Independencia, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00673049",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Trial Of CP-751, 871 And Erlotinib In Refractory Lung Cancer",
@@ -7953,6 +8153,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00680901",
           "fecha": "2025-08-07",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00680901",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7510032). Ese código postal es el que la misma fuente declara para Oncovida en 13 registro(s) con nombre (por ejemplo NCT03635567, NCT03675737, NCT03740165): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00680901",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -8184,6 +8400,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00858364",
           "fecha": "2022-11-30",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00858364",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Anemia Treatment for Advanced Non-Small Cell Lung Cancer (NSCLC) Patients Receiving Chemotherapy",
@@ -8219,6 +8443,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00861614",
           "fecha": "2016-09-30",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution», Santiago, código postal 7510032). Ese código postal es el que la misma fuente declara para Oncovida en 13 registro(s) con nombre (por ejemplo NCT03635567, NCT03675737, NCT03740165): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00861614",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study of Immunotherapy to Treat Advanced Prostate Cancer",
@@ -8250,6 +8482,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00863746",
           "fecha": "2015-01-19",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00863746",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00863746",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -8348,6 +8596,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT00901901",
           "fecha": "2019-05-30",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00901901",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Nexavar-Tarceva Combination Therapy for First Line Treatment of Patients Diagnosed With Hepatocellular Carcinoma",
@@ -8412,6 +8668,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT00917384",
           "fecha": "2019-09-25",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («ImClone Investigational Site», Concepción, código postal 4070038). Ese código postal es el que la misma fuente declara para Hospital Clínico Regional de Concepción en 2 registro(s) con nombre (por ejemplo NCT05166135, NCT06395103): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT00917384",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -8720,6 +8984,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT01013740",
           "fecha": "2017-05-31",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7501088). Ese código postal es el que la misma fuente declara para Instituto de Terapias Oncológicas Providencia en 3 registro(s) con nombre (por ejemplo NCT00849667, NCT00920816, NCT01523587): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01013740",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Lapatinib in Combination With Vinorelbine",
@@ -8856,6 +9128,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01077154",
           "fecha": "2021-09-28",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01077154",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -9184,6 +9464,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT01235962",
           "fecha": "2020-11-23",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01235962",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study to Evaluate Pazopanib as an Adjuvant Treatment for Localized Renal Cell Carcinoma (RCC)",
@@ -9252,6 +9540,30 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT01244191",
           "fecha": "2021-04-06",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01244191",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 7520378). Ese código postal es el que la misma fuente declara para Clínica Santa María en 2 registro(s) con nombre (por ejemplo NCT02576574, NCT06161441): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01244191",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01244191",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Tivantinib Plus Erlotinib Versus Placebo Plus Erlotinib for the Treatment of Non-squamous, Non-small-cell Lung Cancer",
@@ -9283,6 +9595,22 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01263886",
           "fecha": "2015-12-21",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Investigational Site Number 152002», Santiago, código postal 7510032). Ese código postal es el que la misma fuente declara para Oncovida en 13 registro(s) con nombre (por ejemplo NCT03635567, NCT03675737, NCT03740165): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01263886",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Investigational Site Number 152003», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01263886",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -9346,6 +9674,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01285609",
           "fecha": "2020-06-18",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution», Santiago, código postal 7520378). Ese código postal es el que la misma fuente declara para Clínica Santa María en 2 registro(s) con nombre (por ejemplo NCT02576574, NCT06161441): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01285609",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01285609",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -9412,6 +9756,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01308580",
           "fecha": "2017-04-17",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Investigational Site Number 152004», Santiago, código postal 7510032). Ese código postal es el que la misma fuente declara para Oncovida en 13 registro(s) con nombre (por ejemplo NCT03635567, NCT03675737, NCT03740165): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01308580",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Investigational Site Number 152002», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01308580",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -9578,6 +9938,22 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT01450696",
           "fecha": "2016-11-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01450696",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01450696",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of Herceptin (Trastuzumab) in Combination With Cisplatin/Capecitabine Chemotherapy in Participants With Human Epidermal Growth Factor Receptor 2 (HER2)-Positive Metastatic Gastric or Gastro-Esophageal Junction Cancer",
@@ -9611,6 +9987,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01450761",
           "fecha": "2020-07-08",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution», Santiago, código postal 8360160). Ese código postal es el que la misma fuente declara para Hospital Clínico San Borja Arriarán en 2 registro(s) con nombre (por ejemplo NCT02272413, NCT02576574): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01450761",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -9745,6 +10129,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01500720",
           "fecha": "2015-04-13",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Investigational Site Number 152001», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01500720",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -10299,6 +10691,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT01901146",
           "fecha": "2019-08-07",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8360160). Ese código postal es el que la misma fuente declara para Hospital Clínico San Borja Arriarán en 2 registro(s) con nombre (por ejemplo NCT02272413, NCT02576574): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01901146",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Efficacy and Safety Study of ABP 980 Compared With Trastuzumab in Women With HER2-positive Early Breast Cancer",
@@ -10363,6 +10763,38 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01933932",
           "fecha": "2026-07-21",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01933932",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7520349). Ese código postal es el que la misma fuente declara para Clínica Santa María en 4 registro(s) con nombre (por ejemplo NCT02272413, NCT03729245, NCT06311721): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01933932",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8360160). Ese código postal es el que la misma fuente declara para Hospital Clínico San Borja Arriarán en 2 registro(s) con nombre (por ejemplo NCT02272413, NCT02576574): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01933932",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01933932",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -10461,6 +10893,14 @@
           "fase": "Fase IV",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01977651",
           "fecha": "2024-12-06",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site CL56002», Temuco, código postal 4781156). Ese código postal es el que la misma fuente declara para Centro de Investigación Clínica del Sur en 3 registro(s) con nombre (por ejemplo NCT03395197, NCT04736199, NCT06629779): se infiere que es ese centro.",
+          "fase": "Fase IV",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT01977651",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -10597,6 +11037,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT02016534",
           "fecha": "2017-07-02",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02016534",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Phase 2 Study of AMG 337 in MET Amplified Gastric/Esophageal Adenocarcinoma or Other Solid Tumors",
@@ -10627,6 +11075,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT02023697",
           "fecha": "2019-07-12",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («sin nombre», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02023697",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -11556,6 +12012,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT02475681",
           "fecha": "2026-08-25",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02475681",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Acalabrutinib, Obinutuzumab and Chlorambucil in Treatment naïve CLL",
@@ -11589,6 +12053,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT02477826",
           "fecha": "2025-10-30",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0173», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02477826",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -11656,6 +12128,38 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT02542293",
           "fecha": "2026-08-06",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02542293",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02542293",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7520349). Ese código postal es el que la misma fuente declara para Clínica Santa María en 4 registro(s) con nombre (por ejemplo NCT02272413, NCT03729245, NCT06311721): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02542293",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02542293",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -11824,6 +12328,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT02588261",
           "fecha": "2024-12-10",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site CL56001», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02588261",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -12533,6 +13045,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT02960022",
           "fecha": "2026-08-12",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site CL56006», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT02960022",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study for Subjects With Prostate Cancer Who Previously Participated in an Enzalutamide Clinical Study",
@@ -12726,6 +13246,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03056755",
           "fecha": "2026-01-13",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03056755",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study Assessing the Efficacy and Safety of Alpelisib Plus Fulvestrant or Letrozole, Based on Prior Endocrine Therapy, in Patients With PIK3CA Mutant, HR+, HER2- Advanced Breast Cancer Who Have Progressed on or After Prior Treatments",
@@ -12882,6 +13410,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03138512",
           "fecha": "2024-12-18",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0223», La Serena, código postal 1720430). Ese código postal es el que la misma fuente declara para IC La Serena Research en 22 registro(s) con nombre (por ejemplo NCT04738487, NCT04879329, NCT05111626): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03138512",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03138512",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0222», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03138512",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -13072,6 +13624,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03215706",
           "fecha": "2025-12-17",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0059», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03215706",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -13441,6 +14001,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03383458",
           "fecha": "2026-07-31",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0247», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03383458",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of Nivolumab in Participants With Hepatocellular Carcinoma Who Are at High Risk of Recurrence After Curative Hepatic Resection or Ablation",
@@ -13620,6 +14188,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03447769",
           "fecha": "2024-10-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Novartis Investigative Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03447769",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Brief Title: Study of Efficacy and Safety of Canakinumab as Adjuvant Therapy in Adult Subjects With Stages AJCC/UICC v. 8 II-IIIA and IIIB (T>5cm N2) Completely Resected Non-small Cell Lung Cancer Acronym: CANOPY-A",
@@ -13685,6 +14261,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03504397",
           "fecha": "2026-05-04",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site CL56003», Providencia, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03504397",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site CL56008», Providencia, código postal 7520378). Ese código postal es el que la misma fuente declara para Clínica Santa María en 2 registro(s) con nombre (por ejemplo NCT02576574, NCT06161441): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03504397",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site CL56005», Santiago, código postal 8330032). Ese código postal es el que la misma fuente declara para Pontificia Universidad Católica de Chile en 25 registro(s) con nombre (por ejemplo NCT03829319, NCT03302234, NCT03614013): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03504397",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -13787,6 +14387,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03556358",
           "fecha": "2022-01-14",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Tanvex Investigational Site 4002», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03556358",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -14423,6 +15031,22 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03732677",
           "fecha": "2026-07-17",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7520349). Ese código postal es el que la misma fuente declara para Clínica Santa María en 4 registro(s) con nombre (por ejemplo NCT02272413, NCT03729245, NCT06311721): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03732677",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Temuco, código postal 4810218). Ese código postal es el que la misma fuente declara para CIDO — Centro de Investigación y Desarrollo Oncológico en 10 registro(s) con nombre (por ejemplo NCT03829319, NCT03740165, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03732677",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Durvalumab+ Gemcitabine/Cisplatin (Neoadjuvant Treatment) and Durvalumab (Adjuvant Treatment) in Patients With MIBC",
@@ -14454,6 +15078,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03732820",
           "fecha": "2026-08-18",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7520349). Ese código postal es el que la misma fuente declara para Clínica Santa María en 4 registro(s) con nombre (por ejemplo NCT02272413, NCT03729245, NCT06311721): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03732820",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Temuco, código postal 4781156). Ese código postal es el que la misma fuente declara para Centro de Investigación Clínica del Sur en 3 registro(s) con nombre (por ejemplo NCT03395197, NCT04736199, NCT06629779): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03732820",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -14563,6 +15203,22 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03778229",
           "fecha": "2026-04-23",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03778229",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7520349). Ese código postal es el que la misma fuente declara para Clínica Santa María en 4 registro(s) con nombre (por ejemplo NCT02272413, NCT03729245, NCT06311721): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03778229",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -14724,6 +15380,22 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03800134",
           "fecha": "2025-06-11",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03800134",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03800134",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of Neoadjuvant/Adjuvant Durvalumab for the Treatment of Patients With Resectable Non-small Cell Lung Cancer",
@@ -14824,6 +15496,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03830866",
           "fecha": "2024-07-26",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03830866",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8380455). Ese código postal es el que la misma fuente declara para Instituto Nacional del Cáncer en 19 registro(s) con nombre (por ejemplo NCT00631371, NCT01633203, NCT02163694): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03830866",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Temuco, código postal 4810218). Ese código postal es el que la misma fuente declara para CIDO — Centro de Investigación y Desarrollo Oncológico en 10 registro(s) con nombre (por ejemplo NCT03829319, NCT03740165, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03830866",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -14958,6 +15654,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03873402",
           "fecha": "2026-01-21",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0004», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03873402",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -15133,6 +15837,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03937219",
           "fecha": "2025-09-10",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Exelixis Clinical Site #91», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT03937219",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -15495,6 +16207,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT04035486",
           "fecha": "2026-09-03",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04035486",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of Osimertinib With or Without Chemotherapy as 1st Line Treatment in Patients With Mutated Epidermal Growth Factor Receptor Non-Small Cell Lung Cancer (FLAURA2)",
@@ -15528,6 +16248,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT04039607",
           "fecha": "2026-08-25",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0094», La Serena, código postal 1720430). Ese código postal es el que la misma fuente declara para IC La Serena Research en 22 registro(s) con nombre (por ejemplo NCT04738487, NCT04879329, NCT05111626): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04039607",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0156», Santiago, código postal 8380456). Ese código postal es el que la misma fuente declara para Hospital Clínico Universidad de Chile en 11 registro(s) con nombre (por ejemplo NCT01154140, NCT02576574, NCT01241591): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04039607",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0012», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04039607",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -15637,6 +16381,38 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT04109066",
           "fecha": "2025-01-08",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0197», La Serena, código postal 1720430). Ese código postal es el que la misma fuente declara para IC La Serena Research en 22 registro(s) con nombre (por ejemplo NCT04738487, NCT04879329, NCT05111626): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04109066",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0318», Santiago, código postal 6900941). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 4 registro(s) con nombre (por ejemplo NCT03396445, NCT05008224, NCT04152863): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04109066",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0019», Santiago Region Metropolitana, código postal 8330034). Ese código postal es el que la misma fuente declara para Pontificia Universidad Católica de Chile en 2 registro(s) con nombre (por ejemplo NCT07291076, NCT07022483): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04109066",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0018», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04109066",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study of Nivolumab Versus Placebo in Combination With Neoadjuvant Chemotherapy and Adjuvant Endocrine Therapy in Participants With High-risk, Estrogen Receptor-Positive (ER+), Human Epidermal Growth Factor Receptor 2-Negative (HER2-) Primary Breast Cancer",
@@ -15668,6 +16444,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT04109391",
           "fecha": "2022-10-26",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Tanvex Investigational Site 4001E», Temuco, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04109391",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -15769,6 +16553,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT04149574",
           "fecha": "2025-09-16",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0011», La Serena, código postal 1720430). Ese código postal es el que la misma fuente declara para IC La Serena Research en 22 registro(s) con nombre (por ejemplo NCT04738487, NCT04879329, NCT05111626): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04149574",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0072», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04149574",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -16358,6 +17158,38 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT04446117",
           "fecha": "2025-12-18",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Exelixis Clinical Site #139», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04446117",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Exelixis Clinical Site #247», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04446117",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Exelixis Clinical Site #142», Providencia, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04446117",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Exelixis Clinical Site #90», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04446117",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "sedes_pendientes_resolucion": [
@@ -16444,6 +17276,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT04475939",
           "fecha": "2026-06-18",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04475939",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04475939",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -16736,6 +17584,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT04581824",
           "fecha": "2025-08-08",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04581824",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Efficacy Comparison of Dostarlimab Plus Chemotherapy Versus Pembrolizumab Plus Chemotherapy in Participants With Metastatic Non-squamous Non-small Cell Lung Cancer (NSCLC)",
@@ -16845,6 +17701,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT04613596",
           "fecha": "2026-08-25",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 007-699», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04613596",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -17053,6 +17917,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT04659603",
           "fecha": "2025-10-01",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Investigational Site Number : 1520003», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04659603",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Tusamitamab Ravtansine Monotherapy and in Combination in Patients With CEACAM5-positive Advanced Solid Tumors",
@@ -17244,6 +18116,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT04742192",
           "fecha": "2023-08-14",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": null,
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04742192",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Non-interventional, Prospective Study to Determine Prevalence of EGFR Mutations in Non-small Cell Lung Cancer",
@@ -17309,6 +18189,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT04810078",
           "fecha": "2025-10-09",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0104», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04810078",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0076», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04810078",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0077», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04810078",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -17568,6 +18472,22 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT04915755",
           "fecha": "2025-07-16",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04915755",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («GSK Investigational Site», Santiago, código postal 7500836). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 6 registro(s) con nombre (por ejemplo NCT02003924, NCT02762877, NCT06152575): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04915755",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Efficacy and Safety Comparison of Niraparib to Placebo in Participants With Human Epidermal Growth Factor 2 Negative (HER2-) Breast Cancer Susceptibility Gene Mutation (BRCAmut) or Triple-Negative Breast Cancer (TNBC) With Molecular Disease",
@@ -17723,6 +18643,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT04960709",
           "fecha": "2026-06-04",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04960709",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT04960709",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -18041,6 +18977,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT05043090",
           "fecha": "2026-05-22",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Providencia, código postal 7510032). Ese código postal es el que la misma fuente declara para Oncovida en 13 registro(s) con nombre (por ejemplo NCT03635567, NCT03675737, NCT03740165): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05043090",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05043090",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -18951,6 +19903,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT05261399",
           "fecha": "2026-08-06",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05261399",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Savolitinib Plus Osimertinib Versus Platinum-based Doublet Chemotherapy in Participants With Non-Small Cell Lung Cancer Who Have Progressed on Osimertinib Treatment",
@@ -19060,6 +20020,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT05348577",
           "fecha": "2025-01-27",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05348577",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7650568). Ese código postal es el que la misma fuente declara para Clínica Alemana Santiago en 11 registro(s) con nombre (por ejemplo NCT05144841, NCT04191096, NCT06136559): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05348577",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -19376,6 +20352,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT05519085",
           "fecha": "2026-09-09",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0329», Santiago, código postal 7580206). Ese código postal es el que la misma fuente declara para Inmunocel en 13 registro(s) con nombre (por ejemplo NCT04994717, NCT05139017, NCT05947851): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05519085",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -19752,6 +20736,30 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT05678673",
           "fecha": "2026-07-29",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Exelixis Clinical Site #53», Providencia, código postal 7520378). Ese código postal es el que la misma fuente declara para Clínica Santa María en 2 registro(s) con nombre (por ejemplo NCT02576574, NCT06161441): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05678673",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Exelixis Clinical Site #106», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05678673",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Exelixis Clinical Site #108», Santiago, código postal 7520378). Ese código postal es el que la misma fuente declara para Clínica Santa María en 2 registro(s) con nombre (por ejemplo NCT02576574, NCT06161441): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05678673",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "sedes_pendientes_resolucion": [
@@ -19859,6 +20867,46 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT05774951",
           "fecha": "2026-08-19",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Concepción, código postal 4070196). Ese código postal es el que la misma fuente declara para Biocenter en 10 registro(s) con nombre (por ejemplo NCT05139017, NCT05947851, NCT06504394): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05774951",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», La Serena, código postal 1720430). Ese código postal es el que la misma fuente declara para IC La Serena Research en 22 registro(s) con nombre (por ejemplo NCT04738487, NCT04879329, NCT05111626): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05774951",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Port Montt, código postal 5500243). Ese código postal es el que la misma fuente declara para Clínica Puerto Montt en 8 registro(s) con nombre (por ejemplo NCT04738487, NCT05116189, NCT05502237): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05774951",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8330032). Ese código postal es el que la misma fuente declara para Pontificia Universidad Católica de Chile en 25 registro(s) con nombre (por ejemplo NCT03829319, NCT03302234, NCT03614013): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05774951",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8330336). Ese código postal es el que la misma fuente declara para CeCim Biocinetic en 4 registro(s) con nombre (por ejemplo NCT05111626, NCT05152147, NCT06252649): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05774951",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -20064,6 +21112,62 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT05952557",
           "fecha": "2026-08-10",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Concepción, código postal 4070196). Ese código postal es el que la misma fuente declara para Biocenter en 10 registro(s) con nombre (por ejemplo NCT05139017, NCT05947851, NCT06504394): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05952557",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», La Serena, código postal 1720430). Ese código postal es el que la misma fuente declara para IC La Serena Research en 22 registro(s) con nombre (por ejemplo NCT04738487, NCT04879329, NCT05111626): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05952557",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Port Montt, código postal 5500243). Ese código postal es el que la misma fuente declara para Clínica Puerto Montt en 8 registro(s) con nombre (por ejemplo NCT04738487, NCT05116189, NCT05502237): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05952557",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7620157). Ese código postal es el que la misma fuente declara para Universidad de los Andes en 4 registro(s) con nombre (por ejemplo NCT06152575, NCT06097364, NCT05730036): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05952557",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8330032). Ese código postal es el que la misma fuente declara para Pontificia Universidad Católica de Chile en 25 registro(s) con nombre (por ejemplo NCT03829319, NCT03302234, NCT03614013): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05952557",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8330336). Ese código postal es el que la misma fuente declara para CeCim Biocinetic en 4 registro(s) con nombre (por ejemplo NCT05111626, NCT05152147, NCT06252649): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05952557",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Temuco, código postal 4810218). Ese código postal es el que la misma fuente declara para CIDO — Centro de Investigación y Desarrollo Oncológico en 10 registro(s) con nombre (por ejemplo NCT03829319, NCT03740165, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT05952557",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "An Adjuvant Endocrine-based Therapy Study of Camizestrant (AZD9833) in ER+/HER2- Early Breast Cancer (CAMBRIA-2)",
@@ -20161,6 +21265,14 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT06090539",
           "fecha": "2026-08-18",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0105», Santiago, código postal 7580206). Ese código postal es el que la misma fuente declara para Inmunocel en 13 registro(s) con nombre (por ejemplo NCT04994717, NCT05139017, NCT05947851): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06090539",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -20340,6 +21452,46 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT06120491",
           "fecha": "2026-07-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Concepción, código postal 4070196). Ese código postal es el que la misma fuente declara para Biocenter en 10 registro(s) con nombre (por ejemplo NCT05139017, NCT05947851, NCT06504394): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06120491",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», La Serena, código postal 1720430). Ese código postal es el que la misma fuente declara para IC La Serena Research en 22 registro(s) con nombre (por ejemplo NCT04738487, NCT04879329, NCT05111626): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06120491",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7520349). Ese código postal es el que la misma fuente declara para Clínica Santa María en 4 registro(s) con nombre (por ejemplo NCT02272413, NCT03729245, NCT06311721): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06120491",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8330032). Ese código postal es el que la misma fuente declara para Pontificia Universidad Católica de Chile en 25 registro(s) con nombre (por ejemplo NCT03829319, NCT03302234, NCT03614013): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06120491",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Temuco, código postal 4781156). Ese código postal es el que la misma fuente declara para Centro de Investigación Clínica del Sur en 3 registro(s) con nombre (por ejemplo NCT03395197, NCT04736199, NCT06629779): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06120491",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -20683,6 +21835,30 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06232707",
           "fecha": "2024-05-31",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0027», Santiago, código postal 7580206). Ese código postal es el que la misma fuente declara para Inmunocel en 13 registro(s) con nombre (por ejemplo NCT04994717, NCT05139017, NCT05947851): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06232707",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0030», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06232707",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0029», Santiago, código postal 7650568). Ese código postal es el que la misma fuente declara para Clínica Alemana Santiago en 11 registro(s) con nombre (por ejemplo NCT05144841, NCT04191096, NCT06136559): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06232707",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study to Evaluate Efficacy and Safety of Alnuctamab Compared to Standard of Care Regimens in Participants With Relapsed or Refractory Multiple Myeloma (RRMM)",
@@ -20860,6 +22036,22 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06356129",
           "fecha": "2026-07-06",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0106», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06356129",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0107», Santiago, código postal 7580206). Ese código postal es el que la misma fuente declara para Inmunocel en 13 registro(s) con nombre (por ejemplo NCT04994717, NCT05139017, NCT05947851): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06356129",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study to Compare the Effectiveness and Safety of Golcadomide Plus R-CHOP vs Placebo Plus R-CHOP in Participants With Previously Untreated High-risk Large B-cell Lymphoma",
@@ -20893,6 +22085,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT06380751",
           "fecha": "2026-09-02",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Providencia, código postal 7500994). Ese código postal es el que la misma fuente declara para Oncovida en 10 registro(s) con nombre (por ejemplo NCT04305054, NCT04626479, NCT05609968): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06380751",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Recoleta, código postal 8420391). Ese código postal es el que la misma fuente declara para Bradford Hill Clinical Research Center en 2 registro(s) con nombre (por ejemplo NCT07221357, NCT06875310): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06380751",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8330034). Ese código postal es el que la misma fuente declara para Pontificia Universidad Católica de Chile en 2 registro(s) con nombre (por ejemplo NCT07291076, NCT07022483): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06380751",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -20962,6 +22178,22 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT06425302",
           "fecha": "2026-07-31",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0049», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06425302",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0050», Santiago, código postal 7580206). Ese código postal es el que la misma fuente declara para Inmunocel en 13 registro(s) con nombre (por ejemplo NCT04994717, NCT05139017, NCT05947851): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06425302",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -21165,6 +22397,30 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06525220",
           "fecha": "2026-06-02",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site 40», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06525220",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site 32», Santiago, código postal 7560908). Ese código postal es el que la misma fuente declara para Centro de Oncología de Precisión en 13 registro(s) con nombre (por ejemplo NCT04246177, NCT04924075, NCT05226598): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06525220",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Site 34», Santiago, código postal 8330336). Ese código postal es el que la misma fuente declara para CeCim Biocinetic en 4 registro(s) con nombre (por ejemplo NCT05111626, NCT05152147, NCT06252649): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06525220",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "sedes_pendientes_resolucion": [
@@ -21344,6 +22600,30 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06646276",
           "fecha": "2026-08-31",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0085», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06646276",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0083», Santiago, código postal 8330032). Ese código postal es el que la misma fuente declara para Pontificia Universidad Católica de Chile en 25 registro(s) con nombre (por ejemplo NCT03829319, NCT03302234, NCT03614013): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06646276",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0082», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06646276",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study to Compare the Efficacy and Safety of BMS-986489 (BMS-986012+ Nivolumab Fixed Dose Combination) in Combination With Carboplatin Plus Etoposide to That of Atezolizumab With Carboplatin Plus Etoposide as First-Line Therapy in Participants With Extensive-Stage Small Cell Lung Cancer (TIGOS).",
@@ -21412,6 +22692,30 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06764485",
           "fecha": "2026-09-08",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0236», Valdivia, código postal 5112129). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 11 registro(s) con nombre (por ejemplo NCT04738487, NCT05139017, NCT04241185): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06764485",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0135», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06764485",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0127», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06764485",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study to Compare the Efficacy and Safety of BMS-986365 Versus the Investigator's Choice of Therapy in Participants With Metastatic Castration-resistant Prostate Cancer",
@@ -21445,6 +22749,30 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT06764875",
           "fecha": "2026-06-16",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06764875",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Temuco, código postal 4810218). Ese código postal es el que la misma fuente declara para CIDO — Centro de Investigación y Desarrollo Oncológico en 10 registro(s) con nombre (por ejemplo NCT03829319, NCT03740165, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06764875",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06764875",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -21510,6 +22838,14 @@
           "fase": null,
           "fuente_url": "https://clinicaltrials.gov/study/NCT06767462",
           "fecha": "2026-06-16",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7620157). Ese código postal es el que la misma fuente declara para Universidad de los Andes en 4 registro(s) con nombre (por ejemplo NCT06152575, NCT06097364, NCT05730036): se infiere que es ese centro.",
+          "fase": null,
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06767462",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -21648,6 +22984,30 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06868277",
           "fecha": "2026-08-03",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Conception, código postal 4070196). Ese código postal es el que la misma fuente declara para Biocenter en 10 registro(s) con nombre (por ejemplo NCT05139017, NCT05947851, NCT06504394): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06868277",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06868277",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06868277",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Global Phase III Study of Rilvegostomig or Pembrolizumab Monotherapy for First-Line Treatment of PD-L1-high Metastatic Non-small Cell Lung Cancer",
@@ -21718,6 +23078,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT06911502",
           "fecha": "2026-05-20",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0154», Santiago, código postal 7580206). Ese código postal es el que la misma fuente declara para Inmunocel en 13 registro(s) con nombre (por ejemplo NCT04994717, NCT05139017, NCT05947851): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06911502",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -21856,6 +23224,30 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT06952803",
           "fecha": "2026-08-21",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Concepción, código postal 4070196). Ese código postal es el que la misma fuente declara para Biocenter en 10 registro(s) con nombre (por ejemplo NCT05139017, NCT05947851, NCT06504394): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06952803",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», La Serena, código postal 1720430). Ese código postal es el que la misma fuente declara para IC La Serena Research en 22 registro(s) con nombre (por ejemplo NCT04738487, NCT04879329, NCT05111626): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06952803",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Temuco, código postal 4781156). Ese código postal es el que la misma fuente declara para Centro de Investigación Clínica del Sur en 3 registro(s) con nombre (por ejemplo NCT03395197, NCT04736199, NCT06629779): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT06952803",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of Metastases Free Survival With Saruparib vs Placebo Added to a Standard RT/ADT in Men With High-risk Prostate Cancer With a BRCA Mutation",
@@ -21989,6 +23381,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT07063745",
           "fecha": "2026-08-25",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0473», Providencia, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07063745",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study to Compare the Combination of Navlimetostat (BMS-986504) With Pembrolizumab and Chemotherapy Versus Placebo Plus Pembrolizumab and Chemotherapy in First-line Metastatic Non-small Cell Lung Cancer Participants With Homozygous MTAP Deletion",
@@ -22097,6 +23497,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT07100080",
           "fecha": "2026-08-25",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0005», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07100080",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study of Izalontamab Brengitecan (BMS-986507) Versus Platinum-Pemetrexed for EGFR-mutated Non-small Cell Lung Cancer After Failure of EGFR TKI Therapy (IZABRIGHT-Lung01)",
@@ -22193,6 +23601,38 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT07218809",
           "fecha": "2026-07-21",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Providencia, código postal 7510032). Ese código postal es el que la misma fuente declara para Oncovida en 13 registro(s) con nombre (por ejemplo NCT03635567, NCT03675737, NCT03740165): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07218809",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 7500653). Ese código postal es el que la misma fuente declara para Centro de Estudios Clínicos SAGA en 29 registro(s) con nombre (por ejemplo NCT03929666, NCT04534205, NCT04738487): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07218809",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8330032). Ese código postal es el que la misma fuente declara para Pontificia Universidad Católica de Chile en 25 registro(s) con nombre (por ejemplo NCT03829319, NCT03302234, NCT03614013): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07218809",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Research Site», Santiago, código postal 8331143). Ese código postal es el que la misma fuente declara para CeCim Biocinetic en 4 registro(s) con nombre (por ejemplo NCT04604132, NCT05502237, NCT06012435): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07218809",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "AZD5335 vs. Mirvetuximab Soravtansine in FRα-high and AZD5335 vs. Chemotherapy in FRα-low Platinum-resistant Ovarian Cancer",
@@ -22227,6 +23667,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT07221149",
           "fecha": "2026-09-08",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0068», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07221149",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study to Evaluate the Safety and Efficacy of Pumitamig in Combination With Chemotherapy Versus Nivolumab in Combination With Chemotherapy in Participants With Previously Untreated Advanced or Metastatic Gastric, Gastroesophageal Junction, or Esophageal Adenocarcinoma (ROSETTA Gastric-204)",
@@ -22260,6 +23708,22 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT07221357",
           "fecha": "2026-08-17",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Bradfordhill», Recoleta, código postal 8420391). Ese código postal es el que la misma fuente declara para Bradford Hill Clinical Research Center en 2 registro(s) con nombre (por ejemplo NCT06875310): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07221357",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Fundacion Oncologia Arturo Lopez Perez», Santiago, código postal 7500921). Ese código postal es el que la misma fuente declara para Fundación Arturo López Pérez (FALP) en 90 registro(s) con nombre (por ejemplo NCT01663727, NCT02395172, NCT01358877): se infiere que es ese centro.",
+          "fase": "Fase III",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07221357",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -22719,6 +24183,22 @@
           "fase": "Fase II",
           "fuente_url": "https://clinicaltrials.gov/study/NCT07680764",
           "fecha": "2026-07-24",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0081», Santiago, código postal 7500713). Ese código postal es el que la misma fuente declara para Orlandi Oncología en 18 registro(s) con nombre (por ejemplo NCT03395197, NCT03829319, NCT03937154): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07680764",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov declara una sede sin nombre de centro («Local Institution - 0084», Viña del Mar, código postal 2520598). Ese código postal es el que la misma fuente declara para Oncocentro APYS en 57 registro(s) con nombre (por ejemplo NCT02008227, NCT01966471, NCT03829319): se infiere que es ese centro.",
+          "fase": "Fase II",
+          "fuente_url": "https://clinicaltrials.gov/study/NCT07680764",
+          "fecha": "2026-09-29",
           "confianza": "pendiente"
         }
       ],
@@ -69169,6 +70649,1470 @@
       "destino": "farmaco-zoledronic-acid",
       "tipo": "intervención",
       "texto_en_la_fuente": "Zoledronic acid"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00073528",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00073528"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00075270",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00075270"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00089999",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00089999"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct00089999",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00089999"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00099437",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00099437"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00300885",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00300885"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00334282",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00334282"
+    },
+    {
+      "origen": "itop",
+      "destino": "nct00338247",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00338247"
+    },
+    {
+      "origen": "itop",
+      "destino": "nct00374322",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00374322"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00374322",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00374322"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00387764",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00387764"
+    },
+    {
+      "origen": "hosp-sotero",
+      "destino": "nct00428090",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00428090"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct00457392",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Pfizer Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00457392"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00457392",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Pfizer Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00457392"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct00457691",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Pfizer Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00457691"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00490139",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00490139"
+    },
+    {
+      "origen": "hosp-san-borja",
+      "destino": "nct00490139",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00490139"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00490139",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00490139"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00558103",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00558103"
+    },
+    {
+      "origen": "hosp-calvo-mackenna",
+      "destino": "nct00560235",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Pfizer Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00560235"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct00561470",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Sanofi-Aventis Investigational Site Number 152002",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00561470"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00561470",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Sanofi-Aventis Investigational Site Number 152001",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00561470"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct00561470",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Sanofi-Aventis Investigational Site Number 152005",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00561470"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00625664",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Sanofi-Aventis Investigational Site Number 152001",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00625664"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00673049",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Pfizer Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00673049"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct00680901",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00680901"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct00680901",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00680901"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00858364",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00858364"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct00861614",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00861614"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00863746",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00863746"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct00863746",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00863746"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct00901901",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00901901"
+    },
+    {
+      "origen": "hosp-concepcion",
+      "destino": "nct00917384",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "ImClone Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT00917384"
+    },
+    {
+      "origen": "itop",
+      "destino": "nct01013740",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01013740"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct01077154",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01077154"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct01235962",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01235962"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct01244191",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01244191"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct01244191",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01244191"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct01244191",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01244191"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct01263886",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Investigational Site Number 152002",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01263886"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct01263886",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Investigational Site Number 152003",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01263886"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct01285609",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01285609"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct01285609",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01285609"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct01308580",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Investigational Site Number 152004",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01308580"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct01308580",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Investigational Site Number 152002",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01308580"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct01450696",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01450696"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct01450696",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01450696"
+    },
+    {
+      "origen": "hosp-san-borja",
+      "destino": "nct01450761",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01450761"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct01500720",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Investigational Site Number 152001",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01500720"
+    },
+    {
+      "origen": "hosp-san-borja",
+      "destino": "nct01901146",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01901146"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct01933932",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01933932"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct01933932",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01933932"
+    },
+    {
+      "origen": "hosp-san-borja",
+      "destino": "nct01933932",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01933932"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct01933932",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01933932"
+    },
+    {
+      "origen": "cics-temuco",
+      "destino": "nct01977651",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site CL56002",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT01977651"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct02016534",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02016534"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct02023697",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "(sin nombre)",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02023697"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct02475681",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02475681"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct02477826",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0173",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02477826"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct02542293",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02542293"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct02542293",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02542293"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct02542293",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02542293"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct02542293",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02542293"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct02588261",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site CL56001",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02588261"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct02960022",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site CL56006",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT02960022"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03056755",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03056755"
+    },
+    {
+      "origen": "ic-la-serena",
+      "destino": "nct03138512",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0223",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03138512"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct03138512",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03138512"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct03138512",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0222",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03138512"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03215706",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0059",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03215706"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct03383458",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0247",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03383458"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03447769",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Novartis Investigative Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03447769"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03504397",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site CL56003",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03504397"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct03504397",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site CL56008",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03504397"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct03504397",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site CL56005",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03504397"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct03556358",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Tanvex Investigational Site 4002",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03556358"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct03732677",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03732677"
+    },
+    {
+      "origen": "cido",
+      "destino": "nct03732677",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03732677"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct03732820",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03732820"
+    },
+    {
+      "origen": "cics-temuco",
+      "destino": "nct03732820",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03732820"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct03778229",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03778229"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct03778229",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03778229"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct03800134",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03800134"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03800134",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03800134"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03830866",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03830866"
+    },
+    {
+      "origen": "inc",
+      "destino": "nct03830866",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03830866"
+    },
+    {
+      "origen": "cido",
+      "destino": "nct03830866",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03830866"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct03873402",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0004",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03873402"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03937219",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Exelixis Clinical Site #91",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT03937219"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct04035486",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04035486"
+    },
+    {
+      "origen": "ic-la-serena",
+      "destino": "nct04039607",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0094",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04039607"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct04039607",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0156",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04039607"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct04039607",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0012",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04039607"
+    },
+    {
+      "origen": "ic-la-serena",
+      "destino": "nct04109066",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0197",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04109066"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04109066",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0318",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04109066"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct04109066",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0019",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04109066"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct04109066",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0018",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04109066"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct04109391",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Tanvex Investigational Site 4001E",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04109391"
+    },
+    {
+      "origen": "ic-la-serena",
+      "destino": "nct04149574",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0011",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04149574"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct04149574",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0072",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04149574"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04446117",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Exelixis Clinical Site #139",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04446117"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct04446117",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Exelixis Clinical Site #247",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04446117"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct04446117",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Exelixis Clinical Site #142",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04446117"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct04446117",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Exelixis Clinical Site #90",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04446117"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct04475939",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04475939"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04475939",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04475939"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct04581824",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04581824"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct04613596",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 007-699",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04613596"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04659603",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Investigational Site Number : 1520003",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04659603"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct04742192",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04742192"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct04810078",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0104",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04810078"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04810078",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0076",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04810078"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct04810078",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0077",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04810078"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct04915755",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04915755"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04915755",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "GSK Investigational Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04915755"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct04960709",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04960709"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct04960709",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT04960709"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct05043090",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05043090"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct05043090",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05043090"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct05261399",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05261399"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct05348577",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05348577"
+    },
+    {
+      "origen": "clinica-alemana",
+      "destino": "nct05348577",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05348577"
+    },
+    {
+      "origen": "inmunocel",
+      "destino": "nct05519085",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0329",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05519085"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct05678673",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Exelixis Clinical Site #53",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05678673"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct05678673",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Exelixis Clinical Site #106",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05678673"
+    },
+    {
+      "origen": "biocenter",
+      "destino": "nct05774951",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05774951"
+    },
+    {
+      "origen": "ic-la-serena",
+      "destino": "nct05774951",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05774951"
+    },
+    {
+      "origen": "clinica-puerto-montt",
+      "destino": "nct05774951",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05774951"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct05774951",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05774951"
+    },
+    {
+      "origen": "cecim",
+      "destino": "nct05774951",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05774951"
+    },
+    {
+      "origen": "biocenter",
+      "destino": "nct05952557",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05952557"
+    },
+    {
+      "origen": "ic-la-serena",
+      "destino": "nct05952557",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05952557"
+    },
+    {
+      "origen": "clinica-puerto-montt",
+      "destino": "nct05952557",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05952557"
+    },
+    {
+      "origen": "uandes",
+      "destino": "nct05952557",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05952557"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct05952557",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05952557"
+    },
+    {
+      "origen": "cecim",
+      "destino": "nct05952557",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05952557"
+    },
+    {
+      "origen": "cido",
+      "destino": "nct05952557",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT05952557"
+    },
+    {
+      "origen": "inmunocel",
+      "destino": "nct06090539",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0105",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06090539"
+    },
+    {
+      "origen": "biocenter",
+      "destino": "nct06120491",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06120491"
+    },
+    {
+      "origen": "ic-la-serena",
+      "destino": "nct06120491",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06120491"
+    },
+    {
+      "origen": "clinica-santa-maria",
+      "destino": "nct06120491",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06120491"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06120491",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06120491"
+    },
+    {
+      "origen": "cics-temuco",
+      "destino": "nct06120491",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06120491"
+    },
+    {
+      "origen": "inmunocel",
+      "destino": "nct06232707",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0027",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06232707"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06232707",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0030",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06232707"
+    },
+    {
+      "origen": "clinica-alemana",
+      "destino": "nct06232707",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0029",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06232707"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06356129",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0106",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06356129"
+    },
+    {
+      "origen": "inmunocel",
+      "destino": "nct06356129",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0107",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06356129"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct06380751",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06380751"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct06380751",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06380751"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06380751",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06380751"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06425302",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0049",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06425302"
+    },
+    {
+      "origen": "inmunocel",
+      "destino": "nct06425302",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0050",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06425302"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06525220",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site 40",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06525220"
+    },
+    {
+      "origen": "centro-precision",
+      "destino": "nct06525220",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site 32",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06525220"
+    },
+    {
+      "origen": "cecim",
+      "destino": "nct06525220",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Site 34",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06525220"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06646276",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0085",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06646276"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct06646276",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0083",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06646276"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct06646276",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0082",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06646276"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct06764485",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0236",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06764485"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct06764485",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0135",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06764485"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct06764875",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06764875"
+    },
+    {
+      "origen": "cido",
+      "destino": "nct06764875",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06764875"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct06764875",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06764875"
+    },
+    {
+      "origen": "uandes",
+      "destino": "nct06767462",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06767462"
+    },
+    {
+      "origen": "biocenter",
+      "destino": "nct06868277",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06868277"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct06868277",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06868277"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct06868277",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06868277"
+    },
+    {
+      "origen": "inmunocel",
+      "destino": "nct06911502",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0154",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06911502"
+    },
+    {
+      "origen": "biocenter",
+      "destino": "nct06952803",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06952803"
+    },
+    {
+      "origen": "ic-la-serena",
+      "destino": "nct06952803",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06952803"
+    },
+    {
+      "origen": "cics-temuco",
+      "destino": "nct06952803",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT06952803"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct07063745",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0473",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07063745"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07100080",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0005",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07100080"
+    },
+    {
+      "origen": "oncovida",
+      "destino": "nct07218809",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07218809"
+    },
+    {
+      "origen": "saga",
+      "destino": "nct07218809",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07218809"
+    },
+    {
+      "origen": "puc",
+      "destino": "nct07218809",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07218809"
+    },
+    {
+      "origen": "cecim",
+      "destino": "nct07218809",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Research Site",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07218809"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07221149",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0068",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07221149"
+    },
+    {
+      "origen": "bradford-hill",
+      "destino": "nct07221357",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Bradfordhill",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07221357"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct07221357",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Fundacion Oncologia Arturo Lopez Perez",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07221357"
+    },
+    {
+      "origen": "orlandi",
+      "destino": "nct07680764",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0081",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07680764"
+    },
+    {
+      "origen": "oncocentro",
+      "destino": "nct07680764",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "Local Institution - 0084",
+      "criterio": "codigo_postal",
+      "fuente_url": "https://clinicaltrials.gov/study/NCT07680764"
     }
   ],
   "campos_confiables": [

@@ -1,0 +1,1770 @@
+[
+ {
+  "ensayo": "NCT00073528",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7591046",
+  "centros_con_ese_codigo": {
+   "clinica-las-condes": 1
+  }
+ },
+ {
+  "ensayo": "NCT00075270",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7591046",
+  "centros_con_ese_codigo": {
+   "clinica-las-condes": 1
+  }
+ },
+ {
+  "ensayo": "NCT00105443",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8330024",
+  "centros_con_ese_codigo": {
+   "puc": 10,
+   "centro-cancer-uc": 2
+  }
+ },
+ {
+  "ensayo": "NCT00334282",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7591046",
+  "centros_con_ese_codigo": {
+   "clinica-las-condes": 1
+  }
+ },
+ {
+  "ensayo": "NCT00334282",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT00373113",
+  "sede_en_la_fuente": "Pfizer Investigational Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT00374322",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7591046",
+  "centros_con_ese_codigo": {
+   "clinica-las-condes": 1
+  }
+ },
+ {
+  "ensayo": "NCT00374322",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT00387764",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT00490139",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT00490139",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Valdivia",
+  "codigo_postal": "5090145",
+  "centros_con_ese_codigo": {
+   "hosp-valdivia": 1
+  }
+ },
+ {
+  "ensayo": "NCT00490139",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Valparaíso",
+  "codigo_postal": "2341131",
+  "centros_con_ese_codigo": {
+   "hosp-van-buren": 1
+  }
+ },
+ {
+  "ensayo": "NCT00490139",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT00558103",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT00558103",
+  "sede_en_la_fuente": "GSK Investigational Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT00561470",
+  "sede_en_la_fuente": "Sanofi-Aventis Investigational Site Number 152004",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT00680901",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT00680901",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT00692770",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8330024",
+  "centros_con_ese_codigo": {
+   "puc": 10,
+   "centro-cancer-uc": 2
+  }
+ },
+ {
+  "ensayo": "NCT00858364",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT00858364",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500006",
+  "centros_con_ese_codigo": {
+   "health-care-chile": 5,
+   "orlandi": 2
+  }
+ },
+ {
+  "ensayo": "NCT00858364",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7571831",
+  "centros_con_ese_codigo": {
+   "hosp-dipreca": 1
+  }
+ },
+ {
+  "ensayo": "NCT01013740",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "ViÃ±a Del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT01030783",
+  "sede_en_la_fuente": "Site 123",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01057810",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01057810",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT01076010",
+  "sede_en_la_fuente": "Site 123",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01077154",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01077154",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT01204749",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01204749",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Valparaíso",
+  "codigo_postal": "2363058",
+  "centros_con_ese_codigo": {
+   "inc": 1,
+   "oncocentro": 2
+  }
+ },
+ {
+  "ensayo": "NCT01235962",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT01263886",
+  "sede_en_la_fuente": "Investigational Site Number 152004",
+  "ciudad": "Valparaíso",
+  "codigo_postal": "2363058",
+  "centros_con_ese_codigo": {
+   "inc": 1,
+   "oncocentro": 2
+  }
+ },
+ {
+  "ensayo": "NCT01285609",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT01308580",
+  "sede_en_la_fuente": "Investigational Site Number 152001",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT01412957",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01412957",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT01437566",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "7630370",
+  "centros_con_ese_codigo": {
+   "cic-vina": 1,
+   "iram": 6
+  }
+ },
+ {
+  "ensayo": "NCT01437566",
+  "sede_en_la_fuente": null,
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01437566",
+  "sede_en_la_fuente": null,
+  "ciudad": "Valparaíso",
+  "codigo_postal": "2341391",
+  "centros_con_ese_codigo": {
+   "hosp-van-buren": 1
+  }
+ },
+ {
+  "ensayo": "NCT01437566",
+  "sede_en_la_fuente": null,
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT01450696",
+  "sede_en_la_fuente": null,
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT01450761",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT01450761",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT01456325",
+  "sede_en_la_fuente": null,
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01516736",
+  "sede_en_la_fuente": "Sandoz Investigational Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01642004",
+  "sede_en_la_fuente": "Local Institution - 0131",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT01642004",
+  "sede_en_la_fuente": "Local Institution - 0154",
+  "ciudad": "Santiago",
+  "codigo_postal": "7630370",
+  "centros_con_ese_codigo": {
+   "cic-vina": 1,
+   "iram": 6
+  }
+ },
+ {
+  "ensayo": "NCT01673867",
+  "sede_en_la_fuente": "Local Institution - 0077",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT01721772",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Santiago",
+  "codigo_postal": "7630370",
+  "centros_con_ese_codigo": {
+   "cic-vina": 1,
+   "iram": 6
+  }
+ },
+ {
+  "ensayo": "NCT01724021",
+  "sede_en_la_fuente": null,
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT01724021",
+  "sede_en_la_fuente": null,
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT01901146",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01933932",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7630370",
+  "centros_con_ese_codigo": {
+   "cic-vina": 1,
+   "iram": 6
+  }
+ },
+ {
+  "ensayo": "NCT01933932",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT01977651",
+  "sede_en_la_fuente": "Site CL56001",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT01977651",
+  "sede_en_la_fuente": "Site CL56004",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT01977651",
+  "sede_en_la_fuente": "Site CL56003",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT02016534",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7630370",
+  "centros_con_ese_codigo": {
+   "cic-vina": 1,
+   "iram": 6
+  }
+ },
+ {
+  "ensayo": "NCT02016534",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT02125461",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT02162667",
+  "sede_en_la_fuente": null,
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT02231749",
+  "sede_en_la_fuente": "Local Institution - 0101",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT02231749",
+  "sede_en_la_fuente": "Local Institution - 0103",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT02279862",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT02352948",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT02352948",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT02367040",
+  "sede_en_la_fuente": null,
+  "ciudad": "Temuco",
+  "codigo_postal": "4800827",
+  "centros_con_ese_codigo": {
+   "sim": 4,
+   "james-lind": 30
+  }
+ },
+ {
+  "ensayo": "NCT02369874",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT02437318",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT02437318",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT02437318",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT02475681",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT02477826",
+  "sede_en_la_fuente": "Local Institution - 0131",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT02477826",
+  "sede_en_la_fuente": "Local Institution - 0174",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT02542293",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT02542293",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810297",
+  "centros_con_ese_codigo": {
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT02542293",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT02588261",
+  "sede_en_la_fuente": "Site CL56002",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT02588261",
+  "sede_en_la_fuente": "Site CL56007",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT02809053",
+  "sede_en_la_fuente": "Research site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT02872116",
+  "sede_en_la_fuente": "Local Institution - 0032",
+  "ciudad": "Temuco",
+  "codigo_postal": "4800827",
+  "centros_con_ese_codigo": {
+   "sim": 4,
+   "james-lind": 30
+  }
+ },
+ {
+  "ensayo": "NCT02872116",
+  "sede_en_la_fuente": "Local Institution - 0033",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT02941926",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03056755",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT03056755",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03138512",
+  "sede_en_la_fuente": "Local Institution - 0221",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03141177",
+  "sede_en_la_fuente": "Local Institution - 0045",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03200717",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT03200717",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03215706",
+  "sede_en_la_fuente": "Local Institution - 0084",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03215706",
+  "sede_en_la_fuente": "Local Institution - 0079",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2520612",
+  "centros_con_ese_codigo": {
+   "cic-vina": 8,
+   "oncocentro": 5
+  }
+ },
+ {
+  "ensayo": "NCT03338790",
+  "sede_en_la_fuente": "Local Institution - 0034",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03338790",
+  "sede_en_la_fuente": "Local Institution - 0051",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT03377361",
+  "sede_en_la_fuente": "Local Institution - 0118",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03447769",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500006",
+  "centros_con_ese_codigo": {
+   "health-care-chile": 5,
+   "orlandi": 2
+  }
+ },
+ {
+  "ensayo": "NCT03519256",
+  "sede_en_la_fuente": "Local Institution - 0154",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03556358",
+  "sede_en_la_fuente": "Tanvex Investigational Site 4001",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT03626545",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500006",
+  "centros_con_ese_codigo": {
+   "health-care-chile": 5,
+   "orlandi": 2
+  }
+ },
+ {
+  "ensayo": "NCT03631199",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT03631199",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03635983",
+  "sede_en_la_fuente": "Local Institution - 0173",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330024",
+  "centros_con_ese_codigo": {
+   "puc": 10,
+   "centro-cancer-uc": 2
+  }
+ },
+ {
+  "ensayo": "NCT03704077",
+  "sede_en_la_fuente": "Local Institution",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330024",
+  "centros_con_ese_codigo": {
+   "puc": 10,
+   "centro-cancer-uc": 2
+  }
+ },
+ {
+  "ensayo": "NCT03732677",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT03732677",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540488",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 1,
+   "cic-vina": 7
+  }
+ },
+ {
+  "ensayo": "NCT03732820",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540488",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 1,
+   "cic-vina": 7
+  }
+ },
+ {
+  "ensayo": "NCT03778229",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03800134",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT03800134",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540488",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 1,
+   "cic-vina": 7
+  }
+ },
+ {
+  "ensayo": "NCT03830866",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7630370",
+  "centros_con_ese_codigo": {
+   "cic-vina": 1,
+   "iram": 6
+  }
+ },
+ {
+  "ensayo": "NCT03830866",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT03830866",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540488",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 1,
+   "cic-vina": 7
+  }
+ },
+ {
+  "ensayo": "NCT03873402",
+  "sede_en_la_fuente": "Local Institution - 0003",
+  "ciudad": "Santiago",
+  "codigo_postal": "8330024",
+  "centros_con_ese_codigo": {
+   "puc": 10,
+   "centro-cancer-uc": 2
+  }
+ },
+ {
+  "ensayo": "NCT03873402",
+  "sede_en_la_fuente": "Local Institution - 0034",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03873402",
+  "sede_en_la_fuente": "Local Institution - 0012",
+  "ciudad": "Viña El Mar",
+  "codigo_postal": "2540488",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 1,
+   "cic-vina": 7
+  }
+ },
+ {
+  "ensayo": "NCT03937219",
+  "sede_en_la_fuente": "Exelixis Clinical Site #85",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810561",
+  "centros_con_ese_codigo": {
+   "icos": 1
+  }
+ },
+ {
+  "ensayo": "NCT03937219",
+  "sede_en_la_fuente": "Exelixis Clinical Site #100",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT03980314",
+  "sede_en_la_fuente": "Local Institution - 0045",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT04035486",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT04035486",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT04035486",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540488",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 1,
+   "cic-vina": 7
+  }
+ },
+ {
+  "ensayo": "NCT04039607",
+  "sede_en_la_fuente": "Local Institution - 0283",
+  "ciudad": "Santiago",
+  "codigo_postal": "7630372",
+  "centros_con_ese_codigo": {
+   "iram": 1
+  }
+ },
+ {
+  "ensayo": "NCT04109391",
+  "sede_en_la_fuente": "Tanvex Investigational Site 4002E",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT04266301",
+  "sede_en_la_fuente": "Novartis Investigative Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540364",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 5,
+   "cic-vina": 11
+  }
+ },
+ {
+  "ensayo": "NCT04446117",
+  "sede_en_la_fuente": "Exelixis Clinical Site #148",
+  "ciudad": "Recoleta",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT04446117",
+  "sede_en_la_fuente": "Exelixis Clinical Site #113",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT04446117",
+  "sede_en_la_fuente": "Exelixis Clinical Site #119",
+  "ciudad": "Valparaíso",
+  "codigo_postal": "2540333",
+  "centros_con_ese_codigo": {
+   "cic-vina": 1
+  }
+ },
+ {
+  "ensayo": "NCT04613596",
+  "sede_en_la_fuente": "Local Institution - Unk073",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810469",
+  "centros_con_ese_codigo": {
+   "icos": 19,
+   "sim": 9,
+   "james-lind": 1,
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT04659603",
+  "sede_en_la_fuente": "Investigational Site Number : 1520002",
+  "ciudad": "Temuco",
+  "codigo_postal": "4800827",
+  "centros_con_ese_codigo": {
+   "sim": 4,
+   "james-lind": 30
+  }
+ },
+ {
+  "ensayo": "NCT04659603",
+  "sede_en_la_fuente": "Investigational Site Number : 1520001",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT05043090",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT05043090",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Temuco",
+  "codigo_postal": "4810561",
+  "centros_con_ese_codigo": {
+   "icos": 1
+  }
+ },
+ {
+  "ensayo": "NCT05348577",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500918",
+  "centros_con_ese_codigo": {
+   "falp": 1
+  }
+ },
+ {
+  "ensayo": "NCT05519085",
+  "sede_en_la_fuente": "Local Institution - 0387",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT05678673",
+  "sede_en_la_fuente": "Exelixis Clinical Site #109",
+  "ciudad": "Santiago",
+  "codigo_postal": "8241479",
+  "centros_con_ese_codigo": {
+   "iceg": 4,
+   "clinica-davila-vespucio": 5
+  }
+ },
+ {
+  "ensayo": "NCT05678673",
+  "sede_en_la_fuente": "Exelixis Clinical Site #107",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT06090539",
+  "sede_en_la_fuente": "Local Institution - 0109",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT06120491",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8241479",
+  "centros_con_ese_codigo": {
+   "iceg": 4,
+   "clinica-davila-vespucio": 5
+  }
+ },
+ {
+  "ensayo": "NCT06120491",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Viña del Mar",
+  "codigo_postal": "2540488",
+  "centros_con_ese_codigo": {
+   "instituto-oncologico-vina": 1,
+   "cic-vina": 7
+  }
+ },
+ {
+  "ensayo": "NCT06232707",
+  "sede_en_la_fuente": "Local Institution - 0026",
+  "ciudad": "Santiago",
+  "codigo_postal": "7620002",
+  "centros_con_ese_codigo": {
+   "puc": 3,
+   "clinica-uc-san-carlos": 5
+  }
+ },
+ {
+  "ensayo": "NCT06356129",
+  "sede_en_la_fuente": "Local Institution - 0108",
+  "ciudad": "Santiago",
+  "codigo_postal": "7620002",
+  "centros_con_ese_codigo": {
+   "puc": 3,
+   "clinica-uc-san-carlos": 5
+  }
+ },
+ {
+  "ensayo": "NCT06356129",
+  "sede_en_la_fuente": "Local Institution - 0110",
+  "ciudad": "Santiago",
+  "codigo_postal": "8320325",
+  "centros_con_ese_codigo": {
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT06356129",
+  "sede_en_la_fuente": "Local Institution - 0459",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT06380751",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Talca",
+  "codigo_postal": "3461341",
+  "centros_con_ese_codigo": {
+   "ucm": 1
+  }
+ },
+ {
+  "ensayo": "NCT06646276",
+  "sede_en_la_fuente": "Local Institution - 0084",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT06764485",
+  "sede_en_la_fuente": "Local Institution - 0132",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT06764875",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Rancagua",
+  "codigo_postal": "2852424",
+  "centros_con_ese_codigo": {
+   "urumed": 1
+  }
+ },
+ {
+  "ensayo": "NCT06764875",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7620002",
+  "centros_con_ese_codigo": {
+   "puc": 3,
+   "clinica-uc-san-carlos": 5
+  }
+ },
+ {
+  "ensayo": "NCT06764875",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8241479",
+  "centros_con_ese_codigo": {
+   "iceg": 4,
+   "clinica-davila-vespucio": 5
+  }
+ },
+ {
+  "ensayo": "NCT06767462",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500587",
+  "centros_con_ese_codigo": {
+   "enroll": 1
+  }
+ },
+ {
+  "ensayo": "NCT06868277",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT06911502",
+  "sede_en_la_fuente": "Local Institution - 0155",
+  "ciudad": "Santiago",
+  "codigo_postal": "8320325",
+  "centros_con_ese_codigo": {
+   "clinica-alemana": 1
+  }
+ },
+ {
+  "ensayo": "NCT06911502",
+  "sede_en_la_fuente": "Local Institution - 0153",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT06946797",
+  "sede_en_la_fuente": "Local Institution - 0067",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT07100080",
+  "sede_en_la_fuente": "Bradfordhill",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT07218809",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "7500587",
+  "centros_con_ese_codigo": {
+   "enroll": 1
+  }
+ },
+ {
+  "ensayo": "NCT07218809",
+  "sede_en_la_fuente": "Research Site",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT07221149",
+  "sede_en_la_fuente": "Local Institution - 0055",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ },
+ {
+  "ensayo": "NCT07680764",
+  "sede_en_la_fuente": "Local Institution - 0149",
+  "ciudad": "Santiago",
+  "codigo_postal": "8420383",
+  "centros_con_ese_codigo": {
+   "ciec": 10,
+   "clinica-davila": 1,
+   "bradford-hill": 73,
+   "aren-bachero": 2,
+   "meditek": 1
+  }
+ }
+]

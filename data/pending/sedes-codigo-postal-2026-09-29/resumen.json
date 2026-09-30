@@ -1,0 +1,9 @@
+{
+ "fecha": "2026-09-29",
+ "criterio": "código postal específico, >= 2 registros con nombre y >= 90% de ellos",
+ "ensayos_sin_sede_nombrada": 208,
+ "ensayos_con_sede_inferida": 99,
+ "vinculos_inferidos": 183,
+ "sedes_ambiguas": 159,
+ "ensayos_sin_institucion_despues": 109
+}
