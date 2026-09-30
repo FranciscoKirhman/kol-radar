@@ -1514,10 +1514,11 @@
       }
       if (geoView.classList.contains("active")) mapaChile.mostrar();
       inicio.pintar();
+      // La ficha de una institución muestra su dirección: se pide ya, pesa poco. Va antes de leer el
+      // enlace para que nada de lo que pase al abrir una ficha la deje sin pedir.
+      cargarUbicaciones().catch(function () {});
       // Un enlace compartido (#ficha=pembrolizumab) abre directo las conexiones de esa ficha.
       leerHash();
-      // La ficha de una institución muestra su dirección: se pide ya, pesa poco.
-      cargarUbicaciones().catch(function () {});
     })
     .catch(function (err) {
       document.getElementById("loading-state").hidden = true;
@@ -6109,7 +6110,16 @@
   function leerHash() {
     var m = location.hash.match(/^#ficha=(.+)$/);
     if (!m) return;
-    var id = decodeURIComponent(m[1]);
+    var id;
+    // Un enlace mal copiado (#ficha=%E0%A4%A) hacía fallar decodeURIComponent dentro de la carga de
+    // datos: el .catch mostraba "No se pudo cargar…" encima de la página ya cargada. Se ignora.
+    try { id = decodeURIComponent(m[1]); } catch (e) { return; }
+    // Una ficha fusionada con otra guarda su id viejo en ids_anteriores: los enlaces ya compartidos
+    // siguen abriendo a la persona.
+    if (!byId[id]) {
+      var nueva = entidades.filter(function (n) { return (n.ids_anteriores || []).indexOf(id) !== -1; })[0];
+      if (nueva) id = nueva.id;
+    }
     if (byId[id]) explorador.abrir(id);
   }
   window.addEventListener("hashchange", leerHash);

@@ -1,7 +1,7 @@
 {
   "descripcion": "Base de fichas reales sobre oncología en Chile (19 áreas): profesionales, instituciones, ensayos clínicos con sede en Chile y los fármacos que evalúan, recolectada de ClinicalTrials.gov, PubMed, SciELO Chile, el buscador de estudios clínicos de la CIF, la planilla de inspecciones del ISP, el NCI Thesaurus y sitios institucionales. Cada hecho lleva su URL de origen. Casi nada pasó por revisión humana: ver el campo 'confianza' de cada hecho.",
   "generado": "2026-08-09",
-  "actualizado": "2026-09-29",
+  "actualizado": "2026-09-30",
   "especialidad_muestra": "oncología (19 áreas)",
   "contacto": {
     "_como_completar": "Poné en 'canal' UNA de dos cosas y listo — el pie de página del sitio cambia solo, no hay que tocar HTML: (a) una dirección de correo, ej. contacto@tudominio.cl; o (b) la URL https:// de un formulario. Mientras siga en null, el sitio dice honestamente que el canal todavía no existe.",
@@ -3305,7 +3305,10 @@
       "alias_en_la_fuente": [
         "Francisco Aguayo G."
       ],
-      "nota_identidad": "Ficha unificada el 2026-09-29: «Francisco Aguayo G.» (SciELO 2006, Instituto Nacional del Tórax) y «Francisco Aguayo» (PubMed 2022 y 2024, Universidad de Tarapacá) son la misma persona: el artículo de 2006 y el de PubMed de 2007 sobre metilación de p16 en cáncer de pulmón en Chile comparten coautores (Darwins Castillo, Leda Guzmán) y tema, y el registro ORCID de Francisco Aguayo González, de la Universidad de Tarapacá, reclama como propio el de 2007. La «G.» es González. La decidió Claude por encargo de Francisco (2026-09-29), con la evidencia citada; todavía no la revisó una persona."
+      "nota_identidad": "Ficha unificada el 2026-09-29: «Francisco Aguayo G.» (SciELO 2006, Instituto Nacional del Tórax) y «Francisco Aguayo» (PubMed 2022 y 2024, Universidad de Tarapacá) son la misma persona: el artículo de 2006 y el de PubMed de 2007 sobre metilación de p16 en cáncer de pulmón en Chile comparten coautores (Darwins Castillo, Leda Guzmán) y tema, y el registro ORCID de Francisco Aguayo González, de la Universidad de Tarapacá, reclama como propio el de 2007. La «G.» es González. La decidió Claude por encargo de Francisco (2026-09-29), con la evidencia citada; todavía no la revisó una persona.",
+      "ids_anteriores": [
+        "francisco-aguayo-g"
+      ]
     },
     {
       "id": "martin-montecino",
@@ -3850,6 +3853,9 @@
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
         "Juan Carlos Díaz P."
+      ],
+      "ids_anteriores": [
+        "juan-carlos-diaz-p"
       ]
     },
     {
@@ -3942,7 +3948,10 @@
         }
       ],
       "area": "cáncer de pulmón",
-      "nota_identidad": "Ficha unificada el 2026-08-18: 'Claudio Silva F.' (indexado así en PubMed) y 'Claudio Silva Fuente-Alba' (SciELO) eran dos fichas de la misma persona. La fusión la aprobó una revisión humana y la respalda el registro ORCID 0000-0003-2472-1833, que lista ambas formas del nombre."
+      "nota_identidad": "Ficha unificada el 2026-08-18: 'Claudio Silva F.' (indexado así en PubMed) y 'Claudio Silva Fuente-Alba' (SciELO) eran dos fichas de la misma persona. La fusión la aprobó una revisión humana y la respalda el registro ORCID 0000-0003-2472-1833, que lista ambas formas del nombre.",
+      "ids_anteriores": [
+        "claudio-silva-f"
+      ]
     },
     {
       "id": "g-cristobal-ramos-gomez",

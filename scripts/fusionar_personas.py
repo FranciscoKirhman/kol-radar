@@ -76,7 +76,12 @@ def fusionar(base, f):
     if not a:
         sys.exit("No existe la ficha que queda: " + f["queda"])
     if not b:
-        return False                     # ya fusionada en una corrida anterior
+        # Ya fusionada en una corrida anterior. Solo se asegura que la ficha que quedó recuerde el id
+        # absorbido, para que los enlaces compartidos (#ficha=<id viejo>) sigan funcionando.
+        if f["absorbe"] not in a.setdefault("ids_anteriores", []):
+            a["ids_anteriores"].append(f["absorbe"])
+            return True
+        return False
     if a["tipo"] != "persona" or b["tipo"] != "persona":
         sys.exit("Solo se fusionan personas: %s, %s" % (a["id"], b["id"]))
     vistos = {(h.get("fuente_url"), h.get("hecho")) for h in a["hechos"]}
@@ -88,6 +93,10 @@ def fusionar(base, f):
         if (ev["url"], ev["hecho"]) not in vistos:
             a["hechos"].append({"tipo": "afiliacion", "hecho": ev["hecho"], "fuente_url": ev["url"],
                                 "fecha": FECHA, "confianza": "pendiente"})
+    ids = a.setdefault("ids_anteriores", [])
+    for i in [b["id"]] + list(b.get("ids_anteriores") or []):
+        if i not in ids:
+            ids.append(i)
     alias = a.setdefault("alias_en_la_fuente", [])
     for n in [b["nombre"]] + list(b.get("alias_en_la_fuente") or []):
         if n not in alias and n != f["nombre"]:
