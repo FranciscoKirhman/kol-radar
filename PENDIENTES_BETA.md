@@ -10,18 +10,21 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
 2. **El tier público por persona** ("Prioridad alta / media / Monitorear"). Según `REVISION_LEGAL.md`
    es elaboración de perfiles: sacarlo de la vista pública, reemplazarlo por conteos descriptivos, o
    mantenerlo con una evaluación de impacto y publicando su lógica. Antes del 1 de diciembre de 2026.
-3. **Responsable legal y domicilio** para `PRIVACIDAD.md`, idealmente con un abogado. Con eso el
-   aviso se publica como página del sitio.
-4. **Indexación en buscadores** (T1 de la auditoría): decidir cuando 2 y 3 estén resueltos.
+3. **Domicilio del responsable** para `PRIVACIDAD.md`. El responsable es Francisco Kirhman (decidido
+   el 2026-09-30, ya visible en el pie del sitio); el domicilio es lo único que falta para publicar el
+   aviso como página del sitio.
+4. ~~Indexación en buscadores~~: decidido el 2026-09-30, **se indexa** (sin `noindex`). El sitio tiene
+   descripción, datos estructurados de Dataset y `sitemap.xml`; falta dar de alta la propiedad en
+   Google Search Console y enviar el sitemap (lo hace Francisco con su cuenta).
 
 ### Tareas externas
 5. **Tercera ronda para ChatGPT** (`data/pending/tarea-chatgpt-2026-09-29-ronda3/`): 16 instituciones
    sin dirección, 16 textos de sede y 109 ensayos sin institución. Las respuestas se validan con
    `scripts/validar_respuesta_chatgpt.py` y se integran.
-6. **OpenAlex**: crear la cuenta y guardar la API key como secret `OPENALEX_API_KEY` cuando se quiera
-   usar (desambiguación de autores por ORCID y publicaciones por año). No hace falta ningún correo.
-7. **Respaldar** el registro de exclusiones y su clave (`~/.config/kol-radar/`) en un gestor de
-   contraseñas. No es urgente mientras el registro esté vacío.
+6. **OpenAlex**: guardar la API key como secret `OPENALEX_API_KEY` del repositorio (Francisco) y
+   correr el workflow "Enriquecer desde OpenAlex". No hace falta ningún correo.
+7. **Respaldar** el registro de exclusiones y su clave (`~/.config/kol-radar/`): no hace falta todavía
+   (decisión del 2026-09-30), el registro está vacío.
 
 ### Revisión humana (sin fecha)
 8. **Fichas de personas** (Etapa 3): 1 de 3.194 hechos revisado. Empezar por las 8 que entraron desde

@@ -7,7 +7,7 @@
 
 ## Quién es responsable
 
-[Nombre de la persona o institución responsable del tratamiento], con domicilio en [domicilio], es
+Francisco Kirhman, con domicilio en [domicilio], es
 responsable de los datos personales que aparecen en KOL Radar. Contacto para cualquier solicitud
 sobre tus datos: franckirhman@gmail.com.
 
@@ -24,12 +24,11 @@ la página exacta de donde salió.
 **No hay**: datos de contacto personales, fotografías, datos de salud (ni tuyos ni de pacientes),
 opiniones, ni el resultado de inspecciones regulatorias.
 
-[DECIDIR — ver `REVISION_LEGAL.md` §5.1. Mientras el sitio muestre un tier por persona, este aviso
-tiene que decirlo así:] **Hay un indicador automático de actividad.** El sitio calcula para cada
+**Hay un indicador automático de actividad.** El sitio calcula para cada
 persona un puntaje y un nivel ("Prioridad alta", "Prioridad media", "Monitorear") a partir de la
 cantidad, el tipo y la fecha de la evidencia pública que la nombra. Es un cálculo automático, sin
 revisión humana; no evalúa la calidad de tu trabajo ni tu idoneidad profesional, y ninguna decisión
-sobre vos se toma en base a él. Cómo se calcula: [enlace a SCORING.md]. Podés oponerte a que se te
+sobre vos se toma en base a él. Cómo se calcula: <https://github.com/FranciscoKirhman/kol-radar/blob/main/SCORING.md>. Podés oponerte a que se te
 calcule o se muestre.
 
 **Identidad**: la mayoría de las fichas no pasó todavía por una revisión humana de identidad. Cuando
@@ -47,14 +46,14 @@ pública. No se usan para marketing, publicidad ni perfilamiento comercial.
 El tratamiento se basa en el **interés legítimo** (art. 13 letra d de la Ley 19.628, reformada por la
 Ley 21.719) de difundir información profesional y científica de interés público, ya publicada por las
 propias fuentes, con fines no comerciales respecto de las personas nombradas. La evaluación de ese
-interés legítimo está en [enlace a EVALUACION_INTERES_LEGITIMO.md]. Como la base no es tu
+interés legítimo está en <https://github.com/FranciscoKirhman/kol-radar/blob/main/EVALUACION_INTERES_LEGITIMO.md>. Como la base no es tu
 consentimiento, no hay un consentimiento que revocar; lo que tenés es el derecho de oposición.
 
 ## Quién ve los datos
 
 Cualquiera: el sitio es público y la base se puede descargar. El sitio y sus datos se alojan en
-GitHub (GitHub, Inc., Estados Unidos), que actúa como proveedor de alojamiento. [Revisar con abogado:
-cómo se informa esta transferencia internacional y el nivel de protección de EE. UU.]
+GitHub (GitHub, Inc., Estados Unidos), que actúa como proveedor de alojamiento: los datos se
+almacenan y se sirven desde fuera de Chile.
 
 ## Tus derechos
 
@@ -92,4 +91,4 @@ fuentes en cada actualización; lo que la fuente retira, se retira.
 La base se publica con licencia ODbL (ver `data/LICENSE.md`). Quien la reutilice es responsable de
 su propio tratamiento de datos personales, y le pedimos que respete las supresiones que publicamos.
 
-Última actualización: [fecha].
+Última actualización: 2026-09-30.

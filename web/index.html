@@ -4,6 +4,38 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KOL Radar — oncología en Chile (beta)</title>
+<!-- Para buscadores y para cuando se comparte el enlace. El texto no promete validación: casi nada
+     pasó por revisión humana, y así lo dice. -->
+<meta name="description" content="Mapa de ensayos clínicos, centros, fármacos y profesionales de la oncología en Chile, construido con evidencia pública: cada dato enlaza a su fuente (ClinicalTrials.gov, PubMed, SciELO, ISP, CIF). Beta, sin revisión humana." />
+<link rel="canonical" href="https://franciscokirhman.github.io/kol-radar/web/index.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_CL" />
+<meta property="og:site_name" content="KOL Radar" />
+<meta property="og:title" content="KOL Radar — oncología en Chile" />
+<meta property="og:description" content="Quién investiga qué en oncología en Chile: ensayos clínicos, centros, fármacos y profesionales, con la fuente de cada dato. Beta abierta." />
+<meta property="og:url" content="https://franciscokirhman.github.io/kol-radar/web/index.html" />
+<meta name="twitter:card" content="summary" />
+<!-- Dataset de schema.org: hace que la base aparezca en Google Dataset Search. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "KOL Radar — ensayos clínicos, centros y profesionales de la oncología en Chile",
+  "description": "Base abierta de ensayos clínicos oncológicos con sede en Chile, sus centros, los fármacos que evalúan y los profesionales que la evidencia pública nombra, con la URL de origen de cada dato. Fuentes: ClinicalTrials.gov, PubMed, SciELO Chile, el buscador de estudios clínicos de la CIF, la planilla de inspecciones del ISP y el NCI Thesaurus. Beta: los datos no pasaron por revisión humana.",
+  "url": "https://franciscokirhman.github.io/kol-radar/web/index.html",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "isAccessibleForFree": true,
+  "inLanguage": "es",
+  "keywords": ["oncología", "ensayos clínicos", "Chile", "Medical Affairs", "investigación clínica", "cáncer"],
+  "spatialCoverage": {"@type": "Place", "name": "Chile"},
+  "creator": {"@type": "Person", "name": "Francisco Kirhman"},
+  "distribution": [{
+    "@type": "DataDownload",
+    "encodingFormat": "application/json",
+    "contentUrl": "https://franciscokirhman.github.io/kol-radar/data/sample/perfiles-muestra.json"
+  }]
+}
+</script>
 <style>
   /* Dirección visual "publicación científica": papel cálido, tinta serif en los nombres,
      el grafo presentado como figura. Paleta categórica validada con validate_palette.js
@@ -2400,6 +2432,9 @@
     if (esUrlSegura(canal)) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
     pie.appendChild(a);
     pie.appendChild(document.createTextNode("."));
+    // La ley pide identificar al responsable de los datos (Ley 19.628 reformada, art. 14 ter).
+    var resp = contacto && typeof contacto.responsable === "string" ? contacto.responsable.trim() : "";
+    if (resp) pie.appendChild(document.createTextNode(" Responsable de los datos: " + resp + "."));
   }
 
   // Seis colores, no diecinueve. Comprobado en OKLab: por encima de seis, los pares caen bajo
