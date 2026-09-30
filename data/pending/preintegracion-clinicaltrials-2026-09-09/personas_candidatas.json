@@ -368,9 +368,9 @@
   ],
   "fecha_recuperacion": "2026-09-09",
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "misma persona que la ficha christian-caglevic: mismo nombre (o el nombre completo) y la misma institución en el mismo registro; el vínculo con NCT06765109 ya estaba en la muestra",
+  "revisor": "Claude, por encargo de Francisco",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_fuente": "Pamela Salman, MD",
@@ -389,9 +389,9 @@
   ],
   "fecha_recuperacion": "2026-09-09",
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "misma persona que la ficha pamela-salman: mismo nombre (o el nombre completo) y la misma institución en el mismo registro; el vínculo con NCT06765109 ya estaba en la muestra",
+  "revisor": "Claude, por encargo de Francisco",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_fuente": "Hector Gonzalo Galindo Aranibar, MD",
@@ -410,9 +410,9 @@
   ],
   "fecha_recuperacion": "2026-09-09",
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "misma persona que la ficha hector-galindo: mismo nombre (o el nombre completo) y la misma institución en el mismo registro; el vínculo con NCT06765109 ya estaba en la muestra",
+  "revisor": "Claude, por encargo de Francisco",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_fuente": "Ariel Zwenger, MD",
@@ -1425,9 +1425,9 @@
   ],
   "fecha_recuperacion": "2026-09-09",
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "misma persona que la ficha pablo-rodriguez: mismo nombre (o el nombre completo) y la misma institución en el mismo registro; el vínculo con NCT06890598 ya estaba en la muestra",
+  "revisor": "Claude, por encargo de Francisco",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_fuente": "Rodrigo Uribe",
@@ -1446,9 +1446,9 @@
   ],
   "fecha_recuperacion": "2026-09-09",
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "misma persona que la ficha rodrigo-uribe: mismo nombre (o el nombre completo) y la misma institución en el mismo registro; el vínculo con NCT06890598 ya estaba en la muestra",
+  "revisor": "Claude, por encargo de Francisco",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_fuente": "Pamela Salman",
@@ -1467,9 +1467,9 @@
   ],
   "fecha_recuperacion": "2026-09-09",
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "misma persona que la ficha pamela-salman: mismo nombre (o el nombre completo) y la misma institución en el mismo registro; el vínculo con NCT06890598 ya estaba en la muestra",
+  "revisor": "Claude, por encargo de Francisco",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_fuente": "Carlos Rojas",
@@ -1488,9 +1488,9 @@
   ],
   "fecha_recuperacion": "2026-09-09",
   "confianza": "pendiente",
-  "decision_humana": "",
-  "revisor": "",
-  "fecha_decision": ""
+  "decision_humana": "misma persona que la ficha carlos-rojas: mismo nombre (o el nombre completo) y la misma institución en el mismo registro; el vínculo con NCT06890598 ya estaba en la muestra",
+  "revisor": "Claude, por encargo de Francisco",
+  "fecha_decision": "2026-09-29"
  },
  {
   "nombre_fuente": "Study Coordinator",

@@ -186,6 +186,17 @@ y lo agrego; es media hora de trabajo y cero riesgo.
 
 ## Decisión 5 — Dos fusiones de identidad más, esperando tu OK
 
+> **Resuelta el 2026-09-29** (Francisco: "intenta descifrar las fusiones"). Se volvió a verificar la
+> evidencia contra ORCID, PubMed y la página de la U. de Chile, y se aplicaron las dos fusiones con
+> `scripts/fusionar_personas.py`, que deja la evidencia citada y una nota visible en cada ficha:
+> **5.1 sí** (Francisco Aguayo G. → Francisco Aguayo), **5.2 sí** (Juan Carlos Díaz P. → Juan Carlos
+> Díaz Patiño). **5.3: se mantienen separadas**: desde la expansión, `hosp-uchile` es sede de sus
+> propios ensayos en ClinicalTrials.gov y el mapa de regiones trata cada centro como un lugar donde se
+> hacen estudios; el Hospital Clínico es ese lugar, la Universidad es la afiliación académica. Los 7
+> candidatos de ClinicalTrials.gov que coincidían con fichas existentes ya estaban ligados a ellas; su
+> decisión quedó anotada en `personas_candidatas.json`. Ninguna de estas fusiones la revisó todavía
+> una persona.
+
 ### El problema concreto
 
 Confirmaste que Claudio Silva F. y Claudio Silva Fuente-Alba eran la misma persona, y ya están

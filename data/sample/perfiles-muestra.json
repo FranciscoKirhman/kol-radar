@@ -3277,9 +3277,35 @@
           "fecha": "2024-10-24",
           "confianza": "pendiente",
           "revista": "Biological Research"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón; único autor de este artículo afiliado al Instituto Nacional del Tórax (institución ya existente en la muestra).",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
+          "fecha": "2006-03",
+          "confianza": "pendiente",
+          "revista": "Revista Chilena de Enfermedades Respiratorias"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "El registro ORCID 0000-0002-9619-7535 corresponde a Francisco Aguayo González, con empleo en el Departamento de Ciencias Biomédicas de la Universidad de Tarapacá, y reclama como obra propia el artículo de PubMed 18449464 (2007).",
+          "fuente_url": "https://orcid.org/0000-0002-9619-7535",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "«High frequency of p16 promoter methylation in non-small cell lung carcinomas from Chile» (Biol Res, 2007) lo firma «Aguayo FR» junto a Castillo D y Guzman LM, los mismos coautores del artículo de SciELO de 2006 sobre p16INK4a en cáncer escamoso de pulmón.",
+          "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/18449464/",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "alias_en_la_fuente": [
+        "Francisco Aguayo G."
+      ],
+      "nota_identidad": "Ficha unificada el 2026-09-29: «Francisco Aguayo G.» (SciELO 2006, Instituto Nacional del Tórax) y «Francisco Aguayo» (PubMed 2022 y 2024, Universidad de Tarapacá) son la misma persona: el artículo de 2006 y el de PubMed de 2007 sobre metilación de p16 en cáncer de pulmón en Chile comparten coautores (Darwins Castillo, Leda Guzmán) y tema, y el registro ORCID de Francisco Aguayo González, de la Universidad de Tarapacá, reclama como propio el de 2007. La «G.» es González. La decidió Claude por encargo de Francisco (2026-09-29), con la evidencia citada; todavía no la revisó una persona."
     },
     {
       "id": "martin-montecino",
@@ -3496,26 +3522,6 @@
       "area": "cáncer de pulmón"
     },
     {
-      "id": "juan-carlos-diaz-p",
-      "nombre": "Juan Carlos Díaz P.",
-      "tipo": "persona",
-      "ciudad": "Santiago",
-      "subtitulo": "Departamento de Radiología",
-      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
-      "hechos": [
-        {
-          "tipo": "publicacion",
-          "hecho": "Coautor (radiólogo) del artículo de Fernando Saldías P. sobre detección precoz de cáncer pulmonar con TC de tórax en pacientes EPOC.",
-          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
-          "fecha": "2016-02",
-          "confianza": "pendiente",
-          "revista": "Revista Médica de Chile"
-        }
-      ],
-      "nota_identidad": "Existe otro 'Juan Carlos Díaz Patiño' (radiólogo, Departamento de Imágenes, Clínica Alemana de Santiago / Clínica Alemana Universidad del Desarrollo) como primer autor del artículo Rev Med Chile 2018;146(10) sobre neoplasia pulmonar quística. Mismo nombre y apellido, misma ciudad y especialidad (radiología), pero afiliación institucional distinta y 2 años de diferencia entre publicaciones -- podría ser la misma persona que cambió de institución, o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados.",
-      "area": "cáncer de pulmón"
-    },
-    {
       "id": "rodrigo-diaz-t",
       "nombre": "Rodrigo Díaz T.",
       "tipo": "persona",
@@ -3648,25 +3654,6 @@
         {
           "tipo": "publicacion",
           "hecho": "Primer autor del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón en pacientes chilenos.",
-          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
-          "fecha": "2006-03",
-          "confianza": "pendiente",
-          "revista": "Revista Chilena de Enfermedades Respiratorias"
-        }
-      ],
-      "area": "cáncer de pulmón"
-    },
-    {
-      "id": "francisco-aguayo-g",
-      "nombre": "Francisco Aguayo G.",
-      "tipo": "persona",
-      "ciudad": "Santiago",
-      "subtitulo": "Laboratorio de Biología Molecular",
-      "subtitulo_fuente": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
-      "hechos": [
-        {
-          "tipo": "publicacion",
-          "hecho": "Coautor del estudio sobre hipermetilación del gen p16INK4a en cáncer escamoso de pulmón; único autor de este artículo afiliado al Instituto Nacional del Tórax (institución ya existente en la muestra).",
           "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
           "fecha": "2006-03",
           "confianza": "pendiente",
@@ -3842,10 +3829,28 @@
           "fecha": "2018-12",
           "confianza": "pendiente",
           "revista": "Revista Médica de Chile"
+        },
+        {
+          "tipo": "publicacion",
+          "hecho": "Coautor (radiólogo) del artículo de Fernando Saldías P. sobre detección precoz de cáncer pulmonar con TC de tórax en pacientes EPOC.",
+          "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
+          "fecha": "2016-02",
+          "confianza": "pendiente",
+          "revista": "Revista Médica de Chile"
+        },
+        {
+          "tipo": "afiliacion",
+          "hecho": "La Facultad de Medicina de la Universidad de Chile lista a «Dr. Juan Carlos Díaz Patiño — Prof. Asociado — Facultad de Medicina U. de Chile» entre los docentes de su Estada de Perfeccionamiento en Imagenología de Tórax y Cardiovascular.",
+          "fuente_url": "https://medichi.uchile.cl/estada-de-perfeccionamiento-en-imagenologia-de-torax-y-cardiovascular/",
+          "fecha": "2026-09-29",
+          "confianza": "pendiente"
         }
       ],
-      "nota_identidad": "Existe otro 'Juan Carlos Díaz P.' (radiólogo, Departamento de Radiología, Hospital Clínico Universidad de Chile) como coautor del artículo Rev Med Chile 2016;144(2) de Fernando Saldías P. Mismo nombre, misma ciudad y especialidad, pero institución distinta y 2 años de diferencia -- podría ser la misma persona que cambió de institución o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados.",
-      "area": "cáncer de pulmón"
+      "nota_identidad": "Existe otro 'Juan Carlos Díaz P.' (radiólogo, Departamento de Radiología, Hospital Clínico Universidad de Chile) como coautor del artículo Rev Med Chile 2016;144(2) de Fernando Saldías P. Mismo nombre, misma ciudad y especialidad, pero institución distinta y 2 años de diferencia -- podría ser la misma persona que cambió de institución o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados. Existe otro 'Juan Carlos Díaz Patiño' (radiólogo, Departamento de Imágenes, Clínica Alemana de Santiago / Clínica Alemana Universidad del Desarrollo) como primer autor del artículo Rev Med Chile 2018;146(10) sobre neoplasia pulmonar quística. Mismo nombre y apellido, misma ciudad y especialidad (radiología), pero afiliación institucional distinta y 2 años de diferencia entre publicaciones -- podría ser la misma persona que cambió de institución, o dos radiólogos distintos. NO se fusionan; se reportan como candidatos separados. Ficha unificada el 2026-09-29: «Juan Carlos Díaz P.» (Rev Med Chile 2016, Radiología del Hospital Clínico U. de Chile, TC de tórax en EPOC) y «Juan Carlos Díaz Patiño» (Rev Med Chile 2018, Imágenes de Clínica Alemana, neoplasia pulmonar quística) son la misma persona: la Facultad de Medicina de la U. de Chile lista a «Dr. Juan Carlos Díaz Patiño, Prof. Asociado» como docente de su programa de imagenología de tórax. La «P.» es Patiño; la doble afiliación universidad–clínica privada es habitual. No es la misma persona que Orlando Díaz P., broncopulmonar de la PUC. La decidió Claude por encargo de Francisco (2026-09-29), con la evidencia citada; todavía no la revisó una persona.",
+      "area": "cáncer de pulmón",
+      "alias_en_la_fuente": [
+        "Juan Carlos Díaz P."
+      ]
     },
     {
       "id": "julia-alegria-bobadilla",
@@ -51038,7 +51043,7 @@
       "tipo": "afiliación"
     },
     {
-      "origen": "francisco-aguayo-g",
+      "origen": "francisco-aguayo",
       "destino": "torax",
       "tipo": "afiliación"
     },
@@ -51213,12 +51218,12 @@
       "tipo": "afiliación secundaria"
     },
     {
-      "origen": "juan-carlos-diaz-p",
+      "origen": "juan-carlos-diaz-patino",
       "destino": "hosp-uchile",
       "tipo": "afiliación"
     },
     {
-      "origen": "juan-carlos-diaz-p",
+      "origen": "juan-carlos-diaz-patino",
       "destino": "uchile",
       "tipo": "afiliación secundaria"
     },
@@ -51519,7 +51524,7 @@
     },
     {
       "origen": "fernando-saldias",
-      "destino": "juan-carlos-diaz-p",
+      "destino": "juan-carlos-diaz-patino",
       "tipo": "coautoría"
     },
     {
@@ -51528,12 +51533,12 @@
       "tipo": "coautoría"
     },
     {
-      "origen": "juan-carlos-diaz-p",
+      "origen": "juan-carlos-diaz-patino",
       "destino": "orlando-diaz-p",
       "tipo": "coautoría"
     },
     {
-      "origen": "juan-carlos-diaz-p",
+      "origen": "juan-carlos-diaz-patino",
       "destino": "rodrigo-diaz-t",
       "tipo": "coautoría"
     },
@@ -51694,7 +51699,7 @@
     },
     {
       "origen": "darwins-castillo-a",
-      "destino": "francisco-aguayo-g",
+      "destino": "francisco-aguayo",
       "tipo": "coautoría"
     },
     {
@@ -51714,7 +51719,7 @@
     },
     {
       "origen": "eugenia-cordero-s",
-      "destino": "francisco-aguayo-g",
+      "destino": "francisco-aguayo",
       "tipo": "coautoría"
     },
     {
@@ -51733,17 +51738,17 @@
       "tipo": "coautoría"
     },
     {
-      "origen": "francisco-aguayo-g",
+      "origen": "francisco-aguayo",
       "destino": "leda-guzman-m",
       "tipo": "coautoría"
     },
     {
-      "origen": "francisco-aguayo-g",
+      "origen": "francisco-aguayo",
       "destino": "luis-rodriguez-a",
       "tipo": "coautoría"
     },
     {
-      "origen": "francisco-aguayo-g",
+      "origen": "francisco-aguayo",
       "destino": "waldo-adonis-r",
       "tipo": "coautoría"
     },
