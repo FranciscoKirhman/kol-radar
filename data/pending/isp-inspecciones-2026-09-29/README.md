@@ -35,9 +35,21 @@ ensayo y con el centro. No "afiliación": la planilla dice dónde fue investigad
 no dónde trabaja hoy.
 
 **Para la revisión humana que sigue pendiente**: las ligaduras de nombre parcial son las que más
-conviene mirar primero — «Osvaldo Arén» (CIEC) → Osvaldo Arén Frontera, «Eduardo Yáñez Ruiz»
-(James Lind) → Eduardo Yañez (SIM Temuco) y «Mauricio Burotto Pichun» → Mauricio Burotto. Si alguna
-no es la misma persona, se corrige en `MISMA_PERSONA` y se vuelve a correr el script.
+conviene mirar primero. El 2026-09-30 se buscó evidencia para las tres (no se agregó nada a los datos):
+
+| Ligadura | Evidencia encontrada |
+|---|---|
+| «Mauricio Burotto Pichun» (Bradford Hill, 2023) → Mauricio Burotto | La página oficial de Bradford Hill lista a «Dr. Mauricio Burotto» como «Director Médico»: <https://www.bradfordhill.org/nosotros>. Un solo Mauricio Burotto en el mismo centro. |
+| «Osvaldo Arén» (CIEC, 2018) → Osvaldo Arén Frontera | Prensa Médica lo presenta como director del Centro de Investigación Clínica Bradford Hill: <https://prensamedica.org/entrevista-a-dr-osvaldo-aren-director-del-centro-de-investigacion-clinica-bradford-hill/>. CIEC funciona en el mismo edificio (Manzano/Palestina 343, Recoleta). |
+| «Eduardo Yáñez Ruiz» (James Lind, 2024) → Eduardo Yañez (SIM Temuco) | La prensa lo describe como oncólogo de Temuco, exjefe de oncología del Hospital Regional y director de James Lind, junto a su hijo Patricio Yáñez. Mismo nombre, misma ciudad y especialidad. |
+
+Si alguna no es la misma persona, se corrige en `MISMA_PERSONA` y se vuelve a correr el script.
+
+**Aviso para esa revisión**: la cobertura de prensa sobre James Lind (T13 y BioBioChile, 2025–2026)
+informa que Eduardo y Patricio Yáñez están siendo investigados por la inclusión de pacientes en ensayos.
+Nada de eso entra a KOL Radar —no es evidencia de actividad profesional y rige la presunción de
+inocencia—, pero conviene tenerlo presente al revisar esas dos fichas y ante cualquier solicitud de
+rectificación o retiro.
 
 ## Qué NO entró
 
