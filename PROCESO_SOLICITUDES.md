@@ -49,6 +49,7 @@ mantenerla. Después: commit y push a `main`; GitHub Pages publica en unos minut
 | Pide | Qué se hace |
 |---|---|
 | **Supresión** u **oposición** | `python3 scripts/exclusiones.py retirar <id> --tipo supresion` (u `oposicion`). Si ya estaba bloqueada, la ficha ya no está: registrar igual con `registrar --nombre ... --tipo supresion` para que quede el tipo definitivo. |
+| **Oposición al indicador** (que no se le calcule el nivel "Prioridad alta / media / Monitorear", pero seguir apareciendo) | `python3 scripts/exclusiones.py sin-indicador <id> --fecha-solicitud ...`. No se purga nada: la persona sigue. El enlace "¿Es tu ficha? Pide que no se te calcule" de cada ficha manda un correo con el asunto "Oposición al indicador — <nombre>". |
 | Que **no lo incorporen** (todavía no tiene ficha) | `python3 scripts/exclusiones.py registrar --nombre "Nombre Apellido" [--nombre "otra forma"] [--orcid ...] --tipo oposicion --fecha-solicitud ...` |
 | **Rectificación** | Corregir a mano el hecho en la muestra, con la fuente que lo respalda. Si la fuente dice otra cosa, se muestra lo que dice la fuente y se agrega una nota: KOL Radar no afirma nada que ninguna fuente diga. |
 | **Acceso** | Enviarle su ficha: los hechos, con su fuente y fecha, tal como están en la muestra. |

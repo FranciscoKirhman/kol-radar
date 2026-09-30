@@ -47,6 +47,9 @@ Uso
       no prepara purga: un bloqueo es temporal.
   python3 scripts/exclusiones.py registrar --nombre "Nombre Apellido" [--orcid ...] --tipo oposicion ...
       Para quien pide no ser incorporado y todavía no tiene ficha.
+  python3 scripts/exclusiones.py sin-indicador ID --fecha-solicitud 2026-10-02
+      La persona sigue en KOL Radar pero sin el indicador de actividad (el nivel "Prioridad alta /
+      media / Monitorear"): no se calcula, no se muestra, no filtra ni ordena. Oposición parcial.
   python3 scripts/exclusiones.py verificar
       Revisa que ninguna persona excluida aparezca en la muestra: ni como ficha, ni por ORCID, ni
       nombrada en el texto de otra ficha. Sale con error si encuentra algo. Correrlo antes de cada
@@ -83,6 +86,9 @@ CLAVE_ARCHIVO = os.path.join(PRIVADO, "clave-exclusiones")
 RETIRADOS = os.path.join(PRIVADO, "retirados")
 PURGAS = os.path.join(PRIVADO, "purgas")
 TIPOS = ("supresion", "oposicion", "bloqueo")
+# Oposición solo al indicador de actividad (el nivel "Prioridad alta / media / Monitorear"): la
+# persona sigue en KOL Radar, pero no se le calcula ni se le muestra. No se purga nada.
+TIPO_INDICADOR = "oposicion_indicador"
 # Art. 11 de la Ley 19.628 reformada por la Ley 21.719: 30 días corridos, prorrogables una vez.
 # Ver PROCESO_SOLICITUDES.md; no es asesoría legal.
 PLAZO_DIAS = 30
@@ -191,12 +197,28 @@ class Registro(object):
         return _huella(self.clave, texto)
 
     def _indice(self):
-        self.exactas, self.pares = set(), set()
+        self.exactas, self.pares, self.indicador = set(), set(), set()
         for s in self.datos["solicitudes"]:
             h = s.get("huellas", {})
+            if s.get("tipo") == TIPO_INDICADOR:
+                for k in ("id", "orcid", "nombre"):
+                    self.indicador.update(h.get(k, []))
+                continue
             for k in ("id", "orcid", "nombre"):
                 self.exactas.update(h.get(k, []))
             self.pares.update(h.get("par", []))
+
+    def sin_indicador(self, e):
+        """True si la persona pidió que no se le calcule el indicador (coincidencia exacta)."""
+        if e.get("tipo") != "persona" or not self.indicador:
+            return False
+        if self._h("id:" + e["id"]) in self.indicador:
+            return True
+        for nombre in [e.get("nombre")] + list(e.get("alias_en_la_fuente") or []):
+            completa, _ = formas_nombre(nombre)
+            if completa and self._h("nombre:" + completa) in self.indicador:
+                return True
+        return False
 
     def vacio(self):
         return not self.datos["solicitudes"]
@@ -285,6 +307,11 @@ def aplicar(base, registro=None):
     if quitar:
         base["entidades"] = [e for e in base["entidades"] if e["id"] not in quitar]
         base["vinculos"] = [v for v in base["vinculos"] if v["origen"] not in quitar and v["destino"] not in quitar]
+    # La oposición al indicador se vuelve a marcar en cada escritura: si una integración recrea la
+    # ficha, la marca no se pierde.
+    for e in base["entidades"]:
+        if registro.sin_indicador(e):
+            e["sin_indicador"] = True
     return sorted(quitar), posibles
 
 
@@ -448,6 +475,10 @@ def main(argv=None):
     g.add_argument("--fecha-solicitud", type=_fecha, required=True)
     g.add_argument("--nota", default="")
     sub.add_parser("iniciar", help="crea el registro vacío y la clave, fuera del repositorio")
+    si = sub.add_parser("sin-indicador", help="la persona sigue, pero sin indicador de actividad")
+    si.add_argument("id")
+    si.add_argument("--fecha-solicitud", type=_fecha, required=True)
+    si.add_argument("--nota", default="", help="sin nombres: el registro guarda huellas")
     sub.add_parser("verificar", help="falla si alguien excluido aparece en la muestra")
     sub.add_parser("estado", help="solicitudes registradas y plazos")
     a = ap.parse_args(argv)
@@ -483,10 +514,22 @@ def main(argv=None):
         if problemas:
             print("%d problema(s). La muestra nombra a alguien que pidió salir." % len(problemas))
             return 1
-        print("Ninguna de las %d persona(s) excluida(s) aparece en la muestra." % len(reg.datos["solicitudes"]))
+        n = sum(1 for x in reg.datos["solicitudes"] if x.get("tipo") != TIPO_INDICADOR)
+        print("Ninguna de las %d persona(s) excluida(s) aparece en la muestra." % n)
         return 0
 
     reg = Registro()
+    if a.orden == "sin-indicador":
+        base = json.load(open(MUESTRA, encoding="utf-8"))
+        e = next((x for x in base["entidades"] if x["id"] == a.id), None)
+        if not e or e["tipo"] != "persona":
+            sys.exit("No hay ninguna persona con id %r en la muestra." % a.id)
+        nombres = [e["nombre"]] + list(e.get("alias_en_la_fuente") or [])
+        n = reg.agregar(TIPO_INDICADOR, a.fecha_solicitud, reg.huellas_de(nombres, ids=[a.id]), a.nota)
+        reg.guardar()
+        guardar_muestra(base, registro=reg)
+        print("Solicitud #%d: %s sigue en KOL Radar, sin indicador de actividad." % (n, a.id))
+        return 0
     if a.orden == "registrar":
         n = reg.agregar(a.tipo, a.fecha_solicitud, reg.huellas_de(a.nombre, orcids=a.orcid), a.nota)
         reg.guardar()

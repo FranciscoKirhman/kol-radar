@@ -68,7 +68,14 @@ evaluación está en [`EVALUACION_INTERES_LEGITIMO.md`](EVALUACION_INTERES_LEGIT
 
 ## 5. Hallazgos, de más a menos grave
 
-### 5.1 El puntaje público por persona es elaboración de perfiles — **alto**
+### 5.1 El puntaje público por persona es elaboración de perfiles — **alto → mitigado**
+
+> **Decisión del 2026-09-30: se mantiene, con garantías.** Evaluación de impacto en
+> [`EVALUACION_IMPACTO.md`](EVALUACION_IMPACTO.md). Cada ficha explica qué es el indicador y qué no es,
+> enlaza su cálculo y ofrece oponerse ("¿Es tu ficha? Pide que no se te calcule"); quien se opone
+> queda sin nivel en todo el sitio (`scripts/exclusiones.py sin-indicador`). Los avisos ya no dicen
+> "no es una evaluación de desempeño". Lo que sigue abajo es el análisis que llevó a esa decisión.
+
 - El art. 8 bis da derecho a oponerse a decisiones basadas únicamente en tratamiento automatizado,
   incluida la elaboración de perfiles, que produzcan efectos jurídicos o **afecten significativamente**
   a la persona. Un rótulo público de "Monitorear" junto al nombre de un médico, calculado sin revisión
@@ -165,8 +172,8 @@ reincidencia. Fiscaliza la Agencia de Protección de Datos Personales.
 
 | # | Qué | Quién |
 |---|---|---|
-| 1 | Decidir qué pasa con el tier público (5.1) | Francisco |
-| 2 | Responsable y domicilio en el aviso; publicarlo como página del sitio | Francisco + abogado |
+| 1 | ~~Decidir qué pasa con el tier público (5.1)~~ — se mantiene con garantías (2026-09-30) | Francisco |
+| 2 | ~~Responsable y domicilio en el aviso; publicarlo como página del sitio~~ — hecho (2026-09-30), falta revisión de abogado | Francisco + abogado |
 | 3 | Revisar a mano las 14 fichas del ISP y las fusiones pendientes | Francisco |
 | 4 | Validar la evaluación de interés legítimo | abogado |
 | 5 | Decidir indexación con 1–3 resueltos | Francisco |

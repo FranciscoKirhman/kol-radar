@@ -1002,7 +1002,7 @@
 <details class="beta-bar" role="note">
   <summary>
     <span class="beta-sello">Beta</span>
-    <span><span class="beta-largo">Datos públicos con fuente enlazada, </span><strong class="js-cifra-revision">sin revisión humana todavía</strong><span class="beta-largo">. No es una evaluación profesional ni un listado comercial.</span></span>
+    <span><span class="beta-largo">Datos públicos con fuente enlazada, </span><strong class="js-cifra-revision">sin revisión humana todavía</strong><span class="beta-largo">. No evalúa la calidad profesional de nadie ni es un listado comercial.</span></span>
     <span class="beta-mas">Qué significa</span>
   </summary>
   <div class="beta-cuerpo">
@@ -1154,7 +1154,7 @@
 
 <footer class="page-footer" id="page-footer">
   Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, sitios institucionales) —
-  no es una evaluación de desempeño profesional ni un listado comercial. Todavía no fue revisada por
+  no evalúa la calidad profesional de nadie ni es un listado comercial. Todavía no fue revisada por
   una persona: <span class="js-cifra-pendientes">casi todos los hechos</span> están pendientes. ¿Eres un
   profesional listado acá y quieres corregir o eliminar tu información? El canal privado para eso
   todavía no está definido — "Reportar un error (reporte público)" abre un repositorio público, así
@@ -1438,6 +1438,17 @@
   }
 
   var TIER_LABEL = { alta: "Prioridad alta", media: "Prioridad media", monitorear: "Monitorear" };
+
+  // El nivel de prioridad es un indicador automático sobre una persona identificada, es decir,
+  // elaboración de perfiles en el sentido de la Ley 21.719 (ver EVALUACION_IMPACTO.md). Se muestra
+  // con tres garantías: dice qué es y qué no es, enlaza su cálculo, y cualquier persona puede pedir
+  // que no se le calcule. Quien lo pidió queda marcada con `sin_indicador` (lo aplica
+  // scripts/exclusiones.py), y entonces el nivel no se muestra, no filtra ni ordena.
+  var TEXTO_INDICADOR = "Indicador automático de actividad: se calcula solo con la evidencia pública de la ficha " +
+    "(cantidad, tipo y fecha de ensayos, publicaciones y conexiones). No evalúa la calidad profesional ni la " +
+    "idoneidad de nadie, y KOL Radar no toma decisiones sobre personas con él.";
+  function conIndicador(n) { return n.tipo === "persona" && !n.sin_indicador; }
+  var contactoDatos = null;
 
   // ---------------- Confianza de IDENTIDAD (PRODUCT_CHARTER.md §5B) ----------------
   // "¿Es la misma persona en todas las fuentes?" es una pregunta distinta a "¿alguien revisó
@@ -1724,7 +1735,7 @@
       if (recencyBucket(mostRecentHecho(n).fecha) !== state.periodo) return false;
     }
     if (state.tier !== "todas") {
-      if (n.tipo !== "persona" || computePriority(n).tier !== state.tier) return false;
+      if (!conIndicador(n) || computePriority(n).tier !== state.tier) return false;
     }
     if (state.areas.length && !areasDe(n).some(function (a) { return state.areas.indexOf(a) !== -1; })) return false;
     if (state.region !== "todas" && regionOf(n) !== state.region) return false;
@@ -1757,8 +1768,8 @@
     if (state.sort === "prioridad") {
       list.sort(function (a, b) {
         // Instituciones y ensayos no tienen tier: van después de las personas, por recencia.
-        var ra = a.tipo === "persona" ? TIER_RANK[computePriority(a).tier] : 3;
-        var rb = b.tipo === "persona" ? TIER_RANK[computePriority(b).tier] : 3;
+        var ra = conIndicador(a) ? TIER_RANK[computePriority(a).tier] : 3;
+        var rb = conIndicador(b) ? TIER_RANK[computePriority(b).tier] : 3;
         if (ra !== rb) return ra - rb;
         return sortableDate(mostRecentHecho(b).fecha).localeCompare(sortableDate(mostRecentHecho(a).fecha));
       });
@@ -1936,11 +1947,14 @@
     // El tier de prioridad (PRODUCT_CHARTER.md) solo aplica a personas — instituciones y ensayos
     // son contexto, no candidatos a priorizar, así que mantienen el conteo crudo de señales.
     var scoreBadge;
-    if (n.tipo === "persona") {
+    if (conIndicador(n)) {
       var priority = computePriority(n);
       scoreBadge = document.createElement("span");
       scoreBadge.className = "tier-badge " + priority.tier;
       scoreBadge.textContent = TIER_LABEL[priority.tier];
+      scoreBadge.title = TEXTO_INDICADOR;
+    } else if (n.tipo === "persona") {
+      scoreBadge = document.createElement("span");
     } else if (n.tipo === "farmaco") {
       scoreBadge = document.createElement("span");
     } else {
@@ -2415,14 +2429,15 @@
   // nunca al revés, para que un error de carga no borre la advertencia honesta.
   var CORREO_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
   function renderFooter(contacto) {
+    contactoDatos = contacto || null;
     var canal = contacto && typeof contacto.canal === "string" ? contacto.canal.trim() : "";
     if (!canal) return;
     var href = esUrlSegura(canal) ? canal : (CORREO_RE.test(canal) ? "mailto:" + canal : "");
     if (!href) return;
     var pie = document.getElementById("page-footer");
     pie.textContent = "Información de fuentes públicas (PubMed, ClinicalTrials.gov, SciELO Chile, " +
-      "sitios institucionales) — no es una evaluación de desempeño profesional ni un listado " +
-      "comercial. Todavía no fue revisada por una persona: " +
+      "sitios institucionales) — no evalúa la calidad profesional de nadie ni es un listado " +
+      "comercial; el nivel de cada persona es un indicador automático de actividad. Todavía no fue revisada por una persona: " +
       (cifrasRevision.hechos - cifrasRevision.confirmados).toLocaleString("es-CL") + " de " +
       cifrasRevision.hechos.toLocaleString("es-CL") + " hechos están pendientes. ¿Eres un profesional " +
       "listado aquí y quieres corregir o eliminar tu información? ";
@@ -2434,7 +2449,12 @@
     pie.appendChild(document.createTextNode("."));
     // La ley pide identificar al responsable de los datos (Ley 19.628 reformada, art. 14 ter).
     var resp = contacto && typeof contacto.responsable === "string" ? contacto.responsable.trim() : "";
-    if (resp) pie.appendChild(document.createTextNode(" Responsable de los datos: " + resp + "."));
+    if (resp) pie.appendChild(document.createTextNode(" Responsable de los datos: " + resp + ". "));
+    var priv = document.createElement("a");
+    priv.href = "privacidad.html";
+    priv.textContent = "Aviso de privacidad";
+    pie.appendChild(priv);
+    pie.appendChild(document.createTextNode("."));
   }
 
   // Seis colores, no diecinueve. Comprobado en OKLab: por encima de seis, los pares caen bajo
@@ -2652,7 +2672,8 @@
 
     seleccionados.forEach(function (n, i) {
       var p = computePriority(n);
-      L.push((i + 1) + ". " + n.nombre + " — " + TIER_LABEL[p.tier] + " (" + p.total + " pts)");
+      L.push((i + 1) + ". " + n.nombre + (conIndicador(n) ? " — " + TIER_LABEL[p.tier] + " (" + p.total + " pts)"
+                                                            : " — sin indicador, a pedido de la persona"));
       L.push("   Afiliación observada: " + subtituloLinea(n));
       var porQue = [];
       if (p.ensayosPts) porQue.push(p.nEnsayos + " ensayo(s) clínico(s) [" + p.ensayosPts + " pts]");
@@ -5237,7 +5258,7 @@
       if (p.nodo.tipo === "institucion") { p.peso = 0; return; }
       if (p.nodo.tipo === "tema") { p.peso = 3; return; }
       if (p.nodo.tipo !== "persona") { p.peso = 5; return; }
-      var t = TIER_PESO[computePriority(p.nodo).tier];
+      var t = conIndicador(p.nodo) ? TIER_PESO[computePriority(p.nodo).tier] : undefined;
       p.peso = typeof t === "number" ? t : 4;
     });
     pendientes.sort(function (a, b) {
@@ -6442,7 +6463,11 @@
     scoreNoteLink.href = "interno.html#puntaje"; scoreNoteLink.target = "_blank"; scoreNoteLink.rel = "noopener";
     scoreNoteLink.textContent = "Cómo se calcula →";
 
-    if (n.tipo === "persona") {
+    if (n.tipo === "persona" && n.sin_indicador) {
+      var sinInd = document.createElement("div"); sinInd.className = "confidence-row";
+      sinInd.textContent = "Esta persona pidió que no se le calcule el indicador de actividad. La evidencia sigue abajo, con sus fuentes.";
+      scorePanel.appendChild(sinInd);
+    } else if (n.tipo === "persona") {
       var priority = computePriority(n);
       var scoreNum = document.createElement("span"); scoreNum.className = "num"; scoreNum.textContent = priority.total;
       var scoreLbl = document.createElement("span"); scoreLbl.className = "label"; scoreLbl.textContent = "puntos";
@@ -6482,7 +6507,15 @@
           scorePanel.appendChild(notaRow);
         }
       }
-      scoreNote.appendChild(document.createTextNode("Prioridad de investigación, no un ranking de valor profesional — cada componente pesa por recencia y tiene un tope para que ninguna señal domine sola. "));
+      scoreNote.appendChild(document.createTextNode(TEXTO_INDICADOR + " Cada componente pesa por recencia y tiene un tope para que ninguna señal domine sola. "));
+      var canalOpo = contactoDatos && typeof contactoDatos.canal === "string" ? contactoDatos.canal.trim() : "";
+      if (CORREO_RE.test(canalOpo)) {
+        var opo = document.createElement("a");
+        opo.href = "mailto:" + canalOpo + "?subject=" + encodeURIComponent("Oposición al indicador — " + n.nombre);
+        opo.textContent = "¿Es tu ficha? Pide que no se te calcule";
+        scoreNote.appendChild(opo);
+        scoreNote.appendChild(document.createTextNode(" · "));
+      }
     } else {
       var scoreNum2 = document.createElement("span"); scoreNum2.className = "num"; scoreNum2.textContent = senales.total;
       var scoreLbl2 = document.createElement("span"); scoreLbl2.className = "label"; scoreLbl2.textContent = "puntos";

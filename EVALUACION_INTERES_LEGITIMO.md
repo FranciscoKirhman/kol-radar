@@ -5,7 +5,7 @@ Documento que exige el uso del **interés legítimo** como base de licitud (art.
 necesario y proporcionado. Borrador del 2026-09-29, para validar con un abogado. El análisis
 completo, con fuentes, está en [`REVISION_LEGAL.md`](REVISION_LEGAL.md).
 
-**Responsable**: [nombre o institución]. **Tratamiento**: KOL Radar, mapa público de profesionales
+**Responsable**: Francisco Kirhman. **Tratamiento**: KOL Radar, mapa público de profesionales
 de la oncología activos en Chile, con evidencia pública trazable.
 
 ## 1. ¿Hay un interés legítimo?
@@ -35,7 +35,7 @@ El interés es **lícito, concreto y actual**: el producto funciona hoy, y la ne
 | Ciudad de la institución | Sí | Para planificar; es de la institución, no de la persona. |
 | Datos de contacto personales, fotos, datos de salud, opiniones | **No se tratan** | No hacen falta para la finalidad. |
 | Resultado de inspecciones del ISP | **No se trata** | Es una evaluación regulatoria, no evidencia de actividad. |
-| **Tier público** ("Prioridad alta / media / Monitorear") | **No demostrado** | La finalidad se cumple mostrando la evidencia. Ordenar a las personas en un rótulo visible para cualquiera no es imprescindible, y es elaboración de perfiles (ver §3). |
+| **Tier público** ("Prioridad alta / media / Monitorear") | **Sí, con garantías** (decisión 2026-09-30) | Ordena la investigación de quien prepara un territorio. Es elaboración de perfiles: se sostiene con la evaluación de impacto (`EVALUACION_IMPACTO.md`), la explicación en cada ficha y la oposición al indicador. |
 
 **Alternativas menos intrusivas consideradas**: publicar solo instituciones y ensayos, sin personas
 (no responde la pregunta de la finalidad); pedir consentimiento a cada persona (inviable a esta
@@ -65,9 +65,9 @@ escala y no es la base elegida); mostrar conteos descriptivos en vez de un tier 
 **Resultado**
 - Para nombre, afiliación, ensayos, publicaciones y coautorías, con sus garantías: **el interés
   legítimo prevalece.**
-- Para el **tier público por persona**: **no prevalece con las garantías actuales.** Hace falta
-  sacarlo de la vista pública, reemplazarlo por datos descriptivos, o sostenerlo con una evaluación de
-  impacto y publicando su lógica.
+- Para el **tier público por persona**: prevalece **con las garantías agregadas el 2026-09-30**:
+  explicación en cada ficha, cálculo público, oposición al indicador sin salir del sitio y evaluación de
+  impacto (`EVALUACION_IMPACTO.md`).
 - Para las **fichas sin revisión de identidad**: prevalece de forma **condicionada** a que la nota de
   identidad sea visible (lo es) y a que la revisión se haga pronto.
 
@@ -81,8 +81,8 @@ escala y no es la base elegida); mostrar conteos descriptivos en vez de un tier 
 | Registro de exclusiones respetado por toda recolección | Hecho |
 | Purga del historial ante supresión | Procedimiento escrito |
 | Nota visible en fichas con identidad no revisada | Hecho |
-| Aviso de privacidad completo (art. 14 ter) | Pendiente: responsable y domicilio |
-| Decisión sobre el tier público | **Pendiente** |
+| Aviso de privacidad completo (art. 14 ter) | Hecho: publicado en `web/privacidad.html` (2026-09-30) |
+| Decisión sobre el tier público | Hecho: se mantiene con garantías (2026-09-30) |
 | Revisión humana de identidades | Pendiente |
 
 ## 5. Revisión
@@ -90,4 +90,4 @@ escala y no es la base elegida); mostrar conteos descriptivos en vez de un tier 
 Esta evaluación se revisa cuando cambie la finalidad, cuando entre una fuente o categoría de dato
 nueva, cuando cambie el puntaje, o una vez al año.
 
-Aprobada por: [responsable] · Fecha: [fecha] · Revisada por abogado: [nombre, fecha]
+Aprobada por: Francisco Kirhman · Fecha: 2026-09-30 · Revisada por abogado: [pendiente]

@@ -7,12 +7,10 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
 
 ### Decisiones de Francisco (bloquean publicar más allá de una demo)
 1. **Publicar la rama `pendientes-beta-2026-09-28`** en `main`: el push lo hace una persona.
-2. **El tier público por persona** ("Prioridad alta / media / Monitorear"). Según `REVISION_LEGAL.md`
-   es elaboración de perfiles: sacarlo de la vista pública, reemplazarlo por conteos descriptivos, o
-   mantenerlo con una evaluación de impacto y publicando su lógica. Antes del 1 de diciembre de 2026.
-3. **Domicilio del responsable** para `PRIVACIDAD.md`. El responsable es Francisco Kirhman (decidido
-   el 2026-09-30, ya visible en el pie del sitio); el domicilio es lo único que falta para publicar el
-   aviso como página del sitio.
+2. ~~El tier público por persona~~: decidido el 2026-09-30, **se mantiene con garantías**
+   (explicación en cada ficha, oposición al indicador, evaluación de impacto en `EVALUACION_IMPACTO.md`).
+3. ~~Responsable y domicilio~~: Francisco Kirhman, Bello Horizonte 979, Las Condes. Aviso publicado
+   en `web/privacidad.html` y enlazado desde el pie (2026-09-30). Falta que lo revise un abogado.
 4. ~~Indexación en buscadores~~: decidido el 2026-09-30, **se indexa** (sin `noindex`). El sitio tiene
    descripción, datos estructurados de Dataset y `sitemap.xml`; falta dar de alta la propiedad en
    Google Search Console y enviar el sitemap (lo hace Francisco con su cuenta).
