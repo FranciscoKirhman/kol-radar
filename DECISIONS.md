@@ -297,13 +297,12 @@ visible que dice que se unificó, quién lo aprobó y con qué respaldo. Nada se
 
 ## Resumen de qué necesito de ti
 
-| # | Decisión | Qué necesito | Bloquea |
-|---|---|---|---|
-| 1 | Canal de corrección | Un link de formulario **o** una dirección de correo | Poder compartir el sitio más allá de una demo interna |
-| 2 | OpenAlex | Que crees la cuenta y guardes la key como secret del repo | Desambiguación de identidad + gráfico de tendencia/rising stars |
-| 3 | Cadencia del pipeline | Tres respuestas cortas (cada cuánto, dónde, qué hacer ante conflicto) | Automatizar la recolección |
-| 4 | Capa privada | Solo confirmar si querés el paso chico (notas locales) o nada por ahora | Nada urgente |
-| 5 | Fusiones de identidad | `sí/no` a dos pares de fichas duplicadas, y un criterio para las instituciones | Que el mapa no muestre a la misma persona dos veces |
+Estado al 2026-09-30 (la lista vigente de todo lo que falta está en `PENDIENTES_BETA.md`):
 
-La #1 es la que yo movería primero. Las otras tres son mejoras; esa es una promesa incumplida en
-un sitio público sobre personas reales.
+| # | Decisión | Estado |
+|---|---|---|
+| 1 | Canal de corrección | **Resuelta**: correo provisorio en el pie; proceso y registro de exclusiones en `PROCESO_SOLICITUDES.md` |
+| 2 | OpenAlex | Pendiente: crear la cuenta y guardar la key como secret `OPENALEX_API_KEY`. Ya no hace falta un correo |
+| 3 | Cadencia del pipeline | Pendiente: cada cuánto, dónde vive la bandeja, qué hacer ante una contradicción |
+| 4 | Capa privada | Sin cambios: nada hasta que haya un caso de uso real |
+| 5 | Fusiones de identidad | **Resuelta** el 2026-09-29 (ver arriba) |
