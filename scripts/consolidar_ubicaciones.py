@@ -44,7 +44,8 @@ GEO = os.path.join(RAIZ, "data", "geo", "chile-regiones-comunas.json")
 OSM = os.path.join(RAIZ, "data", "pending", "geolocalizacion-osm-2026-09-15", "instituciones_ubicadas.json")
 RESPUESTAS = [os.path.join(RAIZ, "data", "pending", "tarea-chatgpt-*", "respuesta_*_A.json"),
               os.path.join(RAIZ, "data", "pending", "direcciones-*", "respuesta_*_A.json")]
-ORDEN_RONDAS = ["tarea-chatgpt-2026-09-15", "tarea-chatgpt-2026-09-15-ronda2", "direcciones-2026-09-28"]
+ORDEN_RONDAS = ["tarea-chatgpt-2026-09-15", "tarea-chatgpt-2026-09-15-ronda2", "direcciones-2026-09-28",
+                "direcciones-2026-09-29", "tarea-chatgpt-2026-09-29-ronda3"]
 SALIDA = os.path.join(RAIZ, "data", "geo", "ubicaciones-instituciones.json")
 HOY = datetime.date.today().isoformat()
 

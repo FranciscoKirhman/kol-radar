@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-28",
+ "generado": "2026-09-29",
  "nota": "Propuesta pendiente de revisión humana. El mapa usa solo 'principal'; 'otras_sedes' se muestran en la ficha.",
  "fuentes": {
   "deis_minsal": {
@@ -20,20 +20,21 @@
   }
  },
  "resumen": {
-  "con_ubicacion": 90,
-  "sin_ubicar": 20,
+  "con_ubicacion": 94,
+  "sin_ubicar": 16,
   "direccion": {
-   "sitio_oficial": 24,
+   "sitio_oficial": 27,
    "deis_minsal": 47,
    "openstreetmap": 13,
-   "otro": 4,
+   "otro": 5,
    "superintendencia_salud": 2
   },
   "coordenadas": {
-   "openstreetmap · direccion": 17,
+   "openstreetmap · direccion": 19,
    "deis_minsal · establecimiento": 57,
    "openstreetmap · establecimiento": 11,
-   "openstreetmap · calle": 5
+   "openstreetmap · calle": 6,
+   "geoboundaries · comuna": 1
   }
  },
  "instituciones": {
@@ -58,7 +59,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/112605212",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Palestina 343, Recoleta»"
     },
     "confianza": "pendiente"
@@ -78,7 +79,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112254"
     },
     "lat": -33.43913,
@@ -87,7 +88,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112254"
     },
     "confianza": "pendiente"
@@ -107,7 +108,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112103"
     },
     "lat": -33.437988,
@@ -116,7 +117,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112103"
     },
     "confianza": "pendiente"
@@ -145,7 +146,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/node/8586902939",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Hochstetter 298, Temuco»"
     },
     "confianza": "pendiente"
@@ -174,7 +175,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 118100"
     },
     "confianza": "pendiente"
@@ -203,7 +204,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 124105"
     },
     "confianza": "pendiente"
@@ -263,7 +264,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/618341463",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Avenida Los Leones 2209, Providencia»"
     },
     "confianza": "pendiente"
@@ -292,7 +293,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/200027044",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Badajoz 130, Las Condes»"
     },
     "confianza": "pendiente"
@@ -321,7 +322,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112200"
     },
     "confianza": "pendiente"
@@ -347,7 +348,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112212"
     },
     "lat": -33.384094,
@@ -356,7 +357,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112212"
     },
     "confianza": "pendiente"
@@ -385,7 +386,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200905"
     },
     "confianza": "pendiente"
@@ -414,7 +415,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112249"
     },
     "confianza": "pendiente"
@@ -495,7 +496,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/570565367",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Santa Magdalena 75, Providencia»"
     },
     "confianza": "pendiente"
@@ -524,7 +525,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/108453405",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Avenida General Holley 2363, Providencia»"
     },
     "confianza": "pendiente"
@@ -553,7 +554,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/108393520",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Román Díaz 205, Providencia»"
     },
     "confianza": "pendiente"
@@ -611,7 +612,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/25018684",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Avenida Libertador Bernardo O'Higgins 1058, Santiago»"
     },
     "confianza": "pendiente"
@@ -802,7 +803,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109200"
     },
     "confianza": "pendiente"
@@ -831,7 +832,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112240"
     },
     "confianza": "pendiente"
@@ -891,7 +892,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/586747670",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Avenida La Marina 1702, Viña del Mar»"
     },
     "confianza": "pendiente"
@@ -955,7 +956,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/448416954",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Avenida Antonio Varas 475, Providencia»"
     },
     "confianza": "pendiente"
@@ -995,7 +996,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 201799"
     },
     "confianza": "pendiente"
@@ -1021,7 +1022,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109103"
     },
     "lat": -33.418128,
@@ -1030,7 +1031,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109103"
     },
     "confianza": "pendiente"
@@ -1059,7 +1060,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 202100"
     },
     "confianza": "pendiente"
@@ -1088,7 +1089,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/924535662",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Lago Puyehue 01745, Temuco»"
     },
     "confianza": "pendiente"
@@ -1117,7 +1118,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/322992688",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Lincoyán 334, Concepción»"
     },
     "confianza": "pendiente"
@@ -1166,7 +1167,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 116276"
     },
     "lat": -35.428905,
@@ -1175,7 +1176,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 116276"
     },
     "confianza": "pendiente"
@@ -1204,7 +1205,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/453374205",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Avenida Presidente Kennedy 5488, Vitacura»"
     },
     "confianza": "pendiente"
@@ -1244,7 +1245,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/60193655",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Lago Puyehue 1745, Temuco»"
     },
     "confianza": "pendiente"
@@ -1273,7 +1274,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/108525240",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Paseo Bulnes 79, Santiago»"
     },
     "confianza": "pendiente"
@@ -1302,7 +1303,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/112605212",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Manzano 343, Recoleta»"
     },
     "confianza": "pendiente"
@@ -1322,7 +1323,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 124250"
     },
     "lat": -41.45861,
@@ -1331,7 +1332,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 124250"
     },
     "confianza": "pendiente"
@@ -1360,7 +1361,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/203290231",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Diego de Velásquez 2131, Providencia»"
     },
     "confianza": "pendiente"
@@ -1386,7 +1387,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112102"
     },
     "lat": -33.429848,
@@ -1395,7 +1396,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112102"
     },
     "confianza": "pendiente"
@@ -1415,7 +1416,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 106100"
     },
     "lat": -33.050258,
@@ -1424,7 +1425,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 106100"
     },
     "confianza": "pendiente"
@@ -1444,7 +1445,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 111100"
     },
     "lat": -33.460498,
@@ -1453,7 +1454,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 111100"
     },
     "confianza": "pendiente"
@@ -1482,7 +1483,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 114101"
     },
     "confianza": "pendiente"
@@ -1511,7 +1512,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/538383617",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Avenida Américo Vespucio Norte 1314, Vitacura»"
     },
     "confianza": "pendiente"
@@ -1537,7 +1538,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112530"
     },
     "lat": -33.4504927,
@@ -1546,7 +1547,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112530"
     },
     "confianza": "pendiente"
@@ -1566,7 +1567,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112100"
     },
     "lat": -33.43664,
@@ -1575,7 +1576,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112100"
     },
     "confianza": "pendiente"
@@ -1595,7 +1596,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 115100"
     },
     "lat": -34.15535824,
@@ -1604,7 +1605,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 115100"
     },
     "confianza": "pendiente"
@@ -1627,13 +1628,13 @@
      "fecha": "2026-09-28",
      "via": "colaborador IA, data/pending/direcciones-2026-09-28/respuesta_lote1_A.json"
     },
-    "lat": -33.4403693,
-    "lon": -70.6257094,
+    "lat": -33.440314,
+    "lon": -70.625637,
     "precision": "direccion",
     "fuente_coordenadas": {
-     "url": "https://www.openstreetmap.org/node/1243866466",
+     "url": "https://www.openstreetmap.org/node/4107564497",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Dr. Torres Boonen 520, Providencia»"
     },
     "confianza": "pendiente"
@@ -1653,7 +1654,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109201"
     },
     "lat": -33.427257,
@@ -1662,7 +1663,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109201"
     },
     "confianza": "pendiente"
@@ -1682,7 +1683,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 113100"
     },
     "lat": -33.485147,
@@ -1691,7 +1692,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 113100"
     },
     "confianza": "pendiente"
@@ -1720,7 +1721,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 122100"
     },
     "confianza": "pendiente"
@@ -1740,7 +1741,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 121109"
     },
     "lat": -38.736532,
@@ -1749,7 +1750,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 121109"
     },
     "confianza": "pendiente"
@@ -1769,7 +1770,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 107100"
     },
     "lat": -33.0294,
@@ -1778,7 +1779,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 107100"
     },
     "confianza": "pendiente"
@@ -1798,7 +1799,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 116105"
     },
     "lat": -35.426896,
@@ -1807,7 +1808,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 116105"
     },
     "confianza": "pendiente"
@@ -1827,7 +1828,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 110100"
     },
     "lat": -33.442394,
@@ -1836,7 +1837,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 110100"
     },
     "confianza": "pendiente"
@@ -1856,7 +1857,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200602"
     },
     "lat": -38.734908,
@@ -1865,7 +1866,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200602"
     },
     "confianza": "pendiente"
@@ -1885,7 +1886,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 107206"
     },
     "lat": -32.983854,
@@ -1894,7 +1895,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 107206"
     },
     "confianza": "pendiente"
@@ -1914,7 +1915,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200508"
     },
     "lat": -23.569147,
@@ -1923,7 +1924,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200508"
     },
     "confianza": "pendiente"
@@ -1943,7 +1944,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200699"
     },
     "lat": -33.442892,
@@ -1952,7 +1953,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200699"
     },
     "confianza": "pendiente"
@@ -1972,7 +1973,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 111200"
     },
     "lat": -33.442233,
@@ -1981,7 +1982,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 111200"
     },
     "confianza": "pendiente"
@@ -2001,7 +2002,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112261"
     },
     "lat": -33.4002636,
@@ -2010,7 +2011,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112261"
     },
     "confianza": "pendiente"
@@ -2030,7 +2031,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112512"
     },
     "lat": -33.497116,
@@ -2039,7 +2040,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112512"
     },
     "confianza": "pendiente"
@@ -2059,7 +2060,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 114223"
     },
     "lat": -33.5188111,
@@ -2068,7 +2069,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 114223"
     },
     "confianza": "pendiente"
@@ -2088,7 +2089,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200234"
     },
     "lat": -33.355737,
@@ -2097,7 +2098,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200234"
     },
     "confianza": "pendiente"
@@ -2117,7 +2118,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109101"
     },
     "lat": -33.415335,
@@ -2126,7 +2127,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109101"
     },
     "confianza": "pendiente"
@@ -2146,7 +2147,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112101"
     },
     "lat": -33.501328,
@@ -2155,7 +2156,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112101"
     },
     "confianza": "pendiente"
@@ -2175,7 +2176,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112248"
     },
     "lat": -33.4176831,
@@ -2184,7 +2185,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112248"
     },
     "confianza": "pendiente"
@@ -2204,7 +2205,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112238"
     },
     "lat": -33.395327,
@@ -2213,7 +2214,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112238"
     },
     "confianza": "pendiente"
@@ -2233,7 +2234,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 107217"
     },
     "lat": -32.998382,
@@ -2242,7 +2243,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 107217"
     },
     "confianza": "pendiente"
@@ -2262,7 +2263,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109100"
     },
     "lat": -33.416586,
@@ -2271,7 +2272,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 109100"
     },
     "confianza": "pendiente"
@@ -2291,7 +2292,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 105101"
     },
     "lat": -29.968488,
@@ -2300,7 +2301,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 105101"
     },
     "confianza": "pendiente"
@@ -2320,7 +2321,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 105100"
     },
     "lat": -29.908191,
@@ -2329,7 +2330,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 105100"
     },
     "confianza": "pendiente"
@@ -2349,7 +2350,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 125100"
     },
     "lat": -45.568399,
@@ -2358,7 +2359,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 125100"
     },
     "confianza": "pendiente"
@@ -2378,7 +2379,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112107"
     },
     "lat": -27.150381,
@@ -2387,7 +2388,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 112107"
     },
     "confianza": "pendiente"
@@ -2407,7 +2408,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 101100"
     },
     "lat": -18.482478,
@@ -2416,7 +2417,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 101100"
     },
     "confianza": "pendiente"
@@ -2436,7 +2437,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 121121"
     },
     "lat": -39.2777,
@@ -2445,7 +2446,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 121121"
     },
     "confianza": "pendiente"
@@ -2465,7 +2466,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 129106"
     },
     "lat": -38.233942,
@@ -2474,7 +2475,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 129106"
     },
     "confianza": "pendiente"
@@ -2494,7 +2495,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 121114"
     },
     "lat": -38.740329,
@@ -2503,7 +2504,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 121114"
     },
     "confianza": "pendiente"
@@ -2523,7 +2524,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 128109"
     },
     "lat": -37.473676,
@@ -2532,7 +2533,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 128109"
     },
     "confianza": "pendiente"
@@ -2552,7 +2553,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 116102"
     },
     "lat": -35.10776,
@@ -2561,7 +2562,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 116102"
     },
     "confianza": "pendiente"
@@ -2581,7 +2582,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 114319"
     },
     "lat": -33.56387,
@@ -2590,8 +2591,37 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 114319"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "urumed": {
+   "nombre": "Servicios Médicos Urumed",
+   "principal": {
+    "direccion": "Avenida Presidente Salvador Allende Gossens",
+    "comuna": "Rancagua",
+    "ciudad": "Rancagua",
+    "region": "Región del Libertador General Bernardo O'Higgins",
+    "nombre_oficial": "Servicios Médicos Urumed",
+    "fuente_direccion": {
+     "url": "https://www.unensayoparami.org/es/sitios/servicios-medicos-urumed",
+     "tipo": "otro",
+     "cita": "Av Pdte Salvador Allende Gossens, Rancagua, O'Higgins, Chile",
+     "fecha": "2026-09-29",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-29/respuesta_lote1_A.json"
+    },
+    "lat": -34.122,
+    "lon": -70.809,
+    "precision": "comuna",
+    "fuente_coordenadas": {
+     "url": "https://www.geoboundaries.org/countryDownloads.html",
+     "tipo": "geoboundaries",
+     "fecha": "2026-09-16",
+     "via": "centro de la comuna Rancagua; la dirección no se pudo ubicar"
     },
     "confianza": "pendiente"
    },
@@ -2619,8 +2649,95 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/447727823",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Suecia 42, Providencia»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "ufro": {
+   "nombre": "Universidad de La Frontera",
+   "principal": {
+    "direccion": "Avenida Francisco Salazar 01145",
+    "comuna": "Temuco",
+    "ciudad": "Temuco",
+    "region": "Región de La Araucanía",
+    "nombre_oficial": "Universidad de La Frontera",
+    "fuente_direccion": {
+     "url": "https://www.ufro.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Avenida Francisco Salazar 01145 Temuco - Chile",
+     "fecha": "2026-09-29",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-29/respuesta_lote1_A.json"
+    },
+    "lat": -38.7480605,
+    "lon": -72.6182905,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/relation/4296616",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-29",
+     "via": "Nominatim, búsqueda de «Avenida Francisco Salazar 01145, Temuco»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "ucn": {
+   "nombre": "Universidad Católica del Norte",
+   "principal": {
+    "direccion": "Larrondo 1281",
+    "comuna": "Coquimbo",
+    "ciudad": "Coquimbo",
+    "region": "Región de Coquimbo",
+    "nombre_oficial": "Universidad Católica del Norte",
+    "fuente_direccion": {
+     "url": "https://www.ucn.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Larrondo 1281, Coquimbo.",
+     "fecha": "2026-09-29",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-29/respuesta_lote1_A.json"
+    },
+    "lat": -29.9649483,
+    "lon": -71.3508572,
+    "precision": "direccion",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/92022614",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-29",
+     "via": "Nominatim, búsqueda de «Larrondo 1281, Coquimbo»"
+    },
+    "confianza": "pendiente"
+   },
+   "otras_sedes": [],
+   "avisos": []
+  },
+  "ucmaule": {
+   "nombre": "Universidad Católica del Maule",
+   "principal": {
+    "direccion": "Avenida San Miguel 3605",
+    "comuna": "Talca",
+    "ciudad": "Talca",
+    "region": "Región del Maule",
+    "nombre_oficial": "Universidad Católica del Maule",
+    "fuente_direccion": {
+     "url": "https://www.ucm.cl/",
+     "tipo": "sitio_oficial",
+     "cita": "Avenida San Miguel 3605, Talca.",
+     "fecha": "2026-09-29",
+     "via": "colaborador IA, data/pending/direcciones-2026-09-29/respuesta_lote1_A.json"
+    },
+    "lat": -35.4553399,
+    "lon": -71.5819475,
+    "precision": "calle",
+    "fuente_coordenadas": {
+     "url": "https://www.openstreetmap.org/way/1072188220",
+     "tipo": "openstreetmap",
+     "fecha": "2026-09-29",
+     "via": "Nominatim, búsqueda de «Avenida San Miguel 3605, Talca»"
     },
     "confianza": "pendiente"
    },
@@ -2639,7 +2756,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 201202"
     },
     "lat": -33.440183,
@@ -2648,7 +2765,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 201202"
     },
     "confianza": "pendiente"
@@ -2668,16 +2785,16 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 200092"
     },
-    "lat": -33.392164,
-    "lon": -70.572279,
+    "lat": -33.3967889,
+    "lon": -70.5716146,
     "precision": "calle",
     "fuente_coordenadas": {
-     "url": "https://www.openstreetmap.org/way/453518291",
+     "url": "https://www.openstreetmap.org/way/453529031",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Manquehue Norte 2051, Vitacura»"
     },
     "confianza": "pendiente"
@@ -2697,7 +2814,7 @@
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
      "cita": null,
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 121202"
     },
     "lat": -38.736587,
@@ -2706,7 +2823,7 @@
     "fuente_coordenadas": {
      "url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
      "tipo": "deis_minsal",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "código de establecimiento 121202"
     },
     "confianza": "pendiente"
@@ -2735,7 +2852,7 @@
     "fuente_coordenadas": {
      "url": "https://www.openstreetmap.org/way/296684564",
      "tipo": "openstreetmap",
-     "fecha": "2026-09-28",
+     "fecha": "2026-09-29",
      "via": "Nominatim, búsqueda de «Avenida Salvador 351, Providencia»"
     },
     "confianza": "pendiente"
@@ -2790,30 +2907,6 @@
   "ceos": {
    "nombre": "Centro de Estudios Oncológicos de Santiago (CEOS)",
    "ciudad_en_la_muestra": "Santiago",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
-  "urumed": {
-   "nombre": "Servicios Médicos Urumed",
-   "ciudad_en_la_muestra": "Rancagua",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
-  "ufro": {
-   "nombre": "Universidad de La Frontera",
-   "ciudad_en_la_muestra": "Temuco",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
-  "ucn": {
-   "nombre": "Universidad Católica del Norte",
-   "ciudad_en_la_muestra": "Coquimbo",
-   "motivo": "sin dirección en ninguna fuente revisada",
-   "fuente_revisada": null
-  },
-  "ucmaule": {
-   "nombre": "Universidad Católica del Maule",
-   "ciudad_en_la_muestra": "Talca",
    "motivo": "sin dirección en ninguna fuente revisada",
    "fuente_revisada": null
   },
