@@ -94,7 +94,10 @@ def fusionar(base, f):
             alias.append(n)
     a["nombre"] = f["nombre"]
     nota = "Ficha unificada el %s: %s %s" % (FECHA, f["por_que"], QUIEN)
-    previas = [x for x in (a.get("nota_identidad"), b.get("nota_identidad")) if x]
+    # Las notas que presentaban a las dos fichas como candidatas separadas ("NO se fusionan") son
+    # justo lo que esta fusión resuelve: dejarlas contradiría a la nota nueva.
+    previas = [x for x in (a.get("nota_identidad"), b.get("nota_identidad"))
+               if x and "no se fusionan" not in x.lower()]
     a["nota_identidad"] = " ".join(previas + [nota])
     nuevos, claves = [], set()
     for v in vin:
