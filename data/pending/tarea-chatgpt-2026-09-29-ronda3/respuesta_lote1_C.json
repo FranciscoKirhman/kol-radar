@@ -1,0 +1,294 @@
+{
+  "lote": 1,
+  "tareas_incluidas": ["C"],
+  "C": [
+    {
+      "nct": "NCT01642004",
+      "resultado": "sede_encontrada",
+      "sedes": [
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "ciec",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-73B164-20220816144215.pdf",
+          "cita_textual": "CA209-017- 0131* [investigador] Centro Internacional de Estudios Clinicos(Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile, Chile",
+          "fecha_consulta": "2026-09-30"
+        },
+        {
+          "resultado": "institucion_nueva",
+          "id_institucion": null,
+          "institucion_nueva": {
+            "nombre_oficial": "Centro Oncológico Antofagasta",
+            "direccion": "Los Pumas 10255, Chimba Alto",
+            "comuna": "Antofagasta",
+            "ciudad": "Antofagasta",
+            "region": "Región de Antofagasta",
+            "lat": null,
+            "lon": null,
+            "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-73B164-20220816144215.pdf",
+            "fuente_tipo": "otro",
+            "cita_textual": "CA209-017- 0161* [investigador] Centro Oncológico Antofagasta(Office), Los Pumas 10255, Chimba Alto, Antofagasta, Antofagasta, 240000, Chile",
+            "fecha_consulta": "2026-09-30"
+          },
+          "ciudad": "Antofagasta",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-73B164-20220816144215.pdf",
+          "cita_textual": "CA209-017- 0161* [investigador] Centro Oncológico Antofagasta(Office), Los Pumas 10255, Chimba Alto, Antofagasta, Antofagasta, 240000, Chile",
+          "fecha_consulta": "2026-09-30"
+        }
+      ],
+      "motivo_si_no_encontrada": "",
+      "notas": "El informe del patrocinador identifica directamente los centros 0131 y 0161. No atribuí los otros códigos de sede mediante código postal."
+    },
+    {
+      "nct": "NCT01673867",
+      "resultado": "sede_encontrada",
+      "sedes": [
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "instituto-oncologico-vina",
+          "institucion_nueva": null,
+          "ciudad": "Viña del Mar",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-621624-20221216083228.pdf",
+          "cita_textual": "CA209-057- 0012* [investigador] Instituto Oncologico(Office) Anabaena 336 Jardin Del Mar Reñaca Viña Del Mar, VALPARAISO N/A Chile",
+          "fecha_consulta": "2026-09-30"
+        },
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "ciec",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-621624-20221216083228.pdf",
+          "cita_textual": "CA209-057- 0077* [investigador] Centro Internacional de Estudios Clinicos(Office) Manzano 343 Oficina 410 Recoleta, Santiago de Chile Chile",
+          "fecha_consulta": "2026-09-30"
+        },
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "falp",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-621624-20221216083228.pdf",
+          "cita_textual": "CA209-057- 0134* [investigador] Fundacion Arturo Lopez Perez(Office) Av. Rancagua 878 Santiago, METROPOLITANA NA Chile",
+          "fecha_consulta": "2026-09-30"
+        }
+      ],
+      "motivo_si_no_encontrada": "",
+      "notas": "Los números 0012, 0077 y 0134 aparecen junto al nombre de cada centro en el informe. El centro 0058 no quedó identificado con esta evidencia."
+    },
+    {
+      "nct": "NCT01721772",
+      "resultado": "sede_encontrada",
+      "sedes": [
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "instituto-oncologico-vina",
+          "institucion_nueva": null,
+          "ciudad": "Viña del Mar",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+          "cita_textual": "CA209-066-0028* [investigador] Instituto Oncologico (Office), Anabaena 336, Jardin Del Mar, Reñaca, Viña Del Mar, Valparaiso, Chile",
+          "fecha_consulta": "2026-09-30"
+        },
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "falp",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+          "cita_textual": "CA209-066-0029* [investigador] Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago, Metropolitana, Chile",
+          "fecha_consulta": "2026-09-30"
+        },
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "hosp-uchile",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+          "cita_textual": "CA209-066-0080* [investigador] Hospital Clinico de la Universidad De Chile (Office), Santos Dumont 999, 5 Piso Sector E, Santiago, Metropolitana, Chile",
+          "fecha_consulta": "2026-09-30"
+        },
+        {
+          "resultado": "institucion_nueva",
+          "id_institucion": null,
+          "institucion_nueva": {
+            "nombre_oficial": "Centro Investigaciones Clinicas",
+            "direccion": "Av. Americo Vespucio 1314, 3rd Floor",
+            "comuna": "Vitacura",
+            "ciudad": "Santiago",
+            "region": "Región Metropolitana de Santiago",
+            "lat": null,
+            "lon": null,
+            "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+            "fuente_tipo": "otro",
+            "cita_textual": "CA209-066-0085* [investigador] Centro Investigaciones Clinicas (Office), Av. Americo Vespucio 1314, 3rd Floor, Vitacura, Santiago, 7630370, Chile",
+            "fecha_consulta": "2026-09-30"
+          },
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+          "cita_textual": "CA209-066-0085* [investigador] Centro Investigaciones Clinicas (Office), Av. Americo Vespucio 1314, 3rd Floor, Vitacura, Santiago, 7630370, Chile",
+          "fecha_consulta": "2026-09-30"
+        }
+      ],
+      "motivo_si_no_encontrada": "",
+      "notas": "El informe nombra cuatro centros chilenos. No fusioné Centro Investigaciones Clinicas con otra institución de la lista E por compartir investigador."
+    },
+    {
+      "nct": "NCT02231749",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA209-214 y CA209214 en informes del patrocinador en portal.dimdi.de y en el sitio del Instituto Oncológico. La página del centro menciona el protocolo en la trayectoria de un profesional, pero no prueba en qué institución se ejecutó.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT02279862",
+      "resultado": "sede_encontrada",
+      "sedes": [
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "instituto-oncologico-vina",
+          "institucion_nueva": null,
+          "ciudad": "Viña del Mar",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2225_01-2-0-0B1D07-20171214093750.pdf",
+          "cita_textual": "012 Instituto Oncologico Clinica Renaca(Office) Anabaena 336 Jardin Del Mar Vina Del Mar, VALPARAISO 2540364 Chile",
+          "fecha_consulta": "2026-09-30"
+        },
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "ciec",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2225_01-2-0-0B1D07-20171214093750.pdf",
+          "cita_textual": "015 Centro Internacional de Estudios Clinicos(Office) Manzano 343 Oficina 410 Recoleta, Santiago de Chile Chile",
+          "fecha_consulta": "2026-09-30"
+        },
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "falp",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2225_01-2-0-0B1D07-20171214093750.pdf",
+          "cita_textual": "016 Fundacion Arturo Lopez Perez(Office) Av. Rancagua 878 Santiago, METROPOLITANA NA Chile",
+          "fecha_consulta": "2026-09-30"
+        }
+      ],
+      "motivo_si_no_encontrada": "",
+      "notas": "Los tres centros figuran en el listado de centros del informe CA184-437."
+    },
+    {
+      "nct": "NCT02481830",
+      "resultado": "sede_encontrada",
+      "sedes": [
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "ciec",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2526_01-2-0-93C79C-20230822175952.pdf",
+          "cita_textual": "CA209-331-0025* [investigador] Centro Internacional de Estudios Clinicos(Office) Manzano 343 Oficina 410 Recoleta, Santiago de Chile Chile",
+          "fecha_consulta": "2026-09-30"
+        }
+      ],
+      "motivo_si_no_encontrada": "",
+      "notas": "El número 0025 coincide con el código de la sede del registro."
+    },
+    {
+      "nct": "NCT02823574",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA209-714 y CA209714 en informes del patrocinador y material del ensayo; no encontré una página permitida que nombrara a la vez el protocolo y el centro chileno.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT02872116",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA209-649 y CA209649 en informes del patrocinador y sitios de centros. La trayectoria de un profesional menciona el protocolo, pero no establece el centro donde se ejecutó.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT03141177",
+      "resultado": "sede_encontrada",
+      "sedes": [
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "ciec",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-2713432-1-0-D695CA-20220830114625.pdf",
+          "cita_textual": "CA209-9ER-0045* [investigador] Centro Internacional de Estudios Clinicos (Office) Manzano 343 Oficina 410 Recoleta, Santiago de Chile",
+          "fecha_consulta": "2026-09-30"
+        }
+      ],
+      "motivo_si_no_encontrada": "",
+      "notas": "El informe identifica directamente el centro 0045; no atribuí otras instituciones por compartir dirección."
+    },
+    {
+      "nct": "NCT03338790",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA209-9KD y CA2099KD en informes del patrocinador y sitios de centros. La mención del protocolo en una trayectoria profesional no identifica de forma suficiente la sede del estudio.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT03377361",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA209-9N9 y CA2099N9 en informes del patrocinador y material del ensayo. Encontré el protocolo y resultados por país, pero no una fuente permitida que nombrara el centro chileno.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT03470922",
+      "resultado": "sede_encontrada",
+      "sedes": [
+        {
+          "resultado": "institucion_existente",
+          "id_institucion": "falp",
+          "institucion_nueva": null,
+          "ciudad": "Santiago",
+          "evidencia_url": "https://portal.dimdi.de/data/ctr/O-7007005-1-0-4C3C7D-20230421120631.pdf",
+          "cita_textual": "CA224-047-0001* [investigador] Fundacion Arturo Lopez Perez (Office) Av. Rancagua 878 Santiago, METROPOLITANA NA Chile",
+          "fecha_consulta": "2026-09-30"
+        }
+      ],
+      "motivo_si_no_encontrada": "",
+      "notas": "El informe identifica directamente el centro 0001."
+    },
+    {
+      "nct": "NCT03519256",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA209-9UT y CA2099UT en informes del patrocinador y material del ensayo; no encontré una página permitida que nombrara el protocolo y una institución chilena concreta.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT03635983",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA045-001 y CA045001 en informes del patrocinador y material del ensayo; no encontré una página permitida que nombrara el protocolo y los centros chilenos.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT03704077",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA224-061 y CA224061 en informes del patrocinador y material del ensayo; no encontré una página permitida que nombrara el protocolo y una institución chilena concreta.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT03980314",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA209-8FC y CA2098FC en informes del patrocinador y material del ensayo. Hallé referencias al estudio y países participantes, pero no un centro chileno nombrado.",
+      "notas": ""
+    },
+    {
+      "nct": "NCT06946797",
+      "resultado": "no_encontrada",
+      "sedes": [],
+      "motivo_si_no_encontrada": "Busqué CA209-1533 y CA2091533 en el buscador del patrocinador y material público del ensayo; no encontré una fuente permitida que identificara el centro chileno.",
+      "notas": ""
+    }
+  ],
+  "pendientes_para_el_proximo_lote": [
+    "Continuar con los 37 NCT restantes de la lista, en lotes de máximo 30."
+  ]
+}

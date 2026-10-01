@@ -1,7 +1,7 @@
 {
   "descripcion": "Base de fichas reales sobre oncología en Chile (19 áreas): profesionales, instituciones, ensayos clínicos con sede en Chile y los fármacos que evalúan, recolectada de ClinicalTrials.gov, PubMed, SciELO Chile, el buscador de estudios clínicos de la CIF, la planilla de inspecciones del ISP, el NCI Thesaurus y sitios institucionales. Cada hecho lleva su URL de origen. Casi nada pasó por revisión humana: ver el campo 'confianza' de cada hecho.",
   "generado": "2026-08-09",
-  "actualizado": "2026-09-30",
+  "actualizado": "2026-10-01",
   "especialidad_muestra": "oncología (19 áreas)",
   "contacto": {
     "_como_completar": "Poné en 'canal' UNA de dos cosas y listo — el pie de página del sitio cambia solo, no hay que tocar HTML: (a) una dirección de correo, ej. contacto@tudominio.cl; o (b) la URL https:// de un formulario. Mientras siga en null, el sitio dice honestamente que el canal todavía no existe.",
@@ -10396,6 +10396,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT01642004",
           "fecha": "2022-12-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-017), lista de centros: Centro Internacional de Estudios Clínicos (CIEC) y Centro Oncológico del Norte.",
+          "fase": "Fase III",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-73B164-20220816144215.pdf",
+          "fecha": "2026-09-30",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study of BMS-936558 (Nivolumab) Compared to Docetaxel in Previously Treated Advanced or Metastatic Squamous Cell Non-small Cell Lung Cancer (NSCLC) (CheckMate 017)",
@@ -10527,6 +10535,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT01673867",
           "fecha": "2023-02-08",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-057), lista de centros: Instituto Oncológico — Clínica Bupa Reñaca, Centro Internacional de Estudios Clínicos (CIEC) y Fundación Arturo López Pérez (FALP).",
+          "fase": "Fase III",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-621624-20221216083228.pdf",
+          "fecha": "2026-09-30",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Study of BMS-936558 (Nivolumab) Compared to Docetaxel in Previously Treated Metastatic Non-squamous NSCLC",
@@ -10594,6 +10610,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT01721772",
           "fecha": "2022-07-12",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-066), lista de centros: Instituto Oncológico — Clínica Bupa Reñaca, Fundación Arturo López Pérez (FALP) y Hospital Clínico Universidad de Chile.",
+          "fase": "Fase III",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+          "fecha": "2026-09-30",
           "confianza": "pendiente"
         }
       ],
@@ -11441,6 +11465,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT02279862",
           "fecha": "2019-08-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-437), lista de centros: Instituto Oncológico — Clínica Bupa Reñaca, Centro Internacional de Estudios Clínicos (CIEC) y Fundación Arturo López Pérez (FALP).",
+          "fase": "Fase II",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-2225_01-2-0-0B1D07-20171214093750.pdf",
+          "fecha": "2026-09-30",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "Safety and Efficacy Study of Ipilimumab 3 mg/kg Versus Ipilimumab 10 mg/kg in Subjects With Metastatic Castration Resistant Prostate Cancer Who Are Chemotherapy Naive",
@@ -12127,6 +12159,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT02481830",
           "fecha": "2023-07-27",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-331), lista de centros: Centro Internacional de Estudios Clínicos (CIEC).",
+          "fase": "Fase III",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-2526_01-2-0-93C79C-20230822175952.pdf",
+          "fecha": "2026-09-30",
           "confianza": "pendiente"
         }
       ],
@@ -13502,6 +13542,14 @@
           "fuente_url": "https://clinicaltrials.gov/study/NCT03141177",
           "fecha": "2026-08-24",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-9ER), lista de centros: Centro Internacional de Estudios Clínicos (CIEC).",
+          "fase": "Fase III",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-2713432-1-0-D695CA-20220830114625.pdf",
+          "fecha": "2026-09-30",
+          "confianza": "pendiente"
         }
       ],
       "titulo_fuente": "A Study of Nivolumab Combined With Cabozantinib Compared to Sunitinib in Previously Untreated Advanced or Metastatic Renal Cell Carcinoma",
@@ -14260,6 +14308,14 @@
           "fase": "Fase III",
           "fuente_url": "https://clinicaltrials.gov/study/NCT03470922",
           "fecha": "2025-09-09",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "ensayo_clinico",
+          "hecho": "ClinicalTrials.gov no nombra la sede en Chile. La nombra el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA224-047), lista de centros: Fundación Arturo López Pérez (FALP).",
+          "fase": "Fase III",
+          "fuente_url": "https://portal.dimdi.de/data/ctr/O-7007005-1-0-4C3C7D-20230421120631.pdf",
+          "fecha": "2026-09-30",
           "confianza": "pendiente"
         }
       ],
@@ -72218,6 +72274,132 @@
       "criterio": "documento_del_estudio",
       "fuente_url": "https://portal.dimdi.de/data/ctr/O-1156_01-2-0-76FC19-20161124160439.pdf",
       "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-095), lista de centros"
+    },
+    {
+      "origen": "ciec",
+      "destino": "nct01642004",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-017-0131: Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-73B164-20220816144215.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-017), lista de centros"
+    },
+    {
+      "origen": "centro-oncologico-norte",
+      "destino": "nct01642004",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-017-0161: Centro Oncológico Antofagasta (Office), Los Pumas 10255, Chimba Alto, Antofagasta, 240000",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-73B164-20220816144215.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-017), lista de centros"
+    },
+    {
+      "origen": "instituto-oncologico-vina",
+      "destino": "nct01673867",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-057-0012: Instituto Oncologico (Office), Anabaena 336, Jardin Del Mar, Reñaca, Viña Del Mar",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-621624-20221216083228.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-057), lista de centros"
+    },
+    {
+      "origen": "ciec",
+      "destino": "nct01673867",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-057-0077: Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-621624-20221216083228.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-057), lista de centros"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct01673867",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-057-0134: Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-621624-20221216083228.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-057), lista de centros"
+    },
+    {
+      "origen": "instituto-oncologico-vina",
+      "destino": "nct01721772",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-066-0028: Instituto Oncologico (Office), Anabaena 336, Jardin Del Mar, Reñaca, Viña Del Mar",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-066), lista de centros"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct01721772",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-066-0029: Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-066), lista de centros"
+    },
+    {
+      "origen": "hosp-uchile",
+      "destino": "nct01721772",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-066-0080: Hospital Clinico de la Universidad De Chile (Office), Santos Dumont 999, 5 Piso Sector E, Santiago",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2672461-3-0-C9B7D2-20220607144210.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-066), lista de centros"
+    },
+    {
+      "origen": "instituto-oncologico-vina",
+      "destino": "nct02279862",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "012 Instituto Oncologico Clinica Renaca (Office), Anabaena 336, Jardin Del Mar, Vina Del Mar, 2540364",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2225_01-2-0-0B1D07-20171214093750.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-437), lista de centros"
+    },
+    {
+      "origen": "ciec",
+      "destino": "nct02279862",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "015 Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2225_01-2-0-0B1D07-20171214093750.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-437), lista de centros"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct02279862",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "016 Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2225_01-2-0-0B1D07-20171214093750.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA184-437), lista de centros"
+    },
+    {
+      "origen": "ciec",
+      "destino": "nct02481830",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-331-0025: Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2526_01-2-0-93C79C-20230822175952.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-331), lista de centros"
+    },
+    {
+      "origen": "ciec",
+      "destino": "nct03141177",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA209-9ER-0045: Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-2713432-1-0-D695CA-20220830114625.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA209-9ER), lista de centros"
+    },
+    {
+      "origen": "falp",
+      "destino": "nct03470922",
+      "tipo": "sitio del ensayo",
+      "alias_fuente": "CA224-047-0001: Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago",
+      "criterio": "documento_del_estudio",
+      "fuente_url": "https://portal.dimdi.de/data/ctr/O-7007005-1-0-4C3C7D-20230421120631.pdf",
+      "fuente_descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo CA224-047), lista de centros"
     }
   ],
   "campos_confiables": [

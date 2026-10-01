@@ -5,12 +5,16 @@
 ClinicalTrials.gov esconde el nombre de muchas sedes ("Local Institution", "Chile"), pero el
 informe de resultados del patrocinador o el apéndice de la publicación a veces lista los centros
 por país. La tercera ronda de ChatGPT (2026-09-30) buscó esos documentos para los 109 ensayos sin
-ninguna sede identificada; encontró 3.
+ninguna sede identificada; encontró 10. Los informes de Bristol-Myers Squibb nombran el estudio por
+su código de protocolo (CA209-017…), que es el orgStudyId que declara ClinicalTrials.gov, y la sede
+por un número que a veces es el mismo de "Local Institution - 0131".
 
 Cada fila de SEDES se verificó abriendo el documento: la cita está copiada de ahí, y la ciudad (y
 el código postal, cuando lo hay) calza con la sede enmascarada de ClinicalTrials.gov.
   - Solo instituciones que ya están en la muestra: no crea entidades.
-  - No agrega personas, aunque el documento las nombre.
+  - No agrega personas, aunque el documento las nombre (y el texto del centro se guarda sin ellas).
+  - Si el documento nombra un centro que no se puede identificar sin suponer, no entra: queda en
+    NO_RESUELTAS.
   - El vínculo lleva "criterio": "documento_del_estudio" y la URL del documento; la ficha del
     ensayo recibe un hecho que dice qué documento y qué centros. Todo entra `pendiente`.
   - Correrlo dos veces no cambia nada.
@@ -46,6 +50,18 @@ DOCUMENTOS = {
         "consultado": "2026-09-30",
     },
 }
+for _protocolo, _archivo in (("CA209-017", "O-2672461-3-0-73B164-20220816144215"),
+                             ("CA209-057", "O-2672461-3-0-621624-20221216083228"),
+                             ("CA209-066", "O-2672461-3-0-C9B7D2-20220607144210"),
+                             ("CA184-437", "O-2225_01-2-0-0B1D07-20171214093750"),
+                             ("CA209-331", "O-2526_01-2-0-93C79C-20230822175952"),
+                             ("CA209-9ER", "O-2713432-1-0-D695CA-20220830114625"),
+                             ("CA224-047", "O-7007005-1-0-4C3C7D-20230421120631")):
+    DOCUMENTOS[_protocolo.lower()] = {
+        "url": "https://portal.dimdi.de/data/ctr/%s.pdf" % _archivo,
+        "descripcion": "el informe de resultados del patrocinador (Bristol-Myers Squibb, protocolo %s), lista de centros" % _protocolo,
+        "consultado": "2026-09-30",
+    }
 
 # (ensayo, institución de la muestra, documento, texto del centro tal como lo escribe el documento)
 SEDES = [
@@ -61,6 +77,38 @@ SEDES = [
      "ICOS – Inmunomedica (Pt Tx Ctr - Med Office/Clinic), Lago Puyehue 1745, Temuco"),
     ("NCT01057810", "iram", "ca184-095",
      "IRAM (Pt Tx Ctr - Hosp/Med Ctr), Av. Americo Vespucio Norte, Nro. 1314, Santiago"),
+    ("NCT01642004", "ciec", "ca209-017",
+     "CA209-017-0131: Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile"),
+    ("NCT01642004", "centro-oncologico-norte", "ca209-017",
+     "CA209-017-0161: Centro Oncológico Antofagasta (Office), Los Pumas 10255, Chimba Alto, Antofagasta, 240000"),
+    ("NCT01673867", "instituto-oncologico-vina", "ca209-057",
+     "CA209-057-0012: Instituto Oncologico (Office), Anabaena 336, Jardin Del Mar, Reñaca, Viña Del Mar"),
+    ("NCT01673867", "ciec", "ca209-057",
+     "CA209-057-0077: Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile"),
+    ("NCT01673867", "falp", "ca209-057", "CA209-057-0134: Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago"),
+    ("NCT01721772", "instituto-oncologico-vina", "ca209-066",
+     "CA209-066-0028: Instituto Oncologico (Office), Anabaena 336, Jardin Del Mar, Reñaca, Viña Del Mar"),
+    ("NCT01721772", "falp", "ca209-066", "CA209-066-0029: Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago"),
+    ("NCT01721772", "hosp-uchile", "ca209-066",
+     "CA209-066-0080: Hospital Clinico de la Universidad De Chile (Office), Santos Dumont 999, 5 Piso Sector E, Santiago"),
+    ("NCT02279862", "instituto-oncologico-vina", "ca184-437",
+     "012 Instituto Oncologico Clinica Renaca (Office), Anabaena 336, Jardin Del Mar, Vina Del Mar, 2540364"),
+    ("NCT02279862", "ciec", "ca184-437",
+     "015 Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile"),
+    ("NCT02279862", "falp", "ca184-437", "016 Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago"),
+    ("NCT02481830", "ciec", "ca209-331",
+     "CA209-331-0025: Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile"),
+    ("NCT03141177", "ciec", "ca209-9er",
+     "CA209-9ER-0045: Centro Internacional de Estudios Clinicos (Office), Manzano 343, Oficina 410, Recoleta, Santiago de Chile"),
+    ("NCT03470922", "falp", "ca224-047", "CA224-047-0001: Fundacion Arturo Lopez Perez (Office), Av. Rancagua 878, Santiago"),
+]
+
+# Centros que un documento nombra pero que no se pueden ligar sin suponer. No entran a la muestra.
+NO_RESUELTAS = [
+    ("NCT01721772", "ca209-066", "CA209-066-0085: Centro Investigaciones Clinicas (Office), Av. Americo Vespucio 1314, "
+     "3rd Floor, Vitacura, Santiago, 7630370",
+     "Es el edificio del IRAM, pero ClinicalTrials.gov usa ese código postal para el IRAM y para el Centro de "
+     "Investigaciones Clínicas Viña del Mar. No se sabe cuál de los dos es, o si es otro."),
 ]
 
 
@@ -102,6 +150,7 @@ def main():
         "vinculos_nuevos": nuevos,
         "ensayos": len({eid for eid, _ in por_ensayo}),
         "ensayos_sin_institucion_despues": sum(1 for e in ent if e["tipo"] == "ensayo_clinico" and e["id"] not in con_inst),
+        "centros_nombrados_sin_resolver": ["%s · %s" % (nct, texto) for nct, _, texto, _ in NO_RESUELTAS],
     }, ensure_ascii=False, indent=1))
 
 

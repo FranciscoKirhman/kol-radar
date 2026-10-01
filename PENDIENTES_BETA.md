@@ -1,7 +1,7 @@
 # Pendientes de la beta
 
 La lista vigente de lo que falta, con quién lo tiene que hacer. Al final, lo que ya se resolvió y
-cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 2026-09-30.
+cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 2026-10-01.
 
 ## Lo que falta
 
@@ -17,9 +17,9 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
    Google Search Console y enviar el sitemap (lo hace Francisco con su cuenta).
 
 ### Tareas externas
-5. **Tercera ronda para ChatGPT** (`data/pending/tarea-chatgpt-2026-09-29-ronda3/`): la tarea C está
-   hecha (3 ensayos con sede, integrados). Faltan 8 instituciones de la A y los 16 textos de sede de la B;
-   la segunda parte de la C se puede repetir con una búsqueda de verdad (ver el README de la ronda).
+5. **Tercera ronda para ChatGPT** (`data/pending/tarea-chatgpt-2026-09-29-ronda3/`): 10 ensayos con sede
+   integrados. Faltan 8 instituciones de la A, los 16 textos de sede de la B y 37 ensayos de la segunda
+   parte de la C (los de otros patrocinadores que Bristol-Myers Squibb).
 6. **OpenAlex**: la API key está como secret y el workflow corre (2026-09-30). Falta revisar su
    propuesta, el PR #2 (28 coincidencias, 5 ambiguas, 21 con otra afiliación), y cerrar el PR #1, del
    2026-08-18, que quedó viejo.
@@ -27,7 +27,7 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
    (decisión del 2026-09-30), el registro está vacío.
 
 ### Revisión humana (sin fecha)
-8. **Fichas de personas** (Etapa 3): 1 de 3.197 hechos revisado. Empezar por las 8 que entraron desde
+8. **Fichas de personas** (Etapa 3): 1 de 3.204 hechos revisado. Empezar por las 8 que entraron desde
    el ISP sin revisión de identidad, las ligaduras de nombre parcial (evidencia encontrada en la
    bandeja del ISP) y las 2 fusiones del 2026-09-29.
 9. **Validación con 3–5 MSL** (Etapa 6). Recién después tiene sentido recalibrar el puntaje.
@@ -43,16 +43,21 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
 - **Sedes que no se pueden resolver**: 35 marcadores del patrocinador ("Site 122", "Exelixis Clinical
   Site #100") y 159 sedes enmascaradas con código postal ambiguo (`data/pending/sedes-codigo-postal-2026-09-29/ambiguas.json`).
 
-## Cifras al 2026-09-30
+## Cifras al 2026-10-01
 
 | | |
 |---|---|
 | Fichas | 1.133: 83 personas, 110 instituciones, 579 ensayos, 361 fármacos |
-| Ensayos sin ninguna institución | 106 (eran 262 el 2026-09-10) |
+| Ensayos sin ninguna institución | 99 (eran 262 el 2026-09-10) |
 | Instituciones ubicadas en el mapa | 96 de 110 |
-| Hechos revisados por una persona | 1 de 3.197 |
+| Hechos revisados por una persona | 1 de 3.204 |
 
 ## Lo resuelto
+
+**2026-10-01**
+- Segunda parte de la tarea C, repetida: los informes de resultados de Bristol-Myers Squibb nombran 14
+  sedes en 7 ensayos (106 → 99 ensayos sin institución). Un centro que nombran no se liga porque no se
+  sabe cuál es.
 
 **2026-09-30**
 - Tercera ronda de ChatGPT, primera entrega: 8 sedes nuevas en 3 ensayos que ClinicalTrials.gov
