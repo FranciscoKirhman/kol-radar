@@ -1,0 +1,53 @@
+# Actualización mensual de los vencimientos de patentes (pestaña Patentes).
+#
+# El Orange Book de la FDA se publica cada mes y el INAPI actualiza sus registros a diario, así que
+# este flujo corre el día 20 de cada mes, y también a mano desde la pestaña Actions. No toca
+# personas: solo patentes, exclusividades y titulares que son empresas.
+#
+# Nunca escribe sobre main: abre un Pull Request con el archivo nuevo para revisarlo antes.
+name: Actualizar patentes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 20 * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Descargar las fuentes y armar data/patentes/vencimientos.json
+        run: python3 scripts/patentes.py --cache /tmp/patentes | tee /tmp/resumen.json
+
+      - name: Abrir Pull Request con la actualización
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # La fecha de generación cambia siempre; si nada más cambió, no hay PR.
+          if git diff --quiet -I '"(generado|version)":' -- data/patentes; then
+            echo "Sin cambios en las patentes. No se abre PR."
+            exit 0
+          fi
+          FECHA=$(date +%Y-%m-%d)
+          RAMA="patentes/actualizacion-$FECHA-${{ github.run_id }}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$RAMA"
+          git add data/patentes
+          git commit -m "Actualizar los vencimientos de patentes ($FECHA)"
+          git push -u origin "$RAMA"
+          gh pr create \
+            --title "Patentes — actualización $FECHA" \
+            --body "Generado por scripts/patentes.py desde el Orange Book y el Purple Book (FDA) y los registros del INAPI. Revisar en la pestaña Patentes antes de unir. Resumen de la corrida en el registro del workflow."

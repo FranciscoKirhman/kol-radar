@@ -1,7 +1,7 @@
 # Pendientes de la beta
 
 La lista vigente de lo que falta, con quién lo tiene que hacer. Al final, lo que ya se resolvió y
-cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 2026-10-01.
+cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 2026-10-03.
 
 ## Lo que falta
 
@@ -26,11 +26,22 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
 7. **Respaldar** el registro de exclusiones y su clave (`~/.config/kol-radar/`): no hace falta todavía
    (decisión del 2026-09-30), el registro está vacío.
 
+### Patentes (pestaña nueva, 2026-10-03)
+8. **Patentes chilenas del compuesto**: el INAPI solo deja buscarlas por el título, y la del compuesto
+   casi nunca nombra el fármaco. Para encontrarlas hace falta ligar cada patente de EE.UU. con su
+   familia (sus equivalentes chilenas) en la base de la Oficina Europea de Patentes (EPO OPS, gratis con
+   registro: lo crea Francisco y la clave va como secret). Con eso, Chile tendría la misma fecha clave
+   que EE.UU.
+9. **Biológicos sin datos en EE.UU.** (pembrolizumab, nivolumab y la mayoría de los anticuerpos): el
+   Purple Book solo publica patentes cuando un biosimilar las pide, y no hay otra fuente abierta que
+   las liste. Se pueden buscar a mano, o con EPO OPS por titular y fecha, con revisión de una persona.
+10. **Revisar el primer PR mensual** del workflow "Actualizar patentes" (día 20 de cada mes).
+
 ### Revisión humana (sin fecha)
-8. **Fichas de personas** (Etapa 3): 1 de 3.204 hechos revisado. Empezar por las 8 que entraron desde
+11. **Fichas de personas** (Etapa 3): 1 de 3.204 hechos revisado. Empezar por las 8 que entraron desde
    el ISP sin revisión de identidad, las ligaduras de nombre parcial (evidencia encontrada en la
    bandeja del ISP) y las 2 fusiones del 2026-09-29.
-9. **Validación con 3–5 MSL** (Etapa 6). Recién después tiene sentido recalibrar el puntaje.
+12. **Validación con 3–5 MSL** (Etapa 6). Recién después tiene sentido recalibrar el puntaje.
 
 ### Deliberadamente sin tocar
 - **Modelo de puntaje**: pesos, umbrales, tope de red y heurística de guías, hasta validar con MSL.
@@ -53,6 +64,13 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
 | Hechos revisados por una persona | 1 de 3.204 |
 
 ## Lo resuelto
+
+**2026-10-03**
+- Pestaña **Patentes**: cuenta regresiva al próximo vencimiento, vencimientos por año y lista con
+  filtros; sección de patentes en el perfil de cada fármaco, con una cronología por producto; aviso en
+  Inicio. Datos de `scripts/patentes.py`: 88 fármacos con patentes o exclusividades en EE.UU. (Orange
+  Book y Purple Book), 72 con genéricos y 10 con biosimilares ya aprobados allá, y 49 con patentes
+  chilenas que los nombran (INAPI).
 
 **2026-10-01**
 - Segunda parte de la tarea C, repetida: los informes de resultados de Bristol-Myers Squibb nombran 14

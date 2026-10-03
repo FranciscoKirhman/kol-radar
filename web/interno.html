@@ -318,6 +318,18 @@
               <td>Información pública de un organismo del Estado (Ley 20.285). Solo el hecho, con la URL de la planilla.</td>
             </tr>
             <tr>
+              <td><a href="https://www.fda.gov/drugs/drug-approvals-and-databases/orange-book-data-files" target="_blank" rel="noopener">Orange Book y Purple Book</a><span class="quien">FDA, EE. UU.</span></td>
+              <td>Pestaña Patentes y perfil de cada fármaco: las patentes y exclusividades que el titular listó para cada producto aprobado en EE. UU., con su fecha de vencimiento; las patentes de biológicos informadas a fabricantes de biosimilares; y cuántos genéricos o biosimilares ya están aprobados.</td>
+              <td>Archivos mensuales completos, ligados por principio activo (sin la sal) y por producto: <code>scripts/patentes.py</code> → <code>data/patentes/vencimientos.json</code>.</td>
+              <td>Dominio público (gobierno de EE. UU.).</td>
+            </tr>
+            <tr>
+              <td><a href="https://datos.gob.cl/dataset/registros-de-patentes" target="_blank" rel="noopener">Registros de patentes 2009 a hoy</a><span class="quien">INAPI, Chile · datos.gob.cl</span></td>
+              <td>Patentes chilenas vigentes cuyo título nombra el fármaco, con su vencimiento y su tipo (deducido del título). Parcial: la patente del compuesto casi nunca nombra el fármaco.</td>
+              <td>Las planillas anuales completas, por <code>scripts/patentes.py</code>. Se guardan los titulares, no los inventores; un titular persona natural no se publica.</td>
+              <td>CC0. Pat-INFORMED (OMPI) no se usa: prohíbe las consultas automatizadas.</td>
+            </tr>
+            <tr>
               <td><a href="https://evsexplore.semantics.cancer.gov/" target="_blank" rel="noopener">NCI Thesaurus</a><span class="quien">National Cancer Institute, EE. UU. · API EVS</span></td>
               <td>El tipo de cada fármaco: inhibidor de checkpoint, terapia dirigida, quimioterapia, conjugado anticuerpo-fármaco, terapia hormonal…</td>
               <td>Búsqueda del concepto y de toda su jerarquía, con reglas explícitas y en orden (2026-09-28): <code>scripts/clasificar_farmacos_ncit.py</code>.</td>
@@ -476,7 +488,9 @@
     "evsexplore.semantics.cancer.gov": "NCI Thesaurus", "datos.gob.cl": "DEIS — Establecimientos de Salud (datos.gob.cl)",
     "openstreetmap.org": "OpenStreetMap", "orcid.org": "ORCID", "unensayoparami.org": "Un Ensayo para Mí",
     "superdesalud.gob.cl": "Superintendencia de Salud", "geoboundaries.org": "geoBoundaries",
-    "ispch.gob.cl": "ISP — Centros de investigación clínica inspeccionados"
+    "ispch.gob.cl": "ISP — Centros de investigación clínica inspeccionados",
+    "portal.dimdi.de": "Informes de resultados del patrocinador (PharmNet.Bund)",
+    "discovery.ucl.ac.uk": "UCL Discovery — publicación de un ensayo"
   };
   var QUE_LABEL = { hecho: "hecho", subtitulo: "afiliación mostrada", vinculo: "vínculo", direccion: "dirección",
                     coordenadas: "punto en el mapa", otra_sede: "otra sede", revisada: "revisada sin resultado", conjunto: "conjunto de datos" };

@@ -121,6 +121,9 @@ python3 scripts/integrar_isp_inspecciones.py && python3 scripts/integrar_sedes_d
 python3 scripts/fusionar_personas.py && python3 scripts/consolidar_ubicaciones.py
 ```
 ```bash
+python3 scripts/patentes.py
+```
+```bash
 python3 scripts/exclusiones.py verificar && python3 scripts/test_puntaje_paridad.py
 ```
 
@@ -142,9 +145,10 @@ termina con error si la API no respondió para algún fármaco, sin borrar su cl
 | `sedes_por_codigo_postal.py` | Sedes que ClinicalTrials.gov oculta, inferidas por el código postal que sí declara (marcadas como inferidas) |
 | `fusionar_personas.py` | Fusiones de identidad decididas, con su evidencia |
 | `consolidar_ubicaciones.py` | Dirección y punto de cada institución (DEIS, sitios oficiales, OpenStreetMap, respuestas revisadas de ChatGPT) |
+| `patentes.py` | Vencimientos de patentes y exclusividades (Orange Book y Purple Book de la FDA, registros del INAPI) para la pestaña Patentes. Lee la muestra, no la escribe: va al final. Un workflow lo corre cada mes y abre un PR |
 | `preparar_tarea_chatgpt_ronda3.py` + `validar_respuesta_chatgpt.py` | Lo que no se encontró, como tarea para ChatGPT, y la validación de sus respuestas |
 | `enriquecer_openalex.py` | Propuestas de afiliación desde OpenAlex (vía PR, nunca directo) |
 | `exclusiones.py` | Registro de quienes pidieron salir; todos los anteriores lo respetan |
 
-Una cadencia razonable: mensual para ClinicalTrials.gov y la CIF (el estado de reclutamiento cambia),
-trimestral para lo demás.
+Una cadencia razonable: mensual para ClinicalTrials.gov, la CIF y las patentes (el Orange Book se
+actualiza cada mes), trimestral para lo demás.

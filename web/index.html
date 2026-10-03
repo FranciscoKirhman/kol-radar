@@ -6,7 +6,7 @@
 <title>KOL Radar — oncología en Chile (beta)</title>
 <!-- Para buscadores y para cuando se comparte el enlace. El texto no promete validación: casi nada
      pasó por revisión humana, y así lo dice. -->
-<meta name="description" content="Mapa de ensayos clínicos, centros, fármacos y profesionales de la oncología en Chile, construido con evidencia pública: cada dato enlaza a su fuente (ClinicalTrials.gov, PubMed, SciELO, ISP, CIF). Beta, sin revisión humana." />
+<meta name="description" content="Mapa de ensayos clínicos, centros, fármacos y profesionales de la oncología en Chile, y cuándo vencen las patentes de cada fármaco, construido con evidencia pública: cada dato enlaza a su fuente (ClinicalTrials.gov, PubMed, SciELO, ISP, CIF, FDA, INAPI). Beta, sin revisión humana." />
 <link rel="canonical" href="https://franciscokirhman.github.io/kol-radar/web/index.html" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_CL" />
@@ -902,6 +902,172 @@
   .beta-sello { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--accent); border-radius: 3px; padding: 2px 7px; }
   .view-btn { padding: 7px 14px; }
 
+  /* ---------- Patentes: cuenta regresiva, años, lista y cronología del perfil ----------
+     Un color por TIPO de protección, el mismo en la pestaña y en el perfil, y siempre con su
+     nombre escrito al lado: el color ayuda a escanear, no es la única forma de leerlo. */
+  #patentes-view { display: none; }
+  #patentes-view.active { display: block; }
+  .pat-t-s { --pat-color: var(--accent); }
+  .pat-t-f { --pat-color: var(--persona); }
+  .pat-t-u { --pat-color: var(--ensayo); }
+  .pat-t-e { --pat-color: var(--tema); }
+  .pat-t-b { --pat-color: var(--farmaco); }
+  .pat-t-o { --pat-color: var(--text-muted); }
+  .pat-cabeza { padding: 26px 0 6px; max-width: 760px; }
+  .pat-cabeza h1 { font-family: var(--serif); font-size: clamp(26px, 4vw, 36px); letter-spacing: -.02em; line-height: 1.12; margin: 0 0 10px; }
+  .pat-lead { font-size: 15px; line-height: 1.55; color: var(--text-secondary); margin: 0 0 18px; text-wrap: pretty; }
+  .pat-pais {
+    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    border: 1px solid var(--border); color: var(--text-secondary); border-radius: 3px; padding: 1px 6px; vertical-align: 2px; white-space: nowrap;
+  }
+  .pat-pais.cl { border-color: color-mix(in srgb, var(--institucion) 55%, transparent); color: var(--institucion); }
+
+  /* La cuenta regresiva: lo primero que se ve. Dígitos tabulares para que no salten al cambiar. */
+  .pat-hero {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px 28px; align-items: center;
+    background: var(--surface-0); border: 1px solid var(--border); border-left: 4px solid var(--accent);
+    border-radius: 4px; padding: 18px 20px; margin: 0 0 14px;
+  }
+  @media (max-width: 760px) { .pat-hero { grid-template-columns: minmax(0, 1fr); } }
+  .pat-hero-kicker { font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--accent); margin: 0 0 6px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .pat-hero-nombre {
+    font: inherit; font-family: var(--serif); font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; letter-spacing: -.02em; line-height: 1.1;
+    background: none; border: none; padding: 0; color: var(--text-primary); cursor: pointer; text-align: left;
+  }
+  .pat-hero-nombre:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .pat-hero-sub { font-size: 13px; color: var(--text-secondary); margin: 4px 0 0; line-height: 1.5; }
+  .pat-reloj { display: flex; gap: 6px; }
+  .pat-reloj-celda { background: var(--surface-1); border-radius: 4px; padding: 8px 10px 6px; min-width: 64px; text-align: center; }
+  .pat-reloj-celda b { display: block; font-size: clamp(28px, 4.5vw, 40px); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .pat-reloj-celda span { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
+  .pat-reloj-pie { font-size: 12.5px; color: var(--text-secondary); margin: 8px 0 0; text-align: center; }
+  @media (max-width: 760px) { .pat-reloj-pie { text-align: left; } .pat-reloj-celda { min-width: 0; flex: 1; } }
+  .pat-avance { grid-column: 1 / -1; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; font-size: 11.5px; color: var(--text-muted); }
+  .pat-avance-barra { height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+  .pat-avance-barra span { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+
+  .pat-controles { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin: 0 0 12px; }
+  .pat-grupo { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .pat-grupo-tit { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-right: 4px; }
+  .pat-nota-filtro { font-size: 12px; color: var(--text-muted); }
+
+  /* Vencimientos por año: un vistazo a dónde se amontonan. Cada barra lleva su número escrito. */
+  .pat-anios-caja { background: var(--surface-0); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px 10px; margin: 0 0 14px; }
+  .pat-anios-caja h2 { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 8px; }
+  .pat-anios { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 4px; align-items: end; height: 96px; }
+  .pat-anio {
+    font: inherit; border: none; background: none; padding: 0; cursor: pointer; color: var(--text-secondary);
+    display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; height: 100%; min-width: 0;
+  }
+  .pat-anio .n { font-size: 11.5px; font-weight: 700; font-variant-numeric: tabular-nums; text-align: center; color: var(--text-primary); }
+  .pat-anio .b { display: block; background: var(--accent); border-radius: 2px 2px 0 0; min-height: 2px; opacity: .85; transition: opacity 150ms ease; }
+  .pat-anio.fuera .b { background: var(--text-muted); opacity: .35; }
+  .pat-anio .a { font-size: 10.5px; text-align: center; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 3px; font-variant-numeric: tabular-nums; }
+  .pat-anio:hover .b, .pat-anio:focus-visible .b { opacity: 1; }
+  .pat-anio:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  .pat-anio.vacio { cursor: default; }
+  .pat-anio .a-corto { display: none; }
+  @media (max-width: 560px) {
+    .pat-anios { gap: 2px; }
+    .pat-anio .a-largo { display: none; }
+    .pat-anio .a-corto { display: block; }
+    .pat-anio .n { font-size: 10px; }
+  }
+
+  .pat-anio-h { font-family: var(--serif); font-size: 21px; letter-spacing: -.01em; margin: 18px 0 6px; display: flex; align-items: baseline; gap: 8px; scroll-margin-top: 120px; }
+  .pat-lista { list-style: none; margin: 0; padding: 0; background: var(--surface-0); border: 1px solid var(--border); border-radius: 4px; }
+  .pat-lista > li + li { border-top: 1px solid var(--surface-2); }
+  .pat-fila {
+    font: inherit; width: 100%; text-align: left; color: var(--text-primary); background: none; border: none; cursor: pointer;
+    display: grid; grid-template-columns: 74px minmax(0, 1fr) minmax(150px, 26%) 128px; gap: 14px; align-items: center; padding: 11px 14px;
+    transition: background-color 150ms ease;
+  }
+  .pat-fila:hover, .pat-fila:focus-visible { background: var(--surface-1); outline: none; }
+  .pat-falta { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
+  .pat-falta b { font-size: 24px; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .pat-falta span { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+  .pat-falta.pronto b { color: var(--accent); }
+  .pat-principal { min-width: 0; }
+  .pat-nombre { font-family: var(--serif); font-size: 16.5px; font-weight: 700; letter-spacing: -.01em; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; }
+  .pat-linea-sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pat-linea-sub.muted { color: var(--text-muted); }
+  .pat-ctx { font-size: 12px; color: var(--text-muted); text-align: right; line-height: 1.4; }
+  .pat-ctx b { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .pat-ctx .recl { display: block; color: var(--ensayo); font-weight: 600; }
+  /* Mini cronología de la fila: hoy a la izquierda, diez años a la derecha; la misma escala en
+     todas las filas, para comparar de un vistazo. */
+  .pat-mini { position: relative; height: 26px; }
+  .pat-mini::before { content: ""; position: absolute; left: 0; right: 0; top: 13px; height: 1px; background: var(--border); }
+  .pat-mini i { position: absolute; top: 7px; width: 3px; height: 13px; margin-left: -1px; border-radius: 1px; background: var(--pat-color); }
+  .pat-mini i.fin { top: 6px; width: 11px; height: 15px; margin-left: -5px; border-radius: 50%; border: 2px solid var(--surface-0); box-shadow: 0 0 0 1px var(--pat-color); }
+  .pat-mini i.mas { width: 0; height: 0; background: none; border-left: 7px solid var(--text-muted); border-top: 5px solid transparent; border-bottom: 5px solid transparent; top: 8px; margin-left: -7px; border-radius: 0; }
+  .pat-mini .eje { position: absolute; top: 18px; font-size: 9.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; transform: translateX(-50%); }
+  @media (max-width: 760px) {
+    .pat-fila { grid-template-columns: 60px minmax(0, 1fr); gap: 10px; }
+    .pat-linea-sub { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .pat-mini { display: none; }
+    .pat-ctx { grid-column: 2; text-align: left; }
+    .pat-ctx .recl { display: inline; margin-left: 6px; }
+  }
+  .pat-vacio { background: var(--surface-0); border: 1px solid var(--border); border-radius: 4px; padding: 18px; color: var(--text-secondary); font-size: 14px; }
+  .pat-pie { font-size: 12.5px; line-height: 1.6; color: var(--text-muted); margin: 18px 0 0; max-width: 820px; }
+  .pat-pie p { margin: 0 0 8px; }
+  .pat-leyenda { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 10px; }
+  .pat-leyenda span, .pat-tipo { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+  .pat-leyenda span::before, .pat-tipo::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--pat-color); flex: none; }
+  .pat-tipo { font-size: 11.5px; font-weight: 600; color: var(--text-secondary); }
+
+  /* Perfil del fármaco: una cronología por producto, en la misma escala dentro de cada bloque. */
+  .pat-bloque + .pat-bloque { border-top: 1px solid var(--surface-2); margin-top: 10px; padding-top: 12px; }
+  .pat-bloque-cab { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; margin: 0 0 2px; }
+  .pat-bloque-cab strong { font-family: var(--serif); font-size: 16px; }
+  .pat-bloque-meta { font-size: 12px; color: var(--text-muted); margin: 0 0 6px; }
+  .pat-bloque-meta a { color: inherit; }
+  .pat-resumen-linea { font-size: 13.5px; color: var(--text-primary); margin: 0 0 10px; line-height: 1.5; }
+  .pat-resumen-linea .falta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+  .pat-crono { display: grid; grid-template-columns: minmax(150px, 30%) minmax(0, 1fr) auto; column-gap: 12px; row-gap: 2px; align-items: center; font-size: 12.5px; }
+  .pat-crono .eje-pista { position: relative; height: 16px; border-bottom: 1px solid var(--border); }
+  .pat-crono .eje-pista span { position: absolute; bottom: 2px; font-size: 10px; color: var(--text-muted); transform: translateX(-50%); font-variant-numeric: tabular-nums; }
+  .pat-crono .eje-pista span:first-child { transform: none; }
+  .pat-crono-lab { min-width: 0; display: flex; flex-direction: column; padding: 4px 0; }
+  .pat-crono-lab a { font-size: 11.5px; color: var(--text-muted); text-decoration: none; font-variant-numeric: tabular-nums; }
+  .pat-crono-lab a:hover { text-decoration: underline; color: var(--text-primary); }
+  .pat-pista { position: relative; height: 10px; background: linear-gradient(90deg, var(--surface-2), var(--surface-2)) center / 100% 1px no-repeat; }
+  .pat-pista span { position: absolute; left: 0; top: 1px; height: 8px; border-radius: 0 4px 4px 0; background: var(--pat-color); opacity: .85; min-width: 3px; }
+  .pat-crono-fecha { font-size: 12px; color: var(--text-secondary); white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+  .pat-crono-fecha small { display: block; font-size: 11px; color: var(--text-muted); }
+  @media (max-width: 560px) {
+    .pat-crono { grid-template-columns: minmax(0, 1fr) auto; }
+    .pat-crono .eje-pista, .pat-crono .eje-hueco, .pat-pista { display: none; }
+  }
+  .pat-cl { list-style: none; margin: 0; padding: 0; }
+  .pat-cl li { display: grid; grid-template-columns: 118px minmax(0, 1fr); gap: 12px; padding: 8px 0; border-top: 1px solid var(--surface-2); font-size: 12.5px; }
+  .pat-cl li:first-child { border-top: none; }
+  .pat-cl-fecha { font-variant-numeric: tabular-nums; color: var(--text-primary); font-weight: 600; }
+  .pat-cl-fecha small { display: block; font-weight: 400; color: var(--text-muted); font-size: 11px; }
+  .pat-cl-titulo { color: var(--text-primary); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pat-cl-meta { color: var(--text-muted); font-size: 11.5px; margin-top: 2px; }
+  .pat-mas { margin: 6px 0 0; font-size: 12.5px; color: var(--text-secondary); }
+  .pat-mas summary { cursor: pointer; color: var(--text-secondary); font-weight: 600; }
+  .pat-enlaces { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 4px; }
+  .pat-enlaces a { font-size: 12px; font-weight: 600; color: var(--text-primary); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; text-decoration: none; }
+  .pat-enlaces a:hover { border-color: var(--text-primary); }
+
+  /* Aviso en Inicio: una línea que lleva a la pestaña. */
+  .pat-aviso {
+    font: inherit; width: 100%; text-align: left; cursor: pointer; color: var(--text-primary);
+    display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center;
+    background: var(--surface-0); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 4px;
+    padding: 12px 16px; margin: 0 0 14px; transition: background-color 150ms ease;
+  }
+  .pat-aviso:hover, .pat-aviso:focus-visible { background: var(--surface-1); outline: none; }
+  .pat-aviso-num { font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; color: var(--accent); text-align: center; }
+  .pat-aviso-num small { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-top: 3px; }
+  .pat-aviso-txt { font-size: 13.5px; line-height: 1.45; color: var(--text-secondary); }
+  .pat-aviso-txt b { color: var(--text-primary); }
+  .pat-aviso-ir { font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+  @media (max-width: 560px) { .pat-aviso { grid-template-columns: auto minmax(0, 1fr); } .pat-aviso-ir { grid-column: 2; } }
+
   /* Movimiento reducido: menos, no cero. Se quedan los fundidos de opacidad y color, que ayudan
      a entender qué cambió, y se va todo lo que se desplaza. La escala de 3% al apretar se
      conserva: no desplaza nada y es la única confirmación de que el toque llegó. */
@@ -935,6 +1101,7 @@
       <button type="button" class="view-btn" id="view-mapa" aria-pressed="false">Perfil</button>
       <button type="button" class="view-btn" id="view-geo" aria-pressed="false">Mapa</button>
       <button type="button" class="view-btn" id="view-lista" aria-pressed="false">Fichas</button>
+      <button type="button" class="view-btn" id="view-patentes" aria-pressed="false">Patentes</button>
     </div>
     <a class="dev-link" href="interno.html" title="Cómo se construyó esto y de dónde salen los datos">Detalles técnicos ↗</a>
   </div>
@@ -1037,6 +1204,7 @@
       <div class="hero-ejemplos" id="hero-ejemplos"></div>
     </div>
     <div class="entradas" id="entradas"></div>
+    <div id="inicio-patentes"></div>
     <div class="inicio-pie">
       <div class="inicio-caja">
         <h3>Dónde hay actividad</h3>
@@ -1055,6 +1223,11 @@
 
   <section id="explorar-view" aria-label="Perfil de una ficha">
     <div id="explorar"></div>
+  </section>
+
+  <!-- Vencimientos de patentes: lo arma scripts/patentes.py en data/patentes/vencimientos.json. -->
+  <section id="patentes-view" aria-labelledby="pat-titulo">
+    <div id="patentes"></div>
   </section>
 
   <section id="list-view">
@@ -1560,6 +1733,16 @@
       // La ficha de una institución muestra su dirección: se pide ya, pesa poco. Va antes de leer el
       // enlace para que nada de lo que pase al abrir una ficha la deje sin pedir.
       cargarUbicaciones().catch(function () {});
+      // Las patentes pesan poco y las usan tres lugares (la pestaña, el perfil de un fármaco y el
+      // aviso de Inicio): se piden ya, y cuando llegan se repinta lo que esté a la vista.
+      cargarPatentes().then(function () {
+        inicio.pintar();
+        if (patentesView.classList.contains("active")) patentesVista.pintar();
+        var f = explorador.foco();
+        if (explorarView.classList.contains("active") && f && byId[f] && byId[f].tipo === "farmaco") explorador.pintar();
+      }, function () {
+        if (patentesView.classList.contains("active")) patentesVista.pintar();
+      });
       // Un enlace compartido (#ficha=pembrolizumab) abre directo las conexiones de esa ficha.
       leerHash();
     })
@@ -2510,6 +2693,7 @@
     if (networkView.classList.contains("active") && entidades.length) {
       buildNetwork(); networkBuilt = true;
     }
+    if (patentesView.classList.contains("active")) patentesVista.pintar();
   }
 
   function buildAreaChips() {
@@ -2754,6 +2938,8 @@
   var inicioView = document.getElementById("inicio-view");
   var explorarView = document.getElementById("explorar-view");
   var btnInicio = document.getElementById("view-inicio");
+  var patentesView = document.getElementById("patentes-view");
+  var btnPatentes = document.getElementById("view-patentes");
 
   // Cinco vistas, cuatro botones: "Perfil" es el perfil de una ficha (explorar) y, detrás de un
   // enlace, el grafo del ecosistema completo (conexiones). Las dos marcan el mismo botón.
@@ -2770,13 +2956,22 @@
     networkView.classList.toggle("active", cual === "conexiones");
     geoView.classList.toggle("active", cual === "chile");
     listView.classList.toggle("active", cual === "fichas");
+    patentesView.classList.toggle("active", cual === "patentes");
     document.body.classList.toggle("en-inicio", cual === "inicio");
     document.body.classList.toggle("en-explorar", cual === "explorar");
     btnInicio.setAttribute("aria-pressed", String(cual === "inicio"));
     btnMapa.setAttribute("aria-pressed", String(cual === "conexiones" || cual === "explorar"));
     btnGeo.setAttribute("aria-pressed", String(cual === "chile"));
     btnLista.setAttribute("aria-pressed", String(cual === "fichas"));
+    btnPatentes.setAttribute("aria-pressed", String(cual === "patentes"));
     if (cual === "conexiones" && !networkBuilt && entidades.length) { buildNetwork(); networkBuilt = true; }
+    // La pestaña de patentes tiene su propio enlace (#patentes), para poder compartirla.
+    if (cual === "patentes") {
+      try { history.replaceState(null, "", "#patentes"); } catch (e) { /* file:// */ }
+      if (entidades.length) patentesVista.pintar();
+    } else if (location.hash === "#patentes") {
+      try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* file:// */ }
+    }
     if (cual === "chile" && entidades.length) mapaChile.mostrar();
     if (cual === "explorar") explorador.pintar();
     if (cual !== "explorar" && location.hash.indexOf("#ficha=") === 0) {
@@ -2828,6 +3023,7 @@
   btnGeo.addEventListener("click", function () { mostrarVista("chile"); });
   btnLista.addEventListener("click", function () { mostrarVista("fichas"); });
   btnInicio.addEventListener("click", function () { mostrarVista("inicio"); });
+  btnPatentes.addEventListener("click", function () { mostrarVista("patentes"); });
   document.getElementById("brand-inicio").addEventListener("click", function () { mostrarVista("inicio"); });
   document.getElementById("grafo-a-explorar").addEventListener("click", function () { mostrarVista("explorar"); });
 
@@ -5596,6 +5792,169 @@
   }
   var RANGO_FASE = { "Fase IV": 4, "Fase III": 3, "Fase II": 2, "Fase I": 1 };
 
+  // ---------------- Patentes: datos y fechas ----------------
+  // Cuándo vence la protección de cada fármaco. scripts/patentes.py lo arma desde el Orange Book y
+  // el Purple Book (FDA, EE.UU.) y los registros del INAPI (Chile); acá solo se lee y se cuenta
+  // hacia atrás. La cuenta corre en el navegador, así que no envejece entre una carga y otra.
+  var PATENTES_URL = "../data/patentes/vencimientos.json";
+  var patentesDatos = null, promesaPatentes = null;
+  function cargarPatentes() {
+    if (!promesaPatentes) {
+      promesaPatentes = fetch(PATENTES_URL, { cache: "no-cache" }).then(jsonOk)
+        .then(function (d) { patentesDatos = d; return d; },
+              function (err) { promesaPatentes = null; throw err; });
+    }
+    return promesaPatentes;
+  }
+  var MESES_CORTOS = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+  var MESES_LARGOS = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+  function diaDe(iso) { var p = iso.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function dosDigitos(n) { return (n < 10 ? "0" : "") + n; }
+  function hoyIso() { var d = new Date(); return d.getFullYear() + "-" + dosDigitos(d.getMonth() + 1) + "-" + dosDigitos(d.getDate()); }
+  function fechaCorta(iso) { var d = diaDe(iso); return d.getDate() + " " + MESES_CORTOS[d.getMonth()] + " " + d.getFullYear(); }
+  function fechaLarga(iso) { var d = diaDe(iso); return d.getDate() + " de " + MESES_LARGOS[d.getMonth()] + " de " + d.getFullYear(); }
+  // Una protección dura todo su último día: la cuenta llega a cero al empezar el día siguiente.
+  function finDelDia(iso) { var d = diaDe(iso); d.setDate(d.getDate() + 1); return d; }
+  function diasHasta(iso) { var h = new Date(); h.setHours(0, 0, 0, 0); return Math.round((diaDe(iso) - h) / 864e5); }
+  function mesesHasta(iso) {
+    var h = new Date(), d = diaDe(iso);
+    return (d.getFullYear() - h.getFullYear()) * 12 + d.getMonth() - h.getMonth() - (d.getDate() < h.getDate() ? 1 : 0);
+  }
+  function faltaTexto(iso) {
+    var dias = diasHasta(iso);
+    if (dias < 0) return "venció";
+    if (dias === 0) return "vence hoy";
+    if (dias < 60) return "faltan " + plural(dias, "día", "días");
+    var m = mesesHasta(iso), a = Math.floor(m / 12);
+    m = m % 12;
+    return "faltan " + (a ? plural(a, "año", "años") + (m ? " y " + plural(m, "mes", "meses") : "") : plural(m, "mes", "meses"));
+  }
+  // La misma cuenta en una cifra corta para una columna: días, meses o años con un decimal.
+  function faltaCorto(iso) {
+    var dias = diasHasta(iso);
+    if (dias < 100) return [String(Math.max(dias, 0)), dias === 1 ? "día" : "días"];
+    var m = mesesHasta(iso);
+    if (m < 24) return [String(m), "meses"];
+    return [(m / 12).toLocaleString("es-CL", { maximumFractionDigits: 1 }), "años"];
+  }
+  // Los nombres del Orange Book vienen en mayúsculas: "BRISTOL MYERS SQUIBB" → "Bristol Myers Squibb".
+  var SIGLAS_EMPRESA = { AB: 1, AG: 1, LLC: 1, LP: 1, NV: 1, BV: 1, PLC: 1, SA: 1, SPA: 1, US: 1, USA: 1, UK: 1, KG: 1, II: 1, III: 1 };
+  function nombreLegible(s) {
+    if (!s || s !== s.toUpperCase()) return s || "";
+    return s.toLowerCase().replace(/[a-zà-ÿ0-9]+/g, function (w) {
+      var W = w.toUpperCase();
+      if (SIGLAS_EMPRESA[W]) return W;
+      if (W === "GMBH") return "GmbH";
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    });
+  }
+  // Tipo de protección → [nombre, qué significa, grupo de color]. Los grupos: s sustancia,
+  // f formulación, u uso, e exclusividad regulatoria, b biológico, o otra.
+  var TIPO_PATENTE = {
+    sustancia: ["Sustancia", "Reivindica el principio activo: el compuesto, una sal o una forma cristalina.", "s"],
+    sustancia_formulacion: ["Sustancia y formulación", "Reivindica el principio activo y también el producto formulado.", "s"],
+    formulacion: ["Formulación", "Reivindica el producto formulado (comprimido, solución, dosis), no el principio activo.", "f"],
+    uso: ["Uso", "Protege un uso o una indicación: un genérico puede salir sin esa indicación.", "u"],
+    otra: ["Otra", "El titular no la declaró como de sustancia, de formulación ni de uso.", "o"],
+    biologico: ["Patente", "Patente que el titular informó a un fabricante de biosimilares (Purple Book).", "b"],
+    exclusividad: ["Exclusividad", "Protección regulatoria de la FDA, independiente de las patentes.", "e"],
+    compuesto: ["Compuesto", "Según el título, protege un compuesto.", "s"],
+    forma_solida: ["Forma sólida o sal", "Según el título, protege una forma cristalina, una sal o una forma sólida.", "s"],
+    combinacion: ["Combinación", "Según el título, protege una combinación con otro fármaco, no este fármaco solo.", "o"],
+    proceso: ["Proceso", "Según el título, protege una forma de fabricarlo: no impide fabricarlo de otra manera.", "o"]
+  };
+  function tipoPatente(clave) { return TIPO_PATENTE[clave] || TIPO_PATENTE.otra; }
+  function exclusividadDe(codigo) {
+    var lista = (patentesDatos && patentesDatos.exclusividades) || [];
+    for (var i = 0; i < lista.length; i++) {
+      var p = lista[i].prefijo;
+      if (codigo === p || codigo.indexOf(p.slice(-1) === "-" ? p : p + "-") === 0) return lista[i];
+    }
+    return { nombre: "Exclusividad regulatoria", alcance: "" };
+  }
+  function numeroPatenteUS(n) { return /^\d+$/.test(n) ? "US " + Number(n).toLocaleString("en-US") : "US " + n; }
+  var CLASES_SOPORTE = { "Soporte": 1, "Otros agentes": 1, "Sin clasificar": 1 };
+  function esBiologico(n) { return /anticuerpo|inmunoterapia|conjugado|biespec|celular|vacuna/i.test(n.clase || ""); }
+
+  // Todo lo conocido de un fármaco, ordenado: productos de EE.UU. (cada uno con sus patentes y
+  // exclusividades) y patentes chilenas, separadas en las que tratan del fármaco y las que solo lo
+  // mencionan (combinaciones, usos de otro compuesto). null si no hay datos o no cargaron.
+  function proteccionesDe(fid) {
+    if (!patentesDatos || !patentesDatos.farmacos[fid]) return null;
+    var d = patentesDatos.farmacos[fid], hoy = hoyIso();
+    var porFecha = function (a, b) { return a.vence < b.vence ? -1 : a.vence > b.vence ? 1 : 0; };
+    var us = (d.ee_uu || []).map(function (p) {
+      var esBla = p.aplicacion.indexOf("BLA") === 0;
+      var items = p.patentes.map(function (x) {
+        // Los códigos de uso (U-1777…) solo se entienden con la tabla de la FDA: van al tooltip.
+        return { clave: x.tipo, id: numeroPatenteUS(x.numero), vence: x.vence, nota: x.pediatrica ? "incluye la extensión pediátrica" : "",
+                 usos: x.usos || null,
+                 url: /^\d+$/.test(x.numero) ? "https://patents.google.com/patent/US" + x.numero : p.fuente_url };
+      }).concat(p.exclusividades.map(function (x) {
+        var e = exclusividadDe(x.codigo);
+        return { clave: "exclusividad", nombre: e.nombre, id: x.codigo, vence: x.vence, nota: e.alcance, url: p.fuente_url };
+      })).sort(porFecha);
+      var fin = items.length ? items[items.length - 1] : null;
+      var sustancias = items.filter(function (x) { return tipoPatente(x.clave)[2] === "s"; });
+      return {
+        pais: "us", marca: p.marcas.join(" / "), aplicacion: p.aplicacion, titular: nombreLegible(p.titular),
+        aprobada: p.aprobada || null, combinacion: p.combinacion || null, fuente: esBla ? "Purple Book" : "Orange Book",
+        fuente_url: p.fuente_url, items: items, fin: fin, finSustancia: sustancias.length ? sustancias[sustancias.length - 1] : null,
+        vigentes: items.filter(function (x) { return x.vence >= hoy; })
+      };
+    }).sort(function (a, b) { return a.fin && b.fin ? porFecha(a.fin, b.fin) : 0; });
+    var cl = (d.chile || []).slice().sort(porFecha);
+    return {
+      us: us,
+      competencia: d.ee_uu_competencia || null,
+      clPrincipales: cl.filter(function (c) { return c.principal; }),
+      clMenciones: cl.filter(function (c) { return !c.principal; })
+    };
+  }
+  // "la exclusividad ODE-337", "una patente de uso (US 12,465,608)", "una patente (US 8,574,869)".
+  function loQueVence(x) {
+    if (x.clave === "exclusividad") return "la exclusividad " + x.id + " (" + x.nombre.toLowerCase() + ")";
+    if (x.clave === "biologico") return "una patente (" + x.id + ")";
+    return "una patente de " + tipoPatente(x.clave)[0].toLowerCase() + " (" + x.id + ")";
+  }
+  // Genéricos o biosimilares ya aprobados en EE.UU.: dice si el vencimiento todavía importa.
+  function competenciaTexto(c, corto) {
+    if (!c) return "";
+    if (c.biosimilares && c.biosimilares.length) {
+      var b0 = c.biosimilares[0];
+      return corto ? "ya hay " + plural(c.biosimilares.length, "biosimilar", "biosimilares") + " en EE.UU." :
+        "En EE.UU. ya hay " + plural(c.biosimilares.length, "biosimilar aprobado", "biosimilares aprobados") +
+        (b0.aprobado ? " (el primero, " + b0.marca + ", en " + MESES_CORTOS[diaDe(b0.aprobado).getMonth()] + " " + diaDe(b0.aprobado).getFullYear() + ")" : "") + ".";
+    }
+    if (c.genericos) {
+      return corto ? "ya hay " + plural(c.genericos, "genérico", "genéricos") + " en EE.UU." :
+        "En EE.UU. ya hay " + plural(c.genericos, "genérico aprobado", "genéricos aprobados") + " con este principio activo" +
+        (c.primer_generico ? " (el primero, en " + MESES_CORTOS[diaDe(c.primer_generico).getMonth()] + " " + diaDe(c.primer_generico).getFullYear() + ")" : "") + ".";
+    }
+    return "";
+  }
+  function titularesTexto(lista) {
+    return (lista || []).map(function (t) { return t ? nombreLegible(t) : "persona natural"; }).join(" · ");
+  }
+  // Para la pestaña y el aviso de Inicio: un hito por producto de EE.UU. (el fin de TODA su
+  // protección listada) y uno por patente chilena que trata del fármaco. Solo los que no vencieron.
+  function hitosDePatentes() {
+    if (!patentesDatos) return [];
+    var hoy = hoyIso(), hitos = [];
+    Object.keys(patentesDatos.farmacos).forEach(function (fid) {
+      var n = byId[fid];
+      if (!n) return;
+      var p = proteccionesDe(fid);
+      p.us.forEach(function (prod) {
+        if (prod.fin && prod.fin.vence >= hoy) hitos.push({ fid: fid, n: n, pais: "us", fecha: prod.fin.vence, prod: prod });
+      });
+      p.clPrincipales.forEach(function (c) {
+        if (c.vence >= hoy) hitos.push({ fid: fid, n: n, pais: "cl", fecha: c.vence, cl: c });
+      });
+    });
+    return hitos.sort(function (a, b) { return a.fecha < b.fecha ? -1 : a.fecha > b.fecha ? 1 : a.n.nombre.localeCompare(b.n.nombre, "es"); });
+  }
+
   var explorador = (function () {
     var raiz = document.getElementById("explorar");
     var foco = null, historia = [], soloReclutando = false, abiertos = {};
@@ -5780,6 +6139,225 @@
       return sec;
     }
 
+    // ------------------------------------------------------------ patentes del fármaco
+    function frasesPatentes(pat) {
+      if (!pat) return [];
+      var f = [], hoy = hoyIso();
+      var vig = pat.us.filter(function (p) { return p.fin && p.fin.vence >= hoy; });
+      if (vig.length === 1) {
+        var p = vig[0], sus = p.finSustancia;
+        f.push("En EE.UU., la protección listada de " + p.marca + " termina el " + fechaCorta(p.fin.vence) + " (" + faltaTexto(p.fin.vence) + ")" +
+          (sus && sus.vence >= hoy && sus.vence < p.fin.vence ? "; su última patente de sustancia vence antes, el " + fechaCorta(sus.vence) + "." : "."));
+      } else if (vig.length > 1) {
+        f.push("En EE.UU., " + vig.length + " productos con este principio activo tienen protección listada: termina entre el " +
+          fechaCorta(vig[0].fin.vence) + " y el " + fechaCorta(vig[vig.length - 1].fin.vence) + ", según el producto.");
+      } else if (pat.us.length) {
+        var ultima = pat.us.map(function (p) { return p.fin ? p.fin.vence : ""; }).sort().pop();
+        if (ultima) f.push("En EE.UU., la protección listada ya terminó: lo último venció el " + fechaCorta(ultima) + ".");
+      }
+      var comp = competenciaTexto(pat.competencia);
+      if (comp) f.push(comp);
+      var cl = pat.clPrincipales.filter(function (c) { return c.vence >= hoy; });
+      if (cl.length) f.push("En Chile, " + plural(cl.length, "patente vigente lo nombra", "patentes vigentes lo nombran") +
+        " en su título; la primera vence el " + fechaCorta(cl[0].vence) + ".");
+      return f;
+    }
+
+    function enlaceExterno(texto, url, titulo) {
+      var a = el("a", "", texto);
+      a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer";
+      if (titulo) a.title = titulo;
+      return a;
+    }
+    // Los títulos del INAPI suelen venir en mayúsculas: se pasan a minúscula con mayúscula inicial.
+    function tituloLegible(t) {
+      return t === t.toUpperCase() ? t.charAt(0) + t.slice(1).toLowerCase() : t;
+    }
+
+    // Cronología de un producto: una fila por protección vigente, todas con la misma escala (de hoy
+    // a la última), así se ve de un vistazo qué cae primero y qué se queda.
+    function cronologia(items, clave) {
+      var hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+      var t0 = hoy.getTime();
+      var tFin = diaDe(items[items.length - 1].vence).getTime();
+      var span = Math.max(tFin - t0, 365 * 864e5) * 1.04;
+      var pos = function (t) { return Math.max(0, Math.min(100, (t - t0) / span * 100)); };
+      var caja = el("div", "");
+      var g = el("div", "pat-crono");
+      g.appendChild(el("span", "eje-hueco", ""));
+      var eje = el("div", "eje-pista");
+      eje.appendChild(el("span", "", "hoy"));
+      var anios = (tFin - t0) / (365.25 * 864e5), paso = anios <= 6 ? 1 : anios <= 12 ? 2 : 5;
+      for (var y = hoy.getFullYear() + 1; y <= new Date(tFin).getFullYear() + 1; y++) {
+        var p = pos(new Date(y, 0, 1).getTime());
+        if (y % paso || p < 6 || p > 97) continue;
+        var s = el("span", "", String(y)); s.style.left = p + "%";
+        eje.appendChild(s);
+      }
+      g.appendChild(eje);
+      g.appendChild(el("span", "eje-hueco", ""));
+      var tope = 10;
+      (abiertos[clave] ? items : items.slice(0, tope)).forEach(function (x) {
+        var tp = tipoPatente(x.clave), grupo = "pat-t-" + tp[2];
+        var lab = el("div", "pat-crono-lab");
+        var tipo = el("span", "pat-tipo " + grupo, x.clave === "exclusividad" ? x.nombre : tp[0]);
+        tipo.title = x.clave === "exclusividad" ? x.nota : tp[1];
+        lab.appendChild(tipo);
+        lab.appendChild(enlaceExterno(x.id + (x.nota && x.clave !== "exclusividad" ? " · " + x.nota : ""), x.url,
+          x.clave === "exclusividad" ? "Exclusividad " + x.id + " en el Orange Book" :
+            "Abrir la patente " + x.id + (x.usos ? ". Códigos de uso del Orange Book: " + x.usos.join(", ") : "")));
+        g.appendChild(lab);
+        var pista = el("div", "pat-pista " + grupo), barra = el("span", "");
+        barra.style.width = pos(diaDe(x.vence).getTime()) + "%";
+        pista.appendChild(barra);
+        g.appendChild(pista);
+        var f = el("div", "pat-crono-fecha", fechaCorta(x.vence));
+        f.appendChild(el("small", "", faltaTexto(x.vence)));
+        g.appendChild(f);
+      });
+      caja.appendChild(g);
+      if (items.length > tope) {
+        var mas = el("button", "exp-mas", abiertos[clave] ? "Mostrar menos" : "Mostrar las " + items.length);
+        mas.type = "button";
+        mas.addEventListener("click", function () { abiertos[clave] = !abiertos[clave]; pintar(); });
+        caja.appendChild(mas);
+      }
+      return caja;
+    }
+
+    function bloqueProducto(prod, clave) {
+      var hoy = hoyIso();
+      var b = el("div", "pat-bloque");
+      var cab = el("div", "pat-bloque-cab");
+      cab.appendChild(el("span", "pat-pais", "EE.UU."));
+      cab.appendChild(el("strong", "", prod.marca));
+      if (prod.combinacion) cab.appendChild(el("span", "pat-bloque-meta", "combinación de " + prod.combinacion.join(" + ")));
+      b.appendChild(cab);
+      var meta = el("p", "pat-bloque-meta",
+        [prod.aplicacion, prod.titular, prod.aprobada ? "aprobado el " + fechaCorta(prod.aprobada) : null].filter(Boolean).join(" · ") + " · ");
+      meta.appendChild(enlaceExterno(prod.fuente + " ↗", prod.fuente_url, "La ficha de este producto en el " + prod.fuente + " de la FDA"));
+      b.appendChild(meta);
+      var linea = el("p", "pat-resumen-linea");
+      if (prod.fin.vence >= hoy) {
+        linea.appendChild(document.createTextNode("Toda la protección listada termina el " + fechaLarga(prod.fin.vence) + " "));
+        linea.appendChild(el("span", "falta", "· " + faltaTexto(prod.fin.vence)));
+        linea.appendChild(document.createTextNode(". Lo último en vencer: " + loQueVence(prod.fin) + "." +
+          (prod.finSustancia && prod.finSustancia.vence >= hoy && prod.finSustancia.vence < prod.fin.vence ?
+            " La última de sustancia vence antes, el " + fechaCorta(prod.finSustancia.vence) + "." : "")));
+      } else {
+        linea.textContent = "La protección listada ya terminó: lo último venció el " + fechaLarga(prod.fin.vence) + ".";
+      }
+      b.appendChild(linea);
+      if (prod.vigentes.length) b.appendChild(cronologia(prod.vigentes, clave));
+      var vencidas = prod.items.length - prod.vigentes.length;
+      if (vencidas && prod.vigentes.length) {
+        b.appendChild(el("p", "pat-bloque-meta", plural(vencidas, "protección más de este producto ya venció.", "protecciones más de este producto ya vencieron.")));
+      }
+      return b;
+    }
+
+    function listaChile(lista) {
+      var ul = el("ul", "pat-cl");
+      lista.forEach(function (c) {
+        var tp = tipoPatente(c.tipo);
+        var li = el("li", "");
+        var f = el("div", "pat-cl-fecha", fechaCorta(c.vence));
+        f.appendChild(el("small", "", faltaTexto(c.vence)));
+        li.appendChild(f);
+        var d = el("div", "");
+        var tipo = el("span", "pat-tipo pat-t-" + tp[2], tp[0] + " (según el título)");
+        tipo.title = tp[1];
+        d.appendChild(tipo);
+        var tit = el("div", "pat-cl-titulo", tituloLegible(c.titulo));
+        tit.title = c.titulo;
+        d.appendChild(tit);
+        var meta = el("div", "pat-cl-meta", titularesTexto(c.titulares) + " · solicitud " + c.solicitud +
+          (c.registro ? " · registro " + c.registro : "") + " · ");
+        meta.appendChild(enlaceExterno("INAPI, datos abiertos ↗", c.fuente_url, "Planilla del INAPI donde está este registro (descarga un .xlsx)"));
+        d.appendChild(meta);
+        li.appendChild(d);
+        ul.appendChild(li);
+      });
+      return ul;
+    }
+
+    function bloqueChile(pat) {
+      var b = el("div", "pat-bloque");
+      var cab = el("div", "pat-bloque-cab");
+      cab.appendChild(el("span", "pat-pais cl", "Chile"));
+      cab.appendChild(el("strong", "", "Patentes registradas en el INAPI"));
+      b.appendChild(cab);
+      b.appendChild(el("p", "pat-bloque-meta", "Vigentes, registradas desde 2009, cuyo título nombra el fármaco; el tipo sale del título. " +
+        "La patente del compuesto casi nunca lo nombra (se presenta antes de que el fármaco tenga nombre), así que puede existir y no estar acá."));
+      if (pat.clPrincipales.length) b.appendChild(listaChile(pat.clPrincipales));
+      else if (pat.clMenciones.length) b.appendChild(el("p", "pf-vacio", "Ninguna trata de este fármaco: solo lo mencionan."));
+      else b.appendChild(el("p", "pf-vacio", "Ninguna patente chilena registrada desde 2009 lo nombra en su título."));
+      if (pat.clMenciones.length) {
+        var det = el("details", "pat-mas");
+        det.appendChild(el("summary", "", plural(pat.clMenciones.length, "patente más lo menciona", "patentes más lo mencionan") +
+          ", pero trata de otro fármaco o de una combinación"));
+        det.appendChild(listaChile(pat.clMenciones));
+        b.appendChild(det);
+      }
+      return b;
+    }
+
+    function enlacesPatentes() {
+      var w = el("div", "pat-enlaces");
+      var a = el("a", "", "Ver todos los vencimientos");
+      a.href = "#patentes";
+      w.appendChild(a);
+      w.appendChild(enlaceExterno("Buscador de patentes del INAPI ↗", "https://buscadorpatentes.inapi.cl/UI/MainSearch.aspx",
+        "Para confirmar en Chile, incluida la patente del compuesto"));
+      w.appendChild(enlaceExterno("Pat-INFORMED (OMPI) ↗", "https://patinformed.wipo.int/",
+        "Patentes declaradas por los laboratorios, por país. Consulta manual: no permite copiar sus datos."));
+      return w;
+    }
+
+    function seccionPatentes(n, pat) {
+      var sec = el("section", "pf-sec ancha");
+      sec.id = "pf-patentes";
+      sec.appendChild(el("h3", "", "Patentes y exclusividad"));
+      if (!patentesDatos) {
+        sec.appendChild(el("p", "pf-vacio", promesaPatentes ? "Cargando las patentes…" : "No se pudieron cargar los datos de patentes."));
+        return sec;
+      }
+      if (!pat) {
+        sec.appendChild(el("p", "pf-vacio", esBiologico(n) ?
+          "Sin datos. Es un biológico: en EE.UU. sus patentes se publican solo cuando un fabricante de biosimilares las pide (Purple Book), y para este no hay; " +
+          "en Chile, ninguna patente registrada desde 2009 lo nombra en su título." :
+          "Sin datos: el Orange Book (EE.UU.) no lista patentes ni exclusividades para un producto con este principio activo, y ninguna patente chilena registrada " +
+          "desde 2009 lo nombra en su título. Puede no estar aprobado en EE.UU. o haber perdido ya su protección."));
+        sec.appendChild(enlacesPatentes());
+        return sec;
+      }
+      sec.appendChild(el("p", "pf-nota", "Cuándo vence cada protección conocida, con la fuente de cada fecha. Que una venza no significa que entren " +
+        "genéricos o biosimilares: puede quedar otra patente, una exclusividad o un litigio, y en Chile además la protección de datos de prueba."));
+      pat.us.forEach(function (prod, i) { sec.appendChild(bloqueProducto(prod, "pat-us-" + i)); });
+      if (pat.competencia) {
+        var comp = el("p", "pat-resumen-linea", competenciaTexto(pat.competencia) + " ");
+        comp.appendChild(enlaceExterno((pat.competencia.biosimilares ? "Purple Book" : "Orange Book") + " ↗", pat.competencia.fuente_url,
+          "Genéricos (ANDA) o biosimilares (351(k)) aprobados por la FDA"));
+        if (pat.competencia.biosimilares) comp.title = pat.competencia.biosimilares.map(function (b) {
+          return b.marca + (b.aprobado ? " (" + fechaCorta(b.aprobado) + ")" : "") + (b.intercambiable ? ", intercambiable" : "");
+        }).join(" · ");
+        sec.appendChild(comp);
+      }
+      if (!pat.us.length) {
+        var sinUs = el("div", "pat-bloque");
+        sinUs.appendChild(el("p", "pf-vacio", esBiologico(n) ?
+          "EE.UU.: sin datos. El Purple Book publica las patentes de un biológico solo cuando un fabricante de biosimilares las pide." :
+          "EE.UU.: el Orange Book no lista patentes ni exclusividades para un producto con este principio activo."));
+        sec.appendChild(sinUs);
+      }
+      sec.appendChild(bloqueChile(pat));
+      sec.appendChild(enlacesPatentes());
+      var F = patentesDatos.fuentes;
+      sec.appendChild(el("p", "pf-nota", "Fuentes: " + F.orange_book.nombre + " (archivos del " + fechaCorta(F.orange_book.version) + "), " +
+        F.purple_book.nombre + " y " + F.inapi.nombre + " (actualizado el " + fechaCorta(F.inapi.version) + "). No es asesoría legal."));
+      return sec;
+    }
+
     // ------------------------------------------------------------ contenido por tipo
     // Cada tipo contesta sus propias preguntas. Devuelve frases, cifras y secciones.
     function perfilFarmaco(n) {
@@ -5816,18 +6394,26 @@
       });
       frases.push(inv.length ? plural(inv.length, "profesional aparece", "profesionales aparecen") + " con nombre en estos estudios." :
         "ClinicalTrials.gov no nombra investigadores en estos estudios; abajo, profesionales de los centros donde corren.");
+      var pat = proteccionesDe(n.id);
+      frasesPatentes(pat).forEach(function (f) { frases.push(f); });
+      var secPat = seccionPatentes(n, pat);
+      var patArriba = !!(pat && (pat.us.length || pat.clPrincipales.length));
       return {
         frases: frases,
         cifras: [[T.length, "estudios en Chile"], [R, "reclutando hoy"], [centros.length, "centros"], [patro.length, "patrocinadores"]],
         secciones: [
+          // Con datos de patentes, van primero: es lo que se viene a buscar cuando se mira un fármaco
+          // con una fecha encima. Sin datos, al final y en una línea.
+          patArriba ? secPat : null,
           seccion("centros", "Dónde se estudia", "Centros con al menos un estudio de este fármaco, por cuántos estudios.", filasDe(centros, ["estudio", "estudios"]), "Ninguna sede identificada."),
           seccion("gente", "Con nombre en estos estudios", "Profesionales que la fuente nombra como investigadores en al menos uno.", gente, "ClinicalTrials.gov no nombra investigadores en estos estudios."),
           seccion("enCentros", "En los centros donde se estudia", "Profesionales de la muestra que trabajan en esos centros. Es contexto: la fuente no los vincula al fármaco.", enCentros, "Sin profesionales de la muestra en esos centros."),
           seccion("areas", "En qué indicaciones", "Área de cada estudio, según la condición que declara la fuente.", filasDe(areas, ["estudio", "estudios"]), "—"),
           seccion("patro", "Quién patrocina", null, filasDe(patro, ["estudio", "estudios"]), "—"),
           seccion("combos", "Con qué se combina", "Otros fármacos evaluados en los mismos estudios.", filasDe(combos, ["estudio", "estudios"]), "Se evalúa solo."),
-          tablaEstudios("tabla", "Estudios", "Primero los que reclutan hoy en Chile, después por fase.", T)
-        ]
+          tablaEstudios("tabla", "Estudios", "Primero los que reclutan hoy en Chile, después por fase.", T),
+          patArriba ? null : secPat
+        ].filter(Boolean)
       };
     }
 
@@ -6167,6 +6753,7 @@
 
   // Enlace compartido: #ficha=<id> abre las conexiones de esa ficha.
   function leerHash() {
+    if (location.hash === "#patentes") { mostrarVista("patentes"); return; }
     var m = location.hash.match(/^#ficha=(.+)$/);
     if (!m) return;
     var id;
@@ -6285,6 +6872,11 @@
         cont.appendChild(art);
       });
 
+      var slot = document.getElementById("inicio-patentes");
+      slot.innerHTML = "";
+      var av = patentesVista.aviso();
+      if (av) slot.appendChild(av);
+
       // Regiones: cuántas fichas declaran una ciudad de cada región. Los fármacos no tienen lugar.
       var cuenta = {};
       entidades.forEach(function (n) {
@@ -6313,6 +6905,339 @@
       });
     }
     return { pintar: pintar, destacados: destacados, botonEjemplo: botonEjemplo };
+  })();
+
+  // ---------------- Patentes: la pestaña ----------------
+  // Responde "¿qué fármacos pierden su protección pronto?". Arriba, una cuenta regresiva al próximo
+  // vencimiento; después, cuántos vencen cada año; abajo, la lista por año con lo que vence, una
+  // mini cronología en la misma escala para todas las filas y lo que KOL Radar sabe del fármaco en
+  // Chile. Cada fila abre el perfil del fármaco, donde está el detalle con cada fuente.
+  var patentesVista = (function () {
+    var raiz = document.getElementById("patentes");
+    var filtro = { pais: "todos", horizonte: 5, onco: true, sinCompetencia: false };
+    var reloj = null;
+    function el(tag, clase, texto) {
+      var e = document.createElement(tag);
+      if (clase) e.className = clase;
+      if (texto !== undefined && texto !== null) e.textContent = texto;
+      return e;
+    }
+    function pasa(h) {
+      if (filtro.pais !== "todos" && h.pais !== filtro.pais) return false;
+      if (filtro.onco && CLASES_SOPORTE[h.n.clase]) return false;
+      if (filtro.sinCompetencia && h.pais === "us" && competenciaTexto(proteccionesDe(h.fid).competencia)) return false;
+      if (state.areas.length && !areasDe(h.n).some(function (a) { return state.areas.indexOf(a) !== -1; })) return false;
+      return true;
+    }
+    function limiteHorizonte() {
+      if (!filtro.horizonte) return "9999-12-31";
+      var d = new Date(); d.setFullYear(d.getFullYear() + filtro.horizonte);
+      return d.getFullYear() + "-" + dosDigitos(d.getMonth() + 1) + "-" + dosDigitos(d.getDate());
+    }
+    function abrirPerfil(fid) {
+      explorador.abrir(fid);
+      // Después de que el perfil se pinta y sube al inicio, se baja a la sección de patentes.
+      setTimeout(function () {
+        var s = document.getElementById("pf-patentes");
+        if (s) s.scrollIntoView({ block: "start", behavior: reducirMovimiento() ? "auto" : "smooth" });
+      }, 60);
+    }
+    function queVence(h) {
+      if (h.pais === "cl") return tipoPatente(h.cl.tipo)[0] + " (según el título)";
+      var fin = h.prod.fin, comp = competenciaTexto(proteccionesDe(h.fid).competencia, true);
+      return "Termina toda su protección listada · lo último: " + (fin.clave === "exclusividad" ? "exclusividad " + fin.id :
+        fin.clave === "biologico" ? "patente" : tipoPatente(fin.clave)[0].toLowerCase()) + (comp ? " · " + comp : "");
+    }
+    function estudiosEnChile(fid) {
+      var T = vecinosDe(fid, "ensayo_clinico").map(function (a) { return byId[a.otro]; });
+      return { n: T.length, recl: T.filter(function (t) { return t.sitios_chile_reclutando > 0; }).length };
+    }
+    function pildora(pais) { return el("span", "pat-pais" + (pais === "cl" ? " cl" : ""), pais === "cl" ? "Chile" : "EE.UU."); }
+
+    // ---------------------------------------------------------------- cuenta regresiva
+    function detenerReloj() { if (reloj) { clearInterval(reloj); reloj = null; } }
+    function heroe(h) {
+      var caja = el("section", "pat-hero");
+      caja.setAttribute("aria-label", "Próximo vencimiento");
+      var izq = el("div", "");
+      var k = el("p", "pat-hero-kicker", "Próximo vencimiento");
+      k.appendChild(pildora(h.pais));
+      izq.appendChild(k);
+      var nb = el("button", "pat-hero-nombre", h.n.nombre); nb.type = "button";
+      nb.title = "Ver el perfil de " + h.n.nombre + " y todas sus patentes";
+      nb.addEventListener("click", function () { abrirPerfil(h.fid); });
+      izq.appendChild(nb);
+      if (h.pais === "us") {
+        izq.appendChild(el("p", "pat-hero-sub", h.prod.marca + " · " + h.prod.titular + " · " + h.prod.fuente));
+        izq.appendChild(el("p", "pat-hero-sub", "En EE.UU. termina toda la protección listada de este producto. Lo último en vencer es " +
+          loQueVence(h.prod.fin) + ". " + competenciaTexto(proteccionesDe(h.fid).competencia)));
+      } else {
+        izq.appendChild(el("p", "pat-hero-sub", "Patente chilena · " + tipoPatente(h.cl.tipo)[0].toLowerCase() + " según el título · " + titularesTexto(h.cl.titulares)));
+        var tt = el("p", "pat-hero-sub", "«" + h.cl.titulo.replace(/\s+/g, " ").slice(0, 180) + (h.cl.titulo.length > 180 ? "…" : "") + "»");
+        izq.appendChild(tt);
+      }
+      caja.appendChild(izq);
+
+      var der = el("div", "");
+      var r = el("div", "pat-reloj");
+      r.setAttribute("role", "timer");
+      r.setAttribute("aria-label", "Tiempo que falta para el " + fechaLarga(h.fecha));
+      var celdas = {};
+      [["d", "días"], ["h", "horas"], ["m", "min"], ["s", "seg"]].forEach(function (c) {
+        var cel = el("div", "pat-reloj-celda");
+        celdas[c[0]] = el("b", "", "0");
+        cel.appendChild(celdas[c[0]]);
+        cel.appendChild(el("span", "", c[1]));
+        r.appendChild(cel);
+      });
+      der.appendChild(r);
+      der.appendChild(el("p", "pat-reloj-pie", "hasta el fin del " + fechaLarga(h.fecha)));
+      caja.appendChild(der);
+      var objetivo = finDelDia(h.fecha).getTime();
+      function tic() {
+        if (!patentesView.classList.contains("active")) { detenerReloj(); return; }
+        var ms = Math.max(0, objetivo - Date.now());
+        var s = Math.floor(ms / 1000);
+        celdas.d.textContent = Math.floor(s / 86400).toLocaleString("es-CL");
+        celdas.h.textContent = dosDigitos(Math.floor(s % 86400 / 3600));
+        celdas.m.textContent = dosDigitos(Math.floor(s % 3600 / 60));
+        celdas.s.textContent = dosDigitos(s % 60);
+      }
+      tic();
+      reloj = setInterval(tic, 1000);
+
+      // Cuánto de su protección ya pasó: de la aprobación en EE.UU. al fin de lo listado.
+      if (h.pais === "us" && h.prod.aprobada && h.prod.aprobada < h.fecha) {
+        var t0 = diaDe(h.prod.aprobada).getTime(), t1 = diaDe(h.fecha).getTime();
+        var pct = Math.max(0, Math.min(100, (Date.now() - t0) / (t1 - t0) * 100));
+        var av = el("div", "pat-avance");
+        av.appendChild(el("span", "", "Aprobado en EE.UU. · " + MESES_CORTOS[diaDe(h.prod.aprobada).getMonth()] + " " + diaDe(h.prod.aprobada).getFullYear()));
+        var barra = el("div", "pat-avance-barra"), relleno = el("span", "");
+        relleno.style.width = pct + "%";
+        barra.appendChild(relleno);
+        barra.title = Math.round(pct) + "% del tiempo entre la aprobación y el fin de la protección listada ya pasó";
+        av.appendChild(barra);
+        av.appendChild(el("span", "", Math.round(pct) + "% recorrido"));
+        caja.appendChild(av);
+      }
+      return caja;
+    }
+
+    // ---------------------------------------------------------------- controles
+    function grupo(titulo, opciones, actual, alElegir) {
+      var g = el("div", "pat-grupo");
+      g.setAttribute("role", "group");
+      g.setAttribute("aria-label", titulo);
+      g.appendChild(el("span", "pat-grupo-tit", titulo));
+      opciones.forEach(function (o) {
+        var b = el("button", "chip small", o[1]); b.type = "button";
+        b.setAttribute("aria-pressed", String(o[0] === actual));
+        b.addEventListener("click", function () { alElegir(o[0]); pintar(); });
+        g.appendChild(b);
+      });
+      return g;
+    }
+    function controles() {
+      var c = el("div", "pat-controles");
+      c.appendChild(grupo("Dónde", [["todos", "EE.UU. y Chile"], ["us", "EE.UU."], ["cl", "Chile"]], filtro.pais, function (v) { filtro.pais = v; }));
+      c.appendChild(grupo("Hasta", [[1, "1 año"], [3, "3 años"], [5, "5 años"], [0, "Todo"]], filtro.horizonte, function (v) { filtro.horizonte = v; }));
+      var o = el("button", "chip small", "Incluir soporte y otros agentes"); o.type = "button";
+      o.setAttribute("aria-pressed", String(!filtro.onco));
+      o.title = "Antieméticos, factores de crecimiento, antibióticos y otros fármacos que aparecen en estudios de oncología sin ser antitumorales";
+      o.addEventListener("click", function () { filtro.onco = !filtro.onco; pintar(); });
+      c.appendChild(o);
+      var sc = el("button", "chip small", "Solo sin genéricos ni biosimilares en EE.UU."); sc.type = "button";
+      sc.setAttribute("aria-pressed", String(filtro.sinCompetencia));
+      sc.title = "Deja fuera los productos de EE.UU. cuyo principio activo ya tiene genéricos o biosimilares aprobados: ahí el vencimiento cambia poco";
+      sc.addEventListener("click", function () { filtro.sinCompetencia = !filtro.sinCompetencia; pintar(); });
+      c.appendChild(sc);
+      if (state.areas.length) c.appendChild(el("span", "pat-nota-filtro", "Solo " + (state.areas.length === 1 ? "el área " : "las áreas ") + state.areas.join(", ") + " (filtro de arriba)."));
+      return c;
+    }
+
+    // ---------------------------------------------------------------- por año
+    function porAnio(todos) {
+      var caja = el("section", "pat-anios-caja");
+      caja.appendChild(el("h2", "", "Cuántas protecciones terminan cada año"));
+      var cuenta = {}, y0 = new Date().getFullYear(), yMax = y0;
+      todos.forEach(function (h) { var y = +h.fecha.slice(0, 4); cuenta[y] = (cuenta[y] || 0) + 1; if (y > yMax) yMax = y; });
+      yMax = Math.min(Math.max(yMax, y0 + 9), y0 + 16);
+      var max = 1;
+      for (var y = y0; y <= yMax; y++) max = Math.max(max, cuenta[y] || 0);
+      var tope = +limiteHorizonte().slice(0, 4);
+      var g = el("div", "pat-anios");
+      for (var a = y0; a <= yMax; a++) (function (anio) {
+        var n = cuenta[anio] || 0;
+        var b = el("button", "pat-anio" + (anio > tope ? " fuera" : "") + (n ? "" : " vacio")); b.type = "button";
+        b.appendChild(el("span", "n", n ? String(n) : ""));
+        var barra = el("span", "b");
+        barra.style.height = (n / max * 64) + "px";
+        b.appendChild(barra);
+        var lab = el("span", "a");
+        lab.appendChild(el("span", "a-largo", String(anio)));
+        lab.appendChild(el("span", "a-corto", "’" + String(anio).slice(2)));
+        b.appendChild(lab);
+        b.setAttribute("aria-label", anio + ": " + plural(n, "protección termina", "protecciones terminan"));
+        if (n) b.addEventListener("click", function () {
+          if (anio > tope) { filtro.horizonte = 0; pintar(); }
+          var h = document.getElementById("pat-anio-" + anio);
+          if (h) h.scrollIntoView({ block: "start", behavior: reducirMovimiento() ? "auto" : "smooth" });
+        });
+        else b.disabled = true;
+        g.appendChild(b);
+      })(a);
+      caja.appendChild(g);
+      return caja;
+    }
+
+    // ---------------------------------------------------------------- lista
+    // Diez años en el ancho de la columna, para todas las filas.
+    var ESCALA_ANIOS = 10;
+    function mini(h) {
+      var m = el("div", "pat-mini");
+      var t0 = new Date().setHours(0, 0, 0, 0), span = ESCALA_ANIOS * 365.25 * 864e5;
+      var pos = function (iso) { return (diaDe(iso).getTime() - t0) / span * 100; };
+      var marcas = h.pais === "us" ? h.prod.vigentes : [{ clave: h.cl.tipo, vence: h.cl.vence }];
+      marcas.forEach(function (x, i) {
+        var p = pos(x.vence), esFin = x.vence === h.fecha && (h.pais === "cl" || i === marcas.length - 1);
+        var tp = tipoPatente(x.clave);
+        var tick = el("i", (p > 100 ? "mas" : esFin ? "fin" : "") + " pat-t-" + tp[2]);
+        tick.style.left = Math.min(p, 100) + "%";
+        tick.title = (x.id ? x.id + " · " : "") + (x.clave === "exclusividad" ? x.nombre : tp[0]) + " · " + fechaCorta(x.vence);
+        m.appendChild(tick);
+      });
+      [0, 5, 10].forEach(function (a) {
+        var s = el("span", "eje", a ? "+" + a : "hoy");
+        s.style.left = (a / ESCALA_ANIOS * 100) + "%";
+        if (!a) s.style.transform = "none";
+        if (a === ESCALA_ANIOS) s.style.transform = "translateX(-100%)";
+        m.appendChild(s);
+      });
+      m.title = "De hoy a " + ESCALA_ANIOS + " años: cada marca es una protección que vence; el círculo, la última.";
+      return m;
+    }
+    function fila(h) {
+      var b = el("button", "pat-fila"); b.type = "button";
+      b.title = "Ver el perfil de " + h.n.nombre + " y todas sus patentes";
+      b.addEventListener("click", function () { abrirPerfil(h.fid); });
+      var fc = faltaCorto(h.fecha);
+      var falta = el("div", "pat-falta" + (diasHasta(h.fecha) < 365 ? " pronto" : ""));
+      falta.appendChild(el("b", "", fc[0]));
+      falta.appendChild(el("span", "", fc[1]));
+      b.appendChild(falta);
+      var p = el("div", "pat-principal");
+      var nom = el("div", "pat-nombre", h.n.nombre);
+      nom.appendChild(pildora(h.pais));
+      p.appendChild(nom);
+      if (h.pais === "us") {
+        p.appendChild(el("div", "pat-linea-sub", "Vence el " + fechaCorta(h.fecha) + " · " + h.prod.marca + " · " + h.prod.titular));
+        p.appendChild(el("div", "pat-linea-sub muted", queVence(h)));
+      } else {
+        p.appendChild(el("div", "pat-linea-sub", "Vence el " + fechaCorta(h.fecha) + " · " + queVence(h) + " · " + titularesTexto(h.cl.titulares)));
+        var t = el("div", "pat-linea-sub muted", h.cl.titulo.replace(/\s+/g, " "));
+        t.title = h.cl.titulo;
+        p.appendChild(t);
+      }
+      b.appendChild(p);
+      b.appendChild(mini(h));
+      var e = estudiosEnChile(h.fid), ctx = el("div", "pat-ctx");
+      ctx.appendChild(el("b", "", String(e.n)));
+      ctx.appendChild(document.createTextNode(e.n === 1 ? " estudio en Chile" : " estudios en Chile"));
+      if (e.recl) ctx.appendChild(el("span", "recl", e.recl + " reclutando"));
+      b.appendChild(ctx);
+      return b;
+    }
+
+    function pie() {
+      var F = patentesDatos.fuentes, p = el("div", "pat-pie");
+      var ley = el("div", "pat-leyenda");
+      [["s", "Sustancia o compuesto"], ["f", "Formulación"], ["u", "Uso o indicación"], ["e", "Exclusividad regulatoria (FDA)"],
+       ["b", "Patente de un biológico"], ["o", "Otra, combinación o proceso"]].forEach(function (x) { ley.appendChild(el("span", "pat-t-" + x[0], x[1])); });
+      p.appendChild(ley);
+      p.appendChild(el("p", "", "Qué cuenta como vencimiento: en EE.UU., el fin de TODA la protección que el titular listó para un producto (patentes y " +
+        "exclusividades); en Chile, cada patente vigente cuyo título trata del fármaco. Que una protección termine no significa que entren genéricos " +
+        "o biosimilares: puede quedar otra patente, una exclusividad o un litigio, y en Chile además la protección de datos de prueba. No es asesoría legal."));
+      var f = el("p", "");
+      f.appendChild(document.createTextNode("Fuentes: "));
+      [[F.orange_book, "archivos del " + fechaCorta(F.orange_book.version)], [F.purple_book, null], [F.inapi, "actualizado el " + fechaCorta(F.inapi.version)]]
+        .forEach(function (x, i) {
+          if (i) f.appendChild(document.createTextNode(i === 2 ? " y " : ", "));
+          var a = el("a", "", x[0].nombre); a.href = x[0].url; a.target = "_blank"; a.rel = "noopener noreferrer";
+          f.appendChild(a);
+          if (x[1]) f.appendChild(document.createTextNode(" (" + x[1] + ")"));
+        });
+      f.appendChild(document.createTextNode(". La patente chilena del compuesto casi nunca nombra el fármaco en su título, así que en Chile faltan " +
+        "patentes: confirmalas en el INAPI o en Pat-INFORMED (OMPI), que se consulta a mano."));
+      p.appendChild(f);
+      return p;
+    }
+
+    // ---------------------------------------------------------------- pintar
+    function pintar() {
+      detenerReloj();
+      raiz.innerHTML = "";
+      var cab = el("div", "pat-cabeza");
+      var h1 = el("h1", "", "¿Qué fármacos pierden su patente pronto?"); h1.id = "pat-titulo";
+      cab.appendChild(h1);
+      cab.appendChild(el("p", "pat-lead", "Cuándo vence la protección de los fármacos que se estudian en Chile: patentes y exclusividades " +
+        "según la FDA (EE.UU.) y patentes chilenas según el INAPI. Cada fecha enlaza a su fuente; cada fila, al perfil del fármaco."));
+      raiz.appendChild(cab);
+      if (!patentesDatos) {
+        var espera = el("p", "pat-vacio", promesaPatentes ? "Cargando las patentes…" : "No se pudieron cargar los datos de patentes (data/patentes/vencimientos.json).");
+        raiz.appendChild(espera);
+        if (!promesaPatentes) cargarPatentes().then(pintar, function () {});
+        return;
+      }
+      var todos = hitosDePatentes().filter(pasa), tope = limiteHorizonte();
+      var visibles = todos.filter(function (h) { return h.fecha <= tope; });
+      if (visibles.length) raiz.appendChild(heroe(visibles[0]));
+      raiz.appendChild(controles());
+      if (todos.length) raiz.appendChild(porAnio(todos));
+      if (!visibles.length) {
+        raiz.appendChild(el("p", "pat-vacio", todos.length ? "Nada vence en ese plazo con estos filtros. Probá con un plazo más largo." :
+          "Ninguna protección vigente con estos filtros."));
+      }
+      var anioActual = null, ul = null;
+      visibles.forEach(function (h) {
+        var y = h.fecha.slice(0, 4);
+        if (y !== anioActual) {
+          anioActual = y;
+          var n = visibles.filter(function (x) { return x.fecha.slice(0, 4) === y; }).length;
+          var hh = el("h2", "pat-anio-h", y); hh.id = "pat-anio-" + y;
+          hh.appendChild(el("span", "pf-cuenta", plural(n, "vencimiento", "vencimientos")));
+          raiz.appendChild(hh);
+          ul = el("ul", "pat-lista");
+          raiz.appendChild(ul);
+        }
+        var li = el("li", "");
+        li.appendChild(fila(h));
+        ul.appendChild(li);
+      });
+      raiz.appendChild(pie());
+    }
+
+    // Una línea en Inicio: el próximo vencimiento (EE.UU., fármacos antitumorales) y cuántos vienen.
+    function aviso() {
+      if (!patentesDatos) return null;
+      var hitos = hitosDePatentes().filter(function (h) { return h.pais === "us" && !CLASES_SOPORTE[h.n.clase]; });
+      if (!hitos.length) return null;
+      var h = hitos[0], vistos = {}, en3 = 0;
+      hitos.forEach(function (x) { if (diasHasta(x.fecha) <= 3 * 365 && !vistos[x.fid]) { vistos[x.fid] = true; en3++; } });
+      var b = el("button", "pat-aviso"); b.type = "button";
+      var fc = faltaCorto(h.fecha), num = el("div", "pat-aviso-num", fc[0]);
+      num.appendChild(el("small", "", fc[1]));
+      b.appendChild(num);
+      var txt = el("div", "pat-aviso-txt");
+      txt.appendChild(document.createTextNode("Patentes · El próximo fármaco en perder su protección listada en EE.UU. es "));
+      txt.appendChild(el("b", "", h.n.nombre));
+      txt.appendChild(document.createTextNode(" (" + h.prod.marca + "), el " + fechaCorta(h.fecha) + ". " +
+        plural(en3, "fármaco la pierde", "fármacos la pierden") + " en los próximos 3 años."));
+      b.appendChild(txt);
+      b.appendChild(el("span", "pat-aviso-ir", "Ver los vencimientos →"));
+      b.addEventListener("click", function () { mostrarVista("patentes"); });
+      return b;
+    }
+    return { pintar: pintar, aviso: aviso };
   })();
 
   // ---------------- Detail sheet ----------------

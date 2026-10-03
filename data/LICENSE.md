@@ -1,7 +1,8 @@
 # Licencia de los datos
 
 La base de datos de KOL Radar —todo lo que está en `data/`, en particular
-`data/sample/perfiles-muestra.json` y `data/geo/ubicaciones-instituciones.json`— se publica bajo
+`data/sample/perfiles-muestra.json`, `data/geo/ubicaciones-instituciones.json` y
+`data/patentes/vencimientos.json`— se publica bajo
 la **Open Database License (ODbL) 1.0**.
 
 > This "KOL Radar — Chile" database is made available under the Open Database License:
@@ -38,6 +39,8 @@ Cada hecho de la base lleva la URL exacta de donde salió. Las fuentes, con sus 
 | ClinicalTrials.gov (NLM, EE. UU.) | Ensayos, sedes, intervenciones, patrocinador | Dominio público en EE. UU.; se pide citar la fuente — <https://clinicaltrials.gov/about-site/terms-conditions> |
 | PubMed (NLM) | Autoría, afiliación, revista, fecha | Metadatos bibliográficos (hechos); los resúmenes no se reproducen |
 | SciELO Chile | Autoría y afiliación en revistas chilenas | CC BY en la mayoría de las revistas |
+| FDA — Orange Book y Purple Book (EE. UU.) | Patentes, exclusividades, genéricos y biosimilares aprobados (`data/patentes/`) | Dominio público (gobierno de EE. UU.) |
+| INAPI — registros de patentes (datos.gob.cl) | Patentes chilenas que nombran un fármaco (`data/patentes/`) | CC0 |
 | Buscador de estudios clínicos de la CIF (estudiosclinicos.cl) | Qué centros tienen abierto cada ensayo que hoy recluta | Solo se toma el hecho (ensayo ↔ centro) con su URL; no se reproducen textos ni contactos |
 | Instituto de Salud Pública de Chile — Centros de investigación clínica inspeccionados 2016–2025 | Qué centro fue sede de un ensayo, por su código de protocolo | Información pública de un organismo del Estado (Ley 20.285). Solo se toma el hecho (protocolo ↔ centro) con la URL de la planilla; no se reproducen los resultados de las inspecciones |
 | NCI Thesaurus™ (Enterprise Vocabulary Services, National Cancer Institute, EE. UU.) | Tipo de cada fármaco (inmunoterapia, terapia dirigida, quimioterapia…) | CC BY 4.0 — <https://evs.nci.nih.gov/license>. El nombre "NCI Thesaurus" es marca del NCI |
