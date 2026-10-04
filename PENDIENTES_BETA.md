@@ -70,7 +70,8 @@ cuándo, para que la próxima iteración no lo busque de cero. Actualizado el 20
   filtros; sección de patentes en el perfil de cada fármaco, con una cronología por producto; aviso en
   Inicio. Datos de `scripts/patentes.py`: 88 fármacos con patentes o exclusividades en EE.UU. (Orange
   Book y Purple Book), 72 con genéricos y 10 con biosimilares ya aprobados allá, y 49 con patentes
-  chilenas que los nombran (INAPI).
+  chilenas que los nombran (INAPI). La pestaña tiene buscador (fármaco, marca o laboratorio) y filtro por
+  tipo de fármaco (NCI Thesaurus), además de país, plazo y genéricos.
 
 **2026-10-01**
 - Segunda parte de la tarea C, repetida: los informes de resultados de Bristol-Myers Squibb nombran 14

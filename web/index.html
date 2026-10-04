@@ -950,6 +950,11 @@
   .pat-grupo { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
   .pat-grupo-tit { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-right: 4px; }
   .pat-nota-filtro { font-size: 12px; color: var(--text-muted); }
+  .pat-filtros { background: var(--surface-0); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px 4px; margin: 0 0 14px; }
+  .pat-filtros .pat-controles { margin-bottom: 8px; }
+  .pat-buscar { flex: 1 1 260px; max-width: 420px; min-width: 200px; }
+  .pat-clase { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing: 0; color: var(--text-muted); }
+  .pat-vacio .chip-clear { margin-left: 4px; }
 
   /* Vencimientos por año: un vistazo a dónde se amontonan. Cada barra lleva su número escrito. */
   .pat-anios-caja { background: var(--surface-0); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px 10px; margin: 0 0 14px; }
@@ -6914,7 +6919,8 @@
   // Chile. Cada fila abre el perfil del fármaco, donde está el detalle con cada fuente.
   var patentesVista = (function () {
     var raiz = document.getElementById("patentes");
-    var filtro = { pais: "todos", horizonte: 5, onco: true, sinCompetencia: false };
+    var FILTRO_INICIAL = { pais: "todos", horizonte: 5, onco: true, sinCompetencia: false, texto: "", clase: null };
+    var filtro = JSON.parse(JSON.stringify(FILTRO_INICIAL));
     var reloj = null;
     function el(tag, clase, texto) {
       var e = document.createElement(tag);
@@ -6922,9 +6928,21 @@
       if (texto !== undefined && texto !== null) e.textContent = texto;
       return e;
     }
-    function pasa(h) {
+    function claseDe(n) { return n.clase || "Sin clasificar"; }
+    // Lo que el buscador mira de cada fila: fármaco, nombres en la fuente, tipo, marca y laboratorio
+    // (y en Chile, el título y los titulares de la patente).
+    function textoDe(h) {
+      return sinTildes([h.n.nombre, claseDe(h.n)].concat(h.n.alias_en_la_fuente || [],
+        h.pais === "us" ? [h.prod.marca, h.prod.titular] : [h.cl.titulo, titularesTexto(h.cl.titulares)]).join(" "));
+    }
+    function pasa(h, sinClase) {
       if (filtro.pais !== "todos" && h.pais !== filtro.pais) return false;
-      if (filtro.onco && CLASES_SOPORTE[h.n.clase]) return false;
+      if (filtro.onco && CLASES_SOPORTE[claseDe(h.n)]) return false;
+      if (!sinClase && filtro.clase && claseDe(h.n) !== filtro.clase) return false;
+      if (filtro.texto.trim()) {
+        var txt = textoDe(h);
+        if (!sinTildes(filtro.texto).trim().split(/\s+/).every(function (q) { return txt.indexOf(q) !== -1; })) return false;
+      }
       if (filtro.sinCompetencia && h.pais === "us" && competenciaTexto(proteccionesDe(h.fid).competencia)) return false;
       if (state.areas.length && !areasDe(h.n).some(function (a) { return state.areas.indexOf(a) !== -1; })) return false;
       return true;
@@ -6960,7 +6978,7 @@
       var caja = el("section", "pat-hero");
       caja.setAttribute("aria-label", "Próximo vencimiento");
       var izq = el("div", "");
-      var k = el("p", "pat-hero-kicker", "Próximo vencimiento");
+      var k = el("p", "pat-hero-kicker", filtrosActivos() ? "Próximo vencimiento con estos filtros" : "Próximo vencimiento");
       k.appendChild(pildora(h.pais));
       izq.appendChild(k);
       var nb = el("button", "pat-hero-nombre", h.n.nombre); nb.type = "button";
@@ -7037,22 +7055,67 @@
       });
       return g;
     }
-    function controles() {
+    function filtrosActivos() {
+      return Object.keys(FILTRO_INICIAL).some(function (k) { return filtro[k] !== FILTRO_INICIAL[k]; });
+    }
+    function buscador() {
+      var w = el("div", "search-wrap pat-buscar");
+      w.appendChild(el("span", "icon", "⌕"));
+      var i = el("input", "");
+      i.type = "search"; i.id = "pat-buscar"; i.autocomplete = "off"; i.value = filtro.texto;
+      i.placeholder = "Buscar fármaco, marca o laboratorio…";
+      i.setAttribute("aria-label", "Buscar en los vencimientos por fármaco, marca o laboratorio");
+      // Filtra mientras se escribe. Todo se repinta, así que el foco y el cursor vuelven al campo.
+      i.addEventListener("input", function () {
+        var cursor = i.selectionStart;
+        filtro.texto = i.value;
+        pintar();
+        var nuevo = document.getElementById("pat-buscar");
+        if (nuevo) { nuevo.focus(); try { nuevo.setSelectionRange(cursor, cursor); } catch (e) { /* type=search */ } }
+      });
+      w.appendChild(i);
+      return w;
+    }
+    // Tipos de fármaco (NCI Thesaurus) con cuántos vencimientos tiene cada uno con los demás filtros.
+    function categorias(enPlazo) {
+      var cuenta = {}, total = 0;
+      enPlazo.forEach(function (h) { var k = claseDe(h.n); cuenta[k] = (cuenta[k] || 0) + 1; total++; });
+      var opciones = [[null, "Todos · " + total]];
+      ORDEN_CLASES.forEach(function (k) { if (cuenta[k] || filtro.clase === k) opciones.push([k, k + " · " + (cuenta[k] || 0)]); });
+      return grupo("Tipo", opciones, filtro.clase, function (v) { filtro.clase = v; });
+    }
+    function controles(enPlazoSinClase) {
       var c = el("div", "pat-controles");
+      c.appendChild(buscador());
       c.appendChild(grupo("Dónde", [["todos", "EE.UU. y Chile"], ["us", "EE.UU."], ["cl", "Chile"]], filtro.pais, function (v) { filtro.pais = v; }));
       c.appendChild(grupo("Hasta", [[1, "1 año"], [3, "3 años"], [5, "5 años"], [0, "Todo"]], filtro.horizonte, function (v) { filtro.horizonte = v; }));
+      var c2 = el("div", "pat-controles");
+      c2.appendChild(categorias(enPlazoSinClase));
+      var c3 = el("div", "pat-controles");
       var o = el("button", "chip small", "Incluir soporte y otros agentes"); o.type = "button";
       o.setAttribute("aria-pressed", String(!filtro.onco));
       o.title = "Antieméticos, factores de crecimiento, antibióticos y otros fármacos que aparecen en estudios de oncología sin ser antitumorales";
-      o.addEventListener("click", function () { filtro.onco = !filtro.onco; pintar(); });
-      c.appendChild(o);
+      o.addEventListener("click", function () {
+        filtro.onco = !filtro.onco;
+        if (filtro.onco && CLASES_SOPORTE[filtro.clase]) filtro.clase = null;
+        pintar();
+      });
+      c3.appendChild(o);
       var sc = el("button", "chip small", "Solo sin genéricos ni biosimilares en EE.UU."); sc.type = "button";
       sc.setAttribute("aria-pressed", String(filtro.sinCompetencia));
       sc.title = "Deja fuera los productos de EE.UU. cuyo principio activo ya tiene genéricos o biosimilares aprobados: ahí el vencimiento cambia poco";
       sc.addEventListener("click", function () { filtro.sinCompetencia = !filtro.sinCompetencia; pintar(); });
-      c.appendChild(sc);
-      if (state.areas.length) c.appendChild(el("span", "pat-nota-filtro", "Solo " + (state.areas.length === 1 ? "el área " : "las áreas ") + state.areas.join(", ") + " (filtro de arriba)."));
-      return c;
+      c3.appendChild(sc);
+      if (state.areas.length) c3.appendChild(el("span", "pat-nota-filtro", "Solo " + (state.areas.length === 1 ? "el área " : "las áreas ") + state.areas.join(", ") + " (filtro de arriba)."));
+      if (filtrosActivos()) c3.appendChild(botonLimpiar());
+      var caja = el("div", "pat-filtros");
+      caja.appendChild(c); caja.appendChild(c2); caja.appendChild(c3);
+      return caja;
+    }
+    function botonLimpiar() {
+      var b = el("button", "chip-clear", "Limpiar filtros"); b.type = "button";
+      b.addEventListener("click", function () { filtro = JSON.parse(JSON.stringify(FILTRO_INICIAL)); pintar(); });
+      return b;
     }
 
     // ---------------------------------------------------------------- por año
@@ -7128,6 +7191,7 @@
       var p = el("div", "pat-principal");
       var nom = el("div", "pat-nombre", h.n.nombre);
       nom.appendChild(pildora(h.pais));
+      if (claseDe(h.n) !== "Sin clasificar") nom.appendChild(el("span", "pat-clase", claseDe(h.n)));
       p.appendChild(nom);
       if (h.pais === "us") {
         p.appendChild(el("div", "pat-linea-sub", "Vence el " + fechaCorta(h.fecha) + " · " + h.prod.marca + " · " + h.prod.titular));
@@ -7188,14 +7252,26 @@
         if (!promesaPatentes) cargarPatentes().then(pintar, function () {});
         return;
       }
-      var todos = hitosDePatentes().filter(pasa), tope = limiteHorizonte();
+      var hitos = hitosDePatentes(), tope = limiteHorizonte();
+      var todos = hitos.filter(function (h) { return pasa(h); });
       var visibles = todos.filter(function (h) { return h.fecha <= tope; });
+      // Quien busca un fármaco quiere su fecha aunque caiga fuera del plazo elegido: se muestra igual.
+      var ampliado = !!(filtro.texto.trim() && filtro.horizonte && !visibles.length && todos.length);
+      if (ampliado) visibles = todos;
+      raiz.appendChild(controles(hitos.filter(function (h) { return pasa(h, true) && (ampliado || h.fecha <= tope); })));
       if (visibles.length) raiz.appendChild(heroe(visibles[0]));
-      raiz.appendChild(controles());
       if (todos.length) raiz.appendChild(porAnio(todos));
+      if (ampliado) {
+        raiz.appendChild(el("p", "pat-nota-filtro", "Nada de «" + filtro.texto.trim() + "» vence en " +
+          (filtro.horizonte === 1 ? "el próximo año" : "los próximos " + filtro.horizonte + " años") + ": se muestran todos los plazos."));
+      }
       if (!visibles.length) {
-        raiz.appendChild(el("p", "pat-vacio", todos.length ? "Nada vence en ese plazo con estos filtros. Probá con un plazo más largo." :
-          "Ninguna protección vigente con estos filtros."));
+        var q = filtro.texto.trim();
+        var vacio = el("div", "pat-vacio", todos.length ? "Nada vence en ese plazo con estos filtros. Probá con un plazo más largo. " :
+          (q ? "Ninguna protección vigente para «" + q + "» con estos filtros. " : "Ninguna protección vigente con estos filtros. ") +
+          "Si el fármaco no aparece, puede no tener patentes listadas (su perfil lo explica). ");
+        if (filtrosActivos()) vacio.appendChild(botonLimpiar());
+        raiz.appendChild(vacio);
       }
       var anioActual = null, ul = null;
       visibles.forEach(function (h) {
