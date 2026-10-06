@@ -317,6 +317,14 @@ def aplicar(base, registro=None):
 
 def guardar_muestra(base, ruta=MUESTRA, registro=None):
     """La única forma en que un script escribe la muestra: primero aplica las exclusiones."""
+    import paises
+    # La comprobación ocurre ANTES de abrir el archivo. Si falla, el JSON anterior queda intacto.
+    destino = os.path.realpath(ruta)
+    raiz = os.path.realpath(RAIZ) + os.sep
+    if destino.startswith(raiz):
+        errores = paises.comprobar_publicacion(base)
+        if errores:
+            raise ValueError("Publicación bloqueada por país: " + "; ".join(errores[:8]))
     quitadas, _ = aplicar(base, registro)
     if quitadas:
         print("exclusiones: %d ficha(s) excluida(s) no se escriben." % len(quitadas), file=sys.stderr)

@@ -1,0 +1,1374 @@
+[
+  {
+    "iso2": "CL",
+    "iso3": "CHL",
+    "nombre": "Chile",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": "allowed",
+    "condiciones": [
+      "Aplicar registro de exclusiones y aviso de privacidad vigente.",
+      "Revisar el perfilado y la reforma 21.719 con abogado antes de su vigencia."
+    ],
+    "fuentes_legales": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=141599&idVersion=2012-02-17",
+      "https://www.bcn.cl/leychile/navegar?idNorma=1209272"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 2,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [
+      "ISP",
+      "CIF",
+      "DEIS",
+      "INAPI"
+    ],
+    "adm_geoboundaries": "CHL",
+    "idioma": "es",
+    "plazo_respuesta_unidad": "hábiles",
+    "plazo_respuesta_alcance": "pronunciamiento; ley vigente al 2026-10-06",
+    "nombre_ctgov": "Chile"
+  },
+  {
+    "iso2": "AR",
+    "iso3": "ARG",
+    "nombre": "Argentina",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.argentina.gob.ar/normativa/nacional/64790/actualizacion",
+      "https://www.argentina.gob.ar/transferencias-internacionales",
+      "https://www.argentina.gob.ar/aaip/datospersonales/responsables/obligaciones"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 5,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "ARG",
+    "idioma": "es",
+    "plazo_respuesta_unidad": "hábiles",
+    "plazo_respuesta_alcance": "rectificación/supresión; acceso 10 corridos",
+    "nombre_ctgov": "Argentina"
+  },
+  {
+    "iso2": "BR",
+    "iso3": "BRA",
+    "nombre": "Brasil",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+      "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia_legitimo_interesse.pdf/@@display-file/file"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 15,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "BRA",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "solo acceso completo",
+    "nombre_ctgov": "Brazil"
+  },
+  {
+    "iso2": "MX",
+    "iso3": "MEX",
+    "nombre": "México",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf",
+      "https://www.ordenjuridico.gob.mx/Documentos/Federal/html/wo125102.html"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 20,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "MEX",
+    "idioma": "es",
+    "plazo_respuesta_unidad": "hábiles",
+    "plazo_respuesta_alcance": "decisión ARCO",
+    "nombre_ctgov": "Mexico"
+  },
+  {
+    "iso2": "CO",
+    "iso3": "COL",
+    "nombre": "Colombia",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "COL",
+    "idioma": "es",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Colombia"
+  },
+  {
+    "iso2": "PE",
+    "iso3": "PER",
+    "nombre": "Perú",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://leyes.congreso.gob.pe/DetLeyNume_1p.aspx?xNorma=6&xNumero=29733&xTipoNorma=0",
+      "https://leyes.congreso.gob.pe/documentos/leyes/29733.pdf"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "PER",
+    "idioma": "es",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Peru"
+  },
+  {
+    "iso2": "UY",
+    "iso3": "URY",
+    "nombre": "Uruguay",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.impo.com.uy/bases/leyes/18331-2008",
+      "https://www.gub.uy/unidad-reguladora-control-datos-personales/comunicacion/publicaciones/preguntas-frecuentes/preguntas-frecuentes/sobre-inscripcion-base-datos"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 5,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "URY",
+    "idioma": "es",
+    "plazo_respuesta_unidad": "hábiles",
+    "plazo_respuesta_alcance": "acceso/rectificación/supresión",
+    "nombre_ctgov": "Uruguay"
+  },
+  {
+    "iso2": "CR",
+    "iso3": "CRI",
+    "nombre": "Costa Rica",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.micitt.go.cr/sites/default/files/marco_juridico_legal/08.%20Ley%20n.%C2%B0%208968%20Ley%20de%20Protecci%C3%B3n%20de%20la%20Persona%20frente%20al%20tratamiento%20de%20sus%20datos%20personales..pdf",
+      "https://formatos.inamu.go.cr/SIDOC/DOCS/ley_8968.pdf"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 5,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "CRI",
+    "idioma": "es",
+    "plazo_respuesta_unidad": "hábiles",
+    "plazo_respuesta_alcance": "resolución de derechos verificados",
+    "nombre_ctgov": "Costa Rica"
+  },
+  {
+    "iso2": "US",
+    "iso3": "USA",
+    "nombre": "Estados Unidos",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.oag.ca.gov/privacy/ccpa?version=published",
+      "https://www.cppa.ca.gov/data_brokers/"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "USA",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": "sin plazo uniforme nacional",
+    "nombre_ctgov": "United States"
+  },
+  {
+    "iso2": "CA",
+    "iso3": "CAN",
+    "nombre": "Canadá",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/pipeda-compliance-help/pipeda-interpretation-bulletins/interpretations_06_pai/",
+      "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-006/",
+      "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/p_principle/principles/p_access/",
+      "https://www.priv.gc.ca/en/privacy-topics/airports-and-borders/gl_dab_090127/?wbdisable=true"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 30,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "CAN",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "solo acceso PIPEDA",
+    "nombre_ctgov": "Canada"
+  },
+  {
+    "iso2": "AT",
+    "iso3": "AUT",
+    "nombre": "Austria",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "AUT",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Austria"
+  },
+  {
+    "iso2": "BE",
+    "iso3": "BEL",
+    "nombre": "Bélgica",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "BEL",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Belgium"
+  },
+  {
+    "iso2": "BG",
+    "iso3": "BGR",
+    "nombre": "Bulgaria",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "BGR",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Bulgaria"
+  },
+  {
+    "iso2": "HR",
+    "iso3": "HRV",
+    "nombre": "Croacia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "HRV",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Croatia"
+  },
+  {
+    "iso2": "CY",
+    "iso3": "CYP",
+    "nombre": "Chipre",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "CYP",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Cyprus"
+  },
+  {
+    "iso2": "CZ",
+    "iso3": "CZE",
+    "nombre": "Chequia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "CZE",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Czechia"
+  },
+  {
+    "iso2": "DK",
+    "iso3": "DNK",
+    "nombre": "Dinamarca",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "DNK",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Denmark"
+  },
+  {
+    "iso2": "EE",
+    "iso3": "EST",
+    "nombre": "Estonia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "EST",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Estonia"
+  },
+  {
+    "iso2": "FI",
+    "iso3": "FIN",
+    "nombre": "Finlandia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "FIN",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Finland"
+  },
+  {
+    "iso2": "FR",
+    "iso3": "FRA",
+    "nombre": "Francia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "FRA",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "France"
+  },
+  {
+    "iso2": "DE",
+    "iso3": "DEU",
+    "nombre": "Alemania",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "DEU",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Germany"
+  },
+  {
+    "iso2": "GR",
+    "iso3": "GRC",
+    "nombre": "Grecia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "GRC",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Greece"
+  },
+  {
+    "iso2": "HU",
+    "iso3": "HUN",
+    "nombre": "Hungría",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "HUN",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Hungary"
+  },
+  {
+    "iso2": "IE",
+    "iso3": "IRL",
+    "nombre": "Irlanda",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "IRL",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Ireland"
+  },
+  {
+    "iso2": "IT",
+    "iso3": "ITA",
+    "nombre": "Italia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "ITA",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Italy"
+  },
+  {
+    "iso2": "LV",
+    "iso3": "LVA",
+    "nombre": "Letonia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "LVA",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Latvia"
+  },
+  {
+    "iso2": "LT",
+    "iso3": "LTU",
+    "nombre": "Lituania",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "LTU",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Lithuania"
+  },
+  {
+    "iso2": "LU",
+    "iso3": "LUX",
+    "nombre": "Luxemburgo",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "LUX",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Luxembourg"
+  },
+  {
+    "iso2": "MT",
+    "iso3": "MLT",
+    "nombre": "Malta",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "MLT",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Malta"
+  },
+  {
+    "iso2": "NL",
+    "iso3": "NLD",
+    "nombre": "Países Bajos",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "NLD",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Netherlands"
+  },
+  {
+    "iso2": "PL",
+    "iso3": "POL",
+    "nombre": "Polonia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "POL",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Poland"
+  },
+  {
+    "iso2": "PT",
+    "iso3": "PRT",
+    "nombre": "Portugal",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "PRT",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Portugal"
+  },
+  {
+    "iso2": "RO",
+    "iso3": "ROU",
+    "nombre": "Rumania",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "ROU",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Romania"
+  },
+  {
+    "iso2": "SK",
+    "iso3": "SVK",
+    "nombre": "Eslovaquia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "SVK",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Slovakia"
+  },
+  {
+    "iso2": "SI",
+    "iso3": "SVN",
+    "nombre": "Eslovenia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "SVN",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Slovenia"
+  },
+  {
+    "iso2": "ES",
+    "iso3": "ESP",
+    "nombre": "España",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "ESP",
+    "idioma": "es",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Spain"
+  },
+  {
+    "iso2": "SE",
+    "iso3": "SWE",
+    "nombre": "Suecia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Evaluar interés legítimo y perfilado concreto.",
+      "Cumplir aviso indirecto o justificar formalmente excepción del art. 14.",
+      "Revisar representante, registro y transferencias internacionales.",
+      "Revisión de legislación nacional y abogado local antes de aprobación."
+    ],
+    "fuentes_legales": [
+      "https://www.cnil.fr/fr/les-bases-legales/interet-legitime",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3",
+      "https://www.cnil.fr/sites/cnil/files/atoms/files/wp260_enpdf_transparency.pdf",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4",
+      "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre5"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "SWE",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "Sweden"
+  },
+  {
+    "iso2": "GB",
+    "iso3": "GBR",
+    "nombre": "Reino Unido",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/legitimate-interests/",
+      "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-be-informed/",
+      "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-object/"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 28,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "GBR",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "objetivo interno; plazo legal un mes calendario",
+    "nombre_ctgov": "United Kingdom"
+  },
+  {
+    "iso2": "CH",
+    "iso3": "CHE",
+    "nombre": "Suiza",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.edoeb.admin.ch/en/representatives-in-accordance-with-article-14-fadp",
+      "https://www.edoeb.admin.ch/en/cross-border-transfer-of-personal-data",
+      "https://www.edoeb.admin.ch/en/duty-to-provide-information"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "CHE",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Switzerland"
+  },
+  {
+    "iso2": "IL",
+    "iso3": "ISR",
+    "nombre": "Israel",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "ISR",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Israel"
+  },
+  {
+    "iso2": "TR",
+    "iso3": "TUR",
+    "nombre": "Turquía",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.kvkk.gov.tr/Icerik/6649/Personal-Data-Protection-Law",
+      "https://www.kvkk.gov.tr/Icerik/6650/VERBIS"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": 30,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "TUR",
+    "idioma": "en",
+    "plazo_respuesta_unidad": "corridos",
+    "plazo_respuesta_alcance": "respuesta art.13",
+    "nombre_ctgov": "Turkey"
+  },
+  {
+    "iso2": "SA",
+    "iso3": "SAU",
+    "nombre": "Arabia Saudita",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "SAU",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Saudi Arabia"
+  },
+  {
+    "iso2": "AE",
+    "iso3": "ARE",
+    "nombre": "Emiratos Árabes Unidos",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "ARE",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "United Arab Emirates"
+  },
+  {
+    "iso2": "ZA",
+    "iso3": "ZAF",
+    "nombre": "Sudáfrica",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://inforegulator.org.za/acts/",
+      "https://inforegulator.org.za/popia/"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "ZAF",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "South Africa"
+  },
+  {
+    "iso2": "EG",
+    "iso3": "EGY",
+    "nombre": "Egipto",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "EGY",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Egypt"
+  },
+  {
+    "iso2": "IN",
+    "iso3": "IND",
+    "nombre": "India",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.meity.gov.in/static/uploads/2024/02/Digital-Personal-Data-Protection-Act-2023-1.pdf"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "IND",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "India"
+  },
+  {
+    "iso2": "CN",
+    "iso3": "CHN",
+    "nombre": "China",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "CHN",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "China"
+  },
+  {
+    "iso2": "JP",
+    "iso3": "JPN",
+    "nombre": "Japón",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.ppc.go.jp/en/legal/",
+      "https://www.ppc.go.jp/files/pdf/APPI_english.pdf"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "JPN",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Japan"
+  },
+  {
+    "iso2": "KR",
+    "iso3": "KOR",
+    "nombre": "Corea del Sur",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://pipc.go.kr/eng/user/lgp/law/lawsRegulations.do",
+      "https://www.law.go.kr/LSW/lsInfoP.do?chrClsCd=010202&lsiSeq=248613&urlMode=engLsInfoR&viewCls=engLsInfoR"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "KOR",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "South Korea"
+  },
+  {
+    "iso2": "SG",
+    "iso3": "SGP",
+    "nombre": "Singapur",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.pdpc.gov.sg/-/media/Files/PDPC/PDF-Files/EU-GDPR/Broad-Comparison-of-the-PDPAs-Consent-Exceptions-with-EU-GDPRs-Legal-Bases-for-Processing-Personal-Data-1-Apr-2021.pdf?la=en"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "SGP",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Singapore"
+  },
+  {
+    "iso2": "AU",
+    "iso3": "AUS",
+    "nombre": "Australia",
+    "estado_propuesto": "allowed_with_conditions",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-3-app-3-collection-of-solicited-personal-information",
+      "https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/more-guidance/guide-to-data-analytics-and-the-australian-privacy-principles"
+    ],
+    "certeza": "media",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "AUS",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Australia"
+  },
+  {
+    "iso2": "RU",
+    "iso3": "RUS",
+    "nombre": "Rusia",
+    "estado_propuesto": "blocked",
+    "estado_aprobado": null,
+    "condiciones": [
+      "Revisión legal local de base, aviso indirecto, oposición, registro o representante y transferencias antes de aprobación.",
+      "No publicar personas hasta aprobación expresa de Francisco."
+    ],
+    "fuentes_legales": [
+      "https://mintrud.gov.ru/docs/laws/130"
+    ],
+    "certeza": "baja",
+    "plazo_respuesta_dias": null,
+    "plazo_bloqueo": "inmediato tras verificación (política interna)",
+    "fuentes_nacionales": [],
+    "adm_geoboundaries": "RUS",
+    "idioma": "en",
+    "plazo_respuesta_unidad": null,
+    "plazo_respuesta_alcance": null,
+    "nombre_ctgov": "Russia"
+  }
+]
