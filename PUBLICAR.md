@@ -5,6 +5,9 @@ pasos concretos, en orden, con quién decide cada uno.
 
 ## Dónde estamos
 
+La etiqueta `noindex, nofollow` de las tres páginas se quitará solo cuando Francisco haya
+identificado al responsable legal y aprobado el aviso de privacidad.
+
 | | Estado |
 |---|---|
 | Sitio | Funciona como sitio estático (sin servidor ni base de datos). Ya está en GitHub Pages: <https://franciscokirhman.github.io/kol-radar/> |
