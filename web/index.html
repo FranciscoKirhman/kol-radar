@@ -4,16 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
-<title>KOL Radar — oncología en Chile (beta)</title>
+<title>KOL Radar — ensayos y centros en el mundo</title>
 <!-- Para buscadores y para cuando se comparte el enlace. El texto no promete validación: casi nada
      pasó por revisión humana, y así lo dice. -->
-<meta name="description" content="Mapa de ensayos clínicos, centros, fármacos y profesionales de la oncología en Chile, y cuándo vencen las patentes de cada fármaco, construido con evidencia pública: cada dato enlaza a su fuente (ClinicalTrials.gov, PubMed, SciELO, ISP, CIF, FDA, INAPI). Beta, sin revisión humana." />
+<meta name="description" content="Mapa mundial de ensayos clínicos y sedes declaradas, con fuentes verificables. En Chile también incluye profesionales, fármacos y patentes. Datos pendientes de revisión humana." />
 <link rel="canonical" href="https://franciscokirhman.github.io/kol-radar/web/index.html" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_CL" />
 <meta property="og:site_name" content="KOL Radar" />
-<meta property="og:title" content="KOL Radar — oncología en Chile" />
-<meta property="og:description" content="Quién investiga qué en oncología en Chile: ensayos clínicos, centros, fármacos y profesionales, con la fuente de cada dato. Beta abierta." />
+<meta property="og:title" content="KOL Radar — mapa mundial de ensayos" />
+<meta property="og:description" content="Ensayos clínicos y sedes declaradas por país, con acceso a la fuente de cada dato." />
 <meta property="og:url" content="https://franciscokirhman.github.io/kol-radar/web/index.html" />
 <meta name="twitter:card" content="summary" />
 <!-- Dataset de schema.org: hace que la base aparezca en Google Dataset Search. -->
@@ -21,19 +21,19 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "KOL Radar — ensayos clínicos, centros y profesionales de la oncología en Chile",
-  "description": "Base abierta de ensayos clínicos oncológicos con sede en Chile, sus centros, los fármacos que evalúan y los profesionales que la evidencia pública nombra, con la URL de origen de cada dato. Fuentes: ClinicalTrials.gov, PubMed, SciELO Chile, el buscador de estudios clínicos de la CIF, la planilla de inspecciones del ISP y el NCI Thesaurus. Beta: los datos no pasaron por revisión humana.",
+  "name": "KOL Radar — mapa mundial de ensayos clínicos",
+  "description": "Ensayos clínicos y sedes textuales declaradas por ClinicalTrials.gov en países y territorios de todo el mundo, con URL de origen. Chile incluye además datos locales. Los datos no pasaron por revisión humana.",
   "url": "https://franciscokirhman.github.io/kol-radar/web/index.html",
   "license": "https://opendatacommons.org/licenses/odbl/1-0/",
   "isAccessibleForFree": true,
   "inLanguage": "es",
-  "keywords": ["oncología", "ensayos clínicos", "Chile", "Medical Affairs", "investigación clínica", "cáncer"],
-  "spatialCoverage": {"@type": "Place", "name": "Chile"},
+  "keywords": ["ensayos clínicos", "mapa mundial", "Medical Affairs", "investigación clínica"],
+  "spatialCoverage": {"@type": "Place", "name": "Mundo"},
   "creator": {"@type": "Person", "name": "Francisco Kirhman"},
   "distribution": [{
     "@type": "DataDownload",
     "encodingFormat": "application/json",
-    "contentUrl": "https://franciscokirhman.github.io/kol-radar/data/publicado/indice.json"
+    "contentUrl": "https://franciscokirhman.github.io/kol-radar/data/publicado/mundo/indice.json"
   }]
 }
 </script>
@@ -116,6 +116,8 @@
   .topbar-row { display: flex; align-items: center; gap: 10px; max-width: 1080px; margin: 0 auto; flex-wrap: wrap; }
   .dev-link { margin-left: auto; font-size: 11px; color: var(--text-muted); white-space: nowrap; text-decoration: none; }
   .dev-link:hover { text-decoration: underline; }
+  .world-link { color: var(--accent); font-weight: 600; font-size: 12px; text-decoration: none; white-space: nowrap; }
+  .world-link:hover { text-decoration: underline; }
   .brand { font-weight: 700; font-size: 17px; white-space: nowrap; font-family: var(--serif); letter-spacing: -.01em; }
   .brand-btn { border: none; background: none; padding: 0; color: inherit; cursor: pointer; }
   .specialty-badge {
@@ -1087,6 +1089,23 @@
       .foco-salir-flotante { transform: translateX(-50%); }
     }
   }
+.country-control { display:flex; align-items:center; gap:6px; color:var(--text-muted); font-size:11px; white-space:nowrap; }
+.country-control select { max-width:165px; font:inherit; font-size:12px; color:var(--text-primary); background:var(--surface-1); border:1px solid var(--border); border-radius:999px; padding:6px 8px; }
+.geo-global { max-width:1080px; margin:0 auto 22px; padding:20px; border:1px solid var(--border); border-radius:12px; background:var(--surface-0); }
+.geo-global h2 { margin:0 0 6px; font-family:var(--serif); }
+.geo-global p { color:var(--text-secondary); font-size:13px; }
+.geo-global-map { overflow:hidden; border:1px solid var(--border); border-radius:8px; background:var(--surface-2); }
+.geo-global-map svg { display:block; width:100%; height:auto; aspect-ratio:2/1; }
+.geo-global-map path { fill:var(--border); stroke:var(--surface-0); stroke-width:.45; cursor:pointer; }
+.geo-global-map path[data-volume="one"] { fill:#efd7c8; }
+.geo-global-map path[data-volume="two"] { fill:#dfa47e; }
+.geo-global-map path[data-volume="three"] { fill:var(--institucion); }
+.geo-global-map path[data-volume="four"] { fill:var(--accent); }
+.geo-global-map path[data-current="true"] { stroke:var(--text-primary); stroke-width:2; }
+.geo-global-sites { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px; margin-top:16px; }
+.geo-global-sites button { text-align:left; border:1px solid var(--border); background:var(--surface-1); color:var(--text-primary); border-radius:8px; padding:9px; font:inherit; cursor:pointer; }
+.geo-global-sites button small { display:block; color:var(--text-muted); }
+@media(max-width:430px) { .country-control select { max-width:135px; } .geo-global { padding:12px; } }
 </style>
 </head>
 <body class="en-inicio">
@@ -1094,7 +1113,8 @@
 <header class="topbar">
   <div class="topbar-row">
     <button type="button" class="brand brand-btn" id="brand-inicio" title="Volver al inicio">KOL Radar</button>
-    <span class="specialty-badge" id="specialty-badge">beta</span>
+    <span class="specialty-badge" id="specialty-badge">Chile</span>
+    <label class="country-control" for="pais-global">País <select id="pais-global" aria-label="País de los ensayos y sedes"><option value="CL">Chile</option></select></label>
     <div class="search-wrap">
       <span class="icon">⌕</span>
       <input id="search" type="search" placeholder="Buscar fármaco, estudio, profesional o institución…" autocomplete="off"
@@ -1169,30 +1189,7 @@
   </div>
 </header>
 
-<!-- El aviso de beta nunca desaparece (el charter lo pide), pero ocupa una línea: antes se
-     comía medio primer pantallazo. El detalle está a un click. Las cifras las calcula el JS
-     desde los datos: escritas a mano quedaban desactualizadas en la siguiente integración. -->
-<details class="beta-bar" role="note">
-  <summary>
-    <span class="beta-sello">Beta</span>
-    <span><span class="beta-largo">Datos públicos con fuente enlazada, </span><strong class="js-cifra-revision">sin revisión humana todavía</strong><span class="beta-largo">. No evalúa la calidad profesional de nadie ni es un listado comercial.</span></span>
-    <span class="beta-mas">Qué significa</span>
-  </summary>
-  <div class="beta-cuerpo">
-    <div class="beta-txt">
-      Todo lo que ves sale de fuentes públicas —ClinicalTrials.gov, PubMed, SciELO, el buscador
-      de estudios clínicos de la Cámara de la Innovación Farmacéutica, el registro de
-      establecimientos del Minsal y sitios institucionales— y cada dato enlaza a la fuente exacta
-      de donde salió. <strong><span class="js-cifra-pendientes">Casi todos los hechos</span> están
-      pendientes de revisión humana.</strong> Pueden faltar personas, sobrar duplicados y haber
-      identidades sin confirmar. Si algo está mal, lo mejor que podés hacer es avisarnos.
-      <a href="interno.html#fuentes">Ver todas las fuentes, una por una ↗</a>
-    </div>
-    <a class="beta-cta" id="beta-feedback"
-       href="https://github.com/FranciscoKirhman/kol-radar/issues/new"
-       target="_blank" rel="noopener noreferrer">Reportar un error (reporte público)</a>
-  </div>
-</details>
+
 <main>
   <section id="inicio-view" class="active" aria-labelledby="hero-titulo">
     <div class="hero">
@@ -1245,6 +1242,14 @@
   </section>
 
   <section id="geo-view">
+    <div id="geo-global" class="geo-global" hidden>
+      <h2>Mapa mundial de ensayos</h2>
+      <p id="geo-global-status" role="status">Cargando países…</p>
+      <div class="geo-global-map"><svg id="geo-global-svg" viewBox="0 0 720 360" role="img" aria-label="Países con ensayos clínicos registrados"></svg></div>
+      <p class="geo-global-note">El color representa ensayos registrados por país. Las sedes se muestran como texto de ClinicalTrials.gov; el mapa no les asigna coordenadas.</p>
+      <button type="button" class="chip" id="geo-global-mas" hidden>Cargar más ensayos de ClinicalTrials.gov</button>
+      <div id="geo-global-sites" class="geo-global-sites"></div>
+    </div>
     <div class="foco-bar geo-foco vacia" id="geo-foco"></div>
     <p class="sr-solo" id="geo-anuncio" role="status" aria-live="polite"></p>
     <div class="geo-layout">
@@ -1337,7 +1342,7 @@
   una persona: <span class="js-cifra-pendientes">casi todos los hechos</span> están pendientes. ¿Eres un
   profesional listado acá y quieres corregir o eliminar tu información? El canal privado para eso
   todavía no está definido — "Reportar un error (reporte público)" abre un repositorio público, así
-  que no es el lugar para pedir que se retire tu ficha. Esta es una beta, no un producto en producción.
+  que no es el lugar para pedir que se retire tu ficha.
 </footer>
 
 <div class="backdrop" id="backdrop"></div>
@@ -1364,6 +1369,10 @@
   "use strict";
 
   var INDICE_URL = "../data/publicado/indice.json";
+  var INDICE_MUNDO_URL = "../data/publicado/mundo/indice.json";
+  var PAIS_ACTUAL = ((location.search.match(/[?&]pais=([A-Z]{2})(?:&|$)/i) || [])[1] || "CL").toUpperCase();
+  var indiceMundo = null, paisMundo = null, mundoGeo = null, mundoRegistros = [], mundoTaxonomia = null;
+  var mundoPaginaToken = null, mundoCargaActiva = false, mundoFuenteAgotada = false;
   var DATA_URL = "";
   var indicePublicado = null;
   var TIPO_HECHO_LABEL = {
@@ -1692,30 +1701,271 @@
   }
   var IDENTITY_LABEL = { alta: "Identidad: alta", media: "Identidad: media", baja: "Identidad: por verificar" };
 
+  // La misma interfaz de fichas y red recibe ensayos y sedes de cualquier país.
+  // Una sede se agrupa solo si el texto, la ciudad y el estado son idénticos;
+  // esto no afirma identidad institucional ni agrega personas sin aprobación.
+  function convertirMundo(doc, meta, taxonomia) {
+    var areaNombre = {}, trials = {}, sites = {}, links = {}, entities = [], edges = [];
+    (taxonomia.areas || []).forEach(function (a) { areaNombre[a.id] = a.nombre; });
+    (doc.registros || []).forEach(function (r) {
+      if (r.country_iso2 !== meta.iso2 || !/^NCT\d{8}$/.test(r.nct_id || "")) return;
+      var url = "https://clinicaltrials.gov/study/" + r.nct_id;
+      if (r.source_url !== url) return;
+      var labels = (r.area_ids || []).map(function (id) { return areaNombre[id]; }).filter(Boolean);
+      if (!labels.length) labels = ["Sin área clasificada"];
+      var tid = "world-" + meta.iso2 + "-" + r.nct_id.toLowerCase();
+      var t = trials[tid];
+      if (!t) {
+        t = { id: tid, nombre: (r.title || r.nct_id) + " (" + r.nct_id + ")",
+          tipo: "ensayo_clinico", acronimo: r.nct_id, titulo_fuente: r.title || r.nct_id,
+          subtitulo: r.status || "Estado no declarado", estado_reclutamiento: r.status || null,
+          ciudad: r.city || null, region: r.state || "Sin estado declarado",
+          areas: labels, area: labels[0], condiciones: r.conditions || [],
+          hechos: [{ tipo: "ensayo_clinico", hecho: "Ensayo registrado con sede en " + meta.nombre + ".",
+            fuente_url: url, fecha: r.source_date, confianza: "pendiente" }] };
+        trials[tid] = t; entities.push(t);
+      }
+      if (!r.facility_text) return;
+      var key = [r.facility_text, r.city || "", r.state || ""].join("\u001f");
+      var s = sites[key];
+      if (!s) {
+        s = { id: "world-" + meta.iso2 + "-site-" + Object.keys(sites).length,
+          nombre: r.facility_text, tipo: "institucion", ciudad: r.city || null,
+          region: r.state || "Sin estado declarado", subtitulo: "Sede textual de ClinicalTrials.gov",
+          areas: labels.slice(), area: labels[0], hechos: [] };
+        sites[key] = s; entities.push(s);
+      }
+      labels.forEach(function (a) { if (s.areas.indexOf(a) === -1) s.areas.push(a); });
+      var lk = tid + "|" + s.id;
+      if (!links[lk]) {
+        links[lk] = true;
+        edges.push({ origen: tid, destino: s.id, tipo: "sitio del ensayo",
+          fuente_url: url, fecha: r.source_date, confianza: "pendiente" });
+        s.hechos.push({ tipo: "ensayo_clinico", hecho: "Sede textual declarada para " + r.nct_id + ".",
+          fuente_url: url, fecha: r.source_date, confianza: "pendiente" });
+      }
+    });
+    return { entidades: entities, vinculos: edges, contacto: null };
+  }
+
+  function prepararInterfazMundo() {
+    document.getElementById("specialty-badge").textContent = paisMundo.nombre;
+    document.getElementById("view-patentes").hidden = true;
+    document.querySelector('[data-filter="farmaco"]').hidden = true;
+    document.querySelector('[data-filter="persona"]').hidden = true;
+    document.getElementById("toggle-shortlist").hidden = true;
+    document.getElementById("tier-chips").parentNode.hidden = true;
+    document.getElementById("filtro-reclutando").hidden = true;
+    document.getElementById("area-summary").setAttribute("aria-label", "Filtrar por área terapéutica");
+    document.getElementById("search").placeholder = "Buscar estudio o sede…";
+    document.getElementById("hero-search").placeholder = "Buscar estudio o sede…";
+    document.querySelector("#geo-view .geo-layout").hidden = true;
+    document.getElementById("geo-foco").hidden = true;
+    document.querySelector("#network-hint").textContent = "Red de estudios y sedes textuales declaradas por ClinicalTrials.gov. Cada vínculo abre su fuente.";
+  }
+
+  function pintarInicioMundo() {
+    document.querySelector(".hero-kicker").textContent = paisMundo.nombre + " · todas las áreas de salud · fuentes públicas";
+    document.getElementById("hero-titulo").textContent = "Ensayos y sedes en " + paisMundo.nombre;
+    document.querySelector(".hero-lead").textContent = "Buscá un estudio o una sede, mirá sus conexiones y abrí la fuente de cada dato. " +
+      "Las sedes son textos del registro, todavía sin verificar como instituciones canónicas.";
+    document.getElementById("inicio-patentes").hidden = true;
+    document.querySelector(".inicio-pie").hidden = true;
+    var ejemplos = document.getElementById("hero-ejemplos"); ejemplos.textContent = "";
+    var cont = document.getElementById("entradas"); cont.textContent = "";
+    ["ensayo_clinico", "institucion"].forEach(function (tipo) {
+      var grupo = entidades.filter(function (n) { return n.tipo === tipo; })
+        .sort(function (a, b) { return connectionCount(b.id) - connectionCount(a.id); });
+      var art = document.createElement("article"); art.className = "entrada";
+      art.style.setProperty("--tipo-color", tipo === "institucion" ? "var(--institucion)" : "var(--ensayo)");
+      var h = document.createElement("h2"); h.textContent = (tipo === "institucion" ? "Sedes declaradas" : "Ensayos clínicos") + " (" + grupo.length + ")";
+      art.appendChild(h);
+      var p = document.createElement("p"); p.textContent = tipo === "institucion" ?
+        "Textos de sedes, sin fusión automática de identidades." : "Primera carga guardada; el total registrado figura en el mapa.";
+      art.appendChild(p);
+      grupo.slice(0, 8).forEach(function (n) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "hero-ejemplo";
+        b.textContent = n.tipo === "ensayo_clinico" ? n.acronimo : n.nombre;
+        b.addEventListener("click", function () { explorador.abrir(n.id); });
+        art.appendChild(b);
+      });
+      var ver = document.createElement("button"); ver.type = "button"; ver.className = "chip";
+      ver.textContent = "Ver todas las fichas"; ver.addEventListener("click", function () { mostrarVista("fichas"); });
+      art.appendChild(ver); cont.appendChild(art);
+    });
+  }
+
+  function mostrarMapaMundial() {
+    var panel = document.getElementById("geo-global"), svg = document.getElementById("geo-global-svg");
+    panel.hidden = false;
+    if (mundoGeo) return;
+    fetch("../data/geo/mundo-paises.json").then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status); return res.json();
+    }).then(function (geo) {
+      mundoGeo = geo;
+      var porIso = {};
+      (indiceMundo.paises || []).forEach(function (p) { porIso[p.iso2] = p; });
+      geo.paises.forEach(function (g) {
+        var p = porIso[g.iso2], n = p ? p.ensayos : 0;
+        var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", g.trazado);
+        path.setAttribute("data-volume", n >= 10000 ? "four" : n >= 1000 ? "three" : n >= 100 ? "two" : n >= 1 ? "one" : "");
+        path.setAttribute("data-current", String(g.iso2 === PAIS_ACTUAL));
+        path.setAttribute("tabindex", "0");
+        path.setAttribute("aria-label", g.nombre + ": " + (p ? p.ensayos + " ensayos" : "sin conteo publicado"));
+        path.addEventListener("click", function () { if (p) location.href = "index.html?pais=" + g.iso2 + "#mapa"; });
+        path.addEventListener("keydown", function (ev) { if (p && (ev.key === "Enter" || ev.key === " ")) {
+          ev.preventDefault(); location.href = "index.html?pais=" + g.iso2 + "#mapa";
+        } });
+        svg.appendChild(path);
+      });
+      document.getElementById("geo-global-status").textContent =
+        (indiceMundo.paises || []).length + " países y territorios con ensayos. " +
+        paisMundo.nombre + ": " + paisMundo.ensayos.toLocaleString("es-CL") + " registrados; " +
+        paisMundo.ensayos_detalle.toLocaleString("es-CL") + " con detalle guardado (" + paisMundo.estado + ").";
+      var sites = document.getElementById("geo-global-sites"); sites.textContent = "";
+      entidades.filter(function (n) { return n.tipo === "institucion"; }).slice(0, 80).forEach(function (n) {
+        var b = document.createElement("button"); b.type = "button"; b.textContent = n.nombre;
+        var small = document.createElement("small"); small.textContent = n.ciudad || "Ciudad no declarada";
+        b.appendChild(small); b.addEventListener("click", function () { explorador.abrir(n.id); });
+        sites.appendChild(b);
+      });
+      if (entidades.filter(function (n) { return n.tipo === "institucion"; }).length > 80) {
+        var nota = document.createElement("p"); nota.textContent = "Mostrando las primeras 80 sedes; todas están en Fichas.";
+        sites.appendChild(nota);
+      }
+      document.getElementById("geo-global-mas").hidden = PAIS_ACTUAL === "CL" || paisMundo.estado === "completo";
+    }).catch(function (err) { document.getElementById("geo-global-status").textContent = "No se pudo cargar el mapa: " + err.message; });
+  }
+
+  function sedeMundoPermitida(v) {
+    var s = (typeof v === "string" ? v.replace(/\s+/g, " ").trim() : "").toLowerCase();
+    return !!s && /hospital|clinic|medical cent|university|institute|research|health system|healthcare|health care|health cent|foundation|trust|hospice|polyclinic|dispensary|krankenhaus|klinik|klinikum|centre hospitalier|centro m[eé]dico|centro hospitalar|instituto|cl[ií]nica/.test(s);
+  }
+
+  function registrosMundoVivos(study) {
+    var ps = study.protocolSection || {}, ident = ps.identificationModule || {};
+    var nct = ident.nctId, label = paisMundo.nombre_ctgov, out = [];
+    if (!/^NCT\d{8}$/.test(nct || "")) return out;
+    var conditions = ((ps.conditionsModule || {}).conditions || []).filter(function (x) { return typeof x === "string"; });
+    var ids = [];
+    (mundoTaxonomia.areas || []).forEach(function (a) {
+      var terms = [a.mesh_label, a.consulta_ctgov];
+      (a.enfermedades || []).forEach(function (e) { terms.push(e.mesh_label, e.consulta_ctgov); });
+      if (terms.some(function (t) { return typeof t === "string" && t.length >= 5 && conditions.some(function (c) {
+        return c.toLowerCase() === t.toLowerCase() || c.toLowerCase().indexOf(t.toLowerCase()) !== -1;
+      }); })) ids.push(a.id);
+    });
+    ((ps.contactsLocationsModule || {}).locations || []).forEach(function (loc) {
+      if (loc.country !== label) return;
+      var facility = loc.facility || null, redact = facility && !sedeMundoPermitida(facility);
+      out.push({ country_iso2: PAIS_ACTUAL, country_name: label, area_ids: ids,
+        facility_text: redact ? null : facility, site_text_redacted: !!redact,
+        city: loc.city || null, state: loc.state || null, nct_id: nct,
+        title: ident.briefTitle || ident.officialTitle || nct, conditions: conditions,
+        status: (ps.statusModule || {}).overallStatus || null,
+        source_url: "https://clinicaltrials.gov/study/" + nct,
+        source_date: new Date().toISOString().slice(0, 10), confidence: "pendiente", review_status: "pending" });
+    });
+    return out;
+  }
+
+  function cargarMasMundo() {
+    if (PAIS_ACTUAL === "CL" || mundoCargaActiva || mundoFuenteAgotada || !paisMundo.nombre_ctgov) return;
+    mundoCargaActiva = true;
+    var boton = document.getElementById("geo-global-mas");
+    boton.disabled = true; boton.textContent = "Consultando la fuente…";
+    var url = "https://clinicaltrials.gov/api/v2/studies?format=json&pageSize=200&filter.advanced=" +
+      encodeURIComponent("AREA[LocationCountry]" + paisMundo.nombre_ctgov);
+    if (mundoPaginaToken) url += "&pageToken=" + encodeURIComponent(mundoPaginaToken);
+    fetch(url).then(function (res) { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
+      .then(function (data) {
+        var seen = {};
+        mundoRegistros.forEach(function (r) { seen[[r.nct_id, r.facility_text, r.city, r.state].join("|")] = true; });
+        (data.studies || []).forEach(function (s) { registrosMundoVivos(s).forEach(function (r) {
+          var key = [r.nct_id, r.facility_text, r.city, r.state].join("|");
+          if (!seen[key]) { seen[key] = true; mundoRegistros.push(r); }
+        }); });
+        mundoPaginaToken = data.nextPageToken || null;
+        mundoFuenteAgotada = !mundoPaginaToken;
+        var convertido = convertirMundo({ registros: mundoRegistros }, paisMundo, mundoTaxonomia);
+        entidades = convertido.entidades; vinculos = convertido.vinculos; byId = {};
+        entidades.forEach(function (n) { byId[n.id] = n; });
+        construirAdyacencia(); pintarCifrasRevision(); buildAreaChips(); buildRegionChips(); renderCards();
+        pintarInicioMundo(); networkBuilt = false;
+        document.getElementById("geo-global-status").textContent = paisMundo.nombre + ": " +
+          Object.keys(mundoRegistros.reduce(function (acc, r) { acc[r.nct_id] = true; return acc; }, {})).length.toLocaleString("es-CL") +
+          " ensayos con detalle cargado de " + paisMundo.ensayos.toLocaleString("es-CL") + " registrados. " +
+          (mundoFuenteAgotada ? "No hay más páginas en la fuente." : "Podés cargar la página siguiente.");
+        var sites = document.getElementById("geo-global-sites"); sites.textContent = "";
+        entidades.filter(function (n) { return n.tipo === "institucion"; }).slice(0, 80).forEach(function (n) {
+          var b = document.createElement("button"); b.type = "button"; b.textContent = n.nombre;
+          var small = document.createElement("small"); small.textContent = n.ciudad || "Ciudad no declarada";
+          b.appendChild(small); b.addEventListener("click", function () { explorador.abrir(n.id); }); sites.appendChild(b);
+        });
+        if (entidades.filter(function (n) { return n.tipo === "institucion"; }).length > 80) {
+          var nota = document.createElement("p"); nota.textContent = "Mostrando las primeras 80 sedes; todas están en Fichas."; sites.appendChild(nota);
+        }
+        boton.hidden = mundoFuenteAgotada;
+      }).catch(function (err) {
+        document.getElementById("geo-global-status").textContent = "No se pudo consultar ClinicalTrials.gov: " + err.message + ". Reintentá.";
+      }).then(function () { mundoCargaActiva = false; boton.disabled = false; boton.textContent = "Cargar más ensayos de ClinicalTrials.gov"; });
+  }
+  document.getElementById("geo-global-mas").addEventListener("click", cargarMasMundo);
+
   // ---------------- Carga de datos ----------------
   // `no-cache` obliga a revalidar contra el servidor en cada carga (usa ETag, así que si el
   // archivo no cambió la respuesta sigue siendo un 304 barato). Sin esto, en GitHub Pages un
   // tester que vuelve al sitio se queda con el dataset de su visita anterior y ve una versión
   // vieja sin ningún indicio de que lo es — que en una beta que se va a corregir seguido es
   // justo el error más difícil de diagnosticar.
-  fetch(INDICE_URL, { cache: "no-cache" })
+  var selectorPais = document.getElementById("pais-global");
+  selectorPais.addEventListener("change", function () {
+    if (/^[A-Z]{2}$/.test(selectorPais.value)) location.href = "index.html?pais=" + selectorPais.value;
+  });
+  fetch(INDICE_MUNDO_URL, { cache: "no-cache" })
     .then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
     })
-    .then(function (indice) {
-      indicePublicado = indice;
-      var pais = (indice.paises || []).filter(function (p) { return p.iso2 === indice.pais_inicial; })[0];
-      var area = pais && (pais.areas || []).filter(function (a) { return a.id === indice.area_inicial; })[0];
-      if (!area || !/^\.\.\/data\/publicado\/[A-Z]{2}\/[a-z0-9-]+\.json$/.test(area.ruta)) {
-        throw new Error("Índice de datos inválido");
+    .then(function (world) {
+      indiceMundo = world;
+      var opciones = (world.paises || []).slice().sort(function (a, b) { return a.nombre.localeCompare(b.nombre, "es"); });
+      selectorPais.textContent = "";
+      opciones.forEach(function (p) {
+        var opt = document.createElement("option"); opt.value = p.iso2; opt.textContent = p.nombre;
+        selectorPais.appendChild(opt);
+      });
+      paisMundo = (world.paises || []).filter(function (p) { return p.iso2 === PAIS_ACTUAL; })[0];
+      if (!paisMundo) throw new Error("País sin registro de ensayos en el índice mundial");
+      selectorPais.value = PAIS_ACTUAL;
+      if (PAIS_ACTUAL !== "CL") {
+        if (!/^\.\.\/data\/publicado\/mundo\/[A-Z]{2}\.json$/.test(paisMundo.ruta) ||
+            paisMundo.ruta.slice(-7, -5) !== PAIS_ACTUAL) throw new Error("Ruta mundial inválida");
+        DATA_URL = paisMundo.ruta;
+        return Promise.all([fetch(DATA_URL, { cache: "no-cache" }), fetch("../data/config/areas.json")])
+          .then(function (responses) { return Promise.all(responses.map(function (res) {
+            if (!res.ok) throw new Error("HTTP " + res.status); return res.json();
+          })); })
+          .then(function (docs) {
+            mundoRegistros = docs[0].registros || []; mundoTaxonomia = docs[1];
+            return convertirMundo(docs[0], paisMundo, docs[1]);
+          });
       }
-      DATA_URL = area.ruta;
-      return fetch(DATA_URL, { cache: "no-cache" });
-    })
-    .then(function (res) {
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      return res.json();
+      return fetch(INDICE_URL, { cache: "no-cache" }).then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      }).then(function (indice) {
+        indicePublicado = indice;
+        var pais = (indice.paises || []).filter(function (p) { return p.iso2 === indice.pais_inicial; })[0];
+        var area = pais && (pais.areas || []).filter(function (a) { return a.id === indice.area_inicial; })[0];
+        if (!area || !/^\.\.\/data\/publicado\/[A-Z]{2}\/[a-z0-9-]+\.json$/.test(area.ruta))
+          throw new Error("Índice de datos inválido");
+        DATA_URL = area.ruta;
+        return fetch(DATA_URL, { cache: "no-cache" }).then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status); return r.json();
+        });
+      });
     })
     .then(function (data) {
       entidades = data.entidades || [];
@@ -1743,6 +1993,7 @@
       buildRegionChips();
       refreshShortlistUI();
       renderCards();
+      if (PAIS_ACTUAL !== "CL") prepararInterfazMundo();
       // El mapa es la vista de entrada, así que se construye acá: si se dejara para el primer
       // click del botón, al abrir el sitio se vería el panel vacío.
       // El grafo se arma en el tick siguiente: así el encabezado, los filtros y el aviso de
@@ -1750,14 +2001,17 @@
       if (networkView.classList.contains("active")) {
         setTimeout(function () { buildNetwork(); networkBuilt = true; }, 0);
       }
-      if (geoView.classList.contains("active")) mapaChile.mostrar();
-      inicio.pintar();
+      if (geoView.classList.contains("active")) {
+        mostrarMapaMundial();
+        if (PAIS_ACTUAL === "CL") mapaChile.mostrar();
+      }
+      if (PAIS_ACTUAL === "CL") inicio.pintar(); else pintarInicioMundo();
       // La ficha de una institución muestra su dirección: se pide ya, pesa poco. Va antes de leer el
       // enlace para que nada de lo que pase al abrir una ficha la deje sin pedir.
-      cargarUbicaciones().catch(function () {});
+      if (PAIS_ACTUAL === "CL") cargarUbicaciones().catch(function () {});
       // Las patentes pesan poco y las usan tres lugares (la pestaña, el perfil de un fármaco y el
       // aviso de Inicio): se piden ya, y cuando llegan se repinta lo que esté a la vista.
-      cargarPatentes().then(function () {
+      if (PAIS_ACTUAL === "CL") cargarPatentes().then(function () {
         inicio.pintar();
         if (patentesView.classList.contains("active")) patentesVista.pintar();
         var f = explorador.foco();
@@ -1844,6 +2098,7 @@
   ];
 
   function regionOf(n) {
+    if (PAIS_ACTUAL !== "CL") return n.region || "Sin estado declarado";
     var c = (n.ciudad || "").toLowerCase();
     var hit = REGION_RULES.find(function (r) { return r.kw.some(function (k) { return c.indexOf(k) !== -1; }); });
     if (hit) return hit.region;
@@ -2163,7 +2418,8 @@
     } else if (n.tipo === "farmaco") {
       scoreBadge = document.createElement("span");
     } else {
-      scoreBadge = document.createElement("span"); scoreBadge.className = "score-badge"; scoreBadge.textContent = senales.total + " pts";
+      scoreBadge = document.createElement("span"); scoreBadge.className = "score-badge";
+      scoreBadge.textContent = PAIS_ACTUAL === "CL" ? senales.total + " pts" : connectionCount(n.id) + " vínculos";
     }
     nameRow.appendChild(nameWrap); nameRow.appendChild(scoreBadge);
     top.appendChild(dot); top.appendChild(nameRow);
@@ -2336,7 +2592,7 @@
     } else {
       networkBuilt = false;
     }
-    if (geoView.classList.contains("active")) mapaChile.refrescar();
+    if (geoView.classList.contains("active") && PAIS_ACTUAL === "CL") mapaChile.refrescar();
   }
 
   // ---------------- Buscador: ubica, no filtra ----------------
@@ -2635,6 +2891,12 @@
   var CORREO_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
   function renderFooter(contacto) {
     contactoDatos = contacto || null;
+    if (PAIS_ACTUAL !== "CL") {
+      var pieMundo = document.getElementById("page-footer");
+      pieMundo.textContent = "Ensayos y sedes textuales de ClinicalTrials.gov. Los nombres de sede no confirman identidad institucional ni ubicación exacta. ";
+      var privMundo = document.createElement("a"); privMundo.href = "privacidad.html"; privMundo.textContent = "Aviso de privacidad";
+      pieMundo.appendChild(privMundo); return;
+    }
     var canal = contacto && typeof contacto.canal === "string" ? contacto.canal.trim() : "";
     if (!canal) return;
     var href = esUrlSegura(canal) ? canal : (CORREO_RE.test(canal) ? "mailto:" + canal : "");
@@ -2721,7 +2983,8 @@
   function buildAreaChips() {
     var areas = areasDisponibles();
     if (areas.length < 2) { document.getElementById("area-menu").hidden = true; return; }
-    document.getElementById("specialty-badge").textContent = areas.length + " áreas · beta";
+    document.getElementById("area-menu").hidden = false;
+    document.getElementById("specialty-badge").textContent = areas.length + " áreas";
     var panel = document.getElementById("area-panel");
     panel.innerHTML = "";
     areas.forEach(function (a) {
@@ -2769,21 +3032,24 @@
     actualizarResumenAreas();
 
     // Cerrar al tocar fuera: un <details> abierto tapa la lista y es fácil olvidarlo abierto.
-    document.addEventListener("click", function (ev) {
-      var menu = document.getElementById("area-menu");
-      if (menu && menu.hasAttribute("open") && !menu.contains(ev.target)) menu.removeAttribute("open");
-    });
+    if (!buildAreaChips._outsideBound) {
+      document.addEventListener("click", function (ev) {
+        var menu = document.getElementById("area-menu");
+        if (menu && menu.hasAttribute("open") && !menu.contains(ev.target)) menu.removeAttribute("open");
+      });
+      buildAreaChips._outsideBound = true;
+    }
 
     // Al abrir se ancla al botón. Si no cabe hacia la derecha, se pega al borde.
     var menuEl = document.getElementById("area-menu");
-    menuEl.addEventListener("toggle", function () {
+    menuEl.ontoggle = function () {
       if (!menuEl.open) return;
       var r = document.getElementById("area-summary").getBoundingClientRect();
       var ancho = 300;
       panel.style.top = Math.round(r.bottom + 6) + "px";
       panel.style.left = Math.round(Math.max(8, Math.min(r.left, window.innerWidth - ancho - 8))) + "px";
       panel.style.maxHeight = Math.round(window.innerHeight - r.bottom - 24) + "px";
-    });
+    };
   }
 
 
@@ -2811,7 +3077,7 @@
       b.textContent = r + " (" + count + ")";
       regionsEl.appendChild(b);
     });
-    regionsEl.addEventListener("click", function (e) {
+    regionsEl.onclick = function (e) {
       var btn = e.target.closest("[data-region]");
       if (!btn) return;
       regionsEl.querySelectorAll("[data-region]").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
@@ -2820,7 +3086,7 @@
       state.ciudad = null;
       if (state.region === "todas") { limpiarFiltroGeo(); return; }
       verLugar();
-    });
+    };
   }
 
   document.getElementById("filtro-reclutando").addEventListener("click", function () {
@@ -2969,6 +3235,7 @@
   function mostrarVista(cual) {
     if (cual === true) cual = "conexiones";
     if (cual === false) cual = "fichas";
+    if (cual === "patentes" && PAIS_ACTUAL !== "CL") cual = "inicio";
     // Cambiar de vista con la página desplazada dejaba la vista nueva a media altura: el mapa se
     // abría con su mitad superior fuera de pantalla.
     if (cual !== vistaActual) window.scrollTo(0, 0);
@@ -2994,7 +3261,10 @@
     } else if (location.hash === "#patentes") {
       try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* file:// */ }
     }
-    if (cual === "chile" && entidades.length) mapaChile.mostrar();
+    if (cual === "chile" && entidades.length) {
+      mostrarMapaMundial();
+      if (PAIS_ACTUAL === "CL") mapaChile.mostrar();
+    }
     if (cual === "explorar") explorador.pintar();
     if (cual !== "explorar" && location.hash.indexOf("#ficha=") === 0) {
       try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* file:// */ }
@@ -3072,6 +3342,7 @@
                     "huechuraba", "quilicura", "lo barnechea", "la reina", "san miguel",
                     "peñalolén", "penalolen", "estación central", "estacion central"];
   function ciudadDe(n) {
+    if (PAIS_ACTUAL !== "CL") return n.ciudad || "";
     var c = (n.ciudad || "").split(" (")[0].trim();
     var l = c.toLowerCase();
     if (COMUNAS_RM.indexOf(l) !== -1) return "Santiago";
@@ -6617,6 +6888,10 @@
       raiz.innerHTML = "";
       var box = el("div", "exp-vacio");
       box.appendChild(el("h2", "", "Elegí algo para ver su perfil"));
+      if (PAIS_ACTUAL !== "CL") {
+        box.appendChild(el("p", "", "Buscá un estudio o una sede textual. Cada ficha enlaza al registro de ClinicalTrials.gov."));
+        raiz.appendChild(box); return;
+      }
       box.appendChild(el("p", "", "Buscá arriba un fármaco, un estudio, una institución o un profesional. El perfil resume en qué " +
         "estudios aparece, en qué centros, quién patrocina y quién trabaja ahí, con cada cifra contada desde vínculos con fuente."));
       var ej = el("div", "hero-ejemplos");
@@ -6631,10 +6906,58 @@
       raiz.appendChild(box);
     }
 
+    function pintarMundo(n) {
+      raiz.textContent = "";
+      var cab = el("div", "exp-cabeza");
+      cab.style.setProperty("--tipo-color", colorTipo(n.tipo));
+      var izq = el("div", "");
+      izq.appendChild(el("div", "exp-tipo", n.tipo === "ensayo_clinico" ? "Ensayo clínico" : "Sede textual declarada"));
+      izq.appendChild(el("h2", "exp-nombre", n.tipo === "ensayo_clinico" ? n.titulo_fuente : n.nombre));
+      izq.appendChild(el("p", "exp-sub", [n.tipo === "ensayo_clinico" ? n.acronimo : n.ciudad, n.region, paisMundo.nombre].filter(Boolean).join(" · ")));
+      cab.appendChild(izq);
+      var acc = el("div", "exp-acciones"), mapa = el("button", "exp-btn", "Ver mapa");
+      mapa.type = "button"; mapa.addEventListener("click", function () { mostrarVista("chile"); }); acc.appendChild(mapa);
+      var url = fuentePrincipal(n);
+      if (url) {
+        var a = el("a", "exp-btn", "Registro fuente ↗"); a.href = url;
+        a.target = "_blank"; a.rel = "noopener noreferrer"; acc.appendChild(a);
+      }
+      cab.appendChild(acc); raiz.appendChild(cab);
+      var resumen = el("div", "pf-resumen");
+      var intro = el("div", ""); intro.appendChild(el("h3", "", "Qué declara la fuente"));
+      intro.appendChild(el("p", "pf-nota", n.tipo === "institucion" ?
+        "Este nombre aparece como sede de un ensayo. La identidad de la institución y su ubicación exacta están pendientes de verificación." :
+        "El estudio figura con una ubicación declarada en este país. La lista muestra solo las sedes nombradas en los datos cargados."));
+      resumen.appendChild(intro); raiz.appendChild(resumen);
+      var vecinos = vecinosDe(n.id).map(function (v) { return byId[v.otro]; }).filter(Boolean);
+      var sec = el("section", "pf-sec ancha");
+      sec.appendChild(el("h3", "", n.tipo === "institucion" ? "Ensayos vinculados (" + vecinos.length + ")" : "Sedes declaradas (" + vecinos.length + ")"));
+      if (!vecinos.length) sec.appendChild(el("p", "pf-vacio", "La fuente no declara una sede con nombre institucional en los datos cargados."));
+      var lista = el("ol", "pf-lista");
+      vecinos.slice(0, 200).forEach(function (otro) {
+        var li = el("li", ""), b = el("button", "pf-fila", otro.tipo === "ensayo_clinico" ? otro.acronimo + " · " + otro.titulo_fuente : otro.nombre + (otro.ciudad ? " · " + otro.ciudad : ""));
+        b.type = "button"; b.addEventListener("click", function () { abrir(otro.id); }); li.appendChild(b); lista.appendChild(li);
+      });
+      sec.appendChild(lista);
+      if (vecinos.length > 200) sec.appendChild(el("p", "pf-nota", "Mostrando 200 vínculos. Usá las fichas y filtros para explorar el resto."));
+      raiz.appendChild(sec);
+      var evidencia = el("section", "pf-sec ancha"); evidencia.appendChild(el("h3", "", "Evidencia y fuentes"));
+      var fuentes = {}, ul = el("ul", "pf-lista");
+      n.hechos.forEach(function (h) {
+        if (!esUrlSegura(h.fuente_url) || fuentes[h.fuente_url]) return;
+        fuentes[h.fuente_url] = true;
+        var li = el("li", ""), a = el("a", "", h.fuente_url);
+        a.href = h.fuente_url; a.target = "_blank"; a.rel = "noopener noreferrer";
+        li.appendChild(a); li.appendChild(el("small", "", " · " + (h.fecha || "fecha no declarada") + " · pendiente")); ul.appendChild(li);
+      });
+      evidencia.appendChild(ul); raiz.appendChild(evidencia);
+    }
+
     function pintar() {
       if (!entidades.length) return;
       if (!foco || !byId[foco]) { pintarVacio(); return; }
       var n = byId[foco];
+      if (PAIS_ACTUAL !== "CL") { pintarMundo(n); return; }
       raiz.innerHTML = "";
 
       var migas = el("nav", "exp-migas");
@@ -6775,7 +7098,8 @@
 
   // Enlace compartido: #ficha=<id> abre las conexiones de esa ficha.
   function leerHash() {
-    if (location.hash === "#patentes") { mostrarVista("patentes"); return; }
+    if (location.hash === "#mapa") { mostrarVista("chile"); return; }
+    if (location.hash === "#patentes" && PAIS_ACTUAL === "CL") { mostrarVista("patentes"); return; }
     var m = location.hash.match(/^#ficha=(.+)$/);
     if (!m) return;
     var id;
