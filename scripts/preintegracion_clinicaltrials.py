@@ -15,26 +15,24 @@ que permiten auditar la recolección antes de decidir si entra a la muestra púb
 
 Umbral de admisión aplicado a un ensayo (acumulativo):
   - identidad estable por NCT + URL exacta de ClinicalTrials.gov;
-  - la API declara al menos una ubicación con país Chile;
-  - al menos una sede chilena con nombre institucional específico resoluble a una institución
+  - la API declara al menos una ubicación en el país solicitado;
+  - al menos una sede con nombre institucional específico resoluble a una institución
     canónica mediante un alias documentado;
   - se conserva el texto original de la sede, el estado y la fecha de recuperación.
 
 Ese umbral admite un ensayo y su vínculo con una institución. NO autoriza crear una persona.
 """
-import json, os, re, sys, collections, datetime
+import argparse, json, os, re, sys, collections, datetime
+import pipeline_pais
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(RAIZ, "scripts"))
 # La fecha de la descarga (KOL_FECHA, por defecto hoy) nombra la carpeta de salida.
 FECHA_CONSULTA = os.environ.get("KOL_FECHA") or datetime.date.today().isoformat()
-DESTINO = os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-" + FECHA_CONSULTA)
 
 # La descarga cruda la genera scripts/descargar_ctgov.py; el normalizador es scripts/normalizar.py
 # (KOL_NORMALIZADOR solo para usar otro).
 CRUDO = os.environ.get("KOL_CRUDO")
-if not CRUDO:
-    sys.exit("Definí KOL_CRUDO con la descarga de scripts/descargar_ctgov.py.")
 if os.environ.get("KOL_NORMALIZADOR"):
     sys.path.insert(0, os.path.dirname(os.environ["KOL_NORMALIZADOR"]))
 import normalizar  # noqa: E402
@@ -70,12 +68,22 @@ def clave_nombre(n):
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--pais", default="CL")
+    ap.add_argument("--crudo", default=CRUDO)
+    ap.add_argument("--salida")
+    a = ap.parse_args()
+    config = pipeline_pais.configurar(a.pais)
+    if not a.crudo:
+        ap.error("Definí KOL_CRUDO o --crudo con la descarga de descargar_ctgov.py")
+    destino = pipeline_pais.validar_destino(a.salida or pipeline_pais.carpeta_pre(config, FECHA_CONSULTA), config)
     excl = exclusiones.Registro()   # no "registro": ese nombre ya es cada sede, más abajo
-    crudo = json.load(open(CRUDO, encoding="utf-8"))
+    crudo = pipeline_pais.cargar_crudo(a.crudo, config)
     base = json.load(open(os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json"),
                           encoding="utf-8"))
     inst_existentes = {e["id"]: e["nombre"] for e in base["entidades"] if e["tipo"] == "institucion"}
-    personas_existentes = {e["id"]: e["nombre"] for e in base["entidades"] if e["tipo"] == "persona"}
+    personas_existentes = {e["id"]: e["nombre"] for e in base["entidades"]
+                           if e["tipo"] == "persona" and pipeline_pais.paises.pais_afiliacion(e) == config["iso2"]}
     nct_existentes = {e["id"].upper() for e in base["entidades"] if e["tipo"] == "ensayo_clinico"}
 
     ensayos, alias_por_inst = {}, collections.defaultdict(collections.Counter)
@@ -88,7 +96,7 @@ def main():
             sitios_ok, sitios_todos = [], []
             for s in e["sitios"]:
                 fac = (s.get("facility") or "").strip()
-                r = normalizar.resolver(fac)
+                r = pipeline_pais.resolver_sede(fac, config, normalizar)
                 registro = {"texto_original_fuente": fac, "ciudad": s.get("city"),
                             "estado_sitio": s.get("status")}
                 if r:
@@ -131,8 +139,8 @@ def main():
                 "condiciones_declaradas_fuente": e.get("condiciones") or [],
                 "intervenciones_fuente": e.get("intervenciones") or [],
                 "areas_consultadas": [area],
-                "sitios_chile": sitios_todos,
-                "sitios_chile_resolubles": len(sitios_ok),
+                ("sitios_chile" if config["iso2"] == "CL" else "sitios_pais"): sitios_todos,
+                ("sitios_chile_resolubles" if config["iso2"] == "CL" else "sitios_pais_resolubles"): len(sitios_ok),
                 "ya_en_la_muestra": nct.upper() in nct_existentes,
                 "fecha_recuperacion": FECHA_CONSULTA,
                 "confianza": "pendiente",
@@ -188,6 +196,7 @@ def main():
             continue
         vistos[k] = 1
         candidatos.append({
+            "pais_sitio": config["iso2"],
             "nombre_fuente": c["bruto"], "nombre_normalizado": limpio,
             "rol_declarado_fuente": c["rol_fuente"],
             "nct": c["nct"], "fuente_url": "https://clinicaltrials.gov/study/%s" % c["nct"],
@@ -200,9 +209,9 @@ def main():
             "decision_humana": "", "revisor": "", "fecha_decision": "",
         })
 
-    os.makedirs(DESTINO, exist_ok=True)
+    os.makedirs(destino, exist_ok=True)
     def guardar(nombre, obj):
-        with open(os.path.join(DESTINO, nombre), "w", encoding="utf-8") as f:
+        with open(os.path.join(destino, nombre), "w", encoding="utf-8") as f:
             json.dump(obj, f, ensure_ascii=False, indent=1)
 
     inst_out = []
@@ -223,6 +232,7 @@ def main():
 
     resumen = {
         "fecha_consulta": FECHA_CONSULTA,
+        "pais": config["iso2"],
         "ensayos_admitidos": len(ensayos),
         "ensayos_ya_en_la_muestra": sum(1 for e in ensayos.values() if e["ya_en_la_muestra"]),
         "instituciones_canonicas": len(inst_out),

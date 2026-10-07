@@ -20,7 +20,9 @@
       "ISP",
       "CIF",
       "DEIS",
-      "INAPI"
+      "MINSAL",
+      "INAPI",
+      "CODIGO_POSTAL"
     ],
     "adm_geoboundaries": "CHL",
     "idioma": "es",

@@ -17,6 +17,7 @@ cada 1,5 segundos.
 
 Uso:  python3 scripts/recolectar_estudiosclinicos_cl.py [carpeta_cache_html]
 """
+import argparse
 import datetime
 import html
 import json
@@ -25,6 +26,7 @@ import re
 import sys
 import time
 import urllib.request
+import pipeline_pais
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FECHA = datetime.date.today().isoformat()
@@ -65,7 +67,12 @@ def leer_ficha(url, h):
 
 
 def main():
-    cache = sys.argv[1] if len(sys.argv) > 1 else None
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("cache", nargs="?")
+    ap.add_argument("--pais", default="CL")
+    a = ap.parse_args()
+    pipeline_pais.exigir_fuente_chilena(a.pais, "CIF")
+    cache = a.cache
     urls = [u for u in re.findall(r"<loc>([^<]+)</loc>", bajar(SITEMAP)) if u.rstrip("/") != "https://estudiosclinicos.cl/ensayos"]
     fichas = []
     for i, url in enumerate(urls):

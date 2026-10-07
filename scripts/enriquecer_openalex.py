@@ -10,9 +10,11 @@ mantiene y el nuevo queda anotado como conflicto para que lo resuelva una person
 
 Uso:
     OPENALEX_API_KEY=... python3 scripts/enriquecer_openalex.py
-    python3 scripts/enriquecer_openalex.py --dry-run     # sin key, pool "polite"
+    python3 scripts/enriquecer_openalex.py --pais CL --dry-run  # acceso sin clave sujeto a límites
 """
-import json, os, sys, time, urllib.parse, urllib.request, unicodedata, datetime
+import argparse, json, os, sys, time, urllib.parse, urllib.request, unicodedata, datetime
+
+import pipeline_pais
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
@@ -84,19 +86,19 @@ def palabras_distintivas(texto):
             if len(w) > 4 and w not in GENERICAS}
 
 
-def evaluar(cand, persona):
+def evaluar(cand, persona, pais="CL"):
     """Puntúa qué tan buena es la coincidencia. Solo señales verificables, sin adivinar."""
     razones, puntos = [], 0
     insts = cand.get("last_known_institutions") or []
     nombres_inst = [i.get("display_name", "") for i in insts]
-    en_chile = any(i.get("country_code") == "CL" for i in insts)
+    en_chile = any(i.get("country_code") == pais for i in insts)
     if not en_chile:
         # Compuerta dura, no un punto más: el alcance del proyecto es Chile. Sin esto, un
         # homónimo con ORCID en otro país (ej. un Carlos Rojas de la Universidad de Costa
         # Rica, 115 trabajos) alcanzaba el umbral y se proponía como si fuera el nuestro.
-        return 0, ["descartado: sin institución conocida en Chile"]
+        return 0, ["descartado: sin institución conocida en %s" % pais]
     puntos += 3
-    razones.append("institución conocida en Chile (%s)" % "; ".join(nombres_inst))
+    razones.append("institución conocida en %s (%s)" % (pais, "; ".join(nombres_inst)))
     if cand.get("orcid"):
         puntos += 3
         razones.append("ORCID publicado")
@@ -140,16 +142,26 @@ def evaluar(cand, persona):
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--pais", default="CL")
+    ap.add_argument("--muestra", default=MUESTRA)
+    ap.add_argument("--salida-dir")
+    ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+    config = pipeline_pais.configurar(a.pais)
+    salida_dir = pipeline_pais.validar_destino(a.salida_dir or
+        (os.path.join(SALIDA_DIR, "CL") if config["iso2"] == "CL" else pipeline_pais.cache(config) / "openalex"), config)
     api_key = os.environ.get("OPENALEX_API_KEY")
-    dry = "--dry-run" in sys.argv
+    dry = a.dry_run
     if not api_key and not dry:
         print("ERROR: falta OPENALEX_API_KEY (o usá --dry-run)", file=sys.stderr)
         return 1
     if not api_key:
-        print("· sin API key: usando el pool 'polite' de OpenAlex (más lento, sin garantías)")
+        print("· consulta sin API key: el servidor puede rechazarla o limitarla")
 
-    datos = json.load(open(MUESTRA, encoding="utf-8"))
-    personas = [e for e in datos["entidades"] if e["tipo"] == "persona"]
+    datos = json.load(open(a.muestra, encoding="utf-8"))
+    personas = [e for e in datos["entidades"] if e["tipo"] == "persona"
+                and pipeline_pais.paises.pais_afiliacion(e) == config["iso2"]]
     propuestas, sin_match, conflictos = [], [], []
 
     for i, p in enumerate(personas, 1):
@@ -163,7 +175,7 @@ def main():
         for c in cands:
             if not nombre_compatible(p["nombre"], c.get("display_name", "")):
                 continue
-            pts, raz = evaluar(c, p)
+            pts, raz = evaluar(c, p, config["iso2"])
             evaluados.append((pts, raz, c))
         evaluados.sort(key=lambda x: -x[0])
 
@@ -218,6 +230,8 @@ def main():
             ],
             "confianza": "pendiente",
             "fuente_url": mejor.get("id"),
+            "fecha": datetime.date.today().isoformat(),
+            "pais_afiliacion": config["iso2"],
         })
         print("  %d/%d %-34s → %s (match %d%s)" % (
             i, len(personas), p["nombre"], mejor.get("display_name"), pts,
@@ -244,8 +258,8 @@ def main():
         "sin_coincidencia": sin_match,
         "conflictos": conflictos,
     }
-    os.makedirs(SALIDA_DIR, exist_ok=True)
-    ruta = os.path.join(SALIDA_DIR, "openalex-%s.json" % hoy)
+    os.makedirs(salida_dir, exist_ok=True)
+    ruta = os.path.join(salida_dir, "openalex-%s.json" % hoy)
     with open(ruta, "w", encoding="utf-8") as f:
         json.dump(salida, f, indent=2, ensure_ascii=False)
     print("\n%s" % json.dumps(salida["resumen"], ensure_ascii=False))

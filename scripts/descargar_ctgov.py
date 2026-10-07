@@ -27,6 +27,8 @@ import time
 import urllib.parse
 import urllib.request
 
+import pipeline_pais
+
 API = "https://clinicaltrials.gov/api/v2/studies"
 # Área de la muestra → condición en inglés que se consulta.
 CONSULTAS = {
@@ -59,37 +61,45 @@ def pedir(params):
             time.sleep(3 * (intento + 1))
 
 
-def ensayo(s):
+def ensayo(s, pais="Chile", iso2="CL"):
     p = s["protocolSection"]
     im, st = p["identificationModule"], p.get("statusModule", {})
     sitios = []
     for l in p.get("contactsLocationsModule", {}).get("locations", []):
-        if l.get("country") != "Chile":
+        if l.get("country") != pais:
             continue
         sitios.append({"facility": l.get("facility"), "city": l.get("city"), "zip": l.get("zip"),
                        "status": l.get("status"),
                        "contactos": [{"name": c.get("name"), "role": c.get("role")} for c in l.get("contacts") or []]})
-    return {"nct": im["nctId"], "titulo": im.get("briefTitle"), "acronimo": im.get("acronym"),
+    resultado = {"nct": im["nctId"], "titulo": im.get("briefTitle"), "acronimo": im.get("acronym"),
             "fases": p.get("designModule", {}).get("phases") or [], "estado": st.get("overallStatus"),
             "actualizado": (st.get("lastUpdatePostDateStruct") or {}).get("date"),
             "condiciones": p.get("conditionsModule", {}).get("conditions") or [],
             "intervenciones": [i.get("name") for i in p.get("armsInterventionsModule", {}).get("interventions") or []],
             "sitios": sitios}
+    if iso2 != "CL":
+        resultado["pais"] = iso2
+    return resultado
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--salida", default=os.path.join(os.path.expanduser("~"), ".cache", "kol-radar",
-                                                     "ctgov-crudo-%s.json" % datetime.date.today().isoformat()))
+    ap.add_argument("--pais", default="CL", help="ISO2 del país de las sedes")
+    ap.add_argument("--salida")
     a = ap.parse_args()
+    config = pipeline_pais.configurar(a.pais)
+    pais = pipeline_pais.nombre_ctgov(config)
+    a.salida = pipeline_pais.validar_destino(a.salida or pipeline_pais.cache(config) /
+        ("ctgov-crudo-%s.json" % datetime.date.today().isoformat()), config, siempre_privado=True)
     crudo = {}
     for area, condicion in CONSULTAS.items():
-        params = {"query.term": 'AREA[LocationCountry]Chile AND AREA[ConditionSearch]"%s"' % condicion,
+        consulta_pais = pais if config["iso2"] == "CL" else '"%s"' % pais
+        params = {"query.term": 'AREA[LocationCountry]%s AND AREA[ConditionSearch]"%s"' % (consulta_pais, condicion),
                   "fields": CAMPOS, "pageSize": 200}
         lista = []
         while True:
             r = pedir(params)
-            lista += [ensayo(s) for s in r.get("studies", [])]
+            lista += [ensayo(s, pais, config["iso2"]) for s in r.get("studies", [])]
             if not r.get("nextPageToken"):
                 break
             params["pageToken"] = r["nextPageToken"]

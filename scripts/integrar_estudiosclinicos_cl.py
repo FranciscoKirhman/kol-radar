@@ -25,11 +25,13 @@ Reglas:
 
 Uso:  python3 scripts/integrar_estudiosclinicos_cl.py data/pending/estudiosclinicos-cl-AAAA-MM-DD/fichas.json
 """
+import argparse
 import json
 import os
 import re
 import sys
 import unicodedata
+import pipeline_pais
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -122,10 +124,15 @@ def grupo_laboratorio(texto):
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("ruta", nargs="?")
+    ap.add_argument("--pais", default="CL")
+    a = ap.parse_args()
+    pipeline_pais.exigir_fuente_chilena(a.pais, "CIF")
     # Antes de cualquier consulta: si hay exclusiones y falta la clave, se detiene acá y no al
     # final de la corrida. Ver scripts/exclusiones.py.
     registro = exclusiones.Registro()
-    ruta = sys.argv[1] if len(sys.argv) > 1 else None
+    ruta = a.ruta
     if not ruta:
         sys.exit(__doc__)
     cif = json.load(open(ruta, encoding="utf-8"))
