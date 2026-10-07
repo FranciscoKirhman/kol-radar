@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Une fichas de persona que son la misma persona, con la evidencia escrita en FUSIONES.
+"""Registro histórico de fusiones; no ejecuta nuevas fusiones automáticamente.
 
 Las revistas chilenas abrevian el apellido materno ("Fernando Saldías P.") y PubMed indexa por
 apellido e iniciales, así que la misma persona entra dos veces si la recolección la encuentra por
@@ -16,7 +16,8 @@ Qué hace con cada fusión:
 
 Correrlo dos veces no cambia nada: una fusión ya hecha (la absorbida no existe) se salta.
 
-Uso:  python3 scripts/fusionar_personas.py
+Las fusiones ya aplicadas siguen documentadas abajo. Cualquier fusión futura requiere una
+propuesta en data/pending/, ORCID verificado en ambas fichas y aprobación humana.
 """
 import datetime
 import json
@@ -130,13 +131,8 @@ def fusionar(base, f):
 
 
 def main():
-    registro = exclusiones.Registro()
-    base = json.load(open(MUESTRA, encoding="utf-8"))
-    hechas = [f["absorbe"] + " → " + f["queda"] for f in FUSIONES if fusionar(base, f)]
-    if hechas:
-        base["actualizado"] = datetime.date.today().isoformat()
-        exclusiones.guardar_muestra(base, MUESTRA, registro)
-    print("Fusiones aplicadas: %d%s" % (len(hechas), "".join("\n  " + h for h in hechas)))
+    print("Fusiones aplicadas: 0. Este script conserva el registro histórico y no escribe fichas. "
+          "Toda nueva fusión requiere propuesta y aprobación humana con ORCID compartido verificado.")
 
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
 <title>KOL Radar — cómo se construyó (interno)</title>
 <style>
   .viz-root {
@@ -438,7 +439,7 @@
   "use strict";
 
   // ---- Datos: cargados en vivo desde el JSON, no hardcodeados (ver "qué mejorar" — esto ya estaba pendiente y quedó resuelto acá) ----
-  var DATA_URL = "../data/sample/perfiles-muestra.json";
+  var DATA_URL = "../data/publicado/CL/oncologia.json";
   function esUrlSegura(url) {
     return typeof url === "string" && /^https?:\/\//i.test(url);
   }

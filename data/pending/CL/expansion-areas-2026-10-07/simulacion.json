@@ -1,0 +1,70 @@
+{
+  "fecha": "2026-10-07",
+  "advertencia": "Simulación. No se modificó data/sample/perfiles-muestra.json. El escenario B no está autorizado: requiere revisión humana por persona.",
+  "actual": {
+    "entidades": 1133,
+    "vinculos": 3374,
+    "tiers": {
+      "alta": 14,
+      "media": 55,
+      "monitorear": 14
+    },
+    "activacion_de_topes": {
+      "redPts_en_el_tope_5": 37
+    }
+  },
+  "escenario_A_solo_ensayos_e_instituciones": {
+    "entidades": 2105,
+    "vinculos": 3811,
+    "ensayos_nuevos": 972,
+    "instituciones_nuevas": 0,
+    "areas_taxonomia": {
+      "oncologia": 436,
+      "hematologia-no-oncologica": 12,
+      "dermatologia": 11,
+      "cardiologia": 57,
+      "endocrinologia-metabolismo": 85,
+      "infectologia": 24,
+      "inmunologia-reumatologia": 122,
+      "enfermedades-raras": 4,
+      "respiratorio": 128,
+      "gastroenterologia-hepatologia": 9,
+      "psiquiatria": 40,
+      "vacunas": 15,
+      "neurologia": 18,
+      "oftalmologia": 5,
+      "nefrologia": 16
+    },
+    "ensayos_sin_clasificar": 585,
+    "personas_con_puntaje_distinto": 0,
+    "tiers": {
+      "alta": 14,
+      "media": 55,
+      "monitorear": 14
+    },
+    "tiers_antes": {
+      "alta": 14,
+      "media": 55,
+      "monitorear": 14
+    },
+    "activacion_de_topes": {
+      "redPts_en_el_tope_5": 37
+    }
+  },
+  "escenario_B_si_se_aprobaran_las_personas": {
+    "entidades": 2119,
+    "vinculos": 3857,
+    "personas_reutilizadas": 31,
+    "personas_creadas": 14,
+    "personas_con_puntaje_distinto": 15,
+    "tiers": {
+      "alta": 16,
+      "media": 69,
+      "monitorear": 12
+    },
+    "activacion_de_topes": {
+      "ensayo_clinico_sobre_tope": 2,
+      "redPts_en_el_tope_5": 40
+    }
+  }
+}

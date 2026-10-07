@@ -27,6 +27,8 @@ import time
 import urllib.parse
 import urllib.request
 
+import pipeline_pais
+
 API = "https://clinicaltrials.gov/api/v2/studies"
 # Área de la muestra → condición en inglés que se consulta.
 CONSULTAS = {
@@ -41,6 +43,8 @@ CONSULTAS = {
     # con que integrar_beta.py asigna esta área.
     "tumor cerebral": "glioma",
 }
+AREAS_CONFIG = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "data", "config", "areas.json")
 CAMPOS = ",".join(["protocolSection.identificationModule", "protocolSection.statusModule",
                    "protocolSection.designModule.phases", "protocolSection.conditionsModule.conditions",
                    "protocolSection.armsInterventionsModule.interventions",
@@ -59,43 +63,66 @@ def pedir(params):
             time.sleep(3 * (intento + 1))
 
 
-def ensayo(s):
+def ensayo(s, pais="Chile", iso2="CL"):
     p = s["protocolSection"]
     im, st = p["identificationModule"], p.get("statusModule", {})
     sitios = []
     for l in p.get("contactsLocationsModule", {}).get("locations", []):
-        if l.get("country") != "Chile":
+        if l.get("country") != pais:
             continue
         sitios.append({"facility": l.get("facility"), "city": l.get("city"), "zip": l.get("zip"),
                        "status": l.get("status"),
                        "contactos": [{"name": c.get("name"), "role": c.get("role")} for c in l.get("contacts") or []]})
-    return {"nct": im["nctId"], "titulo": im.get("briefTitle"), "acronimo": im.get("acronym"),
+    resultado = {"nct": im["nctId"], "titulo": im.get("briefTitle"), "acronimo": im.get("acronym"),
             "fases": p.get("designModule", {}).get("phases") or [], "estado": st.get("overallStatus"),
             "actualizado": (st.get("lastUpdatePostDateStruct") or {}).get("date"),
             "condiciones": p.get("conditionsModule", {}).get("conditions") or [],
             "intervenciones": [i.get("name") for i in p.get("armsInterventionsModule", {}).get("interventions") or []],
             "sitios": sitios}
+    if iso2 != "CL":
+        resultado["pais"] = iso2
+    return resultado
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--salida", default=os.path.join(os.path.expanduser("~"), ".cache", "kol-radar",
-                                                     "ctgov-crudo-%s.json" % datetime.date.today().isoformat()))
+    ap.add_argument("--pais", default="CL", help="ISO2 del país de las sedes")
+    ap.add_argument("--salida")
+    ap.add_argument("--todas-areas", action="store_true",
+                    help="Consulta todas las enfermedades de areas.json; por defecto conserva las 19 oncológicas")
+    ap.add_argument("--area", action="append", help="ID del área o de una enfermedad de areas.json")
     a = ap.parse_args()
+    config = pipeline_pais.configurar(a.pais)
+    pais = pipeline_pais.nombre_ctgov(config)
+    a.salida = pipeline_pais.validar_destino(a.salida or pipeline_pais.cache(config) /
+        ("ctgov-crudo-%s.json" % datetime.date.today().isoformat()), config, siempre_privado=True)
+    consultas = CONSULTAS
+    if a.todas_areas or a.area:
+        taxonomia = json.load(open(AREAS_CONFIG, encoding="utf-8"))
+        consultas = {}
+        pedidos = set(a.area or [])
+        for area in taxonomia["areas"]:
+            for enfermedad in area["enfermedades"]:
+                if a.todas_areas or area["id"] in pedidos or enfermedad["id"] in pedidos:
+                    consultas[enfermedad.get("nombre_legacy") or enfermedad["nombre"]] = enfermedad["consulta_ctgov"]
+        if not consultas:
+            ap.error("Ningún área o enfermedad coincide con --area")
     crudo = {}
-    for area, condicion in CONSULTAS.items():
-        params = {"query.term": 'AREA[LocationCountry]Chile AND AREA[ConditionSearch]"%s"' % condicion,
+    for area, condicion in consultas.items():
+        consulta_pais = pais if config["iso2"] == "CL" else '"%s"' % pais
+        params = {"query.term": 'AREA[LocationCountry]%s AND AREA[ConditionSearch]"%s"' % (consulta_pais, condicion),
                   "fields": CAMPOS, "pageSize": 200}
         lista = []
         while True:
             r = pedir(params)
-            lista += [ensayo(s) for s in r.get("studies", [])]
+            lista += [ensayo(s, pais, config["iso2"]) for s in r.get("studies", [])]
             if not r.get("nextPageToken"):
                 break
             params["pageToken"] = r["nextPageToken"]
             time.sleep(0.4)
         crudo[area] = [e for e in lista if e["sitios"]]
         print("%-28s %4d ensayos" % (area, len(crudo[area])), file=sys.stderr)
+        time.sleep(0.4)
     os.makedirs(os.path.dirname(os.path.abspath(a.salida)), exist_ok=True)
     json.dump(crudo, open(a.salida, "w", encoding="utf-8"), ensure_ascii=False)
     total = {e["nct"] for l in crudo.values() for e in l}

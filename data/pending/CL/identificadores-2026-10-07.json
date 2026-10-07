@@ -1,0 +1,429 @@
+{
+  "fecha": "2026-10-07",
+  "estado": "propuestas no aplicadas",
+  "propuestas": [
+    {
+      "institucion_id": "bradford-hill",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "falp",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "james-lind",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-concepcion",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-puerto-montt",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "k2-oncology",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "centro-precision",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "clinica-alemana",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "orlandi",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "uandes",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "ser-chile",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "sochradi",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "sochradioterapia",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "soc-cirujanos",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-uchile",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "oncocentro",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "cic-vina",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "saga",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "oncovida",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "ic-la-serena",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "icos",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "biocenter",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "redsalud",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "ucm",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "inmunocel",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "sim",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "cecim",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "ciec",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "clinica-puerto-montt",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "iceg",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-sotero",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "iram",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "crchile",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-rancagua",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "itop",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-barros-luco",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-valdivia",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-temuco",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-fricke",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "cido",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "instituto-oncologico-vina",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "centro-oncologico-norte",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "cics-temuco",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "centro-cancer-uc",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-clinico-uc",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "clinica-uc-san-carlos",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "uc-san-joaquin",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "clinica-davila-vespucio",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "meds-la-dehesa",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-roberto-del-rio",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-tisne",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-fach",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-san-jose",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-san-pablo-coquimbo",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-la-serena",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-coyhaique",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-hanga-roa",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-arica",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-villarrica",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-victoria",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-nueva-imperial",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-curanilahue",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "hosp-molina",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "cesfam-el-roble",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "cesfam-juan-pablo-ii",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "health-care-chile",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "rey-oreilly",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "aren-bachero",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "ceos",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "urumed",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "cec-suecia",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "conac",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "cormun-puente-alto",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "icer-lab",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "clinica-las-nieves",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "benef-osorno",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "enroll",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "meditek",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "dermacross",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "dermovein",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "ced-vina",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "clinica-alemana-temuco",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "institucion_id": "uromed",
+      "resultado": "sin_correspondencia_exacta",
+      "candidatos": []
+    },
+    {
+      "persona_id": "claudio-silva-fuente-alba",
+      "resultado": "openalex_ambiguo",
+      "candidatos": [
+        "https://openalex.org/A5101757989",
+        "https://openalex.org/A5140848258"
+      ]
+    }
+  ]
+}

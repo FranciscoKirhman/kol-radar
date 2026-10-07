@@ -1,0 +1,12 @@
+{
+ "fecha": "2026-10-07",
+ "fuente": "https://clinicaltrials.gov/api/v2/studies",
+ "ensayos_consultados": 1551,
+ "farmacos_creados": 975,
+ "vinculos_intervencion": 2904,
+ "farmacos_con_2_o_mas_ensayos": 399,
+ "uniones_por_otherNames": 87,
+ "claves_excluidas": 211,
+ "ensayos_sin_institucion_que_ahora_tienen_farmaco": 652,
+ "ensayos_sin_institucion_total": 824
+}

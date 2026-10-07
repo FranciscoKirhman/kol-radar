@@ -241,9 +241,12 @@ def direccion_osm_corta(u):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--pais", default="CL")
     ap.add_argument("--deis", help="CSV de establecimientos ya descargado")
     ap.add_argument("--deis-url", help="URL de datos.gob.cl de donde se bajó ese CSV (se cita como fuente)")
     args = ap.parse_args()
+    import pipeline_pais
+    pipeline_pais.exigir_fuente_chilena(args.pais, "DEIS")
     URL_DEIS_LOCAL[0] = args.deis_url
 
     muestra = json.load(open(MUESTRA, encoding="utf-8"))

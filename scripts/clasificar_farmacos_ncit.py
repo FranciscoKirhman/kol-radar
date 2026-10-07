@@ -40,9 +40,9 @@ import urllib.request
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
-MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
+MUESTRA = os.environ.get("KOL_MUESTRA", os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json"))
 FECHA = datetime.date.today().isoformat()
-SALIDA = os.path.join(RAIZ, "data", "pending", "clases-ncit-" + FECHA)
+SALIDA = os.path.join(RAIZ, "data", "pending", "CL", "clases-ncit-" + FECHA)
 API = "https://api-evsrest.nci.nih.gov/api/v1/concept/ncit"
 PAGINA = "https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/"
 
@@ -93,12 +93,13 @@ def pedir(url, cache):
     clave = os.path.join(cache, re.sub(r"[^A-Za-z0-9]+", "_", url)[-180:] + ".json") if cache else None
     if clave and os.path.exists(clave):
         return json.load(open(clave, encoding="utf-8"))
-    for intento in range(3):
+    for intento in range(2):
         try:
-            d = json.load(urllib.request.urlopen(url, timeout=40))
+            peticion = urllib.request.Request(url, headers={"Connection": "close", "User-Agent": "KOL-Radar/1.0"})
+            d = json.load(urllib.request.urlopen(peticion, timeout=10))
             break
         except Exception:
-            time.sleep(2 + intento * 3)
+            time.sleep(1 + intento)
     else:
         FALLAS.append(url)
         return None
@@ -133,8 +134,14 @@ def main():
     if cache:
         os.makedirs(cache, exist_ok=True)
     base = json.load(open(MUESTRA, encoding="utf-8"))
+    ids_ruta = os.environ.get("KOL_FARMACOS_IDS")
+    ids = set(json.load(open(ids_ruta, encoding="utf-8"))) if ids_ruta else None
     decisiones, no_consultados = [], []
-    for f in [e for e in base["entidades"] if e["tipo"] == "farmaco"]:
+    seleccion = [e for e in base["entidades"] if e["tipo"] == "farmaco" and
+                 (ids is None or e["id"] in ids)]
+    for numero, f in enumerate(seleccion, 1):
+        if numero % 50 == 0:
+            print("NCIt: %d/%d fármacos consultados" % (numero, len(seleccion)), flush=True)
         fallas_antes = len(FALLAS)
         previo = {k: f[k] for k in ("clase", "clase_ncit", "ncit") if k in f}
         previos_hechos = list(f["hechos"])
@@ -174,6 +181,13 @@ def main():
             decisiones.append(fila)
             continue
         caminos = pedir(API + "/" + concepto["code"] + "/pathsToRoot", cache) or []
+        if len(FALLAS) > fallas_antes:
+            f.update(previo)
+            f["hechos"] = previos_hechos
+            fila["clase"] = "No consultado (se mantiene: %s)" % previo.get("clase", "sin clase previa")
+            no_consultados.append(f["nombre"])
+            decisiones.append(fila)
+            continue
         clase, por = clasificar(caminos)
         padres = sorted({p[1]["name"] for p in caminos if len(p) > 1})
         f["clase"] = clase

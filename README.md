@@ -1,4 +1,4 @@
-# KOL Radar — Chile
+# KOL Radar — Chile y mapa mundial de ensayos
 
 Radar científico de especialistas, centros y evidencia pública en Chile, pensado como
 herramienta de apoyo para Medical Science Liaisons (MSL) y Medical Affairs.
@@ -26,6 +26,44 @@ Fase 3 con datos reales de muestra — ver "Estado actual" al final de este arch
 | [PUBLICAR.md](PUBLICAR.md) | **Cómo publicarlo y cederlo**: qué bloquea la publicación, la Ley 21.719, pasos en orden |
 | [PRIVACIDAD.md](PRIVACIDAD.md) | Borrador del aviso de privacidad, para completar y revisar con abogado |
 | [LICENSE](LICENSE) · [data/LICENSE.md](data/LICENSE.md) | Licencias: código MIT, datos ODbL 1.0, y lo que la licencia no autoriza sobre datos personales |
+
+## Mapa mundial
+
+El mapa mundial está integrado en la [interfaz principal](web/index.html#mapa),
+con la misma paleta, tipografía, búsqueda, filtros, fichas y grafo de Chile.
+`web/mundo.html` redirige a esa vista para conservar enlaces existentes. El
+selector del encabezado cambia de país en la misma interfaz. El índice
+`data/publicado/mundo/indice.json` muestra, para cada país o
+territorio que aparece en el [facet oficial de ClinicalTrials.gov](https://clinicaltrials.gov/api/v2/stats/field/values?fields=LocationCountry),
+el número de ensayos con una ubicación declarada allí. La geometría viene de
+[Natural Earth 1:110m](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson):
+ubica países, no centros. Los territorios que no tienen polígono a esa escala se
+pueden elegir en la lista.
+
+`data/publicado/mundo/<ISO2>.json` guarda pares ensayo–sede textual de las primeras
+páginas consultadas; `ensayos_detalle` y `estado` indican con claridad cuánto se
+guardó. Al elegir un país, el botón «Cargar más ensayos» puede seguir consultando páginas directamente a
+[la API oficial](https://clinicaltrials.gov/data-api/api). Los estudios muestran
+su NCT y enlace exacto; las sedes son cadenas declaradas por la fuente, todavía
+sin validar como instituciones canónicas ni convertirlas en coordenadas. La
+selección de área se basa en condiciones declaradas y los estudios sin área
+clasificada siguen visibles al seleccionar “Todas las áreas”. Chile conserva
+sus perfiles de personas, fármacos, patentes y mapa detallado; los demás países
+solo publican ensayos y sedes textuales mientras no exista aprobación legal
+para incluir personas y fuentes verificadas para las otras capas.
+
+Para actualizar los recuentos y guardar hasta 100 estudios por país:
+
+```sh
+python3 scripts/recolectar_mundo_ctgov.py --todos --max-paginas 1
+python3 scripts/verificar_mapa_mundial.py
+```
+
+Sin `--todos` ni `--paises`, el recolector actualiza solo el índice; con
+`--paises FR,DE` y `--max-paginas 2` guarda detalle de esos dos países. Los
+países sin aprobación legal no publican fichas de personas ni campos de
+contacto o investigadores. La vista Chile y sus datos personales siguen bajo
+la barrera de `data/config/paises.json`.
 
 ## Objetivo
 

@@ -66,8 +66,11 @@ def codigo(z):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--pais", default="CL")
     ap.add_argument("--ubicaciones", help="ubicaciones ya descargadas (JSON nct → sedes en Chile)")
     a = ap.parse_args()
+    import pipeline_pais
+    pipeline_pais.exigir_fuente_chilena(a.pais, "CODIGO_POSTAL")
     registro = exclusiones.Registro()
     base = json.load(open(MUESTRA, encoding="utf-8"))
     ent, vin = base["entidades"], base["vinculos"]

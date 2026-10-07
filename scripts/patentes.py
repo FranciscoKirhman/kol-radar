@@ -415,8 +415,11 @@ def inapi(cache, farmacos):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--pais", default="CL")
     ap.add_argument("--cache", default=os.path.expanduser("~/.cache/kol-radar/patentes"))
     a = ap.parse_args()
+    import pipeline_pais
+    pipeline_pais.exigir_fuente_chilena(a.pais, "INAPI")
     os.makedirs(a.cache, exist_ok=True)
     base = json.load(open(MUESTRA, encoding="utf-8"))
     farmacos = [e for e in base["entidades"] if e["tipo"] == "farmaco"]

@@ -4,7 +4,7 @@
 
 Reglas aplicadas, todas explícitas:
 
-  1. Entra TODO ensayo que la API declare con al menos una ubicación en Chile. Cada uno conserva
+  1. Entra TODO ensayo que la API declare con al menos una ubicación en el país solicitado. Cada uno conserva
      su NCT, su URL exacta y la fecha de recuperación.
   2. Los que resuelven a una institución canónica reciben el vínculo, y el vínculo guarda el
      ALIAS TEXTUAL con el que la fuente escribió esa sede.
@@ -14,6 +14,7 @@ Reglas aplicadas, todas explícitas:
      listados aparte para que se vea qué se descartó y por qué.
   5. Solo se crean fichas de persona cuando la fuente NOMBRA a alguien y le DECLARA un rol
      individual (investigador principal o subinvestigador) y no existe ya una ficha compatible.
+     La creación pública requiere país de afiliación y fuente explícitos.
      Ninguna fusión es automática: los candidatos que coinciden con una ficha existente quedan
      en la cola de revisión, sin tocar la ficha.
   6. Nada se marca como confirmado. Todo entra como `pendiente`.
@@ -21,29 +22,26 @@ Reglas aplicadas, todas explícitas:
 No inventa ningún dato: cada campo sale del JSON crudo de la API o del artefacto de
 preintegración ya auditado.
 """
+import argparse
 import collections
 import datetime
+import hashlib
 import glob
 import json
 import os
 import re
 import sys
+import urllib.parse
+import pipeline_pais
+import areas as taxonomia_areas
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
 MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
-# La preintegración que se integra: la indicada en KOL_PREINTEGRACION, o la más reciente.
-PRE = os.environ.get("KOL_PREINTEGRACION") or (
-    sorted(glob.glob(os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-*"))) or [""])[-1]
-FECHA = os.environ.get("KOL_FECHA") or re.sub(r"^.*preintegracion-clinicaltrials-", "", PRE) or \
-    datetime.date.today().isoformat()
-
 # La descarga cruda la genera scripts/descargar_ctgov.py. KOL_NORMALIZADOR solo hace falta para usar
 # otro normalizador que el del repositorio (scripts/normalizar.py).
 CRUDO = os.environ.get("KOL_CRUDO")
-if not CRUDO:
-    sys.exit("Definí KOL_CRUDO con la descarga de scripts/descargar_ctgov.py.")
 if os.environ.get("KOL_NORMALIZADOR"):
     sys.path.insert(0, os.path.dirname(os.environ["KOL_NORMALIZADOR"]))
 import normalizar  # noqa: E402
@@ -95,17 +93,48 @@ def _ciudad_de(ent, nombre_inst, inst_c):
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--pais", default="CL")
+    ap.add_argument("--crudo", default=CRUDO)
+    ap.add_argument("--preintegracion")
+    ap.add_argument("--muestra", default=MUESTRA)
+    ap.add_argument("--salida")
+    a = ap.parse_args()
+    config = pipeline_pais.configurar(a.pais)
+    iso = config["iso2"]
+    permitido = pipeline_pais.paises.permitido_publicar_personas(iso)
+    if not a.crudo:
+        ap.error("Definí KOL_CRUDO o --crudo")
+    pre = a.preintegracion or os.environ.get("KOL_PREINTEGRACION")
+    if not pre:
+        raiz_pre = (os.path.join(RAIZ, "data", "pending", iso) if iso == "CL" else str(pipeline_pais.cache(config)))
+        opciones = sorted(glob.glob(os.path.join(raiz_pre, "preintegracion-clinicaltrials-*")))
+        if not opciones and iso == "CL":
+            opciones = sorted(glob.glob(os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-*")))
+        pre = opciones[-1] if opciones else None
+    if not pre:
+        ap.error("Falta --preintegracion para %s" % iso)
+    fecha = os.environ.get("KOL_FECHA") or re.sub(r"^.*preintegracion-clinicaltrials-", "", pre) or datetime.date.today().isoformat()
+    salida = pipeline_pais.validar_destino(a.salida or
+        (a.muestra if iso == "CL" and permitido else pipeline_pais.cache(config) / "integracion.json"), config)
+    resumen_pre = os.path.join(pre, "resumen.json")
+    if os.path.exists(resumen_pre):
+        with open(resumen_pre, encoding="utf-8") as f:
+            pais_pre = json.load(f).get("pais", "CL")
+        if pais_pre != iso:
+            ap.error("La preintegración corresponde a %s, no a %s" % (pais_pre, iso))
     # Antes de cualquier consulta: si hay exclusiones y falta la clave, se detiene acá y no al
     # final de la corrida. Ver scripts/exclusiones.py.
     registro = exclusiones.Registro()
-    base = json.load(open(MUESTRA, encoding="utf-8"))
-    crudo = json.load(open(CRUDO, encoding="utf-8"))
-    inst_c = json.load(open(os.path.join(PRE, "instituciones_candidatas.json"), encoding="utf-8"))
-    pers_c = json.load(open(os.path.join(PRE, "personas_candidatas.json"), encoding="utf-8"))
+    base = json.load(open(a.muestra, encoding="utf-8"))
+    crudo = pipeline_pais.cargar_crudo(a.crudo, config)
+    inst_c = json.load(open(os.path.join(pre, "instituciones_candidatas.json"), encoding="utf-8"))
+    pers_c = json.load(open(os.path.join(pre, "personas_candidatas.json"), encoding="utf-8"))
 
     ent = base["entidades"]
     vin = base["vinculos"]
     ids = {e["id"] for e in ent}
+    por_id = {e["id"]: e for e in ent}
     inst_existentes = {e["id"] for e in ent if e["tipo"] == "institucion"}
 
     # ---------------------------------------------------------------- 1. ensayos, todos
@@ -116,6 +145,7 @@ def main():
             if e["nct"] not in por_nct:
                 por_nct[e["nct"]] = e
 
+    usar_taxonomia = any(a not in TERMINO for a in crudo)
     tamano_area = collections.Counter()
     for nct, areas in areas_por_nct.items():
         for a in areas:
@@ -153,7 +183,7 @@ def main():
                 ciudades.append(s["city"])
             if (s.get("status") or "").upper() == "RECRUITING":
                 reclutando += 1
-            r = normalizar.resolver(fac)
+            r = pipeline_pais.resolver_sede(fac, config, normalizar)
             if r:
                 resueltos.append((r[0], r[1], fac))
                 if s.get("city"):
@@ -164,6 +194,11 @@ def main():
                 pendientes.append(fac)
 
         if eid in ids:
+            if usar_taxonomia and por_id[eid].get("tipo") == "ensayo_clinico":
+                declaradas = taxonomia_areas.desde_condiciones(e.get("condiciones"))
+                por_id[eid]["areas"] = sorted({a["id"] for a, _ in declaradas})
+                por_id[eid]["enfermedades"] = sorted({d["id"] for _, d in declaradas})
+                por_id[eid]["condiciones_fuente"] = e.get("condiciones") or []
             stats["ensayos_ya_existentes"] += 1
         else:
             fase = fase_legible(e.get("fases"))
@@ -173,13 +208,20 @@ def main():
             if ciudades:
                 u = sorted(set(ciudades))
                 ciudad = u[0] + (" (+%d sitios)" % (len(ciudades) - 1) if len(ciudades) > 1 else "")
+            declaradas = taxonomia_areas.desde_condiciones(e.get("condiciones")) if usar_taxonomia else []
+            ids_areas = sorted({a["id"] for a, _ in declaradas})
+            ids_enfermedades = sorted({d["id"] for _, d in declaradas})
+            # La búsqueda recupera candidatos, pero solo las condiciones declaradas
+            # permiten asignarles una enfermedad. Los demás quedan sin clasificar.
+            area_legacy = elegir_area(nct) if not usar_taxonomia else (
+                declaradas[0][1]["nombre"] if declaradas else None)
             nodo = {
                 "id": eid,
                 "nombre": ("%s (%s)" % (e["acronimo"], nct)) if e.get("acronimo") else nct,
                 "tipo": "ensayo_clinico",
                 "ciudad": ciudad,
-                "subtitulo": sub or "Ensayo clínico con sitio en Chile",
-                "area": elegir_area(nct),
+                "subtitulo": sub or "Ensayo clínico con sitio en %s" % config["nombre"],
+                "area": area_legacy,
                 "acronimo": e.get("acronimo"),
                 "intervenciones": [i for i in (e.get("intervenciones") or []) if i][:4],
                 "estado_reclutamiento": estado,
@@ -190,10 +232,18 @@ def main():
                     "hecho": e["titulo"],
                     "fase": fase,
                     "fuente_url": url,
-                    "fecha": e.get("actualizado") or FECHA,
+                    "fecha": e.get("actualizado") or fecha,
                     "confianza": "pendiente",
                 }],
             }
+            if usar_taxonomia:
+                nodo["areas"] = ids_areas
+                nodo["enfermedades"] = ids_enfermedades
+                nodo["condiciones_fuente"] = e.get("condiciones") or []
+            if iso != "CL":
+                nodo["pais"] = iso
+                nodo["sitios_pais"] = nodo.pop("sitios_chile")
+                nodo["sitios_pais_reclutando"] = nodo.pop("sitios_chile_reclutando")
             if pendientes:
                 # Cola de resolución, no evidencia negativa: la sede existe y está declarada,
                 # solo que todavía no tenemos un alias que la ligue a una institución canónica.
@@ -220,15 +270,17 @@ def main():
         ent.append({
             "id": cid, "nombre": i["nombre_canonico"], "tipo": "institucion",
             "ciudad": ciudades.most_common(1)[0][0] if ciudades else None,
-            "subtitulo": "Centro con sitio de ensayos clínicos en Chile",
+            "subtitulo": "Centro con sitio de ensayos clínicos en %s" % config["nombre"],
             "alias_en_la_fuente": [a for a, _ in i["alias_textuales_en_la_fuente"]],
             "hechos": [{
                 "tipo": "afiliacion",
-                "hecho": ("Figura como sede chilena de ensayos clínicos en ClinicalTrials.gov, "
+                "hecho": (("Figura como sede chilena de ensayos clínicos en ClinicalTrials.gov, " if iso == "CL" else
+                           "Figura como sede de ensayos clínicos en ClinicalTrials.gov, ") +
                           "escrita en la fuente como \"%s\"." % alias_top),
-                "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=%s"
-                              % alias_top.replace(" ", "+"),
-                "fecha": FECHA, "confianza": "pendiente",
+                "fuente_url": ("https://clinicaltrials.gov/search?locStr=Chile&term=%s" % alias_top.replace(" ", "+")
+                               if iso == "CL" else "https://clinicaltrials.gov/search?%s" % urllib.parse.urlencode({
+                                   "locStr": pipeline_pais.nombre_ctgov(config), "term": alias_top})),
+                "fecha": fecha, "confianza": "pendiente",
             }],
         })
         ids.add(cid)
@@ -254,6 +306,19 @@ def main():
     # ---------------------------------------------------------------- 4. personas
     creadas = 0
     for p in pers_c:
+        # País del sitio no demuestra afiliación. Un humano debe documentarla antes
+        # de crear una ficha pública. No se infiere del país pedido por CLI.
+        if (not p.get("pais_afiliacion") or not p.get("pais_afiliacion_fuente") or
+                not p.get("decision_humana") == "aprobada" or not p.get("revisor") or
+                not p.get("fecha_decision")):
+            stats["personas_en_cola_por_pais_afiliacion"] += 1
+            continue
+        if not str(p["pais_afiliacion_fuente"]).startswith("https://"):
+            stats["personas_en_cola_por_fuente_afiliacion"] += 1
+            continue
+        if permitido and not pipeline_pais.paises.permitido_publicar_personas(p["pais_afiliacion"]):
+            stats["personas_en_cola_por_pais_no_aprobado"] += 1
+            continue
         if p["rol_declarado_fuente"] not in ("PRINCIPAL_INVESTIGATOR", "SUB_INVESTIGATOR"):
             continue
         excluida = registro.estado_persona(nombre=p["nombre_normalizado"])
@@ -267,12 +332,16 @@ def main():
             stats["personas_en_cola_por_posible_fusion"] += 1
             continue          # fusionar es decisión humana: no se toca la ficha existente
         pid = re.sub(r"[^a-z0-9]+", "-", p["nombre_normalizado"].lower()).strip("-")
+        if not pid:
+            pid = "persona-u-" + hashlib.sha256(p["nombre_normalizado"].encode("utf-8")).hexdigest()[:16]
         eid = p["nct"].lower()
         if pid not in ids:
             rol = ("investigador principal" if p["rol_declarado_fuente"] == "PRINCIPAL_INVESTIGATOR"
                    else "subinvestigador")
             ent.append({
                 "id": pid, "nombre": nombre_presentable(p["nombre_normalizado"]), "tipo": "persona",
+                "pais_afiliacion": p["pais_afiliacion"],
+                "pais_afiliacion_fuente": p["pais_afiliacion_fuente"],
                 # Si la sede no resolvió a una institución canónica, se muestra el texto
                 # literal con que la fuente la nombra: es un dato real, y decir "sin resolver"
                 # escondía información que sí teníamos.
@@ -289,10 +358,11 @@ def main():
                     "registro." % rol),
                 "hechos": [{
                     "tipo": "ensayo_clinico",
-                    "hecho": ("ClinicalTrials.gov la nombra como %s del sitio chileno "
+                    "hecho": (("ClinicalTrials.gov la nombra como %s del sitio chileno " if iso == "CL" else
+                               "ClinicalTrials.gov la nombra como %s del sitio ") +
                               "declarado como \"%s\"." % (rol, p["sede_texto_original"])),
                     "fase": None, "fuente_url": p["fuente_url"],
-                    "fecha": FECHA, "confianza": "pendiente",
+                    "fecha": fecha, "confianza": "pendiente",
                 }],
             })
             ids.add(pid)
@@ -313,13 +383,26 @@ def main():
                                 "alias_fuente": p["sede_texto_original"]})
 
     base["actualizado"] = datetime.date.today().isoformat()
-    base["especialidad_muestra"] = "oncología (19 áreas)"
-    base["nota_beta"] = (
-        "Beta. La expansión del 2026-09-09 sumó ensayos de ClinicalTrials.gov con al menos una "
-        "ubicación declarada en Chile. Ningún hecho pasó revisión humana: todos entran como "
-        "'pendiente'. Las sedes que no se pudieron ligar a una institución conocida quedan "
-        "listadas en el propio ensayo como pendientes de resolución, no descartadas.")
-    exclusiones.guardar_muestra(base, MUESTRA, registro)
+    if usar_taxonomia:
+        base["especialidad_muestra"] = "áreas terapéuticas médicas (taxonomía MeSH)"
+        base["nota_beta"] = (
+            "Beta. Ensayos de ClinicalTrials.gov con sitio declarado en Chile, recuperados "
+            "por consultas de 41 enfermedades. Las áreas nuevas se asignan solo cuando la "
+            "condición declarada coincide con la taxonomía; los demás ensayos quedan sin "
+            "clasificar. Las personas propuestas no se publican sin afiliación y decisión humana. "
+            "Los hechos nuevos siguen pendientes de revisión.")
+    else:
+        base["especialidad_muestra"] = "oncología (19 áreas)"
+        base["nota_beta"] = (
+            "Beta. La expansión del 2026-09-09 sumó ensayos de ClinicalTrials.gov con al menos una "
+            "ubicación declarada en Chile. Ningún hecho pasó revisión humana: todos entran como "
+            "'pendiente'. Las sedes que no se pudieron ligar a una institución conocida quedan "
+            "listadas en el propio ensayo como pendientes de resolución, no descartadas.")
+    if iso != "CL":
+        base["pais_recoleccion"] = iso
+        base["nota_beta"] = "Integración de revisión privada por país; no publicada."
+    os.makedirs(os.path.dirname(salida), exist_ok=True)
+    exclusiones.guardar_muestra(base, salida, registro)
 
     c = collections.Counter(e["tipo"] for e in ent)
     print(json.dumps({
@@ -331,6 +414,10 @@ def main():
         "personas_creadas": creadas,
         "otros": dict(stats),
         "por_area": dict(collections.Counter(e.get("area") for e in ent if e["tipo"] == "ensayo_clinico")),
+        "por_area_taxonomia": dict(collections.Counter(a for e in ent if e["tipo"] == "ensayo_clinico"
+                                                  for a in e.get("areas", []))),
+        "ensayos_nuevos_sin_clasificar": sum(1 for e in ent if e["tipo"] == "ensayo_clinico"
+                                           and "areas" in e and not e["areas"]),
     }, ensure_ascii=False, indent=1))
 
 

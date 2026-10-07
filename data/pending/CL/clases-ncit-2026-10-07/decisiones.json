@@ -1,0 +1,6316 @@
+[
+ {
+  "id": "farmaco-upadacitinib",
+  "nombre": "Upadacitinib",
+  "buscado_como": "Upadacitinib",
+  "ncit": "C152802",
+  "nombre_ncit": "Upadacitinib",
+  "padres": [
+   "Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-metformin",
+  "nombre": "Metformin",
+  "buscado_como": "Metformin",
+  "ncit": "C61612",
+  "nombre_ncit": "Metformin",
+  "padres": [
+   "Biguanide Antidiabetic Agent",
+   "Chemopreventive Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-ritonavir",
+  "nombre": "Ritonavir",
+  "buscado_como": "Ritonavir",
+  "ncit": "C1609",
+  "nombre_ncit": "Ritonavir",
+  "padres": [
+   "HIV Protease Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-salmeterol",
+  "nombre": "Salmeterol",
+  "buscado_como": "Salmeterol",
+  "ncit": "C29443",
+  "nombre_ncit": "Salmeterol",
+  "padres": [
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting respiratory system"
+ },
+ {
+  "id": "farmaco-adalimumab",
+  "nombre": "Adalimumab",
+  "buscado_como": "Adalimumab",
+  "ncit": "C65216",
+  "nombre_ncit": "Adalimumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-clopidogrel",
+  "nombre": "Clopidogrel",
+  "buscado_como": "Clopidogrel",
+  "ncit": "C61686",
+  "nombre_ncit": "Clopidogrel",
+  "padres": [
+   "Thienopyridine Antiplatelet Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-pioglitazone",
+  "nombre": "Pioglitazone",
+  "buscado_como": "Pioglitazone",
+  "ncit": "C71633",
+  "nombre_ncit": "Pioglitazone",
+  "padres": [
+   "Thiazolidinedione Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-alogliptin",
+  "nombre": "Alogliptin",
+  "buscado_como": "Alogliptin",
+  "ncit": "C76906",
+  "nombre_ncit": "Alogliptin",
+  "padres": [
+   "Dipeptidyl Peptidase-4 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-fluticasone-furoate",
+  "nombre": "Fluticasone furoate",
+  "buscado_como": "Fluticasone furoate",
+  "ncit": "C77003",
+  "nombre_ncit": "Fluticasone Furoate",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-lixisenatide",
+  "nombre": "Lixisenatide",
+  "buscado_como": "Lixisenatide",
+  "ncit": "C166988",
+  "nombre_ncit": "Lixisenatide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-aspirin",
+  "nombre": "Aspirin",
+  "buscado_como": "Aspirin",
+  "ncit": "C287",
+  "nombre_ncit": "Aspirin",
+  "padres": [
+   "Cyclooxygenase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-atazanavir",
+  "nombre": "Atazanavir",
+  "buscado_como": "Atazanavir",
+  "ncit": "C66872",
+  "nombre_ncit": "Atazanavir",
+  "padres": [
+   "HIV Protease Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-dupilumab",
+  "nombre": "Dupilumab",
+  "buscado_como": "Dupilumab",
+  "ncit": "C162455",
+  "nombre_ncit": "Dupilumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-insulin-glargine",
+  "nombre": "Insulin glargine",
+  "buscado_como": "Insulin glargine",
+  "ncit": "C47564",
+  "nombre_ncit": "Insulin Glargine",
+  "padres": [
+   "Therapeutic Insulin"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-risankizumab",
+  "nombre": "Risankizumab",
+  "buscado_como": "Risankizumab",
+  "ncit": "C152227",
+  "nombre_ncit": "Risankizumab",
+  "padres": [
+   "Immunosuppressant",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-benralizumab",
+  "nombre": "Benralizumab",
+  "buscado_como": "Benralizumab",
+  "ncit": "C88594",
+  "nombre_ncit": "Benralizumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-dapagliflozin",
+  "nombre": "Dapagliflozin",
+  "buscado_como": "Dapagliflozin",
+  "ncit": "C78126",
+  "nombre_ncit": "Dapagliflozin",
+  "padres": [
+   "SGLT2 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-islatravir",
+  "nombre": "ISL",
+  "buscado_como": "ISL",
+  "ncit": "C16704",
+  "nombre_ncit": "Iceland",
+  "padres": [
+   "Country"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "conceptual entity"
+ },
+ {
+  "id": "farmaco-umeclidinium",
+  "nombre": "Umeclidinium",
+  "buscado_como": "Umeclidinium",
+  "ncit": "C152796",
+  "nombre_ncit": "Umeclidinium",
+  "padres": [
+   "Antimuscarinic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-budesonide",
+  "nombre": "Budesonide",
+  "buscado_como": "Budesonide",
+  "ncit": "C1027",
+  "nombre_ncit": "Budesonide",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-doravirine",
+  "nombre": "DOR",
+  "buscado_como": "Doravirine",
+  "ncit": "C171848",
+  "nombre_ncit": "Doravirine",
+  "padres": [
+   "Non-nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-fluticasone",
+  "nombre": "Fluticasone",
+  "buscado_como": "Fluticasone",
+  "ncit": "C61767",
+  "nombre_ncit": "Fluticasone",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-rimonabant",
+  "nombre": "Rimonabant",
+  "buscado_como": "Rimonabant",
+  "ncit": "C73244",
+  "nombre_ncit": "Rimonabant",
+  "padres": [
+   "Cannabinoid Receptor 1 Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-sarilumab",
+  "nombre": "Sarilumab",
+  "buscado_como": "Sarilumab",
+  "ncit": "C152302",
+  "nombre_ncit": "Sarilumab",
+  "padres": [
+   "Anti-IL-6R Monoclonal Antibody",
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-tiotropium",
+  "nombre": "Tiotropium",
+  "buscado_como": "Tiotropium",
+  "ncit": "C76004",
+  "nombre_ncit": "Tiotropium",
+  "padres": [
+   "Antimuscarinic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-warfarin",
+  "nombre": "Warfarin",
+  "buscado_como": "Warfarin",
+  "ncit": "C945",
+  "nombre_ncit": "Warfarin",
+  "padres": [
+   "Coumarin Compound",
+   "Vitamin K Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-albuterol",
+  "nombre": "Albuterol",
+  "buscado_como": "Albuterol",
+  "ncit": "C215",
+  "nombre_ncit": "Albuterol",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-apixaban",
+  "nombre": "Apixaban",
+  "buscado_como": "Apixaban",
+  "ncit": "C61308",
+  "nombre_ncit": "Apixaban",
+  "padres": [
+   "Direct Factor Xa Inhibitor",
+   "Direct Oral Anticoagulant"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-balinatunfib",
+  "nombre": "SAR441566",
+  "buscado_como": "balinatunfib",
+  "ncit": "C211795",
+  "nombre_ncit": "Balinatunfib",
+  "padres": [
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-donepezil",
+  "nombre": "SB-742457",
+  "buscado_como": "donepezil",
+  "ncit": "C66874",
+  "nombre_ncit": "Donepezil",
+  "padres": [
+   "Acetylcholinesterase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "acetylcholinesterase inhibitor"
+ },
+ {
+  "id": "farmaco-filgotinib",
+  "nombre": "Filgotinib",
+  "buscado_como": "Filgotinib",
+  "ncit": "C155799",
+  "nombre_ncit": "Filgotinib",
+  "padres": [
+   "JAK1 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-ftc",
+  "nombre": "FTC",
+  "buscado_como": "FTC",
+  "ncit": "C47509",
+  "nombre_ncit": "Emtricitabine",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-lunsekimig",
+  "nombre": "Lunsekimig",
+  "buscado_como": "Lunsekimig",
+  "ncit": "C203158",
+  "nombre_ncit": "Lunsekimig",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-mepolizumab",
+  "nombre": "Mepolizumab",
+  "buscado_como": "Mepolizumab",
+  "ncit": "C157376",
+  "nombre_ncit": "Mepolizumab",
+  "padres": [
+   "Anti-asthmatic Agent",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-rivaroxaban",
+  "nombre": "Rivaroxaban",
+  "buscado_como": "Rivaroxaban",
+  "ncit": "C77995",
+  "nombre_ncit": "Rivaroxaban",
+  "padres": [
+   "Direct Factor Xa Inhibitor",
+   "Direct Oral Anticoagulant"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-50mcg",
+  "nombre": "50mcg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-abatacept",
+  "nombre": "Abatacept",
+  "buscado_como": "Abatacept",
+  "ncit": "C28898",
+  "nombre_ncit": "Abatacept",
+  "padres": [
+   "Immunosuppressant",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-anifrolumab",
+  "nombre": "Anifrolumab",
+  "buscado_como": "Anifrolumab",
+  "ncit": "C166658",
+  "nombre_ncit": "Anifrolumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-azilsartan-medoxomil",
+  "nombre": "Azilsartan medoxomil",
+  "buscado_como": "Azilsartan medoxomil",
+  "ncit": "C75110",
+  "nombre_ncit": "Azilsartan Medoxomil",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-bapineuzumab",
+  "nombre": "Bapineuzumab",
+  "buscado_como": "Bapineuzumab",
+  "ncit": "C79569",
+  "nombre_ncit": "Bapineuzumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-belimumab",
+  "nombre": "Belimumab",
+  "buscado_como": "Belimumab",
+  "ncit": "C91385",
+  "nombre_ncit": "Belimumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-certolizumab-pegol",
+  "nombre": "Certolizumab Pegol",
+  "buscado_como": "Certolizumab Pegol",
+  "ncit": "C80972",
+  "nombre_ncit": "Certolizumab Pegol",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-dapirolizumab-pegol",
+  "nombre": "Dapirolizumab pegol",
+  "buscado_como": "Dapirolizumab pegol",
+  "ncit": "C174737",
+  "nombre_ncit": "Dapirolizumab Pegol",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-darunavir",
+  "nombre": "Darunavir",
+  "buscado_como": "Darunavir",
+  "ncit": "C65364",
+  "nombre_ncit": "Darunavir",
+  "padres": [
+   "HIV Protease Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-dolutegravir",
+  "nombre": "Dolutegravir",
+  "buscado_como": "Dolutegravir",
+  "ncit": "C121543",
+  "nombre_ncit": "Dolutegravir",
+  "padres": [
+   "HIV Integrase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-etrasimod",
+  "nombre": "Etrasimod",
+  "buscado_como": "Etrasimod",
+  "ncit": "C166965",
+  "nombre_ncit": "Etrasimod",
+  "padres": [
+   "Sphingosine-1-phosphate Receptor Modulator"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-gantenerumab",
+  "nombre": "Gantenerumab",
+  "buscado_como": "Gantenerumab",
+  "ncit": "C88580",
+  "nombre_ncit": "Gantenerumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-itepekimab",
+  "nombre": "Itepekimab",
+  "buscado_como": "Itepekimab",
+  "ncit": "C174938",
+  "nombre_ncit": "Itepekimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-karxt",
+  "nombre": "KarXT",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-lpv",
+  "nombre": "LPV",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-macitentan",
+  "nombre": "Macitentan",
+  "buscado_como": "Macitentan",
+  "ncit": "C87728",
+  "nombre_ncit": "Macitentan",
+  "padres": [
+   "Endothelin Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-mtx",
+  "nombre": "MTX",
+  "buscado_como": "MTX",
+  "ncit": "C201789",
+  "nombre_ncit": "mtx",
+  "padres": [
+   "Electronic File Format"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "electronic file format"
+ },
+ {
+  "id": "farmaco-salbutamol",
+  "nombre": "Salbutamol",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-saxagliptin",
+  "nombre": "Saxagliptin",
+  "buscado_como": "Saxagliptin",
+  "ncit": "C75983",
+  "nombre_ncit": "Saxagliptin",
+  "padres": [
+   "Dipeptidyl Peptidase-4 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-seladelpar",
+  "nombre": "Seladelpar",
+  "buscado_como": "Seladelpar",
+  "ncit": "C167015",
+  "nombre_ncit": "Seladelpar",
+  "padres": [
+   "Peroxisome Proliferator-Activated Receptor Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-sildenafil",
+  "nombre": "Sildenafil citrate",
+  "buscado_como": "Sildenafil citrate",
+  "ncit": "C26670",
+  "nombre_ncit": "Sildenafil Citrate",
+  "padres": [
+   "Vasodilating Agent",
+   "cGMP Phosphodiesterase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-tenofovir",
+  "nombre": "TDF",
+  "buscado_como": "TDF",
+  "ncit": "C47747",
+  "nombre_ncit": "Tenofovir Disoproxil Fumarate",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-ticagrelor",
+  "nombre": "Ticagrelor",
+  "buscado_como": "Ticagrelor",
+  "ncit": "C76404",
+  "nombre_ncit": "Ticagrelor",
+  "padres": [
+   "P2Y12 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-tofacitinib",
+  "nombre": "Tofacitinib",
+  "buscado_como": "Tofacitinib",
+  "ncit": "C95800",
+  "nombre_ncit": "Tofacitinib",
+  "padres": [
+   "JAK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-tulisokibart",
+  "nombre": "IV Tulisokibart",
+  "buscado_como": "Tulisokibart",
+  "ncit": "C190474",
+  "nombre_ncit": "Tulisokibart",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-vilanterol",
+  "nombre": "Vilanterol",
+  "buscado_como": "Vilanterol",
+  "ncit": "C152875",
+  "nombre_ncit": "Vilanterol",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-amlitelimab",
+  "nombre": "Amlitelimab",
+  "buscado_como": "Amlitelimab",
+  "ncit": "C179073",
+  "nombre_ncit": "Amlitelimab",
+  "padres": [
+   "Anti-OX40 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-amlodipine",
+  "nombre": "Amlodipine",
+  "buscado_como": "Amlodipine",
+  "ncit": "C61635",
+  "nombre_ncit": "Amlodipine",
+  "padres": [
+   "Calcium Channel Blocker"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-astegolimab",
+  "nombre": "Astegolimab",
+  "buscado_como": "Astegolimab",
+  "ncit": "C171824",
+  "nombre_ncit": "Astegolimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-bic",
+  "nombre": "BIC",
+  "buscado_como": "BIC",
+  "ncit": "C161933",
+  "nombre_ncit": "BIC Regimen",
+  "padres": [
+   "Regimen Used to Treat Cervical Carcinoma"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "chemo/immuno/hormone therapy regimen"
+ },
+ {
+  "id": "farmaco-cenerimod",
+  "nombre": "Cenerimod",
+  "buscado_como": "Cenerimod",
+  "ncit": "C169837",
+  "nombre_ncit": "Cenerimod",
+  "padres": [
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-desvenlafaxine-succinate-sustained-release",
+  "nombre": "Desvenlafaxine Succinate Sustained-Release",
+  "buscado_como": "Desvenlafaxine",
+  "ncit": "C61703",
+  "nombre_ncit": "Desvenlafaxine",
+  "padres": [
+   "Antidepressant Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-deucravacitinib",
+  "nombre": "Deucravacitinib",
+  "buscado_como": "Deucravacitinib",
+  "ncit": "C174730",
+  "nombre_ncit": "Deucravacitinib",
+  "padres": [
+   "TYK2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-dronedarone",
+  "nombre": "Dronedarone",
+  "buscado_como": "Dronedarone",
+  "ncit": "C65485",
+  "nombre_ncit": "Dronedarone",
+  "padres": [
+   "Antiarrhythmic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-dupilumab-sar231893",
+  "nombre": "Dupilumab SAR231893",
+  "buscado_como": "Dupilumab",
+  "ncit": "C162455",
+  "nombre_ncit": "Dupilumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-efavirenz",
+  "nombre": "Efavirenz",
+  "buscado_como": "Efavirenz",
+  "ncit": "C29027",
+  "nombre_ncit": "Efavirenz",
+  "padres": [
+   "Non-nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-empagliflozin",
+  "nombre": "Empagliflozin",
+  "buscado_como": "Empagliflozin",
+  "ncit": "C158136",
+  "nombre_ncit": "Empagliflozin",
+  "padres": [
+   "SGLT2 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-enlicitide-decanoate",
+  "nombre": "Enlicitide Decanoate",
+  "buscado_como": "Enlicitide Decanoate",
+  "ncit": "C211796",
+  "nombre_ncit": "Enlicitide Decanoate",
+  "padres": [
+   "PCSK9 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-escitalopram",
+  "nombre": "Escitalopram",
+  "buscado_como": "Escitalopram",
+  "ncit": "C61754",
+  "nombre_ncit": "Escitalopram",
+  "padres": [
+   "Antidepressant Agent",
+   "Selective Serotonin Reuptake Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-evolocumab",
+  "nombre": "Evolocumab",
+  "buscado_como": "Evolocumab",
+  "ncit": "C174672",
+  "nombre_ncit": "Evolocumab",
+  "padres": [
+   "Monoclonal Antibody",
+   "PCSK9 Inhibitor"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-flovent",
+  "nombre": "FLOVENT",
+  "buscado_como": "FLOVENT",
+  "ncit": "C29061",
+  "nombre_ncit": "Fluticasone Propionate",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-formoterol",
+  "nombre": "Formoterol",
+  "buscado_como": "Formoterol",
+  "ncit": "C65754",
+  "nombre_ncit": "Formoterol",
+  "padres": [
+   "Beta-Adrenergic Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-glimepiride",
+  "nombre": "Glimepiride",
+  "buscado_como": "Glimepiride",
+  "ncit": "C29073",
+  "nombre_ncit": "Glimepiride",
+  "padres": [
+   "Sulfonylurea Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-golimumab",
+  "nombre": "Golimumab",
+  "buscado_como": "Golimumab",
+  "ncit": "C87766",
+  "nombre_ncit": "Golimumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-gsk1605786a",
+  "nombre": "GSK1605786A",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gw642444-inhalation-powder",
+  "nombre": "GW642444 Inhalation Powder",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-humira",
+  "nombre": "Humira®",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-indacaterol",
+  "nombre": "Indacaterol",
+  "buscado_como": "Indacaterol",
+  "ncit": "C81644",
+  "nombre_ncit": "Indacaterol",
+  "padres": [
+   "Beta-Adrenergic Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-irbesartan",
+  "nombre": "Irbesartan",
+  "buscado_como": "Irbesartan",
+  "ncit": "C29130",
+  "nombre_ncit": "Irbesartan",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-lamivudine",
+  "nombre": "Lamivudine",
+  "buscado_como": "Lamivudine",
+  "ncit": "C1471",
+  "nombre_ncit": "Lamivudine",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-leflunomide",
+  "nombre": "Leflunomide",
+  "buscado_como": "Leflunomide",
+  "ncit": "C1128",
+  "nombre_ncit": "Leflunomide",
+  "padres": [
+   "Angiogenesis Activator Inhibitor",
+   "Dihydroorotate Dehydrogenase Inhibitor",
+   "Pyrimidine Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-levalbuterol",
+  "nombre": "Levalbuterol",
+  "buscado_como": "Levalbuterol",
+  "ncit": "C74196",
+  "nombre_ncit": "Levalbuterol",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-levodopa",
+  "nombre": "Levodopa",
+  "buscado_como": "Levodopa",
+  "ncit": "C611",
+  "nombre_ncit": "Levodopa",
+  "padres": [
+   "Dopamine Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-levosalbutamol",
+  "nombre": "Levosalbutamol",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-litifilimab",
+  "nombre": "Litifilimab",
+  "buscado_como": "Litifilimab",
+  "ncit": "C186413",
+  "nombre_ncit": "Litifilimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-ly2127399",
+  "nombre": "LY2127399",
+  "buscado_como": "LY2127399",
+  "ncit": "C91727",
+  "nombre_ncit": "Tabalumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-oseltamivir",
+  "nombre": "Oseltamivir",
+  "buscado_como": "Oseltamivir",
+  "ncit": "C62061",
+  "nombre_ncit": "Oseltamivir",
+  "padres": [
+   "Neuraminidase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-ozanimod",
+  "nombre": "Ozanimod",
+  "buscado_como": "Ozanimod",
+  "ncit": "C170279",
+  "nombre_ncit": "Ozanimod",
+  "padres": [
+   "Sphingosine-1-phosphate Receptor Modulator"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-pardoprunox",
+  "nombre": "Pardoprunox",
+  "buscado_como": "Pardoprunox",
+  "ncit": "C80765",
+  "nombre_ncit": "Pardoprunox",
+  "padres": [
+   "Dopamine Agonist",
+   "Serotonin Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-paroxetine",
+  "nombre": "Paroxetine",
+  "buscado_como": "Paroxetine",
+  "ncit": "C61879",
+  "nombre_ncit": "Paroxetine",
+  "padres": [
+   "Antidepressant Agent",
+   "Selective Serotonin Reuptake Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-ph797804",
+  "nombre": "PH-797804",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-pimavanserin",
+  "nombre": "Pimavanserin",
+  "buscado_como": "Pimavanserin",
+  "ncit": "C76444",
+  "nombre_ncit": "Pimavanserin",
+  "padres": [
+   "Serotonin Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-saredutant",
+  "nombre": "Saredutant succinate",
+  "buscado_como": "Saredutant succinate",
+  "ncit": "C222166",
+  "nombre_ncit": "Saredutant Succinate",
+  "padres": [
+   "Antidepressant Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-satavaptan",
+  "nombre": "Satavaptan",
+  "buscado_como": "Satavaptan",
+  "ncit": "C80380",
+  "nombre_ncit": "Satavaptan",
+  "padres": [
+   "Vasopressin Antagonist"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-sirukumab",
+  "nombre": "Sirukumab",
+  "buscado_como": "Sirukumab",
+  "ncit": "C152371",
+  "nombre_ncit": "Sirukumab",
+  "padres": [
+   "Anti-IL-6 Monoclonal Antibody",
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-taf",
+  "nombre": "TAF",
+  "buscado_como": "TAF",
+  "ncit": "C165969",
+  "nombre_ncit": "Insulin-Like Growth Factor Binding Protein 7 Measurement",
+  "padres": [
+   "Insulin-Like Growth Factor Binding Protein Measurement"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "activity"
+ },
+ {
+  "id": "farmaco-tozorakimab",
+  "nombre": "Tozorakimab",
+  "buscado_como": "Tozorakimab",
+  "ncit": "C179129",
+  "nombre_ncit": "Tozorakimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-ustekinumab",
+  "nombre": "Ustekinumab",
+  "buscado_como": "Ustekinumab",
+  "ncit": "C84237",
+  "nombre_ncit": "Ustekinumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-valsartan",
+  "nombre": "Valsartan",
+  "buscado_como": "Valsartan",
+  "ncit": "C47781",
+  "nombre_ncit": "Valsartan",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-verekitug",
+  "nombre": "Verekitug",
+  "buscado_como": "Verekitug",
+  "ncit": "C203156",
+  "nombre_ncit": "Verekitug",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-vicadrostat",
+  "nombre": "Vicadrostat",
+  "buscado_como": "Vicadrostat",
+  "ncit": "C207013",
+  "nombre_ncit": "Vicadrostat",
+  "padres": [
+   "Aldosterone Synthase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "aldosterone synthase inhibitor"
+ },
+ {
+  "id": "farmaco-xanomeline-enteric",
+  "nombre": "KarX-EC",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-50-mcg-via-accuhaler",
+  "nombre": "50 mcg via ACCUHALER",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-80-mg-ixekizumab",
+  "nombre": "80 mg ixekizumab",
+  "buscado_como": "ixekizumab",
+  "ncit": "C174646",
+  "nombre_ncit": "Ixekizumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-9-6-g",
+  "nombre": "9.6 μg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-a623",
+  "nombre": "A-623",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-acp204",
+  "nombre": "ACP-204",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-active-comparator",
+  "nombre": "Active comparator",
+  "buscado_como": "Active comparator",
+  "ncit": "C68609",
+  "nombre_ncit": "Active Comparator",
+  "padres": [
+   "Clinical Study Element"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "clinical study element"
+ },
+ {
+  "id": "farmaco-advair-100",
+  "nombre": "ADVAIR 100",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-advair-250",
+  "nombre": "ADVAIR 250",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-alirocumab",
+  "nombre": "Alirocumab",
+  "buscado_como": "Alirocumab",
+  "ncit": "C174849",
+  "nombre_ncit": "Alirocumab",
+  "padres": [
+   "Monoclonal Antibody",
+   "PCSK9 Inhibitor"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-ambrisentan",
+  "nombre": "Ambrisentan",
+  "buscado_como": "Ambrisentan",
+  "ncit": "C72694",
+  "nombre_ncit": "Ambrisentan",
+  "padres": [
+   "Antihypertensive Agent",
+   "Endothelin Receptor Type A Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-antidepressant",
+  "nombre": "Antidepressant",
+  "buscado_como": "Antidepressant",
+  "ncit": "C265",
+  "nombre_ncit": "Antidepressant Agent",
+  "padres": [
+   "Agent Affecting Nervous System"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-aripiprazole",
+  "nombre": "Aripiprazole IM Depot",
+  "buscado_como": "Aripiprazole",
+  "ncit": "C47403",
+  "nombre_ncit": "Aripiprazole",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-asthma-controller-therapies",
+  "nombre": "Asthma Controller Therapies",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-asthma-reliever-therapies",
+  "nombre": "Asthma Reliever Therapies",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-atacicept",
+  "nombre": "Atacicept",
+  "buscado_como": "Atacicept",
+  "ncit": "C81166",
+  "nombre_ncit": "Atacicept",
+  "padres": [
+   "Immunosuppressant",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-atorvastatin",
+  "nombre": "Atorvastatin",
+  "buscado_como": "Atorvastatin",
+  "ncit": "C61527",
+  "nombre_ncit": "Atorvastatin",
+  "padres": [
+   "HMG-CoA Reductase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-av101",
+  "nombre": "AV-101",
+  "buscado_como": "AV-101",
+  "ncit": "C118314",
+  "nombre_ncit": "L-4-chlorokynurenine",
+  "padres": [
+   "Analgesic Agent",
+   "Neuroprotective Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-avelox",
+  "nombre": "Avelox",
+  "buscado_como": "Avelox",
+  "ncit": "C38696",
+  "nombre_ncit": "Moxifloxacin Hydrochloride",
+  "padres": [
+   "Fluoroquinolone Antibiotic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-azilsartan",
+  "nombre": "Azilsartan",
+  "buscado_como": "Azilsartan",
+  "ncit": "C75107",
+  "nombre_ncit": "Azilsartan",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-baricitinib",
+  "nombre": "Baricitinib",
+  "buscado_como": "Baricitinib",
+  "ncit": "C127012",
+  "nombre_ncit": "Baricitinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "JAK1 Inhibitor",
+   "JAK2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-baxdrostat",
+  "nombre": "Baxdrostat",
+  "buscado_como": "Baxdrostat",
+  "ncit": "C184908",
+  "nombre_ncit": "Baxdrostat",
+  "padres": [
+   "Aldosterone Synthase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "aldosterone synthase inhibitor"
+ },
+ {
+  "id": "farmaco-bazedoxifene",
+  "nombre": "Bazedoxifene",
+  "buscado_como": "Bazedoxifene",
+  "ncit": "C73598",
+  "nombre_ncit": "Bazedoxifene",
+  "padres": [
+   "Selective Estrogen Receptor Modulator"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "antiestrogen"
+ },
+ {
+  "id": "farmaco-bgf-mdi-320",
+  "nombre": "BGF MDI 320",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bi695501",
+  "nombre": "BI 695501",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bitopertin",
+  "nombre": "Bitopertin",
+  "buscado_como": "Bitopertin",
+  "ncit": "C174879",
+  "nombre_ncit": "Bitopertin",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-bms955176",
+  "nombre": "BMS-955176",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bococizumab",
+  "nombre": "Bococizumab",
+  "buscado_como": "Bococizumab",
+  "ncit": "C166723",
+  "nombre_ncit": "Bococizumab",
+  "padres": [
+   "Monoclonal Antibody",
+   "PCSK9 Inhibitor"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-chlorthalidone",
+  "nombre": "Chlorthalidone",
+  "buscado_como": "Chlorthalidone",
+  "ncit": "C47449",
+  "nombre_ncit": "Chlorthalidone",
+  "padres": [
+   "Thiazide Diuretic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-darapladib",
+  "nombre": "Darapladib",
+  "buscado_como": "Darapladib",
+  "ncit": "C72985",
+  "nombre_ncit": "Darapladib",
+  "padres": [
+   "Antilipidemic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-dexmedetomidine",
+  "nombre": "Dexmedetomidine",
+  "buscado_como": "Dexmedetomidine",
+  "ncit": "C47479",
+  "nombre_ncit": "Dexmedetomidine",
+  "padres": [
+   "Alpha-Adrenergic Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-edoxaban",
+  "nombre": "Edoxaban",
+  "buscado_como": "Edoxaban",
+  "ncit": "C96539",
+  "nombre_ncit": "Edoxaban",
+  "padres": [
+   "Direct Factor Xa Inhibitor",
+   "Direct Oral Anticoagulant"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-elafibranor",
+  "nombre": "Elafibranor",
+  "buscado_como": "Elafibranor",
+  "ncit": "C166574",
+  "nombre_ncit": "Elafibranor",
+  "padres": [
+   "Peroxisome Proliferator-Activated Receptor Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-elecoglipron",
+  "nombre": "Elecoglipron",
+  "buscado_como": "Elecoglipron",
+  "ncit": "C216020",
+  "nombre_ncit": "Elecoglipron",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-elritercept",
+  "nombre": "Elritercept",
+  "buscado_como": "Elritercept",
+  "ncit": "C199201",
+  "nombre_ncit": "Elritercept",
+  "padres": [
+   "Agent Affecting Blood or Body Fluid",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-emtricitabine",
+  "nombre": "Emtricitabine",
+  "buscado_como": "Emtricitabine",
+  "ncit": "C47509",
+  "nombre_ncit": "Emtricitabine",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-enoxaparin",
+  "nombre": "Enoxaparin sodium",
+  "buscado_como": "Enoxaparin sodium",
+  "ncit": "C75769",
+  "nombre_ncit": "Enoxaparin Sodium",
+  "padres": [
+   "Low Molecular Weight Heparin"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-eptifibatide",
+  "nombre": "Eptifibatide",
+  "buscado_como": "Eptifibatide",
+  "ncit": "C47516",
+  "nombre_ncit": "Eptifibatide",
+  "padres": [
+   "Antiplatelet Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-ezetimibe",
+  "nombre": "Ezetimibe",
+  "buscado_como": "Ezetimibe",
+  "ncit": "C47529",
+  "nombre_ncit": "Ezetimibe",
+  "padres": [
+   "Antilipidemic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-finerenone",
+  "nombre": "Finerenone",
+  "buscado_como": "Finerenone",
+  "ncit": "C169981",
+  "nombre_ncit": "Finerenone",
+  "padres": [
+   "Aldosterone Receptor Antagonist"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-fkb327",
+  "nombre": "FKB327",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-formoterol-as-needed",
+  "nombre": "Formoterol 'as needed'",
+  "buscado_como": "Formoterol",
+  "ncit": "C65754",
+  "nombre_ncit": "Formoterol",
+  "padres": [
+   "Beta-Adrenergic Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-fostamatinib",
+  "nombre": "Fostamatinib",
+  "buscado_como": "Fostamatinib",
+  "ncit": "C95222",
+  "nombre_ncit": "Fostamatinib",
+  "padres": [
+   "SYK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-gdc0853",
+  "nombre": "GDC-0853",
+  "buscado_como": "GDC-0853",
+  "ncit": "C116844",
+  "nombre_ncit": "Fenebrutinib",
+  "padres": [
+   "Antineoplastic Enzyme Inhibitor",
+   "Non-covalent BTK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-glipizide",
+  "nombre": "Glipizide",
+  "buscado_como": "Glipizide",
+  "ncit": "C29074",
+  "nombre_ncit": "Glipizide",
+  "padres": [
+   "Sulfonylurea Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-glycopyrronium",
+  "nombre": "Glycopyrronium bromide",
+  "buscado_como": "Glycopyrronium bromide",
+  "ncit": "C29078",
+  "nombre_ncit": "Glycopyrrolate",
+  "padres": [
+   "Antimuscarinic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-gsk573719",
+  "nombre": "GSK573719",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gw642444",
+  "nombre": "GW642444",
+  "buscado_como": "GW642444",
+  "ncit": "C152875",
+  "nombre_ncit": "Vilanterol",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-humalog",
+  "nombre": "Insulin lispro",
+  "buscado_como": "Insulin lispro",
+  "ncit": "C29123",
+  "nombre_ncit": "Insulin Lispro",
+  "padres": [
+   "Therapeutic Insulin"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-hydroxychloroquine",
+  "nombre": "Hydroxychloroquine",
+  "buscado_como": "Hydroxychloroquine",
+  "ncit": "C557",
+  "nombre_ncit": "Hydroxychloroquine",
+  "padres": [
+   "Antimalarial Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-ianalumab",
+  "nombre": "Ianalumab",
+  "buscado_como": "Ianalumab",
+  "ncit": "C116788",
+  "nombre_ncit": "Ianalumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-iclepertin",
+  "nombre": "Iclepertin",
+  "buscado_como": "Iclepertin",
+  "ncit": "C184894",
+  "nombre_ncit": "Iclepertin",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-idalopirdine",
+  "nombre": "Idalopirdine",
+  "buscado_como": "Idalopirdine",
+  "ncit": "C166835",
+  "nombre_ncit": "Idalopirdine",
+  "padres": [
+   "Serotonin Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-inclisiran",
+  "nombre": "Inclisiran sodium",
+  "buscado_como": "Inclisiran sodium",
+  "ncit": "C217977",
+  "nombre_ncit": "Inclisiran Sodium",
+  "padres": [
+   "PCSK9 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-itepekimab-sar440340",
+  "nombre": "Itepekimab SAR440340",
+  "buscado_como": "Itepekimab",
+  "ncit": "C174938",
+  "nombre_ncit": "Itepekimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-jnj38518168",
+  "nombre": "JNJ-38518168",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-lantus",
+  "nombre": "Lantus",
+  "buscado_como": "Lantus",
+  "ncit": "C47564",
+  "nombre_ncit": "Insulin Glargine",
+  "padres": [
+   "Therapeutic Insulin"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-linagliptin",
+  "nombre": "Linagliptin",
+  "buscado_como": "Linagliptin",
+  "ncit": "C83887",
+  "nombre_ncit": "Linagliptin",
+  "padres": [
+   "Dipeptidyl Peptidase-4 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-lixisenatide-fixed-ratio",
+  "nombre": "lixisenatide Fixed Ratio Combination",
+  "buscado_como": "lixisenatide",
+  "ncit": "C166988",
+  "nombre_ncit": "Lixisenatide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-lopinavir",
+  "nombre": "Lopinavir",
+  "buscado_como": "Lopinavir",
+  "ncit": "C2095",
+  "nombre_ncit": "Lopinavir",
+  "padres": [
+   "HIV Protease Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-losmapimod",
+  "nombre": "Losmapimod",
+  "buscado_como": "Losmapimod",
+  "ncit": "C96532",
+  "nombre_ncit": "Losmapimod",
+  "padres": [
+   "Mitogen-Activated Protein Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "mitogen-activated protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-luspatercept",
+  "nombre": "Luspatercept",
+  "buscado_como": "Luspatercept",
+  "ncit": "C104012",
+  "nombre_ncit": "Luspatercept",
+  "padres": [
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biological agent"
+ },
+ {
+  "id": "farmaco-m2951",
+  "nombre": "M2951",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-maraviroc",
+  "nombre": "Maraviroc",
+  "buscado_como": "Maraviroc",
+  "ncit": "C73144",
+  "nombre_ncit": "Maraviroc",
+  "padres": [
+   "CCR5 Antagonist",
+   "HIV Entry Inhibitor"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-maridebart-cafraglutide",
+  "nombre": "Maridebart Cafraglutide",
+  "buscado_como": "Maridebart Cafraglutide",
+  "ncit": "C199209",
+  "nombre_ncit": "Maridebart Cafraglutide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-mavrilimumab",
+  "nombre": "Mavrilimumab",
+  "buscado_como": "Mavrilimumab",
+  "ncit": "C95788",
+  "nombre_ncit": "Mavrilimumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-medi545",
+  "nombre": "Sifalimumab 1,200 mg",
+  "buscado_como": "Sifalimumab",
+  "ncit": "C95061",
+  "nombre_ncit": "Sifalimumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-methoxy-polyethylene-glycol-epoetin-beta",
+  "nombre": "Methoxy polyethylene glycol-epoetin beta",
+  "buscado_como": "Methoxy polyethylene glycol-epoetin beta",
+  "ncit": "C38687",
+  "nombre_ncit": "Methoxy Polyethylene Glycol-Epoetin beta",
+  "padres": [
+   "Retired Concept 2022"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "retired concept"
+ },
+ {
+  "id": "farmaco-milvexian",
+  "nombre": "Milvexian",
+  "buscado_como": "Milvexian",
+  "ncit": "C175138",
+  "nombre_ncit": "Milvexian",
+  "padres": [
+   "Thrombolytic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-muraglitazar",
+  "nombre": "Muraglitazar",
+  "buscado_como": "Muraglitazar",
+  "ncit": "C75190",
+  "nombre_ncit": "Muraglitazar",
+  "padres": [
+   "Glitazar Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-nmra335140",
+  "nombre": "NMRA-335140",
+  "buscado_como": "Navacaprant",
+  "ncit": "C199074",
+  "nombre_ncit": "Navacaprant",
+  "padres": [
+   "Opiate Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-olodaterol",
+  "nombre": "Olodaterol",
+  "buscado_como": "Olodaterol",
+  "ncit": "C170249",
+  "nombre_ncit": "Olodaterol",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-otamixaban",
+  "nombre": "Otamixaban",
+  "buscado_como": "Otamixaban",
+  "ncit": "C90704",
+  "nombre_ncit": "Otamixaban",
+  "padres": [
+   "Direct Factor Xa Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-pimodivir",
+  "nombre": "Pimodivir",
+  "buscado_como": "Pimodivir",
+  "ncit": "C158086",
+  "nombre_ncit": "Pimodivir",
+  "padres": [
+   "Antiviral Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-plant-cell-expressed-recombinant-glucocerebrosidase",
+  "nombre": "Plant cell expressed recombinant glucocerebrosidase",
+  "buscado_como": "Taliglucerase alfa",
+  "ncit": "C97411",
+  "nombre_ncit": "Taliglucerase Alfa",
+  "padres": [
+   "Enzyme Replacement or Supplement Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biological agent"
+ },
+ {
+  "id": "farmaco-prasugrel",
+  "nombre": "Prasugrel",
+  "buscado_como": "Prasugrel",
+  "ncit": "C81566",
+  "nombre_ncit": "Prasugrel",
+  "padres": [
+   "Thienopyridine Antiplatelet Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-propofol",
+  "nombre": "Propofol",
+  "buscado_como": "Propofol",
+  "ncit": "C29384",
+  "nombre_ncit": "Propofol",
+  "padres": [
+   "Sedative and Hypnotic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-qmf149-150",
+  "nombre": "QMF149 150",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-quetiapine",
+  "nombre": "Quetiapine",
+  "buscado_como": "Quetiapine",
+  "ncit": "C61917",
+  "nombre_ncit": "Quetiapine",
+  "padres": [
+   "Antipsychotic Agent",
+   "Serotonin Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-qva149",
+  "nombre": "QVA149",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ralinepag",
+  "nombre": "Ralinepag",
+  "buscado_como": "Ralinepag",
+  "ncit": "C152148",
+  "nombre_ncit": "Ralinepag",
+  "padres": [
+   "Vasodilating Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-raltegravir",
+  "nombre": "Raltegravir",
+  "buscado_como": "Raltegravir",
+  "ncit": "C72837",
+  "nombre_ncit": "Raltegravir",
+  "padres": [
+   "HIV Integrase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-ramipril",
+  "nombre": "Ramipril",
+  "buscado_como": "Ramipril",
+  "ncit": "C29411",
+  "nombre_ncit": "Ramipril",
+  "padres": [
+   "ACE Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "ace inhibitor"
+ },
+ {
+  "id": "farmaco-recombinant-novel-coronavirus-vaccine",
+  "nombre": "Recombinant Novel Coronavirus Vaccine",
+  "buscado_como": "Vaccine",
+  "ncit": "C923",
+  "nombre_ncit": "Vaccine",
+  "padres": [
+   "Biological Agent",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-reslizumab",
+  "nombre": "Reslizumab",
+  "buscado_como": "Reslizumab",
+  "ncit": "C152197",
+  "nombre_ncit": "Reslizumab",
+  "padres": [
+   "Anti-asthmatic Agent",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-roflumilast",
+  "nombre": "Roflumilast",
+  "buscado_como": "Roflumilast",
+  "ncit": "C76890",
+  "nombre_ncit": "Roflumilast",
+  "padres": [
+   "Phosphodiesterase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-rosiglitazone-xr",
+  "nombre": "Rosiglitazone XR",
+  "buscado_como": "Rosiglitazone",
+  "ncit": "C62076",
+  "nombre_ncit": "Rosiglitazone",
+  "padres": [
+   "Differentiation Inducer",
+   "Thiazolidinedione Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-roxadustat",
+  "nombre": "Roxadustat",
+  "buscado_como": "Roxadustat",
+  "ncit": "C141436",
+  "nombre_ncit": "Roxadustat",
+  "padres": [
+   "Hypoxia-inducible Factor Prolyl Hydroxylase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-rvt101",
+  "nombre": "RVT-101",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-secukinumab",
+  "nombre": "Secukinumab",
+  "buscado_como": "Secukinumab",
+  "ncit": "C152315",
+  "nombre_ncit": "Secukinumab",
+  "padres": [
+   "Anti-IL17A Monoclonal Antibody",
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-selexipag",
+  "nombre": "Selexipag",
+  "buscado_como": "Selexipag",
+  "ncit": "C152321",
+  "nombre_ncit": "Selexipag",
+  "padres": [
+   "Prostaglandin Analogue"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-semagacestat",
+  "nombre": "Semagacestat",
+  "buscado_como": "Semagacestat",
+  "ncit": "C81115",
+  "nombre_ncit": "Semagacestat",
+  "padres": [
+   "Gamma-Secretase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-seralutinib",
+  "nombre": "Seralutinib",
+  "buscado_como": "Seralutinib",
+  "ncit": "C175203",
+  "nombre_ncit": "Seralutinib",
+  "padres": [
+   "Tyrosine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-sifalimumab",
+  "nombre": "Sifalimumab",
+  "buscado_como": "Sifalimumab",
+  "ncit": "C95061",
+  "nombre_ncit": "Sifalimumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-sitagliptin",
+  "nombre": "Sitagliptin",
+  "buscado_como": "Sitagliptin",
+  "ncit": "C73838",
+  "nombre_ncit": "Sitagliptin",
+  "padres": [
+   "Dipeptidyl Peptidase-4 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-sitaxsentan",
+  "nombre": "Sitaxsentan",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-sotagliflozin",
+  "nombre": "Sotagliflozin",
+  "buscado_como": "Sotagliflozin",
+  "ncit": "C119623",
+  "nombre_ncit": "Sotagliflozin",
+  "padres": [
+   "SGLT2 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-spd489",
+  "nombre": "SPD489",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-spesolimab",
+  "nombre": "Spesolimab",
+  "buscado_como": "Spesolimab",
+  "ncit": "C166849",
+  "nombre_ncit": "Spesolimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-spironolactone",
+  "nombre": "Spironolactone",
+  "buscado_como": "Spironolactone",
+  "ncit": "C840",
+  "nombre_ncit": "Spironolactone",
+  "padres": [
+   "Aldosterone Receptor Antagonist",
+   "Potassium-Sparing Diuretic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-sulfasalazine",
+  "nombre": "Sulfasalazine",
+  "buscado_como": "Sulfasalazine",
+  "ncit": "C29469",
+  "nombre_ncit": "Sulfasalazine",
+  "padres": [
+   "Nonsteroidal Antiinflammatory Drug"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-survodutide",
+  "nombre": "Survodutide",
+  "buscado_como": "Survodutide",
+  "ncit": "C199114",
+  "nombre_ncit": "Survodutide",
+  "padres": [
+   "Dual GLP-1R/GCGR Agonist"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-technosphere-insulin",
+  "nombre": "Technosphere Insulin",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-tenecteplase",
+  "nombre": "Tenecteplase",
+  "buscado_como": "Tenecteplase",
+  "ncit": "C29489",
+  "nombre_ncit": "Tenecteplase",
+  "padres": [
+   "Thrombolytic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-terbutaline-as-needed",
+  "nombre": "Terbutaline 'as needed'",
+  "buscado_como": "Terbutaline",
+  "ncit": "C61965",
+  "nombre_ncit": "Terbutaline",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-tezepelumab",
+  "nombre": "Tezepelumab",
+  "buscado_como": "Tezepelumab",
+  "ncit": "C152582",
+  "nombre_ncit": "Tezepelumab",
+  "padres": [
+   "Anti-asthmatic Agent",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-tobramycin-inhalation-powder",
+  "nombre": "Tobramycin Inhalation Powder",
+  "buscado_como": "Tobramycin",
+  "ncit": "C62082",
+  "nombre_ncit": "Tobramycin",
+  "padres": [
+   "Aminoglycoside Antibiotic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "aminoglycoside antibiotic"
+ },
+ {
+  "id": "farmaco-tocilizumab",
+  "nombre": "Tocilizumab",
+  "buscado_como": "Tocilizumab",
+  "ncit": "C84217",
+  "nombre_ncit": "Tocilizumab",
+  "padres": [
+   "Anti-IL-6R Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-torvutatug-samrotecan",
+  "nombre": "Torvutatug samrotecan",
+  "buscado_como": "Torvutatug samrotecan",
+  "ncit": "C200057",
+  "nombre_ncit": "Torvutatug Samrotecan",
+  "padres": [
+   "Anti-FOLR1 Antibody-drug Conjugate",
+   "Exatecan-containing Antibody-drug Conjugate"
+  ],
+  "clase": "Conjugado anticuerpo-fármaco",
+  "por_ancestro": "anti-folr1 antibody-drug conjugate"
+ },
+ {
+  "id": "farmaco-treprostinil-diolamine",
+  "nombre": "Treprostinil Diolamine",
+  "buscado_como": "Treprostinil Diolamine",
+  "ncit": "C152730",
+  "nombre_ncit": "Treprostinil Diolamine",
+  "padres": [
+   "Prostaglandin Analogue",
+   "Vasodilating Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-unfractionated-heparin",
+  "nombre": "Unfractionated heparin",
+  "buscado_como": "Unfractionated heparin",
+  "ncit": "C539",
+  "nombre_ncit": "Heparin",
+  "padres": [
+   "Anticoagulant Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-vilanterol-100",
+  "nombre": "Vilanterol 100",
+  "buscado_como": "Vilanterol",
+  "ncit": "C152875",
+  "nombre_ncit": "Vilanterol",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-125mcg-once-daily-gsk573719",
+  "nombre": "125mcg once-daily GSK573719",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-17-b-estradiol",
+  "nombre": "17 B estradiol",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-17-b-estradiol-orally",
+  "nombre": "17 B estradiol orally",
+  "buscado_como": "Estrace",
+  "ncit": "C478",
+  "nombre_ncit": "Therapeutic Estradiol",
+  "padres": [
+   "Steroidal Estrogen"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-25-mcg",
+  "nombre": "25 mcg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-25-mcg-once-daily-gsk573719",
+  "nombre": "25 mcg once-daily GSK573719",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-25-mcg-via-ellipta-inhaler",
+  "nombre": "25 mcg via ELLIPTA inhaler",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-25-mcg-via-ndpi",
+  "nombre": "25 mcg via NDPI",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-25mcg",
+  "nombre": "25mcg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-2nrti",
+  "nombre": "2NRTI",
+  "buscado_como": "nucleotides",
+  "ncit": "C709",
+  "nombre_ncit": "Nucleotide",
+  "padres": [
+   "Nucleic Acids, Nucleosides, and Nucleotides"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug or chemical by structure"
+ },
+ {
+  "id": "farmaco-30-insulin-aspart",
+  "nombre": "30% insulin aspart injection",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-400-mg",
+  "nombre": "400 mg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-400mcg",
+  "nombre": "400mcg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-50-mg",
+  "nombre": "50 mg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-50-mg-etanercept",
+  "nombre": "50 mg etanercept",
+  "buscado_como": "etanercept",
+  "ncit": "C2381",
+  "nombre_ncit": "Etanercept",
+  "padres": [
+   "Immunosuppressant",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-62-5mcg",
+  "nombre": "62.5mcg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-70-insulin-aspart-protamine-suspension",
+  "nombre": "70% insulin aspart protamine suspension",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-80-g",
+  "nombre": "80 μg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-9-g",
+  "nombre": "9 μg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-abelacimab",
+  "nombre": "Abelacimab",
+  "buscado_como": "Abelacimab",
+  "ncit": "C169755",
+  "nombre_ncit": "Abelacimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-acetylsalicyclic-acid",
+  "nombre": "Acetylsalicyclic acid",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-acthar",
+  "nombre": "Acthar",
+  "buscado_como": "Acthar",
+  "ncit": "C212",
+  "nombre_ncit": "Recombinant Corticotropin",
+  "padres": [
+   "Pituitary Agent"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-acthar-gel",
+  "nombre": "Acthar Gel",
+  "buscado_como": "Acthar",
+  "ncit": "C212",
+  "nombre_ncit": "Recombinant Corticotropin",
+  "padres": [
+   "Pituitary Agent"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-advair-500",
+  "nombre": "ADVAIR 500",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-advanced-healing",
+  "nombre": "Advanced healing",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-afimetoran",
+  "nombre": "Afimetoran",
+  "buscado_como": "Afimetoran",
+  "ncit": "C177089",
+  "nombre_ncit": "Afimetoran",
+  "padres": [
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-albiglutide",
+  "nombre": "Albiglutide",
+  "buscado_como": "Albiglutide",
+  "ncit": "C78128",
+  "nombre_ncit": "Albiglutide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-albumin",
+  "nombre": "Albumin",
+  "buscado_como": "Albumin",
+  "ncit": "C214",
+  "nombre_ncit": "Albumin",
+  "padres": [
+   "Peptide"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "amino acid, peptide, or protein"
+ },
+ {
+  "id": "farmaco-aleglitazar",
+  "nombre": "Aleglitazar",
+  "buscado_como": "Aleglitazar",
+  "ncit": "C72687",
+  "nombre_ncit": "Aleglitazar",
+  "padres": [
+   "Glitazar Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-alendronate",
+  "nombre": "Alendronate",
+  "buscado_como": "Alendronate",
+  "ncit": "C61625",
+  "nombre_ncit": "Alendronic Acid",
+  "padres": [
+   "Biphosphonate",
+   "Bone Resorption Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting musculoskeletal system"
+ },
+ {
+  "id": "farmaco-all-licensed-antiretroviral-medications",
+  "nombre": "All licensed antiretroviral medications",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-aln4324",
+  "nombre": "ALN-4324",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-alx0061",
+  "nombre": "ALX-0061",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-amibegron",
+  "nombre": "Amibegron",
+  "buscado_como": "Amibegron",
+  "ncit": "C77932",
+  "nombre_ncit": "Amibegron",
+  "padres": [
+   "Beta-Adrenergic Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-amiodarone",
+  "nombre": "Amiodarone",
+  "buscado_como": "Amiodarone",
+  "ncit": "C62002",
+  "nombre_ncit": "Amiodarone",
+  "padres": [
+   "Antiarrhythmic Agent",
+   "Cation Channel Blocker"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-amoxicillin-clavulanic-acid",
+  "nombre": "Amoxicillin clavulanic acid",
+  "buscado_como": "Amoxicillin clavulanic acid",
+  "ncit": "C1481",
+  "nombre_ncit": "Amoxicillin-Clavulanic Acid",
+  "padres": [
+   "Retired Concept Current Year"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "retired concept"
+ },
+ {
+  "id": "farmaco-antidepressants",
+  "nombre": "Antidepressants",
+  "buscado_como": "Antidepressants",
+  "ncit": "C265",
+  "nombre_ncit": "Antidepressant Agent",
+  "padres": [
+   "Agent Affecting Nervous System"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-antihistamine",
+  "nombre": "Antihistamine",
+  "buscado_como": "Antihistamine",
+  "ncit": "C29716",
+  "nombre_ncit": "Antihistamine",
+  "padres": [
+   "Retired Concept 2006"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "retired concept"
+ },
+ {
+  "id": "farmaco-anxiolytics",
+  "nombre": "Anxiolytics",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-apfs",
+  "nombre": "APFS",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-apolipoprotein-a-i",
+  "nombre": "Apolipoprotein A-I",
+  "buscado_como": "Apolipoprotein A-I",
+  "ncit": "C116419",
+  "nombre_ncit": "Apolipoprotein A-I",
+  "padres": [
+   "Transport Protein"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "gene product"
+ },
+ {
+  "id": "farmaco-aramchol",
+  "nombre": "Aramchol",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-aripiprazole-10-30-mg-orally",
+  "nombre": "Aripiprazole 10-30 mg orally",
+  "buscado_como": "Abilify",
+  "ncit": "C47403",
+  "nombre_ncit": "Aripiprazole",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-aripiprazole-depot-25",
+  "nombre": "Aripiprazole depot 25",
+  "buscado_como": "Aripiprazole",
+  "ncit": "C47403",
+  "nombre_ncit": "Aripiprazole",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-aripiprazole-depot-300",
+  "nombre": "Aripiprazole depot 300",
+  "buscado_como": "Aripiprazole",
+  "ncit": "C47403",
+  "nombre_ncit": "Aripiprazole",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-art",
+  "nombre": "ART",
+  "buscado_como": "ART",
+  "ncit": "C115167",
+  "nombre_ncit": "AGRP wt Allele",
+  "padres": [
+   "AGRP Gene"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agrp gene"
+ },
+ {
+  "id": "farmaco-asacol",
+  "nombre": "Asacol",
+  "buscado_como": "Asacol",
+  "ncit": "C29249",
+  "nombre_ncit": "Mesalamine",
+  "padres": [
+   "Nonsteroidal Antiinflammatory Drug"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-atacicept-75-milligram",
+  "nombre": "Atacicept 75 milligram",
+  "buscado_como": "Atacicept",
+  "ncit": "C81166",
+  "nombre_ncit": "Atacicept",
+  "padres": [
+   "Immunosuppressant",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-atazanavir-powder",
+  "nombre": "Atazanavir powder",
+  "buscado_como": "Atazanavir",
+  "ncit": "C66872",
+  "nombre_ncit": "Atazanavir",
+  "padres": [
+   "HIV Protease Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-atorvastatin-single-pill",
+  "nombre": "Atorvastatin single pill",
+  "buscado_como": "Atorvastatin",
+  "ncit": "C61527",
+  "nombre_ncit": "Atorvastatin",
+  "padres": [
+   "HMG-CoA Reductase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-atuliflapon",
+  "nombre": "Atuliflapon",
+  "buscado_como": "Atuliflapon",
+  "ncit": "C184926",
+  "nombre_ncit": "Atuliflapon",
+  "padres": [
+   "Agent Affecting Cardiovascular System"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-atumelnant",
+  "nombre": "Atumelnant",
+  "buscado_como": "Atumelnant",
+  "ncit": "C200540",
+  "nombre_ncit": "Atumelnant",
+  "padres": [
+   "Hormone Antagonist"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-ave2268",
+  "nombre": "AVE2268",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ave5530",
+  "nombre": "AVE5530",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ave7688",
+  "nombre": "AVE7688",
+  "buscado_como": "ilepatril",
+  "ncit": "C87731",
+  "nombre_ncit": "Ilepatril",
+  "padres": [
+   "Antihypertensive Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-avidin",
+  "nombre": "Avidin",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-avp786",
+  "nombre": "AVP-786",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd1163",
+  "nombre": "AZD1163",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd1656",
+  "nombre": "AZD1656",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd2693",
+  "nombre": "AZD2693",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd6234",
+  "nombre": "AZD6234",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd6765",
+  "nombre": "AZD6765 iv",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd6793",
+  "nombre": "AZD6793",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd7624",
+  "nombre": "AZD7624",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd7798",
+  "nombre": "AZD7798",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-azd8630",
+  "nombre": "AZD8630",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-balcinrenone",
+  "nombre": "Balcinrenone",
+  "buscado_como": "Balcinrenone",
+  "ncit": "C188521",
+  "nombre_ncit": "Balcinrenone",
+  "padres": [
+   "Agent Affecting Cardiovascular System"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-bapineuzumab-1-0-m",
+  "nombre": "Bapineuzumab 1.0 m",
+  "buscado_como": "Bapineuzumab",
+  "ncit": "C79569",
+  "nombre_ncit": "Bapineuzumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-basal-insulin",
+  "nombre": "Basal Insulin",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-belapectin",
+  "nombre": "Belapectin",
+  "buscado_como": "Belapectin",
+  "ncit": "C115111",
+  "nombre_ncit": "Belapectin",
+  "padres": [
+   "Apoptotic Pathway-targeting Antineoplastic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "antineoplastic agent"
+ },
+ {
+  "id": "farmaco-benralizumab-arm-a",
+  "nombre": "Benralizumab Arm A",
+  "buscado_como": "Benralizumab",
+  "ncit": "C88594",
+  "nombre_ncit": "Benralizumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-benralizumab-arm-b",
+  "nombre": "Benralizumab Arm B",
+  "buscado_como": "Benralizumab",
+  "ncit": "C88594",
+  "nombre_ncit": "Benralizumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-benralizumab-arm-c",
+  "nombre": "Benralizumab Arm C",
+  "buscado_como": "Benralizumab",
+  "ncit": "C88594",
+  "nombre_ncit": "Benralizumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-bff-mdi-320",
+  "nombre": "BFF MDI 320",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bff-pmdi-320",
+  "nombre": "BFF pMDI 320",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bi695500",
+  "nombre": "BI 695500",
+  "buscado_como": "BI 695500",
+  "ncit": "C1702",
+  "nombre_ncit": "Rituximab",
+  "padres": [
+   "Anti-CD20 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-bifeprunox",
+  "nombre": "Bifeprunox",
+  "buscado_como": "Bifeprunox",
+  "ncit": "C65262",
+  "nombre_ncit": "Bifeprunox",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-blood-withdraw",
+  "nombre": "Blood withdraw",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bms663068",
+  "nombre": "BMS-663068",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-bms931699",
+  "nombre": "BMS-931699",
+  "buscado_como": "lulizumab pegol",
+  "ncit": "C175727",
+  "nombre_ncit": "Lulizumab Pegol",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-bms986278",
+  "nombre": "BMS-986278",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-brensocatib",
+  "nombre": "Brensocatib",
+  "buscado_como": "Brensocatib",
+  "ncit": "C171778",
+  "nombre_ncit": "Brensocatib",
+  "padres": [
+   "Enzyme Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-brivekimig",
+  "nombre": "Brivekimig",
+  "buscado_como": "Brivekimig",
+  "ncit": "C206890",
+  "nombre_ncit": "Brivekimig",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-budesonide-bid",
+  "nombre": "Budesonide bid",
+  "buscado_como": "Budesonide",
+  "ncit": "C1027",
+  "nombre_ncit": "Budesonide",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-budesonide-pmdi",
+  "nombre": "budesonide pMDI",
+  "buscado_como": "budesonide",
+  "ncit": "C1027",
+  "nombre_ncit": "Budesonide",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-budesonode-bid",
+  "nombre": "Budesonode bid",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-cabotegravir-la",
+  "nombre": "Cabotegravir LA",
+  "buscado_como": "CAB",
+  "ncit": "C141289",
+  "nombre_ncit": "Taxi Service",
+  "padres": [
+   "For-Hire Vehicle Service"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "action"
+ },
+ {
+  "id": "farmaco-calcitriol",
+  "nombre": "Calcitriol",
+  "buscado_como": "Calcitriol",
+  "ncit": "C330",
+  "nombre_ncit": "Calcitriol",
+  "padres": [
+   "Differentiation Inducer",
+   "Vitamin D Analog"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "antineoplastic agent"
+ },
+ {
+  "id": "farmaco-calcium-carbonate",
+  "nombre": "Calcium Carbonate",
+  "buscado_como": "Calcium Carbonate",
+  "ncit": "C332",
+  "nombre_ncit": "Calcium Carbonate",
+  "padres": [
+   "Calcium Supplement"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "calcium supplement"
+ },
+ {
+  "id": "farmaco-canagliflozin",
+  "nombre": "Canagliflozin",
+  "buscado_como": "Canagliflozin",
+  "ncit": "C91018",
+  "nombre_ncit": "Canagliflozin",
+  "padres": [
+   "SGLT2 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-ce224-535",
+  "nombre": "CE-224,535",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-celecoxib",
+  "nombre": "Celecoxib",
+  "buscado_como": "Celecoxib",
+  "ncit": "C1728",
+  "nombre_ncit": "Celecoxib",
+  "padres": [
+   "COX-2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "angiogenesis inhibitor"
+ },
+ {
+  "id": "farmaco-celivarone",
+  "nombre": "CELIVARONE",
+  "buscado_como": "CELIVARONE",
+  "ncit": "C81431",
+  "nombre_ncit": "Celivarone",
+  "padres": [
+   "Antiarrhythmic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-cgt2168",
+  "nombre": "CGT-2168",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-chf6001-1600-g",
+  "nombre": "CHF6001 1600µg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-chf6001-3200-g",
+  "nombre": "CHF6001 3200µg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-cholestyramine",
+  "nombre": "CHOLESTYRAMINE",
+  "buscado_como": "CHOLESTYRAMINE",
+  "ncit": "C28929",
+  "nombre_ncit": "Cholestyramine",
+  "padres": [
+   "Bile Acid Sequestrant"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-chs1420",
+  "nombre": "CHS-1420",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ciclesonide",
+  "nombre": "Ciclesonide",
+  "buscado_como": "Ciclesonide",
+  "ncit": "C65326",
+  "nombre_ncit": "Ciclesonide",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-cnp520",
+  "nombre": "CNP520",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-cnto1959",
+  "nombre": "CNTO 1959",
+  "buscado_como": "CNTO 1959",
+  "ncit": "C150390",
+  "nombre_ncit": "Guselkumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-coformulation-favezelimab",
+  "nombre": "Coformulation favezelimab",
+  "buscado_como": "favezelimab",
+  "ncit": "C142077",
+  "nombre_ncit": "Favezelimab",
+  "padres": [
+   "Anti-LAG-3 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-colchicine",
+  "nombre": "Colchicine",
+  "buscado_como": "Colchicine",
+  "ncit": "C385",
+  "nombre_ncit": "Colchicine",
+  "padres": [
+   "Colchicine-Site Binding Agent"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimitotic agent"
+ },
+ {
+  "id": "farmaco-commercially-available-aspirin",
+  "nombre": "Commercially-available Aspirin",
+  "buscado_como": "Aspirin",
+  "ncit": "C287",
+  "nombre_ncit": "Aspirin",
+  "padres": [
+   "Cyclooxygenase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-conjugated-estrogens",
+  "nombre": "Conjugated estrogens",
+  "buscado_como": "Conjugated estrogens",
+  "ncit": "C482",
+  "nombre_ncit": "Estrogens, Conjugated",
+  "padres": [
+   "Steroidal Estrogen"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-control-quadrivalent-influenza-virus-vaccine",
+  "nombre": "Control Quadrivalent influenza virus vaccine",
+  "buscado_como": "vaccine",
+  "ncit": "C923",
+  "nombre_ncit": "Vaccine",
+  "padres": [
+   "Biological Agent",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-cp-690-550",
+  "nombre": "CP- 690 550",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-cp690550",
+  "nombre": "CP-690-550",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-crystalloids",
+  "nombre": "Crystalloids",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-dabigatran-etexilate",
+  "nombre": "Dabigatran Etexilate",
+  "buscado_como": "Dabigatran Etexilate",
+  "ncit": "C87480",
+  "nombre_ncit": "Dabigatran Etexilate",
+  "padres": [
+   "Direct Oral Anticoagulant",
+   "Direct Thrombin Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-dalcetrapib",
+  "nombre": "Dalcetrapib",
+  "buscado_como": "Dalcetrapib",
+  "ncit": "C81529",
+  "nombre_ncit": "Dalcetrapib",
+  "padres": [
+   "Antilipidemic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-depemokimab",
+  "nombre": "Depemokimab",
+  "buscado_como": "Depemokimab",
+  "ncit": "C175768",
+  "nombre_ncit": "Depemokimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-desflurane",
+  "nombre": "Desflurane",
+  "buscado_como": "Desflurane",
+  "ncit": "C47472",
+  "nombre_ncit": "Desflurane",
+  "padres": [
+   "Anesthetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-desmopressin",
+  "nombre": "Desmopressin",
+  "buscado_como": "Desmopressin",
+  "ncit": "C61701",
+  "nombre_ncit": "Desmopressin",
+  "padres": [
+   "Antidiuretic Hormone Analogue"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-desvenlafaxine-succinate-sustained-release-2",
+  "nombre": "Desvenlafaxine succinate sustained release",
+  "buscado_como": "Pristiq",
+  "ncit": "C61704",
+  "nombre_ncit": "Desvenlafaxine Succinate",
+  "padres": [
+   "Antidepressant Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-dexpramipexole",
+  "nombre": "Dexpramipexole Dihydrochloride",
+  "buscado_como": "Dexpramipexole Dihydrochloride",
+  "ncit": "C167010",
+  "nombre_ncit": "Dexpramipexole Dihydrochloride",
+  "padres": [
+   "Dopamine Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-didanosine",
+  "nombre": "Didanosine",
+  "buscado_como": "Didanosine",
+  "ncit": "C431",
+  "nombre_ncit": "Didanosine",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-dimebon",
+  "nombre": "Dimebon",
+  "buscado_como": "Dimebon",
+  "ncit": "C78757",
+  "nombre_ncit": "Latrepirdine",
+  "padres": [
+   "Histamine-1 Receptor Antagonist"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-diskus",
+  "nombre": "DISKUS",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-diskus-inhaler",
+  "nombre": "DISKUS inhaler",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-diuretics",
+  "nombre": "Diuretics",
+  "buscado_como": "Diuretics",
+  "ncit": "C448",
+  "nombre_ncit": "Diuretic",
+  "padres": [
+   "Agent Affecting Blood or Body Fluid"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-donepezil-5-10mg",
+  "nombre": "Donepezil 5-10mg",
+  "buscado_como": "Donepezil",
+  "ncit": "C66874",
+  "nombre_ncit": "Donepezil",
+  "padres": [
+   "Acetylcholinesterase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "acetylcholinesterase inhibitor"
+ },
+ {
+  "id": "farmaco-doxercalciferol",
+  "nombre": "Doxercalciferol",
+  "buscado_como": "Doxercalciferol",
+  "ncit": "C2645",
+  "nombre_ncit": "Doxercalciferol",
+  "padres": [
+   "Vitamin D Analog"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "dietary supplement"
+ },
+ {
+  "id": "farmaco-dulaglutide",
+  "nombre": "Dulaglutide",
+  "buscado_como": "Dulaglutide",
+  "ncit": "C169923",
+  "nombre_ncit": "Dulaglutide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-dutogliptin",
+  "nombre": "Dutogliptin",
+  "buscado_como": "Dutogliptin",
+  "ncit": "C87492",
+  "nombre_ncit": "Dutogliptin",
+  "padres": [
+   "Dipeptidyl Peptidase-4 Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-duvakitug",
+  "nombre": "Duvakitug",
+  "buscado_como": "Duvakitug",
+  "ncit": "C199032",
+  "nombre_ncit": "Duvakitug",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-efavaleukin-alfa",
+  "nombre": "Efavaleukin Alfa",
+  "buscado_como": "Efavaleukin Alfa",
+  "ncit": "C169929",
+  "nombre_ncit": "Efavaleukin Alfa",
+  "padres": [
+   "IL-2-based Therapeutic Agent",
+   "Immunoconjugate",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-efpeglenatide",
+  "nombre": "Efpeglenatide",
+  "buscado_como": "Efpeglenatide",
+  "ncit": "C166682",
+  "nombre_ncit": "Efpeglenatide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-efruxifermin",
+  "nombre": "Efruxifermin",
+  "buscado_como": "Efruxifermin",
+  "ncit": "C175776",
+  "nombre_ncit": "Efruxifermin",
+  "padres": [
+   "Therapeutic Growth Factor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biological agent"
+ },
+ {
+  "id": "farmaco-efv",
+  "nombre": "EFV",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-elzasonan",
+  "nombre": "Elzasonan Combination",
+  "buscado_como": "Elzasonan",
+  "ncit": "C72755",
+  "nombre_ncit": "Elzasonan",
+  "padres": [
+   "Serotonin Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-enpatoran-high-dose",
+  "nombre": "Enpatoran high dose",
+  "buscado_como": "Enpatoran",
+  "ncit": "C177069",
+  "nombre_ncit": "Enpatoran",
+  "padres": [
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-enpatoran-low-dose",
+  "nombre": "Enpatoran low dose",
+  "buscado_como": "Enpatoran",
+  "ncit": "C177069",
+  "nombre_ncit": "Enpatoran",
+  "padres": [
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-enpatoran-medium-dose",
+  "nombre": "Enpatoran medium dose",
+  "buscado_como": "Enpatoran",
+  "ncit": "C177069",
+  "nombre_ncit": "Enpatoran",
+  "padres": [
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-envudeucitinib",
+  "nombre": "Envudeucitinib",
+  "buscado_como": "Envudeucitinib",
+  "ncit": "C206909",
+  "nombre_ncit": "Envudeucitinib",
+  "padres": [
+   "JAK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-ertapenem",
+  "nombre": "Ertapenem",
+  "buscado_como": "Ertapenem",
+  "ncit": "C61752",
+  "nombre_ncit": "Ertapenem",
+  "padres": [
+   "Beta-Lactam Antibiotic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-evr",
+  "nombre": "EVR",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-exenatide",
+  "nombre": "Exenatide",
+  "buscado_como": "Exenatide",
+  "ncit": "C65611",
+  "nombre_ncit": "Exenatide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-exenatide-once",
+  "nombre": "Exenatide Once Weekly",
+  "buscado_como": "Exenatide",
+  "ncit": "C65611",
+  "nombre_ncit": "Exenatide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-experimental-chf6001-1600-g",
+  "nombre": "Experimental: CHF6001 1600µg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-experimental-chf6001-3200-g",
+  "nombre": "Experimental: CHF6001 3200µg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-experimental-tralokinumab",
+  "nombre": "Experimental: Tralokinumab",
+  "buscado_como": "Tralokinumab",
+  "ncit": "C152710",
+  "nombre_ncit": "Tralokinumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-exposure-covid-19-severity",
+  "nombre": "Exposure: COVID-19 severity",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-fang",
+  "nombre": "FANG",
+  "buscado_como": "FANG",
+  "ncit": "C153914",
+  "nombre_ncit": "Fang Language",
+  "padres": [
+   "Bantu Language"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "bantu language"
+ },
+ {
+  "id": "farmaco-favipiravir",
+  "nombre": "Favipiravir",
+  "buscado_como": "Favipiravir",
+  "ncit": "C81605",
+  "nombre_ncit": "Favipiravir",
+  "padres": [
+   "Viral RNA Polymerase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-ff-inhalation-powder",
+  "nombre": "FF Inhalation Powder",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-fluconazole",
+  "nombre": "Fluconazole",
+  "buscado_como": "Fluconazole",
+  "ncit": "C500",
+  "nombre_ncit": "Fluconazole",
+  "padres": [
+   "Antifungal Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-flutiform-250",
+  "nombre": "FlutiForm 250",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-formoterol-pmdi",
+  "nombre": "formoterol pMDI",
+  "buscado_como": "formoterol",
+  "ncit": "C65754",
+  "nombre_ncit": "Formoterol",
+  "padres": [
+   "Beta-Adrenergic Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-formoterol-turbuhaler",
+  "nombre": "Formoterol Turbuhaler",
+  "buscado_como": "Formoterol",
+  "ncit": "C65754",
+  "nombre_ncit": "Formoterol",
+  "padres": [
+   "Beta-Adrenergic Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-fsc-inhalation-powder-250",
+  "nombre": "FSC Inhalation Powder 250",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-fsc100",
+  "nombre": "FSC 100",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gb0895",
+  "nombre": "GB-0895",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-general-interventions-for-all-groups-blood-presure",
+  "nombre": "General interventions for all groups: blood presure",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-general-interventions-for-all-groups-dysilipidemia",
+  "nombre": "General interventions for all groups: dysilipidemia",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gff-mdi-14-4",
+  "nombre": "GFF MDI 14.4",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-glpg3667",
+  "nombre": "GLPG3667",
+  "buscado_como": "Cadefrecitinib",
+  "ncit": "C224721",
+  "nombre_ncit": "Cadefrecitinib",
+  "padres": [
+   "TYK2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-glyburide",
+  "nombre": "Glyburide",
+  "buscado_como": "Glyburide",
+  "ncit": "C29076",
+  "nombre_ncit": "Glyburide",
+  "padres": [
+   "Sulfonylurea Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-gsk1349572",
+  "nombre": "GSK1349572",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gsk189075",
+  "nombre": "GSK189075",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gsk233705",
+  "nombre": "GSK233705",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gsk239512",
+  "nombre": "GSK239512",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gsk2586184",
+  "nombre": "GSK2586184",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gsk372475",
+  "nombre": "GSK372475",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-guselkumab",
+  "nombre": "Guselkumab",
+  "buscado_como": "Guselkumab",
+  "ncit": "C150390",
+  "nombre_ncit": "Guselkumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-gw406381",
+  "nombre": "GW406381",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gw642444-125",
+  "nombre": "GW642444 125",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gw642444-6-25",
+  "nombre": "GW642444 6.25",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gw642444-62-5",
+  "nombre": "GW642444 62.5",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gw642444m",
+  "nombre": "GW642444M",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gw677954",
+  "nombre": "GW677954",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-gw679769",
+  "nombre": "GW679769",
+  "buscado_como": "GW679769",
+  "ncit": "C71635",
+  "nombre_ncit": "Casopitant",
+  "padres": [
+   "Antidepressant Agent",
+   "Antiemetic Agent",
+   "NK1 Antagonist"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "antiemetic agent"
+ },
+ {
+  "id": "farmaco-h1n1-influenza-vaccine",
+  "nombre": "H1N1 influenza vaccine",
+  "buscado_como": "vaccine",
+  "ncit": "C923",
+  "nombre_ncit": "Vaccine",
+  "padres": [
+   "Biological Agent",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-hcq",
+  "nombre": "HCQ",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-hexadecasaccharide",
+  "nombre": "Hexadecasaccharide",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-hoe901-u300",
+  "nombre": "HOE901-U300",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-human-insulin-inhalation-powder",
+  "nombre": "Human Insulin Inhalation Powder",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ianalumab-s-c-q12w",
+  "nombre": "Ianalumab s.c. q12w",
+  "buscado_como": "Ianalumab",
+  "ncit": "C116788",
+  "nombre_ncit": "Ianalumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-ianalumab-s-c-q4w",
+  "nombre": "Ianalumab s.c. q4w",
+  "buscado_como": "Ianalumab",
+  "ncit": "C116788",
+  "nombre_ncit": "Ianalumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-ics",
+  "nombre": "ICS",
+  "buscado_como": "ICS",
+  "ncit": "C178026",
+  "nombre_ncit": "Intracellular Cytokine Stain Flow Cytometric Assay",
+  "padres": [
+   "Cytokine Measurement",
+   "Immunological Flow Cytometry"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "cytokine measurement"
+ },
+ {
+  "id": "farmaco-idrabiotaparinux",
+  "nombre": "Idrabiotaparinux sodium",
+  "buscado_como": "Idrabiotaparinux sodium",
+  "ncit": "C170050",
+  "nombre_ncit": "Idrabiotaparinux Sodium",
+  "padres": [
+   "Anticoagulant Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-ifn-kinoid",
+  "nombre": "IFNα-Kinoid",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-il2",
+  "nombre": "IL-2",
+  "buscado_como": "IL-2",
+  "ncit": "C20507",
+  "nombre_ncit": "Interleukin-2",
+  "padres": [
+   "Interleukin"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "cytokine"
+ },
+ {
+  "id": "farmaco-inactivated",
+  "nombre": "Inactivated",
+  "buscado_como": "Inactivated",
+  "ncit": "C162847",
+  "nombre_ncit": "FDA Inactivation",
+  "padres": [
+   "Administrative Activity"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "activity"
+ },
+ {
+  "id": "farmaco-inbioderm",
+  "nombre": "InbioDerm",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-influenza-vaccine",
+  "nombre": "Influenza Vaccine",
+  "buscado_como": "Influenza Vaccine",
+  "ncit": "C178427",
+  "nombre_ncit": "Influenza Vaccine",
+  "padres": [
+   "Viral Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "vaccine"
+ },
+ {
+  "id": "farmaco-injected-insulin",
+  "nombre": "Injected insulin",
+  "buscado_como": "Injected insulin",
+  "ncit": "C179441",
+  "nombre_ncit": "Injected Insulin Diabetes Therapy",
+  "padres": [
+   "Diabetes Therapy"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "activity"
+ },
+ {
+  "id": "farmaco-insulin",
+  "nombre": "Insulin",
+  "buscado_como": "Insulin",
+  "ncit": "C2271",
+  "nombre_ncit": "Insulin",
+  "padres": [
+   "INS Gene Product"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "gene product"
+ },
+ {
+  "id": "farmaco-insulin-glargine-300-u",
+  "nombre": "Insulin glargine,300 U",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-insulin-glulisine-qd",
+  "nombre": "Insulin glulisine QD",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-insulin-glulisine-tid",
+  "nombre": "Insulin glulisine TID",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-intismeran",
+  "nombre": "Intismeran",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-intraoperative",
+  "nombre": "Intraoperative",
+  "buscado_como": "Intraoperative",
+  "ncit": "C84355",
+  "nombre_ncit": "Intraoperative",
+  "padres": [
+   "Temporal Qualifier"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "property or attribute"
+ },
+ {
+  "id": "farmaco-irbesartan-hydrochlorothiazide",
+  "nombre": "Irbesartan-hydrochlorothiazide",
+  "buscado_como": "Irbesartan",
+  "ncit": "C29130",
+  "nombre_ncit": "Irbesartan",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-isoniazid-for-12-weeks",
+  "nombre": "Isoniazid for 12 weeks",
+  "buscado_como": "Isoniazid",
+  "ncit": "C600",
+  "nombre_ncit": "Isoniazid",
+  "padres": [
+   "Antitubercular Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-jnj40346527",
+  "nombre": "JNJ-40346527",
+  "buscado_como": "JNJ-40346527",
+  "ncit": "C101519",
+  "nombre_ncit": "Edicotinib",
+  "padres": [
+   "CSF1R Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-jnj78934804",
+  "nombre": "JNJ-78934804",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-lanthanum-carbonate",
+  "nombre": "Lanthanum Carbonate",
+  "buscado_como": "Lanthanum Carbonate",
+  "ncit": "C61801",
+  "nombre_ncit": "Lanthanum Carbonate",
+  "padres": [
+   "Agent Affecting Blood or Body Fluid"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-lapaquistat",
+  "nombre": "Lapaquistat acetate",
+  "buscado_como": "Lapaquistat acetate",
+  "ncit": "C81535",
+  "nombre_ncit": "Lapaquistat Acetate",
+  "padres": [
+   "Antilipidemic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-lcz696",
+  "nombre": "LCZ696",
+  "buscado_como": "LCZ696",
+  "ncit": "C162629",
+  "nombre_ncit": "Sacubitril Valsartan Sodium Hydrate",
+  "padres": [
+   "Angiotensin Receptor-Neprilysin Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-lebrikizumab",
+  "nombre": "Lebrikizumab",
+  "buscado_como": "Lebrikizumab",
+  "ncit": "C87767",
+  "nombre_ncit": "Lebrikizumab",
+  "padres": [
+   "Antineoplastic Antibody",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-licensed-comparator-trivalent-split-influenza-vaccine",
+  "nombre": "Licensed comparator trivalent split influenza vaccine",
+  "buscado_como": "Fluzone",
+  "ncit": "C2643",
+  "nombre_ncit": "Trivalent Influenza Vaccine",
+  "padres": [
+   "Influenza Vaccine",
+   "Polyvalent Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "influenza vaccine"
+ },
+ {
+  "id": "farmaco-lithium-carbonate",
+  "nombre": "Lithium carbonate",
+  "buscado_como": "Lithium carbonate",
+  "ncit": "C1318",
+  "nombre_ncit": "Lithium Carbonate",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-lixivaptan",
+  "nombre": "Lixivaptan",
+  "buscado_como": "Lixivaptan",
+  "ncit": "C74429",
+  "nombre_ncit": "Lixivaptan",
+  "padres": [
+   "Vasopressin Antagonist"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-lnp023",
+  "nombre": "LNP023",
+  "buscado_como": "LNP023",
+  "ncit": "C156691",
+  "nombre_ncit": "Iptacopan",
+  "padres": [
+   "Complement Inhibitor"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-lorcaserin",
+  "nombre": "Lorcaserin hydrochloride",
+  "buscado_como": "Lorcaserin hydrochloride",
+  "ncit": "C76103",
+  "nombre_ncit": "Lorcaserin Hydrochloride",
+  "padres": [
+   "Serotonin Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-losartan-potassium",
+  "nombre": "Losartan-potassium",
+  "buscado_como": "Losartan-potassium",
+  "ncit": "C29165",
+  "nombre_ncit": "Losartan Potassium",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-lurasidone",
+  "nombre": "Lurasidone HCl",
+  "buscado_como": "Lurasidone",
+  "ncit": "C77575",
+  "nombre_ncit": "Lurasidone",
+  "padres": [
+   "Dopamine Antagonist",
+   "Serotonin Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-ly2216684",
+  "nombre": "LY2216684",
+  "buscado_como": "edivoxetine",
+  "ncit": "C166706",
+  "nombre_ncit": "Edivoxetine",
+  "padres": [
+   "Antidepressant Agent",
+   "Norepinephrine Reuptake Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-m2591",
+  "nombre": "M2591",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-m5049-high-dose",
+  "nombre": "M5049 high dose",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-m5049-low-dose",
+  "nombre": "M5049 low dose",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-m5049-medium-dose",
+  "nombre": "M5049 medium dose",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-mbs2320",
+  "nombre": "MBS2320",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-medi3506",
+  "nombre": "MEDI3506",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-medi546",
+  "nombre": "Medi-546",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-medroxyprogesterone",
+  "nombre": "Medroxyprogesterone acetate",
+  "buscado_como": "Medroxyprogesterone acetate",
+  "ncit": "C1155",
+  "nombre_ncit": "Medroxyprogesterone Acetate",
+  "padres": [
+   "Progestin"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-memantine-er",
+  "nombre": "memantine ER",
+  "buscado_como": "memantine",
+  "ncit": "C73269",
+  "nombre_ncit": "Memantine",
+  "padres": [
+   "Antiparkinsonian Agent",
+   "Neuroprotective Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-mepolizumab-250",
+  "nombre": "Mepolizumab 250",
+  "buscado_como": "Mepolizumab",
+  "ncit": "C157376",
+  "nombre_ncit": "Mepolizumab",
+  "padres": [
+   "Anti-asthmatic Agent",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-mepolizumab-75",
+  "nombre": "Mepolizumab 75",
+  "buscado_como": "Mepolizumab",
+  "ncit": "C157376",
+  "nombre_ncit": "Mepolizumab",
+  "padres": [
+   "Anti-asthmatic Agent",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-mepolizumab-750",
+  "nombre": "Mepolizumab 750",
+  "buscado_como": "Mepolizumab",
+  "ncit": "C157376",
+  "nombre_ncit": "Mepolizumab",
+  "padres": [
+   "Anti-asthmatic Agent",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-metformin-secretagogues",
+  "nombre": "Metformin & Secretagogues",
+  "buscado_como": "Metformin",
+  "ncit": "C61612",
+  "nombre_ncit": "Metformin",
+  "padres": [
+   "Biguanide Antidiabetic Agent",
+   "Chemopreventive Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-mf-200-g",
+  "nombre": "MF 200 μg",
+  "buscado_como": "Mometasone furoate",
+  "ncit": "C29268",
+  "nombre_ncit": "Mometasone Furoate",
+  "padres": [
+   "Therapeutic Corticosteroid",
+   "Topical Corticosteroid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-mf59-adjuvanted-trivalent-influenza-vaccine",
+  "nombre": "MF59-adjuvanted trivalent influenza vaccine",
+  "buscado_como": "vaccine",
+  "ncit": "C923",
+  "nombre_ncit": "Vaccine",
+  "padres": [
+   "Biological Agent",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-mhaa4549a",
+  "nombre": "MHAA4549A",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-mk0472",
+  "nombre": "MK-0472",
+  "buscado_como": "MK-0472",
+  "ncit": "C220576",
+  "nombre_ncit": "SHP2 Inhibitor MK-0472",
+  "padres": [
+   "SHP2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic enzyme inhibitor"
+ },
+ {
+  "id": "farmaco-mk6194",
+  "nombre": "MK-6194",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-mk8527",
+  "nombre": "MK-8527",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ml-007c-ma",
+  "nombre": "ML-007C-MA",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-mlta3698a",
+  "nombre": "MLTA3698A",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-monovalent-a",
+  "nombre": "Monovalent A",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-mood-stabilizers",
+  "nombre": "Mood stabilizers.",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-mpa",
+  "nombre": "MPA",
+  "buscado_como": "MPA",
+  "ncit": "C1155",
+  "nombre_ncit": "Medroxyprogesterone Acetate",
+  "padres": [
+   "Progestin"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-mscs",
+  "nombre": "MSCs",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-mu001-patches",
+  "nombre": "MU001 patches",
+  "buscado_como": "Investigational",
+  "ncit": "C28041",
+  "nombre_ncit": "Investigational",
+  "padres": [
+   "General Qualifier"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "general qualifier"
+ },
+ {
+  "id": "farmaco-nacl-0-9",
+  "nombre": "NaCl 0.9%",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-naproxen",
+  "nombre": "Naproxen",
+  "buscado_como": "Naproxen",
+  "ncit": "C680",
+  "nombre_ncit": "Naproxen",
+  "padres": [
+   "Cyclooxygenase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-nateglinide",
+  "nombre": "Nateglinide",
+  "buscado_como": "Nateglinide",
+  "ncit": "C61858",
+  "nombre_ncit": "Nateglinide",
+  "padres": [
+   "Meglitinide Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-nesiritide",
+  "nombre": "Nesiritide",
+  "buscado_como": "Nesiritide",
+  "ncit": "C47636",
+  "nombre_ncit": "Nesiritide",
+  "padres": [
+   "Vasodilating Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-neuroleptics",
+  "nombre": "Neuroleptics",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-neutral-protamine-hagedorn-insulin",
+  "nombre": "Neutral Protamine Hagedorn insulin",
+  "buscado_como": "NPH",
+  "ncit": "C155831",
+  "nombre_ncit": "Nasopharyngeal Swab Specimen",
+  "padres": [
+   "Swabbed Material"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biospecimen"
+ },
+ {
+  "id": "farmaco-nolpitantium",
+  "nombre": "Nolpitantium besylate",
+  "buscado_como": "Nolpitantium besylate",
+  "ncit": "C97964",
+  "nombre_ncit": "Nolpitantium Besilate",
+  "padres": [
+   "Antiemetic Agent",
+   "NK1 Antagonist"
+  ],
+  "clase": "Soporte",
+  "por_ancestro": "antiemetic agent"
+ },
+ {
+  "id": "farmaco-norepinephrine",
+  "nombre": "Norepinephrine",
+  "buscado_como": "Norepinephrine",
+  "ncit": "C2321",
+  "nombre_ncit": "l-Norepinephrine",
+  "padres": [
+   "Catecholamine"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "catecholamine"
+ },
+ {
+  "id": "farmaco-nrtis",
+  "nombre": "NRTIs",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-nucresiran",
+  "nombre": "Nucresiran",
+  "buscado_como": "Nucresiran",
+  "ncit": "C206949",
+  "nombre_ncit": "Nucresiran",
+  "padres": [
+   "siRNA Therapeutic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biological agent"
+ },
+ {
+  "id": "farmaco-obeticholic-acid",
+  "nombre": "Obeticholic Acid",
+  "buscado_como": "Obeticholic Acid",
+  "ncit": "C80837",
+  "nombre_ncit": "Obeticholic Acid",
+  "padres": [
+   "Cholagogues or Choleretic Agents"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-ofatumumab",
+  "nombre": "Ofatumumab",
+  "buscado_como": "Ofatumumab",
+  "ncit": "C66952",
+  "nombre_ncit": "Ofatumumab",
+  "padres": [
+   "Anti-CD20 Monoclonal Antibody",
+   "Antineoplastic Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-olipudase-alfa",
+  "nombre": "Olipudase alfa",
+  "buscado_como": "Olipudase alfa",
+  "ncit": "C166929",
+  "nombre_ncit": "Olipudase Alfa",
+  "padres": [
+   "Enzyme Replacement or Supplement Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biological agent"
+ },
+ {
+  "id": "farmaco-olmesartan-medoxomil",
+  "nombre": "Olmesartan medoxomil",
+  "buscado_como": "Olmesartan medoxomil",
+  "ncit": "C47640",
+  "nombre_ncit": "Olmesartan Medoxomil",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-olmesartan-medoxomil-hydrochlorothiazide",
+  "nombre": "Olmesartan medoxomil-hydrochlorothiazide",
+  "buscado_como": "Olmesartan",
+  "ncit": "C66253",
+  "nombre_ncit": "Olmesartan",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-omecamtiv-mecarbil",
+  "nombre": "Omecamtiv Mecarbil",
+  "buscado_como": "Omecamtiv Mecarbil",
+  "ncit": "C166579",
+  "nombre_ncit": "Omecamtiv Mecarbil",
+  "padres": [
+   "Cardiotonic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-omega-3-polyunsaturated-fatty-acids",
+  "nombre": "Omega-3 polyunsaturated fatty acids",
+  "buscado_como": "PUFA",
+  "ncit": "C67038",
+  "nombre_ncit": "Polyunsaturated Fatty Acid",
+  "padres": [
+   "Dietary Fatty Acid"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "bioactive food component"
+ },
+ {
+  "id": "farmaco-once-daily",
+  "nombre": "Once daily.",
+  "buscado_como": "Once daily.",
+  "ncit": "C125004",
+  "nombre_ncit": "Once Daily",
+  "padres": [
+   "Daily"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "action"
+ },
+ {
+  "id": "farmaco-pantoprazole",
+  "nombre": "Pantoprazole",
+  "buscado_como": "Pantoprazole",
+  "ncit": "C29346",
+  "nombre_ncit": "Pantoprazole",
+  "padres": [
+   "Proton Pump Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-patisiran",
+  "nombre": "Patisiran",
+  "buscado_como": "Patisiran",
+  "ncit": "C116792",
+  "nombre_ncit": "Patisiran",
+  "padres": [
+   "Antineoplastic Biological Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "antineoplastic agent"
+ },
+ {
+  "id": "farmaco-pcv15",
+  "nombre": "PCV15",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-pcv15-part-b",
+  "nombre": "PCV15 - Part B",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-pegozafermin",
+  "nombre": "Pegozafermin",
+  "buscado_como": "Pegozafermin",
+  "ncit": "C188638",
+  "nombre_ncit": "Pegozafermin",
+  "padres": [
+   "Therapeutic Growth Factor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biological agent"
+ },
+ {
+  "id": "farmaco-pembrolizumab-coformulated",
+  "nombre": "Pembrolizumab coformulated",
+  "buscado_como": "Pembrolizumab",
+  "ncit": "C106432",
+  "nombre_ncit": "Pembrolizumab",
+  "padres": [
+   "Anti-PD1 Monoclonal Antibody"
+  ],
+  "clase": "Inmunoterapia (checkpoint)",
+  "por_ancestro": "immune checkpoint inhibitor"
+ },
+ {
+  "id": "farmaco-peramivir",
+  "nombre": "Peramivir",
+  "buscado_como": "Peramivir",
+  "ncit": "C81611",
+  "nombre_ncit": "Peramivir",
+  "padres": [
+   "Neuraminidase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-pf04236921",
+  "nombre": "PF-04236921",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-pf04447943",
+  "nombre": "PF-04447943",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-pf05212377",
+  "nombre": "PF-05212377",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-pf06650833",
+  "nombre": "PF-06650833",
+  "buscado_como": "PF-06650833",
+  "ncit": "C185226",
+  "nombre_ncit": "Zimlovisertib",
+  "padres": [
+   "IRAK4 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-pf06651600",
+  "nombre": "PF-06651600",
+  "buscado_como": "PF-06651600",
+  "ncit": "C161783",
+  "nombre_ncit": "Ritlecitinib",
+  "padres": [
+   "Immunotherapeutic Agent",
+   "JAK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-phase-1-conventiaonal-dmard",
+  "nombre": "Phase 1: Conventiaonal DMARD",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-phase-1-etanercept",
+  "nombre": "Phase 1: Etanercept",
+  "buscado_como": "Etanercept",
+  "ncit": "C2381",
+  "nombre_ncit": "Etanercept",
+  "padres": [
+   "Immunosuppressant",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-phase-1-methotrexate",
+  "nombre": "Phase 1: Methotrexate",
+  "buscado_como": "Methotrexate",
+  "ncit": "C642",
+  "nombre_ncit": "Methotrexate",
+  "padres": [
+   "Dihydrofolate Reductase Inhibitor",
+   "Folate Antagonist"
+  ],
+  "clase": "Quimioterapia",
+  "por_ancestro": "antimetabolite"
+ },
+ {
+  "id": "farmaco-phase-2-optional-etn",
+  "nombre": "Phase 2: Optional ETN",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-pneumococcal-13-valent-conjugate-vaccine",
+  "nombre": "Pneumococcal 13-valent conjugate vaccine",
+  "buscado_como": "Pneumococcal 13-valent conjugate vaccine",
+  "ncit": "C97121",
+  "nombre_ncit": "Pneumococcal 13-valent Conjugate Vaccine",
+  "padres": [
+   "Pneumococcal Conjugate Vaccine",
+   "Polyvalent Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "conjugate vaccine"
+ },
+ {
+  "id": "farmaco-posaconazole",
+  "nombre": "Posaconazole",
+  "buscado_como": "Posaconazole",
+  "ncit": "C61500",
+  "nombre_ncit": "Posaconazole",
+  "padres": [
+   "Antifungal Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-post-operative",
+  "nombre": "Post-operative",
+  "buscado_como": "Post-operative",
+  "ncit": "C25623",
+  "nombre_ncit": "Post-Operative",
+  "padres": [
+   "Retired Concept 2004"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "retired concept"
+ },
+ {
+  "id": "farmaco-povorcitinib",
+  "nombre": "Povorcitinib",
+  "buscado_como": "Povorcitinib",
+  "ncit": "C188603",
+  "nombre_ncit": "Povorcitinib",
+  "padres": [
+   "JAK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-ppsv23",
+  "nombre": "PPSV23",
+  "buscado_como": "PPSV23",
+  "ncit": "C1643",
+  "nombre_ncit": "Pneumococcal Polyvalent Vaccine",
+  "padres": [
+   "Polyvalent Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "polyvalent vaccine"
+ },
+ {
+  "id": "farmaco-pregabalin",
+  "nombre": "Pregabalin",
+  "buscado_como": "Pregabalin",
+  "ncit": "C64625",
+  "nombre_ncit": "Pregabalin",
+  "padres": [
+   "Anticonvulsant Agent",
+   "Nonnarcotic Analgesic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-q2w",
+  "nombre": "Q2W",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-qaw039",
+  "nombre": "QAW039",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-quadrivalent",
+  "nombre": "Quadrivalent",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-quadrivalent-influenza-modrna-vaccine",
+  "nombre": "Quadrivalent influenza modRNA vaccine",
+  "buscado_como": "vaccine",
+  "ncit": "C923",
+  "nombre_ncit": "Vaccine",
+  "padres": [
+   "Biological Agent",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-quadrivalent-influenza-vaccine",
+  "nombre": "Quadrivalent influenza vaccine",
+  "buscado_como": "Quadrivalent influenza vaccine",
+  "ncit": "C128455",
+  "nombre_ncit": "Quadrivalent Inactivated Influenza Vaccine",
+  "padres": [
+   "Influenza Vaccine",
+   "Polyvalent Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "influenza vaccine"
+ },
+ {
+  "id": "farmaco-quetiapine-fumarate-xr",
+  "nombre": "Quetiapine fumarate XR",
+  "buscado_como": "SEROQUEL XR",
+  "ncit": "C47700",
+  "nombre_ncit": "Quetiapine Fumarate",
+  "padres": [
+   "Antipsychotic Agent",
+   "Serotonin Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-qvm149",
+  "nombre": "QVM149",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-qvm149-150",
+  "nombre": "QVM149 150",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ravulizumab",
+  "nombre": "Ravulizumab",
+  "buscado_como": "Ravulizumab",
+  "ncit": "C124657",
+  "nombre_ncit": "Ravulizumab",
+  "padres": [
+   "Anti-C5 Monoclonal Antibody",
+   "Complement Inhibitor"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-rcni",
+  "nombre": "rCNI",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-recombinant-covid-19-vaccine-for-inhalation",
+  "nombre": "Recombinant COVID-19 vaccine for Inhalation",
+  "buscado_como": "vaccine",
+  "ncit": "C923",
+  "nombre_ncit": "Vaccine",
+  "padres": [
+   "Biological Agent",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-recombinant-epo",
+  "nombre": "Recombinant EPO",
+  "buscado_como": "Recombinant EPO",
+  "ncit": "C477",
+  "nombre_ncit": "Recombinant Erythropoietin",
+  "padres": [
+   "Recombinant Hematopoietic Growth Factor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "biological agent"
+ },
+ {
+  "id": "farmaco-recombinant-hepatitis-b-virus-vaccine",
+  "nombre": "Recombinant Hepatitis B Virus Vaccine",
+  "buscado_como": "Vaccine",
+  "ncit": "C923",
+  "nombre_ncit": "Vaccine",
+  "padres": [
+   "Biological Agent",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-respiratory-bundle",
+  "nombre": "Respiratory bundle",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-rilpivirine",
+  "nombre": "Rilpivirine",
+  "buscado_como": "Rilpivirine",
+  "ncit": "C76929",
+  "nombre_ncit": "Rilpivirine",
+  "padres": [
+   "Non-nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-rilpivirine-la",
+  "nombre": "Rilpivirine LA",
+  "buscado_como": "Rilpivirine",
+  "ncit": "C76929",
+  "nombre_ncit": "Rilpivirine",
+  "padres": [
+   "Non-nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-rilzabrutinib",
+  "nombre": "Rilzabrutinib",
+  "buscado_como": "Rilzabrutinib",
+  "ncit": "C174769",
+  "nombre_ncit": "Rilzabrutinib",
+  "padres": [
+   "Covalent BTK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-risankizumab-on-body-injector",
+  "nombre": "Risankizumab On-Body Injector",
+  "buscado_como": "OBI",
+  "ncit": "C190884",
+  "nombre_ncit": "Ontology for Biomedical Investigations",
+  "padres": [
+   "Ontology"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "conceptual entity"
+ },
+ {
+  "id": "farmaco-risperidone",
+  "nombre": "Risperidone",
+  "buscado_como": "Risperidone",
+  "ncit": "C29416",
+  "nombre_ncit": "Risperidone",
+  "padres": [
+   "Antipsychotic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-ritonavir-oral-solution",
+  "nombre": "Ritonavir oral solution",
+  "buscado_como": "Ritonavir",
+  "ncit": "C1609",
+  "nombre_ncit": "Ritonavir",
+  "padres": [
+   "HIV Protease Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-ritonavir-boosted-lopinavir",
+  "nombre": "Ritonavir-boosted lopinavir",
+  "buscado_como": "Kaletra",
+  "ncit": "C2096",
+  "nombre_ncit": "Lopinavir/Ritonavir",
+  "padres": [
+   "HIV Protease Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-hiv agent"
+ },
+ {
+  "id": "farmaco-rivastigmine-transdermal-patch",
+  "nombre": "Rivastigmine transdermal patch",
+  "buscado_como": "Rivastigmine",
+  "ncit": "C66519",
+  "nombre_ncit": "Rivastigmine",
+  "padres": [
+   "Acetylcholinesterase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "acetylcholinesterase inhibitor"
+ },
+ {
+  "id": "farmaco-rivoglitazone",
+  "nombre": "Rivoglitazone",
+  "buscado_como": "Rivoglitazone",
+  "ncit": "C72841",
+  "nombre_ncit": "Rivoglitazone",
+  "padres": [
+   "Thiazolidinedione Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-ro4917523",
+  "nombre": "RO4917523",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ro7126209",
+  "nombre": "RO7126209",
+  "buscado_como": "Trontinemab",
+  "ncit": "C188602",
+  "nombre_ncit": "Trontinemab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-ro7269162",
+  "nombre": "RO7269162",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-rocatinlimab",
+  "nombre": "Rocatinlimab",
+  "buscado_como": "Rocatinlimab",
+  "ncit": "C184936",
+  "nombre_ncit": "Rocatinlimab",
+  "padres": [
+   "Anti-OX40 Monoclonal Antibody"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "antineoplastic antibody"
+ },
+ {
+  "id": "farmaco-romosozumab",
+  "nombre": "Romosozumab",
+  "buscado_como": "Romosozumab",
+  "ncit": "C152246",
+  "nombre_ncit": "Romosozumab",
+  "padres": [
+   "Agent Affecting Musculoskeletal System",
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-ropinirole",
+  "nombre": "Ropinirole",
+  "buscado_como": "Ropinirole",
+  "ncit": "C61931",
+  "nombre_ncit": "Ropinirole",
+  "padres": [
+   "Antiparkinsonian Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-rosiglitazone-extended-release",
+  "nombre": "Rosiglitazone Extended Release",
+  "buscado_como": "Rosiglitazone",
+  "ncit": "C62076",
+  "nombre_ncit": "Rosiglitazone",
+  "padres": [
+   "Differentiation Inducer",
+   "Thiazolidinedione Antidiabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-rosuvastatin",
+  "nombre": "Rosuvastatin",
+  "buscado_como": "Rosuvastatin",
+  "ncit": "C66523",
+  "nombre_ncit": "Rosuvastatin",
+  "padres": [
+   "HMG-CoA Reductase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-rotigotine",
+  "nombre": "Rotigotine",
+  "buscado_como": "Rotigotine",
+  "ncit": "C77566",
+  "nombre_ncit": "Rotigotine",
+  "padres": [
+   "Dopamine Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-rsd1235",
+  "nombre": "RSD1235",
+  "buscado_como": "vernakalant",
+  "ncit": "C152864",
+  "nombre_ncit": "Vernakalant",
+  "padres": [
+   "Antiarrhythmic Agent",
+   "Cation Channel Blocker"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-s47445",
+  "nombre": "S47445",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-safinamide",
+  "nombre": "Safinamide",
+  "buscado_como": "Safinamide",
+  "ncit": "C76771",
+  "nombre_ncit": "Safinamide",
+  "padres": [
+   "Monoamine Oxidase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-salbutamol-mdi",
+  "nombre": "Salbutamol MDI",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-salmeterol-250",
+  "nombre": "Salmeterol 250",
+  "buscado_como": "Salmeterol",
+  "ncit": "C29443",
+  "nombre_ncit": "Salmeterol",
+  "padres": [
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting respiratory system"
+ },
+ {
+  "id": "farmaco-salmeterol-500",
+  "nombre": "Salmeterol 500",
+  "buscado_como": "Salmeterol",
+  "ncit": "C29443",
+  "nombre_ncit": "Salmeterol",
+  "padres": [
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting respiratory system"
+ },
+ {
+  "id": "farmaco-salmeterol-inhalation-powder",
+  "nombre": "salmeterol Inhalation Powder",
+  "buscado_como": "salmeterol",
+  "ncit": "C29443",
+  "nombre_ncit": "Salmeterol",
+  "padres": [
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting respiratory system"
+ },
+ {
+  "id": "farmaco-sam531",
+  "nombre": "SAM-531",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-sar342434",
+  "nombre": "SAR342434",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-sar441344",
+  "nombre": "SAR441344",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-sar443122",
+  "nombre": "SAR443122",
+  "buscado_como": "SAR443122",
+  "ncit": "C177073",
+  "nombre_ncit": "Eclitasertib",
+  "padres": [
+   "Serine/Threonine Kinase Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-sarilumab-sar153191",
+  "nombre": "sarilumab SAR153191",
+  "buscado_como": "sarilumab",
+  "ncit": "C152302",
+  "nombre_ncit": "Sarilumab",
+  "padres": [
+   "Anti-IL-6R Monoclonal Antibody",
+   "Immunosuppressant"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-sbi087",
+  "nombre": "SBI-087",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-scni",
+  "nombre": "sCNI",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-seladelpar-5-10-mg",
+  "nombre": "Seladelpar 5-10 mg",
+  "buscado_como": "Seladelpar",
+  "ncit": "C167015",
+  "nombre_ncit": "Seladelpar",
+  "padres": [
+   "Peroxisome Proliferator-Activated Receptor Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-seltorexant",
+  "nombre": "Seltorexant",
+  "buscado_como": "Seltorexant",
+  "ncit": "C152326",
+  "nombre_ncit": "Seltorexant",
+  "padres": [
+   "Antidepressant Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-semaglutide",
+  "nombre": "Semaglutide",
+  "buscado_como": "Semaglutide",
+  "ncit": "C152328",
+  "nombre_ncit": "Semaglutide",
+  "padres": [
+   "GLP-1 Mimetic"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-sertraline",
+  "nombre": "Sertraline",
+  "buscado_como": "Sertraline",
+  "ncit": "C61939",
+  "nombre_ncit": "Sertraline",
+  "padres": [
+   "Antidepressant Agent",
+   "Selective Serotonin Reuptake Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-sevoflurane-desflurane",
+  "nombre": "Sevoflurane-Desflurane",
+  "buscado_como": "Sevoflurane",
+  "ncit": "C47717",
+  "nombre_ncit": "Sevoflurane",
+  "padres": [
+   "Anesthetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-short-acting-beta-agonists",
+  "nombre": "Short-Acting Beta Agonists",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-simvastatin",
+  "nombre": "Simvastatin",
+  "buscado_como": "Simvastatin",
+  "ncit": "C29454",
+  "nombre_ncit": "Simvastatin",
+  "padres": [
+   "HMG-CoA Reductase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-skp-fluticasone",
+  "nombre": "SKP-Fluticasone",
+  "buscado_como": "Fluticasone",
+  "ncit": "C61767",
+  "nombre_ncit": "Fluticasone",
+  "padres": [
+   "Therapeutic Glucocorticoid"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-sobetirome",
+  "nombre": "Sobetirome",
+  "buscado_como": "Sobetirome",
+  "ncit": "C81539",
+  "nombre_ncit": "Sobetirome",
+  "padres": [
+   "Antilipidemic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-spd476",
+  "nombre": "SPD476",
+  "buscado_como": "Lialda",
+  "ncit": "C29249",
+  "nombre_ncit": "Mesalamine",
+  "padres": [
+   "Nonsteroidal Antiinflammatory Drug"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-spy001",
+  "nombre": "SPY001",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-spy002",
+  "nombre": "SPY002",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-spy003",
+  "nombre": "SPY003",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ssr125543",
+  "nombre": "SSR125543",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ssr149415",
+  "nombre": "SSR149415",
+  "buscado_como": "SSR149415",
+  "ncit": "C132046",
+  "nombre_ncit": "Nelivaptan",
+  "padres": [
+   "Vasopressin Antagonist"
+  ],
+  "clase": "Terapia hormonal",
+  "por_ancestro": "hormone therapy agent"
+ },
+ {
+  "id": "farmaco-ssr411298",
+  "nombre": "SSR411298",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ssri",
+  "nombre": "SSRI",
+  "buscado_como": "SSRI",
+  "ncit": "C94725",
+  "nombre_ncit": "Selective Serotonin Reuptake Inhibitor",
+  "padres": [
+   "Agent Affecting Nervous System"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-ssz",
+  "nombre": "SSZ",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-stavudine",
+  "nombre": "Stavudine",
+  "buscado_como": "Stavudine",
+  "ncit": "C1428",
+  "nombre_ncit": "Stavudine",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-sun11031-20-g",
+  "nombre": "SUN11031 20 μg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-sun11031-40-g",
+  "nombre": "SUN11031 40 μg",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-symbicort-pmdi",
+  "nombre": "Symbicort pMDI",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-syr472",
+  "nombre": "SYR-472",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-tak442",
+  "nombre": "TAK-442",
+  "buscado_como": "TAK-442",
+  "ncit": "C96541",
+  "nombre_ncit": "Letaxaban",
+  "padres": [
+   "Thrombolytic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-tasocitinib",
+  "nombre": "Tasocitinib",
+  "buscado_como": "Tasocitinib",
+  "ncit": "C95800",
+  "nombre_ncit": "Tofacitinib",
+  "padres": [
+   "JAK Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-tc5214",
+  "nombre": "TC-5214",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-technosphere-insulin-metformin",
+  "nombre": "Technosphere Insulin & Metformin",
+  "buscado_como": "Metformin",
+  "ncit": "C61612",
+  "nombre_ncit": "Metformin",
+  "padres": [
+   "Biguanide Antidiabetic Agent",
+   "Chemopreventive Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-technosphere-insulin-inhalation-powder",
+  "nombre": "Technosphere® Insulin Inhalation Powder",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-telitacicept",
+  "nombre": "Telitacicept",
+  "buscado_como": "Telitacicept",
+  "ncit": "C166498",
+  "nombre_ncit": "Telitacicept",
+  "padres": [
+   "Immunosuppressant",
+   "Therapeutic Fc Fusion Protein"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-telmisartan",
+  "nombre": "Telmisartan",
+  "buscado_como": "Telmisartan",
+  "ncit": "C47746",
+  "nombre_ncit": "Telmisartan",
+  "padres": [
+   "Angiotensin II Receptor Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-tenofovi-emtricitabine",
+  "nombre": "Tenofovi-Emtricitabine tablet",
+  "buscado_como": "Emtricitabine",
+  "ncit": "C47509",
+  "nombre_ncit": "Emtricitabine",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-tenofovir-disoproxil",
+  "nombre": "Tenofovir Disoproxil Fumarate",
+  "buscado_como": "Tenofovir Disoproxil Fumarate",
+  "ncit": "C47747",
+  "nombre_ncit": "Tenofovir Disoproxil Fumarate",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-tetravalent-influenza-vaccine-developed-by-sinovac-biotech-co",
+  "nombre": "Tetravalent influenza vaccine developed by Sinovac Biotech Co.",
+  "buscado_como": "vaccine",
+  "ncit": "C923",
+  "nombre_ncit": "Vaccine",
+  "padres": [
+   "Biological Agent",
+   "Immunotherapeutic Agent"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-thiazolidinedione",
+  "nombre": "Thiazolidinedione",
+  "buscado_como": "Thiazolidinedione",
+  "ncit": "C98241",
+  "nombre_ncit": "Thiazolidinedione Antidiabetic Agent",
+  "padres": [
+   "Anti-diabetic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting digestive system or metabolism"
+ },
+ {
+  "id": "farmaco-tigecycline",
+  "nombre": "Tigecycline",
+  "buscado_como": "Tigecycline",
+  "ncit": "C72865",
+  "nombre_ncit": "Tigecycline",
+  "padres": [
+   "Antibiotic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-tiotropium-respimat-high-dose",
+  "nombre": "tiotropium Respimat high dose",
+  "buscado_como": "tiotropium",
+  "ncit": "C76004",
+  "nombre_ncit": "Tiotropium",
+  "padres": [
+   "Antimuscarinic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-tiotropium-respimat-low-dose",
+  "nombre": "tiotropium Respimat low dose",
+  "buscado_como": "tiotropium",
+  "ncit": "C76004",
+  "nombre_ncit": "Tiotropium",
+  "padres": [
+   "Antimuscarinic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-tmc125",
+  "nombre": "TMC125",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-tmc278",
+  "nombre": "TMC278",
+  "buscado_como": "TMC278",
+  "ncit": "C76929",
+  "nombre_ncit": "Rilpivirine",
+  "padres": [
+   "Non-nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-tnf-kinoid",
+  "nombre": "TNF kinoid",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-tnfa-kinoid",
+  "nombre": "TNFa Kinoid",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-tobramycin-solution-for-inhalation",
+  "nombre": "Tobramycin Solution for Inhalation",
+  "buscado_como": "Tobramycin",
+  "ncit": "C62082",
+  "nombre_ncit": "Tobramycin",
+  "padres": [
+   "Aminoglycoside Antibiotic"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "aminoglycoside antibiotic"
+ },
+ {
+  "id": "farmaco-tofimilast",
+  "nombre": "Tofimilast",
+  "buscado_como": "Tofimilast",
+  "ncit": "C76891",
+  "nombre_ncit": "Tofimilast",
+  "padres": [
+   "Phosphodiesterase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "drug, food, chemical or biomedical material"
+ },
+ {
+  "id": "farmaco-topical-25-sodium-metabisulfite-in-pediatric-cold-cream",
+  "nombre": "Topical 25% sodium metabisulfite in pediatric cold cream",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-tozadenant",
+  "nombre": "Tozadenant",
+  "buscado_como": "Tozadenant",
+  "ncit": "C152704",
+  "nombre_ncit": "Tozadenant",
+  "padres": [
+   "Antiparkinsonian Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-tozorakimab-1",
+  "nombre": "Tozorakimab 1",
+  "buscado_como": "Tozorakimab",
+  "ncit": "C179129",
+  "nombre_ncit": "Tozorakimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-tozorakimab-2",
+  "nombre": "Tozorakimab 2",
+  "buscado_como": "Tozorakimab",
+  "ncit": "C179129",
+  "nombre_ncit": "Tozorakimab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-tqj230",
+  "nombre": "TQJ230",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-trace-lithium-dose",
+  "nombre": "Trace lithium dose",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-tralokinumab",
+  "nombre": "Tralokinumab",
+  "buscado_como": "Tralokinumab",
+  "ncit": "C152710",
+  "nombre_ncit": "Tralokinumab",
+  "padres": [
+   "Monoclonal Antibody"
+  ],
+  "clase": "Otra inmunoterapia",
+  "por_ancestro": "immunotherapeutic agent"
+ },
+ {
+  "id": "farmaco-tranexamic-acid",
+  "nombre": "Tranexamic Acid",
+  "buscado_como": "Tranexamic Acid",
+  "ncit": "C47765",
+  "nombre_ncit": "Tranexamic Acid",
+  "padres": [
+   "Hemostatic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-trc101",
+  "nombre": "TRC101",
+  "buscado_como": "Veverimer",
+  "ncit": "C171662",
+  "nombre_ncit": "Veverimer",
+  "padres": [
+   "Agent Affecting Blood or Body Fluid"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-trimetazidine",
+  "nombre": "Trimetazidine",
+  "buscado_como": "Trimetazidine",
+  "ncit": "C76590",
+  "nombre_ncit": "Trimetazidine",
+  "padres": [
+   "Cardiotonic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-trivalent-split-influenza-vaccine",
+  "nombre": "Trivalent split influenza vaccine",
+  "buscado_como": "Agriflu",
+  "ncit": "C2643",
+  "nombre_ncit": "Trivalent Influenza Vaccine",
+  "padres": [
+   "Influenza Vaccine",
+   "Polyvalent Vaccine"
+  ],
+  "clase": "Terapia celular, génica o vacuna",
+  "por_ancestro": "influenza vaccine"
+ },
+ {
+  "id": "farmaco-trospium-chloride",
+  "nombre": "Trospium Chloride Capsule",
+  "buscado_como": "Trospium",
+  "ncit": "C78080",
+  "nombre_ncit": "Trospium",
+  "padres": [
+   "Antimuscarinic Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-tuberculosis-window-prophylaxis",
+  "nombre": "Tuberculosis window prophylaxis",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-two-nrtis",
+  "nombre": "Two NRTIs",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ucmsc",
+  "nombre": "ucMSC",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-uk500-001",
+  "nombre": "UK-500,001",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-ulo",
+  "nombre": "ULO",
+  "buscado_como": "ulonivirine",
+  "ncit": "C190365",
+  "nombre_ncit": "Ulonivirine",
+  "padres": [
+   "Non-nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-us-licensed-humira",
+  "nombre": "US-licensed Humira®",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-v116",
+  "nombre": "V116",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-vadadustat",
+  "nombre": "Vadadustat",
+  "buscado_como": "Vadadustat",
+  "ncit": "C152811",
+  "nombre_ncit": "Vadadustat",
+  "padres": [
+   "Hypoxia-inducible Factor Prolyl Hydroxylase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting blood or body fluid"
+ },
+ {
+  "id": "farmaco-vasoconstrictors",
+  "nombre": "Vasoconstrictors",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-vasopressor-test",
+  "nombre": "Vasopressor test",
+  "buscado_como": "Vasopressor",
+  "ncit": "C126567",
+  "nombre_ncit": "Vasopressor",
+  "padres": [
+   "Agent Affecting Cardiovascular System"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ },
+ {
+  "id": "farmaco-vi-inhalation-powder-62-5",
+  "nombre": "VI Inhalation Powder 62.5",
+  "buscado_como": null,
+  "clase": "Sin clasificar"
+ },
+ {
+  "id": "farmaco-vilanterol-200",
+  "nombre": "Vilanterol 200",
+  "buscado_como": "Vilanterol",
+  "ncit": "C152875",
+  "nombre_ncit": "Vilanterol",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-vilanterol-inhalation-powder",
+  "nombre": "Vilanterol Inhalation Powder",
+  "buscado_como": "Vilanterol",
+  "ncit": "C152875",
+  "nombre_ncit": "Vilanterol",
+  "padres": [
+   "Beta-Adrenergic Agonist",
+   "Bronchodilator"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "adrenergic agent"
+ },
+ {
+  "id": "farmaco-vitamin-d3",
+  "nombre": "Vitamin D3",
+  "buscado_como": "Vitamin D3",
+  "ncit": "C68312",
+  "nombre_ncit": "Vitamin D3",
+  "padres": [
+   "Retired Concept 2007"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "retired concept"
+ },
+ {
+  "id": "farmaco-volinanserin",
+  "nombre": "Volinanserin",
+  "buscado_como": "Volinanserin",
+  "ncit": "C95220",
+  "nombre_ncit": "Volinanserin",
+  "padres": [
+   "Serotonin Antagonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-weekly-rifapentine",
+  "nombre": "Weekly rifapentine",
+  "buscado_como": "rifapentine",
+  "ncit": "C66516",
+  "nombre_ncit": "Rifapentine",
+  "padres": [
+   "Antitubercular Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-xanomeline",
+  "nombre": "Xanomeline",
+  "buscado_como": "Xanomeline",
+  "ncit": "C152926",
+  "nombre_ncit": "Xanomeline",
+  "padres": [
+   "Cholinergic Agonist"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting nervous system"
+ },
+ {
+  "id": "farmaco-zasocitinib",
+  "nombre": "Zasocitinib",
+  "buscado_como": "Zasocitinib",
+  "ncit": "C199133",
+  "nombre_ncit": "Zasocitinib",
+  "padres": [
+   "TYK2 Inhibitor"
+  ],
+  "clase": "Terapia dirigida",
+  "por_ancestro": "protein kinase inhibitor"
+ },
+ {
+  "id": "farmaco-zidovudine",
+  "nombre": "Zidovudine",
+  "buscado_como": "Zidovudine",
+  "ncit": "C947",
+  "nombre_ncit": "Zidovudine",
+  "padres": [
+   "Nucleoside Reverse Transcriptase Inhibitor"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "anti-infective agent"
+ },
+ {
+  "id": "farmaco-zilebesiran",
+  "nombre": "Zilebesiran",
+  "buscado_como": "Zilebesiran",
+  "ncit": "C179136",
+  "nombre_ncit": "Zilebesiran",
+  "padres": [
+   "Antihypertensive Agent"
+  ],
+  "clase": "Otros agentes",
+  "por_ancestro": "agent affecting cardiovascular system"
+ }
+]

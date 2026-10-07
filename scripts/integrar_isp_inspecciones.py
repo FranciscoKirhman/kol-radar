@@ -300,9 +300,12 @@ def investigador(nombre, f, iid, nct, ensayo, ent, vin, por_id, registro, stats)
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--pais", default="CL")
     ap.add_argument("--xls", help="planilla del ISP ya descargada")
     ap.add_argument("--codigos", help="JSON de códigos de ClinicalTrials.gov de una corrida anterior")
     a = ap.parse_args()
+    import pipeline_pais
+    pipeline_pais.exigir_fuente_chilena(a.pais, "ISP")
     registro = exclusiones.Registro()
 
     if a.xls:

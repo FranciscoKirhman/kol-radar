@@ -100,8 +100,11 @@ ORCID = re.compile(r"\d{4}-\d{4}-\d{4}-\d{3}[\dX]")
 def tokens(nombre):
     """"Dra. Ana  Pérez-Soto" → ["ana", "perez", "soto"]."""
     s = unicodedata.normalize("NFD", nombre or "")
-    s = "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
-    return [t for t in re.split(r"[^a-z0-9]+", s) if t and t not in TRATAMIENTOS]
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn").casefold()
+    # \w conserva letras y números de otros alfabetos. Para nombres latinos,
+    # el resultado sigue siendo el mismo que el separador ASCII previo.
+    return [t for t in re.split(r"[^\w]+|_+", s, flags=re.UNICODE)
+            if t and t not in TRATAMIENTOS]
 
 
 def formas_nombre(nombre):
@@ -112,7 +115,8 @@ def formas_nombre(nombre):
     letra, también ordenadas: las iniciales ("P.") no alcanzan para decir nada de nadie.
     """
     t = tokens(nombre)
-    completa = " ".join(sorted(t)) if len(t) >= 2 else None
+    completa = " ".join(sorted(t)) if len(t) >= 2 or (len(t) == 1 and
+        len(t[0]) >= 2 and any(ord(c) > 127 for c in t[0])) else None
     largas = sorted(set(x for x in t if len(x) > 1))
     pares = ["%s|%s" % (largas[i], largas[j]) for i in range(len(largas)) for j in range(i + 1, len(largas))]
     return completa, pares
@@ -317,6 +321,14 @@ def aplicar(base, registro=None):
 
 def guardar_muestra(base, ruta=MUESTRA, registro=None):
     """La única forma en que un script escribe la muestra: primero aplica las exclusiones."""
+    import paises
+    # La comprobación ocurre ANTES de abrir el archivo. Si falla, el JSON anterior queda intacto.
+    destino = os.path.realpath(ruta)
+    raiz = os.path.realpath(RAIZ) + os.sep
+    if destino.startswith(raiz):
+        errores = paises.comprobar_publicacion(base)
+        if errores:
+            raise ValueError("Publicación bloqueada por país: " + "; ".join(errores[:8]))
     quitadas, _ = aplicar(base, registro)
     if quitadas:
         print("exclusiones: %d ficha(s) excluida(s) no se escriben." % len(quitadas), file=sys.stderr)

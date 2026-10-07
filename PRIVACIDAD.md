@@ -12,6 +12,14 @@ sobre tus datos: franckirhman@gmail.com.
 
 ## Qué datos hay y de dónde salen
 
+El mapa mundial muestra ensayos y textos de sedes institucionales declarados por ClinicalTrials.gov.
+Los países todavía no aprobados en la configuración legal no incorporan fichas de personas,
+investigadores ni contactos. Una sede textual no equivale a una institución canónica verificada.
+Los países sin recolección terminada se identifican como pendientes, no como países sin actividad.
+Al elegir un país en el mapa, tu navegador puede pedir más estudios directamente a
+ClinicalTrials.gov. Esa petición comunica a ese sitio tu dirección IP y el país
+consultado; KOL Radar no envía el nombre de un profesional ni tu búsqueda local.
+
 KOL Radar muestra **información profesional** de profesionales de la salud en Chile: nombre tal como
 aparece en la fuente, afiliación institucional, participación en ensayos clínicos (incluido el rol de
 investigador principal que declaran ClinicalTrials.gov o el Instituto de Salud Pública), autoría de

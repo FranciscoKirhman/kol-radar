@@ -18,13 +18,16 @@ Simula dos escenarios, porque tienen consecuencias muy distintas:
 Escribe `simulacion.json` en el directorio de preintegración. No modifica
 `data/sample/perfiles-muestra.json`.
 """
+import argparse
 import collections
 import copy
+import datetime
 import json
 import os
 import subprocess
 import sys
 import tempfile
+import pipeline_pais
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRE = os.path.join(RAIZ, "data", "pending", "preintegracion-clinicaltrials-2026-09-09")
@@ -60,6 +63,17 @@ def fase_legible(fases):
 
 
 def main():
+    global PRE, MUESTRA
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--pais", default="CL")
+    ap.add_argument("--preintegracion")
+    ap.add_argument("--crudo", help="Descarga cruda usada para simular exactamente la integración")
+    ap.add_argument("--muestra", default=MUESTRA)
+    a = ap.parse_args()
+    config = pipeline_pais.configurar(a.pais)
+    fecha = os.environ.get("KOL_FECHA") or datetime.date.today().isoformat()
+    PRE = pipeline_pais.validar_destino(a.preintegracion or PRE, config)
+    MUESTRA = a.muestra
     base = json.load(open(MUESTRA, encoding="utf-8"))
     cand = json.load(open(os.path.join(PRE, "ensayos_candidatos.json"), encoding="utf-8"))
     inst_c = json.load(open(os.path.join(PRE, "instituciones_candidatas.json"), encoding="utf-8"))
@@ -86,7 +100,7 @@ def main():
                         "hecho": ("Aparece como sede chilena de al menos un ensayo en "
                                   "ClinicalTrials.gov, escrita en la fuente como \"%s\"." % alias),
                         "fuente_url": "https://clinicaltrials.gov/study/%s" % cand[0]["nct"],
-                        "fecha": "2026-09-09", "confianza": "pendiente"}],
+                        "fecha": fecha, "confianza": "pendiente"}],
         })
 
     nuevos_ensayos = 0
@@ -114,6 +128,26 @@ def main():
          "ensayos_nuevos": nuevos_ensayos,
          "instituciones_nuevas": sum(1 for i in inst_c if i["id_canonico"] not in
                                      {x["id"] for x in base["entidades"]})}
+    if a.crudo:
+        # La preintegración admite solo sedes resueltas; el integrador también
+        # conserva ensayos con sedes pendientes. Usar su salida real evita
+        # subcontar el grafo y las áreas en la simulación.
+        with tempfile.TemporaryDirectory() as tmp:
+            temporal = os.path.join(tmp, "integracion.json")
+            cmd = [sys.executable, os.path.join(RAIZ, "scripts", "integrar_beta.py"),
+                   "--pais", config["iso2"], "--crudo", a.crudo,
+                   "--preintegracion", PRE, "--muestra", MUESTRA, "--salida", temporal]
+            corrida = subprocess.run(cmd, capture_output=True, text=True)
+            if corrida.returncode:
+                raise SystemExit("No se pudo simular la integración:\n" + corrida.stderr)
+            integrado = json.load(open(temporal, encoding="utf-8"))
+            estadisticas = json.loads(corrida.stdout)
+        ent, vin = integrado["entidades"], integrado["vinculos"]
+        A = {"entidades": len(ent), "vinculos": len(vin),
+             "ensayos_nuevos": estadisticas["ensayos_nuevos"],
+             "instituciones_nuevas": estadisticas["instituciones_nuevas"],
+             "areas_taxonomia": estadisticas.get("por_area_taxonomia", {}),
+             "ensayos_sin_clasificar": estadisticas.get("ensayos_nuevos_sin_clasificar", 0)}
 
     antes = puntajes(base["entidades"], base["vinculos"])
     desp_a = puntajes(ent, vin)
@@ -153,7 +187,7 @@ def main():
                 "hecho": ("Figura como %s del sitio chileno en ClinicalTrials.gov."
                           % (p["rol_declarado_fuente"] or "contacto")),
                 "fase": None, "fuente_url": p["fuente_url"],
-                "fecha": "2026-09-09", "confianza": "pendiente"})
+                "fecha": fecha, "confianza": "pendiente"})
             vinB.append({"origen": pid, "destino": p["nct"].lower(),
                          "tipo": "investigador de sitio"})
 
@@ -189,7 +223,7 @@ def main():
     base_topes = topes(antes, base["entidades"])
 
     salida = {
-        "fecha": "2026-09-09",
+        "fecha": fecha,
         "advertencia": ("Simulación. No se modificó data/sample/perfiles-muestra.json. "
                         "El escenario B no está autorizado: requiere revisión humana por persona."),
         "actual": {"entidades": len(base["entidades"]), "vinculos": len(base["vinculos"]),
