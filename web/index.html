@@ -1725,12 +1725,13 @@
             fuente_url: url, fecha: r.source_date, confianza: "pendiente" }] };
         trials[tid] = t; entities.push(t);
       }
-      if (!r.facility_text) return;
-      var key = [r.facility_text, r.city || "", r.state || ""].join("\u001f");
+      var safeFacility = sanearSedeMundo(r.facility_text, meta.iso2 === "CL").facility_text;
+      if (!safeFacility) return;
+      var key = [safeFacility, r.city || "", r.state || ""].join("\u001f");
       var s = sites[key];
       if (!s) {
         s = { id: "world-" + meta.iso2 + "-site-" + Object.keys(sites).length,
-          nombre: r.facility_text, tipo: "institucion", ciudad: r.city || null,
+          nombre: safeFacility, tipo: "institucion", ciudad: r.city || null,
           region: r.state || "Sin estado declarado", subtitulo: "Sede textual de ClinicalTrials.gov",
           areas: labels.slice(), area: labels[0], hechos: [] };
         sites[key] = s; entities.push(s);
@@ -1838,10 +1839,51 @@
     }).catch(function (err) { document.getElementById("geo-global-status").textContent = "No se pudo cargar el mapa: " + err.message; });
   }
 
+  var MARCADORES_SEDE_MUNDO = ["hospital", "medical center", "medical centre", "university", "institute", "research", "cancer center", "cancer centre", "health system", "healthcare", "health care", "medical group", "health center", "health centre", "foundation", "trust", "hospice", "polyclinic", "dispensary", "universitätsklinikum", "krankenhaus", "klinik", "klinikum", "centre hospitalier", "centro medico", "centro médico", "hospital universitario", "hospital universitário", "instituto", "centro hospitalar"];
+  var SEDE_HONORIFIC = "(?:^|[^a-z])(?:drs?|dra|dras|doctor|doctora|docteur|doctores|prof|professor|professeur|dott|dottore|doctoresse)(?:[.]|\\b)";
+  var SEDE_PRIVATE_PRACTICE = "\\b(?:private healthcare|private practice|private office|consultorio|cabinet|praxis)\\b|['’]s\\s+(?:clinic|practice|office)\\b";
+  var SEDE_STRONG_INSTITUTION = "\\b(?:hospital|hospitals|hospitalario|hospitalier|h[oô]pital|university|universidad|universidade|universit[aä]t|universitas|krankenhaus|klinikum|spitalul|ospedale|foundation|fundaci[oó]n|funda[cç][aã]o|institute|instituto|medical cent(?:er|re)|centro m[eé]dico)\\b";
+  var SEDE_EMAIL = "[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:\\.[a-z0-9-]+)+";
+  var SEDE_PHONE_LABEL = "\\b(?:tel(?:ephone|efono|éfono)?|phone|fax|mobile|m[oó]vil|whatsapp)(?:\\s*/\\s*(?:tel|fax))?\\s*[:.]?\\s*\\+?\\d[\\d ()./-]{5,}\\d(?:\\s*(?:ext[.]?|x)\\s*\\d+)?";
+  var SEDE_PHONE = "\\+?\\d[\\d ()./-]{5,}\\d(?:\\s*(?:ext[.]?|x)\\s*\\d+)?";
+  var SEDE_PERSON_SUFFIX = "[,;|/_]\\s*(?=(?:drs?|dra|doctor|doctora|docteur|prof|dott)[.\\s])|\\s+-\\s+(?=(?:drs?|dra|doctor|doctora|docteur|prof|dott)[.\\s])";
+
   function sedeMundoPermitida(v) {
     var s = (typeof v === "string" ? v.replace(/\s+/g, " ").trim() : "").toLowerCase();
-    return !!s && /hospital|clinic|medical cent|university|institute|research|health system|healthcare|health care|health cent|foundation|trust|hospice|polyclinic|dispensary|krankenhaus|klinik|klinikum|centre hospitalier|centro m[eé]dico|centro hospitalar|instituto|cl[ií]nica/.test(s);
+    if (!s || s.indexOf("investigative site") !== -1 || s === "research site" || s === "study site") return false;
+    return MARCADORES_SEDE_MUNDO.some(function (marker) { return s.indexOf(marker) !== -1; });
   }
+
+  // Un apellido sin honorífico no prueba una identidad personal (p. ej. Mayo Clinic).
+  // Hospitales, universidades, fundaciones e institutos nacionales admiten epónimos.
+  function sanearSedeMundo(v, personasPermitidas) {
+    var original = typeof v === "string" ? v.replace(/\s+/g, " ").trim() : "";
+    if (!original) return { facility_text: null, site_text_redacted: false };
+    var text = original.replace(new RegExp(SEDE_EMAIL, "gi"), "")
+      .replace(new RegExp(SEDE_PHONE_LABEL, "gi"), "")
+      .replace(new RegExp(SEDE_PHONE, "g"), function (phone) {
+        return (phone.match(/\d/g) || []).length >= 10 ? "" : phone;
+      }).replace(/\b(?:e-?mail|correo(?: electr[oó]nico)?)\s*:?\s*(?=$|[,;|])/gi, "")
+      .replace(/\(\s*\)/g, "");
+    if (text !== original) text = text.replace(/\s+/g, " ").trim().replace(/^[ ,;|/-]+|[ ,;|/-]+$/g, "");
+    if (!personasPermitidas) {
+      var split = new RegExp(SEDE_PERSON_SUFFIX, "i").exec(text);
+      if (split) {
+        var before = text.slice(0, split.index), after = text.slice(split.index + split[0].length);
+        if (sedeMundoPermitida(before) && !new RegExp(SEDE_STRONG_INSTITUTION, "i").test(after) &&
+            !(new RegExp(SEDE_STRONG_INSTITUTION, "i").test(before) && text.indexOf(" - ") !== -1)) {
+          text = before.replace(/^[ ,;|/_-]+|[ ,;|/_-]+$/g, "");
+        }
+      }
+      var strong = new RegExp(SEDE_STRONG_INSTITUTION, "i").test(text);
+      var personal = new RegExp(SEDE_HONORIFIC, "i").test(text) ||
+        (new RegExp(SEDE_PRIVATE_PRACTICE, "i").test(text) && !/^st[.]?\s+/i.test(text)) ||
+        /\b(?:m[.]?d[.]?|ph[.]?d[.]?)\s*$/i.test(text);
+      if (!sedeMundoPermitida(text) || (personal && !strong)) text = "";
+    }
+    return { facility_text: text || null, site_text_redacted: text !== original };
+  }
+  // FIN SANEAMIENTO MUNDO
 
   function registrosMundoVivos(study) {
     var ps = study.protocolSection || {}, ident = ps.identificationModule || {};
@@ -1858,9 +1900,9 @@
     });
     ((ps.contactsLocationsModule || {}).locations || []).forEach(function (loc) {
       if (loc.country !== label) return;
-      var facility = loc.facility || null, redact = facility && !sedeMundoPermitida(facility);
+      var safeSite = sanearSedeMundo(loc.facility, PAIS_ACTUAL === "CL");
       out.push({ country_iso2: PAIS_ACTUAL, country_name: label, area_ids: ids,
-        facility_text: redact ? null : facility, site_text_redacted: !!redact,
+        facility_text: safeSite.facility_text, site_text_redacted: safeSite.site_text_redacted,
         city: loc.city || null, state: loc.state || null, nct_id: nct,
         title: ident.briefTitle || ident.officialTitle || nct, conditions: conditions,
         status: (ps.statusModule || {}).overallStatus || null,

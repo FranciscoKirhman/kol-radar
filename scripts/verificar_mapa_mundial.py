@@ -6,7 +6,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-from recolectar_mundo_ctgov import institution_label_allowed
+from recolectar_mundo_ctgov import sanitize_facility
 
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "data" / "publicado" / "mundo"
@@ -61,8 +61,9 @@ def verificar():
             assert r["source_url"] == "https://clinicaltrials.gov/study/" + nct
             assert r["confidence"] == "pendiente"
             assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["source_date"])
-            if iso != "CL" and r.get("facility_text"):
-                assert institution_label_allowed(r["facility_text"]), (iso, nct, "sede no institucional")
+            safe = sanitize_facility(r.get("facility_text"), iso == "CL")
+            assert safe["facility_text"] == r.get("facility_text"), (iso, nct, "sede con nombre personal o contacto sin sanear")
+            assert isinstance(r.get("site_text_redacted"), bool), (iso, nct, "redacción sin indicador")
             ensayos.add(nct)
             if r.get("facility_text"):
                 centros.add((r["facility_text"], r.get("city"), r.get("state")))
@@ -72,7 +73,7 @@ def verificar():
         if pais["estado"] == "completo":
             assert len(ensayos) == total, (iso, "completo sin todos los ensayos")
     assert vistos >= set(fuente), "Faltan países del facet en el índice"
-    print("OK: %d países/territorios con fuente, %d con detalle; sin cruces ni campos de contactos/investigadores." %
+    print("OK: %d países/territorios con fuente, %d con detalle; sin cruces, campos personales ni etiquetas pendientes de saneamiento." %
           (len(fuente), detallados))
 
 

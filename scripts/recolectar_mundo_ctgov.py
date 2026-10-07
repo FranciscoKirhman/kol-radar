@@ -43,13 +43,13 @@ ALIASES = {
     "Seychelles": "SC",
 }
 MARKERS = (
-    "hospital", "clinic", "medical center", "medical centre", "university",
+    "hospital", "medical center", "medical centre", "university",
     "institute", "research", "cancer center", "cancer centre", "health system",
     "healthcare", "health care", "medical group", "health center", "health centre",
     "foundation", "trust", "hospice", "polyclinic", "dispensary",
     "universitätsklinikum", "krankenhaus", "klinik", "klinikum",
     "centre hospitalier", "centro medico", "centro médico", "hospital universitario",
-    "hospital universitário", "instituto", "clínica", "clinica", "centro hospitalar",
+    "hospital universitário", "instituto", "centro hospitalar",
 )
 
 
@@ -64,11 +64,58 @@ def clean(value):
     return re.sub(r"\s+", " ", value).strip() if isinstance(value, str) else None
 
 
+# Honoríficos y práctica privada son señales explícitas. No se infiere identidad
+# de un apellido sin título (p. ej. Mayo Clinic); ese caso requiere revisión.
+HONORIFIC = r"(?:^|[^a-z])(?:drs?|dra|dras|doctor|doctora|docteur|doctores|prof|professor|professeur|dott|dottore|doctoresse)(?:[.]|\b)"
+PRIVATE_PRACTICE = r"\b(?:private healthcare|private practice|private office|consultorio|cabinet|praxis)\b|['’]s\s+(?:clinic|practice|office)\b"
+STRONG_INSTITUTION = r"\b(?:hospital|hospitals|hospitalario|hospitalier|h[oô]pital|university|universidad|universidade|universit[aä]t|universitas|krankenhaus|klinikum|spitalul|ospedale|foundation|fundaci[oó]n|funda[cç][aã]o|institute|instituto|medical cent(?:er|re)|centro m[eé]dico)\b"
+EMAIL = r"[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)+"
+PHONE_LABEL = r"\b(?:tel(?:ephone|efono|éfono)?|phone|fax|mobile|m[oó]vil|whatsapp)(?:\s*/\s*(?:tel|fax))?\s*[:.]?\s*\+?\d[\d ()./-]{5,}\d(?:\s*(?:ext[.]?|x)\s*\d+)?"
+PHONE = r"\+?\d[\d ()./-]{5,}\d(?:\s*(?:ext[.]?|x)\s*\d+)?"
+PERSON_SUFFIX = r"[,;|/_]\s*(?=(?:drs?|dra|doctor|doctora|docteur|prof|dott)[.\s])|\s+-\s+(?=(?:drs?|dra|doctor|doctora|docteur|prof|dott)[.\s])"
+
+
 def institution_label_allowed(value):
-    value = (clean(value) or "").casefold()
+    """Reconoce texto institucional; no constituye verificación de identidad."""
+    value = (clean(value) or "").lower()
     if not value or "investigative site" in value or value in ("research site", "study site"):
         return False
     return any(marker in value for marker in MARKERS)
+
+
+def sanitize_facility(value, persons_allowed=False):
+    """Quita contactos; omite nombres médicos en países no aprobados.
+
+    Conserva epónimos con marcador institucional fuerte. Un honorífico en una
+    clínica privada no queda autorizado por contener «clinic» o «research».
+    El original nunca se devuelve ni se guarda como nota de redacción.
+    """
+    original = clean(value)
+    if not original:
+        return {"facility_text": None, "site_text_redacted": False}
+    text = re.sub(EMAIL, "", original, flags=re.I)
+    text = re.sub(PHONE_LABEL, "", text, flags=re.I)
+    # Sin etiqueta, exige al menos diez dígitos; evita borrar códigos de sede.
+    text = re.sub(PHONE, lambda m: "" if len(re.findall(r"\d", m.group())) >= 10 else m.group(), text)
+    text = re.sub(r"\b(?:e-?mail|correo(?: electr[oó]nico)?)\s*:?\s*(?=$|[,;|])", "", text, flags=re.I)
+    text = re.sub(r"\(\s*\)", "", text)
+    text = (clean(text) or "").strip(" ,;|/-") if text != original else original
+    if not persons_allowed:
+        # «Hospital X, Dr. Y» conserva Hospital X; «Hospital Dr. X» es epónimo.
+        parts = re.split(PERSON_SUFFIX, text, maxsplit=1, flags=re.I)
+        if (len(parts) > 1 and institution_label_allowed(parts[0]) and
+                not re.search(STRONG_INSTITUTION, parts[1], re.I) and
+                not (re.search(STRONG_INSTITUTION, parts[0], re.I) and " - " in text)):
+            text = parts[0].strip(" ,;|/-_")
+        strong = bool(re.search(STRONG_INSTITUTION, text, re.I))
+        personal = bool(re.search(HONORIFIC, text, re.I) or
+                        (re.search(PRIVATE_PRACTICE, text, re.I) and
+                         not re.search(r"^st[.]?\s+", text, re.I)) or
+                        re.search(r"\b(?:m[.]?d[.]?|ph[.]?d[.]?)\s*$", text, re.I))
+        if not institution_label_allowed(text) or (personal and not strong):
+            text = ""
+    return {"facility_text": text or None,
+            "site_text_redacted": text != original}
 
 
 def discover():
@@ -164,10 +211,9 @@ def site_rows(study, iso, label, today):
     for loc in (ps.get("contactsLocationsModule") or {}).get("locations") or []:
         if clean(loc.get("country")) != clean(label):
             continue
-        facility = clean(loc.get("facility"))
-        redact = bool(iso != "CL" and facility and not institution_label_allowed(facility))
+        safe_site = sanitize_facility(loc.get("facility"), iso == "CL")
         out.append({"country_iso2": iso, "country_name": label, "area_ids": area_ids,
-                    "facility_text": None if redact else facility, "site_text_redacted": redact,
+                    **safe_site,
                     "city": clean(loc.get("city")), "state": clean(loc.get("state")),
                     "nct_id": nct, "title": title, "conditions": conditions,
                     "status": status, "source_url": "https://clinicaltrials.gov/study/" + nct,
@@ -209,12 +255,47 @@ def collect(iso, labels, max_pages):
           "sedes", len(records), "completo" if complete else "parcial", flush=True)
 
 
+def sanitize_published():
+    """Migra archivos locales sin red ni eliminación de ensayos o ubicaciones."""
+    changed_files = changed_rows = 0
+    for path in sorted(DEST.glob("[A-Z][A-Z].json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        changed = False
+        for row in data.get("registros", []):
+            safe = sanitize_facility(row.get("facility_text"), row["country_iso2"] == "CL")
+            if safe["facility_text"] != row.get("facility_text"):
+                row.update(safe)
+                changed = True
+                changed_rows += 1
+        if changed:
+            atomic_json(path, data)
+            changed_files += 1
+    index_path = DEST / "indice.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    for country in index["paises"]:
+        path = DEST / (country["iso2"] + ".json")
+        if not path.exists():
+            continue
+        rows = json.loads(path.read_text(encoding="utf-8")).get("registros", [])
+        country["centros"] = len({(r["facility_text"], r.get("city"), r.get("state"))
+                                 for r in rows if r.get("facility_text")})
+    atomic_json(index_path, index)
+    print("Saneamiento local: %d registros en %d archivos; ensayos, ubicación y fuente conservados." %
+          (changed_rows, changed_files))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--sanear-publicado", action="store_true", help="sanea los fragmentos locales y recuenta sedes, sin red")
     ap.add_argument("--paises", help="ISO2 separados por coma; sin este argumento solo actualiza el índice")
     ap.add_argument("--todos", action="store_true", help="carga hasta --max-paginas en todos los países del facet")
     ap.add_argument("--max-paginas", type=int, default=1, help="hasta 100 estudios por página y país")
     args = ap.parse_args()
+    if args.sanear_publicado:
+        if args.todos or args.paises:
+            ap.error("--sanear-publicado no se combina con recolección")
+        sanitize_published()
+        return
     if args.todos and args.paises:
         ap.error("usá --todos o --paises, no ambos")
     if not 1 <= args.max_paginas <= 1000:

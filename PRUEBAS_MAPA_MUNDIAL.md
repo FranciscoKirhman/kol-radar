@@ -35,6 +35,7 @@ con [condiciones de uso de dominio público](https://www.naturalearthdata.com/ab
 
 ```sh
 python3 scripts/verificar_mapa_mundial.py
+python3 scripts/test_sede_mundo_paridad.py
 python3 scripts/verificar_paises.py
 python3 scripts/test_verificar_paises.py
 python3 scripts/test_puntaje_paridad.py
@@ -47,6 +48,18 @@ investigadores, y que «completo» solo aparece cuando están todos los ensayos
 de ese país. Un muestreo determinista de 30 países contrastó NCT, país y sede
 textual contra `/api/v2/studies/<NCT>`: **30/30 coincidencias**. Es un control
 de muestra, no validación de identidad institucional.
+
+La corrección C1 saneó 1.525 filas de sedes en 132 fragmentos sin borrar el
+ensayo, la ciudad, la región ni la URL. Redacta clínicas/consultorios privados
+con honorífico, conserva epónimos de hospitales y otras instituciones grandes,
+y quita correos y teléfonos del texto. La misma regla corre en Python al
+publicar y en JavaScript al consultar páginas adicionales. La prueba de
+paridad cubre 15 formas de clínica privada, 15 epónimos y contactos. Los
+ejemplos reales señalados por la revisión se probaron antes del saneamiento;
+no se guardan sus nombres en las pruebas públicas. El verificador falla si
+queda una etiqueta pendiente de saneamiento. Una marca ambigua sin honorífico
+requiere revisión manual: el algoritmo no convierte un apellido aislado en
+una identidad personal.
 
 En el navegador se comprobó `web/index.html?pais=FR#mapa` y
 `web/index.html?pais=CL#mapa` a 375 px, sin desborde horizontal ni errores
