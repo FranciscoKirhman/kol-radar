@@ -33,7 +33,7 @@
   "distribution": [{
     "@type": "DataDownload",
     "encodingFormat": "application/json",
-    "contentUrl": "https://franciscokirhman.github.io/kol-radar/data/sample/perfiles-muestra.json"
+    "contentUrl": "https://franciscokirhman.github.io/kol-radar/data/publicado/indice.json"
   }]
 }
 </script>
@@ -1239,7 +1239,7 @@
   <section id="list-view">
     <p class="results-meta" id="results-meta"></p>
     <div class="cards" id="cards"></div>
-    <div class="loading-state" id="loading-state">Cargando datos de <code>data/sample/perfiles-muestra.json</code>…</div>
+    <div class="loading-state" id="loading-state">Cargando datos del área seleccionada…</div>
     <div class="error-state" id="error-state" hidden></div>
     <div class="empty-state" id="empty-state" hidden>Sin resultados para esa búsqueda.</div>
   </section>
@@ -1363,7 +1363,9 @@
 (function () {
   "use strict";
 
-  var DATA_URL = "../data/sample/perfiles-muestra.json";
+  var INDICE_URL = "../data/publicado/indice.json";
+  var DATA_URL = "";
+  var indicePublicado = null;
   var TIPO_HECHO_LABEL = {
     publicacion: "Publicaciones",
     ensayo_clinico: "Ensayos clínicos",
@@ -1696,7 +1698,21 @@
   // tester que vuelve al sitio se queda con el dataset de su visita anterior y ve una versión
   // vieja sin ningún indicio de que lo es — que en una beta que se va a corregir seguido es
   // justo el error más difícil de diagnosticar.
-  fetch(DATA_URL, { cache: "no-cache" })
+  fetch(INDICE_URL, { cache: "no-cache" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    })
+    .then(function (indice) {
+      indicePublicado = indice;
+      var pais = (indice.paises || []).filter(function (p) { return p.iso2 === indice.pais_inicial; })[0];
+      var area = pais && (pais.areas || []).filter(function (a) { return a.id === indice.area_inicial; })[0];
+      if (!area || !/^\.\.\/data\/publicado\/[A-Z]{2}\/[a-z0-9-]+\.json$/.test(area.ruta)) {
+        throw new Error("Índice de datos inválido");
+      }
+      DATA_URL = area.ruta;
+      return fetch(DATA_URL, { cache: "no-cache" });
+    })
     .then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
