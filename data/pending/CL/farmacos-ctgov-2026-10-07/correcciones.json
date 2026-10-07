@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-10-07",
+  "motivo": "El separador 'with or without' y la expresión 'without' describen un comparador ausente, no un principio activo adicional.",
+  "fuentes": [
+    "https://clinicaltrials.gov/study/NCT00695955",
+    "https://clinicaltrials.gov/study/NCT02187055"
+  ],
+  "fichas_erroneas_retiradas_de_esta_corrida": [
+    "farmaco-tofacitinib-without-methotrexate",
+    "farmaco-without-add-on-chlorthalidone",
+    "farmaco-without-add-on-hydrochlorothiazide"
+  ],
+  "accion": "Se conserva el literal de tofacitinib en el vínculo y hecho de la ficha canónica; no se crea fármaco para un añadido opcional ausente. Las 361 fichas anteriores permanecen."
+}

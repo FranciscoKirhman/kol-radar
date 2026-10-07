@@ -29,7 +29,8 @@ def fragmentos(base, iso):
     por_id = {e["id"]: e for e in entidades}
     legacy_onco = {d.get("nombre_legacy") for a, d in areas.nodos() if a["id"] == "oncologia"}
     legacy_onco.discard(None)
-    ids_basicos = {e["id"] for e in entidades if e["tipo"] != "ensayo_clinico"}
+    ids_legacy_onco = {e["id"] for e in entidades if e["tipo"] != "ensayo_clinico"
+                       and (e.get("area") in legacy_onco or "oncologia" in e.get("areas", []))}
     salida = {}
     for area in areas.cargar():
         aid = area["id"]
@@ -38,20 +39,30 @@ def fragmentos(base, iso):
                        (aid == "oncologia" and e.get("area") in legacy_onco))}
         ids = set(trials)
         if aid == "oncologia":
-            ids |= ids_basicos
-        else:
-            for v in vinculos:
-                if v["destino"] in trials and por_id.get(v["origen"], {}).get("tipo") == "institucion":
-                    ids.add(v["origen"])
-                if v["origen"] in trials and por_id.get(v["destino"], {}).get("tipo") == "institucion":
-                    ids.add(v["destino"])
+            ids |= ids_legacy_onco
+        ids |= {e["id"] for e in entidades if e["tipo"] == "persona" and aid in e.get("areas", [])}
+        for v in vinculos:
+            if v["destino"] in trials and v["origen"] in por_id:
+                ids.add(v["origen"])
+            if v["origen"] in trials and v["destino"] in por_id:
+                ids.add(v["destino"])
+        # Conservar el centro de una persona sustentada solo por publicaciones.
+        for v in vinculos:
+            if v["origen"] in ids and por_id.get(v["origen"], {}).get("tipo") == "persona" \
+                    and por_id.get(v["destino"], {}).get("tipo") == "institucion":
+                ids.add(v["destino"])
+            if v["destino"] in ids and por_id.get(v["destino"], {}).get("tipo") == "persona" \
+                    and por_id.get(v["origen"], {}).get("tipo") == "institucion":
+                ids.add(v["origen"])
         salida[aid] = (ids, trials)
     sin_clasificar = {e["id"] for e in entidades if e["tipo"] == "ensayo_clinico"
                        and "areas" in e and not e["areas"]}
     ids = set(sin_clasificar)
     for v in vinculos:
-        if v["destino"] in sin_clasificar and por_id.get(v["origen"], {}).get("tipo") == "institucion":
+        if v["destino"] in sin_clasificar and v["origen"] in por_id:
             ids.add(v["origen"])
+        if v["origen"] in sin_clasificar and v["destino"] in por_id:
+            ids.add(v["destino"])
     salida["sin-clasificar"] = (ids, sin_clasificar)
     return salida
 

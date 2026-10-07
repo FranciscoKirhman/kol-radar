@@ -183,6 +183,33 @@
           "fuente_url": "https://id.nlm.nih.gov/mesh/D001932.json",
           "consulta_ctgov": "glioma",
           "nombre_legacy": "tumor cerebral"
+        },
+        {
+          "id": "neoplasias",
+          "nombre": "Neoplasias",
+          "mesh_id": "D009369",
+          "mesh_label": "Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D009369.json",
+          "consulta_ctgov": "solid tumor",
+          "alias_condiciones": [
+            "Advanced Solid Tumors",
+            "Solid Tumors",
+            "Biliary Tract Carcinoma"
+          ]
+        },
+        {
+          "id": "esofago",
+          "nombre": "Cáncer de esófago",
+          "mesh_id": "D004938",
+          "mesh_label": "Esophageal Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D004938.json",
+          "consulta_ctgov": "esophageal neoplasm",
+          "alias_condiciones": [
+            "Esophageal Squamous Cell Carcinoma (ESCC)",
+            "Esophageal Squamous Cell Carcinoma",
+            "Metastatic Esophageal Squamous Cell Carcinoma",
+            "Advanced/Metastatic Gastroesophageal Adenocarcinoma"
+          ]
         }
       ]
     },
@@ -200,7 +227,10 @@
           "mesh_id": "D006331",
           "mesh_label": "Heart Diseases",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D006331.json",
-          "consulta_ctgov": "heart disease"
+          "consulta_ctgov": "heart disease",
+          "alias_condiciones": [
+            "Cardiovascular Disease"
+          ]
         },
         {
           "id": "hipertension",
@@ -208,7 +238,126 @@
           "mesh_id": "D006973",
           "mesh_label": "Hypertension",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D006973.json",
-          "consulta_ctgov": "hypertension"
+          "consulta_ctgov": "hypertension",
+          "alias_condiciones": [
+            "Hypertensive Disease"
+          ]
+        },
+        {
+          "id": "fibrilacion-auricular",
+          "nombre": "Fibrilación auricular",
+          "mesh_id": "D001281",
+          "mesh_label": "Atrial Fibrillation",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001281.json",
+          "consulta_ctgov": "atrial fibrillation",
+          "alias_condiciones": [
+            "Atrial Flutter"
+          ]
+        },
+        {
+          "id": "sindrome-coronario-agudo",
+          "nombre": "Síndrome coronario agudo",
+          "mesh_id": "D054058",
+          "mesh_label": "Acute Coronary Syndrome",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D054058.json",
+          "consulta_ctgov": "acute coronary syndrome",
+          "alias_condiciones": [
+            "Acute Coronary Disease"
+          ]
+        },
+        {
+          "id": "insuficiencia-cardiaca",
+          "nombre": "Insuficiencia cardíaca",
+          "mesh_id": "D006333",
+          "mesh_label": "Heart Failure",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D006333.json",
+          "consulta_ctgov": "heart failure",
+          "alias_condiciones": [
+            "Heart Decompensation",
+            "Cardiac Function Failed"
+          ]
+        },
+        {
+          "id": "enfermedad-coronaria",
+          "nombre": "Enfermedad coronaria",
+          "mesh_id": "D003324",
+          "mesh_label": "Coronary Artery Disease",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003324.json",
+          "consulta_ctgov": "coronary artery disease",
+          "alias_condiciones": [
+            "Coronary Disease"
+          ]
+        },
+        {
+          "id": "infarto-miocardio",
+          "nombre": "Infarto de miocardio",
+          "mesh_id": "D009203",
+          "mesh_label": "Myocardial Infarction",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D009203.json",
+          "consulta_ctgov": "myocardial infarction"
+        },
+        {
+          "id": "aterosclerosis",
+          "nombre": "Aterosclerosis",
+          "mesh_id": "D050197",
+          "mesh_label": "Atherosclerosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D050197.json",
+          "consulta_ctgov": "atherosclerosis"
+        },
+        {
+          "id": "insuficiencia-mitral",
+          "nombre": "Insuficiencia mitral",
+          "mesh_id": "D008944",
+          "mesh_label": "Mitral Valve Insufficiency",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008944.json",
+          "consulta_ctgov": "mitral regurgitation"
+        },
+        {
+          "id": "angina-inestable",
+          "nombre": "Angina inestable",
+          "mesh_id": "D000789",
+          "mesh_label": "Angina, Unstable",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000789.json",
+          "consulta_ctgov": "unstable angina",
+          "alias_condiciones": [
+            "Angina Unstable"
+          ]
+        },
+        {
+          "id": "miocardiopatia-dilatada",
+          "nombre": "Miocardiopatía dilatada",
+          "mesh_id": "D002311",
+          "mesh_label": "Cardiomyopathy, Dilated",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D002311.json",
+          "consulta_ctgov": "dilated cardiomyopathy"
+        },
+        {
+          "id": "estenosis-aortica",
+          "nombre": "Estenosis aórtica",
+          "mesh_id": "D001024",
+          "mesh_label": "Aortic Valve Stenosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001024.json",
+          "consulta_ctgov": "aortic stenosis",
+          "alias_condiciones": [
+            "Severe Aortic Stenosis",
+            "Symptomatic Aortic Stenosis"
+          ]
+        },
+        {
+          "id": "taquicardia-supraventricular",
+          "nombre": "Taquicardia supraventricular",
+          "mesh_id": "D013617",
+          "mesh_label": "Tachycardia, Supraventricular",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D013617.json",
+          "consulta_ctgov": "supraventricular tachycardia"
+        },
+        {
+          "id": "insuficiencia-tricuspide",
+          "nombre": "Insuficiencia tricuspídea",
+          "mesh_id": "D014262",
+          "mesh_label": "Tricuspid Valve Insufficiency",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D014262.json",
+          "consulta_ctgov": "tricuspid regurgitation"
         }
       ]
     },
@@ -234,7 +383,153 @@
           "mesh_id": "D003920",
           "mesh_label": "Diabetes Mellitus",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D003920.json",
-          "consulta_ctgov": "diabetes mellitus"
+          "consulta_ctgov": "diabetes mellitus",
+          "alias_condiciones": [
+            "Diabetes Type 2"
+          ]
+        },
+        {
+          "id": "obesidad",
+          "nombre": "Obesidad",
+          "mesh_id": "D009765",
+          "mesh_label": "Obesity",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D009765.json",
+          "consulta_ctgov": "obesity",
+          "alias_condiciones": [
+            "Morbid Obesity",
+            "Overweight and Obesity",
+            "Pediatric Obesity"
+          ]
+        },
+        {
+          "id": "diabetes-tipo-2",
+          "nombre": "Diabetes tipo 2",
+          "mesh_id": "D003924",
+          "mesh_label": "Diabetes Mellitus, Type 2",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003924.json",
+          "consulta_ctgov": "type 2 diabetes",
+          "alias_condiciones": [
+            "Type 2 Diabetes",
+            "Type II Diabetes",
+            "Type2 Diabetes"
+          ]
+        },
+        {
+          "id": "hipercolesterolemia",
+          "nombre": "Hipercolesterolemia",
+          "mesh_id": "D006937",
+          "mesh_label": "Hypercholesterolemia",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D006937.json",
+          "consulta_ctgov": "hypercholesterolemia",
+          "alias_condiciones": [
+            "Hypercholesterolaemia"
+          ]
+        },
+        {
+          "id": "sindrome-metabolico",
+          "nombre": "Síndrome metabólico",
+          "mesh_id": "D024821",
+          "mesh_label": "Metabolic Syndrome",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D024821.json",
+          "consulta_ctgov": "metabolic syndrome",
+          "alias_condiciones": [
+            "Metabolic Syndrome X",
+            "Cardiovascular Syndrome, Metabolic"
+          ]
+        },
+        {
+          "id": "osteoporosis",
+          "nombre": "Osteoporosis",
+          "mesh_id": "D010024",
+          "mesh_label": "Osteoporosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D010024.json",
+          "consulta_ctgov": "osteoporosis"
+        },
+        {
+          "id": "dislipidemia",
+          "nombre": "Dislipidemia",
+          "mesh_id": "D050171",
+          "mesh_label": "Dyslipidemias",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D050171.json",
+          "consulta_ctgov": "dyslipidemia"
+        },
+        {
+          "id": "deficiencia-vitamina-d",
+          "nombre": "Deficiencia de vitamina D",
+          "mesh_id": "D014808",
+          "mesh_label": "Vitamin D Deficiency",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D014808.json",
+          "consulta_ctgov": "vitamin d deficiency",
+          "alias_condiciones": [
+            "Hypovitaminosis D"
+          ]
+        },
+        {
+          "id": "diabetes-tipo-1",
+          "nombre": "Diabetes tipo 1",
+          "mesh_id": "D003922",
+          "mesh_label": "Diabetes Mellitus, Type 1",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003922.json",
+          "consulta_ctgov": "type 1 diabetes",
+          "alias_condiciones": [
+            "Diabetes, Type I"
+          ]
+        },
+        {
+          "id": "hiponatremia",
+          "nombre": "Hiponatremia",
+          "mesh_id": "D007010",
+          "mesh_label": "Hyponatremia",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D007010.json",
+          "consulta_ctgov": "hyponatremia"
+        },
+        {
+          "id": "turner",
+          "nombre": "Síndrome de Turner",
+          "mesh_id": "D014424",
+          "mesh_label": "Turner Syndrome",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D014424.json",
+          "consulta_ctgov": "Turner syndrome"
+        },
+        {
+          "id": "hipogonadismo",
+          "nombre": "Hipogonadismo",
+          "mesh_id": "D007006",
+          "mesh_label": "Hypogonadism",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D007006.json",
+          "consulta_ctgov": "hypogonadism"
+        },
+        {
+          "id": "hipertrigliceridemia",
+          "nombre": "Hipertrigliceridemia",
+          "mesh_id": "D015228",
+          "mesh_label": "Hypertriglyceridemia",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D015228.json",
+          "consulta_ctgov": "hypertriglyceridemia"
+        },
+        {
+          "id": "prediabetes",
+          "nombre": "Prediabetes",
+          "mesh_id": "D011236",
+          "mesh_label": "Prediabetic State",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D011236.json",
+          "consulta_ctgov": "prediabetic state"
+        },
+        {
+          "id": "resistencia-insulina",
+          "nombre": "Resistencia a la insulina",
+          "mesh_id": "D007333",
+          "mesh_label": "Insulin Resistance",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D007333.json",
+          "consulta_ctgov": "insulin resistance"
+        },
+        {
+          "id": "intolerancia-glucosa",
+          "nombre": "Intolerancia a la glucosa",
+          "mesh_id": "D018149",
+          "mesh_label": "Glucose Intolerance",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D018149.json",
+          "consulta_ctgov": "glucose intolerance"
         }
       ]
     },
@@ -252,7 +547,15 @@
           "mesh_id": "D000544",
           "mesh_label": "Alzheimer Disease",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D000544.json",
-          "consulta_ctgov": "Alzheimer disease"
+          "consulta_ctgov": "Alzheimer disease",
+          "alias_condiciones": [
+            "Alzheimer's Disease",
+            "Alzheimers Disease",
+            "Dementia of Alzheimer's Type",
+            "Dementia of the Alzheimer's Type",
+            "Moderate to Severe Alzheimer",
+            "Agitation in Patients With Dementia of the Alzheimer's Type"
+          ]
         },
         {
           "id": "parkinson",
@@ -260,7 +563,41 @@
           "mesh_id": "D010300",
           "mesh_label": "Parkinson Disease",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D010300.json",
-          "consulta_ctgov": "Parkinson disease"
+          "consulta_ctgov": "Parkinson disease",
+          "alias_condiciones": [
+            "Advanced Stage Parkinson's Disease",
+            "Early Stage Parkinson's Disease",
+            "Parkinson's Disease",
+            "Parkinson´s Disease",
+            "Parkinson s Disease"
+          ]
+        },
+        {
+          "id": "ictus",
+          "nombre": "Accidente cerebrovascular",
+          "mesh_id": "D020521",
+          "mesh_label": "Stroke",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D020521.json",
+          "consulta_ctgov": "stroke"
+        },
+        {
+          "id": "neuropatia-diabetica",
+          "nombre": "Neuropatía diabética",
+          "mesh_id": "D003929",
+          "mesh_label": "Diabetic Neuropathies",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003929.json",
+          "consulta_ctgov": "diabetic neuropathy",
+          "alias_condiciones": [
+            "Diabetic Neuropathy, Painful"
+          ]
+        },
+        {
+          "id": "ela",
+          "nombre": "Esclerosis lateral amiotrófica",
+          "mesh_id": "D000690",
+          "mesh_label": "Amyotrophic Lateral Sclerosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000690.json",
+          "consulta_ctgov": "amyotrophic lateral sclerosis"
         }
       ]
     },
@@ -278,7 +615,12 @@
           "mesh_id": "D003866",
           "mesh_label": "Depressive Disorder",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D003866.json",
-          "consulta_ctgov": "depressive disorder"
+          "consulta_ctgov": "depressive disorder",
+          "alias_condiciones": [
+            "Depression",
+            "Depressive Symptoms",
+            "Major Depression"
+          ]
         },
         {
           "id": "esquizofrenia",
@@ -287,6 +629,46 @@
           "mesh_label": "Schizophrenia",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D012559.json",
           "consulta_ctgov": "schizophrenia"
+        },
+        {
+          "id": "ansiedad",
+          "nombre": "Ansiedad",
+          "mesh_id": "D001007",
+          "mesh_label": "Anxiety",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001007.json",
+          "consulta_ctgov": "anxiety"
+        },
+        {
+          "id": "trastorno-bipolar",
+          "nombre": "Trastorno bipolar",
+          "mesh_id": "D001714",
+          "mesh_label": "Bipolar Disorder",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001714.json",
+          "consulta_ctgov": "bipolar disorder"
+        },
+        {
+          "id": "trastornos-psicoticos",
+          "nombre": "Trastornos psicóticos",
+          "mesh_id": "D011618",
+          "mesh_label": "Psychotic Disorders",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D011618.json",
+          "consulta_ctgov": "psychosis"
+        },
+        {
+          "id": "insomnio",
+          "nombre": "Insomnio",
+          "mesh_id": "D007319",
+          "mesh_label": "Sleep Initiation and Maintenance Disorders",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D007319.json",
+          "consulta_ctgov": "sleep initiation and maintenance disorders"
+        },
+        {
+          "id": "ideacion-suicida",
+          "nombre": "Ideación suicida",
+          "mesh_id": "D059020",
+          "mesh_label": "Suicidal Ideation",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D059020.json",
+          "consulta_ctgov": "suicidal ideation"
         }
       ]
     },
@@ -304,7 +686,11 @@
           "mesh_id": "D001172",
           "mesh_label": "Arthritis, Rheumatoid",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D001172.json",
-          "consulta_ctgov": "rheumatoid arthritis"
+          "consulta_ctgov": "rheumatoid arthritis",
+          "alias_condiciones": [
+            "RA",
+            "Rhematoid Arthritis"
+          ]
         },
         {
           "id": "lupus",
@@ -312,7 +698,49 @@
           "mesh_id": "D008180",
           "mesh_label": "Lupus Erythematosus, Systemic",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D008180.json",
-          "consulta_ctgov": "systemic lupus erythematosus"
+          "consulta_ctgov": "systemic lupus erythematosus",
+          "alias_condiciones": [
+            "Lupus",
+            "SLE"
+          ]
+        },
+        {
+          "id": "artritis-psoriasica",
+          "nombre": "Artritis psoriásica",
+          "mesh_id": "D015535",
+          "mesh_label": "Arthritis, Psoriatic",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D015535.json",
+          "consulta_ctgov": "psoriatic arthritis"
+        },
+        {
+          "id": "fibromialgia",
+          "nombre": "Fibromialgia",
+          "mesh_id": "D005356",
+          "mesh_label": "Fibromyalgia",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D005356.json",
+          "consulta_ctgov": "fibromyalgia",
+          "alias_condiciones": [
+            "Fibromyalgia (FM)"
+          ]
+        },
+        {
+          "id": "esclerosis-sistemica",
+          "nombre": "Esclerosis sistémica",
+          "mesh_id": "D012595",
+          "mesh_label": "Scleroderma, Systemic",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D012595.json",
+          "consulta_ctgov": "systemic sclerosis"
+        },
+        {
+          "id": "artritis-juvenil",
+          "nombre": "Artritis juvenil",
+          "mesh_id": "D001171",
+          "mesh_label": "Arthritis, Juvenile",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001171.json",
+          "consulta_ctgov": "juvenile arthritis",
+          "alias_condiciones": [
+            "Arthritis, Juvenile Rheumatoid"
+          ]
         }
       ]
     },
@@ -330,7 +758,13 @@
           "mesh_id": "D015658",
           "mesh_label": "HIV Infections",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D015658.json",
-          "consulta_ctgov": "HIV infection"
+          "consulta_ctgov": "HIV infection",
+          "alias_condiciones": [
+            "HIV",
+            "HIV-1 Infection",
+            "Infection, Human Immunodeficiency Virus",
+            "Human Immunodeficiency Virus - Type 1"
+          ]
         },
         {
           "id": "tuberculosis",
@@ -339,6 +773,47 @@
           "mesh_label": "Tuberculosis",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D014376.json",
           "consulta_ctgov": "tuberculosis"
+        },
+        {
+          "id": "covid-19",
+          "nombre": "COVID-19",
+          "mesh_id": "D000086382",
+          "mesh_label": "COVID-19",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000086382.json",
+          "consulta_ctgov": "covid-19",
+          "alias_condiciones": [
+            "Covid19"
+          ]
+        },
+        {
+          "id": "sepsis",
+          "nombre": "Sepsis",
+          "mesh_id": "D018805",
+          "mesh_label": "Sepsis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D018805.json",
+          "consulta_ctgov": "sepsis",
+          "alias_condiciones": [
+            "Septic Shock"
+          ]
+        },
+        {
+          "id": "osteomielitis",
+          "nombre": "Osteomielitis",
+          "mesh_id": "D010019",
+          "mesh_label": "Osteomyelitis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D010019.json",
+          "consulta_ctgov": "osteomyelitis"
+        },
+        {
+          "id": "infeccion-neumococica",
+          "nombre": "Infección neumocócica",
+          "mesh_id": "D011008",
+          "mesh_label": "Pneumococcal Infections",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D011008.json",
+          "consulta_ctgov": "pneumococcal infection",
+          "alias_condiciones": [
+            "Pneumococcal Disease"
+          ]
         }
       ]
     },
@@ -364,7 +839,59 @@
           "mesh_id": "D029424",
           "mesh_label": "Pulmonary Disease, Chronic Obstructive",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D029424.json",
-          "consulta_ctgov": "chronic obstructive pulmonary disease"
+          "consulta_ctgov": "chronic obstructive pulmonary disease",
+          "alias_condiciones": [
+            "COPD"
+          ]
+        },
+        {
+          "id": "bronquitis-cronica",
+          "nombre": "Bronquitis crónica",
+          "mesh_id": "D029481",
+          "mesh_label": "Bronchitis, Chronic",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D029481.json",
+          "consulta_ctgov": "chronic bronchitis",
+          "alias_condiciones": [
+            "Bronchitis, Chronic"
+          ]
+        },
+        {
+          "id": "enfermedades-pulmonares",
+          "nombre": "Enfermedades pulmonares",
+          "mesh_id": "D008171",
+          "mesh_label": "Lung Diseases",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008171.json",
+          "consulta_ctgov": "lung diseases"
+        },
+        {
+          "id": "bronquiectasias",
+          "nombre": "Bronquiectasias",
+          "mesh_id": "D001987",
+          "mesh_label": "Bronchiectasis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001987.json",
+          "consulta_ctgov": "bronchiectasis"
+        },
+        {
+          "id": "polipos-nasales",
+          "nombre": "Pólipos nasales",
+          "mesh_id": "D009298",
+          "mesh_label": "Nasal Polyps",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D009298.json",
+          "consulta_ctgov": "nasal polyps",
+          "alias_condiciones": [
+            "Nasal Polyposis"
+          ]
+        },
+        {
+          "id": "fibrosis-pulmonar",
+          "nombre": "Fibrosis pulmonar",
+          "mesh_id": "D011658",
+          "mesh_label": "Pulmonary Fibrosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D011658.json",
+          "consulta_ctgov": "pulmonary fibrosis",
+          "alias_condiciones": [
+            "Progressive Pulmonary Fibrosis"
+          ]
         }
       ]
     },
@@ -391,6 +918,89 @@
           "mesh_label": "Liver Cirrhosis",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D008103.json",
           "consulta_ctgov": "liver cirrhosis"
+        },
+        {
+          "id": "crohn",
+          "nombre": "Enfermedad de Crohn",
+          "mesh_id": "D003424",
+          "mesh_label": "Crohn Disease",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003424.json",
+          "consulta_ctgov": "crohn disease",
+          "alias_condiciones": [
+            "Crohn's Disease"
+          ]
+        },
+        {
+          "id": "colitis-ulcerosa",
+          "nombre": "Colitis ulcerosa",
+          "mesh_id": "D003093",
+          "mesh_label": "Colitis, Ulcerative",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003093.json",
+          "consulta_ctgov": "ulcerative colitis",
+          "alias_condiciones": [
+            "Ulcerative Colitis (UC)",
+            "Colitis Ulcerative"
+          ]
+        },
+        {
+          "id": "higado-graso",
+          "nombre": "Hígado graso",
+          "mesh_id": "D005234",
+          "mesh_label": "Fatty Liver",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D005234.json",
+          "consulta_ctgov": "fatty liver",
+          "alias_condiciones": [
+            "NASH - Nonalcoholic Steatohepatitis",
+            "Nonalcoholic Steatohepatitis",
+            "Metabolic Dysfunction Associated Steatohepatitis",
+            "Metabolic Associated-dysfunction Steatotic Liver Disease (MASLD)"
+          ]
+        },
+        {
+          "id": "cirrosis-biliar",
+          "nombre": "Cirrosis biliar",
+          "mesh_id": "D008105",
+          "mesh_label": "Liver Cirrhosis, Biliary",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008105.json",
+          "consulta_ctgov": "primary biliary cirrhosis",
+          "alias_condiciones": [
+            "Primary Biliary Cholangitis"
+          ]
+        },
+        {
+          "id": "enfermedad-celiaca",
+          "nombre": "Enfermedad celíaca",
+          "mesh_id": "D002446",
+          "mesh_label": "Celiac Disease",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D002446.json",
+          "consulta_ctgov": "celiac disease"
+        },
+        {
+          "id": "cirrosis-hepatica",
+          "nombre": "Cirrosis hepática",
+          "mesh_id": "D008103",
+          "mesh_label": "Liver Cirrhosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008103.json",
+          "consulta_ctgov": "liver cirrhosis",
+          "alias_condiciones": [
+            "Cirrhosis, Liver"
+          ]
+        },
+        {
+          "id": "hepatitis-alcoholica",
+          "nombre": "Hepatitis alcohólica",
+          "mesh_id": "D006519",
+          "mesh_label": "Hepatitis, Alcoholic",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D006519.json",
+          "consulta_ctgov": "alcoholic hepatitis"
+        },
+        {
+          "id": "intolerancia-lactosa",
+          "nombre": "Intolerancia a la lactosa",
+          "mesh_id": "D007787",
+          "mesh_label": "Lactose Intolerance",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D007787.json",
+          "consulta_ctgov": "lactose intolerance"
         }
       ]
     },
@@ -409,6 +1019,57 @@
           "mesh_label": "Renal Insufficiency, Chronic",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D051436.json",
           "consulta_ctgov": "chronic kidney disease"
+        },
+        {
+          "id": "nefropatia-diabetica",
+          "nombre": "Nefropatía diabética",
+          "mesh_id": "D003928",
+          "mesh_label": "Diabetic Nephropathies",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003928.json",
+          "consulta_ctgov": "diabetic kidney disease",
+          "alias_condiciones": [
+            "Diabetic Nephropathy"
+          ]
+        },
+        {
+          "id": "nefritis-lupica",
+          "nombre": "Nefritis lúpica",
+          "mesh_id": "D008181",
+          "mesh_label": "Lupus Nephritis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008181.json",
+          "consulta_ctgov": "lupus nephritis"
+        },
+        {
+          "id": "pie-diabetico",
+          "nombre": "Pie diabético",
+          "mesh_id": "D017719",
+          "mesh_label": "Diabetic Foot",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D017719.json",
+          "consulta_ctgov": "diabetic foot"
+        },
+        {
+          "id": "lesion-renal-aguda",
+          "nombre": "Lesión renal aguda",
+          "mesh_id": "D058186",
+          "mesh_label": "Acute Kidney Injury",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D058186.json",
+          "consulta_ctgov": "acute kidney injury",
+          "alias_condiciones": [
+            "Kidney Injury, Acute"
+          ]
+        },
+        {
+          "id": "nefropatia-iga",
+          "nombre": "Nefropatía IgA",
+          "mesh_id": "D005922",
+          "mesh_label": "Glomerulonephritis, IGA",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D005922.json",
+          "consulta_ctgov": "iga nephropathy",
+          "alias_condiciones": [
+            "Primary IgA Nephropathy",
+            "Immunoglobulin A Nephropathy",
+            "IgAN"
+          ]
         }
       ]
     },
@@ -427,6 +1088,22 @@
           "mesh_label": "Anemia",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D000740.json",
           "consulta_ctgov": "anemia"
+        },
+        {
+          "id": "sindromes-mielodisplasicos",
+          "nombre": "Síndromes mielodisplásicos",
+          "mesh_id": "D009190",
+          "mesh_label": "Myelodysplastic Syndromes",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D009190.json",
+          "consulta_ctgov": "myelodysplastic syndromes"
+        },
+        {
+          "id": "trombosis-venosa",
+          "nombre": "Trombosis venosa",
+          "mesh_id": "D020246",
+          "mesh_label": "Venous Thrombosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D020246.json",
+          "consulta_ctgov": "venous thrombosis"
         }
       ]
     },
@@ -445,6 +1122,17 @@
           "mesh_label": "Psoriasis",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D011565.json",
           "consulta_ctgov": "psoriasis"
+        },
+        {
+          "id": "prurigo",
+          "nombre": "Prurigo",
+          "mesh_id": "D011536",
+          "mesh_label": "Prurigo",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D011536.json",
+          "consulta_ctgov": "prurigo",
+          "alias_condiciones": [
+            "Prurigo Nodularis"
+          ]
         }
       ]
     },
@@ -481,6 +1169,99 @@
           "mesh_label": "Cystic Fibrosis",
           "fuente_url": "https://id.nlm.nih.gov/mesh/D003550.json",
           "consulta_ctgov": "cystic fibrosis"
+        },
+        {
+          "id": "gaucher",
+          "nombre": "Enfermedad de Gaucher",
+          "mesh_id": "D005776",
+          "mesh_label": "Gaucher Disease",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D005776.json",
+          "consulta_ctgov": "gaucher disease"
+        },
+        {
+          "id": "mucopolisacaridosis-i",
+          "nombre": "Mucopolisacaridosis I",
+          "mesh_id": "D008059",
+          "mesh_label": "Mucopolysaccharidosis I",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008059.json",
+          "consulta_ctgov": "mucopolysaccharidosis i",
+          "alias_condiciones": [
+            "Mucopolysaccharidosis I (MPS I)"
+          ]
+        },
+        {
+          "id": "fabry",
+          "nombre": "Enfermedad de Fabry",
+          "mesh_id": "D000795",
+          "mesh_label": "Fabry Disease",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000795.json",
+          "consulta_ctgov": "fabry disease"
+        },
+        {
+          "id": "pompe",
+          "nombre": "Enfermedad de Pompe",
+          "mesh_id": "D006009",
+          "mesh_label": "Glycogen Storage Disease Type II",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D006009.json",
+          "consulta_ctgov": "glycogen storage disease type ii",
+          "alias_condiciones": [
+            "Pompe Disease"
+          ]
+        },
+        {
+          "id": "niemann-pick-a",
+          "nombre": "Enfermedad de Niemann-Pick tipo A",
+          "mesh_id": "D052536",
+          "mesh_label": "Niemann-Pick Disease, Type A",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D052536.json",
+          "consulta_ctgov": "niemann-pick disease type a",
+          "alias_condiciones": [
+            "Sphingomyelin Lipidosis"
+          ]
+        },
+        {
+          "id": "adrenoleucodistrofia",
+          "nombre": "Adrenoleucodistrofia",
+          "mesh_id": "D000326",
+          "mesh_label": "Adrenoleukodystrophy",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000326.json",
+          "consulta_ctgov": "adrenoleukodystrophy",
+          "alias_condiciones": [
+            "X-Linked Adrenoleukodystrophy"
+          ]
+        },
+        {
+          "id": "raquitismo-hipofosfatemico",
+          "nombre": "Raquitismo hipofosfatémico",
+          "mesh_id": "D063730",
+          "mesh_label": "Rickets, Hypophosphatemic",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D063730.json",
+          "consulta_ctgov": "hypophosphatemic rickets",
+          "alias_condiciones": [
+            "X-linked Hypophosphatemia"
+          ]
+        },
+        {
+          "id": "amiloidosis",
+          "nombre": "Amiloidosis",
+          "mesh_id": "D000686",
+          "mesh_label": "Amyloidosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000686.json",
+          "consulta_ctgov": "amyloidosis",
+          "alias_condiciones": [
+            "Transthyretin Amyloidosis (ATTR) With Cardiomyopathy"
+          ]
+        },
+        {
+          "id": "hiperplasia-suprarrenal-congenita",
+          "nombre": "Hiperplasia suprarrenal congénita",
+          "mesh_id": "D000312",
+          "mesh_label": "Adrenal Hyperplasia, Congenital",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000312.json",
+          "consulta_ctgov": "congenital adrenal hyperplasia",
+          "alias_condiciones": [
+            "Classic Congenital Adrenal Hyperplasia"
+          ]
         }
       ]
     },

@@ -29,8 +29,10 @@ def desde_condiciones(condiciones):
     declaradas = [normalizar(c) for c in condiciones or []]
     salida = []
     for area, enfermedad in nodos():
-        terminos = (enfermedad["mesh_label"], enfermedad["consulta_ctgov"])
-        if any(normalizar(t) in c for c in declaradas for t in terminos):
+        terminos = (enfermedad["mesh_label"], enfermedad["consulta_ctgov"],
+                    *(enfermedad.get("alias_condiciones") or []))
+        if any((c == normalizar(t) if len(normalizar(t)) <= 4 else normalizar(t) in c)
+               for c in declaradas for t in terminos):
             salida.append((area, enfermedad))
     return salida
 

@@ -51,9 +51,9 @@ import urllib.request
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import exclusiones  # noqa: E402  (todo lo que escribe la muestra pasa por acá)
-MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
+MUESTRA = os.environ.get("KOL_MUESTRA", os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json"))
 FECHA = datetime.date.today().isoformat()
-SALIDA = os.path.join(RAIZ, "data", "pending", "farmacos-ctgov-" + FECHA)
+SALIDA = os.path.join(RAIZ, "data", "pending", "CL", "farmacos-ctgov-" + FECHA)
 API = "https://clinicaltrials.gov/api/v2/studies"
 TIPOS_FARMACO = {"DRUG", "BIOLOGICAL", "COMBINATION_PRODUCT", "GENETIC"}
 TIPO_LEGIBLE = {"DRUG": "fármaco", "BIOLOGICAL": "biológico",
@@ -154,6 +154,9 @@ def parentesis(t):
 def componentes(nombre):
     """Parte una intervención compuesta. Devuelve [(texto_principal, [alias_de_paréntesis])]."""
     nombre = nombre.replace("(+)", " + ")
+    # "Tofacitinib without methotrexate" evalúa tofacitinib; el comparador ausente
+    # no crea otra ficha. Igual para "with or without add-on X".
+    nombre = re.sub(r"\s+(?:with\s+or\s+)?without(?:\s+add-on)?\s+.*$", "", nombre, flags=re.I)
     nombre = re.sub(r",\s+(an?|the)\s.*$", "", nombre)      # "Atezolizumab, an engineered…"
     base, alias_global = parentesis(nombre)
     # "Derazantinib-paclitaxel-ramucirumab combination": se separa solo si cada parte es una DCI.
