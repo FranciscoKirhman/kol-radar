@@ -43,6 +43,8 @@ CONSULTAS = {
     # con que integrar_beta.py asigna esta área.
     "tumor cerebral": "glioma",
 }
+AREAS_CONFIG = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "data", "config", "areas.json")
 CAMPOS = ",".join(["protocolSection.identificationModule", "protocolSection.statusModule",
                    "protocolSection.designModule.phases", "protocolSection.conditionsModule.conditions",
                    "protocolSection.armsInterventionsModule.interventions",
@@ -86,13 +88,27 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--pais", default="CL", help="ISO2 del país de las sedes")
     ap.add_argument("--salida")
+    ap.add_argument("--todas-areas", action="store_true",
+                    help="Consulta todas las enfermedades de areas.json; por defecto conserva las 19 oncológicas")
+    ap.add_argument("--area", action="append", help="ID del área o de una enfermedad de areas.json")
     a = ap.parse_args()
     config = pipeline_pais.configurar(a.pais)
     pais = pipeline_pais.nombre_ctgov(config)
     a.salida = pipeline_pais.validar_destino(a.salida or pipeline_pais.cache(config) /
         ("ctgov-crudo-%s.json" % datetime.date.today().isoformat()), config, siempre_privado=True)
+    consultas = CONSULTAS
+    if a.todas_areas or a.area:
+        taxonomia = json.load(open(AREAS_CONFIG, encoding="utf-8"))
+        consultas = {}
+        pedidos = set(a.area or [])
+        for area in taxonomia["areas"]:
+            for enfermedad in area["enfermedades"]:
+                if a.todas_areas or area["id"] in pedidos or enfermedad["id"] in pedidos:
+                    consultas[enfermedad.get("nombre_legacy") or enfermedad["nombre"]] = enfermedad["consulta_ctgov"]
+        if not consultas:
+            ap.error("Ningún área o enfermedad coincide con --area")
     crudo = {}
-    for area, condicion in CONSULTAS.items():
+    for area, condicion in consultas.items():
         consulta_pais = pais if config["iso2"] == "CL" else '"%s"' % pais
         params = {"query.term": 'AREA[LocationCountry]%s AND AREA[ConditionSearch]"%s"' % (consulta_pais, condicion),
                   "fields": CAMPOS, "pageSize": 200}
@@ -106,6 +122,7 @@ def main():
             time.sleep(0.4)
         crudo[area] = [e for e in lista if e["sitios"]]
         print("%-28s %4d ensayos" % (area, len(crudo[area])), file=sys.stderr)
+        time.sleep(0.4)
     os.makedirs(os.path.dirname(os.path.abspath(a.salida)), exist_ok=True)
     json.dump(crudo, open(a.salida, "w", encoding="utf-8"), ensure_ascii=False)
     total = {e["nct"] for l in crudo.values() for e in l}

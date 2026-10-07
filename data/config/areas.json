@@ -1,0 +1,506 @@
+{
+  "fuente": "NLM MeSH RDF Lookup Service",
+  "fuente_url": "https://id.nlm.nih.gov/mesh/lookup",
+  "terminos_uso_url": "https://www.nlm.nih.gov/databases/download/terms_and_conditions_mesh.html",
+  "consultado": "2026-10-07",
+  "nota": "Se atribuye NLM. Descriptores consultados el 7 de octubre de 2026; esta copia puede no reflejar la versión más reciente. Los términos de búsqueda de ClinicalTrials.gov son consultas operativas, no equivalencias diagnósticas ni asignaciones por título.",
+  "areas": [
+    {
+      "id": "oncologia",
+      "nombre": "Oncología",
+      "mesh_id": "D009369",
+      "mesh_label": "Neoplasms",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D009369.json",
+      "consulta_ctgov": "cancer",
+      "enfermedades": [
+        {
+          "id": "pulmon",
+          "nombre": "cáncer de pulmón",
+          "mesh_id": "D008175",
+          "mesh_label": "Lung Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008175.json",
+          "consulta_ctgov": "lung cancer",
+          "nombre_legacy": "cáncer de pulmón"
+        },
+        {
+          "id": "mama",
+          "nombre": "cáncer de mama",
+          "mesh_id": "D001943",
+          "mesh_label": "Breast Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001943.json",
+          "consulta_ctgov": "breast cancer",
+          "nombre_legacy": "cáncer de mama"
+        },
+        {
+          "id": "gastrico",
+          "nombre": "cáncer gástrico",
+          "mesh_id": "D013274",
+          "mesh_label": "Stomach Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D013274.json",
+          "consulta_ctgov": "gastric cancer",
+          "nombre_legacy": "cáncer gástrico"
+        },
+        {
+          "id": "colorrectal",
+          "nombre": "cáncer colorrectal",
+          "mesh_id": "D015179",
+          "mesh_label": "Colorectal Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D015179.json",
+          "consulta_ctgov": "colorectal cancer",
+          "nombre_legacy": "cáncer colorrectal"
+        },
+        {
+          "id": "prostata",
+          "nombre": "cáncer de próstata",
+          "mesh_id": "D011471",
+          "mesh_label": "Prostatic Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D011471.json",
+          "consulta_ctgov": "prostate cancer",
+          "nombre_legacy": "cáncer de próstata"
+        },
+        {
+          "id": "melanoma",
+          "nombre": "melanoma",
+          "mesh_id": "D008545",
+          "mesh_label": "Melanoma",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008545.json",
+          "consulta_ctgov": "melanoma",
+          "nombre_legacy": "melanoma"
+        },
+        {
+          "id": "linfoma",
+          "nombre": "linfoma",
+          "mesh_id": "D008223",
+          "mesh_label": "Lymphoma",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008223.json",
+          "consulta_ctgov": "lymphoma",
+          "nombre_legacy": "linfoma"
+        },
+        {
+          "id": "leucemia",
+          "nombre": "leucemia",
+          "mesh_id": "D007938",
+          "mesh_label": "Leukemia",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D007938.json",
+          "consulta_ctgov": "leukemia",
+          "nombre_legacy": "leucemia"
+        },
+        {
+          "id": "mieloma",
+          "nombre": "mieloma múltiple",
+          "mesh_id": "D009101",
+          "mesh_label": "Multiple Myeloma",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D009101.json",
+          "consulta_ctgov": "multiple myeloma",
+          "nombre_legacy": "mieloma múltiple"
+        },
+        {
+          "id": "ovario",
+          "nombre": "cáncer de ovario",
+          "mesh_id": "D010051",
+          "mesh_label": "Ovarian Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D010051.json",
+          "consulta_ctgov": "ovarian cancer",
+          "nombre_legacy": "cáncer de ovario"
+        },
+        {
+          "id": "pancreas",
+          "nombre": "cáncer de páncreas",
+          "mesh_id": "D010190",
+          "mesh_label": "Pancreatic Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D010190.json",
+          "consulta_ctgov": "pancreatic cancer",
+          "nombre_legacy": "cáncer de páncreas"
+        },
+        {
+          "id": "renal",
+          "nombre": "cáncer renal",
+          "mesh_id": "D007680",
+          "mesh_label": "Kidney Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D007680.json",
+          "consulta_ctgov": "renal cancer",
+          "nombre_legacy": "cáncer renal"
+        },
+        {
+          "id": "vejiga",
+          "nombre": "cáncer de vejiga",
+          "mesh_id": "D001749",
+          "mesh_label": "Urinary Bladder Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001749.json",
+          "consulta_ctgov": "bladder cancer",
+          "nombre_legacy": "cáncer de vejiga"
+        },
+        {
+          "id": "higado",
+          "nombre": "cáncer de hígado",
+          "mesh_id": "D008113",
+          "mesh_label": "Liver Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008113.json",
+          "consulta_ctgov": "liver cancer",
+          "nombre_legacy": "cáncer de hígado"
+        },
+        {
+          "id": "sarcoma",
+          "nombre": "sarcoma",
+          "mesh_id": "D012509",
+          "mesh_label": "Sarcoma",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D012509.json",
+          "consulta_ctgov": "sarcoma",
+          "nombre_legacy": "sarcoma"
+        },
+        {
+          "id": "cabeza-cuello",
+          "nombre": "cáncer de cabeza y cuello",
+          "mesh_id": "D006258",
+          "mesh_label": "Head and Neck Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D006258.json",
+          "consulta_ctgov": "head and neck cancer",
+          "nombre_legacy": "cáncer de cabeza y cuello"
+        },
+        {
+          "id": "cervicouterino",
+          "nombre": "cáncer cervicouterino",
+          "mesh_id": "D002583",
+          "mesh_label": "Uterine Cervical Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D002583.json",
+          "consulta_ctgov": "cervical cancer",
+          "nombre_legacy": "cáncer cervicouterino"
+        },
+        {
+          "id": "endometrio",
+          "nombre": "cáncer de endometrio",
+          "mesh_id": "D016889",
+          "mesh_label": "Endometrial Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D016889.json",
+          "consulta_ctgov": "endometrial cancer",
+          "nombre_legacy": "cáncer de endometrio"
+        },
+        {
+          "id": "cerebral",
+          "nombre": "tumor cerebral",
+          "mesh_id": "D001932",
+          "mesh_label": "Brain Neoplasms",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001932.json",
+          "consulta_ctgov": "glioma",
+          "nombre_legacy": "tumor cerebral"
+        }
+      ]
+    },
+    {
+      "id": "cardiologia",
+      "nombre": "Cardiología",
+      "mesh_id": "D002318",
+      "mesh_label": "Cardiovascular Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D002318.json",
+      "consulta_ctgov": "cardiovascular disease",
+      "enfermedades": [
+        {
+          "id": "enfermedad-cardiaca",
+          "nombre": "Enfermedad cardíaca",
+          "mesh_id": "D006331",
+          "mesh_label": "Heart Diseases",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D006331.json",
+          "consulta_ctgov": "heart disease"
+        },
+        {
+          "id": "hipertension",
+          "nombre": "Hipertensión",
+          "mesh_id": "D006973",
+          "mesh_label": "Hypertension",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D006973.json",
+          "consulta_ctgov": "hypertension"
+        }
+      ]
+    },
+    {
+      "id": "endocrinologia-metabolismo",
+      "nombre": "Endocrinología y metabolismo",
+      "mesh_id": "D004700",
+      "mesh_label": "Endocrine System Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D004700.json",
+      "consulta_ctgov": "endocrine disease",
+      "enfermedades": [
+        {
+          "id": "metabolicas",
+          "nombre": "Enfermedades metabólicas",
+          "mesh_id": "D008659",
+          "mesh_label": "Metabolic Diseases",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008659.json",
+          "consulta_ctgov": "metabolic disease"
+        },
+        {
+          "id": "diabetes",
+          "nombre": "Diabetes",
+          "mesh_id": "D003920",
+          "mesh_label": "Diabetes Mellitus",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003920.json",
+          "consulta_ctgov": "diabetes mellitus"
+        }
+      ]
+    },
+    {
+      "id": "neurologia",
+      "nombre": "Neurología",
+      "mesh_id": "D009422",
+      "mesh_label": "Nervous System Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D009422.json",
+      "consulta_ctgov": "neurological disease",
+      "enfermedades": [
+        {
+          "id": "alzheimer",
+          "nombre": "Enfermedad de Alzheimer",
+          "mesh_id": "D000544",
+          "mesh_label": "Alzheimer Disease",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000544.json",
+          "consulta_ctgov": "Alzheimer disease"
+        },
+        {
+          "id": "parkinson",
+          "nombre": "Enfermedad de Parkinson",
+          "mesh_id": "D010300",
+          "mesh_label": "Parkinson Disease",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D010300.json",
+          "consulta_ctgov": "Parkinson disease"
+        }
+      ]
+    },
+    {
+      "id": "psiquiatria",
+      "nombre": "Psiquiatría",
+      "mesh_id": "D001523",
+      "mesh_label": "Mental Disorders",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D001523.json",
+      "consulta_ctgov": "mental disorder",
+      "enfermedades": [
+        {
+          "id": "depresion",
+          "nombre": "Depresión",
+          "mesh_id": "D003866",
+          "mesh_label": "Depressive Disorder",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003866.json",
+          "consulta_ctgov": "depressive disorder"
+        },
+        {
+          "id": "esquizofrenia",
+          "nombre": "Esquizofrenia",
+          "mesh_id": "D012559",
+          "mesh_label": "Schizophrenia",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D012559.json",
+          "consulta_ctgov": "schizophrenia"
+        }
+      ]
+    },
+    {
+      "id": "inmunologia-reumatologia",
+      "nombre": "Inmunología y reumatología",
+      "mesh_id": "D007154",
+      "mesh_label": "Immune System Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D007154.json",
+      "consulta_ctgov": "immune disease",
+      "enfermedades": [
+        {
+          "id": "artritis-reumatoide",
+          "nombre": "Artritis reumatoide",
+          "mesh_id": "D001172",
+          "mesh_label": "Arthritis, Rheumatoid",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001172.json",
+          "consulta_ctgov": "rheumatoid arthritis"
+        },
+        {
+          "id": "lupus",
+          "nombre": "Lupus sistémico",
+          "mesh_id": "D008180",
+          "mesh_label": "Lupus Erythematosus, Systemic",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008180.json",
+          "consulta_ctgov": "systemic lupus erythematosus"
+        }
+      ]
+    },
+    {
+      "id": "infectologia",
+      "nombre": "Infectología",
+      "mesh_id": "D003141",
+      "mesh_label": "Communicable Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D003141.json",
+      "consulta_ctgov": "infectious disease",
+      "enfermedades": [
+        {
+          "id": "vih",
+          "nombre": "Infección por VIH",
+          "mesh_id": "D015658",
+          "mesh_label": "HIV Infections",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D015658.json",
+          "consulta_ctgov": "HIV infection"
+        },
+        {
+          "id": "tuberculosis",
+          "nombre": "Tuberculosis",
+          "mesh_id": "D014376",
+          "mesh_label": "Tuberculosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D014376.json",
+          "consulta_ctgov": "tuberculosis"
+        }
+      ]
+    },
+    {
+      "id": "respiratorio",
+      "nombre": "Respiratorio",
+      "mesh_id": "D012140",
+      "mesh_label": "Respiratory Tract Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D012140.json",
+      "consulta_ctgov": "respiratory disease",
+      "enfermedades": [
+        {
+          "id": "asma",
+          "nombre": "Asma",
+          "mesh_id": "D001249",
+          "mesh_label": "Asthma",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D001249.json",
+          "consulta_ctgov": "asthma"
+        },
+        {
+          "id": "epoc",
+          "nombre": "EPOC",
+          "mesh_id": "D029424",
+          "mesh_label": "Pulmonary Disease, Chronic Obstructive",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D029424.json",
+          "consulta_ctgov": "chronic obstructive pulmonary disease"
+        }
+      ]
+    },
+    {
+      "id": "gastroenterologia-hepatologia",
+      "nombre": "Gastroenterología y hepatología",
+      "mesh_id": "D004066",
+      "mesh_label": "Digestive System Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D004066.json",
+      "consulta_ctgov": "digestive disease",
+      "enfermedades": [
+        {
+          "id": "enfermedad-inflamatoria-intestinal",
+          "nombre": "Enfermedad inflamatoria intestinal",
+          "mesh_id": "D015212",
+          "mesh_label": "Inflammatory Bowel Diseases",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D015212.json",
+          "consulta_ctgov": "inflammatory bowel disease"
+        },
+        {
+          "id": "cirrosis",
+          "nombre": "Cirrosis hepática",
+          "mesh_id": "D008103",
+          "mesh_label": "Liver Cirrhosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D008103.json",
+          "consulta_ctgov": "liver cirrhosis"
+        }
+      ]
+    },
+    {
+      "id": "nefrologia",
+      "nombre": "Nefrología",
+      "mesh_id": "D007674",
+      "mesh_label": "Kidney Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D007674.json",
+      "consulta_ctgov": "kidney disease",
+      "enfermedades": [
+        {
+          "id": "enfermedad-renal-cronica",
+          "nombre": "Enfermedad renal crónica",
+          "mesh_id": "D051436",
+          "mesh_label": "Renal Insufficiency, Chronic",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D051436.json",
+          "consulta_ctgov": "chronic kidney disease"
+        }
+      ]
+    },
+    {
+      "id": "hematologia-no-oncologica",
+      "nombre": "Hematología no oncológica",
+      "mesh_id": "D006402",
+      "mesh_label": "Hematologic Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D006402.json",
+      "consulta_ctgov": "hematologic disease",
+      "enfermedades": [
+        {
+          "id": "anemia",
+          "nombre": "Anemia",
+          "mesh_id": "D000740",
+          "mesh_label": "Anemia",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D000740.json",
+          "consulta_ctgov": "anemia"
+        }
+      ]
+    },
+    {
+      "id": "dermatologia",
+      "nombre": "Dermatología",
+      "mesh_id": "D012871",
+      "mesh_label": "Skin Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D012871.json",
+      "consulta_ctgov": "skin disease",
+      "enfermedades": [
+        {
+          "id": "psoriasis",
+          "nombre": "Psoriasis",
+          "mesh_id": "D011565",
+          "mesh_label": "Psoriasis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D011565.json",
+          "consulta_ctgov": "psoriasis"
+        }
+      ]
+    },
+    {
+      "id": "oftalmologia",
+      "nombre": "Oftalmología",
+      "mesh_id": "D005128",
+      "mesh_label": "Eye Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D005128.json",
+      "consulta_ctgov": "eye disease",
+      "enfermedades": [
+        {
+          "id": "glaucoma",
+          "nombre": "Glaucoma",
+          "mesh_id": "D005901",
+          "mesh_label": "Glaucoma",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D005901.json",
+          "consulta_ctgov": "glaucoma"
+        }
+      ]
+    },
+    {
+      "id": "enfermedades-raras",
+      "nombre": "Enfermedades raras",
+      "mesh_id": "D035583",
+      "mesh_label": "Rare Diseases",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D035583.json",
+      "consulta_ctgov": "rare disease",
+      "enfermedades": [
+        {
+          "id": "fibrosis-quistica",
+          "nombre": "Fibrosis quística",
+          "mesh_id": "D003550",
+          "mesh_label": "Cystic Fibrosis",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D003550.json",
+          "consulta_ctgov": "cystic fibrosis"
+        }
+      ]
+    },
+    {
+      "id": "vacunas",
+      "nombre": "Vacunas",
+      "mesh_id": "D014612",
+      "mesh_label": "Vaccines",
+      "fuente_url": "https://id.nlm.nih.gov/mesh/D014612.json",
+      "consulta_ctgov": "vaccine",
+      "enfermedades": [
+        {
+          "id": "influenza",
+          "nombre": "Influenza humana",
+          "mesh_id": "D007251",
+          "mesh_label": "Influenza, Human",
+          "fuente_url": "https://id.nlm.nih.gov/mesh/D007251.json",
+          "consulta_ctgov": "influenza"
+        }
+      ]
+    }
+  ]
+}

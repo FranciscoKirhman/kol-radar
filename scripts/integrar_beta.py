@@ -32,6 +32,7 @@ import re
 import sys
 import urllib.parse
 import pipeline_pais
+import areas as taxonomia_areas
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -132,6 +133,7 @@ def main():
     ent = base["entidades"]
     vin = base["vinculos"]
     ids = {e["id"] for e in ent}
+    por_id = {e["id"]: e for e in ent}
     inst_existentes = {e["id"] for e in ent if e["tipo"] == "institucion"}
 
     # ---------------------------------------------------------------- 1. ensayos, todos
@@ -142,6 +144,7 @@ def main():
             if e["nct"] not in por_nct:
                 por_nct[e["nct"]] = e
 
+    usar_taxonomia = any(a not in TERMINO for a in crudo)
     tamano_area = collections.Counter()
     for nct, areas in areas_por_nct.items():
         for a in areas:
@@ -190,6 +193,11 @@ def main():
                 pendientes.append(fac)
 
         if eid in ids:
+            if usar_taxonomia and por_id[eid].get("tipo") == "ensayo_clinico":
+                declaradas = taxonomia_areas.desde_condiciones(e.get("condiciones"))
+                por_id[eid]["areas"] = sorted({a["id"] for a, _ in declaradas})
+                por_id[eid]["enfermedades"] = sorted({d["id"] for _, d in declaradas})
+                por_id[eid]["condiciones_fuente"] = e.get("condiciones") or []
             stats["ensayos_ya_existentes"] += 1
         else:
             fase = fase_legible(e.get("fases"))
@@ -199,13 +207,20 @@ def main():
             if ciudades:
                 u = sorted(set(ciudades))
                 ciudad = u[0] + (" (+%d sitios)" % (len(ciudades) - 1) if len(ciudades) > 1 else "")
+            declaradas = taxonomia_areas.desde_condiciones(e.get("condiciones")) if usar_taxonomia else []
+            ids_areas = sorted({a["id"] for a, _ in declaradas})
+            ids_enfermedades = sorted({d["id"] for _, d in declaradas})
+            # La búsqueda recupera candidatos, pero solo las condiciones declaradas
+            # permiten asignarles una enfermedad. Los demás quedan sin clasificar.
+            area_legacy = elegir_area(nct) if not usar_taxonomia else (
+                declaradas[0][1]["nombre"] if declaradas else None)
             nodo = {
                 "id": eid,
                 "nombre": ("%s (%s)" % (e["acronimo"], nct)) if e.get("acronimo") else nct,
                 "tipo": "ensayo_clinico",
                 "ciudad": ciudad,
                 "subtitulo": sub or "Ensayo clínico con sitio en %s" % config["nombre"],
-                "area": elegir_area(nct),
+                "area": area_legacy,
                 "acronimo": e.get("acronimo"),
                 "intervenciones": [i for i in (e.get("intervenciones") or []) if i][:4],
                 "estado_reclutamiento": estado,
@@ -220,6 +235,10 @@ def main():
                     "confianza": "pendiente",
                 }],
             }
+            if usar_taxonomia:
+                nodo["areas"] = ids_areas
+                nodo["enfermedades"] = ids_enfermedades
+                nodo["condiciones_fuente"] = e.get("condiciones") or []
             if iso != "CL":
                 nodo["pais"] = iso
                 nodo["sitios_pais"] = nodo.pop("sitios_chile")
@@ -361,12 +380,21 @@ def main():
                                 "alias_fuente": p["sede_texto_original"]})
 
     base["actualizado"] = datetime.date.today().isoformat()
-    base["especialidad_muestra"] = "oncología (19 áreas)"
-    base["nota_beta"] = (
-        "Beta. La expansión del 2026-09-09 sumó ensayos de ClinicalTrials.gov con al menos una "
-        "ubicación declarada en Chile. Ningún hecho pasó revisión humana: todos entran como "
-        "'pendiente'. Las sedes que no se pudieron ligar a una institución conocida quedan "
-        "listadas en el propio ensayo como pendientes de resolución, no descartadas.")
+    if usar_taxonomia:
+        base["especialidad_muestra"] = "áreas terapéuticas médicas (taxonomía MeSH)"
+        base["nota_beta"] = (
+            "Beta. Ensayos de ClinicalTrials.gov con sitio declarado en Chile, recuperados "
+            "por consultas de 41 enfermedades. Las áreas nuevas se asignan solo cuando la "
+            "condición declarada coincide con la taxonomía; los demás ensayos quedan sin "
+            "clasificar. Las personas propuestas no se publican sin afiliación y decisión humana. "
+            "Los hechos nuevos siguen pendientes de revisión.")
+    else:
+        base["especialidad_muestra"] = "oncología (19 áreas)"
+        base["nota_beta"] = (
+            "Beta. La expansión del 2026-09-09 sumó ensayos de ClinicalTrials.gov con al menos una "
+            "ubicación declarada en Chile. Ningún hecho pasó revisión humana: todos entran como "
+            "'pendiente'. Las sedes que no se pudieron ligar a una institución conocida quedan "
+            "listadas en el propio ensayo como pendientes de resolución, no descartadas.")
     if iso != "CL":
         base["pais_recoleccion"] = iso
         base["nota_beta"] = "Integración de revisión privada por país; no publicada."
@@ -383,6 +411,10 @@ def main():
         "personas_creadas": creadas,
         "otros": dict(stats),
         "por_area": dict(collections.Counter(e.get("area") for e in ent if e["tipo"] == "ensayo_clinico")),
+        "por_area_taxonomia": dict(collections.Counter(a for e in ent if e["tipo"] == "ensayo_clinico"
+                                                  for a in e.get("areas", []))),
+        "ensayos_nuevos_sin_clasificar": sum(1 for e in ent if e["tipo"] == "ensayo_clinico"
+                                           and "areas" in e and not e["areas"]),
     }, ensure_ascii=False, indent=1))
 
 
