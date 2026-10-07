@@ -25,6 +25,7 @@ preintegración ya auditado.
 import argparse
 import collections
 import datetime
+import hashlib
 import glob
 import json
 import os
@@ -331,6 +332,8 @@ def main():
             stats["personas_en_cola_por_posible_fusion"] += 1
             continue          # fusionar es decisión humana: no se toca la ficha existente
         pid = re.sub(r"[^a-z0-9]+", "-", p["nombre_normalizado"].lower()).strip("-")
+        if not pid:
+            pid = "persona-u-" + hashlib.sha256(p["nombre_normalizado"].encode("utf-8")).hexdigest()[:16]
         eid = p["nct"].lower()
         if pid not in ids:
             rol = ("investigador principal" if p["rol_declarado_fuente"] == "PRINCIPAL_INVESTIGATOR"

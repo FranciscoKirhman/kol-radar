@@ -63,8 +63,8 @@ def limpiar_nombre(bruto):
 def clave_nombre(n):
     import unicodedata
     s = unicodedata.normalize("NFD", n or "")
-    s = "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
-    return re.sub(r"[^a-z ]", " ", s).split()
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn").casefold()
+    return re.sub(r"[^\w ]|_", " ", s, flags=re.UNICODE).split()
 
 
 def main():
@@ -152,7 +152,7 @@ def main():
     # el segundo token ahí es "Gonzalo", un segundo nombre, no el apellido. Ese fallo habría
     # creado una ficha duplicada del mismo médico.
     apellidos_existentes = collections.defaultdict(list)
-    for pid, nom in personas_existentes.items():
+    for pid, nom in (personas_existentes.items() if config["iso2"] == "CL" else []):
         t = clave_nombre(nom)
         for apellido in t[1:]:
             apellidos_existentes[(t[0], apellido)].append((pid, nom))
@@ -164,7 +164,10 @@ def main():
         excluida = excl.estado_persona(nombre=limpio) if limpio else None
         if excluida == "exacta":
             continue
-        if not limpio or NO_PERSONA.match(limpio) or len(clave_nombre(limpio)) < 2:
+        partes = clave_nombre(limpio)
+        nombre_unico_no_latino = (len(partes) == 1 and len(partes[0]) >= 2 and
+                                 any(ord(c) > 127 for c in partes[0]))
+        if not limpio or NO_PERSONA.match(limpio) or (len(partes) < 2 and not nombre_unico_no_latino):
             clase, coincide = "no_persona_utilizable", []
         else:
             t = clave_nombre(limpio)

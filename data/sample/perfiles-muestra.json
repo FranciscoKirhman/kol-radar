@@ -439,9 +439,17 @@
           "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/00t0z3q71",
+          "fuente_url": "https://ror.org/00t0z3q71",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "ror_id": "https://ror.org/00t0z3q71"
     },
     {
       "id": "james-lind",
@@ -551,6 +559,13 @@
           "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872014000400004",
           "fecha": "sin fecha en la fuente",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04teye511",
+          "fuente_url": "https://ror.org/04teye511",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
       "area": "cáncer de pulmón",
@@ -560,7 +575,8 @@
         "Centro de Investigaciones Clinicas de la Universidad Catolica",
         "Pontificia Universidad Católica de Chile",
         "CICUC"
-      ]
+      ],
+      "ror_id": "https://ror.org/04teye511"
     },
     {
       "id": "k2-oncology",
@@ -3299,6 +3315,20 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/18449464/",
           "fecha": "2026-09-29",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ORCID: 0000-0002-9619-7535",
+          "fuente_url": "https://orcid.org/0000-0002-9619-7535",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "OpenAlex: https://openalex.org/A5035117288",
+          "fuente_url": "https://openalex.org/A5035117288",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
       "area": "cáncer de pulmón",
@@ -3308,7 +3338,9 @@
       "nota_identidad": "Ficha unificada el 2026-09-29: «Francisco Aguayo G.» (SciELO 2006, Instituto Nacional del Tórax) y «Francisco Aguayo» (PubMed 2022 y 2024, Universidad de Tarapacá) son la misma persona: el artículo de 2006 y el de PubMed de 2007 sobre metilación de p16 en cáncer de pulmón en Chile comparten coautores (Darwins Castillo, Leda Guzmán) y tema, y el registro ORCID de Francisco Aguayo González, de la Universidad de Tarapacá, reclama como propio el de 2007. La «G.» es González. La decidió Claude por encargo de Francisco (2026-09-29), con la evidencia citada; todavía no la revisó una persona.",
       "ids_anteriores": [
         "francisco-aguayo-g"
-      ]
+      ],
+      "orcid": "0000-0002-9619-7535",
+      "openalex_id": "https://openalex.org/A5035117288"
     },
     {
       "id": "martin-montecino",
@@ -3945,13 +3977,21 @@
           "fuente_url": "https://orcid.org/0000-0003-2472-1833",
           "fecha": "2026-08-18",
           "confianza": "confirmado"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ORCID: 0000-0003-2472-1833",
+          "fuente_url": "https://orcid.org/0000-0003-2472-1833",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
       "area": "cáncer de pulmón",
       "nota_identidad": "Ficha unificada el 2026-08-18: 'Claudio Silva F.' (indexado así en PubMed) y 'Claudio Silva Fuente-Alba' (SciELO) eran dos fichas de la misma persona. La fusión la aprobó una revisión humana y la respalda el registro ORCID 0000-0003-2472-1833, que lista ambas formas del nombre.",
       "ids_anteriores": [
         "claudio-silva-f"
-      ]
+      ],
+      "orcid": "0000-0003-2472-1833"
     },
     {
       "id": "g-cristobal-ramos-gomez",
@@ -4023,12 +4063,20 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/37572870/",
           "fecha": "2024-01",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/00j5bwe91",
+          "fuente_url": "https://ror.org/00j5bwe91",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
         "Clínica Las Condes"
-      ]
+      ],
+      "ror_id": "https://ror.org/00j5bwe91"
     },
     {
       "id": "orlandi",
@@ -4064,12 +4112,20 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/38320664/",
           "fecha": "2024-05",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04s1kgp90",
+          "fuente_url": "https://ror.org/04s1kgp90",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
         "Cilnica Santa Maria"
-      ]
+      ],
+      "ror_id": "https://ror.org/04s1kgp90"
     },
     {
       "id": "uandes",
@@ -4169,9 +4225,17 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/33113004/",
           "fecha": "2021-05",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/010r9dy59",
+          "fuente_url": "https://ror.org/010r9dy59",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "ror_id": "https://ror.org/010r9dy59"
     },
     {
       "id": "uchile",
@@ -4186,12 +4250,20 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/34186175/",
           "fecha": "2021-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/047gc3g35",
+          "fuente_url": "https://ror.org/047gc3g35",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
         "Faculty of Medicine, University of Chile"
-      ]
+      ],
+      "ror_id": "https://ror.org/047gc3g35"
     },
     {
       "id": "uss",
@@ -4206,9 +4278,17 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/30011388/",
           "fecha": "2018-10",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04jrwm652",
+          "fuente_url": "https://ror.org/04jrwm652",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "ror_id": "https://ror.org/04jrwm652"
     },
     {
       "id": "udec",
@@ -4223,12 +4303,20 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/30011388/",
           "fecha": "2018-10",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/0460jpj73",
+          "fuente_url": "https://ror.org/0460jpj73",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
         "Universidad de Concepción"
-      ]
+      ],
+      "ror_id": "https://ror.org/0460jpj73"
     },
     {
       "id": "utarapaca",
@@ -4243,9 +4331,17 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/36552201/",
           "fecha": "2022-11-23",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04xe01d27",
+          "fuente_url": "https://ror.org/04xe01d27",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "ror_id": "https://ror.org/04xe01d27"
     },
     {
       "id": "unab",
@@ -4260,9 +4356,17 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/36510562/",
           "fecha": "2022",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/01qq57711",
+          "fuente_url": "https://ror.org/01qq57711",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "ror_id": "https://ror.org/01qq57711"
     },
     {
       "id": "uach",
@@ -4277,9 +4381,17 @@
           "fuente_url": "https://pubmed.ncbi.nlm.nih.gov/39519155/",
           "fecha": "2024-10-29",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/029ycp228",
+          "fuente_url": "https://ror.org/029ycp228",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "ror_id": "https://ror.org/029ycp228"
     },
     {
       "id": "hosp-uchile",
@@ -4316,9 +4428,17 @@
           "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872016000200009",
           "fecha": "2016-02",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/05kgh1y38",
+          "fuente_url": "https://ror.org/05kgh1y38",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "area": "cáncer de pulmón"
+      "area": "cáncer de pulmón",
+      "ror_id": "https://ror.org/05kgh1y38"
     },
     {
       "id": "isp",
@@ -4333,12 +4453,20 @@
           "fuente_url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482006000100002",
           "fecha": "2006-03",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/0080ttk76",
+          "fuente_url": "https://ror.org/0080ttk76",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
       "area": "cáncer de pulmón",
       "alias_en_la_fuente": [
         "Instituto de Salud Publica"
-      ]
+      ],
+      "ror_id": "https://ror.org/0080ttk76"
     },
     {
       "id": "nct04022109",
@@ -24559,8 +24687,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Instituto+Nacional+del+Cancer",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/0589fsc66",
+          "fuente_url": "https://ror.org/0589fsc66",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/0589fsc66"
     },
     {
       "id": "ic-la-serena",
@@ -24903,8 +25039,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Hospital+Luis+Calvo+Mackenna+(+Site+1879)",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/02k2v9264",
+          "fuente_url": "https://ror.org/02k2v9264",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/02k2v9264"
     },
     {
       "id": "hosp-van-buren",
@@ -24925,8 +25069,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Hospital+Carlos+Van+Buren+(+Site+1880)",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/017hmzz19",
+          "fuente_url": "https://ror.org/017hmzz19",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/017hmzz19"
     },
     {
       "id": "hosp-san-borja",
@@ -24948,8 +25100,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Hospital+Clinico+San+Borja+Arriaran",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04qdwp261",
+          "fuente_url": "https://ror.org/04qdwp261",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/04qdwp261"
     },
     {
       "id": "hosp-sotero",
@@ -25024,8 +25184,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Hospital+Militar",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/05d5yjx85",
+          "fuente_url": "https://ror.org/05d5yjx85",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/05d5yjx85"
     },
     {
       "id": "crchile",
@@ -25066,8 +25234,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Hospital+del+Salvador",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/00zrn3e14",
+          "fuente_url": "https://ror.org/00zrn3e14",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/00zrn3e14"
     },
     {
       "id": "hosp-rancagua",
@@ -25129,8 +25305,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Clinica+Davila",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04gyvnw24",
+          "fuente_url": "https://ror.org/04gyvnw24",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/04gyvnw24"
     },
     {
       "id": "hosp-barros-luco",
@@ -25227,8 +25411,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Hospital+de+Talca",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04yzyns28",
+          "fuente_url": "https://ror.org/04yzyns28",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/04yzyns28"
     },
     {
       "id": "hosp-sjd",
@@ -25246,8 +25438,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Hospital+San+Juan+de+Dios",
           "fecha": "2026-09-09",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/03mt12903",
+          "fuente_url": "https://ror.org/03mt12903",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/03mt12903"
     },
     {
       "id": "annerleim-walton-diaz",
@@ -25828,9 +26028,17 @@
           "fuente_url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
           "fecha": "2026-09-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/035zr6437",
+          "fuente_url": "https://ror.org/035zr6437",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "nota_identidad": "No es el Hospital de Carabineros (otra ficha): el de la Dirección de Previsión es DIPRECA."
+      "nota_identidad": "No es el Hospital de Carabineros (otra ficha): el de la Dirección de Previsión es DIPRECA.",
+      "ror_id": "https://ror.org/035zr6437"
     },
     {
       "id": "hosp-fach",
@@ -25881,8 +26089,16 @@
           "fuente_url": "https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes",
           "fecha": "2026-09-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/00s5x0w83",
+          "fuente_url": "https://ror.org/00s5x0w83",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/00s5x0w83"
     },
     {
       "id": "hosp-san-jose",
@@ -26374,8 +26590,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Universidad+de+La+Frontera",
           "fecha": "2026-09-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04v0snf24",
+          "fuente_url": "https://ror.org/04v0snf24",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/04v0snf24"
     },
     {
       "id": "ucn",
@@ -26393,8 +26617,16 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Universidad+Cat%C3%B3lica+del+Norte",
           "fecha": "2026-09-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/02akpm128",
+          "fuente_url": "https://ror.org/02akpm128",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
-      ]
+      ],
+      "ror_id": "https://ror.org/02akpm128"
     },
     {
       "id": "ucmaule",
@@ -26412,9 +26644,17 @@
           "fuente_url": "https://clinicaltrials.gov/search?locStr=Chile&term=Catholic+University+of+Maule",
           "fecha": "2026-09-28",
           "confianza": "pendiente"
+        },
+        {
+          "tipo": "identificador",
+          "hecho": "ROR: https://ror.org/04vdpck27",
+          "fuente_url": "https://ror.org/04vdpck27",
+          "fecha": "2026-10-07",
+          "confianza": "pendiente"
         }
       ],
-      "nota_identidad": "Es la universidad, no la Clínica Universidad Católica del Maule (otra ficha)."
+      "nota_identidad": "Es la universidad, no la Clínica Universidad Católica del Maule (otra ficha).",
+      "ror_id": "https://ror.org/04vdpck27"
     },
     {
       "id": "conac",

@@ -33,7 +33,7 @@ MUESTRA = os.path.join(RAIZ, "data", "sample", "perfiles-muestra.json")
 
 def norm(texto):
     s = unicodedata.normalize("NFD", texto or "")
-    s = "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn").casefold()
     return re.sub(r"\s+", " ", s).strip()
 
 
