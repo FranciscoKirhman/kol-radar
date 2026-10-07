@@ -1106,6 +1106,14 @@
 .geo-global-sites button { text-align:left; border:1px solid var(--border); background:var(--surface-1); color:var(--text-primary); border-radius:8px; padding:9px; font:inherit; cursor:pointer; }
 .geo-global-sites button small { display:block; color:var(--text-muted); }
 @media(max-width:430px) { .country-control select { max-width:135px; } .geo-global { padding:12px; } }
+.therapy-control { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:8px 0; font-size:12px; }
+.therapy-control[hidden] { display:none; }
+.therapy-control select { min-width:0; max-width:100%; flex:0 1 300px; padding:8px; border:1px solid var(--border); border-radius:8px; background:var(--surface-1); color:var(--text-primary); font:inherit; }
+#area-carga { color:var(--text-muted); }
+.area-heading { font-size:12px; margin:10px 6px 4px; color:var(--text-muted); }
+.area-panel { width:300px; min-width:0; max-width:calc(100vw - 16px); box-sizing:border-box; }
+.area-opt > span:not(.area-swatch):not(.cuenta) { min-width:0; overflow-wrap:anywhere; }
+@media(max-width:430px) { .therapy-control select { flex:1 1 180px; } #area-carga { flex-basis:100%; } }
 </style>
 </head>
 <body class="en-inicio">
@@ -1131,6 +1139,11 @@
     </div>
     <a class="dev-link" href="interno.html" title="Cómo se construyó esto y de dónde salen los datos">Detalles técnicos ↗</a>
   </div>
+  <div class="therapy-control" id="therapy-control" hidden>
+    <label for="area-terapeutica">Área terapéutica</label>
+    <select id="area-terapeutica" aria-label="Área terapéutica"></select>
+    <span id="area-carga" role="status" aria-live="polite"></span>
+  </div>
   <div class="filters-row">
     <button class="chip" data-filter="todos" aria-pressed="true">Todos</button>
     <button class="chip" data-filter="farmaco" aria-pressed="false">Fármacos</button>
@@ -1140,8 +1153,8 @@
     <button class="chip sort-toggle" id="sort-toggle" data-sort="reciente">Ordenar: más reciente</button>
     <span class="chip-sep" aria-hidden="true"></span>
     <details class="area-menu" id="area-menu">
-      <summary class="chip" id="area-summary" aria-label="Filtrar por área oncológica">Áreas: todas</summary>
-      <div class="area-panel" id="area-panel" role="group" aria-label="Áreas oncológicas"></div>
+      <summary class="chip" id="area-summary" aria-label="Filtrar por enfermedad">Áreas: todas</summary>
+      <div class="area-panel" id="area-panel" role="group" aria-label="Áreas terapéuticas y enfermedades"></div>
     </details>
     <button class="chip" id="toggle-advanced" aria-pressed="false" aria-expanded="false">Filtros avanzados ▾</button>
     <button class="chip shortlist-chip" id="toggle-shortlist" aria-pressed="false">Mi shortlist (0)</button>
@@ -1193,7 +1206,7 @@
 <main>
   <section id="inicio-view" class="active" aria-labelledby="hero-titulo">
     <div class="hero">
-      <p class="hero-kicker">Oncología · Chile · fuentes públicas</p>
+      <p class="hero-kicker">Áreas terapéuticas · Chile · fuentes públicas</p>
       <h1 id="hero-titulo">¿Quién investiga qué, y con quién se conecta?</h1>
       <p class="hero-lead">Buscá un fármaco, un estudio, un profesional o una institución y mirá su red:
         en qué estudios se evalúa, en qué centros corren y quién trabaja ahí. Cada conexión enlaza a su fuente.</p>
@@ -1375,6 +1388,98 @@
   var mundoPaginaToken = null, mundoCargaActiva = false, mundoFuenteAgotada = false;
   var DATA_URL = "";
   var indicePublicado = null;
+  var chileTaxonomia = null, chileAreas = [], chileFragmentos = {}, chilePeticiones = {};
+  var chileAreaActual = "", chileCambio = 0;
+
+  function pedirFragmentoChile(area) {
+    if (chileFragmentos[area.id]) return Promise.resolve(chileFragmentos[area.id]);
+    if (chilePeticiones[area.id]) return chilePeticiones[area.id];
+    if (!/^\.\.\/data\/publicado\/CL\/[a-z0-9-]+\.json$/.test(area.ruta))
+      return Promise.reject(new Error("Ruta de área inválida"));
+    chilePeticiones[area.id] = fetch(area.ruta, { cache: "no-cache" }).then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    }).then(function (doc) {
+      chileFragmentos[area.id] = doc; delete chilePeticiones[area.id]; return doc;
+    }, function (err) { delete chilePeticiones[area.id]; throw err; });
+    return chilePeticiones[area.id];
+  }
+
+  // Merge by entity ID; edge IDs are preferred, with a stable semantic key for legacy edges.
+  function combinarFragmentosChile(docs) {
+    var nodos = {}, edges = {}, salida = { entidades: [], vinculos: [] };
+    docs.forEach(function (doc) {
+      (doc.entidades || []).forEach(function (n) {
+        var actual = nodos[n.id];
+        if (!actual) {
+          actual = JSON.parse(JSON.stringify(n)); nodos[n.id] = actual; salida.entidades.push(actual);
+        } else {
+          Object.keys(n).forEach(function (key) {
+            if (Array.isArray(n[key])) {
+              var visto = {}; (actual[key] || []).forEach(function (v) { visto[JSON.stringify(v)] = true; });
+              n[key].forEach(function (v) { var k = JSON.stringify(v); if (!visto[k]) { (actual[key] = actual[key] || []).push(v); visto[k] = true; } });
+            } else if (actual[key] === undefined) actual[key] = n[key];
+          });
+        }
+        actual._fragmentos = actual._fragmentos || [];
+        if (actual._fragmentos.indexOf(doc.area_id) === -1) actual._fragmentos.push(doc.area_id);
+      });
+      (doc.vinculos || []).forEach(function (v) {
+        var key = v.id || JSON.stringify([v.origen, v.destino, v.tipo, v.criterio || "", v.fuente_url || ""]);
+        if (!edges[key]) { edges[key] = true; salida.vinculos.push(v); }
+      });
+      if (doc.geo) salida.geo = doc.geo;
+      if (doc.contacto) salida.contacto = doc.contacto;
+    });
+    return salida;
+  }
+
+  function cargarSeleccionChile(id) {
+    var areas = chileAreas.filter(function (a) { return id === "todas" || a.id === id; });
+    if (!areas.length) return Promise.reject(new Error("Área sin fragmento publicado"));
+    return Promise.all(areas.map(pedirFragmentoChile)).then(combinarFragmentosChile);
+  }
+
+  function textoAreaChile() {
+    var actual = chileAreas.filter(function (a) { return a.id === chileAreaActual; })[0];
+    return actual ? actual.nombre : "Todas las áreas terapéuticas";
+  }
+
+  function actualizarTextoChile() {
+    var hero = document.querySelector(".hero-kicker");
+    if (hero) hero.textContent = textoAreaChile() + " · Chile · fuentes públicas";
+    document.getElementById("specialty-badge").textContent = textoAreaChile();
+  }
+
+  function prepararSelectorChile() {
+    var select = document.getElementById("area-terapeutica");
+    select.textContent = "";
+    [{ id: "todas", nombre: "Todas" }].concat(chileAreas).forEach(function (a) {
+      var opt = document.createElement("option"); opt.value = a.id; opt.textContent = a.nombre; select.appendChild(opt);
+    });
+    select.value = chileAreaActual;
+    document.getElementById("therapy-control").hidden = false;
+    select.addEventListener("change", function () {
+      var id = select.value, turno = ++chileCambio;
+      var status = document.getElementById("area-carga"); status.textContent = "Cargando área seleccionada…";
+      cargarSeleccionChile(id).then(function (data) {
+        if (turno !== chileCambio) return;
+        chileAreaActual = id; entidades = data.entidades; vinculos = data.vinculos;
+        byId = {}; entidades.forEach(function (n) { byId[n.id] = n; });
+        state.areas = []; state.claseFarmaco = null; state.ciudad = null; state.region = "todas";
+        construirAdyacencia(); construirTemas(); buildAreaChips(); buildRegionChips();
+        pintarCifrasRevision(); refreshShortlistUI(); renderCards(); mapaChile.refrescar(true); invalidateNetwork();
+        inicio.pintar(); actualizarTextoChile();
+        if (patentesView.classList.contains("active")) patentesVista.pintar();
+        status.textContent = entidades.length + " fichas · " + textoAreaChile();
+        // C1 integration point: data selection is complete; classification can refresh here.
+      }).catch(function (err) {
+        if (turno !== chileCambio) return;
+        select.value = chileAreaActual;
+        status.textContent = "No se pudo cargar el área (" + err.message + "). Volvé a seleccionarla para reintentar.";
+      });
+    });
+  }
   var TIPO_HECHO_LABEL = {
     publicacion: "Publicaciones",
     ensayo_clinico: "Ensayos clínicos",
@@ -1520,8 +1625,15 @@
   }
   // Un fármaco no tiene un área: tiene las de sus estudios. El resto de las fichas, la suya.
   function areasDe(n) {
-    if (n.areas && n.areas.length) return n.areas;
-    return [n.area || "cáncer de pulmón"];
+    var out = (n.areas || []).slice();
+    if (n.area && out.indexOf(n.area) === -1) out.push(n.area);
+    if (chileTaxonomia) (chileTaxonomia.areas || []).forEach(function (a) {
+      if (out.indexOf(a.id) !== -1) out.push(a.nombre);
+      (a.enfermedades || []).forEach(function (e) {
+        if ((n.enfermedades || []).indexOf(e.id) !== -1) out.push(e.nombre);
+      });
+    });
+    return out.length ? out : ["Sin clasificar"];
   }
   // Un ensayo fase III/IV pesa el doble que uno fase I/II: es el único peso que no inventamos,
   // porque ClinicalTrials.gov ya entrega la fase como dato estructurado real.
@@ -1839,6 +1951,7 @@
     }).catch(function (err) { document.getElementById("geo-global-status").textContent = "No se pudo cargar el mapa: " + err.message; });
   }
 
+  // INICIO SANEAMIENTO MUNDO: el test ejecuta este bloque del producto.
   var MARCADORES_SEDE_MUNDO = ["hospital", "medical center", "medical centre", "university", "institute", "research", "cancer center", "cancer centre", "health system", "healthcare", "health care", "medical group", "health center", "health centre", "foundation", "trust", "hospice", "polyclinic", "dispensary", "universitätsklinikum", "krankenhaus", "klinik", "klinikum", "centre hospitalier", "centro medico", "centro médico", "hospital universitario", "hospital universitário", "instituto", "centro hospitalar"];
   var SEDE_HONORIFIC = "(?:^|[^a-z])(?:drs?|dra|dras|doctor|doctora|docteur|doctores|prof|professor|professeur|dott|dottore|doctoresse)(?:[.]|\\b)";
   var SEDE_PRIVATE_PRACTICE = "\\b(?:private healthcare|private practice|private office|consultorio|cabinet|praxis)\\b|['’]s\\s+(?:clinic|practice|office)\\b";
@@ -1994,20 +2107,17 @@
             return convertirMundo(docs[0], paisMundo, docs[1]);
           });
       }
-      return fetch(INDICE_URL, { cache: "no-cache" }).then(function (res) {
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        return res.json();
-      }).then(function (indice) {
-        indicePublicado = indice;
-        var pais = (indice.paises || []).filter(function (p) { return p.iso2 === indice.pais_inicial; })[0];
-        var area = pais && (pais.areas || []).filter(function (a) { return a.id === indice.area_inicial; })[0];
-        if (!area || !/^\.\.\/data\/publicado\/[A-Z]{2}\/[a-z0-9-]+\.json$/.test(area.ruta))
-          throw new Error("Índice de datos inválido");
-        DATA_URL = area.ruta;
-        return fetch(DATA_URL, { cache: "no-cache" }).then(function (r) {
-          if (!r.ok) throw new Error("HTTP " + r.status); return r.json();
+      return Promise.all([fetch(INDICE_URL, { cache: "no-cache" }), fetch("../data/config/areas.json", { cache: "no-cache" })])
+        .then(function (responses) { return Promise.all(responses.map(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status); return res.json();
+        })); }).then(function (docs) {
+          indicePublicado = docs[0]; chileTaxonomia = docs[1];
+          var pais = (indicePublicado.paises || []).filter(function (p) { return p.iso2 === "CL"; })[0];
+          chileAreas = pais ? pais.areas || [] : [];
+          chileAreaActual = indicePublicado.area_inicial;
+          prepararSelectorChile();
+          return cargarSeleccionChile(chileAreaActual);
         });
-      });
     })
     .then(function (data) {
       entidades = data.entidades || [];
@@ -2018,10 +2128,11 @@
       pintarCifrasRevision();
       // Una shortlist guardada puede apuntar a ids que ya no existen (el dataset cambia entre
       // versiones) — se limpian en silencio en vez de romper el resumen más adelante.
-      shortlist = shortlist.filter(function (id) { return !!byId[id]; });
+      if (PAIS_ACTUAL !== "CL") shortlist = shortlist.filter(function (id) { return !!byId[id]; });
       saveShortlist();
       document.getElementById("loading-state").hidden = true;
       buildAreaChips();
+      if (PAIS_ACTUAL === "CL") actualizarTextoChile();
       renderFooter(data.contacto);
       construirTemas();
       // En pantalla chica el ecosistema completo es ilegible, así que ahí se arranca en la vista
@@ -2409,7 +2520,7 @@
     card.className = "card";
     // Con varias áreas elegidas, el filo de la tarjeta lleva el color del área: es lo que
     // permite ver de un vistazo a cuál pertenece cada resultado en una lista mezclada.
-    var colArea = colorDeArea(n.area || "cáncer de pulmón");
+    var colArea = colorDeArea(n.area || "Sin clasificar");
     if (colArea) {
       card.setAttribute("data-area-color", "1");
       card.style.setProperty("--area-color", colArea);
@@ -2978,11 +3089,29 @@
     return i < AREA_COLORES.length ? AREA_COLORES[i] : null;
   }
 
+  function gruposEnfermedadesDisponibles() {
+    if (!chileTaxonomia) return [{ nombre: "Enfermedades", enfermedades: areasDisponibles() }];
+    var nombres = {}, grupos = [];
+    (chileTaxonomia.areas || []).forEach(function (a) {
+      if (chileAreaActual !== "todas" && a.id !== chileAreaActual) return;
+      var items = (a.enfermedades || []).filter(function (e) {
+        return entidades.some(function (n) { return areasDe(n).indexOf(e.nombre) !== -1; });
+      }).map(function (e) { nombres[e.nombre] = true; return e.nombre; });
+      grupos.push({ nombre: a.nombre, enfermedades: items });
+    });
+    var otras = [];
+    entidades.forEach(function (n) {
+      if (n.area && !nombres[n.area] && otras.indexOf(n.area) === -1 &&
+          !(chileTaxonomia.areas || []).some(function (a) { return a.nombre === n.area || a.id === n.area; })) otras.push(n.area);
+    });
+    if (otras.length) grupos.push({ nombre: "Otras condiciones declaradas", enfermedades: otras.sort() });
+    return grupos;
+  }
+
   function areasDisponibles() {
     var areas = [];
     entidades.forEach(function (n) {
-      var a = n.area || "cáncer de pulmón";
-      if (areas.indexOf(a) === -1) areas.push(a);
+      areasDe(n).forEach(function (a) { if (areas.indexOf(a) === -1) areas.push(a); });
     });
     return areas.sort();
   }
@@ -2990,8 +3119,8 @@
   function actualizarResumenAreas() {
     var sum = document.getElementById("area-summary");
     sum.textContent = "";
-    if (!state.areas.length) { sum.appendChild(document.createTextNode("Áreas: todas")); return; }
-    sum.appendChild(document.createTextNode("Áreas: "));
+    if (!state.areas.length) { sum.appendChild(document.createTextNode("Enfermedades: todas")); return; }
+    sum.appendChild(document.createTextNode("Enfermedades: "));
     state.areas.forEach(function (a, i) {
       var c = colorDeArea(a);
       if (c) {
@@ -3023,17 +3152,21 @@
   }
 
   function buildAreaChips() {
-    var areas = areasDisponibles();
-    if (areas.length < 2) { document.getElementById("area-menu").hidden = true; return; }
+    var grupos = gruposEnfermedadesDisponibles();
     document.getElementById("area-menu").hidden = false;
-    document.getElementById("specialty-badge").textContent = areas.length + " áreas";
+    if (PAIS_ACTUAL !== "CL") document.getElementById("specialty-badge").textContent = areasDisponibles().length + " áreas";
     var panel = document.getElementById("area-panel");
-    panel.innerHTML = "";
-    areas.forEach(function (a) {
-      var cuenta = entidades.filter(function (x) { return (x.area || "cáncer de pulmón") === a; }).length;
+    panel.textContent = "";
+    grupos.forEach(function (grupo) {
+      var titulo = document.createElement("h3"); titulo.className = "area-heading"; titulo.textContent = grupo.nombre; panel.appendChild(titulo);
+      if (!grupo.enfermedades.length) {
+        var vacio = document.createElement("p"); vacio.className = "area-heading"; vacio.textContent = "Sin enfermedad específica clasificada"; panel.appendChild(vacio);
+      }
+      grupo.enfermedades.forEach(function (a) {
+      var cuenta = entidades.filter(function (x) { return areasDe(x).indexOf(a) !== -1; }).length;
       var lab = document.createElement("label"); lab.className = "area-opt";
       var cb = document.createElement("input");
-      cb.type = "checkbox"; cb.value = a;
+      cb.type = "checkbox"; cb.value = a; cb.checked = state.areas.indexOf(a) !== -1;
       cb.addEventListener("change", function () {
         var i = state.areas.indexOf(a);
         if (cb.checked && i === -1) state.areas.push(a);
@@ -3047,10 +3180,11 @@
       var cnt = document.createElement("span"); cnt.className = "cuenta"; cnt.textContent = cuenta;
       lab.appendChild(cb); lab.appendChild(sw); lab.appendChild(txt); lab.appendChild(cnt);
       panel.appendChild(lab);
+      });
     });
     var acc = document.createElement("div"); acc.className = "area-acciones";
     var limpiar = document.createElement("button");
-    limpiar.type = "button"; limpiar.textContent = "Todas las áreas";
+    limpiar.type = "button"; limpiar.textContent = "Todas las enfermedades";
     limpiar.addEventListener("click", function () {
       state.areas = [];
       panel.querySelectorAll("input[type=checkbox]").forEach(function (c) { c.checked = false; });
@@ -3171,7 +3305,7 @@
     seleccionados.sort(function (a, b) { return computePriority(b).total - computePriority(a).total; });
 
     var L = [];
-    L.push("MAPA DE PRIMERA PASADA — CÁNCER DE PULMÓN, CHILE");
+    L.push("MAPA DE PRIMERA PASADA — " + (PAIS_ACTUAL === "CL" ? textoAreaChile() + ", Chile" : (paisMundo ? paisMundo.nombre : PAIS_ACTUAL)));
     L.push("Generado con KOL Radar · " + new Date().toISOString().slice(0, 10));
     L.push("");
     L.push("MÉTODO");
@@ -4632,8 +4766,18 @@
       b.addEventListener("click", function () { mostrar(); });
       barra.appendChild(b);
     }
-    function refrescar() {
+    function refrescar(datosCambiados) {
       if (!preparado) return;
+      if (datosCambiados) {
+        adj = {}; info = {};
+        entidades.forEach(function (n) { adj[n.id] = []; });
+        vinculos.forEach(function (v) {
+          if (!adj[v.origen] || !adj[v.destino]) return;
+          adj[v.origen].push({ otro: v.destino, tipo: v.tipo });
+          adj[v.destino].push({ otro: v.origen, tipo: v.tipo });
+        });
+        sel = null; ubicarEntidades();
+      }
       recalcular();
       if (sel && !visibles[sel]) sel = null;
       pintarTodo();
@@ -5707,7 +5851,7 @@
       circle.setAttribute("fill", "var(--" + colorVar(n.tipo) + ")");
       // El relleno sigue diciendo QUÉ es el nodo (persona, institución, ensayo); el área va en
       // el borde. Así se pueden leer las dos cosas a la vez sin que una tape a la otra.
-      var colNodo = colorDeArea(n.area || "cáncer de pulmón");
+      var colNodo = colorDeArea(n.area || "Sin clasificar");
       if (colNodo) {
         circle.setAttribute("stroke", colNodo);
         circle.setAttribute("stroke-width", "2.5");
@@ -7477,7 +7621,7 @@
       var c3 = el("div", "pat-controles");
       var o = el("button", "chip small", "Incluir soporte y otros agentes"); o.type = "button";
       o.setAttribute("aria-pressed", String(!filtro.onco));
-      o.title = "Antieméticos, factores de crecimiento, antibióticos y otros fármacos que aparecen en estudios de oncología sin ser antitumorales";
+      o.title = "Antieméticos, factores de crecimiento, antibióticos y otros fármacos de soporte identificados en los estudios publicados";
       o.addEventListener("click", function () {
         filtro.onco = !filtro.onco;
         if (filtro.onco && CLASES_SOPORTE[filtro.clase]) filtro.clase = null;
